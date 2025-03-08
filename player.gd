@@ -2,6 +2,7 @@ extends Area2D
 signal hit
 
 @export var speed = 400
+var multiplier
 var screen_size
 
 
@@ -18,6 +19,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Speed multiplier
+	if Input.is_action_pressed("run"):
+		multiplier = 1.5
+	else:
+		multiplier = 1
+
 	# Determine direction
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
@@ -31,7 +38,7 @@ func _process(delta: float) -> void:
 
 	# Normalise velocity
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		velocity = velocity.normalized() * (speed * multiplier)
 		#$AnimatedSprite2D.play()
 	else:
 		pass

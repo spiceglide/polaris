@@ -1,8 +1,8 @@
-extends Area2D
+extends CharacterBody2D
 signal hit
 
 @export var speed = 400
-var multiplier
+@export var multiplier = 1.5
 
 
 func start(pos):
@@ -16,15 +16,14 @@ func _ready() -> void:
 	#hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Speed multiplier
+	var mult = 1
 	if Input.is_action_pressed("run"):
-		multiplier = 1.5
-	else:
-		multiplier = 1
+		mult = multiplier
 
 	# Determine direction
-	var velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
@@ -36,15 +35,12 @@ func _process(delta: float) -> void:
 
 	# Normalise velocity
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * (speed * multiplier)
+		velocity = velocity.normalized() * speed * mult
+		move_and_slide()
 		#$AnimatedSprite2D.play()
 	else:
 		pass
 		#$AnimatedSprite2D.play()
-	
-	# Set position
-	position += velocity * delta
-	#position = position.clamp(Vector2.ZERO, screen_size)
 
 	# Animations
 	if velocity.y < 0:
@@ -59,8 +55,3 @@ func _process(delta: float) -> void:
 	elif velocity.x > 0:
 		pass
 		#$AnimatedSprite2D.animation = "right"
-
-
-func _on_body_entered(body: Node2D) -> void:
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)

@@ -1,0 +1,126 @@
+[gd_scene load_steps=20 format=3 uid="uid://7a2wv4ftrcw1"]
+
+[ext_resource type="Script" path="res://hud_inventory.gd" id="1_37tyk"]
+[ext_resource type="Texture2D" uid="uid://dfiurayrs7e70" path="res://assets/UI/INVENTORY/ITEM_SLOTS-1.png" id="2_t4gg2"]
+[ext_resource type="Texture2D" uid="uid://b0qg1u7ulbwo5" path="res://assets/UI/INVENTORY/ITEM_SLOTS-2.png" id="3_jbfm7"]
+[ext_resource type="Texture2D" uid="uid://ch0kc707bu4ej" path="res://assets/UI/INVENTORY/ITEM_SLOTS-3.png" id="4_o5a03"]
+[ext_resource type="Texture2D" uid="uid://crgk6p1fo4bkb" path="res://assets/UI/INVENTORY/ITEM_SLOTS-4.png" id="5_jcvda"]
+[ext_resource type="Texture2D" uid="uid://mbkesgwumy4i" path="res://assets/UI/INVENTORY/ITEM_SLOTS-5.png" id="6_wqiw5"]
+[ext_resource type="Texture2D" uid="uid://dktdllmdupepe" path="res://assets/UI/INVENTORY/ITEM_SLOTS-6.png" id="7_scnmq"]
+[ext_resource type="Texture2D" uid="uid://dbbg8t7hvli3l" path="res://assets/UI/INVENTORY/ITEM_SLOTS-7.png" id="8_wtb3q"]
+[ext_resource type="Texture2D" uid="uid://tdf35x3vh44i" path="res://assets/UI/INVENTORY/ITEM_SLOTS-8.png" id="9_emtub"]
+[ext_resource type="Texture2D" uid="uid://cws7hcd7nh3ap" path="res://assets/UI/INVENTORY/ITEM_SLOTS-9.png" id="10_05kal"]
+[ext_resource type="Texture2D" uid="uid://b5ipw4v02kjuc" path="res://assets/UI/INVENTORY/ITEM_SLOTS-10.png" id="11_38pw0"]
+[ext_resource type="Texture2D" uid="uid://xr7e2n63goqx" path="res://assets/UI/INVENTORY/E2.png" id="12_esaoa"]
+[ext_resource type="Texture2D" uid="uid://tf3bhq52cre7" path="res://assets/UI/INVENTORY/E.png" id="13_rnstd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6vx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t4gg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jbfm7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6jmk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o5a03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jcvda")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8r5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wqiw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_scnmq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2dh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wtb3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_emtub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48y8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_05kal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_38pw0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gttl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_esaoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rnstd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Inventory HUD" type="Node2D"]
+script = ExtResource("1_37tyk")
+
+[node name="Slot1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d6vx4")
+
+[node name="Slot2" type="AnimatedSprite2D" parent="."]
+position = Vector2(296, 0.5)
+sprite_frames = SubResource("SpriteFrames_6jmk5")
+
+[node name="Slot3" type="AnimatedSprite2D" parent="."]
+position = Vector2(592, 0.5)
+sprite_frames = SubResource("SpriteFrames_l8r5w")
+
+[node name="Slot4" type="AnimatedSprite2D" parent="."]
+position = Vector2(888, 0.5)
+sprite_frames = SubResource("SpriteFrames_i2dh0")
+
+[node name="Slot5" type="AnimatedSprite2D" parent="."]
+position = Vector2(1184, 0.5)
+sprite_frames = SubResource("SpriteFrames_48y8q")
+
+[node name="Hint" type="AnimatedSprite2D" parent="."]
+position = Vector2(1401, 50)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gttl0")

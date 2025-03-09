@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://e6tq7s5ais8p"]
+[gd_scene load_steps=2 format=3 uid="uid://e6tq7s5ais8p"]
+
+[ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://hud_inventory.tscn" id="1_doxyu"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -9,4 +11,8 @@ offset_bottom = 88.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
 theme_override_font_sizes/font_size = 64
-text = "Polaris"
+text = "❤️❤️❤️❤️❤️"
+
+[node name="Inventory HUD" parent="." instance=ExtResource("1_doxyu")]
+position = Vector2(1012, 1373)
+scale = Vector2(0.3, 0.3)

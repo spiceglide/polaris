@@ -1,0 +1,135 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqj6lvfgsvkj6"]
+
+[ext_resource type="PackedScene" uid="uid://bqgxbgdfy23od" path="res://tree.tscn" id="1_05gnn"]
+
+[node name="Scene" type="Node2D"]
+y_sort_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 3000.0
+offset_bottom = 3000.0
+color = Color(0.902983, 0.97323, 0.973177, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Tree1" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(825, 2386)
+
+[node name="Tree2" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(185, 2065)
+
+[node name="Tree10" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(471, 1827)
+
+[node name="Tree11" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(196, 2398)
+
+[node name="Tree12" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(664, 2001)
+
+[node name="Tree13" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(497, 2208)
+
+[node name="Tree14" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(841, 2767)
+
+[node name="Tree16" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(490, 2602)
+
+[node name="Tree17" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(513, 2880)
+
+[node name="Tree18" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(165, 2740)
+
+[node name="Tree5" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(772, 502)
+
+[node name="Tree6" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(132, 181)
+
+[node name="Tree26" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(418, -57)
+
+[node name="Tree27" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(143, 514)
+
+[node name="Tree28" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(611, 117)
+
+[node name="Tree29" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(444, 324)
+
+[node name="Tree30" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(788, 883)
+
+[node name="Tree31" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(437, 718)
+
+[node name="Tree33" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(112, 856)
+
+[node name="Tree7" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2939, 562)
+
+[node name="Tree8" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2299, 241)
+
+[node name="Tree9" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(948, 75)
+
+[node name="Tree32" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(1533, 551)
+
+[node name="Tree40" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(1492, 2004)
+
+[node name="Tree34" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2585, 3)
+
+[node name="Tree35" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2310, 574)
+
+[node name="Tree36" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2778, 177)
+
+[node name="Tree37" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2611, 384)
+
+[node name="Tree38" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2955, 943)
+
+[node name="Tree39" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2604, 778)
+
+[node name="Tree41" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2279, 916)
+
+[node name="Tree3" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2905, 2360)
+
+[node name="Tree4" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2265, 2039)
+
+[node name="Tree15" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2551, 1801)
+
+[node name="Tree19" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2276, 2372)
+
+[node name="Tree20" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2744, 1975)
+
+[node name="Tree21" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2577, 2182)
+
+[node name="Tree22" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2921, 2741)
+
+[node name="Tree23" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2570, 2576)
+
+[node name="Tree24" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2593, 2854)
+
+[node name="Tree25" parent="." instance=ExtResource("1_05gnn")]
+position = Vector2(2245, 2714)

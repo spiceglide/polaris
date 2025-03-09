@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://e6tq7s5ais8p" path="res://hud.tscn" id="2_kxxnc"]
 [ext_resource type="PackedScene" uid="uid://dqj6lvfgsvkj6" path="res://scene.tscn" id="2_n6gpl"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("2_kxxnc")]
 

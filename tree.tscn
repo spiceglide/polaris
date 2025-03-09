@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://csgwtshm0d45h" path="res://assets/tree.png" id="1_nj4dg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(119.5, 30)
+size = Vector2(123.5, 55)
 
 [node name="Tree" type="StaticBody2D"]
-z_index = 2
+z_index = 1
+y_sort_enabled = true
 scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
@@ -15,5 +16,5 @@ texture = ExtResource("1_nj4dg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-17.75, 96.5)
+position = Vector2(-15.75, 84)
 shape = SubResource("RectangleShape2D_3fioj")

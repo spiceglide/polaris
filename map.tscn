@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqj6lvfgsvkj6" path="res://scene.tscn" id="1_baoya"]
 
-[node name="Map" type="Node"]
+[node name="Map" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Scene" parent="." instance=ExtResource("1_baoya")]

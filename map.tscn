@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtl35oajbss5e"]
+
+[ext_resource type="PackedScene" uid="uid://bqgxbgdfy23od" path="res://tree.tscn" id="1_hgm4c"]
+
+[node name="Map" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 2560.0
+offset_bottom = 1440.0
+color = Color(0.902983, 0.97323, 0.973177, 1)
+
+[node name="Tree1" parent="." instance=ExtResource("1_hgm4c")]
+position = Vector2(1800, 918)
+
+[node name="Tree2" parent="." instance=ExtResource("1_hgm4c")]
+position = Vector2(444, 377)

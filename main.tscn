@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://player.tscn" id="1_4oq0a"]
 [ext_resource type="PackedScene" uid="uid://e6tq7s5ais8p" path="res://hud.tscn" id="2_kxxnc"]
-[ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://map.tscn" id="2_lmewa"]
+[ext_resource type="PackedScene" uid="uid://dqj6lvfgsvkj6" path="res://scene.tscn" id="2_n6gpl"]
 
 [node name="Main" type="Node"]
 
 [node name="HUD" parent="." instance=ExtResource("2_kxxnc")]
 
-[node name="Map" parent="." instance=ExtResource("2_lmewa")]
+[node name="Scene" parent="." instance=ExtResource("2_n6gpl")]
 
 [node name="Player" parent="." instance=ExtResource("1_4oq0a")]
-position = Vector2(1361, 625)
+position = Vector2(1395, 1139)
 
 [node name="Marker2D" type="Marker2D" parent="."]

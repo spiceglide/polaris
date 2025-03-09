@@ -192,3 +192,7 @@ shape = SubResource("RectangleShape2D_jmgsg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.2, 0.2)
+limit_left = 0
+limit_top = 0
+limit_right = 25000
+limit_bottom = 25000

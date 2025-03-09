@@ -1,8 +1,8 @@
 extends CharacterBody2D
 signal hit
 
-@export var speed = 400
-@export var multiplier = 1.5
+@export var speed = 500
+@export var multiplier = 1.75
 
 
 func start(pos):

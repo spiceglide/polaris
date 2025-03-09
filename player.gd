@@ -3,7 +3,6 @@ signal hit
 
 @export var speed = 400
 var multiplier
-var screen_size
 
 
 func start(pos):
@@ -13,9 +12,8 @@ func start(pos):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_viewport_rect().size
+	pass
 	#hide()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,7 +44,7 @@ func _process(delta: float) -> void:
 	
 	# Set position
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	#position = position.clamp(Vector2.ZERO, screen_size)
 
 	# Animations
 	if velocity.y < 0:

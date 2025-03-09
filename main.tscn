@@ -11,6 +11,6 @@
 [node name="Scene" parent="." instance=ExtResource("2_n6gpl")]
 
 [node name="Player" parent="." instance=ExtResource("1_4oq0a")]
-position = Vector2(1395, 1139)
+position = Vector2(1533, 1545)
 
 [node name="Marker2D" type="Marker2D" parent="."]

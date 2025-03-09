@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtl35oajbss5e"]
 
-[ext_resource type="PackedScene" uid="uid://dqj6lvfgsvkj6" path="res://scene.tscn" id="1_baoya"]
+[ext_resource type="Script" path="res://map.gd" id="1_4jlxt"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
-
-[node name="Scene" parent="." instance=ExtResource("1_baoya")]
+script = ExtResource("1_4jlxt")

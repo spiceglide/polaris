@@ -6,16 +6,13 @@ var inventory = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Slot1.play()
-	$Slot2.play()
-	$Slot3.play()
-	$Slot4.play()
-	$Slot5.play()
-	$Hint.play()
-	for slot in range(slot_count):
-		pass
+	for slot in $Hotbar.get_children():
+		slot.play()
+		
+	for slot in $Full.get_children():
+		slot.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	for item in inventory.slice(0, slot_count):
-		pass
+	if Input.is_action_just_pressed("inventory"):
+		$Full.visible = !($Full.visible)

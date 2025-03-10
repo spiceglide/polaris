@@ -36,14 +36,15 @@ theme_override_font_sizes/font_size = 64
 text = "❤️❤️❤️❤️❤️"
 
 [node name="Announcement" type="Label" parent="."]
-offset_left = 968.0
-offset_top = 1263.0
-offset_right = 1362.0
-offset_bottom = 1321.0
+offset_left = 926.0
+offset_top = 1276.0
+offset_right = 1368.0
+offset_bottom = 1340.0
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 32
 text = "[Smells like snow...]"
+horizontal_alignment = 1
 
 [node name="Inventory HUD" parent="." instance=ExtResource("1_doxyu")]
-position = Vector2(1012, 1373)
+position = Vector2(968, 978)
 scale = Vector2(0.3, 0.3)

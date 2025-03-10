@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 	viewport = get_viewport().size
 	$Health.position.x = padding
-	$Announcement.position.x = (viewport.x / 2) - 175
+	$Announcement.position.x = (viewport.x / 2) - 200
 	$Announcement.position.y = (viewport.y) - (15 * padding)
 	$"Inventory HUD".position.x = (viewport.x / 2) - 175
-	$"Inventory HUD".position.y = (viewport.y) - (5 * padding)
+	$"Inventory HUD".position.y = (viewport.y) - (45 * padding)

@@ -101,26 +101,115 @@ animations = [{
 [node name="Inventory HUD" type="Node2D"]
 script = ExtResource("1_37tyk")
 
-[node name="Slot1" type="AnimatedSprite2D" parent="."]
+[node name="Full" type="GridContainer" parent="."]
+visible = false
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot6" type="AnimatedSprite2D" parent="Full"]
 sprite_frames = SubResource("SpriteFrames_d6vx4")
 
-[node name="Slot2" type="AnimatedSprite2D" parent="."]
+[node name="Slot7" type="AnimatedSprite2D" parent="Full"]
 position = Vector2(296, 0.5)
 sprite_frames = SubResource("SpriteFrames_6jmk5")
 
-[node name="Slot3" type="AnimatedSprite2D" parent="."]
+[node name="Slot8" type="AnimatedSprite2D" parent="Full"]
 position = Vector2(592, 0.5)
 sprite_frames = SubResource("SpriteFrames_l8r5w")
 
-[node name="Slot4" type="AnimatedSprite2D" parent="."]
+[node name="Slot9" type="AnimatedSprite2D" parent="Full"]
 position = Vector2(888, 0.5)
 sprite_frames = SubResource("SpriteFrames_i2dh0")
 
-[node name="Slot5" type="AnimatedSprite2D" parent="."]
+[node name="Slot10" type="AnimatedSprite2D" parent="Full"]
 position = Vector2(1184, 0.5)
 sprite_frames = SubResource("SpriteFrames_48y8q")
 
-[node name="Hint" type="AnimatedSprite2D" parent="."]
+[node name="Slot11" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(8, 283.5)
+sprite_frames = SubResource("SpriteFrames_d6vx4")
+
+[node name="Slot12" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(304, 284)
+sprite_frames = SubResource("SpriteFrames_6jmk5")
+
+[node name="Slot13" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(600, 284)
+sprite_frames = SubResource("SpriteFrames_l8r5w")
+
+[node name="Slot14" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(896, 284)
+sprite_frames = SubResource("SpriteFrames_i2dh0")
+
+[node name="Slot15" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(1192, 284)
+sprite_frames = SubResource("SpriteFrames_48y8q")
+
+[node name="Slot16" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(0, 567.5)
+sprite_frames = SubResource("SpriteFrames_d6vx4")
+
+[node name="Slot17" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(296, 568)
+sprite_frames = SubResource("SpriteFrames_6jmk5")
+
+[node name="Slot18" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(592, 568)
+sprite_frames = SubResource("SpriteFrames_l8r5w")
+
+[node name="Slot19" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(888, 568)
+sprite_frames = SubResource("SpriteFrames_i2dh0")
+
+[node name="Slot20" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(1184, 568)
+sprite_frames = SubResource("SpriteFrames_48y8q")
+
+[node name="Slot21" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(0, 851.5)
+sprite_frames = SubResource("SpriteFrames_d6vx4")
+
+[node name="Slot22" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(296, 852)
+sprite_frames = SubResource("SpriteFrames_6jmk5")
+
+[node name="Slot23" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(592, 852)
+sprite_frames = SubResource("SpriteFrames_l8r5w")
+
+[node name="Slot24" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(888, 852)
+sprite_frames = SubResource("SpriteFrames_i2dh0")
+
+[node name="Slot25" type="AnimatedSprite2D" parent="Full"]
+position = Vector2(1184, 852)
+sprite_frames = SubResource("SpriteFrames_48y8q")
+
+[node name="Hotbar" type="HBoxContainer" parent="."]
+offset_top = 1313.0
+offset_bottom = 1313.0
+metadata/_edit_group_ = true
+
+[node name="Slot1" type="AnimatedSprite2D" parent="Hotbar"]
+sprite_frames = SubResource("SpriteFrames_d6vx4")
+
+[node name="Slot2" type="AnimatedSprite2D" parent="Hotbar"]
+position = Vector2(296, 0.5)
+sprite_frames = SubResource("SpriteFrames_6jmk5")
+
+[node name="Slot3" type="AnimatedSprite2D" parent="Hotbar"]
+position = Vector2(592, 0.5)
+sprite_frames = SubResource("SpriteFrames_l8r5w")
+
+[node name="Slot4" type="AnimatedSprite2D" parent="Hotbar"]
+position = Vector2(888, 0.5)
+sprite_frames = SubResource("SpriteFrames_i2dh0")
+
+[node name="Slot5" type="AnimatedSprite2D" parent="Hotbar"]
+position = Vector2(1184, 0.5)
+sprite_frames = SubResource("SpriteFrames_48y8q")
+
+[node name="Hint" type="AnimatedSprite2D" parent="Hotbar"]
 position = Vector2(1425, 50)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_gttl0")

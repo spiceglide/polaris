@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl2r2tiktn3nn"]
 
 [ext_resource type="Texture2D" uid="uid://ddvo55yybaqk1" path="res://assets/NATURE/SNOW_PILE2.png" id="1_0t2b0"]
-[ext_resource type="Script" path="res://snowpile.gd" id="2_gttbx"]
+[ext_resource type="Script" path="res://interactive_simple.gd" id="2_32cu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(884, 236)
@@ -9,7 +9,7 @@ size = Vector2(884, 236)
 [sub_resource type="CircleShape2D" id="CircleShape2D_61sv8"]
 radius = 494.684
 
-[node name="Snow Pile" type="StaticBody2D"]
+[node name="Snow Pile2" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -400)
@@ -24,7 +24,8 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(-6, 69)
-script = ExtResource("2_gttbx")
+script = ExtResource("2_32cu7")
+description = "“Cold...”"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

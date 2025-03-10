@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(-6, 69)
 script = ExtResource("2_32cu7")
-description = "“Cold...”"
+description = "“Cold…”"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

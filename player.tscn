@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=38 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x1yu0"]
 [ext_resource type="Texture2D" uid="uid://c37mpsf53cjrr" path="res://assets/CHARACTERS/DORA/DORA_S_WALK/DORA_S_WALK-1.png" id="2_0bx2s"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ywbau8kdct0j" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-2.png" id="31_tf3ue"]
 [ext_resource type="Texture2D" uid="uid://dgy1qenfylp46" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-3.png" id="32_o70wf"]
 [ext_resource type="Texture2D" uid="uid://c22bfrcc2ayre" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-4.png" id="33_cqv5h"]
+[ext_resource type="Script" path="res://interaction.gd" id="34_qs00s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqw58"]
 animations = [{
@@ -176,12 +177,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
 size = Vector2(366, 301)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_52r7i"]
+radius = 313.957
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -371)
 script = ExtResource("1_x1yu0")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gqw58")
@@ -197,3 +200,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 25000
 limit_bottom = 25000
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(-2, 253)
+script = ExtResource("34_qs00s")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_52r7i")

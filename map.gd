@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var grid_size = [9, 9]
-var scene_size = [3000, 3000]
+var scene_size = [9000, 9000]
 var scenes = [preload("res://scene1.tscn"), preload("res://scene2.tscn")]
 
 # Called when the node enters the scene tree for the first time.

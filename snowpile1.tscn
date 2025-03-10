@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://di1au0y2ha18t"]
+
+[ext_resource type="Texture2D" uid="uid://b0he8u0g50jk0" path="res://assets/NATURE/SNOW_PILE1.png" id="1_0i83b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
+size = Vector2(855.5, 138)
+
+[node name="Snow Pile" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -350)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0i83b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+position = Vector2(-21.75, 115)
+shape = SubResource("RectangleShape2D_3fioj")

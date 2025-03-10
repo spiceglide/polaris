@@ -179,6 +179,7 @@ size = Vector2(366, 301)
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
+position = Vector2(0, -371)
 script = ExtResource("1_x1yu0")
 metadata/_edit_group_ = true
 

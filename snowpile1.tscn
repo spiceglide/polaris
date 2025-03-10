@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://di1au0y2ha18t"]
+[gd_scene load_steps=5 format=3 uid="uid://di1au0y2ha18t"]
 
 [ext_resource type="Texture2D" uid="uid://b0he8u0g50jk0" path="res://assets/NATURE/SNOW_PILE1.png" id="1_0i83b"]
+[ext_resource type="Script" path="res://snowpile.gd" id="2_stx8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(855.5, 138)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nv3j8"]
+radius = 462.017
 
 [node name="Snow Pile" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -350)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0i83b")
@@ -18,3 +21,11 @@ texture = ExtResource("1_0i83b")
 light_mask = 0
 position = Vector2(-21.75, 115)
 shape = SubResource("RectangleShape2D_3fioj")
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(-6, 102)
+script = ExtResource("2_stx8u")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_nv3j8")

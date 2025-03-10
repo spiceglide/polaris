@@ -5,8 +5,9 @@
 [node name="Bush" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
-scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 124)
 texture = ExtResource("1_yif3d")
+offset = Vector2(2, -124)

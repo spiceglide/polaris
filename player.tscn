@@ -183,12 +183,14 @@ radius = 313.957
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -371)
 script = ExtResource("1_x1yu0")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 388)
 sprite_frames = SubResource("SpriteFrames_gqw58")
 animation = &"down_idle"
+offset = Vector2(2, -388)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 252.5)

@@ -9,4 +9,6 @@ position = Vector2(0, -105)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 58)
 texture = ExtResource("1_mmpwc")
+offset = Vector2(1, -58)

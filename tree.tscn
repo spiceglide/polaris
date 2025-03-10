@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://interactive_simple.gd" id="1_xcecl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(82.5, 206.5)
+size = Vector2(66, 191.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
 radius = 97.0464
@@ -12,15 +12,17 @@ radius = 97.0464
 [node name="Tree" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-694, -1195)
+position = Vector2(0, 1133)
 texture = ExtResource("1_pfv34")
 centered = false
+offset = Vector2(-692, -2328)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-0.25, 1051.75)
+position = Vector2(-1, 1044.25)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]

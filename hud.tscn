@@ -1,10 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://e6tq7s5ais8p"]
+[gd_scene load_steps=5 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://hud_inventory.tscn" id="1_doxyu"]
 [ext_resource type="Script" path="res://hud.gd" id="1_ib77g"]
+[ext_resource type="Shader" path="res://vignette.gdshader" id="3_0i1kg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
+shader = ExtResource("3_0i1kg")
+shader_parameter/outerRadius = 2.5
+shader_parameter/MainAlpha = 0.6
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ib77g")
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1whyg")
+offset_right = 2560.0
+offset_bottom = 1440.0
 
 [node name="Health" type="Label" parent="."]
 offset_left = 15.0

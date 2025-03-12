@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=6 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://hud_inventory.tscn" id="1_doxyu"]
 [ext_resource type="Script" path="res://hud.gd" id="1_ib77g"]
 [ext_resource type="Shader" path="res://vignette.gdshader" id="3_0i1kg"]
+[ext_resource type="FontFile" uid="uid://by1qbjuqf1exp" path="res://assets/FONT/Polarisfont-Regular222.otf" id="4_ksx20"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
 shader = ExtResource("3_0i1kg")
@@ -43,7 +44,8 @@ position = Vector2(-220, -65)
 scale = Vector2(0.3, 0.3)
 
 [node name="HealthContainer" type="Container" parent="."]
-offset_right = 40.0
+offset_left = 15.0
+offset_right = 55.0
 offset_bottom = 40.0
 
 [node name="Health" type="Label" parent="HealthContainer"]
@@ -57,15 +59,17 @@ text = "❤️❤️❤️❤️❤️"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -80.0
-offset_right = -40.0
-offset_bottom = 40.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -90.0
+offset_bottom = 60.0
 grow_horizontal = 2
 
 [node name="Announcement" type="Label" parent="AnnouncementContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_ksx20")
+theme_override_font_sizes/font_size = 38
 text = "[Smells like snow...]"
 horizontal_alignment = 1
 vertical_alignment = 1

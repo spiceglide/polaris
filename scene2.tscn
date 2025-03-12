@@ -9,7 +9,7 @@ y_sort_enabled = true
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 9000.0
 offset_bottom = 9000.0
-color = Color(0.902983, 0.97323, 0.973177, 1)
+color = Color(0.917647, 0.976471, 0.988235, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Tree" parent="." instance=ExtResource("1_vn1c4")]

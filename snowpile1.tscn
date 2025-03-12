@@ -20,7 +20,7 @@ texture = ExtResource("1_0i83b")
 offset = Vector2(0, -163)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
-self_modulate = Color(0, 0, 0, 0.133333)
+self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 position = Vector2(-97, 73)
 rotation = -3.14159

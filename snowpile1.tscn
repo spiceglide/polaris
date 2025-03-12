@@ -19,6 +19,15 @@ position = Vector2(0, 163)
 texture = ExtResource("1_0i83b")
 offset = Vector2(0, -163)
 
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 0, 0, 0.133333)
+show_behind_parent = true
+position = Vector2(-97, 73)
+rotation = -3.14159
+scale = Vector2(1, 0.423292)
+skew = 0.733038
+texture = ExtResource("1_0i83b")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 position = Vector2(-25.75, 115)

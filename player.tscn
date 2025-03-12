@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=39 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_x1yu0"]
 [ext_resource type="Texture2D" uid="uid://c37mpsf53cjrr" path="res://assets/CHARACTERS/DORA/DORA_S_WALK/DORA_S_WALK-1.png" id="2_0bx2s"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dgy1qenfylp46" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-3.png" id="32_o70wf"]
 [ext_resource type="Texture2D" uid="uid://c22bfrcc2ayre" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-4.png" id="33_cqv5h"]
 [ext_resource type="Script" path="res://interaction.gd" id="34_qs00s"]
+[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqw58"]
 animations = [{
@@ -210,3 +211,9 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
 shape = SubResource("CircleShape2D_52r7i")
+
+[node name="Shadow" type="Sprite2D" parent="Interaction"]
+self_modulate = Color(1, 1, 1, 0.133333)
+position = Vector2(0, 147)
+scale = Vector2(3, 1.031)
+texture = ExtResource("35_1odh0")

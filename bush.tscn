@@ -5,9 +5,17 @@
 [node name="Bush" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 124)
 texture = ExtResource("1_yif3d")
 offset = Vector2(2, -124)
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 0, 0, 0.133333)
+show_behind_parent = true
+position = Vector2(-46, 66)
+rotation = -3.14159
+scale = Vector2(1, 0.423292)
+skew = 0.733038
+texture = ExtResource("1_yif3d")

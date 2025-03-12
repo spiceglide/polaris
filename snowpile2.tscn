@@ -9,7 +9,7 @@ size = Vector2(813, 193)
 [sub_resource type="CircleShape2D" id="CircleShape2D_61sv8"]
 radius = 494.684
 
-[node name="Snow Pile2" type="StaticBody2D"]
+[node name="Snow Pile" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -400)
@@ -18,6 +18,15 @@ position = Vector2(0, -400)
 position = Vector2(0, 230)
 texture = ExtResource("1_0t2b0")
 offset = Vector2(0, -230)
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 0, 0, 0.133333)
+show_behind_parent = true
+position = Vector2(-101, 81)
+rotation = -3.14159
+scale = Vector2(1, 0.423292)
+skew = 0.733038
+texture = ExtResource("1_0t2b0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

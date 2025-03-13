@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://di1au0y2ha18t"]
 
-[ext_resource type="Texture2D" uid="uid://b0he8u0g50jk0" path="res://assets/NATURE/SNOW_PILE1.png" id="1_0i83b"]
-[ext_resource type="Script" path="res://interactive_simple.gd" id="2_frw5g"]
+[ext_resource type="Texture2D" uid="uid://b0he8u0g50jk0" path="res://assets/NATURE/SNOW_PILE1.png" id="1_t48ix"]
+[ext_resource type="Script" path="res://scripts/interactive_simple.gd" id="2_3gril"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(847.5, 138)
@@ -16,7 +16,7 @@ position = Vector2(0, -350)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 163)
-texture = ExtResource("1_0i83b")
+texture = ExtResource("1_t48ix")
 offset = Vector2(0, -163)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
@@ -26,7 +26,7 @@ position = Vector2(-97, 73)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_0i83b")
+texture = ExtResource("1_t48ix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -35,7 +35,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(-6, 102)
-script = ExtResource("2_frw5g")
+script = ExtResource("2_3gril")
 description = "\"Cold...\""
 metadata/_edit_group_ = true
 

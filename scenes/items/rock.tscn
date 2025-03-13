@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6y27qxb4h6qs"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_elrq8"]
+[ext_resource type="Texture2D" uid="uid://5sgvmghfgu02" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_ROCK_A.png" id="2_ypqma"]
+[ext_resource type="Texture2D" uid="uid://cgms7kdboy7sc" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_ROCK_B.png" id="3_nb087"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l3oc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ypqma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nb087")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Rock" type="Node2D"]
+script = ExtResource("1_elrq8")
+id = "rock"
+title = "Rock"
+description = "\"Better than nothing\""
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l3oc7")

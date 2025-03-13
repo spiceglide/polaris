@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqj6lvfgsvkj6"]
 
-[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://tree.tscn" id="1_05gnn"]
-[ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://snowpile1.tscn" id="2_geocy"]
-[ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://snowpile2.tscn" id="3_ppvt3"]
-[ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://rock1.tscn" id="4_o416n"]
-[ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://rock2.tscn" id="5_hhtvx"]
-[ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://pineMedium.tscn" id="7_grwu3"]
+[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://scenes/tree.tscn" id="1_05gnn"]
+[ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://scenes/snowpile1.tscn" id="2_geocy"]
+[ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://scenes/snowpile2.tscn" id="3_ppvt3"]
+[ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://scenes/rock1.tscn" id="4_o416n"]
+[ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://scenes/rock2.tscn" id="5_hhtvx"]
+[ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://scenes/pineMedium.tscn" id="7_grwu3"]
 
 [node name="Scene" type="Node2D"]
 y_sort_enabled = true

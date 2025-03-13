@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://cbuloj656l6eh"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_x1yu0"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_x1yu0"]
 [ext_resource type="Texture2D" uid="uid://c37mpsf53cjrr" path="res://assets/CHARACTERS/DORA/DORA_S_WALK/DORA_S_WALK-1.png" id="2_0bx2s"]
 [ext_resource type="Texture2D" uid="uid://celeg0d4tx14v" path="res://assets/CHARACTERS/DORA/DORA_S_IDLE/DORA_S_IDLE-1.png" id="2_gk4my"]
 [ext_resource type="Texture2D" uid="uid://dt0s6q5rlh753" path="res://assets/CHARACTERS/DORA/DORA_S_IDLE/DORA_S_IDLE-2.png" id="3_mpalr"]
@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ywbau8kdct0j" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-2.png" id="31_tf3ue"]
 [ext_resource type="Texture2D" uid="uid://dgy1qenfylp46" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-3.png" id="32_o70wf"]
 [ext_resource type="Texture2D" uid="uid://c22bfrcc2ayre" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-4.png" id="33_cqv5h"]
-[ext_resource type="Script" path="res://interaction.gd" id="34_qs00s"]
+[ext_resource type="Script" path="res://scripts/interaction.gd" id="34_qs00s"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqw58"]

@@ -6,6 +6,8 @@ var inventory = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#_err = self.connect("item_pick_up",self,"item_pick_up")
+	
 	for slot in $Hotbar.get_children():
 		slot.play()
 		

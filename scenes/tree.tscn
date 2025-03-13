@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bny82lifsvvnc"]
 
-[ext_resource type="Texture2D" uid="uid://cjye5r24icbch" path="res://assets/NATURE/TREE1.png" id="1_pfv34"]
-[ext_resource type="Script" path="res://interactive_simple.gd" id="1_xcecl"]
-[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="3_rmmmm"]
+[ext_resource type="Texture2D" uid="uid://cjye5r24icbch" path="res://assets/NATURE/TREE1.png" id="1_6gj6j"]
+[ext_resource type="Script" path="res://scripts/interactive_simple.gd" id="2_6erf3"]
+[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="3_t7b0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(66, 191.5)
@@ -16,7 +16,7 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1133)
-texture = ExtResource("1_pfv34")
+texture = ExtResource("1_6gj6j")
 centered = false
 offset = Vector2(-692, -2328)
 
@@ -26,7 +26,7 @@ show_behind_parent = true
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_pfv34")
+texture = ExtResource("1_6gj6j")
 centered = false
 offset = Vector2(-692, -2328)
 
@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(2, 1081)
-script = ExtResource("1_xcecl")
+script = ExtResource("2_6erf3")
 description = "\"Just a tree...\""
 metadata/_edit_group_ = true
 
@@ -49,4 +49,4 @@ visible = false
 self_modulate = Color(1, 1, 1, 0.133333)
 position = Vector2(0, 1130)
 scale = Vector2(8, 5.12)
-texture = ExtResource("3_rmmmm")
+texture = ExtResource("3_t7b0b")

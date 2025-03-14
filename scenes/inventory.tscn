@@ -1,220 +1,124 @@
-[gd_scene load_steps=21 format=3 uid="uid://7a2wv4ftrcw1"]
+[gd_scene load_steps=3 format=3 uid="uid://7a2wv4ftrcw1"]
 
-[ext_resource type="Script" path="res://scripts/hud_inventory.gd" id="1_b6eu6"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_b6eu6"]
 [ext_resource type="PackedScene" uid="uid://dwsra7bdijtmc" path="res://scenes/Slot.tscn" id="2_m44es"]
-[ext_resource type="Texture2D" uid="uid://bp0oa76amkw3v" path="res://assets/UI/INV V2/ITEM_SLOTS-3.png" id="3_14g50"]
-[ext_resource type="Texture2D" uid="uid://bgv2refyh2awe" path="res://assets/UI/INV V2/ITEM_SLOTS-4.png" id="4_wqvb2"]
-[ext_resource type="Texture2D" uid="uid://cift1j4g5k1ka" path="res://assets/UI/INV V2/ITEM_SLOTS-5.png" id="5_m1ege"]
-[ext_resource type="Texture2D" uid="uid://ceykic3tje3fr" path="res://assets/UI/INV V2/ITEM_SLOTS-6.png" id="6_mrfq1"]
-[ext_resource type="Texture2D" uid="uid://76xc1eus41sr" path="res://assets/UI/INV V2/ITEM_SLOTS-7.png" id="7_avotn"]
-[ext_resource type="Texture2D" uid="uid://c0xy1t8m2hiai" path="res://assets/UI/INV V2/ITEM_SLOTS-8.png" id="8_bqdfp"]
-[ext_resource type="Texture2D" uid="uid://uayurhqnn1w6" path="res://assets/UI/INV V2/ITEM_SLOTS-9.png" id="9_pek8h"]
-[ext_resource type="Texture2D" uid="uid://bvxab1gfbx3sg" path="res://assets/UI/INV V2/ITEM_SLOTS-10.png" id="10_xugsa"]
-[ext_resource type="Texture2D" uid="uid://u343s8em0l66" path="res://assets/UI/INV V2/ITEM_SLOTS-1.png" id="11_ypfhq"]
-[ext_resource type="Texture2D" uid="uid://dmnu8x3lhkqb4" path="res://assets/UI/INV V2/ITEM_SLOTS-2.png" id="12_ksokg"]
-[ext_resource type="Texture2D" uid="uid://ccymox8aebjaf" path="res://assets/UI/INVENTORY/ITEM_SLOTS-11.png" id="13_jag2e"]
-[ext_resource type="Texture2D" uid="uid://d2lksr370x6w" path="res://assets/UI/INVENTORY/ITEM_SLOTS-12.png" id="14_bwotd"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6jmk5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_14g50")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_wqvb2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l8r5w"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_m1ege")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_mrfq1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i2dh0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_avotn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_bqdfp")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_48y8q"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_pek8h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_xugsa")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d6vx4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_ypfhq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_ksokg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gttl0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_jag2e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_bwotd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
 
 [node name="Inventory HUD" type="Node2D"]
 script = ExtResource("1_b6eu6")
 
 [node name="Full" type="GridContainer" parent="."]
-offset_left = 8.0
-offset_top = -1246.0
-offset_right = 1483.0
-offset_bottom = -96.0
+visible = false
+offset_top = -1250.0
+offset_right = 1996.0
+offset_bottom = 294.0
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 200
+columns = 5
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
 
 [node name="Slot6" parent="Full" instance=ExtResource("2_m44es")]
 layout_mode = 2
 
-[node name="Slot7" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(444, 143)
-sprite_frames = SubResource("SpriteFrames_6jmk5")
+[node name="Slot7" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type2"
 
-[node name="Slot8" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(740, 143)
-sprite_frames = SubResource("SpriteFrames_l8r5w")
+[node name="Slot8" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type3"
 
-[node name="Slot9" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1036, 143)
-sprite_frames = SubResource("SpriteFrames_i2dh0")
+[node name="Slot9" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type4"
 
-[node name="Slot10" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1332, 143)
-sprite_frames = SubResource("SpriteFrames_48y8q")
+[node name="Slot10" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type5"
 
-[node name="Slot11" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(156, 426)
-sprite_frames = SubResource("SpriteFrames_d6vx4")
+[node name="Slot11" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
 
-[node name="Slot12" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(452, 426.5)
-sprite_frames = SubResource("SpriteFrames_6jmk5")
+[node name="Slot12" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type2"
 
-[node name="Slot13" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(748, 426.5)
-sprite_frames = SubResource("SpriteFrames_l8r5w")
+[node name="Slot13" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type3"
 
-[node name="Slot14" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1044, 426.5)
-sprite_frames = SubResource("SpriteFrames_i2dh0")
+[node name="Slot14" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type4"
 
-[node name="Slot15" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1340, 426.5)
-sprite_frames = SubResource("SpriteFrames_48y8q")
+[node name="Slot15" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type5"
 
-[node name="Slot16" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(148, 710)
-sprite_frames = SubResource("SpriteFrames_d6vx4")
+[node name="Slot16" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
 
-[node name="Slot17" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(444, 710.5)
-sprite_frames = SubResource("SpriteFrames_6jmk5")
+[node name="Slot17" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type2"
 
-[node name="Slot18" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(740, 710.5)
-sprite_frames = SubResource("SpriteFrames_l8r5w")
+[node name="Slot18" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type3"
 
-[node name="Slot19" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1036, 710.5)
-sprite_frames = SubResource("SpriteFrames_i2dh0")
+[node name="Slot19" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type4"
 
-[node name="Slot20" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1332, 710.5)
-sprite_frames = SubResource("SpriteFrames_48y8q")
+[node name="Slot20" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type5"
 
-[node name="Slot21" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(148, 994)
-sprite_frames = SubResource("SpriteFrames_d6vx4")
+[node name="Slot21" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
 
-[node name="Slot22" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(444, 994.5)
-sprite_frames = SubResource("SpriteFrames_6jmk5")
+[node name="Slot22" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type2"
 
-[node name="Slot23" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(740, 994.5)
-sprite_frames = SubResource("SpriteFrames_l8r5w")
+[node name="Slot23" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type3"
 
-[node name="Slot24" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1036, 994.5)
-sprite_frames = SubResource("SpriteFrames_i2dh0")
+[node name="Slot24" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type4"
 
-[node name="Slot25" type="AnimatedSprite2D" parent="Full"]
-position = Vector2(1332, 994.5)
-sprite_frames = SubResource("SpriteFrames_48y8q")
+[node name="Slot25" parent="Full" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type5"
 
 [node name="Hotbar" type="HBoxContainer" parent="."]
-offset_right = 1662.0
+offset_right = 1648.0
 offset_bottom = 284.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
 metadata/_edit_group_ = true
 
-[node name="Slot1" type="AnimatedSprite2D" parent="Hotbar"]
-position = Vector2(148, 141.5)
-sprite_frames = SubResource("SpriteFrames_d6vx4")
+[node name="Slot1" parent="Hotbar" instance=ExtResource("2_m44es")]
+layout_mode = 2
 
-[node name="Slot2" type="AnimatedSprite2D" parent="Hotbar"]
-position = Vector2(444, 142)
-sprite_frames = SubResource("SpriteFrames_6jmk5")
+[node name="Slot2" parent="Hotbar" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type2"
 
-[node name="Slot3" type="AnimatedSprite2D" parent="Hotbar"]
-position = Vector2(740, 142)
-sprite_frames = SubResource("SpriteFrames_l8r5w")
+[node name="Slot3" parent="Hotbar" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type3"
 
-[node name="Slot4" type="AnimatedSprite2D" parent="Hotbar"]
-position = Vector2(1036, 142)
-sprite_frames = SubResource("SpriteFrames_i2dh0")
+[node name="Slot4" parent="Hotbar" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type4"
 
-[node name="Slot5" type="AnimatedSprite2D" parent="Hotbar"]
-position = Vector2(1332, 142)
-sprite_frames = SubResource("SpriteFrames_48y8q")
+[node name="Slot5" parent="Hotbar" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "type5"
 
-[node name="Hint" type="AnimatedSprite2D" parent="Hotbar"]
-position = Vector2(1573, 191.5)
-scale = Vector2(0.6, 0.6)
-sprite_frames = SubResource("SpriteFrames_gttl0")
+[node name="Hint" parent="Hotbar" instance=ExtResource("2_m44es")]
+layout_mode = 2
+anim = "hint"

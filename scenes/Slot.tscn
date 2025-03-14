@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dwsra7bdijtmc"]
 
 [ext_resource type="Texture2D" uid="uid://u343s8em0l66" path="res://assets/UI/INV V2/ITEM_SLOTS-1.png" id="1_21abe"]
-[ext_resource type="Script" path="res://scripts/slot.gd" id="1_xgkrn"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_vtahu"]
 [ext_resource type="Texture2D" uid="uid://dmnu8x3lhkqb4" path="res://assets/UI/INV V2/ITEM_SLOTS-2.png" id="2_l28ys"]
 [ext_resource type="Texture2D" uid="uid://ccymox8aebjaf" path="res://assets/UI/INVENTORY/ITEM_SLOTS-11.png" id="2_q7d11"]
 [ext_resource type="Texture2D" uid="uid://d2lksr370x6w" path="res://assets/UI/INVENTORY/ITEM_SLOTS-12.png" id="3_3kbrl"]
@@ -83,22 +83,20 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Slot" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_xgkrn")
+[node name="Slot" type="MarginContainer"]
+offset_right = 300.0
+offset_bottom = 280.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_vtahu")
 
-[node name="Frame" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
-animation = &"type5"
+animation = &"type1"
 
 [node name="Button" type="Button" parent="."]
 visible = false
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 2

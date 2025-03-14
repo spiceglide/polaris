@@ -42,8 +42,6 @@ grow_vertical = 0
 [node name="Inventory" parent="InventoryContainer" instance=ExtResource("1_doxyu")]
 position = Vector2(-220, -65)
 scale = Vector2(0.3, 0.3)
-slot_count = 5
-spacing = 100
 
 [node name="HealthContainer" type="Container" parent="."]
 offset_left = 15.0

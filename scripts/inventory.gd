@@ -35,8 +35,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("inventory"):
+	pass
+
+func _input(event):
+	if event.is_action_pressed("inventory"):
 		$Full.visible = !($Full.visible)
+		
+	if event.is_action_pressed("hotbar"):
+		selected_slot = event.as_text().to_int()
+		print(selected_slot)
 
 func set_item(item_id: String):
 	var item = item_scene.instantiate()

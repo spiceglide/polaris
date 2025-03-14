@@ -26,18 +26,18 @@ func _physics_process(delta: float) -> void:
 
 	# Determine direction
 	velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_up"):
-		last_dir = "up"
-		velocity.y -= 1
-	if Input.is_action_pressed("move_down"):
-		last_dir = "down"
-		velocity.y += 1
 	if Input.is_action_pressed("move_left"):
 		last_dir = "left"
 		velocity.x -= 1
 	if Input.is_action_pressed("move_right"):
 		last_dir = "right"
 		velocity.x += 1
+	if Input.is_action_pressed("move_up"):
+		last_dir = "up"
+		velocity.y -= 1
+	if Input.is_action_pressed("move_down"):
+		last_dir = "down"
+		velocity.y += 1
 
 	# Normalise velocity
 	if velocity.length() > 0:

@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://dwsra7bdijtmc"]
+
+[ext_resource type="Script" path="res://scripts/slot.gd" id="1_x3ewo"]
+[ext_resource type="Texture2D" uid="uid://ccymox8aebjaf" path="res://assets/UI/INVENTORY/ITEM_SLOTS-11.png" id="2_hj6o5"]
+[ext_resource type="Texture2D" uid="uid://d2lksr370x6w" path="res://assets/UI/INVENTORY/ITEM_SLOTS-12.png" id="3_jfeaw"]
+[ext_resource type="Texture2D" uid="uid://u343s8em0l66" path="res://assets/UI/INV V2/ITEM_SLOTS-1.png" id="4_k0b2t"]
+[ext_resource type="Texture2D" uid="uid://dmnu8x3lhkqb4" path="res://assets/UI/INV V2/ITEM_SLOTS-2.png" id="5_031ju"]
+[ext_resource type="Texture2D" uid="uid://bp0oa76amkw3v" path="res://assets/UI/INV V2/ITEM_SLOTS-3.png" id="6_e4wio"]
+[ext_resource type="Texture2D" uid="uid://bgv2refyh2awe" path="res://assets/UI/INV V2/ITEM_SLOTS-4.png" id="7_f5fl4"]
+[ext_resource type="Texture2D" uid="uid://cift1j4g5k1ka" path="res://assets/UI/INV V2/ITEM_SLOTS-5.png" id="8_4hb2m"]
+[ext_resource type="Texture2D" uid="uid://ceykic3tje3fr" path="res://assets/UI/INV V2/ITEM_SLOTS-6.png" id="9_ttayr"]
+[ext_resource type="Texture2D" uid="uid://76xc1eus41sr" path="res://assets/UI/INV V2/ITEM_SLOTS-7.png" id="10_bpab8"]
+[ext_resource type="Texture2D" uid="uid://c0xy1t8m2hiai" path="res://assets/UI/INV V2/ITEM_SLOTS-8.png" id="11_e5isj"]
+[ext_resource type="Texture2D" uid="uid://uayurhqnn1w6" path="res://assets/UI/INV V2/ITEM_SLOTS-9.png" id="12_gfkvy"]
+[ext_resource type="Texture2D" uid="uid://bvxab1gfbx3sg" path="res://assets/UI/INV V2/ITEM_SLOTS-10.png" id="13_yvcko"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_355af"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hj6o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jfeaw")
+}],
+"loop": true,
+"name": &"hint",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k0b2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_031ju")
+}],
+"loop": true,
+"name": &"type1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_e4wio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f5fl4")
+}],
+"loop": true,
+"name": &"type2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4hb2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ttayr")
+}],
+"loop": true,
+"name": &"type3",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bpab8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e5isj")
+}],
+"loop": true,
+"name": &"type4",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gfkvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yvcko")
+}],
+"loop": true,
+"name": &"type5",
+"speed": 2.0
+}]
+
+[node name="Slot" type="MarginContainer"]
+offset_right = 300.0
+offset_bottom = 280.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_x3ewo")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(148, 141.5)
+sprite_frames = SubResource("SpriteFrames_355af")
+animation = &"type1"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 2

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://7a2wv4ftrcw1"]
+[gd_scene load_steps=2 format=3 uid="uid://7a2wv4ftrcw1"]
 
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="1_b6eu6"]
-[ext_resource type="PackedScene" uid="uid://dwsra7bdijtmc" path="res://scenes/Slot.tscn" id="2_m44es"]
 
 [node name="Inventory HUD" type="Node2D"]
 script = ExtResource("1_b6eu6")
@@ -17,108 +16,9 @@ columns = 5
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
 
-[node name="Slot6" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-
-[node name="Slot7" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type2"
-
-[node name="Slot8" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type3"
-
-[node name="Slot9" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type4"
-
-[node name="Slot10" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type5"
-
-[node name="Slot11" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-
-[node name="Slot12" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type2"
-
-[node name="Slot13" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type3"
-
-[node name="Slot14" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type4"
-
-[node name="Slot15" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type5"
-
-[node name="Slot16" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-
-[node name="Slot17" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type2"
-
-[node name="Slot18" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type3"
-
-[node name="Slot19" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type4"
-
-[node name="Slot20" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type5"
-
-[node name="Slot21" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-
-[node name="Slot22" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type2"
-
-[node name="Slot23" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type3"
-
-[node name="Slot24" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type4"
-
-[node name="Slot25" parent="Full" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type5"
-
 [node name="Hotbar" type="HBoxContainer" parent="."]
 offset_right = 1648.0
 offset_bottom = 284.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 200
 metadata/_edit_group_ = true
-
-[node name="Slot1" parent="Hotbar" instance=ExtResource("2_m44es")]
-layout_mode = 2
-
-[node name="Slot2" parent="Hotbar" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type2"
-
-[node name="Slot3" parent="Hotbar" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type3"
-
-[node name="Slot4" parent="Hotbar" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type4"
-
-[node name="Slot5" parent="Hotbar" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "type5"
-
-[node name="Hint" parent="Hotbar" instance=ExtResource("2_m44es")]
-layout_mode = 2
-anim = "hint"

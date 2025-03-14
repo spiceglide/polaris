@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 HUD="*res://scenes/hud.tscn"
-Inventory="*res://scenes/inventory.tscn"
 
 [display]
 

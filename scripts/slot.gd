@@ -2,12 +2,15 @@ extends Control
 class_name InventorySlot
 
 @export var item: Item
+@export var anim: String = "type1"
 
 signal slot_click(which: InventorySlot)
 signal slot_hovered(which: InventorySlot, is_hover: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Sprite.animation = anim
+	$Sprite.play()
 	add_to_group("inventory_slots")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@export var padding = 10
 @export var announcement = ""
 @export var announcement_timeout = 250
 var timer = 0
@@ -14,8 +13,8 @@ func _process(delta: float) -> void:
 	
 	timer += 1
 	
-	if (timer > announcement_timeout) and ($AnnouncementContainer/Announcement.text == announcement):
+	if (timer > announcement_timeout) and ($Announcement.text == announcement):
 		announcement = ""
 		timer = 0
 
-	$AnnouncementContainer/Announcement.text = announcement
+	$Announcement.text = announcement

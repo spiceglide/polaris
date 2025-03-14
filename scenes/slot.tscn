@@ -1,7 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwsra7bdijtmc"]
+[gd_scene load_steps=21 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" path="res://scripts/slot.gd" id="1_x3ewo"]
+[ext_resource type="Texture2D" uid="uid://bp3o7fjoo4p1e" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_BERRY_A.png" id="2_3xruo"]
 [ext_resource type="Texture2D" uid="uid://ccymox8aebjaf" path="res://assets/UI/INVENTORY/ITEM_SLOTS-11.png" id="2_hj6o5"]
+[ext_resource type="Texture2D" uid="uid://5sgvmghfgu02" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_ROCK_A.png" id="2_qipjr"]
+[ext_resource type="Texture2D" uid="uid://31kg152gg6sl" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_BERRY_B.png" id="3_6hsov"]
+[ext_resource type="Texture2D" uid="uid://cgms7kdboy7sc" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_ROCK_B.png" id="3_fdyp6"]
 [ext_resource type="Texture2D" uid="uid://d2lksr370x6w" path="res://assets/UI/INVENTORY/ITEM_SLOTS-12.png" id="3_jfeaw"]
 [ext_resource type="Texture2D" uid="uid://u343s8em0l66" path="res://assets/UI/INV V2/ITEM_SLOTS-1.png" id="4_k0b2t"]
 [ext_resource type="Texture2D" uid="uid://dmnu8x3lhkqb4" path="res://assets/UI/INV V2/ITEM_SLOTS-2.png" id="5_031ju"]
@@ -13,6 +17,32 @@
 [ext_resource type="Texture2D" uid="uid://c0xy1t8m2hiai" path="res://assets/UI/INV V2/ITEM_SLOTS-8.png" id="11_e5isj"]
 [ext_resource type="Texture2D" uid="uid://uayurhqnn1w6" path="res://assets/UI/INV V2/ITEM_SLOTS-9.png" id="12_gfkvy"]
 [ext_resource type="Texture2D" uid="uid://bvxab1gfbx3sg" path="res://assets/UI/INV V2/ITEM_SLOTS-10.png" id="13_yvcko"]
+[ext_resource type="PackedScene" uid="uid://b6y27qxb4h6qs" path="res://scenes/item.tscn" id="14_u74pu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brms5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3xruo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6hsov")
+}],
+"loop": true,
+"name": &"berries",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qipjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fdyp6")
+}],
+"loop": true,
+"name": &"rock",
+"speed": 2.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_355af"]
 animations = [{
@@ -92,11 +122,20 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 script = ExtResource("1_x3ewo")
 
+[node name="ItemSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(42, 40)
+sprite_frames = SubResource("SpriteFrames_brms5")
+animation = &"berries"
+centered = false
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
-animation = &"type1"
+animation = &"type2"
 
 [node name="Button" type="Button" parent="."]
 visible = false
 layout_mode = 2
+
+[node name="Item" parent="." instance=ExtResource("14_u74pu")]

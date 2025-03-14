@@ -1,8 +1,8 @@
-extends Node2D
+extends Control
 class_name InventorySystem
 
-var slot_scene = preload("res://scenes/slot.tscn")
-var item_scene = preload("res://scenes/item.tscn")
+@onready var slot_scene = preload("res://scenes/slot.tscn")
+@onready var item_scene = preload("res://scenes/item.tscn")
 
 @export var cols: int = 5
 @export var rows: int = 5
@@ -19,20 +19,20 @@ func _ready() -> void:
 		for col in cols:
 			var slot = slot_scene.instantiate()
 			slot.anim = anims[col % len(anims)]
-			slots.append(slot)
 			$Hotbar.add_child(slot)
+			slots.append(slot)
 		
 		for row in range(rows - 1):
 			for col in range(cols):
 				var slot = slot_scene.instantiate()
 				slot.anim = anims[col % len(anims)]
-				slots.append(slot)
 				$Full.add_child(slot)
+				slots.append(slot)
 	
 	var hint = slot_scene.instantiate()
 	hint.anim = "hint"
 	$Hotbar.add_child(hint)
-
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -42,15 +42,10 @@ func _input(event):
 		$Full.visible = !($Full.visible)
 		
 	if event.is_action_pressed("hotbar"):
-		selected_slot = event.as_text().to_int()
-		print(selected_slot)
+		selected_slot = event.as_text().to_int() - 1
 
 func set_item(item_id: String):
-	var item = item_scene.instantiate()
 	var slot = slots[selected_slot]
-	
-	item.create(item_id)
-	slot.item = item
-	slot.add_child(item)
-	
-	print("Picked up '" + item_id + "'")
+	if slot.item == null:
+		slot.set_item(item_id)
+		print("Picked up '" + item_id + "'")

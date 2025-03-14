@@ -2,23 +2,27 @@
 
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="1_b6eu6"]
 
-[node name="Inventory HUD" type="Node2D"]
+[node name="Inventory HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_b6eu6")
+
+[node name="Hotbar" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1300.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+metadata/_edit_group_ = true
 
 [node name="Full" type="GridContainer" parent="."]
 visible = false
+layout_mode = 0
 offset_top = -1250.0
-offset_right = 1996.0
-offset_bottom = 294.0
+offset_right = 1300.0
+offset_bottom = 350.0
 theme_override_constants/h_separation = 200
 theme_override_constants/v_separation = 200
 columns = 5
 metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
-
-[node name="Hotbar" type="HBoxContainer" parent="."]
-offset_right = 1648.0
-offset_bottom = 284.0
-size_flags_horizontal = 3
-theme_override_constants/separation = 200
 metadata/_edit_group_ = true

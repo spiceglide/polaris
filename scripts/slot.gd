@@ -11,6 +11,8 @@ signal slot_hovered(which: InventorySlot, is_hover: bool)
 func _ready() -> void:
 	$Sprite.animation = anim
 	$Sprite.play()
+	$ItemSprite.play()
+	$ItemSprite.visible = false
 	add_to_group("inventory_slots")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,3 +28,14 @@ func _on_button_mouse_entered() -> void:
 
 func _on_button_mouse_exited() -> void:
 	slot_hovered.emit(self, false)
+
+func set_item(id: String):
+	$Item.set_item(id)
+	item = $Item
+	
+	$ItemSprite.animation = id
+	$ItemSprite.visible = true
+	
+func clear_item():
+	item = null
+	$ItemSprite.visible = false

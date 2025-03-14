@@ -27,46 +27,35 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InventoryContainer" type="Container" parent="."]
+[node name="Inventory" parent="." instance=ExtResource("1_doxyu")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_top = -100.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Inventory" parent="InventoryContainer" instance=ExtResource("1_doxyu")]
-position = Vector2(-220, -65)
 scale = Vector2(0.3, 0.3)
 
-[node name="HealthContainer" type="Container" parent="."]
+[node name="Health" type="Label" parent="."]
 offset_left = 15.0
-offset_right = 55.0
-offset_bottom = 40.0
-
-[node name="Health" type="Label" parent="HealthContainer"]
-layout_mode = 2
+offset_right = 283.0
+offset_bottom = 88.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
 theme_override_font_sizes/font_size = 64
 text = "❤️❤️❤️❤️❤️"
 
-[node name="AnnouncementContainer" type="Container" parent="."]
+[node name="Announcement" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -130.0
-offset_top = 20.0
-offset_right = -90.0
-offset_bottom = 60.0
+offset_left = -193.5
+offset_right = 193.5
+offset_bottom = 47.0
 grow_horizontal = 2
-
-[node name="Announcement" type="Label" parent="AnnouncementContainer"]
-layout_mode = 2
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("4_ksx20")
 theme_override_font_sizes/font_size = 38

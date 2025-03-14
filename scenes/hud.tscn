@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://scenes/inventory.tscn" id="1_doxyu"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_ib77g"]
-[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="3_0i1kg"]
+[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://scripts/hud.gd" id="1_ib77g"]
+[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="3_0i1kg"]
 [ext_resource type="FontFile" uid="uid://by1qbjuqf1exp" path="res://assets/FONT/Polarisfont-Regular222.otf" id="4_ksx20"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
@@ -30,13 +30,10 @@ grow_vertical = 2
 [node name="Inventory" parent="." instance=ExtResource("1_doxyu")]
 anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_top = -100.0
 offset_bottom = -100.0
 grow_horizontal = 2
-grow_vertical = 0
 scale = Vector2(0.3, 0.3)
 
 [node name="Health" type="Label" parent="."]

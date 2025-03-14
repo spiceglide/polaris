@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://12i565cs2h8l"]
 
 [ext_resource type="Texture2D" uid="uid://bbvoslhi60ghk" path="res://assets/NATURE/ROCK1.png" id="1_mmpwc"]
-[ext_resource type="Script" path="res://scripts/interaction_pickup.gd" id="2_t6sek"]
+[ext_resource type="Script" uid="uid://cas2y7g3p4xeo" path="res://scripts/interaction_pickup.gd" id="2_t6sek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ednr2"]
 radius = 84.0536

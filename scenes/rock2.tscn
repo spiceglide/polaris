@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc3wehveui7v8"]
+[gd_scene load_steps=4 format=3 uid="uid://dc3wehveui7v8"]
 
 [ext_resource type="Texture2D" uid="uid://chvyjwpnl005u" path="res://assets/NATURE/ROCK2.png" id="1_c1afd"]
+[ext_resource type="Script" path="res://scripts/interaction_pickup.gd" id="2_lihe6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghpk6"]
+radius = 121.202
 
 [node name="Rock" type="StaticBody2D"]
 z_index = 1
@@ -20,3 +24,11 @@ rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("1_c1afd")
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(30, 97)
+script = ExtResource("2_lihe6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_ghpk6")

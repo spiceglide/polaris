@@ -1,7 +1,5 @@
 extends Area2D
 
-@export var item_id = 0
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,6 +9,7 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
-	emit_signal("itemPickUp", item_id)
-	print("picked up")
-	queue_free()
+	#emit_signal("itemPickUp", item_id)
+	Inventory.set_item("rock")
+	HUD.announcement = '"Better than nothing"'
+	self.get_parent().queue_free()

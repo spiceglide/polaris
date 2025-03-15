@@ -29,6 +29,12 @@ func _input(event):
 	if event.is_action_pressed("hotbar"):
 		select(event.as_text().to_int() - 1)
 		
+	if event.is_action_pressed("inv_next"):
+		select((selected_slot + 1) % cols)
+		
+	if event.is_action_pressed("inv_prev"):
+		select(fposmod(selected_slot - 1, cols))
+		
 	if event.is_action_pressed("drop"):
 		slots[selected_slot].clear_item()
 		

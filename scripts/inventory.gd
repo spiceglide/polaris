@@ -44,8 +44,11 @@ func _input(event):
 	if event.is_action_pressed("hotbar"):
 		selected_slot = event.as_text().to_int() - 1
 
-func set_item(item_id: String):
+func set_item(item_id: String) -> bool:
 	var slot = slots[selected_slot]
 	if slot.item == null:
 		slot.set_item(item_id)
 		print("Picked up '" + item_id + "'")
+		return true
+	else:
+		return false

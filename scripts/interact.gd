@@ -29,5 +29,5 @@ func interact():
 			inventory.set_item(item)
 		Interaction.PICKUP_AND_DISPOSE:
 			HUD.announcement = description
-			inventory.set_item(item)
-			self.get_parent().queue_free()
+			if inventory.set_item(item):
+				self.get_parent().queue_free()

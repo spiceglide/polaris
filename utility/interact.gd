@@ -23,11 +23,11 @@ func _process(delta: float) -> void:
 func interact():
 	match type:
 		Interaction.INSPECT:
-			HUD.announcement = description
+			HUD.announce(description)
 		Interaction.PICKUP:
-			HUD.announcement = description
+			HUD.announce(description)
 			inventory.set_item(item)
 		Interaction.PICKUP_AND_DISPOSE:
-			HUD.announcement = description
+			HUD.announce(description)
 			if inventory.set_item(item):
 				self.get_parent().queue_free()

@@ -5,7 +5,6 @@ const RENDER_DISTANCE = 2
 
 @export var grid_size = [9, 9]
 var scene_size = [DIMS, DIMS]
-#var scenes = [preload("res://scenes/scene1.tscn"), preload("res://scenes/scene2.tscn"), preload("res://scenes/scene3.tscn")]
 var available_scenes = [preload("res://screens/Level_Snow_1.tscn")]
 var scenes = []
 
@@ -41,15 +40,9 @@ func _cull_scenes():
 		Player.position.y + (RENDER_DISTANCE * DIMS),
 	]
 	
-	var printthing = ""
 	for x in range(grid_size[0]):
 		for y in range(grid_size[1]):
 			if (x*DIMS < bounds[0]) or (x*DIMS > bounds[1] or (y*DIMS < bounds[2]) or (y*DIMS > bounds[3])):
 				scenes[x][y].visible = false
 			else:
 				scenes[x][y].visible = true
-			
-			printthing += ('O' if scenes[x][y].visible else 'X')
-		printthing += "\n"
-	print(printthing)
-	print()

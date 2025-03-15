@@ -43,6 +43,9 @@ func _input(event):
 		
 	if event.is_action_pressed("hotbar"):
 		selected_slot = event.as_text().to_int() - 1
+		
+	if event.is_action_pressed("drop"):
+		slots[selected_slot].clear_item()
 
 func set_item(item_id: String) -> bool:
 	var slot = slots[selected_slot]

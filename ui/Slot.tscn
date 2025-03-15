@@ -218,8 +218,12 @@ animations = [{
 }]
 
 [node name="Slot" type="MarginContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -280.0
 offset_right = 300.0
-offset_bottom = 280.0
+grow_vertical = 0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50

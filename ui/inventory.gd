@@ -70,6 +70,8 @@ func _setup_slots():
 	
 	var hint = slot_scene.instantiate()
 	hint.anim = "hint"
+	hint.get_node("Sprite").scale = Vector2(0.7, 0.7)
+	hint.scale.x = 0.25
 	$Hotbar.add_child(hint)
 	
 func _setup_crafting():

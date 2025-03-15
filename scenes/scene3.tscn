@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3g0lqqyty2hk"]
+
+[ext_resource type="PackedScene" uid="uid://c2cxx0jnih11" path="res://assets/TILESETS/SNOW1.tmx" id="1_rvng1"]
+
+[node name="Scene" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="ObjectLayer" type="Node2D" parent="Map"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Map"]
+y_sort_enabled = true
+
+[node name="SNOW1" parent="Map/TileMapLayer" instance=ExtResource("1_rvng1")]
+y_sort_enabled = true

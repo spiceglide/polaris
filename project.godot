@@ -29,6 +29,10 @@ window/size/viewport_height=1440
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/YATI-beaf425a05151bc9afd8c028bc43b1f0b375b5aa/GDScript/addons/YATI/plugin.cfg")
+
 [input]
 
 move_up={

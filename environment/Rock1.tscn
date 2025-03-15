@@ -19,6 +19,7 @@ offset = Vector2(1, -58)
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
+z_as_relative = false
 position = Vector2(-20, 13)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)

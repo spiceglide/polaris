@@ -9,7 +9,7 @@ size = Vector2(1127, 545)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
 radius = 723.747
 
-[node name="Pine" type="StaticBody2D"]
+[node name="PineMedium" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 
@@ -22,6 +22,7 @@ offset = Vector2(-695, -1510)
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
+z_as_relative = false
 position = Vector2(208, 335)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var grid_size = [3, 3]
-var scene_size = [13440, 13440]
+var scene_size = [24*640, 24*640]
 #var scenes = [preload("res://scenes/scene1.tscn"), preload("res://scenes/scene2.tscn"), preload("res://scenes/scene3.tscn")]
 var scenes = [preload("res://screens/Level_Snow_1.tscn")]
 

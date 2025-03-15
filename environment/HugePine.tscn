@@ -1,20 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://iny1lbsa3o1g"]
 
-[ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_3blts"]
+[ext_resource type="Texture2D" uid="uid://cocmjkt3inrri" path="res://assets/NATURE/HUGEPINE.png" id="1_3blts"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_4065a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(1127, 545)
+size = Vector2(459, 327)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 723.747
+radius = 400.001
 
-[node name="Pine" type="StaticBody2D"]
+[node name="HugePine" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, -818)
+position = Vector2(-1527, -7013)
 texture = ExtResource("1_3blts")
 centered = false
 offset = Vector2(-695, -1510)
@@ -22,7 +22,8 @@ offset = Vector2(-695, -1510)
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
-position = Vector2(208, 335)
+z_as_relative = false
+position = Vector2(1388, 8566)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
@@ -32,7 +33,7 @@ offset = Vector2(-692, -2328)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(59.5, -444.5)
+position = Vector2(6.5, -425.5)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
@@ -44,4 +45,5 @@ type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+position = Vector2(-8, 87)
 shape = SubResource("CircleShape2D_ejv3r")

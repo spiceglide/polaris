@@ -1,0 +1,43 @@
+{
+  "berry": {
+    "name": "Berry",
+    "description": "A little treat"
+  },
+  "bigfire": {
+    "name": "Big Campfire",
+    "description": "This'll do nicely"
+  },
+  "cloth": {
+    "name": "Cloth",
+    "description": "Slightly tattered"
+  },
+  "cone": {
+    "name": "Pinecone",
+    "description": "I've always liked these"
+  },
+  "log": {
+    "name": "Log",
+    "description": "It's heavy..."
+  },
+  "rock": {
+    "name": "Rock",
+    "description": "Better than nothing"
+  },
+  "sap": {
+    "name": "Sap",
+    "description": "Not for drinking!"
+  },
+  "smallfire": {
+    "name": "Small Campfire",
+    "description": "Should last the night"
+  },
+  "stick": {
+    "name": "Stick",
+    "description": "Keeps the flames ablaze"
+  },
+  "torch": {
+    "name": "Torch",
+    "description": "Uncomfortably dim"
+  }
+}
+

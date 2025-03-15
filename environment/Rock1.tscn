@@ -9,7 +9,6 @@ radius = 84.0536
 [node name="Rock2" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -105)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 58)

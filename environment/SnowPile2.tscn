@@ -12,7 +12,6 @@ radius = 494.684
 [node name="Snow Pile" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, -400)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 230)

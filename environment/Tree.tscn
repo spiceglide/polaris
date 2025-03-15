@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bny82lifsvvnc"]
+[gd_scene load_steps=5 format=3 uid="uid://bny82lifsvvnc"]
 
 [ext_resource type="Texture2D" uid="uid://cjye5r24icbch" path="res://assets/NATURE/TREE1.png" id="1_ws5lw"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_ws5lw"]
-[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="3_twckm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(66, 191.5)
@@ -46,10 +45,3 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
 shape = SubResource("CircleShape2D_ejv3r")
-
-[node name="Shadow" type="Sprite2D" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0.133333)
-position = Vector2(0, 1130)
-scale = Vector2(8, 5.12)
-texture = ExtResource("3_twckm")

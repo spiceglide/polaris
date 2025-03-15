@@ -30,7 +30,7 @@ position = Vector2(30, 97)
 script = ExtResource("2_4tkwb")
 description = "\"Better than nothing\""
 item = "rock"
-type = 1
+type = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

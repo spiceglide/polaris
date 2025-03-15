@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ednr2"]
 radius = 84.0536
 
-[node name="Rock" type="StaticBody2D"]
+[node name="Rock2" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -105)
@@ -29,7 +29,7 @@ texture = ExtResource("1_mmpwc")
 script = ExtResource("2_w7urf")
 description = "\"Better than nothing\""
 item = "rock"
-type = 1
+type = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

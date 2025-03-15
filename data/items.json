@@ -1,6 +1,6 @@
 {
-  "berry": {
-    "name": "Berry",
+  "berries": {
+    "name": "berries",
     "description": "A little treat"
   },
   "bigfire": {

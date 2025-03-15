@@ -39,6 +39,8 @@ shape = SubResource("RectangleShape2D_3fioj")
 position = Vector2(2, 1081)
 script = ExtResource("2_6erf3")
 description = "\"Just a tree...\""
+item = "stick"
+type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

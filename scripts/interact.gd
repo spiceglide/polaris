@@ -9,6 +9,7 @@ extends Area2D
 enum Interaction {
 	INSPECT,
 	PICKUP,
+	PICKUP_AND_DISPOSE,
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +25,9 @@ func interact():
 		Interaction.INSPECT:
 			HUD.announcement = description
 		Interaction.PICKUP:
+			HUD.announcement = description
+			inventory.set_item(item)
+		Interaction.PICKUP_AND_DISPOSE:
 			HUD.announcement = description
 			inventory.set_item(item)
 			self.get_parent().queue_free()

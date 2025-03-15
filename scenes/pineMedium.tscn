@@ -39,6 +39,8 @@ shape = SubResource("RectangleShape2D_3fioj")
 position = Vector2(23, -518)
 script = ExtResource("2_frnc4")
 description = "\"This one's bigger\""
+item = "cone"
+type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

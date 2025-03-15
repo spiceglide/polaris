@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ywbau8kdct0j" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-2.png" id="31_tf3ue"]
 [ext_resource type="Texture2D" uid="uid://dgy1qenfylp46" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-3.png" id="32_o70wf"]
 [ext_resource type="Texture2D" uid="uid://c22bfrcc2ayre" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-4.png" id="33_cqv5h"]
-[ext_resource type="Script" uid="uid://dedkhqs84lumm" path="res://scripts/interaction_system.gd" id="34_qs00s"]
+[ext_resource type="Script" path="res://scripts/interaction_system.gd" id="34_qs00s"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqw58"]

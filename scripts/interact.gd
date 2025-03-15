@@ -2,6 +2,15 @@ extends Area2D
 
 @onready var inventory: InventorySystem = HUD.get_node("Inventory")
 
+@export var description: String
+@export var item: String
+@export var type: Interaction
+
+enum Interaction {
+	INSPECT,
+	PICKUP,
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,7 +20,10 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
-	#emit_signal("itemPickUp", item_id)
-	inventory.set_item("rock")
-	HUD.announcement = '"Better than nothing"'
-	self.get_parent().queue_free()
+	match type:
+		Interaction.INSPECT:
+			HUD.announcement = description
+		Interaction.PICKUP:
+			HUD.announcement = description
+			inventory.set_item(item)
+			self.get_parent().queue_free()

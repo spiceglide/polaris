@@ -38,6 +38,7 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(-200, 0)
 
 [node name="Health" type="Label" parent="."]
 offset_left = 15.0

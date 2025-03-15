@@ -14,9 +14,9 @@ var recipes: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#_err = self.connect("item_pick_up",self,"item_pick_up")
 	_setup_slots()
 	_setup_crafting()
+	select(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,7 +27,7 @@ func _input(event):
 		$Full.visible = !($Full.visible)
 		
 	if event.is_action_pressed("hotbar"):
-		selected_slot = event.as_text().to_int() - 1
+		select(event.as_text().to_int() - 1)
 		
 	if event.is_action_pressed("drop"):
 		slots[selected_slot].clear_item()
@@ -90,6 +90,11 @@ func _setup_crafting():
 	for recipe in recipes:
 		recipe["in"].sort()
 
+func select(slot_index: int):
+	slots[selected_slot].deselect()
+	selected_slot = slot_index
+	slots[selected_slot].select()
+
 func craft(ingr_slots: Array) -> bool:
 	var ingredients = []
 		
@@ -107,7 +112,7 @@ func craft(ingr_slots: Array) -> bool:
 	for recipe in recipes:
 		if ingredients == recipe["in"]:
 			slots[ingr_slots[0]].set_item(recipe["out"])
-			selected_slot = ingr_slots[0]
+			select(ingr_slots[0])
 			print(recipe["out"])
 			for i in ingr_slots.slice(1):
 				slots[i].clear_item()

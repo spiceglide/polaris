@@ -35,6 +35,14 @@ func get_item():
 	if item:
 		return $Item.item_id
 
+func select():
+	self.scale = Vector2(0.95, 0.95)
+	$Sprite.modulate = Color(0.85, 0.85, 0.85)
+	
+func deselect():
+	self.scale = Vector2(1, 1)
+	$Sprite.modulate = Color(1, 1, 1)
+
 func _get_drag_data(at_position: Vector2) -> Variant:
 	var preview = TextureRect.new()
 	var spriteName = $ItemSprite.get_animation()

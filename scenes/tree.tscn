@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bny82lifsvvnc"]
 
 [ext_resource type="Texture2D" uid="uid://cjye5r24icbch" path="res://assets/NATURE/TREE1.png" id="1_6gj6j"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interactive_simple.gd" id="2_6erf3"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interact.gd" id="2_6erf3"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="3_t7b0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
@@ -39,6 +39,8 @@ shape = SubResource("RectangleShape2D_3fioj")
 position = Vector2(2, 1081)
 script = ExtResource("2_6erf3")
 description = "\"Just a tree...\""
+item = "stick"
+type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

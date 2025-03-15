@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bvpp82otu27sj"]
+[gd_scene load_steps=37 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://scripts/slot.gd" id="1_x3ewo"]
 [ext_resource type="Texture2D" uid="uid://bp3o7fjoo4p1e" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_BERRY_A.png" id="2_3xruo"]
@@ -7,17 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://31kg152gg6sl" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_BERRY_B.png" id="3_6hsov"]
 [ext_resource type="Texture2D" uid="uid://cgms7kdboy7sc" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_ROCK_B.png" id="3_fdyp6"]
 [ext_resource type="Texture2D" uid="uid://d2lksr370x6w" path="res://assets/UI/INVENTORY/ITEM_SLOTS-12.png" id="3_jfeaw"]
+[ext_resource type="Texture2D" uid="uid://cn6gwdtioaae0" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_BIGFIRE_A.png" id="4_2avfg"]
 [ext_resource type="Texture2D" uid="uid://u343s8em0l66" path="res://assets/UI/INV V2/ITEM_SLOTS-1.png" id="4_k0b2t"]
+[ext_resource type="Texture2D" uid="uid://sg65klutnuf1" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_BIGFIRE_B.png" id="5_8vfwp"]
 [ext_resource type="Texture2D" uid="uid://dmnu8x3lhkqb4" path="res://assets/UI/INV V2/ITEM_SLOTS-2.png" id="5_031ju"]
 [ext_resource type="Texture2D" uid="uid://bp0oa76amkw3v" path="res://assets/UI/INV V2/ITEM_SLOTS-3.png" id="6_e4wio"]
+[ext_resource type="Texture2D" uid="uid://uoodp2eheg30" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_CLOTH_A.png" id="6_jbjak"]
+[ext_resource type="Texture2D" uid="uid://d230gtwdbgtjq" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_CLOTH_B.png" id="7_5bxfn"]
 [ext_resource type="Texture2D" uid="uid://bgv2refyh2awe" path="res://assets/UI/INV V2/ITEM_SLOTS-4.png" id="7_f5fl4"]
 [ext_resource type="Texture2D" uid="uid://cift1j4g5k1ka" path="res://assets/UI/INV V2/ITEM_SLOTS-5.png" id="8_4hb2m"]
+[ext_resource type="Texture2D" uid="uid://ck2humvf18ot2" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_CONE_A.png" id="8_hoyn5"]
+[ext_resource type="Texture2D" uid="uid://lqgb1xm01bqw" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_CONE_B.png" id="9_kxblp"]
 [ext_resource type="Texture2D" uid="uid://ceykic3tje3fr" path="res://assets/UI/INV V2/ITEM_SLOTS-6.png" id="9_ttayr"]
 [ext_resource type="Texture2D" uid="uid://76xc1eus41sr" path="res://assets/UI/INV V2/ITEM_SLOTS-7.png" id="10_bpab8"]
+[ext_resource type="Texture2D" uid="uid://ci1otdhbhk0vi" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_LOG_A.png" id="10_fltqi"]
+[ext_resource type="Texture2D" uid="uid://jevdusruhnf1" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_LOG_B.png" id="11_c530f"]
 [ext_resource type="Texture2D" uid="uid://c0xy1t8m2hiai" path="res://assets/UI/INV V2/ITEM_SLOTS-8.png" id="11_e5isj"]
 [ext_resource type="Texture2D" uid="uid://uayurhqnn1w6" path="res://assets/UI/INV V2/ITEM_SLOTS-9.png" id="12_gfkvy"]
 [ext_resource type="Texture2D" uid="uid://bvxab1gfbx3sg" path="res://assets/UI/INV V2/ITEM_SLOTS-10.png" id="13_yvcko"]
+[ext_resource type="Texture2D" uid="uid://d26k8cjmhrjdd" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_SAP_A.png" id="14_87hdg"]
 [ext_resource type="PackedScene" uid="uid://b6y27qxb4h6qs" path="res://scenes/item.tscn" id="14_u74pu"]
+[ext_resource type="Texture2D" uid="uid://cpkj6ccafog2j" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_SAP_B.png" id="15_vg2uq"]
+[ext_resource type="Texture2D" uid="uid://d20biqge1y1p6" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_SMALLFIRE_A.png" id="16_nhrye"]
+[ext_resource type="Texture2D" uid="uid://21y85uyf78ys" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_SMALLFIRE_B.png" id="17_bjmga"]
+[ext_resource type="Texture2D" uid="uid://dyyt0w04uaisa" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_STICK_A.png" id="18_0y8qq"]
+[ext_resource type="Texture2D" uid="uid://clkry2gd53g8v" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_STICK_B.png" id="19_qjv2f"]
+[ext_resource type="Texture2D" uid="uid://cmihak0rsq1mo" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_TORCH_A.png" id="20_4iumh"]
+[ext_resource type="Texture2D" uid="uid://ty37aixgoob6" path="res://assets/UI/ITEMS/ITEM ICONS INV/ITEMICON_TORCH_B.png" id="21_pp56f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_brms5"]
 animations = [{
@@ -34,6 +50,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_2avfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8vfwp")
+}],
+"loop": true,
+"name": &"bigfire",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jbjak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5bxfn")
+}],
+"loop": true,
+"name": &"cloth",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hoyn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kxblp")
+}],
+"loop": true,
+"name": &"cone",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fltqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c530f")
+}],
+"loop": true,
+"name": &"log",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_qipjr")
 }, {
 "duration": 1.0,
@@ -41,6 +101,50 @@ animations = [{
 }],
 "loop": true,
 "name": &"rock",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_87hdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vg2uq")
+}],
+"loop": true,
+"name": &"sap",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_nhrye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bjmga")
+}],
+"loop": true,
+"name": &"smallfire",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_0y8qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qjv2f")
+}],
+"loop": true,
+"name": &"stick",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_4iumh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pp56f")
+}],
+"loop": true,
+"name": &"torch",
 "speed": 2.0
 }]
 

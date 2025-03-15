@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl2r2tiktn3nn"]
 
 [ext_resource type="Texture2D" uid="uid://ddvo55yybaqk1" path="res://assets/NATURE/SNOW_PILE2.png" id="1_0m606"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interactive_simple.gd" id="2_m312o"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interact.gd" id="2_m312o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(813, 193)

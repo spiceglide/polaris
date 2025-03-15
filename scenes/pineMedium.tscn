@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://6idnqp6mveuf"]
 
 [ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_7ta4t"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interactive_simple.gd" id="2_frnc4"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interact.gd" id="2_frnc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(1127, 545)
@@ -39,6 +39,8 @@ shape = SubResource("RectangleShape2D_3fioj")
 position = Vector2(23, -518)
 script = ExtResource("2_frnc4")
 description = "\"This one's bigger\""
+item = "cone"
+type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

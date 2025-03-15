@@ -10,9 +10,48 @@ var slots: Array[InventorySlot] = []
 var anims: Array[String] = ["type1", "type2", "type3", "type4", "type5"]
 var selected_slot: int = 0
 
+var recipes: Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#_err = self.connect("item_pick_up",self,"item_pick_up")
+	_setup_slots()
+	_setup_crafting()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _input(event):
+	if event.is_action_pressed("inventory"):
+		$Full.visible = !($Full.visible)
+		
+	if event.is_action_pressed("hotbar"):
+		selected_slot = event.as_text().to_int() - 1
+		
+	if event.is_action_pressed("drop"):
+		slots[selected_slot].clear_item()
+		
+	if event.is_action_pressed("craft"):
+		var ingredients = []
+		for i in range(max(5, cols)):
+			var ingr = slots[i].get_item()
+			if ingr:
+				ingredients.append(i)
+			else:
+				break
+		craft(ingredients)
+
+func set_item(item_id: String) -> bool:
+	var slot = slots[selected_slot]
+	if slot.item == null:
+		slot.set_item(item_id)
+		print("Picked up '" + item_id + "'")
+		return true
+	else:
+		return false
+
+func _setup_slots():
 	$Full.columns = cols
 	
 	if rows >= 1:
@@ -32,20 +71,43 @@ func _ready() -> void:
 	var hint = slot_scene.instantiate()
 	hint.anim = "hint"
 	$Hotbar.add_child(hint)
+	
+func _setup_crafting():
+	var file = FileAccess.open("res://data/recipes.json", FileAccess.READ)
+	var json = file.get_as_text()
+	
+	var reader = JSON.new()
+	var error = reader.parse(json)
+	if error == OK:
+		recipes = reader.data
+	else:
+		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
 		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	recipes.sort_custom(func(a, b): return len(a["in"]) > len(b["in"]))
+	
+	for recipe in recipes:
+		recipe["in"].sort()
 
-func _input(event):
-	if event.is_action_pressed("inventory"):
-		$Full.visible = !($Full.visible)
+func craft(ingr_slots: Array) -> bool:
+	var ingredients = []
 		
-	if event.is_action_pressed("hotbar"):
-		selected_slot = event.as_text().to_int() - 1
-
-func set_item(item_id: String):
-	var slot = slots[selected_slot]
-	if slot.item == null:
-		slot.set_item(item_id)
-		print("Picked up '" + item_id + "'")
+	for ingr_slot in ingr_slots:
+		var ingr = slots[ingr_slot].get_item()
+		if ingr:
+			print("%s: %s" % [ingr_slot, ingr])
+			ingredients.append(ingr)
+		else:
+			return false
+			
+	ingredients.sort()
+	print()
+		
+	for recipe in recipes:
+		if ingredients == recipe["in"]:
+			slots[ingr_slots[0]].set_item(recipe["out"])
+			selected_slot = ingr_slots[0]
+			print(recipe["out"])
+			for i in ingr_slots.slice(1):
+				slots[i].clear_item()
+		
+	return true

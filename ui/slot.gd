@@ -3,6 +3,7 @@ class_name InventorySlot
 
 @export var item: Item
 @export var anim: String = "type1"
+var is_dragging: bool = false
 
 signal slot_click(which: InventorySlot)
 signal slot_hovered(which: InventorySlot, is_hover: bool)
@@ -35,9 +36,15 @@ func get_item():
 		return $Item.item_id
 
 func _get_drag_data(at_position: Vector2) -> Variant:
-	var preview = self.duplicate()
-	preview.modulate = 1
+	var preview = TextureRect.new()
+	var spriteName = $ItemSprite.get_animation()
+	var frame = $ItemSprite.sprite_frames.get_frame_texture($ItemSprite.get_animation(), 0)
+	preview.texture = frame
+	preview.scale = Vector2(0.3, 0.3)
 	set_drag_preview(preview)
+	
+	is_dragging = true
+	$ItemSprite.visible = false
 	return [item, self]
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
@@ -48,7 +55,17 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	print("dropping_data")
-	print(data)
 	set_item(data[0].item_id)
-	data[1].clear_item()
+	#data[1].clear_item()
+
+func _notification(type):
+	match type:
+		NOTIFICATION_DRAG_END:
+			if not is_dragging:
+				return
+			is_dragging = false
+			
+			if is_drag_successful():
+				clear_item()
+			else:
+				$ItemSprite.visible = true

@@ -10,7 +10,7 @@ var slots: Array[InventorySlot] = []
 var anims: Array[String] = ["type1", "type2", "type3", "type4", "type5"]
 var selected_slot: int = 0
 
-var recipe_map: Dictionary
+var recipes: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -79,10 +79,15 @@ func _setup_crafting():
 	var reader = JSON.new()
 	var error = reader.parse(json)
 	if error == OK:
-		recipe_map = reader.data
+		recipes = reader.data
 	else:
 		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
 		
+	recipes.sort_custom(func(a, b): return len(a["in"]) > len(b["in"]))
+	
+	for recipe in recipes:
+		recipe["in"].sort()
+
 func craft(ingr_slots: Array) -> bool:
 	var ingredients = []
 		
@@ -96,16 +101,12 @@ func craft(ingr_slots: Array) -> bool:
 			
 	ingredients.sort()
 	print()
-	#print(ingredients)
 		
-	for item in recipe_map:
-		var recipe_ingredients = recipe_map[item]["ingredients"]
-		recipe_ingredients.sort()
-		
-		if ingredients == recipe_ingredients:
-			slots[ingr_slots[0]].set_item(item)
-			print(item)
-			#ingredients[slots[0]] = item
+	for recipe in recipes:
+		if ingredients == recipe["in"]:
+			slots[ingr_slots[0]].set_item(recipe["out"])
+			selected_slot = ingr_slots[0]
+			print(recipe["out"])
 			for i in ingr_slots.slice(1):
 				slots[i].clear_item()
 		

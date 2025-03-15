@@ -28,6 +28,8 @@ texture = ExtResource("1_8w3ho")
 position = Vector2(-1, 107)
 script = ExtResource("2_ehqem")
 description = "\"Shrubbery\""
+item = "berries"
+type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

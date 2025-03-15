@@ -1,12 +1,14 @@
-{
-  "smallfire": {
-    "ingredients": ["stick", "cone"]
-  },
-  "bigfire": {
-    "ingredients": ["stick", "cone", "log"]
-  },
-  "torch": {
-    "ingredients": ["stick", "sap", "cloth"]
-  }
-}
-
+[
+    {
+        "in": ["stick", "cone"],
+        "out": "smallfire"
+    },
+    {
+        "in": ["stick", "cone", "log"],
+        "out": "bigfire"
+    },
+    {
+        "in": ["stick", "sap", "cloth"],
+        "out": "torch"
+    }
+]

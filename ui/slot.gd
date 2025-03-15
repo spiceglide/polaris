@@ -44,6 +44,9 @@ func deselect():
 	$Sprite.modulate = Color(1, 1, 1)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+	if not item:
+		return
+		
 	var preview = TextureRect.new()
 	var spriteName = $ItemSprite.get_animation()
 	var frame = $ItemSprite.sprite_frames.get_frame_texture($ItemSprite.get_animation(), 0)
@@ -76,4 +79,5 @@ func _notification(type):
 			if is_drag_successful():
 				clear_item()
 			else:
-				$ItemSprite.visible = true
+				if item:
+					$ItemSprite.visible = true

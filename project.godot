@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Polaris"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-HUD="*res://scenes/hud.tscn"
+HUD="*res://ui/HUD.tscn"
 
 [display]
 

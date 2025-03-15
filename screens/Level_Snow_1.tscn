@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=4 uid="uid://b0yj5y6jsrka5"]
 
-[ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://scenes/pineMedium.tscn" id="scenespineMedium"]
-[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://scenes/Tree.tscn" id="scenesTree"]
-[ext_resource type="Texture2D" uid="uid://hehwyn7ut4oe" path="res://assets/TILESETS/png/TILESET_GROUND_1A.png" id="TILESET GROUND1"]
+[ext_resource type="Texture2D" uid="uid://hehwyn7ut4oe" path="res://assets/TILESETS/png/TILESET_GROUND_1A.png" id="1_i6s1a"]
+[ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://environment/PineMedium.tscn" id="2_6ihwx"]
+[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://environment/Tree.tscn" id="3_x62nq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
-texture = ExtResource("TILESET GROUND1")
+texture = ExtResource("1_i6s1a")
 texture_region_size = Vector2i(640, 640)
 0:0/0 = 0
 1:0/0 = 0
@@ -108,59 +108,59 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAHAAAAAAAEAAEAAAALAAAAAAAAAAIAAAAQAAAAAAAAAAEAAAARAAAAAAAGAAAAAAAKAAEAAAAGAAEAAAARAAEAAAAAAAIAAAALAAIAAAAIAAAAAAAWAAIAAAACAAIAAAACAAMAAAADAAAAAAAHAAMAAAAFAAAAAAAMAAMAAAABAAEAAAARAAMAAAAFAAEAAAATAAMAAAABAAEAAAAVAAMAAAAIAAAAAAAEAAQAAAAFAAEAAAAFAAQAAAABAAAAAAAJAAQAAAAFAAAAAAAPAAQAAAAGAAAAAAAVAAQAAAACAAAAAAAWAAQAAAACAAAAAAAXAAQAAAACAAAAAAACAAUAAAABAAEAAAAGAAUAAAACAAAAAAAQAAUAAAAFAAAAAAAVAAUAAAAHAAAAAAAKAAYAAAADAAAAAAARAAYAAAAAAAEAAAATAAYAAAAHAAAAAAABAAcAAAAHAAAAAAACAAcAAAAHAAAAAAAFAAcAAAAFAAAAAAAKAAcAAAAHAAAAAAANAAcAAAAIAAAAAAATAAcAAAADAAAAAAAUAAcAAAAEAAAAAAAHAAgAAAAEAAAAAAAUAAgAAAAFAAAAAAADAAkAAAADAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAAFAAAAAAAIAAoAAAABAAEAAAALAAoAAAAFAAEAAAAOAAoAAAADAAAAAAATAAoAAAAAAAEAAAAVAAoAAAACAAEAAAAOAAsAAAACAAEAAAAVAAsAAAADAAAAAAAKAAwAAAABAAEAAAALAAwAAAAFAAAAAAANAAwAAAADAAAAAAACAA0AAAABAAIAAAAEAA0AAAAAAAIAAAAIAA0AAAAEAAAAAAALAA0AAAAFAAEAAAAUAA0AAAADAAEAAAAKAA4AAAAFAAAAAAAQAA4AAAAHAAAAAAASAA4AAAACAAEAAAADAA8AAAABAAIAAAALAA8AAAAAAAIAAAANAA8AAAAEAAAAAAAQAA8AAAAAAAIAAAAGABAAAAADAAAAAAALABAAAAAAAAEAAAAMABAAAAAHAAAAAAAOABAAAAADAAAAAAACABEAAAACAAIAAAAMABEAAAAIAAAAAAARABEAAAAGAAAAAAACABIAAAAFAAAAAAAKABIAAAAAAAIAAAAOABIAAAAEAAAAAAAGABMAAAAAAAEAAAARABMAAAAHAAAAAAATABMAAAAIAAAAAAACABQAAAAAAAEAAAAGABQAAAAFAAAAAAAIABQAAAADAAAAAAAMABQAAAAAAAEAAAARABQAAAAGAAAAAAADABYAAAAHAAAAAAAJABYAAAACAAEAAAAKABYAAAABAAEAAAAOABYAAAAHAAAAAAAPABYAAAAIAAAAAAAXABYAAAAFAAAAAAAEABcAAAAEAAAAAAAIABcAAAABAAEAAAAMABcAAAAHAAAAAAAQABcAAAAIAAAAAAA=")
 tile_set = SubResource("TileSet_0")
 
-[node name="Object1" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object1" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(2592, 1952.5)
 
-[node name="Object2" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object2" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(5720.11, 1851.58)
 
-[node name="Object3" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object3" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(1888, 1168.5)
 
-[node name="Object4" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object4" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(6741.34, 6344.5)
 
-[node name="Object5" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object5" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(11573.4, 2280.5)
 
-[node name="Object6" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object6" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(11543.7, 4963.27)
 
-[node name="Object7" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object7" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(9504, 16.5)
 
-[node name="Object8" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object8" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(8192, 2288.5)
 
-[node name="Object9" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object9" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(11016, 1480.5)
 
-[node name="Object10" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object10" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(1552, 2664.5)
 
-[node name="Object11" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object11" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(13376, 1712.5)
 
-[node name="Object12" parent="." instance=ExtResource("scenespineMedium")]
+[node name="Object12" parent="." instance=ExtResource("2_6ihwx")]
 position = Vector2(960, 11232.5)
 
-[node name="Object39" parent="." instance=ExtResource("scenesTree")]
+[node name="Object39" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(9740, 7524.93)
 
-[node name="Object40" parent="." instance=ExtResource("scenesTree")]
+[node name="Object40" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(4740.88, 11025.8)
 
-[node name="Object41" parent="." instance=ExtResource("scenesTree")]
+[node name="Object41" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(4400.71, 6316.88)
 
-[node name="Object42" parent="." instance=ExtResource("scenesTree")]
+[node name="Object42" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(5249.47, 5768)
 
-[node name="Object93" parent="." instance=ExtResource("scenesTree")]
+[node name="Object93" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(13600, 10024)
 
-[node name="Object94" parent="." instance=ExtResource("scenesTree")]
+[node name="Object94" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(11296, 13192)
 
-[node name="Object95" parent="." instance=ExtResource("scenesTree")]
+[node name="Object95" parent="." instance=ExtResource("3_x62nq")]
 position = Vector2(4019.73, 13648)

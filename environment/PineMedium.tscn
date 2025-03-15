@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://6idnqp6mveuf"]
 
-[ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_7ta4t"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interact.gd" id="2_frnc4"]
+[ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_vrf8y"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_vrf8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(1127, 545)
@@ -15,7 +15,7 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, -818)
-texture = ExtResource("1_7ta4t")
+texture = ExtResource("1_vrf8y")
 centered = false
 offset = Vector2(-695, -1510)
 
@@ -26,7 +26,7 @@ position = Vector2(208, 335)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_7ta4t")
+texture = ExtResource("1_vrf8y")
 centered = false
 offset = Vector2(-692, -2328)
 
@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(23, -518)
-script = ExtResource("2_frnc4")
+script = ExtResource("2_vrf8y")
 description = "\"This one's bigger\""
 item = "cone"
 type = 1

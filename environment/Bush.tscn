@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://f6yovtrpm7id"]
 
-[ext_resource type="Texture2D" uid="uid://khhdxj58b3uh" path="res://assets/NATURE/BERRY_BUSH1.png" id="1_8w3ho"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://scripts/interact.gd" id="2_ehqem"]
+[ext_resource type="Texture2D" uid="uid://khhdxj58b3uh" path="res://assets/NATURE/BERRY_BUSH1.png" id="1_uvwit"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_uvwit"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tu87o"]
 radius = 111.005
@@ -12,7 +12,7 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 124)
-texture = ExtResource("1_8w3ho")
+texture = ExtResource("1_uvwit")
 offset = Vector2(2, -124)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
@@ -22,11 +22,11 @@ position = Vector2(-46, 66)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_8w3ho")
+texture = ExtResource("1_uvwit")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(-1, 107)
-script = ExtResource("2_ehqem")
+script = ExtResource("2_uvwit")
 description = "\"Shrubbery\""
 item = "berries"
 type = 1

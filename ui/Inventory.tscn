@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://7a2wv4ftrcw1"]
+[gd_scene load_steps=2 format=3 uid="uid://7a2wv4ftrcw1"]
 
 [ext_resource type="Script" uid="uid://c2ukkdte1qj33" path="res://ui/inventory.gd" id="1_b6eu6"]
-[ext_resource type="PackedScene" uid="uid://bvpp82otu27sj" path="res://ui/Slot.tscn" id="2_0sq80"]
 
 [node name="Inventory HUD" type="Control"]
 layout_mode = 3
@@ -12,13 +11,10 @@ script = ExtResource("1_b6eu6")
 layout_mode = 0
 offset_left = -360.0
 offset_right = 1240.0
-offset_bottom = 100.0
+offset_bottom = 283.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 200
 metadata/_edit_group_ = true
-
-[node name="Slot" parent="Hotbar" instance=ExtResource("2_0sq80")]
-layout_mode = 2
 
 [node name="Full" type="GridContainer" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=41 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://ui/player.gd" id="1_x1yu0"]
 [ext_resource type="Texture2D" uid="uid://c37mpsf53cjrr" path="res://assets/CHARACTERS/DORA/DORA_S_WALK/DORA_S_WALK-1.png" id="2_0bx2s"]
@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://c22bfrcc2ayre" path="res://assets/CHARACTERS/DORA/DORA_N_IDLE/DORA_N_IDLE-4.png" id="33_cqv5h"]
 [ext_resource type="Script" uid="uid://dedkhqs84lumm" path="res://utility/interaction_system.gd" id="34_qs00s"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
+[ext_resource type="FontFile" uid="uid://by1qbjuqf1exp" path="res://assets/FONT/Polarisfont-Regular222.otf" id="36_6cift"]
+[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="37_r4xk0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqw58"]
 animations = [{
@@ -217,3 +219,20 @@ self_modulate = Color(1, 1, 1, 0.133333)
 position = Vector2(0, 147)
 scale = Vector2(3, 1.031)
 texture = ExtResource("35_1odh0")
+
+[node name="Announcement" type="Label" parent="."]
+z_index = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -628.0
+offset_top = -581.0
+offset_right = 674.0
+offset_bottom = -426.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 28
+theme_override_fonts/font = ExtResource("36_6cift")
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("37_r4xk0")

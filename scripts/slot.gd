@@ -39,3 +39,7 @@ func set_item(id: String):
 func clear_item():
 	item = null
 	$ItemSprite.visible = false
+
+func get_item():
+	if item:
+		return $Item.item_id

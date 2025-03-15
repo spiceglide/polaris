@@ -1,11 +1,11 @@
 extends Node2D
 class_name Item
 
-@export var id: String = ""
+@export var item_id: String = ""
 @export var title: String = ""
 @export var description: String = ""
 
-var item_map
+var item_map: Dictionary
 
 func _ready() -> void:
 	var file = FileAccess.open("res://data/items.json", FileAccess.READ)
@@ -26,6 +26,6 @@ func _process(delta: float) -> void:
 
 func set_item(id: String):
 	var data = item_map[id]
-	id = id
+	item_id = id
 	title = data["name"]
 	description = data["description"]

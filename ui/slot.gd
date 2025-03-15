@@ -18,17 +18,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func _on_button_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		slot_click.emit(self)
-
-func _on_button_mouse_entered() -> void:
-	slot_hovered.emit(self, true)
-
-func _on_button_mouse_exited() -> void:
-	slot_hovered.emit(self, false)
-
+	
 func set_item(id: String):
 	$Item.set_item(id)
 	item = $Item
@@ -43,3 +33,22 @@ func clear_item():
 func get_item():
 	if item:
 		return $Item.item_id
+
+func _get_drag_data(at_position: Vector2) -> Variant:
+	var preview = self.duplicate()
+	preview.modulate = 1
+	set_drag_preview(preview)
+	return [item, self]
+
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	if item:
+		return false
+	if not data[0]:
+		return false
+	return true
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	print("dropping_data")
+	print(data)
+	set_item(data[0].item_id)
+	data[1].clear_item()

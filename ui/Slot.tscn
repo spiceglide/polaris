@@ -218,6 +218,7 @@ animations = [{
 }]
 
 [node name="Slot" type="MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

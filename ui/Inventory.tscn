@@ -10,21 +10,21 @@ script = ExtResource("1_b6eu6")
 [node name="Hotbar" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -360.0
-offset_right = 1240.0
+offset_right = 1828.0
 offset_bottom = 283.0
 size_flags_horizontal = 3
-theme_override_constants/separation = 200
+theme_override_constants/separation = 5
 metadata/_edit_group_ = true
 
 [node name="Full" type="GridContainer" parent="."]
 visible = false
 layout_mode = 0
 offset_left = -360.0
-offset_top = -1250.0
+offset_top = -1275.0
 offset_right = 940.0
-offset_bottom = -50.0
-theme_override_constants/h_separation = 200
-theme_override_constants/v_separation = 200
+offset_bottom = -75.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
 columns = 5
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true

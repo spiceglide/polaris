@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bny82lifsvvnc"]
+[gd_scene load_steps=7 format=3 uid="uid://bny82lifsvvnc"]
 
 [ext_resource type="Texture2D" uid="uid://cjye5r24icbch" path="res://assets/NATURE/TREE1.png" id="1_ws5lw"]
+[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_ppss4"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_ws5lw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twckm"]
+shader = ExtResource("2_ppss4")
+shader_parameter/sprite = ExtResource("1_ws5lw")
+shader_parameter/color = Vector3(0, 0, 0.1)
+shader_parameter/opacity = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(66, 191.5)
@@ -20,9 +27,9 @@ centered = false
 offset = Vector2(-692, -2328)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
-self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
+material = SubResource("ShaderMaterial_twckm")
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038

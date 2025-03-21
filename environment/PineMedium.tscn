@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://6idnqp6mveuf"]
+[gd_scene load_steps=7 format=3 uid="uid://6idnqp6mveuf"]
 
 [ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_vrf8y"]
+[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_cskvd"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_vrf8y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
+shader = ExtResource("2_cskvd")
+shader_parameter/sprite = ExtResource("1_vrf8y")
+shader_parameter/color = Vector3(0, 0, 0.1)
+shader_parameter/opacity = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(1127, 545)
@@ -23,6 +30,7 @@ offset = Vector2(-695, -1510)
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
+material = SubResource("ShaderMaterial_cijpc")
 position = Vector2(208, 335)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)

@@ -108,103 +108,103 @@ layer_1/name = "Background_Rounded"
 layer_1/tile_data = PackedInt32Array(0, 196608, 0, 7, 262144, 1, 11, 0, 2, 16, 0, 1, 17, 393216, 0, 65546, 393216, 1, 65553, 0, 2, 131083, 524288, 0, 131094, 131072, 2, 196610, 196608, 0, 196615, 327680, 0, 196620, 65536, 1, 196625, 327680, 1, 196627, 65536, 1, 196629, 524288, 0, 262148, 327680, 1, 262149, 65536, 0, 262153, 327680, 0, 262159, 393216, 0, 262165, 131072, 0, 262166, 131072, 0, 262167, 131072, 0, 327682, 65536, 1, 327686, 131072, 0, 327696, 327680, 0, 327701, 458752, 0, 393226, 196608, 0, 393233, 0, 1, 393235, 458752, 0, 458753, 458752, 0, 458754, 458752, 0, 458757, 327680, 0, 458762, 458752, 0, 458765, 524288, 0, 458771, 196608, 0, 458772, 262144, 0, 524295, 262144, 0, 524308, 327680, 0, 589827, 196608, 1, 589833, 0, 1, 589834, 327680, 0, 655368, 65536, 1, 655371, 327680, 1, 655374, 196608, 0, 655379, 0, 1, 655381, 131072, 1, 720910, 131072, 1, 720917, 196608, 0, 786442, 65536, 1, 786443, 327680, 0, 786445, 196608, 0, 851970, 65536, 2, 851972, 0, 2, 851976, 262144, 0, 851979, 327680, 1, 851988, 196608, 1, 917514, 327680, 0, 917520, 458752, 0, 917522, 131072, 1, 983043, 65536, 2, 983051, 0, 2, 983053, 262144, 0, 983056, 0, 2, 1048582, 196608, 0, 1048587, 0, 1, 1048588, 458752, 0, 1048590, 196608, 0, 1114114, 131072, 2, 1114124, 524288, 0, 1114129, 393216, 0, 1179650, 327680, 0, 1179658, 0, 2, 1179662, 262144, 0, 1245190, 0, 1, 1245201, 458752, 0, 1245203, 524288, 0, 1310722, 0, 1, 1310726, 327680, 0, 1310728, 196608, 0, 1310732, 0, 1, 1310737, 393216, 0, 1441795, 458752, 0, 1441801, 131072, 1, 1441802, 65536, 1, 1441806, 458752, 0, 1441807, 524288, 0, 1441815, 327680, 0, 1507332, 262144, 0, 1507336, 65536, 1, 1507340, 458752, 0, 1507344, 524288, 0)
 
 [node name="Object1" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(2592, 1952.5)
+position = Vector2(3334, 4982)
 
 [node name="Object2" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(5720.11, 1851.58)
+position = Vector2(6462.11, 4881.08)
 
 [node name="Object3" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(1888, 1168.5)
+position = Vector2(2630, 4198)
 
 [node name="Object4" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(6741.34, 6344.5)
+position = Vector2(7554.34, 8550.5)
 
 [node name="Object5" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(11573.4, 2280.5)
+position = Vector2(12315.4, 5310)
 
 [node name="Object6" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(11543.7, 4963.27)
+position = Vector2(13470, 7942)
 
 [node name="Object7" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(9504, 16.5)
+position = Vector2(10246, 3046)
 
 [node name="Object8" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(8192, 2288.5)
+position = Vector2(8934, 5318)
 
 [node name="Object9" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(11016, 1480.5)
+position = Vector2(11758, 4510)
 
 [node name="Object10" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(1552, 2664.5)
+position = Vector2(2294, 5694)
 
 [node name="Object11" parent="." instance=ExtResource("environmentPineMedium")]
-position = Vector2(13376, 1712.5)
+position = Vector2(14118, 4742)
 
 [node name="Object12" parent="." instance=ExtResource("environmentPineMedium")]
 position = Vector2(960, 11232.5)
 
 [node name="Object18" parent="." instance=ExtResource("environmentRock1")]
-position = Vector2(6764.57, 9984.5)
+position = Vector2(7577.57, 12190.5)
 
 [node name="Object19" parent="." instance=ExtResource("environmentRock1")]
-position = Vector2(4039.57, 8920.5)
+position = Vector2(4852.57, 11126.5)
 
 [node name="Object20" parent="." instance=ExtResource("environmentRock1")]
-position = Vector2(10550.7, 8766.96)
+position = Vector2(11363.7, 10973)
 
 [node name="Object23" parent="." instance=ExtResource("environmentSnowPile2")]
 position = Vector2(9488, 11920)
 
 [node name="Object26" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(11504, 9360)
+position = Vector2(12317, 11566)
 
 [node name="Object27" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(5033.34, 7380)
+position = Vector2(5846.34, 9586)
 
 [node name="Object28" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(11741.2, 2292.15)
+position = Vector2(12483.2, 5321.65)
 
 [node name="Object30" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(5936, 7712)
+position = Vector2(6749, 9918)
 
 [node name="Object31" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(12144, 8400)
+position = Vector2(12957, 10606)
 
 [node name="Object32" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(992, 6560)
+position = Vector2(1805, 8766)
 
 [node name="Object33" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(2408, 4001.6)
+position = Vector2(3221, 6207.6)
 
 [node name="Object34" parent="." instance=ExtResource("environmentSnowPile2")]
-position = Vector2(3808, 1472)
+position = Vector2(4550, 4501.5)
 
 [node name="Object36" parent="." instance=ExtResource("environmentSnowPile2")]
 position = Vector2(2826.66, 12520)
 
 [node name="Object37" parent="." instance=ExtResource("environmentRock1")]
-position = Vector2(3456, 3531)
+position = Vector2(4269, 5737)
 
 [node name="Object38" parent="." instance=ExtResource("environmentRock1")]
-position = Vector2(9296, 4939)
+position = Vector2(10109, 7145)
 
 [node name="Object39" parent="." instance=ExtResource("environmentTree")]
-position = Vector2(9740, 7524.93)
+position = Vector2(10553, 9730.93)
 
 [node name="Object40" parent="." instance=ExtResource("environmentTree")]
 position = Vector2(4740.88, 11025.8)
 
 [node name="Object41" parent="." instance=ExtResource("environmentTree")]
-position = Vector2(4400.71, 6316.88)
+position = Vector2(5213.71, 8522.88)
 
 [node name="Object42" parent="." instance=ExtResource("environmentTree")]
-position = Vector2(5249.47, 5768)
+position = Vector2(6062.47, 7974)
 
 [node name="Object44" parent="." instance=ExtResource("environmentSnowPile1")]
-position = Vector2(11564, 6786.4)
+position = Vector2(12377, 8992.4)
 
 [node name="Object93" parent="." instance=ExtResource("environmentTree")]
-position = Vector2(13600, 10024)
+position = Vector2(14413, 12230)
 
 [node name="Object94" parent="." instance=ExtResource("environmentTree")]
 position = Vector2(11296, 13192)
@@ -213,40 +213,40 @@ position = Vector2(11296, 13192)
 position = Vector2(4019.73, 13648)
 
 [node name="Object120" parent="." instance=ExtResource("environmentHugePine")]
-position = Vector2(11888, -1285.59)
+position = Vector2(12630, 1743.91)
 
 [node name="Object121" parent="." instance=ExtResource("environmentHugePine")]
-position = Vector2(5040, -1599.5)
+position = Vector2(5782, 1430)
 
 [node name="Object122" parent="." instance=ExtResource("environmentHugePine")]
-position = Vector2(416, 608.5)
+position = Vector2(1158, 3638)
 
 [node name="Object124" parent="." instance=ExtResource("environmentHugePine")]
-position = Vector2(2779.87, -903.5)
+position = Vector2(3521.87, 2126)
 
 [node name="Object126" parent="." instance=ExtResource("environmentHugePine")]
-position = Vector2(7376, 2016.5)
+position = Vector2(8118, 5046)
 
 [node name="Object127" parent="." instance=ExtResource("environmentBerryBush")]
 position = Vector2(12160.5, 12880.5)
 
 [node name="Object128" parent="." instance=ExtResource("environmentBerryBush")]
-position = Vector2(4716.5, 4933.67)
+position = Vector2(5529.5, 7139.67)
 
 [node name="Object129" parent="." instance=ExtResource("environmentBerryBush")]
-position = Vector2(7892.71, 6016.5)
+position = Vector2(8705.71, 8222.5)
 
 [node name="Object130" parent="." instance=ExtResource("environmentBerryBush")]
-position = Vector2(6209.35, 8824.5)
+position = Vector2(7022.35, 11030.5)
 
 [node name="Object131" parent="." instance=ExtResource("environmentBerryBush")]
-position = Vector2(10894.8, 3116.5)
+position = Vector2(11636.8, 6146)
 
 [node name="Object132" parent="." instance=ExtResource("environmentBerryBush")]
 position = Vector2(1856, 13899)
 
 [node name="Object133" parent="." instance=ExtResource("environmentBerryBush")]
-position = Vector2(1104, 8123)
+position = Vector2(1917, 10329)
 
 [node name="Object134" parent="." instance=ExtResource("environmentBerryBush")]
-position = Vector2(1552, 4923)
+position = Vector2(2365, 7129)

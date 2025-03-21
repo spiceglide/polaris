@@ -4,6 +4,7 @@ const DIMS = 24*640
 const RENDER_DISTANCE = 1
 
 @export var grid_size = [9, 9]
+@export var leak_opacity = 0.3
 var scene_size = [DIMS, DIMS]
 var available_scenes = [preload("res://screens/Level_Snow_1.tscn")]
 var scenes = []
@@ -54,7 +55,7 @@ func _cull_scenes():
 			continue
 			
 		adj.visible = true
-		adj.modulate = Color(1, 1, 1, 0.5)
+		adj.modulate = Color(1, 1, 1, leak_opacity)
 
 func _update_current_scene():
 	var player_pos = Player.position
@@ -70,9 +71,6 @@ func _update_camera():
 	camera.limit_right = (current_scene[0] * scene_size[0]) + scene_size[0]
 	camera.limit_top = current_scene[1] * scene_size[1]
 	camera.limit_bottom = (current_scene[1] * scene_size[1]) + scene_size[1]
-	
-	#print([camera.limit_left, camera.limit_right, camera.limit_top, camera.limit_bottom])
-	print(current_scene)
 
 func _north(xy: Array):
 	var i = xy[0] - 1

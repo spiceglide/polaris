@@ -1,12 +1,13 @@
 extends Node2D
 
 const DIMS = 24*640
-const RENDER_DISTANCE = 2
+const RENDER_DISTANCE = 1
 
 @export var grid_size = [9, 9]
 var scene_size = [DIMS, DIMS]
 var available_scenes = [preload("res://screens/Level_Snow_1.tscn")]
 var scenes = []
+var current_scene = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,20 +30,76 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	_update_current_scene()
 	_cull_scenes()
 
 func _cull_scenes():
-	var player_pos = Player.position
-	var bounds = [
-		Player.position.x - (RENDER_DISTANCE * DIMS),
-		Player.position.x + (RENDER_DISTANCE * DIMS),
-		Player.position.y - (RENDER_DISTANCE * DIMS),
-		Player.position.y + (RENDER_DISTANCE * DIMS),
-	]
-	
 	for x in range(grid_size[0]):
 		for y in range(grid_size[1]):
-			if (x*DIMS < bounds[0]) or (x*DIMS > bounds[1] or (y*DIMS < bounds[2]) or (y*DIMS > bounds[3])):
-				scenes[x][y].visible = false
-			else:
-				scenes[x][y].visible = true
+			var scene = scenes[x][y]
+			scene.visible = false
+			scene.modulate = Color(1, 1, 1, 1)
+	
+	var current = get_scene(current_scene)
+	current.visible = true
+	
+	var adjacent = [
+		_north(current_scene), _east(current_scene),
+		_south(current_scene), _west(current_scene),
+	]
+	
+	for adj in adjacent:
+		if adj == null:
+			continue
+			
+		adj.visible = true
+		adj.modulate = Color(1, 1, 1, 0.5)
+
+func _update_current_scene():
+	var player_pos = Player.position
+	current_scene = [
+		clamp(player_pos.x / DIMS, 0, grid_size[0]),
+		clamp(player_pos.y / DIMS, 0, grid_size[1]),
+	]
+
+func _north(xy: Array):
+	var i = xy[0] - 1
+	var j = xy[1]
+	
+	if i < 0:
+		return
+
+	return scenes[i][j]
+
+func _south(xy: Array):
+	var i = xy[0] + 1
+	var j = xy[1]
+	
+	if i > grid_size[0]:
+		return
+	
+	return scenes[i][j]
+
+
+func _east(xy: Array):
+	var i = xy[0]
+	var j = xy[1] + 1
+	
+	if j > grid_size[1]:
+		return
+	
+	return scenes[i][j]
+
+
+func _west(xy: Array):
+	var i = xy[0]
+	var j = xy[1] - 1
+	
+	if j < 0:
+		return
+	
+	return scenes[i][j]
+
+	
+func get_scene(xy: Array):
+	return scenes[xy[0]][xy[1]]

@@ -33,6 +33,7 @@ func set_item(id: String):
 	
 	$ItemSprite.animation = id
 	$ItemSprite.visible = true
+	last_used = Time.get_ticks_msec()
 	
 func clear_item():
 	item = null
@@ -71,7 +72,6 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	set_item(data[0].item_id)
-	last_used = Time.get_ticks_msec()
 	
 func _generate_preview():
 	var preview = TextureRect.new()

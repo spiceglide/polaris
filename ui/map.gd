@@ -58,10 +58,12 @@ func _cull_scenes():
 
 func _update_current_scene():
 	var player_pos = HUD.get_meta("player_pos")
+	print(player_pos)
 	current_scene = [
-		clamp(floor(player_pos.x / scene_size[0]), 0, grid_size[0]),
-		clamp(floor(player_pos.y / scene_size[1]), 0, grid_size[1]),
+		clamp(floor(player_pos[0] / scene_size[0]), 0, grid_size[0]),
+		clamp(floor(player_pos[1] / scene_size[1]), 0, grid_size[1]),
 	]
+	print(current_scene)
 
 func _north(xy: Array):
 	var i = xy[0] - 1

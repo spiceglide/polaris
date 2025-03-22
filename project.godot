@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 HUD="*res://ui/HUD.tscn"
-Player="*res://ui/Player.tscn"
 
 [display]
 

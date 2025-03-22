@@ -7,7 +7,7 @@ enum SlotState {
 	SELECTED_CLICK,
 }
 
-@export var item: Item
+@export var item: Item = null
 @export var anim: String = "type1"
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
@@ -17,8 +17,8 @@ func _ready() -> void:
 	$Sprite.animation = anim
 	$Sprite.play()
 	$ItemSprite.play()
-	$ItemSprite.visible = false
 	
+	clear_item()
 	add_to_group("inventory_slots")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,7 +33,6 @@ func set_item(id: String):
 	
 	$ItemSprite.animation = id
 	$ItemSprite.visible = true
-	last_used = Time.get_ticks_msec()
 	
 func clear_item():
 	item = null
@@ -72,6 +71,8 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	set_item(data[0].item_id)
+	state = SlotState.INACTIVE
+	last_used = Time.get_ticks_msec()
 	
 func _generate_preview():
 	var preview = TextureRect.new()

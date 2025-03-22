@@ -50,7 +50,7 @@ func _input(event):
 
 func set_item(item_id: String) -> bool:
 	var slot = slots[selected_slot]
-	if slot.item == null:
+	if not slot.item:
 		slot.set_item(item_id)
 		print("Picked up '" + item_id + "'")
 		return true

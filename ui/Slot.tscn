@@ -246,8 +246,8 @@ animation = &"type2"
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+focus_mode = 0
 mouse_filter = 1
-button_mask = 3
 
 [node name="Item" parent="." instance=ExtResource("34_yg45d")]
 

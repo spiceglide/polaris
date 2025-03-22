@@ -1,5 +1,4 @@
 extends CharacterBody2D
-signal hit
 
 @export var speed = 1500
 @export var multiplier = 0.3
@@ -15,6 +14,9 @@ func start(pos):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
+func _process(delta: float) -> void:
+	HUD.set_meta("player_pos", self.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

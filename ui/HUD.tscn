@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=5 format=3 uid="uid://bhdraj2cyr8o8"]
 
+[ext_resource type="Script" uid="uid://b4uinaa1i08lu" path="res://ui/hud.gd" id="1_jd13s"]
 [ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="2_nysna"]
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://ui/Inventory.tscn" id="3_f6qnu"]
 
@@ -9,6 +10,7 @@ shader_parameter/outerRadius = 4.0
 shader_parameter/MainAlpha = 0.6
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_jd13s")
 
 [node name="Vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_1whyg")

@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var inventory: InventorySystem = HUD.get_node("Inventory")
-@onready var announcer = Player.get_node("Announcement")
 
 @export var description: String
 @export var item: String
@@ -21,7 +20,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func interact():
+func interact(player):
+	var announcer = player.get_node("Announcement")
+	
 	match type:
 		Interaction.INSPECT:
 			announcer.announce(description)

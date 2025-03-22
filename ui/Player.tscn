@@ -185,6 +185,7 @@ radius = 313.957
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_x1yu0")
 metadata/_edit_group_ = true
 

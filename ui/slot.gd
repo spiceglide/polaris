@@ -4,6 +4,7 @@ class_name InventorySlot
 @export var item: Item
 @export var anim: String = "type1"
 var is_dragging: bool = false
+var craftdrag: bool = false
 
 signal slot_click(which: InventorySlot)
 signal slot_hovered(which: InventorySlot, is_hover: bool)
@@ -18,7 +19,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if craftdrag:
+		var preview = _generate_preview()
+		$ItemSprite.visible = false
+		force_drag([item, self], preview)
 	
 func set_item(id: String):
 	$Item.set_item(id)
@@ -47,11 +51,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	if not item:
 		return
 		
-	var preview = TextureRect.new()
-	var spriteName = $ItemSprite.get_animation()
-	var frame = $ItemSprite.sprite_frames.get_frame_texture($ItemSprite.get_animation(), 0)
-	preview.texture = frame
-	preview.scale = Vector2(0.3, 0.3)
+	var preview = _generate_preview()
 	set_drag_preview(preview)
 	
 	is_dragging = true
@@ -68,6 +68,15 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	set_item(data[0].item_id)
 	#data[1].clear_item()
+	
+func _generate_preview():
+	var preview = TextureRect.new()
+	var spriteName = $ItemSprite.get_animation()
+	var frame = $ItemSprite.sprite_frames.get_frame_texture($ItemSprite.get_animation(), 0)
+	preview.texture = frame
+	preview.scale = Vector2(0.3, 0.3)
+	
+	return preview
 
 func _notification(type):
 	match type:
@@ -75,9 +84,15 @@ func _notification(type):
 			if not is_dragging:
 				return
 			is_dragging = false
+			craftdrag = false
 			
 			if is_drag_successful():
 				clear_item()
 			else:
 				if item:
 					$ItemSprite.visible = true
+
+func _on_button_pressed() -> void:
+	if item and not is_dragging:
+		is_dragging = true
+		craftdrag = true

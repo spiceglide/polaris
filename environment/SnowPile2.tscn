@@ -20,9 +20,9 @@ radius = 494.684
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 230)
+position = Vector2(0, 218)
 texture = ExtResource("1_j0xbx")
-offset = Vector2(0, -230)
+offset = Vector2(0, -218)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 self_modulate = Color(0, 0, 0.501961, 0.133333)

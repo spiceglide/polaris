@@ -244,7 +244,11 @@ sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"type2"
 
 [node name="Button" type="Button" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 1
+button_mask = 3
 
 [node name="Item" parent="." instance=ExtResource("34_yg45d")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

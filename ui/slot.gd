@@ -1,14 +1,16 @@
 extends Control
 class_name InventorySlot
 
+enum SlotState {
+	INACTIVE,
+	SELECTED_DRAG,
+	SELECTED_CLICK,
+}
+
 @export var item: Item
 @export var anim: String = "type1"
-var is_dragging: bool = false
-var craftdrag: bool = false
-var block_click: bool = false
-
-signal slot_click(which: InventorySlot)
-signal slot_hovered(which: InventorySlot, is_hover: bool)
+var state = SlotState.INACTIVE
+var last_used = Time.get_ticks_msec()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,14 +18,14 @@ func _ready() -> void:
 	$Sprite.play()
 	$ItemSprite.play()
 	$ItemSprite.visible = false
+	
 	add_to_group("inventory_slots")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		if craftdrag and item:
-			var preview = _generate_preview()
+		if state == SlotState.SELECTED_CLICK:
 			$ItemSprite.visible = false
-			force_drag([item, self], preview)
+			force_drag([item, self], _generate_preview())
 	
 func set_item(id: String):
 	$Item.set_item(id)
@@ -49,14 +51,14 @@ func deselect():
 	$Sprite.modulate = Color(1, 1, 1)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
-	print("drag begin")
 	if not item:
 		return
+	
+	if state == SlotState.INACTIVE:
+		state = SlotState.SELECTED_DRAG
 		
 	var preview = _generate_preview()
 	set_drag_preview(preview)
-	
-	is_dragging = true
 	$ItemSprite.visible = false
 	return [item, self]
 
@@ -69,7 +71,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	set_item(data[0].item_id)
-	block_click = true
+	last_used = Time.get_ticks_msec()
 	
 func _generate_preview():
 	var preview = TextureRect.new()
@@ -83,10 +85,10 @@ func _generate_preview():
 func _notification(type):
 	match type:
 		NOTIFICATION_DRAG_END:
-			if not is_dragging:
+			if state == SlotState.INACTIVE:
 				return
-			is_dragging = false
-			craftdrag = false
+			state = SlotState.INACTIVE
+			last_used = Time.get_ticks_msec()
 			
 			if is_drag_successful():
 				clear_item()
@@ -95,10 +97,9 @@ func _notification(type):
 					$ItemSprite.visible = true
 
 func _on_button_pressed() -> void:
-	if block_click and not is_dragging:
-		block_click = false
-		return
-	
-	if item and not is_dragging:
-		is_dragging = true
-		craftdrag = true
+	if state == SlotState.INACTIVE:
+		var timestamp = Time.get_ticks_msec()
+		if (timestamp - last_used) < 200:
+			return
+		if item:
+			state = SlotState.SELECTED_CLICK

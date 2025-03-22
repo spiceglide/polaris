@@ -98,8 +98,10 @@ tile_size = Vector2i(640, 640)
 sources/0 = SubResource("TileSetAtlasSource_0")
 
 [node name="Level_Snow_1" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 tile_set = SubResource("TileSet_0")
 format = 2
 layer_0/name = "Background_Rough"

@@ -26,7 +26,6 @@ radius = 723.747
 
 [node name="PineMedium" type="StaticBody2D"]
 z_index = 1
-y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cfx2x")

@@ -21,7 +21,6 @@ radius = 121.202
 
 [node name="Rock" type="StaticBody2D"]
 z_index = 1
-y_sort_enabled = true
 material = SubResource("ShaderMaterial_hwicx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

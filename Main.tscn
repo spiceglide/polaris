@@ -3,6 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="2_r0du0"]
 
 [node name="Main" type="Node2D"]
-y_sort_enabled = true
 
 [node name="Map" parent="." instance=ExtResource("2_r0du0")]

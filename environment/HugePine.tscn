@@ -18,7 +18,6 @@ radius = 400.001
 
 [node name="HugePine" type="StaticBody2D"]
 z_index = 1
-y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1527, -7013)

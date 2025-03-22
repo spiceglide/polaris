@@ -1,8 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://f6yovtrpm7id"]
+[gd_scene load_steps=8 format=3 uid="uid://f6yovtrpm7id"]
 
 [ext_resource type="Texture2D" uid="uid://khhdxj58b3uh" path="res://assets/NATURE/BERRY_BUSH1.png" id="1_uvwit"]
+[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_xvv3e"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_3tja5"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_uvwit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pibel"]
+shader = ExtResource("1_xvv3e")
+shader_parameter/speed = 1.0
+shader_parameter/strength = 0.03
+shader_parameter/y_origin = 200.0
+shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvv3e"]
 shader = ExtResource("2_3tja5")
@@ -18,6 +26,7 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pibel")
 position = Vector2(0, 124)
 texture = ExtResource("1_uvwit")
 offset = Vector2(2, -124)

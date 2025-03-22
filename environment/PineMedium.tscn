@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://6idnqp6mveuf"]
+[gd_scene load_steps=9 format=3 uid="uid://6idnqp6mveuf"]
 
+[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_cijpc"]
 [ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_vrf8y"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_cskvd"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_vrf8y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfx2x"]
+shader = ExtResource("1_cijpc")
+shader_parameter/speed = 1.0
+shader_parameter/strength = 0.03
+shader_parameter/y_origin = 200.0
+shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
 shader = ExtResource("2_cskvd")
@@ -21,6 +29,7 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cfx2x")
 position = Vector2(3, -818)
 texture = ExtResource("1_vrf8y")
 centered = false

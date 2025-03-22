@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bny82lifsvvnc"]
+[gd_scene load_steps=9 format=3 uid="uid://bny82lifsvvnc"]
 
+[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_ppss4"]
 [ext_resource type="Texture2D" uid="uid://cjye5r24icbch" path="res://assets/NATURE/TREE1.png" id="1_ws5lw"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_ppss4"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_ws5lw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsawq"]
+shader = ExtResource("1_ppss4")
+shader_parameter/speed = 1.0
+shader_parameter/strength = 0.03
+shader_parameter/y_origin = 200.0
+shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twckm"]
 shader = ExtResource("2_ppss4")
@@ -21,6 +29,7 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tsawq")
 position = Vector2(0, 1133)
 texture = ExtResource("1_ws5lw")
 centered = false

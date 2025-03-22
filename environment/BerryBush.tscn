@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://f6yovtrpm7id"]
 
-[ext_resource type="Texture2D" uid="uid://khhdxj58b3uh" path="res://assets/NATURE/BERRY_BUSH1.png" id="1_uvwit"]
+[ext_resource type="Texture2D" uid="uid://qjy2evgwvkpk" path="res://assets/objects/tundra/berrybush_1.png" id="1_uvwit"]
 [ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_xvv3e"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_3tja5"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_uvwit"]

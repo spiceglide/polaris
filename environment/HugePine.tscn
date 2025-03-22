@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://iny1lbsa3o1g"]
 
-[ext_resource type="Texture2D" uid="uid://cocmjkt3inrri" path="res://assets/NATURE/HUGEPINE.png" id="1_3blts"]
+[ext_resource type="Texture2D" uid="uid://dxfxjbb4exr57" path="res://assets/objects/forest/hugepine_1.png" id="1_3blts"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_4065a"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_vg8be"]
 

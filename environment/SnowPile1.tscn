@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://di1au0y2ha18t"]
 
-[ext_resource type="Texture2D" uid="uid://b0he8u0g50jk0" path="res://assets/NATURE/SNOW_PILE1.png" id="1_ueav0"]
+[ext_resource type="Texture2D" uid="uid://cgpu7ayuiwmbc" path="res://assets/objects/tundra/snowpile_1.png" id="1_ueav0"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_ohlsg"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_ueav0"]
 

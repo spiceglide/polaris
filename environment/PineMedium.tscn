@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://6idnqp6mveuf"]
 
 [ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_cijpc"]
-[ext_resource type="Texture2D" uid="uid://vo0wlnj0myge" path="res://assets/NATURE/PINE MEDIUM.png" id="1_vrf8y"]
+[ext_resource type="Texture2D" uid="uid://d1imglrovdk1f" path="res://assets/objects/forest/mediumpine.png" id="1_vrf8y"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_cskvd"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_vrf8y"]
 

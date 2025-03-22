@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bbvoslhi60ghk" path="res://assets/NATURE/ROCK1.png" id="1_uxwso"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_uxwso"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uinvi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jysaq"]
 shader = ExtResource("1_jysaq")
 shader_parameter/sprite = ExtResource("1_uxwso")
-shader_parameter/color = Vector3(0, 0, 0.1)
-shader_parameter/opacity = 0.3
+shader_parameter/color = Vector3(0, 0, 0.3)
+shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ednr2"]
 radius = 84.0536
@@ -16,7 +16,6 @@ radius = 84.0536
 [node name="Rock" type="StaticBody2D"]
 z_index = 1
 y_sort_enabled = true
-material = SubResource("ShaderMaterial_uinvi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 58)
@@ -24,9 +23,9 @@ texture = ExtResource("1_uxwso")
 offset = Vector2(1, -58)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
-self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
+material = SubResource("ShaderMaterial_jysaq")
 position = Vector2(-20, 13)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)

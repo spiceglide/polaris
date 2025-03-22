@@ -15,8 +15,8 @@ shader_parameter/restrict_dir = 0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvv3e"]
 shader = ExtResource("2_3tja5")
 shader_parameter/sprite = ExtResource("1_uvwit")
-shader_parameter/color = Vector3(0, 0, 0.1)
-shader_parameter/opacity = 0.3
+shader_parameter/color = Vector3(0, 0, 0.3)
+shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tu87o"]
 radius = 111.005
@@ -32,7 +32,6 @@ texture = ExtResource("1_uvwit")
 offset = Vector2(2, -124)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
-self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_xvv3e")

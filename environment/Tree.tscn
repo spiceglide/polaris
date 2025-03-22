@@ -15,8 +15,8 @@ shader_parameter/restrict_dir = 0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twckm"]
 shader = ExtResource("2_ppss4")
 shader_parameter/sprite = ExtResource("1_ws5lw")
-shader_parameter/color = Vector3(0, 0, 0.1)
-shader_parameter/opacity = 0.3
+shader_parameter/color = Vector3(0, 0, 0.3)
+shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(66, 191.5)

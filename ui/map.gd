@@ -33,7 +33,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_update_current_scene()
 	_cull_scenes()
-	_update_camera()
 
 func _cull_scenes():
 	for x in range(grid_size[0]):
@@ -63,14 +62,6 @@ func _update_current_scene():
 		clamp(floor(player_pos.x / scene_size[0]), 0, grid_size[0]),
 		clamp(floor(player_pos.y / scene_size[1]), 0, grid_size[1]),
 	]
-
-func _update_camera():
-	var camera = Player.get_node("Camera2D")
-	
-	camera.limit_left = current_scene[0] * scene_size[0]
-	camera.limit_right = (current_scene[0] * scene_size[0]) + scene_size[0]
-	camera.limit_top = current_scene[1] * scene_size[1]
-	camera.limit_bottom = (current_scene[1] * scene_size[1]) + scene_size[1]
 
 func _north(xy: Array):
 	var i = xy[0] - 1

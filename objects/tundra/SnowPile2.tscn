@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://bl2r2tiktn3nn"]
 
-[ext_resource type="Texture2D" uid="uid://cj5lbq3kvng8u" path="res://assets/objects/tundra/snowpile_2.png" id="1_j0xbx"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_05wcf"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_j0xbx"]
+[ext_resource type="Texture2D" uid="uid://cj5lbq3kvng8u" path="res://assets/objects/tundra/snowpile_2.png" id="1_eqdry"]
+[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_ylgwr"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_vl5v1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ooofd"]
-shader = ExtResource("2_05wcf")
-shader_parameter/sprite = ExtResource("1_j0xbx")
+shader = ExtResource("2_ylgwr")
+shader_parameter/sprite = ExtResource("1_eqdry")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
@@ -21,7 +21,7 @@ z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 218)
-texture = ExtResource("1_j0xbx")
+texture = ExtResource("1_eqdry")
 offset = Vector2(0, -218)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
@@ -33,7 +33,7 @@ position = Vector2(-101, 81)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_j0xbx")
+texture = ExtResource("1_eqdry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -42,7 +42,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(-6, 69)
-script = ExtResource("2_j0xbx")
+script = ExtResource("3_vl5v1")
 description = "\"Cold...\""
 metadata/_edit_group_ = true
 

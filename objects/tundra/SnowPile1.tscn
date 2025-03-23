@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://di1au0y2ha18t"]
 
-[ext_resource type="Texture2D" uid="uid://cgpu7ayuiwmbc" path="res://assets/objects/tundra/snowpile_1.png" id="1_ueav0"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_ohlsg"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_ueav0"]
+[ext_resource type="Texture2D" uid="uid://cgpu7ayuiwmbc" path="res://assets/objects/tundra/snowpile_1.png" id="1_hkd6j"]
+[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_7gi1g"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_3ooul"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yuu6s"]
-shader = ExtResource("2_ohlsg")
-shader_parameter/sprite = ExtResource("1_ueav0")
+shader = ExtResource("2_7gi1g")
+shader_parameter/sprite = ExtResource("1_hkd6j")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
@@ -21,7 +21,7 @@ z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 163)
-texture = ExtResource("1_ueav0")
+texture = ExtResource("1_hkd6j")
 offset = Vector2(0, -163)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
@@ -33,7 +33,7 @@ position = Vector2(-97, 73)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_ueav0")
+texture = ExtResource("1_hkd6j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -42,7 +42,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(-6, 102)
-script = ExtResource("2_ueav0")
+script = ExtResource("3_3ooul")
 description = "\"What! An entire log inside the snow pile!\""
 item = "log"
 type = 1

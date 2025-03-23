@@ -1,20 +1,20 @@
 [gd_scene load_steps=9 format=3 uid="uid://bny82lifsvvnc"]
 
-[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_ppss4"]
-[ext_resource type="Texture2D" uid="uid://boqrrc5tc1wdo" path="res://assets/objects/tundra/sticktree_1.png" id="1_ws5lw"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_ppss4"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_ws5lw"]
+[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_ota4e"]
+[ext_resource type="Texture2D" uid="uid://boqrrc5tc1wdo" path="res://assets/objects/tundra/sticktree_1.png" id="2_2ggt7"]
+[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_gfvp8"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_pxmr5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tsawq"]
-shader = ExtResource("1_ppss4")
+shader = ExtResource("1_ota4e")
 shader_parameter/speed = 1.0
 shader_parameter/strength = 0.03
 shader_parameter/y_origin = 200.0
 shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twckm"]
-shader = ExtResource("2_ppss4")
-shader_parameter/sprite = ExtResource("1_ws5lw")
+shader = ExtResource("3_gfvp8")
+shader_parameter/sprite = ExtResource("2_2ggt7")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
@@ -30,7 +30,7 @@ z_index = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_tsawq")
 position = Vector2(0, 1133)
-texture = ExtResource("1_ws5lw")
+texture = ExtResource("2_2ggt7")
 centered = false
 offset = Vector2(-692, -2328)
 
@@ -41,7 +41,7 @@ material = SubResource("ShaderMaterial_twckm")
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
-texture = ExtResource("1_ws5lw")
+texture = ExtResource("2_2ggt7")
 centered = false
 offset = Vector2(-692, -2328)
 
@@ -52,7 +52,7 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(2, 1081)
-script = ExtResource("2_ws5lw")
+script = ExtResource("4_pxmr5")
 description = "\"Just a tree...\""
 item = "stick"
 type = 1

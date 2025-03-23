@@ -82,8 +82,8 @@ script = ExtResource("1_2gmud")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(124, 118)
 sprite_frames = SubResource("SpriteFrames_wsglq")
-animation = &"idle"
-frame_progress = 0.791881
+animation = &"ribbit"
+frame_progress = 0.894524
 centered = false
 offset = Vector2(-124, -118)
 

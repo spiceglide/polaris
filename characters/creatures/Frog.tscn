@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=3 uid="uid://sy34p85lvyvp"]
+
+[ext_resource type="Script" uid="uid://duc4wr0r7bwjb" path="res://characters/creatures/frog_ai.gd" id="1_2gmud"]
+[ext_resource type="Texture2D" uid="uid://bavyt4745gdvx" path="res://assets/characters/creatures/frog_idle_a.png" id="2_qdvgh"]
+[ext_resource type="Texture2D" uid="uid://dkeathypp3lty" path="res://assets/characters/creatures/frog_idle_b.png" id="3_qpps2"]
+[ext_resource type="Texture2D" uid="uid://drqmyeyrkgn75" path="res://assets/characters/creatures/frog_leap_1_anticipation.png" id="4_2iuke"]
+[ext_resource type="Texture2D" uid="uid://bss1kit2ux01c" path="res://assets/characters/creatures/frog_leap_2.png" id="5_jfrh8"]
+[ext_resource type="Texture2D" uid="uid://dkmqcby8rg81w" path="res://assets/characters/creatures/frog_leap_3.png" id="6_gog3j"]
+[ext_resource type="Texture2D" uid="uid://drnxjnf02t4o" path="res://assets/characters/creatures/frog_leap_4.png" id="7_o1cl5"]
+[ext_resource type="Texture2D" uid="uid://b51upj1jdn5e4" path="res://assets/characters/creatures/frog_leap_5_overshoot.png" id="8_0rnm8"]
+[ext_resource type="Texture2D" uid="uid://dpcaaihjtxty0" path="res://assets/characters/creatures/frog_ribbit_1.png" id="9_airdn"]
+[ext_resource type="Texture2D" uid="uid://bw7ss3c5vj676" path="res://assets/characters/creatures/frog_ribbit_2.png" id="10_lsabj"]
+[ext_resource type="Texture2D" uid="uid://c3d6tbu7sh2et" path="res://assets/characters/creatures/frog_ribbit_3.png" id="11_8dxbi"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="13_8skwa"]
+[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="36_yofgo"]
+[ext_resource type="FontFile" uid="uid://b4c32br4kck56" path="res://assets/font/polarisfont-Regular222.otf" id="37_ghthx"]
+[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="38_khxt4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsglq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qdvgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qpps2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2iuke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jfrh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gog3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o1cl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0rnm8")
+}],
+"loop": true,
+"name": &"leap",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_airdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lsabj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8dxbi")
+}],
+"loop": true,
+"name": &"ribbit",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6e4x"]
+radius = 73.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qw6v7"]
+radius = 2455.56
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sb0ch"]
+radius = 1054.71
+
+[node name="Frog" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-7, -11)
+script = ExtResource("1_2gmud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(124, 118)
+sprite_frames = SubResource("SpriteFrames_wsglq")
+animation = &"idle"
+frame_progress = 0.555525
+centered = false
+offset = Vector2(-124, -118)
+
+[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.133333)
+z_index = -1
+position = Vector2(-17, 68)
+scale = Vector2(2, 0.688)
+texture = ExtResource("36_yofgo")
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(122, 38)
+script = ExtResource("13_8skwa")
+description = "\"GOTCHA!\""
+type = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+position = Vector2(-8, 87)
+shape = SubResource("CircleShape2D_v6e4x")
+
+[node name="AlertRange" type="Area2D" parent="."]
+position = Vector2(122, 38)
+script = ExtResource("13_8skwa")
+description = "\"GOTCHA!\""
+type = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlertRange"]
+position = Vector2(-8, 87)
+shape = SubResource("CircleShape2D_qw6v7")
+
+[node name="DangerRange" type="Area2D" parent="."]
+position = Vector2(122, 38)
+script = ExtResource("13_8skwa")
+description = "\"GOTCHA!\""
+type = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerRange"]
+position = Vector2(-8, 87)
+shape = SubResource("CircleShape2D_sb0ch")
+
+[node name="Announcement" type="Label" parent="."]
+z_index = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.0
+offset_top = -176.0
+offset_right = 454.0
+offset_bottom = -21.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 28
+theme_override_fonts/font = ExtResource("37_ghthx")
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("38_khxt4")
+
+[connection signal="body_entered" from="AlertRange" to="." method="_on_alert_range_body_entered"]
+[connection signal="body_exited" from="AlertRange" to="." method="_on_alert_range_body_exited"]
+[connection signal="body_entered" from="DangerRange" to="." method="_on_danger_range_body_entered"]
+[connection signal="body_exited" from="DangerRange" to="." method="_on_danger_range_body_exited"]

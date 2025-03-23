@@ -9,6 +9,7 @@ extends Area2D
 enum Interaction {
 	INSPECT,
 	PICKUP,
+	DISPOSE,
 	PICKUP_AND_DISPOSE,
 }
 
@@ -21,6 +22,9 @@ func _process(delta: float) -> void:
 	pass
 
 func interact(player):
+	if not item:
+		return
+
 	var announcer = player.get_node("Announcement")
 	
 	match type:
@@ -29,6 +33,9 @@ func interact(player):
 		Interaction.PICKUP:
 			announcer.announce(description)
 			inventory.set_item(item)
+		Interaction.DISPOSE:
+			announcer.announce(description)
+			self.get_parent().queue_free()
 		Interaction.PICKUP_AND_DISPOSE:
 			announcer.announce(description)
 			if inventory.set_item(item):

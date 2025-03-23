@@ -3,10 +3,11 @@ extends Node2D
 const DIMS = 24*640
 const RENDER_DISTANCE = 1
 
-@export var grid_size = [9, 9]
+@export var grid_size = [3, 2]
 @export var leak_opacity = 0.3
 var scene_size = [DIMS, DIMS]
-var available_scenes = [preload("res://screens/level_tundra_1.tscn"), preload("res://screens/forest_tundra_ns_1.tscn")]
+var available_scenes_top = [preload("res://screens/forest_tundra_ns_1.tscn"),] #preload("res://screens/swamp_tundra_ns_1.tscn")]
+var available_scenes = [preload("res://screens/level_tundra_1.tscn")]
 var scenes = []
 var current_scene = 0
 
@@ -18,7 +19,11 @@ func _ready() -> void:
 	for x in range(grid_size[0]):
 		var temp_scenes = []
 		for y in range(grid_size[1]):
-			scene = available_scenes.pick_random()
+			if y == 0:
+				scene = available_scenes_top.pick_random()
+			else:
+				scene = available_scenes.pick_random()
+			
 			instance = scene.instantiate()
 			
 			instance.position.x = scene_size[0] * x
@@ -59,43 +64,43 @@ func _cull_scenes():
 func _update_current_scene():
 	var player_pos = HUD.get_meta("player_pos")
 	current_scene = [
-		clamp(floor(player_pos[0] / scene_size[0]), 0, grid_size[0]),
-		clamp(floor(player_pos[1] / scene_size[1]), 0, grid_size[1]),
+		clamp(floor(player_pos[0] / scene_size[0]), 0, grid_size[0]-1),
+		clamp(floor(player_pos[1] / scene_size[1]), 0, grid_size[1]-1),
 	]
 
 func _north(xy: Array):
-	var i = xy[0] - 1
-	var j = xy[1]
+	var i = xy[0]
+	var j = xy[1] - 1
 	
-	if i < 0:
+	if j < 0:
 		return
 
 	return scenes[i][j]
 
 func _south(xy: Array):
-	var i = xy[0] + 1
-	var j = xy[1]
+	var i = xy[0]
+	var j = xy[1] + 1
 	
-	if i > grid_size[0]:
+	if j >= grid_size[1]:
 		return
 	
 	return scenes[i][j]
 
 
 func _east(xy: Array):
-	var i = xy[0]
-	var j = xy[1] + 1
+	var i = xy[0] + 1
+	var j = xy[1]
 	
-	if j > grid_size[1]:
+	if i >= grid_size[0]:
 		return
 	
 	return scenes[i][j]
 
 func _west(xy: Array):
-	var i = xy[0]
-	var j = xy[1] - 1
+	var i = xy[0] - 1
+	var j = xy[1]
 	
-	if j < 0:
+	if i < 0:
 		return
 	
 	return scenes[i][j]

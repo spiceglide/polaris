@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct0bwbjtev4hx"]
+
+[ext_resource type="Texture2D" uid="uid://cyubf8m8rh7w2" path="res://assets/objects/swamp/s_mud_6.png" id="1_34dwc"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_r36x1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
+radius = 82.0244
+
+[node name="Mud" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(451, -247)
+texture = ExtResource("1_34dwc")
+centered = false
+offset = Vector2(-449, 6)
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(213, -122)
+script = ExtResource("2_r36x1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_ejv3r")

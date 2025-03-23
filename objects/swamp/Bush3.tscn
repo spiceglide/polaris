@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4kkjobhjisp2"]
+
+[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_av8pc"]
+[ext_resource type="Texture2D" uid="uid://k42mipxky6d0" path="res://assets/objects/swamp/s_bush_3.png" id="2_4xysk"]
+[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_et8co"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_711qx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfx2x"]
+shader = ExtResource("1_av8pc")
+shader_parameter/speed = 1.0
+shader_parameter/strength = 0.01
+shader_parameter/y_origin = 200.0
+shader_parameter/restrict_dir = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
+shader = ExtResource("3_et8co")
+shader_parameter/sprite = ExtResource("2_4xysk")
+shader_parameter/color = Vector3(0, 0, 0.3)
+shader_parameter/opacity = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
+size = Vector2(998, 242.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
+radius = 677.012
+
+[node name="Bush" type="StaticBody2D"]
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cfx2x")
+position = Vector2(53, 878)
+texture = ExtResource("2_4xysk")
+centered = false
+offset = Vector2(-695, -1510)
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
+z_as_relative = false
+material = SubResource("ShaderMaterial_cijpc")
+position = Vector2(437, -1406)
+rotation = -3.14159
+scale = Vector2(1, 0.423292)
+skew = 0.733038
+texture = ExtResource("2_4xysk")
+centered = false
+offset = Vector2(-692, -2328)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+position = Vector2(-2, -126.75)
+shape = SubResource("RectangleShape2D_3fioj")
+
+[node name="Interaction" type="Area2D" parent="."]
+position = Vector2(16, -248)
+script = ExtResource("4_711qx")
+description = "\"It's a bush\""
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_ejv3r")

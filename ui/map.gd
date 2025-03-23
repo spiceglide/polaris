@@ -6,7 +6,7 @@ const RENDER_DISTANCE = 1
 @export var grid_size = [9, 9]
 @export var leak_opacity = 0.3
 var scene_size = [DIMS, DIMS]
-var available_scenes = [preload("res://screens/level_tundra_1.tscn")]
+var available_scenes = [preload("res://screens/level_tundra_1.tscn"), preload("res://screens/forest_tundra_ns_1.tscn")]
 var scenes = []
 var current_scene = 0
 

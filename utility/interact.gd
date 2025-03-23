@@ -22,21 +22,22 @@ func _process(delta: float) -> void:
 	pass
 
 func interact(player):
-	if not item:
-		return
-
 	var announcer = player.get_node("Announcement")
 	
 	match type:
 		Interaction.INSPECT:
 			announcer.announce(description)
 		Interaction.PICKUP:
+			if not item:
+				return
 			announcer.announce(description)
 			inventory.set_item(item)
 		Interaction.DISPOSE:
 			announcer.announce(description)
 			self.get_parent().queue_free()
 		Interaction.PICKUP_AND_DISPOSE:
+			if not item:
+				return
 			announcer.announce(description)
 			if inventory.set_item(item):
 				self.get_parent().queue_free()

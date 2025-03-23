@@ -83,7 +83,7 @@ script = ExtResource("1_2gmud")
 position = Vector2(124, 118)
 sprite_frames = SubResource("SpriteFrames_wsglq")
 animation = &"idle"
-frame_progress = 0.555525
+frame_progress = 0.791881
 centered = false
 offset = Vector2(-124, -118)
 
@@ -107,9 +107,6 @@ shape = SubResource("CircleShape2D_v6e4x")
 
 [node name="AlertRange" type="Area2D" parent="."]
 position = Vector2(122, 38)
-script = ExtResource("13_8skwa")
-description = "\"GOTCHA!\""
-type = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlertRange"]
@@ -118,9 +115,6 @@ shape = SubResource("CircleShape2D_qw6v7")
 
 [node name="DangerRange" type="Area2D" parent="."]
 position = Vector2(122, 38)
-script = ExtResource("13_8skwa")
-description = "\"GOTCHA!\""
-type = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerRange"]

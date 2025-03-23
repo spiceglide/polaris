@@ -50,8 +50,8 @@ func _cull_scenes():
 	current.visible = true
 	
 	var adjacent = [
-		_north(current_scene), _east(current_scene),
-		_south(current_scene), _west(current_scene),
+		#_north(current_scene), _east(current_scene),
+		_south(current_scene), #_west(current_scene),
 	]
 	
 	for adj in adjacent:

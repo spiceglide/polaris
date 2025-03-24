@@ -3,6 +3,7 @@ class_name InventorySystem
 
 @onready var slot_scene = preload("res://ui/Slot.tscn")
 @onready var item_scene = preload("res://ui/Item.tscn")
+@onready var hint_scene = preload("res://ui/HintButton.tscn")
 
 @export var cols: int = 5
 @export var rows: int = 5
@@ -79,10 +80,7 @@ func _setup_slots():
 				$Full.add_child(slot)
 				slots.append(slot)
 	
-	var hint = slot_scene.instantiate()
-	hint.anim = "hint"
-	hint.get_node("Sprite").scale = Vector2(0.7, 0.7)
-	hint.scale.x = 0.25
+	var hint = hint_scene.instantiate()
 	$Hotbar.add_child(hint)
 	
 func _setup_crafting():

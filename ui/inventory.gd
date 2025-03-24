@@ -49,13 +49,18 @@ func _input(event):
 		craft(ingredients)
 
 func set_item(item_id: String) -> bool:
-	var slot = slots[selected_slot]
-	if not slot.item:
+	var slot = get_first_empty_slot()
+	if slot:
 		slot.set_item(item_id)
 		print("Picked up '" + item_id + "'")
 		return true
 	else:
 		return false
+
+func get_first_empty_slot():
+	for slot in slots:
+		if not slot.item:
+			return slot
 
 func _setup_slots():
 	$Full.columns = cols

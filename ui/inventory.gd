@@ -9,7 +9,6 @@ class_name InventorySystem
 @export var cols: int = 5
 @export var rows: int = 5
 var slots: Array[InventorySlot] = []
-var anims: Array[String] = ["type1", "type2", "type3", "type4", "type5"]
 var selected_slot: int = 0
 
 var recipes: Array
@@ -71,14 +70,12 @@ func _setup_slots():
 	if rows >= 1:
 		for col in cols:
 			var slot = slot_scene.instantiate()
-			slot.anim = anims[col % len(anims)]
 			$Hotbar.add_child(slot)
 			slots.append(slot)
 		
 		for row in range(rows - 1):
 			for col in range(cols):
 				var slot = slot_scene.instantiate()
-				slot.anim = anims[col % len(anims)]
 				$Full.add_child(slot)
 				slots.append(slot)
 	

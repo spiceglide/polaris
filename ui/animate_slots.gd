@@ -1,4 +1,4 @@
-extends BoxContainer
+extends Container
 
 @export var anims: Array = ["type1", "type2", "type3", "type4", "type5"]
 @export var node_name: String = "Sprite"

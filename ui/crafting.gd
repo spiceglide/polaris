@@ -41,8 +41,6 @@ func _input(event):
 		print(craftable)
 
 func _setup_slots():
-	var anims = ["type1", "type2", "type3", "type4", "type5"]
-	
 	for row in rows:
 		var slot = recipe_scene.instantiate()
 		$Recipes.add_child(slot)

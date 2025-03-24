@@ -9,7 +9,6 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-	$AnimatedSprite2D.play()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,5 +46,3 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		$AnimatedSprite2D.animation = last_dir + "_idle"
-	
-	$AnimatedSprite2D.play()

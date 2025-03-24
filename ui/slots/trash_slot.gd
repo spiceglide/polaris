@@ -3,8 +3,6 @@ extends InventorySlot
 func _ready() -> void:
 	$Sprite.modulate = Color(0.6, 0.6, 0.6)
 	$Sprite.animation = anim
-	$Sprite.play()
-	$ItemSprite.play()
 	clear_item()
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:

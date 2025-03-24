@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb0ddj217hgs2"]
 
-[ext_resource type="Script" uid="uid://f85xdgpu4c7" path="res://ui/recipe_row.gd" id="1_vboqw"]
+[ext_resource type="Script" uid="uid://f85xdgpu4c7" path="res://ui/animate_slots.gd" id="1_vboqw"]
 [ext_resource type="PackedScene" uid="uid://b0coybcg1tfmj" path="res://ui/slots/CraftedSlot.tscn" id="2_17wtr"]
 [ext_resource type="PackedScene" uid="uid://xmwxqd3uos47" path="res://ui/slots/RecipeSlot.tscn" id="3_e42iy"]
 
 [node name="RecipeRow" type="HBoxContainer"]
 theme_override_constants/separation = 50
-script = ExtResource("1_vboqw")
 
 [node name="Crafted" parent="." instance=ExtResource("2_17wtr")]
 layout_mode = 2
 
 [node name="Recipe" type="HBoxContainer" parent="."]
 layout_mode = 2
+script = ExtResource("1_vboqw")
 
 [node name="Slot1" parent="Recipe" instance=ExtResource("3_e42iy")]
 layout_mode = 2
@@ -28,3 +28,5 @@ layout_mode = 2
 
 [node name="Slot5" parent="Recipe" instance=ExtResource("3_e42iy")]
 layout_mode = 2
+
+[connection signal="child_entered_tree" from="Recipe" to="Recipe" method="_on_child_entered_tree"]

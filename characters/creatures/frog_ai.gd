@@ -17,7 +17,6 @@ enum State {
 
 func _ready() -> void:
 	$AnimatedSprite2D.animation = "ribbit"
-	$AnimatedSprite2D.play()
 	
 func _process(delta: float) -> void:
 	if leap_time > (leap_duration * leap_count):

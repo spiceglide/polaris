@@ -9,11 +9,8 @@ enum Category {
 }
 
 @export var category: Category
-@export var anim: String = "type1"
 
 func _ready() -> void:
-	$Sprite.animation = anim
-	
 	match category:
 		Category.All:
 			$ItemSprite.animation = "all"
@@ -25,6 +22,3 @@ func _ready() -> void:
 			$ItemSprite.animation = "vessel"
 		Category.Sanity:
 			$ItemSprite.animation = "sanity"
-	
-	$Sprite.play()
-	$ItemSprite.play()

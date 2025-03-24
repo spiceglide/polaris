@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=43 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Texture2D" uid="uid://0ukhmay7mj81" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_1.png" id="2_0bx2s"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bx22on3a6ib0p" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_2.png" id="31_tf3ue"]
 [ext_resource type="Texture2D" uid="uid://dsl8ig174r7xe" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_3.png" id="32_o70wf"]
 [ext_resource type="Texture2D" uid="uid://bepag4uwymxs2" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_4.png" id="33_cqv5h"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="34_72jjy"]
 [ext_resource type="Script" uid="uid://dedkhqs84lumm" path="res://utility/interaction_system.gd" id="34_qs00s"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player_camera.gd" id="34_r4xk0"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
@@ -195,6 +196,7 @@ position = Vector2(0, 388)
 sprite_frames = SubResource("SpriteFrames_gqw58")
 animation = &"down_idle"
 offset = Vector2(2, -388)
+script = ExtResource("34_72jjy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 252.5)

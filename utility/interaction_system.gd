@@ -12,3 +12,4 @@ func _process(delta: float) -> void:
 		for area: Area2D in get_overlapping_areas():
 			if area.has_method("interact"):
 				area.interact(player)
+				break

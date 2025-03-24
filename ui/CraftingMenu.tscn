@@ -1,13 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt04wa7ht1ten"]
+[gd_scene load_steps=3 format=3 uid="uid://dt04wa7ht1ten"]
 
-[ext_resource type="Script" uid="uid://c2ukkdte1qj33" path="res://ui/inventory.gd" id="1_14nmj"]
+[ext_resource type="Script" uid="uid://bvo6if3hjdcyi" path="res://ui/crafting.gd" id="1_pno6w"]
 [ext_resource type="PackedScene" uid="uid://sxmeccp3qasg" path="res://ui/slots/CategoriesButton.tscn" id="2_pno6w"]
-[ext_resource type="PackedScene" uid="uid://bb0ddj217hgs2" path="res://ui/Recipe.tscn" id="3_r3pf1"]
 
-[node name="Crafting Menu" type="Control"]
+[node name="CraftingMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_14nmj")
+script = ExtResource("1_pno6w")
 
 [node name="Categories" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -21,15 +20,23 @@ layout_mode = 2
 
 [node name="Fire" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+category = 1
+anim = "type2"
 
 [node name="Tool" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+category = 2
+anim = "type3"
 
 [node name="Vessel" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+category = 3
+anim = "type4"
 
 [node name="Sanity" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+category = 4
+anim = "type5"
 
 [node name="Recipes" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -38,15 +45,3 @@ offset_right = 1866.0
 offset_bottom = 1680.0
 theme_override_constants/separation = 40
 metadata/_edit_group_ = true
-
-[node name="Recipe1" parent="Recipes" instance=ExtResource("3_r3pf1")]
-layout_mode = 2
-
-[node name="Recipe2" parent="Recipes" instance=ExtResource("3_r3pf1")]
-layout_mode = 2
-
-[node name="Recipe3" parent="Recipes" instance=ExtResource("3_r3pf1")]
-layout_mode = 2
-
-[node name="Recipe4" parent="Recipes" instance=ExtResource("3_r3pf1")]
-layout_mode = 2

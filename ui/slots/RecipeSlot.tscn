@@ -1,6 +1,5 @@
 [gd_scene load_steps=33 format=3 uid="uid://xmwxqd3uos47"]
 
-[ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_tbwq6"]
 [ext_resource type="Texture2D" uid="uid://dyjo2ei7vqd3l" path="res://assets/ui/items/berry_a.png" id="2_kgvkk"]
 [ext_resource type="Texture2D" uid="uid://c72k4twpuvu7t" path="res://assets/ui/items/berry_b.png" id="3_ac0pm"]
 [ext_resource type="Texture2D" uid="uid://c6awasrh27o8s" path="res://assets/ui/items/smallfire_a.png" id="4_ga7lu"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://o8p75ckqsvfi" path="res://assets/ui/items/stick_b.png" id="17_lauqn"]
 [ext_resource type="Texture2D" uid="uid://qmqtqfsqbnlk" path="res://assets/ui/items/torch_a.png" id="18_jcoxw"]
 [ext_resource type="Texture2D" uid="uid://bb4og6qca43nu" path="res://assets/ui/items/torch_b.png" id="19_5ggn7"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="19_tbwq6"]
 [ext_resource type="Texture2D" uid="uid://3viugkcnrajq" path="res://assets/ui/crafting/recipe_slot_1a.png" id="20_85bo8"]
 [ext_resource type="Texture2D" uid="uid://xt4lrp1nhhdv" path="res://assets/ui/crafting/recipe_slot_1b.png" id="21_t2f37"]
 [ext_resource type="Texture2D" uid="uid://dgllin1lih7mb" path="res://assets/ui/crafting/recipe_slot_2a.png" id="22_nh7t8"]
@@ -214,18 +214,21 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
-script = ExtResource("1_tbwq6")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(42, 40)
 sprite_frames = SubResource("SpriteFrames_brms5")
 animation = &"stick"
+frame_progress = 0.76348
 centered = false
+script = ExtResource("19_tbwq6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"type2"
+frame_progress = 0.177332
+script = ExtResource("19_tbwq6")
 
 [node name="Item" parent="." instance=ExtResource("30_qsxq4")]

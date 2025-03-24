@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dp0alufktwr2j"]
+[gd_scene load_steps=16 format=3 uid="uid://dp0alufktwr2j"]
 
 [ext_resource type="Script" uid="uid://u78s1iaw4kw8" path="res://ui/hint_button.gd" id="1_5pua0"]
 [ext_resource type="Texture2D" uid="uid://nk0nbrevslgp" path="res://assets/ui/inventory/inventory_e1.png" id="2_76ksy"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bcw2dlivfenou" path="res://assets/ui/inventory/itemslot_4b.png" id="11_8snrq"]
 [ext_resource type="Texture2D" uid="uid://dnvbeobuu1pl4" path="res://assets/ui/inventory/itemslot_5a.png" id="12_x0i34"]
 [ext_resource type="Texture2D" uid="uid://dmgpdivckhmk" path="res://assets/ui/inventory/itemslot_5b.png" id="13_dw8ho"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="14_76ksy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_355af"]
 animations = [{
@@ -104,6 +105,7 @@ metadata/_edit_group_ = true
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"hint"
+script = ExtResource("14_76ksy")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

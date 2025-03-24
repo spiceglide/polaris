@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://sxmeccp3qasg"]
+[gd_scene load_steps=25 format=3 uid="uid://sxmeccp3qasg"]
 
-[ext_resource type="Script" uid="uid://u78s1iaw4kw8" path="res://ui/hint_button.gd" id="1_ou45e"]
+[ext_resource type="Script" uid="uid://dfmhphmk0h6ew" path="res://ui/slots/categories_button.gd" id="1_y3q5a"]
 [ext_resource type="Texture2D" uid="uid://b6k01deu6lgt8" path="res://assets/ui/crafting/category_slot_1a.png" id="2_y3q5a"]
 [ext_resource type="Texture2D" uid="uid://ckm0avmbhee4q" path="res://assets/ui/crafting/category_slot_1b.png" id="3_mnoeh"]
 [ext_resource type="Texture2D" uid="uid://bx4ny5fqvlluf" path="res://assets/ui/crafting/category_slot_2a.png" id="4_bhvtq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b3p31mx8h6i7t" path="res://assets/ui/crafting/category_slot_4b.png" id="9_orke5"]
 [ext_resource type="Texture2D" uid="uid://r3cp55ewdx2s" path="res://assets/ui/crafting/category_slot_5a.png" id="10_tt756"]
 [ext_resource type="Texture2D" uid="uid://d3rn82xus5pqq" path="res://assets/ui/crafting/category_slot_5b.png" id="11_606wh"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="12_mnoeh"]
 [ext_resource type="Texture2D" uid="uid://kwmlumhymv40" path="res://assets/ui/crafting/category_exclamationmark_a.png" id="12_s6brs"]
 [ext_resource type="Texture2D" uid="uid://b7go4kckqtoxj" path="res://assets/ui/crafting/category_exclamationmark_b.png" id="13_ujwv8"]
 [ext_resource type="Texture2D" uid="uid://dsq624x6ekpm" path="res://assets/ui/crafting/category_fire_a.png" id="14_8q453"]
@@ -152,18 +153,20 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
-script = ExtResource("1_ou45e")
+script = ExtResource("1_y3q5a")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_t13gf")
-animation = &"type5"
+animation = &"type1"
+script = ExtResource("12_mnoeh")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"all"
+script = ExtResource("12_mnoeh")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

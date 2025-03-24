@@ -4,6 +4,7 @@ class_name InventorySystem
 @onready var slot_scene = preload("res://ui/slots/Slot.tscn")
 @onready var item_scene = preload("res://ui/Item.tscn")
 @onready var hint_scene = preload("res://ui/slots/HintButton.tscn")
+@onready var crafting_menu = HUD.get_node("CraftingMenu")
 
 @export var cols: int = 5
 @export var rows: int = 5
@@ -25,7 +26,8 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
-		toggle_inventory()
+		$Full.visible = !($Full.visible)
+		$Trash.visible = !($Trash.visible)
 		
 	if event.is_action_pressed("hotbar"):
 		select(event.as_text().to_int() - 1)
@@ -48,10 +50,6 @@ func _input(event):
 			else:
 				break
 		craft(ingredients)
-
-func toggle_inventory():
-	$Full.visible = !($Full.visible)
-	$Trash.visible = !($Trash.visible)
 
 func set_item(item_id: String) -> bool:
 	var slot = get_first_empty_slot()

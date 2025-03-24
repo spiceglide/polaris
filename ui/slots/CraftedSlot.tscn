@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b0coybcg1tfmj"]
+[gd_scene load_steps=34 format=3 uid="uid://b0coybcg1tfmj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_6fpoc"]
 [ext_resource type="Texture2D" uid="uid://dyjo2ei7vqd3l" path="res://assets/ui/items/berry_a.png" id="2_io71b"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://o8p75ckqsvfi" path="res://assets/ui/items/stick_b.png" id="17_5js2v"]
 [ext_resource type="Texture2D" uid="uid://qmqtqfsqbnlk" path="res://assets/ui/items/torch_a.png" id="18_m0tkw"]
 [ext_resource type="Texture2D" uid="uid://bb4og6qca43nu" path="res://assets/ui/items/torch_b.png" id="19_paxup"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_io71b"]
 [ext_resource type="Texture2D" uid="uid://b4qerjpmk66mb" path="res://assets/ui/crafting/crafted_slot_1a.png" id="20_kyeyh"]
 [ext_resource type="Texture2D" uid="uid://6mhk10i3a36s" path="res://assets/ui/crafting/crafted_slot_1b.png" id="21_bqhur"]
 [ext_resource type="Texture2D" uid="uid://mu3hywk4gm1e" path="res://assets/ui/crafting/crafted_slot_2a.png" id="22_f10ed"]
@@ -222,11 +223,13 @@ position = Vector2(42, 40)
 sprite_frames = SubResource("SpriteFrames_brms5")
 animation = &"torch"
 centered = false
+script = ExtResource("20_io71b")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_2x4ab")
 animation = &"type1"
+script = ExtResource("20_io71b")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -4,7 +4,6 @@ class_name InventorySystem
 @onready var slot_scene = preload("res://ui/slots/Slot.tscn")
 @onready var item_scene = preload("res://ui/Item.tscn")
 @onready var hint_scene = preload("res://ui/slots/HintButton.tscn")
-@onready var crafting_menu = HUD.get_node("CraftingMenu")
 
 @export var cols: int = 5
 @export var rows: int = 5
@@ -50,6 +49,14 @@ func get_first_empty_slot():
 	for slot in slots:
 		if not slot.item:
 			return slot
+
+func get_all_items():
+	var items = []
+	for slot in slots:
+		var item = slot.get_item()
+		if item:
+			items.append(slot.get_item())
+	return items
 
 func _setup_slots():
 	$Full.columns = cols

@@ -37,9 +37,10 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
-		_sort_recipes()
-		_update_list()
 		self.visible = !(self.visible)
+		if self.visible:
+			_sort_recipes()
+			_update_list()
 
 func _setup_slots():
 	for row in rows:

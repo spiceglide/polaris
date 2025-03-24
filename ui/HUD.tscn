@@ -54,3 +54,4 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(50, 0)

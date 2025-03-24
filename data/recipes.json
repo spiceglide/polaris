@@ -6,7 +6,7 @@
     },
     {
         "in": ["stick", "cone", "log"],
-        "out": "bigfire",
+        "out": "campfire",
 	"category": "fire"
     },
     {

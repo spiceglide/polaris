@@ -1,8 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://bvpp82otu27sj"]
+[gd_scene load_steps=38 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_ygpc3"]
 [ext_resource type="Texture2D" uid="uid://dyjo2ei7vqd3l" path="res://assets/ui/items/berry_a.png" id="2_ntr71"]
 [ext_resource type="Texture2D" uid="uid://c72k4twpuvu7t" path="res://assets/ui/items/berry_b.png" id="3_fdsj6"]
+[ext_resource type="Texture2D" uid="uid://45xwi707y4gw" path="res://assets/ui/items/campfire_a.png" id="4_3hlki"]
+[ext_resource type="Texture2D" uid="uid://dr77oc22xtklo" path="res://assets/ui/items/campfire_b.png" id="5_42i2g"]
 [ext_resource type="Texture2D" uid="uid://dlucss6hej6eg" path="res://assets/ui/items/cloth_a.png" id="6_aq67p"]
 [ext_resource type="Texture2D" uid="uid://bj7bbr10r2j7q" path="res://assets/ui/items/cloth_b.png" id="7_d62ay"]
 [ext_resource type="Texture2D" uid="uid://bhq71os370f1g" path="res://assets/ui/items/cone_a.png" id="8_0q5jh"]
@@ -49,13 +51,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_alxpj")
+"texture": ExtResource("4_3hlki")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_3d1qc")
+"texture": ExtResource("5_42i2g")
 }],
 "loop": true,
-"name": &"bigfire",
+"name": &"campfire",
 "speed": 2.0
 }, {
 "frames": [{
@@ -234,7 +236,7 @@ script = ExtResource("1_ygpc3")
 z_index = 1
 position = Vector2(42, 40)
 sprite_frames = SubResource("SpriteFrames_brms5")
-animation = &"berries"
+animation = &"campfire"
 centered = false
 script = ExtResource("20_2aomv")
 

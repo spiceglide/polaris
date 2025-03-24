@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
-		$Full.visible = !($Full.visible)
+		toggle_inventory()
 		
 	if event.is_action_pressed("hotbar"):
 		select(event.as_text().to_int() - 1)
@@ -48,6 +48,10 @@ func _input(event):
 			else:
 				break
 		craft(ingredients)
+
+func toggle_inventory():
+	$Full.visible = !($Full.visible)
+	$Trash.visible = !($Trash.visible)
 
 func set_item(item_id: String) -> bool:
 	var slot = get_first_empty_slot()

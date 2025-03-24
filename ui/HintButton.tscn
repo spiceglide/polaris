@@ -96,7 +96,7 @@ grow_vertical = 0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 500
+theme_override_constants/margin_bottom = 50
 script = ExtResource("1_sbv1y")
 metadata/_edit_group_ = true
 

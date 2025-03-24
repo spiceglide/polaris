@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7a2wv4ftrcw1"]
+[gd_scene load_steps=3 format=3 uid="uid://7a2wv4ftrcw1"]
 
 [ext_resource type="Script" uid="uid://c2ukkdte1qj33" path="res://ui/inventory.gd" id="1_b6eu6"]
+[ext_resource type="PackedScene" uid="uid://dcdscwfma5sob" path="res://ui/TrashSlot.tscn" id="2_0sq80"]
 
 [node name="Inventory HUD" type="Control"]
 layout_mode = 3
@@ -28,3 +29,11 @@ theme_override_constants/v_separation = 2
 columns = 5
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
+
+[node name="Trash" parent="." instance=ExtResource("2_0sq80")]
+visible = false
+layout_mode = 1
+offset_left = 1148.0
+offset_top = -369.0
+offset_right = 1448.0
+offset_bottom = -69.0

@@ -29,7 +29,7 @@ z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cfx2x")
-position = Vector2(115, 1154)
+position = Vector2(115, 1175)
 texture = ExtResource("2_av8pc")
 centered = false
 offset = Vector2(-695, -1510)
@@ -49,11 +49,11 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-182, -59.75)
+position = Vector2(-182, -38.75)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(-174, -72)
+position = Vector2(-174, -51)
 script = ExtResource("4_18ynv")
 description = "\"It's a bush\""
 metadata/_edit_group_ = true

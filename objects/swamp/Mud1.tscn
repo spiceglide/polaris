@@ -9,13 +9,13 @@ radius = 248.918
 [node name="Mud" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(483, -7)
+position = Vector2(31, 542)
 texture = ExtResource("1_wbrya")
 centered = false
 offset = Vector2(-483, -539)
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(465, -269)
+position = Vector2(13, 280)
 script = ExtResource("4_kkru7")
 metadata/_edit_group_ = true
 

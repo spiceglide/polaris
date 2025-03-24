@@ -24,7 +24,7 @@ z_index = 1
 material = SubResource("ShaderMaterial_hwicx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(33, 137)
+position = Vector2(3.5, 57.5)
 texture = ExtResource("2_c5dir")
 offset = Vector2(2, -94)
 
@@ -39,7 +39,7 @@ skew = 0.733038
 texture = ExtResource("2_c5dir")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(30, 97)
+position = Vector2(0.5, 17.5)
 script = ExtResource("3_2qrgu")
 description = "\"Better than nothing\""
 item = "rock"

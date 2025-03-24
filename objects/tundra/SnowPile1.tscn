@@ -11,7 +11,7 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(847.5, 138)
+size = Vector2(622, 130)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nv3j8"]
 radius = 462.017
@@ -20,7 +20,7 @@ radius = 462.017
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 163)
+position = Vector2(0, 64)
 texture = ExtResource("1_hkd6j")
 offset = Vector2(0, -163)
 
@@ -37,11 +37,11 @@ texture = ExtResource("1_hkd6j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-25.75, 115)
+position = Vector2(-32, 58)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(-6, 102)
+position = Vector2(-6, 3)
 script = ExtResource("3_3ooul")
 description = "\"What! An entire log inside the snow pile!\""
 item = "log"

@@ -44,7 +44,7 @@ offset = Vector2(-692, -2328)
 flip_h = true
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(220, -87)
+position = Vector2(175, -87)
 script = ExtResource("4_s0no2")
 description = "\"Sausagepodobny\""
 metadata/_edit_group_ = true

@@ -11,7 +11,7 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(813, 193)
+size = Vector2(420, 124)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_61sv8"]
 radius = 494.684
@@ -20,7 +20,7 @@ radius = 494.684
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 218)
+position = Vector2(8, 143)
 texture = ExtResource("1_eqdry")
 offset = Vector2(0, -218)
 
@@ -37,11 +37,11 @@ texture = ExtResource("1_eqdry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-31.5, 152.5)
+position = Vector2(-7, 43)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(-6, 69)
+position = Vector2(2, -6)
 script = ExtResource("3_vl5v1")
 description = "\"Cold...\""
 metadata/_edit_group_ = true

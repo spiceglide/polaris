@@ -5,13 +5,14 @@ extends CharacterBody2D
 @export var leap_count = 2
 var state: State = State.Idle
 var leap_time = 0
+var speech_time = 0
 var leap_direction = Vector2.ZERO
 var last_player_pos = Vector2.ZERO
 
 enum State {
 	Idle,
 	Alert,
-	Danger,
+	Flee,
 }
 
 func _ready() -> void:
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 	if leap_time > (leap_duration * leap_count):
 		finish_leap()
 		
-	if state == State.Danger:
+	if state == State.Flee:
 		if leap_time == 0:
 			start_leap()
 	
@@ -32,9 +33,11 @@ func _process(delta: float) -> void:
 	if leap_time == 0:
 		match state:
 			State.Idle:
-					$AnimatedSprite2D.animation = "ribbit"
+				$AnimatedSprite2D.animation = "ribbit"
+				$Announcement.idle_chatter = ["Ribbit"]
 			State.Alert:
-					$AnimatedSprite2D.animation = "idle"
+				$AnimatedSprite2D.animation = "idle"
+				$Announcement.idle_chatter = ["*shiver*", "*nervous croaking*"]
 
 func _physics_process(delta: float) -> void:
 	# Determine direction
@@ -70,7 +73,6 @@ func start_leap():
 func finish_leap():
 	leap_direction = Vector2.ZERO
 	leap_time = 0
-	$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
 
 func _on_alert_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -84,8 +86,9 @@ func _on_alert_range_body_exited(body: Node2D) -> void:
 
 func _on_danger_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		self.state = State.Danger
+		self.state = State.Flee
 		last_player_pos = body.position
+		$Announcement.announce("!!")
 
 func _on_danger_range_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

@@ -83,7 +83,7 @@ script = ExtResource("1_2gmud")
 position = Vector2(124, 118)
 sprite_frames = SubResource("SpriteFrames_wsglq")
 animation = &"ribbit"
-frame_progress = 0.991729
+frame_progress = 0.195686
 centered = false
 offset = Vector2(-124, -118)
 
@@ -133,7 +133,7 @@ offset_bottom = -21.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 28
 theme_override_fonts/font = ExtResource("37_ghthx")
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 96
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("38_khxt4")

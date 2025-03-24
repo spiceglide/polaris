@@ -22,9 +22,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 		if state == SlotState.SELECTED_CLICK:
-			$ItemSprite.visible = false
-			var drag_data = _generate_drag_data()
-			force_drag(drag_data["data"], drag_data["preview"])
+			_clickdrag()
+
 	
 func set_item(id: String):
 	$Item.set_item(id)
@@ -48,6 +47,14 @@ func select():
 func deselect():
 	self.scale = Vector2(1, 1)
 	$Sprite.modulate = Color(1, 1, 1)
+	
+func _clickdrag():
+	if not item:
+		return
+	
+	$ItemSprite.visible = false
+	var drag_data = _generate_drag_data()
+	force_drag(drag_data["data"], drag_data["preview"])
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if not item:

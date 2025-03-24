@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://dcdscwfma5sob"]
 
-[ext_resource type="Script" uid="uid://dw6lci1a46ls4" path="res://ui/trash_slot.gd" id="1_hhlo8"]
+[ext_resource type="Script" uid="uid://dw6lci1a46ls4" path="res://ui/slots/trash_slot.gd" id="1_hhlo8"]
 [ext_resource type="Texture2D" uid="uid://dyjo2ei7vqd3l" path="res://assets/ui/items/berry_a.png" id="2_d0ffw"]
 [ext_resource type="Texture2D" uid="uid://c72k4twpuvu7t" path="res://assets/ui/items/berry_b.png" id="3_02n2s"]
 [ext_resource type="Texture2D" uid="uid://c6awasrh27o8s" path="res://assets/ui/items/smallfire_a.png" id="4_bl3uq"]
@@ -237,6 +237,7 @@ animation = &"berries"
 centered = false
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.603922, 0.603922, 0.603922, 1)
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"type2"

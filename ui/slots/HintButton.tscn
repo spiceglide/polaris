@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=3 uid="uid://dp0alufktwr2j"]
+
+[ext_resource type="Script" uid="uid://u78s1iaw4kw8" path="res://ui/hint_button.gd" id="1_5pua0"]
+[ext_resource type="Texture2D" uid="uid://nk0nbrevslgp" path="res://assets/ui/inventory/inventory_e1.png" id="2_76ksy"]
+[ext_resource type="Texture2D" uid="uid://bd1p5m4n1jgy3" path="res://assets/ui/inventory/inventory_e2.png" id="3_lg28f"]
+[ext_resource type="Texture2D" uid="uid://dt761dpjabvwn" path="res://assets/ui/inventory/itemslot_1a.png" id="4_lgeec"]
+[ext_resource type="Texture2D" uid="uid://bn12d5mippxnu" path="res://assets/ui/inventory/itemslot_1b.png" id="5_3e38m"]
+[ext_resource type="Texture2D" uid="uid://003jyxi5h45b" path="res://assets/ui/inventory/itemslot_2a.png" id="6_o01ag"]
+[ext_resource type="Texture2D" uid="uid://ddsamimhqtiwd" path="res://assets/ui/inventory/itemslot_2b.png" id="7_33whc"]
+[ext_resource type="Texture2D" uid="uid://bvt2lfr3s7mx5" path="res://assets/ui/inventory/itemslot_3a.png" id="8_3ilhn"]
+[ext_resource type="Texture2D" uid="uid://c0035xmlwvo6u" path="res://assets/ui/inventory/itemslot_3b.png" id="9_kotwa"]
+[ext_resource type="Texture2D" uid="uid://b6q55bk5ig2x1" path="res://assets/ui/inventory/itemslot_4a.png" id="10_obmm4"]
+[ext_resource type="Texture2D" uid="uid://bcw2dlivfenou" path="res://assets/ui/inventory/itemslot_4b.png" id="11_8snrq"]
+[ext_resource type="Texture2D" uid="uid://dnvbeobuu1pl4" path="res://assets/ui/inventory/itemslot_5a.png" id="12_x0i34"]
+[ext_resource type="Texture2D" uid="uid://dmgpdivckhmk" path="res://assets/ui/inventory/itemslot_5b.png" id="13_dw8ho"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_355af"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_76ksy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lg28f")
+}],
+"loop": true,
+"name": &"hint",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lgeec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3e38m")
+}],
+"loop": true,
+"name": &"type1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o01ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_33whc")
+}],
+"loop": true,
+"name": &"type2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3ilhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kotwa")
+}],
+"loop": true,
+"name": &"type3",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_obmm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8snrq")
+}],
+"loop": true,
+"name": &"type4",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_x0i34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dw8ho")
+}],
+"loop": true,
+"name": &"type5",
+"speed": 2.0
+}]
+
+[node name="HintButton" type="MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -302.0
+offset_right = 299.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_5pua0")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(148, 141.5)
+sprite_frames = SubResource("SpriteFrames_355af")
+animation = &"hint"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

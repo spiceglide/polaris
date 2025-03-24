@@ -1,0 +1,174 @@
+[gd_scene load_steps=24 format=3 uid="uid://sxmeccp3qasg"]
+
+[ext_resource type="Script" uid="uid://u78s1iaw4kw8" path="res://ui/hint_button.gd" id="1_ou45e"]
+[ext_resource type="Texture2D" uid="uid://b6k01deu6lgt8" path="res://assets/ui/crafting/category_slot_1a.png" id="2_y3q5a"]
+[ext_resource type="Texture2D" uid="uid://ckm0avmbhee4q" path="res://assets/ui/crafting/category_slot_1b.png" id="3_mnoeh"]
+[ext_resource type="Texture2D" uid="uid://bx4ny5fqvlluf" path="res://assets/ui/crafting/category_slot_2a.png" id="4_bhvtq"]
+[ext_resource type="Texture2D" uid="uid://ccpmkodhdy0ta" path="res://assets/ui/crafting/category_slot_2b.png" id="5_cqyp1"]
+[ext_resource type="Texture2D" uid="uid://b025kro1dcygj" path="res://assets/ui/crafting/category_slot_3a.png" id="6_xvose"]
+[ext_resource type="Texture2D" uid="uid://bdj3mnw11npbc" path="res://assets/ui/crafting/category_slot_3b.png" id="7_d803b"]
+[ext_resource type="Texture2D" uid="uid://cg0oymtekf86y" path="res://assets/ui/crafting/category_slot_4a.png" id="8_noyo8"]
+[ext_resource type="Texture2D" uid="uid://b3p31mx8h6i7t" path="res://assets/ui/crafting/category_slot_4b.png" id="9_orke5"]
+[ext_resource type="Texture2D" uid="uid://r3cp55ewdx2s" path="res://assets/ui/crafting/category_slot_5a.png" id="10_tt756"]
+[ext_resource type="Texture2D" uid="uid://d3rn82xus5pqq" path="res://assets/ui/crafting/category_slot_5b.png" id="11_606wh"]
+[ext_resource type="Texture2D" uid="uid://kwmlumhymv40" path="res://assets/ui/crafting/category_exclamationmark_a.png" id="12_s6brs"]
+[ext_resource type="Texture2D" uid="uid://b7go4kckqtoxj" path="res://assets/ui/crafting/category_exclamationmark_b.png" id="13_ujwv8"]
+[ext_resource type="Texture2D" uid="uid://dsq624x6ekpm" path="res://assets/ui/crafting/category_fire_a.png" id="14_8q453"]
+[ext_resource type="Texture2D" uid="uid://bojq5rxyyotyr" path="res://assets/ui/crafting/category_fire_b.png" id="15_lshr5"]
+[ext_resource type="Texture2D" uid="uid://ynnbrg6scc2e" path="res://assets/ui/crafting/category_sanity_a.png" id="16_c6wco"]
+[ext_resource type="Texture2D" uid="uid://ca1rrysvinanj" path="res://assets/ui/crafting/category_sanity_b.png" id="17_16ssp"]
+[ext_resource type="Texture2D" uid="uid://k477424kw8w1" path="res://assets/ui/crafting/category_tool_a.png" id="18_yqwut"]
+[ext_resource type="Texture2D" uid="uid://dur3qvuhee0yx" path="res://assets/ui/crafting/category_tool_b.png" id="19_uyqqv"]
+[ext_resource type="Texture2D" uid="uid://du1rhj26vf3ib" path="res://assets/ui/crafting/category_vessel_a.png" id="20_trt30"]
+[ext_resource type="Texture2D" uid="uid://bwhut30bocl4c" path="res://assets/ui/crafting/category_vessel_b.png" id="21_yykn1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t13gf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y3q5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mnoeh")
+}],
+"loop": true,
+"name": &"type1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bhvtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cqyp1")
+}],
+"loop": true,
+"name": &"type2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xvose")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d803b")
+}],
+"loop": true,
+"name": &"type3",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_noyo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_orke5")
+}],
+"loop": true,
+"name": &"type4",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_tt756")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_606wh")
+}],
+"loop": true,
+"name": &"type5",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_355af"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_s6brs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ujwv8")
+}],
+"loop": true,
+"name": &"all",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_8q453")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lshr5")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_c6wco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_16ssp")
+}],
+"loop": true,
+"name": &"sanity",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_yqwut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_uyqqv")
+}],
+"loop": true,
+"name": &"tool",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_trt30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yykn1")
+}],
+"loop": true,
+"name": &"vessel",
+"speed": 2.0
+}]
+
+[node name="Categories Button" type="MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -302.0
+offset_right = 299.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_ou45e")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(148, 141.5)
+sprite_frames = SubResource("SpriteFrames_t13gf")
+animation = &"type5"
+
+[node name="ItemSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(148, 141.5)
+sprite_frames = SubResource("SpriteFrames_355af")
+animation = &"all"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

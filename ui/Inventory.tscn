@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7a2wv4ftrcw1"]
 
 [ext_resource type="Script" uid="uid://c2ukkdte1qj33" path="res://ui/inventory.gd" id="1_b6eu6"]
-[ext_resource type="PackedScene" uid="uid://dcdscwfma5sob" path="res://ui/TrashSlot.tscn" id="2_0sq80"]
+[ext_resource type="PackedScene" uid="uid://dcdscwfma5sob" path="res://ui/slots/TrashSlot.tscn" id="2_0sq80"]
 
 [node name="Inventory HUD" type="Control"]
 layout_mode = 3

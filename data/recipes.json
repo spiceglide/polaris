@@ -1,14 +1,17 @@
 [
     {
         "in": ["stick", "cone"],
-        "out": "smallfire"
+        "out": "smallfire",
+	"category": "fire"
     },
     {
         "in": ["stick", "cone", "log"],
-        "out": "bigfire"
+        "out": "bigfire",
+	"category": "fire"
     },
     {
         "in": ["stick", "sap", "cloth"],
-        "out": "torch"
+        "out": "torch",
+	"category": "fire"
     }
 ]

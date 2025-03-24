@@ -2,10 +2,10 @@ extends Control
 class_name CraftingSystem
 
 @onready var recipe_scene = preload("res://ui/RecipeRow.tscn")
+@onready var inventory: InventorySystem = HUD.get_node("Inventory")
 
 @export var rows: int = 5
-var slots: Array[InventorySlot] = []
-var selected_slot: int = 0
+var slots = inventory.slots
 
 var recipes: Array
 
@@ -42,14 +42,8 @@ func _setup_slots():
 	
 	for row in rows:
 		var slot = recipe_scene.instantiate()
-		#slot.anim = anims[row % len(anims)]
 		$Recipes.add_child(slot)
 		slots.append(slot)
-
-func select(slot_index: int):
-	slots[selected_slot].deselect()
-	selected_slot = slot_index
-	slots[selected_slot].select()
 
 func craft(ingr_slots: Array) -> bool:
 	var ingredients = []
@@ -68,7 +62,6 @@ func craft(ingr_slots: Array) -> bool:
 	for recipe in recipes:
 		if ingredients == recipe["in"]:
 			slots[ingr_slots[0]].set_item(recipe["out"])
-			select(ingr_slots[0])
 			print(recipe["out"])
 			for i in ingr_slots.slice(1):
 				slots[i].clear_item()

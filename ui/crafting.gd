@@ -5,6 +5,7 @@ class_name CraftingSystem
 @onready var inventory: InventorySystem = HUD.get_node("Inventory")
 
 @export var rows: int = 5
+@export var current_category = "all"
 var craftable = []
 var uncraftable = []
 var recipes: Array
@@ -44,6 +45,12 @@ func _setup_slots():
 	for row in rows:
 		var slot = recipe_scene.instantiate()
 		$Recipes.add_child(slot)
+	
+	for category in $Categories.get_children():
+		if category.name.to_lower() == current_category:
+			category.enable()
+		else:
+			category.disable() 
 
 func _sort_recipes():
 	# TODO: consider item category
@@ -52,6 +59,9 @@ func _sort_recipes():
 	uncraftable = []
 	
 	for recipe in recipes:
+		if (recipe["category"] != current_category) and (current_category != "all"):
+			continue
+		
 		if is_subset(recipe["in"], all_items):
 			craftable.append(recipe)
 		else:

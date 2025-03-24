@@ -22,3 +22,9 @@ func _ready() -> void:
 			$ItemSprite.animation = "vessel"
 		Category.Sanity:
 			$ItemSprite.animation = "sanity"
+
+func enable():
+	$Sprite.modulate = Color(1, 1, 1)
+
+func disable():
+	$Sprite.modulate = Color(0.6, 0.6, 0.6)

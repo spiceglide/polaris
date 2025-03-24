@@ -7,7 +7,7 @@ class_name InventorySystem
 
 @export var cols: int = 5
 @export var rows: int = 5
-var slots: Array[InventorySlot] = []
+var slots: Array[ItemSlot] = []
 var selected_slot: int = 0
 
 # Called when the node enters the scene tree for the first time.

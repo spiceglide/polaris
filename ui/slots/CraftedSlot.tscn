@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://b0coybcg1tfmj"]
 
-[ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_6fpoc"]
+[ext_resource type="Script" uid="uid://csmdpplcjysma" path="res://ui/slots/crafted_slot.gd" id="1_io71b"]
 [ext_resource type="Texture2D" uid="uid://dyjo2ei7vqd3l" path="res://assets/ui/items/berry_a.png" id="2_io71b"]
 [ext_resource type="Texture2D" uid="uid://c72k4twpuvu7t" path="res://assets/ui/items/berry_b.png" id="3_4b8hj"]
 [ext_resource type="Texture2D" uid="uid://c6awasrh27o8s" path="res://assets/ui/items/smallfire_a.png" id="4_ydkte"]
@@ -215,7 +215,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
-script = ExtResource("1_6fpoc")
+script = ExtResource("1_io71b")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1

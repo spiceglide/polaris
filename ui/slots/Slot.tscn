@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bvpp82otu27sj"]
+[gd_scene load_steps=36 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_ygpc3"]
 [ext_resource type="Texture2D" uid="uid://dyjo2ei7vqd3l" path="res://assets/ui/items/berry_a.png" id="2_ntr71"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cvxx3i4woijx5" path="res://assets/ui/items/smallfire_b.png" id="17_3d1qc"]
 [ext_resource type="Texture2D" uid="uid://dpvu8tj3cgi8o" path="res://assets/ui/items/stick_a.png" id="18_8y35m"]
 [ext_resource type="Texture2D" uid="uid://o8p75ckqsvfi" path="res://assets/ui/items/stick_b.png" id="19_2l4vf"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_2aomv"]
 [ext_resource type="Texture2D" uid="uid://qmqtqfsqbnlk" path="res://assets/ui/items/torch_a.png" id="20_q4nq7"]
 [ext_resource type="Texture2D" uid="uid://bb4og6qca43nu" path="res://assets/ui/items/torch_b.png" id="21_bfnn7"]
 [ext_resource type="Texture2D" uid="uid://nk0nbrevslgp" path="res://assets/ui/inventory/inventory_e1.png" id="22_2kom7"]
@@ -235,11 +236,13 @@ position = Vector2(42, 40)
 sprite_frames = SubResource("SpriteFrames_brms5")
 animation = &"berries"
 centered = false
+script = ExtResource("20_2aomv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"type2"
+script = ExtResource("20_2aomv")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)

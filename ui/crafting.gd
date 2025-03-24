@@ -37,8 +37,8 @@ func _process(delta: float) -> void:
 func _input(event):
 	if event.is_action_pressed("inventory"):
 		_sort_recipes()
+		_update_list()
 		self.visible = !(self.visible)
-		print(craftable)
 
 func _setup_slots():
 	for row in rows:
@@ -46,20 +46,37 @@ func _setup_slots():
 		$Recipes.add_child(slot)
 
 func _sort_recipes():
+	# TODO: consider item category
 	var all_items = inventory.get_all_items()
 	craftable = []
 	uncraftable = []
 	
 	for recipe in recipes:
-		if is_subset(all_items, recipe["in"]):
+		if is_subset(recipe["in"], all_items):
 			craftable.append(recipe)
 		else:
 			uncraftable.append(recipe)
 
+func _update_list():
+	var recipe_rows = $Recipes.get_children()
+	var start = 0
+	
+	var recipe
+	var i = start
+	for row in recipe_rows:
+		if i < len(craftable):
+			recipe = craftable[i]
+			row.set_recipe(recipe, true)
+		elif i < (len(craftable) + len(uncraftable)):
+			recipe = uncraftable[i - len(craftable)]
+			row.set_recipe(recipe, false)
+		else:
+			row.clear_recipe()
+		
+		i += 1
+
 func is_subset(array1: Array, array2: Array) -> bool:
-	for item in array2:
-		if !array1.has(item):
-			return false
-		if array2.count(item) != array1.count(item):
+	for item in array1:
+		if item not in array2:
 			return false
 	return true

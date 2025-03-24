@@ -1,5 +1,5 @@
 extends Control
-class_name InventorySlot
+class_name ItemSlot
 
 enum SlotState {
 	INACTIVE,
@@ -15,8 +15,6 @@ var last_used = Time.get_ticks_msec()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sprite.animation = anim
-	$Sprite.play()
-	$ItemSprite.play()
 	
 	clear_item()
 	add_to_group("inventory_slots")

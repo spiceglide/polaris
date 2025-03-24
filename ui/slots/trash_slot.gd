@@ -1,4 +1,4 @@
-extends InventorySlot
+extends ItemSlot
 
 func _ready() -> void:
 	$Sprite.modulate = Color(0.6, 0.6, 0.6)

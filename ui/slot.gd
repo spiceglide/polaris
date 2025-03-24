@@ -25,7 +25,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 		if state == SlotState.SELECTED_CLICK:
 			$ItemSprite.visible = false
-			force_drag([item, self], _generate_preview())
+			var drag_data = _generate_drag_data()
+			force_drag(drag_data["data"], drag_data["preview"])
 	
 func set_item(id: String):
 	$Item.set_item(id)
@@ -56,20 +57,24 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	
 	if state == SlotState.INACTIVE:
 		state = SlotState.SELECTED_DRAG
-		
-	var preview = _generate_preview()
-	set_drag_preview(preview)
+	
 	$ItemSprite.visible = false
-	return [item, self]
+		
+	var drag_data = _generate_drag_data()
+	set_drag_preview(drag_data["preview"])
+	return drag_data["data"]
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	if item:
-		return false
 	if not data[0]:
 		return false
 	return true
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+	var source_slot = data[1]
+	if item:
+		source_slot.set_item(item.item_id)
+	else:
+		source_slot.clear_item()
 	set_item(data[0].item_id)
 	state = SlotState.INACTIVE
 	last_used = Time.get_ticks_msec()
@@ -83,6 +88,12 @@ func _generate_preview():
 	preview.scale = Vector2(0.3, 0.3)
 	return preview
 
+func _generate_drag_data():
+	return {
+		"data": [item.duplicate(), self],
+		"preview": _generate_preview(),
+	}
+
 func _notification(type):
 	match type:
 		NOTIFICATION_DRAG_END:
@@ -92,7 +103,7 @@ func _notification(type):
 			last_used = Time.get_ticks_msec()
 			
 			if is_drag_successful():
-				clear_item()
+				pass
 			else:
 				if item:
 					$ItemSprite.visible = true

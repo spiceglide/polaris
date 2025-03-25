@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://uhnhyutpcf7j"]
 
-[ext_resource type="Texture2D" uid="uid://m0gt164mqkly" path="res://assets/objects/swamp/s_tree_1.PNG" id="1_n0bvb"]
+[ext_resource type="Texture2D" uid="uid://dugpya46uo2y4" path="res://assets/objects/swamp/s_tree_1.png" id="1_n0bvb"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_qimsc"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_18ynv"]
 
@@ -11,10 +11,10 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(1127, 531)
+size = Vector2(349, 118)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 723.747
+radius = 289.691
 
 [node name="Tree" type="StaticBody2D"]
 z_index = 1
@@ -22,8 +22,6 @@ z_index = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -865)
 texture = ExtResource("1_n0bvb")
-centered = false
-offset = Vector2(-2151, -7335)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
@@ -40,11 +38,10 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(41.5, -264.5)
+position = Vector2(26.5, 59)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(5, -331)
 script = ExtResource("4_18ynv")
 description = "\"Swampy\""
 metadata/_edit_group_ = true

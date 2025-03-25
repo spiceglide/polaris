@@ -11,16 +11,16 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(420, 124)
+size = Vector2(144, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_61sv8"]
-radius = 494.684
+radius = 84.006
 
 [node name="Snow Pile" type="StaticBody2D"]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, 143)
+position = Vector2(7, 188)
 texture = ExtResource("1_eqdry")
 offset = Vector2(0, -218)
 
@@ -29,19 +29,18 @@ self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_ooofd")
-position = Vector2(-101, 81)
-rotation = -3.14159
+position = Vector2(-14, -160)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("1_eqdry")
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-7, 43)
+position = Vector2(8, 5)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(2, -6)
 script = ExtResource("3_vl5v1")
 description = "\"Cold...\""
 metadata/_edit_group_ = true

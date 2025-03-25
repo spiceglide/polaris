@@ -19,7 +19,7 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(998, 242.5)
+size = Vector2(163, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
 radius = 677.012
@@ -29,31 +29,25 @@ z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cfx2x")
-position = Vector2(61, 908)
+position = Vector2(0, -70)
 texture = ExtResource("4_v4qv5")
-centered = false
-offset = Vector2(-695, -1510)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_cijpc")
-position = Vector2(441, -1443)
-rotation = -3.14159
+position = Vector2(-20, 98)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("4_v4qv5")
-centered = false
-offset = Vector2(-692, -2328)
-flip_h = true
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(6, -96.75)
+position = Vector2(5.5, -5)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(24, -218)
 script = ExtResource("4_byg76")
 description = "\"It's a bush\""
 metadata/_edit_group_ = true

@@ -4,18 +4,14 @@
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_qvxw4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 114.07
+radius = 81.0987
 
 [node name="Mud" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(309, 1)
 texture = ExtResource("1_kpcub")
-centered = false
-offset = Vector2(-307, -256)
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(323, -131)
 script = ExtResource("2_qvxw4")
 metadata/_edit_group_ = true
 

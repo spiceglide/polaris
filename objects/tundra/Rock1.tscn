@@ -11,28 +11,26 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ednr2"]
-radius = 84.0536
+radius = 27.074
 
 [node name="Rock" type="StaticBody2D"]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(12.5, 30.5)
+position = Vector2(1, -10)
 texture = ExtResource("1_edgbq")
-offset = Vector2(1, -58)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_jysaq")
-position = Vector2(-20, 13)
-rotation = -3.14159
+position = Vector2(-4, 16)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("1_edgbq")
+flip_v = true
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(12.5, -27.5)
 script = ExtResource("3_xs4gh")
 description = "\"Better than nothing\""
 item = "rock"

@@ -19,32 +19,29 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 258.002
+radius = 58.2151
 
 [node name="Reed" type="StaticBody2D"]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cfx2x")
-position = Vector2(0, -954)
+position = Vector2(0, -114)
 texture = ExtResource("2_t34qr")
-centered = false
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_cijpc")
-position = Vector2(91, 494)
-rotation = -3.14159
+position = Vector2(-17, 846)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("2_t34qr")
 centered = false
 offset = Vector2(-692, -2328)
-flip_h = true
+flip_v = true
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(220, -87)
 script = ExtResource("4_0f2bd")
 description = "\"Sausagepodobny\""
 metadata/_edit_group_ = true

@@ -11,39 +11,34 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(459, 327)
+size = Vector2(109, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 400.001
+radius = 120.702
 
 [node name="HugePine" type="StaticBody2D"]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1517, -6432)
+position = Vector2(0, -963)
 texture = ExtResource("1_j8p45")
-centered = false
-offset = Vector2(-695, -1510)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_lbdfe")
-position = Vector2(1388, 8566)
-rotation = -3.14159
+position = Vector2(-285, 1320)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("1_j8p45")
-centered = false
-offset = Vector2(-692, -2328)
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(16.5, 155.5)
+position = Vector2(43.5, 19)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(33, 63)
 script = ExtResource("3_locfo")
 description = "\"This one's bigger\""
 item = "cone"
@@ -51,5 +46,4 @@ type = 1
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-position = Vector2(-8, 87)
 shape = SubResource("CircleShape2D_ejv3r")

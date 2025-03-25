@@ -19,40 +19,35 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(569, 303)
+size = Vector2(75, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 723.747
+radius = 134.082
 
 [node name="PineMedium" type="StaticBody2D"]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cfx2x")
-position = Vector2(-7, -579)
+position = Vector2(0, -194)
 texture = ExtResource("2_04lg0")
-centered = false
-offset = Vector2(-695, -1510)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_cijpc")
-position = Vector2(208, 335)
-rotation = -3.14159
+position = Vector2(-49, 280)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("2_04lg0")
-centered = false
-offset = Vector2(-692, -2328)
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(15.5, -173.5)
+position = Vector2(-0.5, 4)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(13, -279)
 script = ExtResource("4_v4q15")
 description = "\"This one's bigger\""
 item = "cone"

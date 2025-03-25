@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 1500
+@export var speed = 400
 @export var multiplier = 0.3
 var last_dir = "down";
 

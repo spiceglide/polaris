@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 4000
+@export var speed = 1000
 @export var leap_duration = 12
 @export var leap_count = 2
 var state: State = State.Idle

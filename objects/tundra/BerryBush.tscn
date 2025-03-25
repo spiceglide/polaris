@@ -19,29 +19,27 @@ shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tu87o"]
-radius = 111.005
+radius = 18.0278
 
 [node name="Bush" type="StaticBody2D"]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_pibel")
-position = Vector2(0.5, 24.5)
+position = Vector2(-5, -35)
 texture = ExtResource("2_bv5ra")
-offset = Vector2(2, -124)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_xvv3e")
-position = Vector2(-46, 66)
+position = Vector2(-9, 48)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("2_bv5ra")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(-0.5, 7.5)
 script = ExtResource("4_bvmnd")
 description = "\"Shrubbery\""
 item = "berries"

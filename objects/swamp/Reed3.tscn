@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://boi1j5eac6sdm"]
 
 [ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_n6ra2"]
-[ext_resource type="Texture2D" uid="uid://brmgipn8y3gv1" path="res://assets/objects/swamp/reed_3.png" id="2_n6ra2"]
+[ext_resource type="Texture2D" uid="uid://b466bygvf5ivu" path="res://assets/objects/swamp/reed_3.png" id="2_n6ra2"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_8fy1v"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_ql76t"]
 

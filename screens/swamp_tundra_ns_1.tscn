@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]
 [ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://objects/tundra/SnowPile2.tscn" id="objectstundraSnowPile2"]
 [ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://objects/tundra/StickTree.tscn" id="objectstundraStickTree"]
-[ext_resource type="Texture2D" uid="uid://dxmrt5jm53fb2" path="res://assets/tilemaps/tilesets/tileset_ground_c.png" id="TILESET GROUND1"]
+[ext_resource type="Texture2D" uid="uid://bgxu1bcwcgaex" path="res://assets/tilemaps/tilesets/tileset_ground_c.png" id="TILESET GROUND1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("TILESET GROUND1")

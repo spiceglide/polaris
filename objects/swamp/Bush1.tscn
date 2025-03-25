@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_4xysk"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_pfsr2"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_byg76"]
-[ext_resource type="Texture2D" uid="uid://dg1wm606eo4us" path="res://assets/objects/swamp/s_bush_1.png" id="4_v4qv5"]
+[ext_resource type="Texture2D" uid="uid://p6sikun5ffeq" path="res://assets/objects/swamp/s_bush_1.png" id="4_v4qv5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cfx2x"]
 shader = ExtResource("1_4xysk")

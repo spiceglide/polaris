@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://f6yovtrpm7id"]
 
 [ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_2yjhj"]
-[ext_resource type="Texture2D" uid="uid://qjy2evgwvkpk" path="res://assets/objects/tundra/berrybush_1.png" id="2_bv5ra"]
+[ext_resource type="Texture2D" uid="uid://0f3o76ar7e0o" path="res://assets/objects/tundra/berrybush_1.png" id="2_bv5ra"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_atgp7"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_bvmnd"]
 

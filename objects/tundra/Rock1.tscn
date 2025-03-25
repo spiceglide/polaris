@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://12i565cs2h8l"]
 
-[ext_resource type="Texture2D" uid="uid://cq3hpi8bs64vt" path="res://assets/objects/tundra/rock_1.png" id="1_edgbq"]
+[ext_resource type="Texture2D" uid="uid://buxg5r7n1smw2" path="res://assets/objects/tundra/rock_1.png" id="1_edgbq"]
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_qsc1y"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_xs4gh"]
 

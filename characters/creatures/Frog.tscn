@@ -1,20 +1,20 @@
 [gd_scene load_steps=21 format=3 uid="uid://sy34p85lvyvp"]
 
 [ext_resource type="Script" uid="uid://duc4wr0r7bwjb" path="res://characters/creatures/frog_ai.gd" id="1_2gmud"]
-[ext_resource type="Texture2D" uid="uid://bavyt4745gdvx" path="res://assets/characters/creatures/frog_idle_a.png" id="2_qdvgh"]
-[ext_resource type="Texture2D" uid="uid://dkeathypp3lty" path="res://assets/characters/creatures/frog_idle_b.png" id="3_qpps2"]
-[ext_resource type="Texture2D" uid="uid://drqmyeyrkgn75" path="res://assets/characters/creatures/frog_leap_1_anticipation.png" id="4_2iuke"]
-[ext_resource type="Texture2D" uid="uid://bss1kit2ux01c" path="res://assets/characters/creatures/frog_leap_2.png" id="5_jfrh8"]
-[ext_resource type="Texture2D" uid="uid://dkmqcby8rg81w" path="res://assets/characters/creatures/frog_leap_3.png" id="6_gog3j"]
-[ext_resource type="Texture2D" uid="uid://drnxjnf02t4o" path="res://assets/characters/creatures/frog_leap_4.png" id="7_o1cl5"]
-[ext_resource type="Texture2D" uid="uid://b51upj1jdn5e4" path="res://assets/characters/creatures/frog_leap_5_overshoot.png" id="8_0rnm8"]
-[ext_resource type="Texture2D" uid="uid://dpcaaihjtxty0" path="res://assets/characters/creatures/frog_ribbit_1.png" id="9_airdn"]
-[ext_resource type="Texture2D" uid="uid://bw7ss3c5vj676" path="res://assets/characters/creatures/frog_ribbit_2.png" id="10_lsabj"]
-[ext_resource type="Texture2D" uid="uid://c3d6tbu7sh2et" path="res://assets/characters/creatures/frog_ribbit_3.png" id="11_8dxbi"]
+[ext_resource type="Texture2D" uid="uid://bkh7nuj0ulguw" path="res://assets/characters/creatures/frog/frog_idle_a.png" id="2_qdvgh"]
+[ext_resource type="Texture2D" uid="uid://chjfsl3o1uroc" path="res://assets/characters/creatures/frog/frog_idle_b.png" id="3_qpps2"]
+[ext_resource type="Texture2D" uid="uid://drc71k5e1vovu" path="res://assets/characters/creatures/frog/frog_leap_1_anticipation.png" id="4_2iuke"]
+[ext_resource type="Texture2D" uid="uid://dn4pkh04uwfnm" path="res://assets/characters/creatures/frog/frog_leap_2.png" id="5_jfrh8"]
+[ext_resource type="Texture2D" uid="uid://8du462acj6as" path="res://assets/characters/creatures/frog/frog_leap_3.png" id="6_gog3j"]
+[ext_resource type="Texture2D" uid="uid://dilkm4jbw3r48" path="res://assets/characters/creatures/frog/frog_leap_4.png" id="7_o1cl5"]
+[ext_resource type="Texture2D" uid="uid://bu0bu7k16eja4" path="res://assets/characters/creatures/frog/frog_leap_5_overshoot.png" id="8_0rnm8"]
+[ext_resource type="Texture2D" uid="uid://b73grib025f5d" path="res://assets/characters/creatures/frog/frog_ribbit_1.png" id="9_airdn"]
+[ext_resource type="Texture2D" uid="uid://drrx64sbc4hy2" path="res://assets/characters/creatures/frog/frog_ribbit_2.png" id="10_lsabj"]
+[ext_resource type="Texture2D" uid="uid://lqqlxjblxg" path="res://assets/characters/creatures/frog/frog_ribbit_3.png" id="11_8dxbi"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="12_qdvgh"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="13_8skwa"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="36_yofgo"]
-[ext_resource type="FontFile" uid="uid://b4c32br4kck56" path="res://assets/font/polarisfont-Regular222.otf" id="37_ghthx"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="37_ghthx"]
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="38_khxt4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wsglq"]
@@ -84,7 +84,6 @@ script = ExtResource("1_2gmud")
 position = Vector2(124, 118)
 sprite_frames = SubResource("SpriteFrames_wsglq")
 animation = &"ribbit"
-frame_progress = 0.195686
 centered = false
 offset = Vector2(-124, -118)
 script = ExtResource("12_qdvgh")

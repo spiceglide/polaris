@@ -18,27 +18,30 @@ radius = 120.702
 
 [node name="HugePine" type="StaticBody2D"]
 z_index = 1
+position = Vector2(0, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -963)
+position = Vector2(0, -964)
 texture = ExtResource("1_j8p45")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = SubResource("ShaderMaterial_lbdfe")
-position = Vector2(-285, 1320)
+position = Vector2(2.00003, 963)
 scale = Vector2(1, 0.423292)
 skew = 0.733038
 texture = ExtResource("1_j8p45")
+offset = Vector2(34.4441, 1134.89)
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(43.5, 19)
+position = Vector2(43.5, 18)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]
+position = Vector2(0, -1)
 script = ExtResource("3_locfo")
 description = "\"This one's bigger\""
 item = "cone"

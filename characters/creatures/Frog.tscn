@@ -66,60 +66,50 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6e4x"]
-radius = 73.0
+radius = 35.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw6v7"]
-radius = 2455.56
+radius = 600.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sb0ch"]
-radius = 1054.71
+radius = 250.0
 
 [node name="Frog" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-7, -11)
 script = ExtResource("1_2gmud")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(124, 118)
 sprite_frames = SubResource("SpriteFrames_wsglq")
 animation = &"ribbit"
-centered = false
-offset = Vector2(-124, -118)
 script = ExtResource("12_qdvgh")
 
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
 self_modulate = Color(1, 1, 1, 0.133333)
 z_index = -1
-position = Vector2(-17, 68)
-scale = Vector2(2, 0.688)
+position = Vector2(-5, 21)
+scale = Vector2(0.5, 0.172)
 texture = ExtResource("36_yofgo")
 
 [node name="Interaction" type="Area2D" parent="."]
-position = Vector2(122, 38)
 script = ExtResource("13_8skwa")
 description = "\"GOTCHA!\""
 type = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-position = Vector2(-8, 87)
 shape = SubResource("CircleShape2D_v6e4x")
 
 [node name="AlertRange" type="Area2D" parent="."]
-position = Vector2(122, 38)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlertRange"]
-position = Vector2(-8, 87)
 shape = SubResource("CircleShape2D_qw6v7")
 
 [node name="DangerRange" type="Area2D" parent="."]
-position = Vector2(122, 38)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerRange"]
-position = Vector2(-8, 87)
 shape = SubResource("CircleShape2D_sb0ch")
 
 [node name="Announcement" type="Label" parent="."]
@@ -127,14 +117,14 @@ z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -111.0
-offset_top = -176.0
-offset_right = 454.0
-offset_bottom = -21.0
+offset_left = -70.0
+offset_top = -75.0
+offset_right = 71.0
+offset_bottom = -37.0
 grow_horizontal = 2
-theme_override_constants/outline_size = 28
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("37_ghthx")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("38_khxt4")

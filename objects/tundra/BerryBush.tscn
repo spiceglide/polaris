@@ -8,7 +8,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pibel"]
 shader = ExtResource("1_2yjhj")
 shader_parameter/speed = 1.0
-shader_parameter/strength = 0.05
 shader_parameter/y_origin = 50.0
 shader_parameter/restrict_dir = 0
 

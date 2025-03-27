@@ -9,7 +9,7 @@
 shader = ExtResource("1_t34qr")
 shader_parameter/speed = 1.0
 shader_parameter/strength = 0.03
-shader_parameter/y_origin = 1000.0
+shader_parameter/y_origin = 100.0
 shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-const DIMS = 24*640
+const DIMS = 24*160
 const RENDER_DISTANCE = 1
 
 @export var grid_size = [3, 2]

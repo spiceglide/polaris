@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfvnyrq463fll"]
+[gd_scene load_steps=16 format=3 uid="uid://dfvnyrq463fll"]
 
 [ext_resource type="PackedScene" uid="uid://sy34p85lvyvp" path="res://characters/creatures/Frog.tscn" id="11_es228"]
+[ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/Player.tscn" id="12_g5rrm"]
 [ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://objects/tundra/BerryBush.tscn" id="environmentBerryBush"]
 [ext_resource type="PackedScene" uid="uid://iny1lbsa3o1g" path="res://objects/forest/HugePine.tscn" id="environmentHugePine"]
 [ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://objects/forest/MediumPine.tscn" id="environmentPineMedium"]
@@ -502,4 +503,7 @@ position = Vector2(10328, 1111.44)
 position = Vector2(13376, 3679.44)
 
 [node name="Frog" parent="." instance=ExtResource("11_es228")]
-position = Vector2(9066, 5858)
+position = Vector2(1908, 1107)
+
+[node name="Player" parent="." instance=ExtResource("12_g5rrm")]
+position = Vector2(468, 2362)

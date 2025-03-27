@@ -1,20 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://yufo0vj7muxv"]
+[gd_scene load_steps=6 format=3 uid="uid://yufo0vj7muxv"]
 
-[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_tpg6a"]
+[ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_tpg6a"]
 [ext_resource type="Texture2D" uid="uid://b7n23wdldpvvy" path="res://assets/objects/swamp/reed_2.png" id="2_tpg6a"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_3rvxj"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_5cga4"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_3j5g3"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfx2x"]
-shader = ExtResource("1_tpg6a")
-shader_parameter/speed = 1.0
-shader_parameter/y_origin = 100.0
-shader_parameter/restrict_dir = 0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
-shader = ExtResource("3_3rvxj")
-shader_parameter/color = Vector3(0, 0, 0.3)
-shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
 radius = 48.0416
@@ -23,14 +12,15 @@ radius = 48.0416
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_cfx2x")
+material = ExtResource("1_tpg6a")
+instance_shader_parameters/y_origin = 100.0
 position = Vector2(0, -100)
 texture = ExtResource("2_tpg6a")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
-material = SubResource("ShaderMaterial_cijpc")
+material = ExtResource("3_5cga4")
 position = Vector2(-28, 131)
 scale = Vector2(1, 0.423292)
 skew = 0.733038

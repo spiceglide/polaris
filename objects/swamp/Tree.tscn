@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://uhnhyutpcf7j"]
+[gd_scene load_steps=6 format=3 uid="uid://uhnhyutpcf7j"]
 
 [ext_resource type="Texture2D" uid="uid://dugpya46uo2y4" path="res://assets/objects/swamp/s_tree_1.png" id="1_n0bvb"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_qimsc"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_n0bvb"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_18ynv"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
-shader = ExtResource("3_qimsc")
-shader_parameter/sprite = ExtResource("1_n0bvb")
-shader_parameter/color = Vector3(0, 0, 0.3)
-shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(349, 118)
@@ -26,7 +20,7 @@ texture = ExtResource("1_n0bvb")
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
-material = SubResource("ShaderMaterial_cijpc")
+material = ExtResource("2_n0bvb")
 position = Vector2(1165, 8016)
 rotation = -3.14159
 scale = Vector2(1, 0.423292)

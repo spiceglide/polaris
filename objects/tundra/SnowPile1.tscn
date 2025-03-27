@@ -1,13 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://di1au0y2ha18t"]
+[gd_scene load_steps=6 format=3 uid="uid://di1au0y2ha18t"]
 
 [ext_resource type="Texture2D" uid="uid://4peh5gfvkc0q" path="res://assets/objects/tundra/snowpile_1.png" id="1_hkd6j"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="2_7gi1g"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_hkd6j"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_3ooul"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yuu6s"]
-shader = ExtResource("2_7gi1g")
-shader_parameter/color = Vector3(0, 0, 0.3)
-shader_parameter/opacity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(161, 21)
@@ -26,7 +21,7 @@ texture = ExtResource("1_hkd6j")
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
-material = SubResource("ShaderMaterial_yuu6s")
+material = ExtResource("2_hkd6j")
 position = Vector2(-16, 63)
 scale = Vector2(1, 0.423292)
 skew = 0.733038

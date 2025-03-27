@@ -3,16 +3,12 @@
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="1_7o5vc"]
 [ext_resource type="Texture2D" uid="uid://cpac7gk1u356i" path="res://assets/objects/tundra/rock_2.png" id="2_c5dir"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_2qrgu"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_c5dir"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hwicx"]
 shader = ExtResource("1_7o5vc")
 shader_parameter/color = Vector3(0, 0, 0.1)
 shader_parameter/opacity = 0.3
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2r68"]
-shader = ExtResource("1_7o5vc")
-shader_parameter/color = Vector3(0, 0, 0.3)
-shader_parameter/opacity = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghpk6"]
 radius = 31.0161
@@ -27,7 +23,7 @@ texture = ExtResource("2_c5dir")
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
-material = SubResource("ShaderMaterial_d2r68")
+material = ExtResource("3_c5dir")
 position = Vector2(-7, 24)
 scale = Vector2(1, 0.423292)
 skew = 0.733038

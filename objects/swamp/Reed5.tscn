@@ -8,7 +8,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cfx2x"]
 shader = ExtResource("1_v1by8")
 shader_parameter/speed = 1.0
-shader_parameter/y_origin = 100.0
 shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
@@ -24,6 +23,7 @@ z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cfx2x")
+instance_shader_parameters/y_origin = 100.0
 position = Vector2(0, -111)
 texture = ExtResource("2_v1by8")
 

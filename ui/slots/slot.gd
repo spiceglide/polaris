@@ -90,7 +90,6 @@ func _generate_preview():
 	var frame = $ItemSprite.sprite_frames.get_frame_texture($ItemSprite.get_animation(), 0)
 	preview.texture = frame
 	preview.z_index = 1
-	preview.scale = Vector2(0.3, 0.3)
 	return preview
 
 func _generate_drag_data():

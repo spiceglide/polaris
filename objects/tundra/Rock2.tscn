@@ -6,13 +6,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hwicx"]
 shader = ExtResource("1_7o5vc")
-shader_parameter/sprite = ExtResource("2_c5dir")
 shader_parameter/color = Vector3(0, 0, 0.1)
 shader_parameter/opacity = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2r68"]
 shader = ExtResource("1_7o5vc")
-shader_parameter/sprite = ExtResource("2_c5dir")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 

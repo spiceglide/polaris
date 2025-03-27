@@ -13,7 +13,6 @@ shader_parameter/restrict_dir = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
 shader = ExtResource("3_8fy1v")
-shader_parameter/sprite = ExtResource("2_n6ra2")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 

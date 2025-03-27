@@ -6,7 +6,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ooofd"]
 shader = ExtResource("2_ylgwr")
-shader_parameter/sprite = ExtResource("1_eqdry")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
 

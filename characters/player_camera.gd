@@ -2,7 +2,7 @@ extends Camera2D
 
 @onready var player = self.get_parent()
 
-const DIMS = 24*640
+const DIMS = 24*160
 var grid_size = [3, 2]
 var scene_size = [DIMS, DIMS]
 

@@ -206,31 +206,23 @@ animations = [{
 }]
 
 [node name="Crafted Slot" type="MarginContainer"]
-custom_minimum_size = Vector2(300, 300)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -280.0
-offset_right = 300.0
-grow_vertical = 0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+custom_minimum_size = Vector2(90, 90)
+offset_right = 75.0
+offset_bottom = 75.0
 script = ExtResource("1_io71b")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(42, 40)
+position = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_brms5")
 animation = &"campfire"
 centered = false
 script = ExtResource("20_io71b")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(148, 141.5)
 sprite_frames = SubResource("SpriteFrames_2x4ab")
 animation = &"type1"
+centered = false
 script = ExtResource("20_io71b")
 
 [node name="Button" type="Button" parent="."]

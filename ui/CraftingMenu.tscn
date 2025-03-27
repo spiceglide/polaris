@@ -10,11 +10,10 @@ anchors_preset = 0
 script = ExtResource("1_pno6w")
 
 [node name="Categories" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 1508.0
-offset_bottom = 300.0
+layout_mode = 1
+offset_right = 466.0
+offset_bottom = 90.0
 size_flags_horizontal = 3
-theme_override_constants/separation = 100
 script = ExtResource("2_r3pf1")
 
 [node name="All" parent="Categories" instance=ExtResource("2_pno6w")]
@@ -37,11 +36,13 @@ layout_mode = 2
 category = 4
 
 [node name="Recipes" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 360.0
-offset_right = 1866.0
-offset_bottom = 1680.0
-theme_override_constants/separation = 40
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -466.0
+offset_right = 460.0
+grow_vertical = 0
 script = ExtResource("2_r3pf1")
 node_name = "Crafted/Sprite"
 metadata/_edit_group_ = true

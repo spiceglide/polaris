@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://xmwxqd3uos47" path="res://ui/slots/RecipeSlot.tscn" id="3_e42iy"]
 
 [node name="RecipeRow" type="HBoxContainer"]
-theme_override_constants/separation = 50
+offset_right = 460.0
+offset_bottom = 90.0
 script = ExtResource("1_17wtr")
 
 [node name="Crafted" parent="." instance=ExtResource("2_17wtr")]

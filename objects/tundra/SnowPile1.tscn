@@ -22,11 +22,7 @@ self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("2_hkd6j")
-position = Vector2(-16, 63)
-scale = Vector2(1, 0.423292)
-skew = 0.733038
 texture = ExtResource("1_hkd6j")
-flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

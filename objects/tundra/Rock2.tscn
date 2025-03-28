@@ -9,6 +9,9 @@
 shader = ExtResource("1_7o5vc")
 shader_parameter/color = Vector3(0, 0, 0.1)
 shader_parameter/opacity = 0.3
+shader_parameter/flip_offset = 1.95
+shader_parameter/scale_factor = Vector2(3, 2)
+shader_parameter/game_time = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghpk6"]
 radius = 31.0161
@@ -24,11 +27,7 @@ texture = ExtResource("2_c5dir")
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_c5dir")
-position = Vector2(-7, 24)
-scale = Vector2(1, 0.423292)
-skew = 0.733038
 texture = ExtResource("2_c5dir")
-flip_v = true
 
 [node name="Interaction" type="Area2D" parent="."]
 script = ExtResource("3_2qrgu")

@@ -21,11 +21,7 @@ texture = ExtResource("2_tpg6a")
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_5cga4")
-position = Vector2(-28, 131)
-scale = Vector2(1, 0.423292)
-skew = 0.733038
 texture = ExtResource("2_tpg6a")
-flip_v = true
 
 [node name="Interaction" type="Area2D" parent="."]
 script = ExtResource("4_3j5g3")

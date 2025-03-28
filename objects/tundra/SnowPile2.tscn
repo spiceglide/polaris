@@ -14,20 +14,14 @@ radius = 84.006
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7, 188)
 texture = ExtResource("1_eqdry")
-offset = Vector2(0, -218)
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("2_eqdry")
-position = Vector2(-14, -160)
-scale = Vector2(1, 0.423292)
-skew = 0.733038
 texture = ExtResource("1_eqdry")
-flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

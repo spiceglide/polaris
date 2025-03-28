@@ -23,11 +23,7 @@ texture = ExtResource("2_2ggt7")
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_2ggt7")
-position = Vector2(-78, 372)
-scale = Vector2(1, 0.423292)
-skew = 0.733038
 texture = ExtResource("2_2ggt7")
-flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

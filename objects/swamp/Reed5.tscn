@@ -14,6 +14,9 @@ shader_parameter/restrict_dir = 0
 shader = ExtResource("3_m5q23")
 shader_parameter/color = Vector3(0, 0, 0.3)
 shader_parameter/opacity = 0.1
+shader_parameter/flip_offset = 1.95
+shader_parameter/scale_factor = Vector2(3, 2)
+shader_parameter/game_time = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
 radius = 48.3735

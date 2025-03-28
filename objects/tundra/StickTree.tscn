@@ -27,7 +27,7 @@ texture = ExtResource("2_2ggt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(0, -10.5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Area2D" parent="."]

@@ -5,10 +5,10 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_n
 uniform vec3 color = vec3(0.0, 0.0, 0.3);
 uniform float opacity: hint_range(0.0, 1.0) = 0.1;
 
-uniform float flip_offset = 2.0;
+uniform float flip_offset = 1.95;
 uniform vec2 scale_factor = vec2(3.0, 2.0);
 
-uniform float game_time: hint_range(0, 360.0);
+global uniform uint game_time;
 
 void vertex() {
 	VERTEX.xy *= scale_factor;

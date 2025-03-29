@@ -101,7 +101,7 @@ inv_next={
 
 game_time={
 "type": "uint",
-"value": 0
+"value": 300
 }
 wind_strength={
 "type": "float",

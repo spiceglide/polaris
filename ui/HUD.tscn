@@ -14,7 +14,9 @@ shader_parameter/MainAlpha = 0.6
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pfnlp"]
 shader = ExtResource("2_pom5v")
 shader_parameter/night_filter = Vector3(0, 0.1, 0.3)
+shader_parameter/night_interval = Vector2(0, 0.1)
 shader_parameter/twilight_filter = Vector3(1.5, 1, 1)
+shader_parameter/twilight_interval = Vector2(0, 0.2)
 shader_parameter/alpha = 0.3
 
 [node name="HUD" type="CanvasLayer"]

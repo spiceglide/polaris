@@ -6,7 +6,7 @@ uniform vec3 color = vec3(0.0, 0.0, 0.3);
 uniform float opacity: hint_range(0.0, 1.0) = 0.1;
 
 instance uniform float flip_offset = 2;
-uniform float shadow_height = 0.1;
+uniform float shadow_height = 0.2;
 uniform float end_angle = 45;
 uniform vec2 scale_factor = vec2(3.0, 2.0);
 

@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7x7xmi35d5q6"]
+
+[ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="1_r2nfi"]
+[ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_tder3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="MainMenu"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(8.42288e-08, 0.0712349, 0.103106, 1)
+
+[node name="Control" type="Control" parent="MainMenu"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Title" type="MarginContainer" parent="MainMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -304.0
+offset_right = 304.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 80
+
+[node name="Label" type="Label" parent="MainMenu/Title"]
+layout_mode = 2
+theme = ExtResource("1_r2nfi")
+theme_override_fonts/font = ExtResource("2_tder3")
+theme_override_font_sizes/font_size = 128
+text = "Krai Lesa"
+
+[node name="Menu" type="MarginContainer" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -120.0
+offset_right = 173.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Continue" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../New Game")
+theme = ExtResource("1_r2nfi")
+theme_type_variation = &"FlatButton"
+text = "Continue"
+
+[node name="New Game" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Continue")
+theme = ExtResource("1_r2nfi")
+theme_type_variation = &"FlatButton"
+text = "New Game"
+
+[node name="Options" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../New Game")
+theme = ExtResource("1_r2nfi")
+theme_type_variation = &"FlatButton"
+text = "Options"
+
+[node name="Quit" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+layout_mode = 2
+focus_previous = NodePath("../Options")
+theme = ExtResource("1_r2nfi")
+theme_type_variation = &"FlatButton"
+text = "Quit Game"
+
+[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

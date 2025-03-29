@@ -5,7 +5,9 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_n
 uniform vec3 color = vec3(0.0, 0.0, 0.3);
 uniform float opacity: hint_range(0.0, 1.0) = 0.1;
 
-uniform float flip_offset = 1.95;
+instance uniform float flip_offset = 2;
+uniform float shadow_height = 0.1;
+uniform float end_angle = 45;
 uniform vec2 scale_factor = vec2(3.0, 2.0);
 
 global uniform uint game_time;
@@ -24,10 +26,9 @@ void fragment() {
 	// Skew effect
 	vec2 origin = vec2(0.5, -1.0);
 	float ntime = float(game_time) / 360.0;
-	float skew = mix(-45, 45, ntime);  // figure out a better transformation
-	float yScale = max(0.2, abs(tan(mix(-1.5, 1.5, ntime))));
+	float skew = mix(-end_angle/4.0, end_angle/4.0, ntime);  // figure out a better transformation
 	uv.x += (uv.y + origin.y) * skew;
-	uv.y += (uv.y + origin.y) / yScale;
+	uv.y += (uv.y + origin.y) / shadow_height;
 	
 	vec4 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0);
 	vec4 mask_color = texture(TEXTURE, uv);

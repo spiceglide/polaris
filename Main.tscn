@@ -3,5 +3,4 @@
 [ext_resource type="Script" uid="uid://cq477oim8wt8x" path="res://main.gd" id="1_glv2v"]
 
 [node name="Main" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_glv2v")

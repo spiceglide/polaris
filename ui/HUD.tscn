@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=7 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="2_nysna"]
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="2_pom5v"]
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://ui/Inventory.tscn" id="3_f6qnu"]
 [ext_resource type="PackedScene" uid="uid://dt04wa7ht1ten" path="res://ui/CraftingMenu.tscn" id="3_jd13s"]
-[ext_resource type="Script" uid="uid://ca7j7i2rlv2oh" path="res://utility/time.gd" id="4_wxbmk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
 shader = ExtResource("2_nysna")
@@ -83,6 +82,3 @@ offset_top = -94.0
 offset_right = 12.0
 offset_bottom = -94.0
 grow_vertical = 0
-
-[node name="Time" type="Node2D" parent="."]
-script = ExtResource("4_wxbmk")

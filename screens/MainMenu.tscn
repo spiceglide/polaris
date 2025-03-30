@@ -25,13 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(8.42288e-08, 0.0712349, 0.103106, 1)
 
-[node name="Control" type="Control" parent="MainMenu"]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-grow_horizontal = 2
-
 [node name="Title" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 5
 anchor_left = 0.5

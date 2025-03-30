@@ -12,8 +12,17 @@ script = ExtResource("1_tder3")
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="MainMenu"]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(8.42288e-08, 0.0712349, 0.103106, 1)
 
 [node name="Control" type="Control" parent="MainMenu"]
@@ -85,7 +94,7 @@ layout_mode = 2
 focus_previous = NodePath("../Options")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "Quit Game"
+text = "Leave"
 
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]

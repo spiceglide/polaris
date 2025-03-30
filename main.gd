@@ -1,4 +1,6 @@
 extends Node2D
 
+var main_menu = preload("res://screens/MainMenu.tscn").instantiate()
+
 func _ready() -> void:
-	get_tree().change_scene_to_file("res://screens/MainMenu.tscn")
+	self.add_child(main_menu)

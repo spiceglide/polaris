@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://on2lm2criuyc"]
+
+[ext_resource type="Script" uid="uid://b4l7vmqocns7e" path="res://screens/loading_screen.gd" id="1_xfn56"]
+[ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="2_xfn56"]
+[ext_resource type="Texture2D" uid="uid://4rjm0i2u0o2f" path="res://assets/characters/creatures/hare/hare_idle_a.png" id="3_jf3fe"]
+[ext_resource type="Texture2D" uid="uid://bh4c45msgcx6c" path="res://assets/characters/creatures/hare/hare_idle_a_earflop.png" id="4_og14n"]
+[ext_resource type="Texture2D" uid="uid://be8t0r1ne7oho" path="res://assets/characters/creatures/hare/hare_idle_b.png" id="5_oyopg"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="6_og14n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47o88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jf3fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_og14n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oyopg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="LoadingScreen" type="CanvasLayer"]
+script = ExtResource("1_xfn56")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1280.0
+offset_top = -720.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(8.42288e-08, 0.0712349, 0.103106, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = -24.5
+offset_right = 146.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_xfn56")
+text = "Loading..."
+
+[node name="Icon" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -86.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Icon"]
+sprite_frames = SubResource("SpriteFrames_47o88")
+frame_progress = 0.620693
+script = ExtResource("6_og14n")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

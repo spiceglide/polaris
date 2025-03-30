@@ -86,3 +86,7 @@ focus_previous = NodePath("../Options")
 theme = ExtResource("2_d7xn7")
 theme_type_variation = &"FlatButton"
 text = "Quit"
+
+[connection signal="pressed" from="Control/Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/Menu/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

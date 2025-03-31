@@ -15,7 +15,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	HUD.set_meta("player_pos", self.position)
+	PlayerData.position = self.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

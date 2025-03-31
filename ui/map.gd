@@ -1,11 +1,6 @@
 extends Node2D
 
-const DIMS = 24*160
-const RENDER_DISTANCE = 1
-
-@export var grid_size = [3, 2]
 @export var leak_opacity = 0.3
-var scene_size = [DIMS, DIMS]
 var available_scenes_top = [preload("res://scenes/forest_tundra_ns_1.tscn"), preload("res://scenes/swamp_tundra_ns_1.tscn")]
 var available_scenes = [preload("res://scenes/level_tundra_1.tscn")]
 var scenes = []
@@ -15,6 +10,9 @@ var current_scene = 0
 func _ready() -> void:
 	var scene
 	var instance
+	
+	var grid_size = WorldData.grid_size
+	var scene_size = WorldData.scene_size
 	
 	for x in range(grid_size[0]):
 		var temp_scenes = []
@@ -40,6 +38,8 @@ func _process(delta: float) -> void:
 	_cull_scenes()
 
 func _cull_scenes():
+	var grid_size = WorldData.grid_size
+	
 	for x in range(grid_size[0]):
 		for y in range(grid_size[1]):
 			var scene = scenes[x][y]
@@ -62,7 +62,10 @@ func _cull_scenes():
 		adj.modulate = Color(1, 1, 1, leak_opacity)
 
 func _update_current_scene():
-	var player_pos = HUD.get_meta("player_pos")
+	var player_pos = PlayerData.position
+	var grid_size = WorldData.grid_size
+	var scene_size = WorldData.scene_size
+	
 	current_scene = [
 		clamp(floor(player_pos[0] / scene_size[0]), 0, grid_size[0]-1),
 		clamp(floor(player_pos[1] / scene_size[1]), 0, grid_size[1]-1),
@@ -78,10 +81,11 @@ func _north(xy: Array):
 	return scenes[i][j]
 
 func _south(xy: Array):
+	var grid_size = WorldData.grid_size
 	var i = xy[0]
 	var j = xy[1] + 1
 	
-	if j >= grid_size[1]:
+	if j >= WorldData.grid_size[1]:
 		return
 	
 	return scenes[i][j]
@@ -91,7 +95,7 @@ func _east(xy: Array):
 	var i = xy[0] + 1
 	var j = xy[1]
 	
-	if i >= grid_size[0]:
+	if i >= WorldData.grid_size[0]:
 		return
 	
 	return scenes[i][j]

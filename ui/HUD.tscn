@@ -19,7 +19,6 @@ shader_parameter/twilight_interval = Vector2(0, 0.2)
 shader_parameter/alpha = 0.3
 
 [node name="HUD" type="CanvasLayer"]
-metadata/player_pos = Vector2(0, 0)
 
 [node name="Vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_1whyg")

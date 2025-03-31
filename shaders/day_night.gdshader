@@ -1,47 +1,93 @@
 shader_type canvas_item;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
-
-uniform vec3 night_filter = vec3(0.0, 0.1, 0.3);
-uniform vec2 night_interval = vec2(0.0, 0.1);
-uniform vec3 twilight_filter = vec3(0.5, 0.2, 0.2);
-uniform vec2 twilight_interval = vec2(0.0, 0.2);
-uniform float alpha: hint_range(0.0, 1.0) = 0.5;
+uniform sampler2D day_lut;
+uniform sampler2D night_lut;
+uniform sampler2D twilight_lut;
 
 global uniform uint game_time;
 
-float reflect_around(float value, float refl) {
-	return refl - abs(value - refl);
+uniform sampler2D lut;
+uniform float lut_size = 16.0;
+
+uniform float filter_alpha : hint_range(0, 1) = 1.0;
+
+// Gets interpolation percentage for color  channel using floor and diff values.
+float get_interp_percent_channel(float channel_value, float floor_value, float diff_value){
+	// Workaround to avoid division by zero and return zero
+	float div_sign = abs(sign(diff_value));
+	return (channel_value-floor_value)*div_sign/(diff_value + (div_sign-1.0));
 }
 
-float fade_in_out(float value, float minimum, float maximum) {
-	float norm = (value - minimum) / (maximum - minimum);
-	bool should_apply = value >= minimum || value <= maximum;
-	return float(should_apply) * reflect_around(norm, 0.5);
+// Gets interpolation percentage for color using floor and diff values.
+vec3 get_interp_percent_color(vec3 color, vec3 floorc, vec3 diff){
+	vec3 res = vec3(0.0);
+	res.r = get_interp_percent_channel(color.r, floorc.r, diff.r);
+	res.g = get_interp_percent_channel(color.g, floorc.g, diff.g);
+	res.b = get_interp_percent_channel(color.b, floorc.b, diff.b);
+	return res;
 }
 
-float fade_out(float value, float minimum, float maximum) {
-	float norm = 1.0 - (value - minimum) / (maximum - minimum);
-	return norm;
+// Get interpolated color using color floor, diff and channel percentage.
+vec3 get_interpolated_color(vec3 floorc, vec3 diff, float perc){
+	return floorc.rgb + diff.rgb * perc;
 }
 
-void fragment() {
-	float ntime = float(game_time) / 360.0;
-	float gtime = reflect_around(ntime, 0.5);
+// Gets LUT mapped color using trilinear interpolation.
+vec4 get_lut_mapping_trilinear(vec4 old_color){
+	float lut_div = lut_size - 1.0;
+	// Get floor and ceil colors and diff from identity lut
+	vec3 old_color_lut_base = lut_div * old_color.rgb;
+	vec3 old_color_floor_vec = floor(old_color_lut_base);
+	vec3 old_color_ceil_vec = ceil(old_color_lut_base);
+	vec3 old_color_diff = (old_color_floor_vec - old_color_ceil_vec)/lut_div;
+	vec3 old_color_percentages = get_interp_percent_color(old_color.rgb, old_color_floor_vec/lut_div, old_color_diff);
+	// Get the surrounding 8 samples positions
+	vec3 lut_color_fff_vec = vec3(old_color_floor_vec.r, old_color_floor_vec.g, old_color_floor_vec.b);
+	vec3 lut_color_ffc_vec = vec3(old_color_floor_vec.r, old_color_floor_vec.g, old_color_ceil_vec.b);
+	vec3 lut_color_fcf_vec = vec3(old_color_floor_vec.r, old_color_ceil_vec.g, old_color_floor_vec.b);
+	vec3 lut_color_fcc_vec = vec3(old_color_floor_vec.r, old_color_ceil_vec.g, old_color_ceil_vec.b);
+	vec3 lut_color_cff_vec = vec3(old_color_ceil_vec.r, old_color_floor_vec.g, old_color_floor_vec.b);
+	vec3 lut_color_cfc_vec = vec3(old_color_ceil_vec.r, old_color_floor_vec.g, old_color_ceil_vec.b);
+	vec3 lut_color_ccf_vec = vec3(old_color_ceil_vec.r, old_color_ceil_vec.g, old_color_floor_vec.b);
+	vec3 lut_color_ccc_vec = vec3(old_color_ceil_vec.r, old_color_ceil_vec.g, old_color_ceil_vec.b);
+	ivec2 lut_color_fff_pos = ivec2(int(lut_size*lut_color_fff_vec.b + lut_color_fff_vec.r), int(lut_color_fff_vec.g));
+	ivec2 lut_color_ffc_pos = ivec2(int(lut_size*lut_color_ffc_vec.b + lut_color_ffc_vec.r), int(lut_color_ffc_vec.g));
+	ivec2 lut_color_fcf_pos = ivec2(int(lut_size*lut_color_fcf_vec.b + lut_color_fcf_vec.r), int(lut_color_fcf_vec.g));
+	ivec2 lut_color_fcc_pos = ivec2(int(lut_size*lut_color_fcc_vec.b + lut_color_fcc_vec.r), int(lut_color_fcc_vec.g));
+	ivec2 lut_color_cff_pos = ivec2(int(lut_size*lut_color_cff_vec.b + lut_color_cff_vec.r), int(lut_color_cff_vec.g));
+	ivec2 lut_color_cfc_pos = ivec2(int(lut_size*lut_color_cfc_vec.b + lut_color_cfc_vec.r), int(lut_color_cfc_vec.g));
+	ivec2 lut_color_ccf_pos = ivec2(int(lut_size*lut_color_ccf_vec.b + lut_color_ccf_vec.r), int(lut_color_ccf_vec.g));
+	ivec2 lut_color_ccc_pos = ivec2(int(lut_size*lut_color_ccc_vec.b + lut_color_ccc_vec.r), int(lut_color_ccc_vec.g));
+	// Get gamma corrected color from LUT.
+	vec3 lut_color_fff = texelFetch(lut, lut_color_fff_pos, 0).rgb;
+	vec3 lut_color_ffc = texelFetch(lut, lut_color_ffc_pos, 0).rgb;
+	vec3 lut_color_fcf = texelFetch(lut, lut_color_fcf_pos, 0).rgb;
+	vec3 lut_color_fcc = texelFetch(lut, lut_color_fcc_pos, 0).rgb;
+	vec3 lut_color_cff = texelFetch(lut, lut_color_cff_pos, 0).rgb;
+	vec3 lut_color_cfc = texelFetch(lut, lut_color_cfc_pos, 0).rgb;
+	vec3 lut_color_ccf = texelFetch(lut, lut_color_ccf_pos, 0).rgb;
+	vec3 lut_color_ccc = texelFetch(lut, lut_color_ccc_pos, 0).rgb;
+	// Calculate first level interpolations.
+	vec3 lut_color_iff = get_interpolated_color(lut_color_fff, lut_color_fff - lut_color_cff , old_color_percentages.r);
+	vec3 lut_color_ifc = get_interpolated_color(lut_color_ffc, lut_color_ffc - lut_color_cfc, old_color_percentages.r);
+	vec3 lut_color_icf = get_interpolated_color(lut_color_fcf, lut_color_fcf - lut_color_ccf, old_color_percentages.r);
+	vec3 lut_color_icc = get_interpolated_color(lut_color_fcc, lut_color_fcc - lut_color_ccc, old_color_percentages.r);
+	// Calculate second level interpolations.
+	vec3 lut_color_iif = get_interpolated_color(lut_color_iff, lut_color_iff - lut_color_icf, old_color_percentages.g);
+	vec3 lut_color_iic = get_interpolated_color(lut_color_ifc, lut_color_ifc - lut_color_icc, old_color_percentages.g);
+	// Calculate third and final interpolation.
+	vec3 lut_color_iii = get_interpolated_color(lut_color_iif, lut_color_iif - lut_color_iic, old_color_percentages.b);
+	// Get final color with original alpha.
+	vec4 final_color = vec4(lut_color_iii, old_color.a);
+	return final_color;
+}
 
-	float night_curve = fade_out(gtime, night_interval.x, night_interval.y);
-	float twilight_curve = fade_in_out(gtime, twilight_interval.x, twilight_interval.y);
-
-	vec4 sum_filter = vec4(night_filter, night_curve);
-	sum_filter = mix(sum_filter, vec4(twilight_filter, twilight_curve), 0.5);
-
-	vec4 filter = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0);
-
-	filter.rgb = mix(filter.rgb, night_filter, night_curve);
-	filter.rgb = mix(filter.rgb, twilight_filter, twilight_curve);
-
-	filter.a = max(night_curve, twilight_curve);
-
-	filter.a *= alpha;
-	COLOR = filter;
+void fragment(){
+	vec4 original_color = texture(SCREEN_TEXTURE, SCREEN_UV);
+	vec4 filtered_color = get_lut_mapping_trilinear(original_color);
+	// Calculate filter alpha.
+	vec3 diff_color = filtered_color.rgb - original_color.rgb;
+	vec4 final_color = vec4(get_interpolated_color(original_color.rgb, diff_color, filter_alpha), filtered_color.a);
+	COLOR = final_color;
 }

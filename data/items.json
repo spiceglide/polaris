@@ -1,43 +1,42 @@
 {
   "berries": {
-    "name": "berries",
-    "description": "A little treat"
+	"name": "berries",
+	"description": "A little treat"
   },
   "campfire": {
-    "name": "Big Campfire",
-    "description": "This'll do nicely"
+	"name": "Big Campfire",
+	"description": "This'll do nicely"
   },
   "cloth": {
-    "name": "Cloth",
-    "description": "Slightly tattered"
+	"name": "Cloth",
+	"description": "Slightly tattered"
   },
   "cone": {
-    "name": "Pinecone",
-    "description": "I've always liked these"
+	"name": "Pinecone",
+	"description": "I've always liked these"
   },
   "log": {
-    "name": "Log",
-    "description": "It's heavy..."
+	"name": "Log",
+	"description": "It's heavy..."
   },
   "rock": {
-    "name": "Rock",
-    "description": "Better than nothing"
+	"name": "Rock",
+	"description": "Better than nothing"
   },
   "sap": {
-    "name": "Sap",
-    "description": "Not for drinking!"
+	"name": "Sap",
+	"description": "Not for drinking!"
   },
   "smallfire": {
-    "name": "Small Campfire",
-    "description": "Should last the night"
+	"name": "Small Campfire",
+	"description": "Should last the night"
   },
   "stick": {
-    "name": "Stick",
-    "description": "Keeps the flames ablaze"
+	"name": "Stick",
+	"description": "Keeps the flames ablaze"
   },
   "torch": {
-    "name": "Torch",
-    "description": "Uncomfortably dim"
+	"name": "Torch",
+	"description": "Uncomfortably dim"
   }
 }
-

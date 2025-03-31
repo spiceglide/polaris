@@ -13,7 +13,7 @@ enum Interaction {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("interactive")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 
 func interact(player):
 	var announcer = player.get_node("Announcement")
-	print(type)
 	
 	match type:
 		Interaction.INSPECT:
@@ -29,7 +28,7 @@ func interact(player):
 		Interaction.PICKUP:
 			if not item:
 				return
-			if InventoryData.set_item(item):
+			if InventoryData.set_item_at_first_empty(item):
 				announcer.announce(description)
 		Interaction.DISPOSE:
 			announcer.announce(description)
@@ -38,5 +37,5 @@ func interact(player):
 			if not item:
 				return
 			announcer.announce(description)
-			if InventoryData.set_item(item):
+			if InventoryData.set_item_at_first_empty(item):
 				self.get_parent().queue_free()

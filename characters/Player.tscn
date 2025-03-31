@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=60 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://whqt0y2m483" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_4.png" id="33_cqv5h"]
 [ext_resource type="Texture2D" uid="uid://b867paeakvr0a" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_3.2.png" id="33_gbfby"]
 [ext_resource type="Texture2D" uid="uid://dgb80a8of7lbe" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_4.2.png" id="34_3jr5p"]
-[ext_resource type="Script" uid="uid://dedkhqs84lumm" path="res://utility/interaction_system.gd" id="34_qs00s"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player_camera.gd" id="34_r4xk0"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
 [ext_resource type="Texture2D" uid="uid://djb4gcwxdvua" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_1.2.png" id="35_iomsq"]
@@ -352,7 +351,6 @@ position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_jmgsg")
 
 [node name="Interaction" type="Area2D" parent="."]
-script = ExtResource("34_qs00s")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
@@ -373,3 +371,6 @@ theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("37_r4xk0")
+
+[connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
+[connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]

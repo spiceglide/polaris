@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 400
 @export var multiplier = 0.3
 var last_dir = "south";
+var interactable = []
 
 func start(pos):
 	position = pos
@@ -46,3 +47,18 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		$Sprite.set_state(last_dir, "idle")
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if interactable:
+			interactable[0].interact(self)
+
+func _on_interaction_body_entered(body: Node2D) -> void:
+	var interactive = body.get_node("Interaction")
+	if interactive and interactive.is_in_group("interactive"):
+		interactable.append(interactive)
+
+func _on_interaction_body_exited(body: Node2D) -> void:
+	var interactive = body.get_node("Interaction")
+	if interactive and interactive.is_in_group("interactive"):
+		interactable.erase(interactive)

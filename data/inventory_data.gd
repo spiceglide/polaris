@@ -9,6 +9,11 @@ var selected_slot: int = 0
 func _ready() -> void:
 	slots.resize(size)
 	select_slot(0)
+	
+	set_item(0, "stick")
+	set_item(1, "cone")
+	set_item(2, "log")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,7 +41,7 @@ func get_item(index: int):
 
 func get_all_items():
 	return slots.filter(
-		func(item): return bool(item)
+		func(item): return not item.is_empty()
 	)
 
 func select_slot(index: int):

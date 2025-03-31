@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=9 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="2_nysna"]
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="2_pom5v"]
-[ext_resource type="Texture2D" uid="uid://c6dpdbttgsja4" path="res://assets/lighting/neutral.png" id="3_3q2by"]
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://ui/Inventory.tscn" id="3_f6qnu"]
 [ext_resource type="PackedScene" uid="uid://dt04wa7ht1ten" path="res://ui/CraftingMenu.tscn" id="3_jd13s"]
 [ext_resource type="Texture2D" uid="uid://c6wyoxk32si8k" path="res://assets/lighting/night.png" id="4_tvtyy"]
@@ -15,12 +14,12 @@ shader_parameter/MainAlpha = 0.6
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pfnlp"]
 shader = ExtResource("2_pom5v")
-shader_parameter/day_lut = ExtResource("3_3q2by")
 shader_parameter/night_lut = ExtResource("4_tvtyy")
 shader_parameter/twilight_lut = ExtResource("5_li43i")
-shader_parameter/lut = ExtResource("5_li43i")
+shader_parameter/night_length = 0.1
+shader_parameter/twilight_length = 0.2
 shader_parameter/lut_size = 16.0
-shader_parameter/filter_alpha = 1.0
+shader_parameter/alpha = 1.0
 
 [node name="HUD" type="CanvasLayer"]
 metadata/player_pos = Vector2(0, 0)

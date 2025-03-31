@@ -1,16 +1,31 @@
 shader_type canvas_item;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
-uniform sampler2D day_lut;
 uniform sampler2D night_lut;
 uniform sampler2D twilight_lut;
 
+uniform float night_length = 0.1;
+uniform float twilight_length = 0.2;
+
+uniform float lut_size = 16.0;
+uniform float alpha : hint_range(0, 1) = 1.0;
+
 global uniform uint game_time;
 
-uniform sampler2D lut;
-uniform float lut_size = 16.0;
+float reflect_around(float value, float refl) {
+	return refl - abs(value - refl);
+}
 
-uniform float filter_alpha : hint_range(0, 1) = 1.0;
+float fade_in_out(float value, float minimum, float maximum) {
+	float norm = (value - minimum) / (maximum - minimum);
+	bool should_apply = value >= minimum || value <= maximum;
+	return float(should_apply) * reflect_around(norm, 0.5);
+}
+
+float fade_out(float value, float minimum, float maximum) {
+	float norm = 1.0 - (value - minimum) / (maximum - minimum);
+	return norm;
+}
 
 // Gets interpolation percentage for color  channel using floor and diff values.
 float get_interp_percent_channel(float channel_value, float floor_value, float diff_value){
@@ -34,7 +49,7 @@ vec3 get_interpolated_color(vec3 floorc, vec3 diff, float perc){
 }
 
 // Gets LUT mapped color using trilinear interpolation.
-vec4 get_lut_mapping_trilinear(vec4 old_color){
+vec4 get_lut_mapping_trilinear(vec4 old_color, sampler2D lut){
 	float lut_div = lut_size - 1.0;
 	// Get floor and ceil colors and diff from identity lut
 	vec3 old_color_lut_base = lut_div * old_color.rgb;
@@ -84,10 +99,21 @@ vec4 get_lut_mapping_trilinear(vec4 old_color){
 }
 
 void fragment(){
+	float ntime = float(game_time) / 360.0;
+	float gtime = reflect_around(ntime, 0.5);
+
+	float night_twilight = fade_out(gtime, 0.0, night_length);
+	float twilight_day;
+	if (gtime > night_length) { twilight_day = fade_out(gtime, night_length, twilight_length); } else { twilight_day = 1.0; };
+
 	vec4 original_color = texture(SCREEN_TEXTURE, SCREEN_UV);
-	vec4 filtered_color = get_lut_mapping_trilinear(original_color);
+
+	vec4 night_color = get_lut_mapping_trilinear(original_color, night_lut);
+	vec4 twilight_color = get_lut_mapping_trilinear(original_color, twilight_lut);
+	vec4 filtered_color = mix(twilight_color, night_color, night_twilight);
+
 	// Calculate filter alpha.
 	vec3 diff_color = filtered_color.rgb - original_color.rgb;
-	vec4 final_color = vec4(get_interpolated_color(original_color.rgb, diff_color, filter_alpha), filtered_color.a);
+	vec4 final_color = vec4(get_interpolated_color(original_color.rgb, diff_color, alpha), twilight_day);
 	COLOR = final_color;
 }

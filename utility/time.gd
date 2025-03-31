@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var day_length: int = 900
+@export var day_length: int = 60 #900
 var game_time = 0;
 
 func _ready():

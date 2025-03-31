@@ -1,7 +1,5 @@
 extends Area2D
 
-@onready var inventory: InventorySystem = HUD.get_node("Inventory")
-
 @export var description: String
 @export var item: String
 @export var type: Interaction
@@ -23,6 +21,7 @@ func _process(delta: float) -> void:
 
 func interact(player):
 	var announcer = player.get_node("Announcement")
+	print(type)
 	
 	match type:
 		Interaction.INSPECT:
@@ -30,8 +29,8 @@ func interact(player):
 		Interaction.PICKUP:
 			if not item:
 				return
-			announcer.announce(description)
-			inventory.set_item(item)
+			if InventoryData.set_item(item):
+				announcer.announce(description)
 		Interaction.DISPOSE:
 			announcer.announce(description)
 			self.get_parent().queue_free()
@@ -39,5 +38,5 @@ func interact(player):
 			if not item:
 				return
 			announcer.announce(description)
-			if inventory.set_item(item):
+			if InventoryData.set_item(item):
 				self.get_parent().queue_free()

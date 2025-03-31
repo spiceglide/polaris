@@ -2,7 +2,6 @@ extends Control
 class_name CraftingSystem
 
 @onready var recipe_scene = preload("res://ui/RecipeRow.tscn")
-@onready var inventory: InventorySystem = HUD.get_node("Inventory")
 
 @export var rows: int = 5
 @export var current_category = "all"
@@ -55,7 +54,7 @@ func _setup_slots():
 
 func _sort_recipes():
 	# TODO: consider item category
-	var all_items = inventory.get_all_items()
+	var all_items = InventoryData.get_all_items()
 	craftable = []
 	uncraftable = []
 	

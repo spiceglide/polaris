@@ -8,10 +8,6 @@ func _update_camera():
 	var scene_size = WorldData.scene_size
 	var grid_size = WorldData.grid_size
 	
-	print(player_pos)
-	print(scene_size)
-	print()
-	
 	var bounds = [
 		clamp(floor(player_pos.x / scene_size[0]),0, grid_size[0]-1) * scene_size[0],
 		clamp(floor(player_pos.y / scene_size[1]), 0, grid_size[1]-1) * scene_size[1],

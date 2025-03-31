@@ -10,6 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		for area: Area2D in get_overlapping_areas():
+			print("cool area")
 			if area.has_method("interact"):
+				print("cool")
 				area.interact(player)
 				break

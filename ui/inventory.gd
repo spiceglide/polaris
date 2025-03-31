@@ -13,11 +13,19 @@ var selected_slot: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_setup_slots()
-	select(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	select(InventoryData.selected_slot)
+	
+	for i in range(len(slots)):
+		var slot = slots[i]
+		var slot_data = InventoryData.get_item(i)
+		
+		if slot_data:
+			slot.set_item(slot_data)
+		else:
+			slot.clear_item()
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -25,30 +33,24 @@ func _input(event):
 		$Trash.visible = !($Trash.visible)
 		
 	if event.is_action_pressed("hotbar"):
-		select(event.as_text().to_int() - 1)
+		InventoryData.select_slot(event.as_text().to_int() - 1)
 		
 	if event.is_action_pressed("inv_next"):
-		select((selected_slot + 1) % cols)
+		InventoryData.select_slot((selected_slot + 1) % cols)
 		
 	if event.is_action_pressed("inv_prev"):
-		select(fposmod(selected_slot - 1, cols))
+		InventoryData.select_slot(fposmod(selected_slot - 1, cols))
 		
 	if event.is_action_pressed("drop"):
-		slots[selected_slot].clear_item()
+		InventoryData.clear_slot(selected_slot)
 
-func set_item(item_id: String) -> bool:
-	var slot = get_first_empty_slot()
-	if slot:
-		slot.set_item(item_id)
-		print("Picked up '" + item_id + "'")
-		return true
-	else:
-		return false
+func set_item(slot_index: int, item: String):
+	var slot = slots[slot_index]
+	slot.set_item(item)
 
-func get_first_empty_slot():
-	for slot in slots:
-		if not slot.item:
-			return slot
+func clear_item(slot_index: int):
+	var slot = slots[slot_index]
+	slot.clear_item()
 
 func get_all_items():
 	var items = []

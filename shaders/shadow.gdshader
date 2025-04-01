@@ -9,7 +9,7 @@ instance uniform float flip_offset = 2;
 uniform float shadow_height = 0.2;
 uniform float end_angle = 45;
 uniform vec2 scale_factor = vec2(3.0, 2.0);
-uniform vec2 fade_interval = vec2(0.0, 0.1);
+uniform vec2 fade_interval = vec2(0.0, 0.05);
 
 global uniform uint game_time;
 

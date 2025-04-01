@@ -11,6 +11,7 @@ enum SlotState {
 @export var anim: String = "type1"
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
+var slot_id: int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -9,6 +9,7 @@ class_name InventorySystem
 @export var rows: int = 5
 var slots: Array[ItemSlot] = []
 var selected_slot: int = 0
+var last_checked = INF
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,10 +23,22 @@ func _process(delta: float) -> void:
 		var slot = slots[i]
 		var slot_data = InventoryData.get_item(i)
 		
+		# Acknowledge modified slots
+		var timestamp = Time.get_ticks_msec()
+		if last_checked < slot.last_used:
+			if slot.item:
+				InventoryData.set_item(i, slot.item.item_id)
+			else:
+				InventoryData.clear_slot(i)
+			
+			continue
+		
 		if slot_data:
 			slot.set_item(slot_data)
 		else:
 			slot.clear_item()
+	
+	last_checked = Time.get_ticks_msec()
 
 func _input(event):
 	if event.is_action_pressed("inventory"):

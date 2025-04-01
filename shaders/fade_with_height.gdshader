@@ -1,18 +1,19 @@
 shader_type canvas_item;
 
-uniform float start: hint_range(0, 1) = 0.3;
-uniform float end: hint_range(0, 1) = 1.0;
-uniform float pos: hint_range(0, 2) = 0.5;
+uniform float start1: hint_range(0, 1) = 0.6;
+uniform float end1: hint_range(0, 1) = 0.85;
+
+uniform float start2: hint_range(0, 1) = 0.2;
+uniform float end2: hint_range(0, 1) = 0.45;
+
+uniform float min_alpha: hint_range(0, 1) = 0.1;
 
 void fragment() {
 	vec4 sprite = texture(TEXTURE, UV);
 
-	//float uv = mix(0.2, 1.0, UV.y);
-
-	float fade_factor_1 = smoothstep(start, end, UV.y);
-	float fade_factor_2 = smoothstep(start, end, SCREEN_UV.y * pos);
-	float fade_factor = max(fade_factor_1, fade_factor_2);
-	fade_factor = mix(0.3, 1.0, fade_factor);
+	float ff1 = smoothstep(start1, end1, UV.y);
+	float ff2 = smoothstep(start2, end2, SCREEN_UV.y);
+	float fade_factor = max(max(ff1, ff2), min_alpha);
 
 	sprite.a *= fade_factor;
 

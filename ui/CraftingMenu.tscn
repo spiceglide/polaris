@@ -8,6 +8,8 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pno6w")
+rows = null
+current_category = null
 
 [node name="Categories" type="HBoxContainer" parent="."]
 layout_mode = 1

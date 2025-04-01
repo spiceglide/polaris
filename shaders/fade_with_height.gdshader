@@ -6,7 +6,7 @@ uniform float end1: hint_range(0, 1) = 0.85;
 uniform float start2: hint_range(0, 1) = 0.2;
 uniform float end2: hint_range(0, 1) = 0.45;
 
-uniform float min_alpha: hint_range(0, 1) = 0.1;
+uniform float min_alpha: hint_range(0, 1) = 0.2;
 
 void fragment() {
 	vec4 sprite = texture(TEXTURE, UV);
@@ -16,6 +16,5 @@ void fragment() {
 	float fade_factor = max(max(ff1, ff2), min_alpha);
 
 	sprite.a *= fade_factor;
-
 	COLOR = sprite;
 }

@@ -14,6 +14,9 @@ texture = ExtResource("1_34dwc")
 
 [node name="Interaction" type="Area2D" parent="."]
 script = ExtResource("2_r36x1")
+description = null
+item = null
+type = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

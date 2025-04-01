@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-@export var speed = 400
-@export var multiplier = 0.3
 var last_dir = "south";
 var interactable = []
 
@@ -23,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	# Speed multiplier
 	var mult = 1
 	if Input.is_action_pressed("run"):
-		mult = multiplier
+		mult = PlayerData.multiplier
 
 	# Determine direction
 	velocity = Vector2.ZERO
@@ -42,7 +40,7 @@ func _physics_process(delta: float) -> void:
 
 	# Normalise velocity
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed * mult
+		velocity = velocity.normalized() * PlayerData.speed * mult
 		$Sprite.set_state(last_dir, "walk")
 		move_and_slide()
 	else:

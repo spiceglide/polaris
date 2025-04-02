@@ -24,7 +24,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 		if state == SlotState.SELECTED_CLICK:
 			_clickdrag()
-
 	
 func set_item(id: String):
 	$Item.set_item(id)
@@ -48,7 +47,10 @@ func select():
 func deselect():
 	self.scale = Vector2(1, 1)
 	$Sprite.modulate = Color(1, 1, 1)
-	
+
+func update_timestamp():
+	last_used = Time.get_ticks_msec()
+
 func _clickdrag():
 	if not item:
 		return
@@ -83,7 +85,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		source_slot.clear_item()
 	set_item(data[0].item_id)
 	state = SlotState.INACTIVE
-	last_used = Time.get_ticks_msec()
+	update_timestamp()
 	
 func _generate_preview():
 	var preview = TextureRect.new()
@@ -105,7 +107,7 @@ func _notification(type):
 			if state == SlotState.INACTIVE:
 				return
 			state = SlotState.INACTIVE
-			last_used = Time.get_ticks_msec()
+			update_timestamp()
 			
 			if is_drag_successful():
 				pass

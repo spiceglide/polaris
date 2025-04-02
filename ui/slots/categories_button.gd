@@ -1,15 +1,5 @@
 extends Control
 
-signal category_changed
-
-enum Category {
-	All,
-	Fire,
-	Tool,
-	Vessel,
-	Sanity
-}
-
 @export var category: String
 
 func _ready() -> void:
@@ -22,4 +12,4 @@ func disable():
 	$Sprite.modulate = Color(0.6, 0.6, 0.6)
 
 func _on_button_pressed() -> void:
-	emit_signal("category_changed", category)
+	CraftingData.set_category(category)

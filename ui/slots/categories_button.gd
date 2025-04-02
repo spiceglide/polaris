@@ -1,5 +1,7 @@
 extends Control
 
+signal category_changed
+
 enum Category {
 	All,
 	Fire,
@@ -8,23 +10,16 @@ enum Category {
 	Sanity
 }
 
-@export var category: Category
+@export var category: String
 
 func _ready() -> void:
-	match category:
-		Category.All:
-			$ItemSprite.animation = "all"
-		Category.Fire:
-			$ItemSprite.animation = "fire"
-		Category.Tool:
-			$ItemSprite.animation = "tool"
-		Category.Vessel:
-			$ItemSprite.animation = "vessel"
-		Category.Sanity:
-			$ItemSprite.animation = "sanity"
+	$ItemSprite.animation = category
 
 func enable():
 	$Sprite.modulate = Color(1, 1, 1)
 
 func disable():
 	$Sprite.modulate = Color(0.6, 0.6, 0.6)
+
+func _on_button_pressed() -> void:
+	emit_signal("category_changed", category)

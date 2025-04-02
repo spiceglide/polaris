@@ -8,8 +8,6 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pno6w")
-rows = null
-current_category = null
 
 [node name="Categories" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -20,22 +18,23 @@ script = ExtResource("2_r3pf1")
 
 [node name="All" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+category = "all"
 
 [node name="Fire" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
-category = 1
+category = "fire"
 
 [node name="Tool" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
-category = 2
+category = "tool"
 
 [node name="Vessel" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
-category = 3
+category = "vessel"
 
 [node name="Sanity" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
-category = 4
+category = "sanity"
 
 [node name="Recipes" type="VBoxContainer" parent="."]
 layout_mode = 1

@@ -11,24 +11,29 @@ var recipes: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(HUD)
 	_setup_slots()
 	visible = false
 	
+	for cat in $Categories.get_children():
+		cat.connect("category_changed", _on_category_changed)
+	
+	recipes = read_recipes()
+	recipes.sort_custom(func(a, b): return len(a["in"]) > len(b["in"]))
+	
+	for recipe in recipes:
+		recipe["in"].sort()
+
+func read_recipes() -> Array:
 	var file = FileAccess.open("res://data/recipes.json", FileAccess.READ)
 	var json = file.get_as_text()
 	
 	var reader = JSON.new()
 	var error = reader.parse(json)
 	if error == OK:
-		recipes = reader.data
+		return reader.data
 	else:
 		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
-		
-	recipes.sort_custom(func(a, b): return len(a["in"]) > len(b["in"]))
-	
-	for recipe in recipes:
-		recipe["in"].sort()
+		return []
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -53,7 +58,6 @@ func _setup_slots():
 			category.disable() 
 
 func _sort_recipes():
-	# TODO: consider item category
 	var all_items = InventoryData.get_all_items()
 	craftable = []
 	uncraftable = []
@@ -85,8 +89,21 @@ func _update_list():
 		
 		i += 1
 
+func set_category(category: String):
+	self.current_category = category
+	for button in $Categories.get_children():
+		if button.category == category:
+			button.enable()
+		else:
+			button.disable()
+	_sort_recipes()
+	_update_list()
+
 func is_subset(array1: Array, array2: Array) -> bool:
 	for item in array1:
 		if item not in array2:
 			return false
 	return true
+
+func _on_category_changed(category: String):
+	set_category(category)

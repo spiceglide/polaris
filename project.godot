@@ -21,6 +21,7 @@ HUD="*res://ui/HUD.tscn"
 InventoryData="*res://data/InventoryData.tscn"
 PlayerData="*res://data/PlayerData.tscn"
 WorldData="*res://data/WorldData.tscn"
+CraftingData="*res://data/CraftingData.tscn"
 
 [display]
 

@@ -69,4 +69,7 @@ func set_recipes(recipes: Array):
 		self.recipes[recipe["out"]] = recipe["in"]
 
 func craft_complete(product: String):
-	remove_items(recipes[product])
+	for recipe in CraftingData.recipes:
+		if product == recipe["out"]:
+			remove_items(recipe["in"])
+			return

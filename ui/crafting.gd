@@ -2,41 +2,17 @@ extends Control
 class_name CraftingSystem
 
 @onready var recipe_scene = preload("res://ui/RecipeRow.tscn")
-
 @export var rows: int = 5
-@export var current_category = "all"
-var craftable = []
-var uncraftable = []
-var recipes: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_setup_slots()
+	_setup_slots(rows)
 	visible = false
 	
 	add_to_group("crafting")
 	
 	for cat in $Categories.get_children():
 		cat.connect("category_changed", _on_category_changed)
-	
-	recipes = read_recipes()
-	recipes.sort_custom(func(a, b): return len(a["in"]) > len(b["in"]))
-	InventoryData.set_recipes(recipes)
-	
-	for recipe in recipes:
-		recipe["in"].sort()
-
-func read_recipes() -> Array:
-	var file = FileAccess.open("res://data/recipes.json", FileAccess.READ)
-	var json = file.get_as_text()
-	
-	var reader = JSON.new()
-	var error = reader.parse(json)
-	if error == OK:
-		return reader.data
-	else:
-		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
-		return []
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,33 +22,21 @@ func _input(event):
 	if event.is_action_pressed("inventory"):
 		self.visible = !(self.visible)
 		if self.visible:
-			_sort_recipes()
+			CraftingData.sort_recipes()
 			_update_list()
 
-func _setup_slots():
+func _setup_slots(rows: int):
 	for row in rows:
 		var slot = recipe_scene.instantiate()
 		$Recipes.add_child(slot)
 	
 	for category in $Categories.get_children():
-		if category.name.to_lower() == current_category:
+		if category.name.to_lower() == CraftingData.current_category:
 			category.enable()
 		else:
 			category.disable() 
 
-func _sort_recipes():
-	var all_items = InventoryData.get_all_items()
-	craftable = []
-	uncraftable = []
-	
-	for recipe in recipes:
-		if (recipe["category"] != current_category) and (current_category != "all"):
-			continue
-		
-		if is_subset(recipe["in"], all_items):
-			craftable.append(recipe)
-		else:
-			uncraftable.append(recipe)
+
 
 func _update_list():
 	var recipe_rows = $Recipes.get_children()
@@ -81,11 +45,11 @@ func _update_list():
 	var recipe
 	var i = start
 	for row in recipe_rows:
-		if i < len(craftable):
-			recipe = craftable[i]
+		if i < len(CraftingData.craftable):
+			recipe = CraftingData.craftable[i]
 			row.set_recipe(recipe, true)
-		elif i < (len(craftable) + len(uncraftable)):
-			recipe = uncraftable[i - len(craftable)]
+		elif i < (len(CraftingData.craftable) + len(CraftingData.uncraftable)):
+			recipe = CraftingData.uncraftable[i - len(CraftingData.craftable)]
 			row.set_recipe(recipe, false)
 		else:
 			row.clear_recipe()
@@ -99,17 +63,7 @@ func set_category(category: String):
 			button.enable()
 		else:
 			button.disable()
-	_sort_recipes()
-	_update_list()
-
-func is_subset(array1: Array, array2: Array) -> bool:
-	for item in array1:
-		if item not in array2:
-			return false
-	return true
-
-func craft_complete(product: String):
-	_sort_recipes()
+	CraftingData.sort_recipes()
 	_update_list()
 
 func _on_category_changed(category: String):

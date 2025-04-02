@@ -18,6 +18,9 @@ func _clickdrag():
 	
 	$ItemSprite.visible = false
 	var drag_data = _generate_drag_data()
+	
+	get_tree().call_group("crafting", "craft_complete", item.item_id)
+	
 	force_drag(drag_data["data"], drag_data["preview"])
 
 func _get_drag_data(at_position: Vector2) -> Variant:
@@ -33,6 +36,9 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		
 	var drag_data = _generate_drag_data()
 	set_drag_preview(drag_data["preview"])
+	
+	get_tree().call_group("crafting", "craft_complete", item.item_id)
+	
 	return drag_data["data"]
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:

@@ -4,11 +4,14 @@ extends Node
 
 var slots: Array[String]
 var selected_slot: int = 0
+var recipes: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slots.resize(size)
 	select_slot(0)
+	
+	add_to_group("crafting")
 	
 	set_item(0, "stick")
 	set_item(1, "cone")
@@ -49,3 +52,21 @@ func select_slot(index: int):
 
 func clear_slot(index: int):
 	slots[index] = ""
+
+func remove_items(to_remove: Array):
+	for i in range(len(slots)):
+		if to_remove.is_empty():
+			return
+		
+		if to_remove.has(slots[i]):
+			to_remove.erase(slots[i])
+			slots[i] = ""
+
+func set_recipes(recipes: Array):
+	self.recipes = {}
+	
+	for recipe in recipes:
+		self.recipes[recipe["out"]] = recipe["in"]
+
+func craft_complete(product: String):
+	remove_items(recipes[product])

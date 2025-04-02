@@ -14,11 +14,14 @@ func _ready() -> void:
 	_setup_slots()
 	visible = false
 	
+	add_to_group("crafting")
+	
 	for cat in $Categories.get_children():
 		cat.connect("category_changed", _on_category_changed)
 	
 	recipes = read_recipes()
 	recipes.sort_custom(func(a, b): return len(a["in"]) > len(b["in"]))
+	InventoryData.set_recipes(recipes)
 	
 	for recipe in recipes:
 		recipe["in"].sort()
@@ -104,6 +107,10 @@ func is_subset(array1: Array, array2: Array) -> bool:
 		if item not in array2:
 			return false
 	return true
+
+func craft_complete(product: String):
+	_sort_recipes()
+	_update_list()
 
 func _on_category_changed(category: String):
 	set_category(category)

@@ -4,6 +4,9 @@ class_name CraftingSystem
 @onready var recipe_scene = preload("res://ui/RecipeRow.tscn")
 @export var rows: int = 5
 
+# TODO: failed drag operations should result in first available slot being selected
+# Additionally, this may help with the sprite icon not disappearing from source slot during drag
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_setup_slots(rows)
@@ -36,10 +39,6 @@ func _setup_slots(rows: int):
 func _update_list():
 	var recipe_rows = $Recipes.get_children()
 	var start = 0
-	
-	#print(CraftingData.uncraftable)
-	#print(CraftingData.craftable)
-	#print()
 	
 	var recipe
 	var i = start

@@ -10,6 +10,11 @@ func disable():
 	enabled = false
 	$Sprite.modulate = Color(0.6, 0.6, 0.6)
 
+func quick_move():
+	get_tree().call_group("crafting", "craft_complete", item.item_id)
+	var slot = InventoryData.get_first_empty_slot()
+	InventoryData.set_item(slot, item.item_id)
+
 func _clickdrag():
 	if not enabled:
 		return

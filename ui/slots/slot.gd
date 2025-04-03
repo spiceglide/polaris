@@ -35,6 +35,7 @@ func set_item(id: String):
 func clear_item():
 	item = null
 	$ItemSprite.visible = false
+	update_timestamp()
 
 func get_item():
 	if item:
@@ -47,6 +48,11 @@ func select():
 func deselect():
 	self.scale = Vector2(1, 1)
 	$Sprite.modulate = Color(1, 1, 1)
+
+func quick_move():
+	var slot = InventoryData.get_first_empty_slot()
+	InventoryData.set_item(slot, item.item_id)
+	self.clear_item()
 
 func update_timestamp():
 	last_used = Time.get_ticks_msec()
@@ -121,4 +127,7 @@ func _on_button_pressed() -> void:
 		if (timestamp - last_used) < 200:
 			return
 		if item:
-			state = SlotState.SELECTED_CLICK
+			if Input.is_action_pressed("quick_move"):
+				quick_move()
+			else:
+				state = SlotState.SELECTED_CLICK

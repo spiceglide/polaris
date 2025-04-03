@@ -4,8 +4,8 @@
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="2_pom5v"]
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://ui/Inventory.tscn" id="3_f6qnu"]
 [ext_resource type="PackedScene" uid="uid://dt04wa7ht1ten" path="res://ui/CraftingMenu.tscn" id="3_jd13s"]
-[ext_resource type="Texture2D" uid="uid://c6wyoxk32si8k" path="res://assets/lighting/night.png" id="4_tvtyy"]
-[ext_resource type="Texture2D" uid="uid://c7i4hm2hdcn2m" path="res://assets/lighting/twilight.png" id="5_li43i"]
+[ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="4_tvtyy"]
+[ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="5_li43i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
 shader = ExtResource("2_nysna")
@@ -84,4 +84,3 @@ offset_top = -94.0
 offset_right = 12.0
 offset_bottom = -94.0
 grow_vertical = 0
-rows = 5

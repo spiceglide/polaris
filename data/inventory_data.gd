@@ -53,14 +53,16 @@ func select_slot(index: int):
 func clear_slot(index: int):
 	slots[index] = ""
 
-func remove_items(to_remove: Array):
+func remove_items(items: Array):
+	var to_remove = items.duplicate()
+	
 	for i in range(len(slots)):
 		if to_remove.is_empty():
 			return
 		
 		if to_remove.has(slots[i]):
-			to_remove.erase(slots[i])
 			slots[i] = ""
+			to_remove.erase(slots[i])
 
 func set_recipes(recipes: Array):
 	self.recipes = {}

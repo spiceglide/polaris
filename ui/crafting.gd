@@ -37,9 +37,9 @@ func _update_list():
 	var recipe_rows = $Recipes.get_children()
 	var start = 0
 	
-	print(InventoryData.craftable)
-	print(InventoryData.uncraftable)
-	print()
+	#print(CraftingData.uncraftable)
+	#print(CraftingData.craftable)
+	#print()
 	
 	var recipe
 	var i = start

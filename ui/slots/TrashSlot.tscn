@@ -218,7 +218,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Slot" type="MarginContainer"]
+[node name="TrashSlot" type="MarginContainer"]
 custom_minimum_size = Vector2(70, 70)
 offset_right = 70.0
 offset_bottom = 70.0

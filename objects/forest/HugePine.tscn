@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dttlt7aajvyvk" path="res://assets/objects/forest/hugepine_1.png" id="1_j8p45"]
 [ext_resource type="Material" uid="uid://btsphodyus8db" path="res://shaders/fade_with_height.material" id="1_locfo"]
-[ext_resource type="Script" uid="uid://bdu807tajmmm5" path="res://utility/shadow.gd" id="2_02fa7"]
+[ext_resource type="Script" path="res://utility/shadow.gd" id="2_02fa7"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_j8p45"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_locfo"]
 

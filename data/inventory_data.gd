@@ -4,12 +4,15 @@ extends Node
 
 var slots: Array[String]
 var selected_slot: int = 0
-var recipes: Dictionary = {}
+var item_map: Dictionary = {}
+var recipe_map: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slots.resize(size)
 	select_slot(0)
+	
+	item_map = _read_items()
 	
 	add_to_group("crafting")
 	
@@ -17,10 +20,21 @@ func _ready() -> void:
 	set_item(1, "cone")
 	set_item(2, "log")
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _read_items():
+	var file = FileAccess.open("res://data/items.json", FileAccess.READ)
+	var json = file.get_as_text()
+	
+	var reader = JSON.new()
+	var error = reader.parse(json)
+	if error == OK:
+		return reader.data
+	else:
+		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
+		return {}
 
 func set_item(slot: int, item: String) -> bool:
 	if not slots[slot]:
@@ -65,7 +79,7 @@ func remove_items(items: Array):
 			to_remove.erase(slots[i])
 
 func set_recipes(recipes: Array):
-	self.recipes = {}
+	self.recipe_map = {}
 	
 	for recipe in recipes:
 		self.recipes[recipe["out"]] = recipe["in"]

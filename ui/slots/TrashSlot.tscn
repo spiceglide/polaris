@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dcdscwfma5sob"]
+[gd_scene load_steps=37 format=3 uid="uid://dcdscwfma5sob"]
 
 [ext_resource type="Script" uid="uid://dw6lci1a46ls4" path="res://ui/slots/trash_slot.gd" id="1_hhlo8"]
 [ext_resource type="Texture2D" uid="uid://dt7wpjjjiurwg" path="res://assets/ui/items/berry_a.png" id="2_d0ffw"]
@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://8l2n7woksi42" path="res://assets/ui/inventory/itemslot_4b.png" id="29_pqyr6"]
 [ext_resource type="Texture2D" uid="uid://crwk5spjbbb1p" path="res://assets/ui/inventory/itemslot_5a.png" id="30_2biqt"]
 [ext_resource type="Texture2D" uid="uid://gwjs0homn7t7" path="res://assets/ui/inventory/itemslot_5b.png" id="31_5svgt"]
-[ext_resource type="PackedScene" uid="uid://b6y27qxb4h6qs" path="res://ui/Item.tscn" id="32_16wsb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_brms5"]
 animations = [{
@@ -243,7 +242,5 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 focus_mode = 0
 mouse_filter = 1
-
-[node name="Item" parent="." instance=ExtResource("32_16wsb")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

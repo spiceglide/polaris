@@ -1,10 +1,12 @@
 extends Container
 
+var item_scene = preload("res://ui/Item.tscn")
+
 @export var item: Item = null
 
 func set_item(id: String):
-	$Item.set_item(id)
-	item = $Item
+	item = item_scene.instantiate()
+	item.set_item(id)
 	
 	$ItemSprite.animation = id
 	$ItemSprite.visible = true

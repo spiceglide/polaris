@@ -1,6 +1,8 @@
 extends Control
 class_name ItemSlot
 
+var item_scene = preload("res://ui/Item.tscn")
+
 enum SlotState {
 	INACTIVE,
 	SELECTED_DRAG,
@@ -26,8 +28,8 @@ func _process(delta: float) -> void:
 			_clickdrag()
 	
 func set_item(id: String):
-	$Item.set_item(id)
-	item = $Item
+	item = item_scene.instantiate()
+	item.set_item(id)
 	
 	$ItemSprite.animation = id
 	$ItemSprite.visible = true
@@ -39,7 +41,7 @@ func clear_item():
 
 func get_item():
 	if item:
-		return $Item.item_id
+		return item.item_id
 
 func select():
 	self.scale = Vector2(0.95, 0.95)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bccj5m4cvv56k"]
+[gd_scene load_steps=24 format=3 uid="uid://bccj5m4cvv56k"]
 
+[ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_ui6ip"]
 [ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="160x160_tileset_ground_a"]
 [ext_resource type="PackedScene" uid="uid://nlfj8v8idkp1" path="res://objects/swamp/Bush1.tscn" id="objectsswampBush1"]
 [ext_resource type="PackedScene" uid="uid://c67v1sc172sfb" path="res://objects/swamp/Bush2.tscn" id="objectsswampBush2"]
@@ -195,6 +196,8 @@ sources/0 = SubResource("TileSetAtlasSource_0")
 
 [node name="swamp_invsw_river_invsw" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_ui6ip")
+biomes = ["tundra", "swamp"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0")

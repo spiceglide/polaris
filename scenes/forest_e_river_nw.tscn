@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfquxlui3ygme"]
+[gd_scene load_steps=23 format=3 uid="uid://cfquxlui3ygme"]
 
+[ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_isc5g"]
 [ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="160x160_tileset_ground_a"]
 [ext_resource type="PackedScene" uid="uid://iny1lbsa3o1g" path="res://objects/forest/HugePine.tscn" id="objectsforestHugePine"]
 [ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://objects/forest/MediumPine.tscn" id="objectsforestMediumPine"]
@@ -194,6 +195,8 @@ sources/0 = SubResource("TileSetAtlasSource_0")
 
 [node name="forest_e_river_nw" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_isc5g")
+biomes = ["tundra", "forest"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0")

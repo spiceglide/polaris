@@ -18,6 +18,7 @@ z_index = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_locfo")
 position = Vector2(0, -964)
+rotation = -0.000837005
 texture = ExtResource("1_j8p45")
 script = ExtResource("2_02fa7")
 

@@ -18,6 +18,15 @@ func _process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	# Dead men don't walk
+	if PlayerData.state == PlayerData.State.Dead:
+		_die()
+		return
+	
+	# Player movement
+	_move()
+
+func _move() -> void:
 	# Speed multiplier
 	var mult = 1
 	if Input.is_action_pressed("run"):
@@ -45,6 +54,10 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	else:
 		$Sprite.set_state(last_dir, "idle")
+
+func _die():
+	$Sprite.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	$Sprite.set_state(last_dir, "idle")
 
 func _input(event):
 	if event.is_action_pressed("interact"):

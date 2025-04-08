@@ -9,5 +9,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if game_time < day_length:
 		game_time += delta
+		PlayerData.is_night = false
+	else:
+		PlayerData.is_night = true
 	
 	RenderingServer.global_shader_parameter_set("game_time", game_time/day_length * 360)

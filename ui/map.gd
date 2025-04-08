@@ -1,9 +1,23 @@
 extends Node2D
 
 @export var leak_opacity = 0.3
-var available_scenes_top = [preload("res://scenes/forest_tundra_ns_1.tscn"), preload("res://scenes/swamp_tundra_ns_1.tscn")]
-var available_scenes = [preload("res://scenes/level_tundra_1.tscn")]
-var scenes = []
+var available_scenes: Array = [
+	[
+		preload("res://scenes/tundra_river_e.tscn"),
+		preload("res://scenes/forest_e_river_nw.tscn"),
+		preload("res://scenes/forest_river_s.tscn"),
+	], [
+		preload("res://scenes/swamp_s_river_n.tscn"),
+		preload("res://scenes/swamp_sw_forest_ne_river_w.tscn"),
+		preload("res://scenes/forest_n_river_se.tscn"),
+	], [
+		preload("res://scenes/swamp_river_nw.tscn"),
+		preload("res://scenes/swamp_w_tundra.tscn"),
+		preload("res://scenes/tundra_river_e.tscn"),
+	],
+]
+
+var scenes: Array = available_scenes
 var current_scene = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -17,16 +31,15 @@ func _ready() -> void:
 	for x in range(grid_size[0]):
 		var temp_scenes = []
 		for y in range(grid_size[1]):
-			if y == 0:
-				scene = available_scenes_top.pick_random()
-			else:
-				scene = available_scenes.pick_random()
+			scene = available_scenes[y][x]
 			
 			instance = scene.instantiate()
+			print(instance)
 			
 			instance.position.x = scene_size[0] * x
 			instance.position.y = scene_size[1] * y
-			instance.visible = false
+			#instance.visible = false
+			instance.visible = true
 			
 			temp_scenes.append(instance)
 			add_child(instance)
@@ -35,14 +48,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_update_current_scene()
-	_cull_scenes()
+	#_cull_scenes()
 
 func _cull_scenes():
 	var grid_size = WorldData.grid_size
 	
 	for x in range(grid_size[0]):
 		for y in range(grid_size[1]):
-			var scene = scenes[x][y]
+			var scene = scenes[y][x]
 			scene.visible = false
 			scene.modulate = Color(1, 1, 1, 1)
 	

@@ -1,0 +1,467 @@
+[gd_scene load_steps=24 format=3 uid="uid://71d1hkxo18x2"]
+
+[ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="160x160_tileset_ground_a"]
+[ext_resource type="PackedScene" uid="uid://nlfj8v8idkp1" path="res://objects/swamp/Bush1.tscn" id="objectsswampBush1"]
+[ext_resource type="PackedScene" uid="uid://c67v1sc172sfb" path="res://objects/swamp/Bush2.tscn" id="objectsswampBush2"]
+[ext_resource type="PackedScene" uid="uid://d4kkjobhjisp2" path="res://objects/swamp/Bush3.tscn" id="objectsswampBush3"]
+[ext_resource type="PackedScene" uid="uid://dod01g2ybik2k" path="res://objects/swamp/Mud1.tscn" id="objectsswampMud1"]
+[ext_resource type="PackedScene" uid="uid://71jq6ka37r8j" path="res://objects/swamp/Mud2.tscn" id="objectsswampMud2"]
+[ext_resource type="PackedScene" uid="uid://de70muq2m8tii" path="res://objects/swamp/Mud3.tscn" id="objectsswampMud3"]
+[ext_resource type="PackedScene" uid="uid://7i4fp6ndf2ss" path="res://objects/swamp/Mud4.tscn" id="objectsswampMud4"]
+[ext_resource type="PackedScene" uid="uid://gvjk8tsg07d8" path="res://objects/swamp/Mud5.tscn" id="objectsswampMud5"]
+[ext_resource type="PackedScene" uid="uid://ct0bwbjtev4hx" path="res://objects/swamp/Mud6.tscn" id="objectsswampMud6"]
+[ext_resource type="PackedScene" uid="uid://ds5qpufck4mi" path="res://objects/swamp/Reed1.tscn" id="objectsswampReed1"]
+[ext_resource type="PackedScene" uid="uid://yufo0vj7muxv" path="res://objects/swamp/Reed2.tscn" id="objectsswampReed2"]
+[ext_resource type="PackedScene" uid="uid://boi1j5eac6sdm" path="res://objects/swamp/Reed3.tscn" id="objectsswampReed3"]
+[ext_resource type="PackedScene" uid="uid://bt3je2ky4ljad" path="res://objects/swamp/Reed4.tscn" id="objectsswampReed4"]
+[ext_resource type="PackedScene" uid="uid://cfb0llt0plafj" path="res://objects/swamp/Reed5.tscn" id="objectsswampReed5"]
+[ext_resource type="PackedScene" uid="uid://uhnhyutpcf7j" path="res://objects/swamp/Tree.tscn" id="objectsswampTree"]
+[ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="objectstundraRock1"]
+[ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="objectstundraRock2"]
+[ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]
+[ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://objects/tundra/SnowPile2.tscn" id="objectstundraSnowPile2"]
+[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://objects/tundra/StickTree.tscn" id="objectstundraStickTree"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
+texture = ExtResource("160x160_tileset_ground_a")
+texture_region_size = Vector2i(160, 160)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+0:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+0:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+0:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+13:13/0 = 0
+0:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+13:14/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0"]
+tile_size = Vector2i(160, 160)
+sources/0 = SubResource("TileSetAtlasSource_0")
+
+[node name="swamp_s_river_n" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0")
+format = 2
+layer_0/name = "base"
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 65536, 0, 15, 65536, 0, 16, 65536, 0, 17, 65536, 0, 18, 65536, 0, 19, 65536, 0, 20, 65536, 0, 21, 65536, 0, 22, 65536, 0, 23, 65536, 0, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 131072, 0, 131086, 131072, 0, 131087, 131072, 0, 131088, 131072, 0, 131089, 131072, 0, 131090, 131072, 0, 131091, 65536, 0, 131092, 65536, 0, 131093, 65536, 0, 131094, 65536, 0, 131095, 65536, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 131072, 0, 196617, 131072, 0, 196618, 131072, 0, 196619, 131072, 0, 196620, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 196623, 65536, 0, 196624, 65536, 0, 196625, 65536, 0, 196626, 65536, 0, 196627, 65536, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 131072, 0, 262149, 131072, 0, 262150, 131072, 0, 262151, 131072, 0, 262152, 131072, 0, 262153, 131072, 0, 262154, 131072, 0, 262155, 131072, 0, 262156, 131072, 0, 262157, 131072, 0, 262158, 131072, 0, 262159, 131072, 0, 262160, 131072, 0, 262161, 131072, 0, 262162, 131072, 0, 262163, 131072, 0, 262164, 65536, 0, 262165, 65536, 0, 262166, 65536, 0, 262167, 65536, 0, 327680, 131072, 0, 327681, 131072, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 393216, 131072, 0, 393217, 131072, 0, 393218, 65536, 0, 393219, 65536, 0, 393220, 65536, 0, 393221, 65536, 0, 393222, 65536, 0, 393223, 65536, 0, 393224, 131072, 0, 393225, 131072, 0, 393226, 131072, 0, 393227, 131072, 0, 393228, 131072, 0, 393229, 131072, 0, 393230, 65536, 0, 393231, 65536, 0, 393232, 65536, 0, 393233, 65536, 0, 393234, 65536, 0, 393235, 65536, 0, 393236, 65536, 0, 393237, 131072, 0, 393238, 131072, 0, 393239, 131072, 0, 458752, 65536, 0, 458753, 131072, 0, 458754, 131072, 0, 458755, 131072, 0, 458756, 131072, 0, 458757, 131072, 0, 458758, 131072, 0, 458759, 131072, 0, 458760, 131072, 0, 458761, 131072, 0, 458762, 65536, 0, 458763, 65536, 0, 458764, 65536, 0, 458765, 65536, 0, 458766, 65536, 0, 458767, 65536, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 524288, 65536, 0, 524289, 65536, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 65536, 0, 524302, 65536, 0, 524303, 65536, 0, 524304, 65536, 0, 524305, 131072, 0, 524306, 131072, 0, 524307, 131072, 0, 524308, 131072, 0, 524309, 131072, 0, 524310, 65536, 0, 524311, 65536, 0, 589824, 65536, 0, 589825, 65536, 0, 589826, 65536, 0, 589827, 65536, 0, 589828, 65536, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 65536, 0, 655360, 131072, 0, 655361, 131072, 0, 655362, 131072, 0, 655363, 65536, 0, 655364, 65536, 0, 655365, 65536, 0, 655366, 65536, 0, 655367, 65536, 0, 655368, 65536, 0, 655369, 65536, 0, 655370, 131072, 0, 655371, 131072, 0, 655372, 131072, 0, 655373, 65536, 0, 655374, 65536, 0, 655375, 65536, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 65536, 0, 720896, 65536, 0, 720897, 65536, 0, 720898, 65536, 0, 720899, 65536, 0, 720900, 65536, 0, 720901, 65536, 0, 720902, 65536, 0, 720903, 65536, 0, 720904, 65536, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 65536, 0, 720919, 65536, 0, 786432, 131072, 0, 786433, 131072, 0, 786434, 131072, 0, 786435, 65536, 0, 786436, 65536, 0, 786437, 131072, 0, 786438, 131072, 0, 786439, 131072, 0, 786440, 131072, 0, 786441, 65536, 0, 786442, 65536, 0, 786443, 65536, 0, 786444, 262144, 7, 786445, 262144, 7, 786446, 262144, 7, 786447, 262144, 7, 786448, 65536, 0, 786449, 65536, 0, 786450, 65536, 0, 786451, 65536, 0, 786452, 131072, 0, 786453, 131072, 0, 786454, 131072, 0, 786455, 131072, 0, 851968, 131072, 0, 851969, 131072, 0, 851970, 131072, 0, 851971, 131072, 0, 851972, 262144, 7, 851973, 262144, 7, 851974, 262144, 7, 851975, 327680, 7, 851976, 262144, 7, 851977, 262144, 7, 851978, 262144, 7, 851979, 65536, 0, 851980, 65536, 0, 851981, 65536, 0, 851982, 65536, 0, 851983, 65536, 0, 851984, 65536, 0, 851985, 65536, 0, 851986, 65536, 0, 851987, 65536, 0, 851988, 262144, 7, 851989, 262144, 7, 851990, 262144, 7, 851991, 262144, 7, 917504, 65536, 0, 917505, 262144, 7, 917506, 262144, 7, 917507, 262144, 7, 917508, 262144, 7, 917509, 262144, 7, 917510, 262144, 7, 917511, 262144, 7, 917512, 65536, 0, 917513, 131072, 0, 917514, 262144, 7, 917515, 262144, 7, 917516, 262144, 7, 917517, 262144, 7, 917518, 262144, 7, 917519, 262144, 7, 917520, 262144, 7, 917521, 327680, 7, 917522, 327680, 7, 917523, 327680, 7, 917524, 327680, 7, 917525, 327680, 7, 917526, 327680, 7, 917527, 327680, 7, 983040, 262144, 7, 983041, 262144, 7, 983042, 262144, 7, 983043, 327680, 7, 983044, 327680, 7, 983045, 393216, 7, 983046, 393216, 7, 983047, 393216, 7, 983048, 393216, 7, 983049, 393216, 7, 983050, 327680, 7, 983051, 327680, 7, 983052, 327680, 7, 983053, 262144, 7, 983054, 262144, 7, 983055, 262144, 7, 983056, 262144, 7, 983057, 262144, 7, 983058, 262144, 7, 983059, 262144, 7, 983060, 262144, 7, 983061, 262144, 7, 983062, 262144, 7, 983063, 262144, 7, 1048576, 327680, 7, 1048577, 327680, 7, 1048578, 327680, 7, 1048579, 327680, 7, 1048580, 327680, 7, 1048581, 327680, 7, 1048582, 327680, 7, 1048583, 327680, 7, 1048584, 327680, 7, 1048585, 327680, 7, 1048586, 262144, 7, 1048587, 262144, 7, 1048588, 262144, 7, 1048589, 262144, 7, 1048590, 327680, 7, 1048591, 327680, 7, 1048592, 327680, 7, 1048593, 327680, 7, 1048594, 393216, 7, 1048595, 393216, 7, 1048596, 393216, 7, 1048597, 393216, 7, 1048598, 393216, 7, 1048599, 393216, 7, 1114112, 262144, 7, 1114113, 262144, 7, 1114114, 262144, 7, 1114115, 262144, 7, 1114116, 262144, 7, 1114117, 262144, 7, 1114118, 262144, 7, 1114119, 327680, 7, 1114120, 327680, 7, 1114121, 327680, 7, 1114122, 327680, 7, 1114123, 327680, 7, 1114124, 327680, 7, 1114125, 327680, 7, 1114126, 262144, 7, 1114127, 262144, 7, 1114128, 262144, 7, 1114129, 327680, 7, 1114130, 327680, 7, 1114131, 327680, 7, 1114132, 393216, 7, 1114133, 393216, 7, 1114134, 393216, 7, 1114135, 393216, 7, 1179648, 327680, 7, 1179649, 327680, 7, 1179650, 327680, 7, 1179651, 327680, 7, 1179652, 262144, 7, 1179653, 262144, 7, 1179654, 262144, 7, 1179655, 589824, 4, 1179656, 589824, 4, 1179657, 589824, 4, 1179658, 589824, 4, 1179659, 589824, 4, 1179660, 589824, 4, 1179661, 589824, 4, 1179662, 589824, 4, 1179663, 393216, 7, 1179664, 393216, 7, 1179665, 393216, 7, 1179666, 327680, 7, 1179667, 327680, 7, 1179668, 327680, 7, 1179669, 327680, 7, 1179670, 327680, 7, 1179671, 327680, 7, 1245184, 327680, 7, 1245185, 327680, 7, 1245186, 327680, 7, 1245187, 327680, 7, 1245188, 327680, 7, 1245189, 589824, 4, 1245190, 589824, 4, 1245191, 589824, 4, 1245192, 655360, 4, 1245193, 655360, 4, 1245194, 655360, 4, 1245195, 589824, 4, 1245196, 589824, 4, 1245197, 262144, 7, 1245198, 262144, 7, 1245199, 262144, 7, 1245200, 262144, 7, 1245201, 262144, 7, 1245202, 262144, 7, 1245203, 262144, 7, 1245204, 262144, 7, 1245205, 262144, 7, 1245206, 262144, 7, 1245207, 262144, 7, 1310720, 262144, 7, 1310721, 262144, 7, 1310722, 327680, 7, 1310723, 327680, 7, 1310724, 589824, 4, 1310725, 589824, 4, 1310726, 589824, 4, 1310727, 589824, 4, 1310728, 655360, 4, 1310729, 655360, 4, 1310730, 655360, 4, 1310731, 655360, 4, 1310732, 589824, 4, 1310733, 589824, 4, 1310734, 589824, 4, 1310735, 589824, 4, 1310736, 589824, 4, 1310737, 327680, 7, 1310738, 327680, 7, 1310739, 327680, 7, 1310740, 327680, 7, 1310741, 327680, 7, 1310742, 327680, 7, 1310743, 327680, 7, 1376256, 327680, 7, 1376257, 327680, 7, 1376258, 327680, 7, 1376259, 327680, 7, 1376260, 327680, 7, 1376261, 327680, 7, 1376262, 327680, 7, 1376263, 589824, 4, 1376264, 589824, 4, 1376265, 589824, 4, 1376266, 589824, 4, 1376267, 589824, 4, 1376268, 589824, 4, 1376269, 589824, 4, 1376270, 589824, 4, 1376271, 327680, 7, 1376272, 327680, 7, 1376273, 327680, 7, 1376274, 262144, 7, 1376275, 262144, 7, 1376276, 262144, 7, 1376277, 589824, 4, 1376278, 589824, 4, 1376279, 589824, 4, 1441792, 262144, 7, 1441793, 262144, 7, 1441794, 262144, 7, 1441795, 262144, 7, 1441796, 262144, 7, 1441797, 262144, 7, 1441798, 262144, 7, 1441799, 262144, 7, 1441800, 262144, 7, 1441801, 262144, 7, 1441802, 262144, 7, 1441803, 262144, 7, 1441804, 262144, 7, 1441805, 262144, 7, 1441806, 262144, 7, 1441807, 262144, 7, 1441808, 262144, 7, 1441809, 262144, 7, 1441810, 262144, 7, 1441811, 589824, 4, 1441812, 589824, 4, 1441813, 589824, 4, 1441814, 655360, 4, 1441815, 655360, 4, 1507328, 262144, 7, 1507329, 262144, 7, 1507330, 262144, 7, 1507331, 262144, 7, 1507332, 262144, 7, 1507333, 327680, 7, 1507334, 327680, 7, 1507335, 327680, 7, 1507336, 327680, 7, 1507337, 327680, 7, 1507338, 327680, 7, 1507339, 327680, 7, 1507340, 327680, 7, 1507341, 327680, 7, 1507342, 327680, 7, 1507343, 327680, 7, 1507344, 393216, 7, 1507345, 393216, 7, 1507346, 393216, 7, 1507347, 393216, 7, 1507348, 393216, 7, 1507349, 393216, 7, 1507350, 393216, 7, 1507351, 393216, 7)
+layer_1/name = "round"
+layer_1/tile_data = PackedInt32Array(2, 131072, 2, 13, 327680, 0, 65543, 393216, 0, 131073, 0, 2, 131085, 0, 1, 131090, 327680, 0, 196614, 262144, 1, 196616, 393216, 0, 196619, 327680, 0, 196628, 393216, 0, 262147, 131072, 2, 262163, 327680, 0, 327682, 524288, 0, 393218, 524288, 0, 393223, 458752, 0, 393230, 524288, 0, 393236, 458752, 0, 458752, 393216, 0, 458753, 393216, 0, 458762, 131072, 1, 458768, 393216, 0, 524289, 0, 2, 524300, 327680, 0, 524304, 458752, 0, 524309, 327680, 0, 589829, 393216, 0, 589846, 327680, 0, 655363, 131072, 1, 655369, 131072, 2, 655373, 524288, 0, 655376, 393216, 0, 655382, 327680, 1, 720904, 196608, 0, 720917, 327680, 0, 786435, 524288, 0, 786437, 393216, 0, 786441, 131072, 1, 786444, 393216, 0, 786448, 262144, 8, 786451, 131072, 2, 851971, 458752, 7, 851974, 589824, 7, 851976, 655360, 7, 851979, 524288, 7, 851987, 458752, 7, 917505, 65536, 1, 917511, 327680, 0, 917512, 458752, 0, 917514, 524288, 0, 917520, 589824, 7, 983042, 589824, 7, 983044, 720896, 7, 983049, 589824, 7, 983052, 458752, 7, 1048586, 655360, 7, 1048589, 589824, 7, 1048594, 655360, 7, 1114118, 589824, 7, 1114126, 327680, 8, 1114129, 524288, 7, 1114132, 655360, 7, 1179651, 458752, 7, 1179654, 720896, 4, 1179663, 589824, 5, 1179665, 327680, 9, 1245188, 589824, 6, 1245191, 851968, 4, 1245195, 655360, 5, 1245197, 589824, 5, 1310722, 524288, 7, 1310723, 589824, 6, 1310727, 851968, 5, 1310732, 655360, 5, 1310737, 589824, 5, 1376262, 720896, 5, 1376270, 589824, 7, 1376274, 655360, 7, 1376276, 720896, 4, 1441810, 589824, 6, 1441813, 851968, 4, 1507332, 589824, 7, 1507343, 720896, 7)
+layer_2/name = "river"
+layer_2/enabled = false
+layer_2/tile_data = PackedInt32Array(0, 0, 12, 1, 0, 12, 2, 0, 12, 3, 0, 12, 4, 0, 12, 5, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 12, 9, 0, 12, 10, 0, 12, 11, 0, 12, 12, 0, 12, 13, 0, 12, 14, 0, 12, 15, 0, 12, 16, 0, 12, 17, 0, 12, 18, 0, 12, 19, 0, 12, 20, 0, 12, 21, 0, 12, 22, 0, 12, 23, 0, 12, 65536, 0, 12, 65537, 0, 12, 65538, 0, 12, 65539, 0, 12, 65540, 0, 12, 65541, 0, 12, 65542, 0, 12, 65543, 0, 12, 65544, 0, 12, 65545, 0, 12, 65546, 0, 12, 65547, 0, 12, 65548, 0, 12, 65549, 0, 12, 65550, 0, 12, 65551, 0, 12, 65552, 0, 12, 65553, 0, 12, 65554, 0, 12, 65555, 0, 12, 65556, 0, 12, 65557, 0, 12, 65558, 0, 12, 65559, 0, 12, 131072, 0, 12, 131073, 0, 12, 131074, 0, 12, 131075, 0, 12, 131076, 0, 12, 131077, 0, 12, 131078, 0, 12, 131079, 0, 12, 131080, 0, 12, 131081, 0, 12, 131082, 0, 12, 131083, 0, 12, 131084, 0, 12, 131085, 0, 12, 131086, 0, 12, 131087, 0, 12, 131088, 0, 12, 131089, 0, 12, 131090, 0, 12, 131091, 0, 12, 131092, 0, 12, 131093, 0, 12, 131094, 0, 12, 131095, 0, 12, 196608, 0, 12, 196609, 0, 12, 196610, 0, 12, 196611, 0, 12, 196612, 0, 12, 196613, 0, 12, 196614, 0, 12, 196615, 0, 12, 196616, 655360, 12, 196617, 720896, 12, 196621, 786432, 12, 196622, 851968, 12, 196623, 0, 12, 196624, 0, 12, 196625, 0, 12, 196626, 0, 12, 196627, 0, 12, 196628, 0, 12, 196629, 0, 12, 196630, 0, 12, 196631, 0, 12, 262144, 0, 12, 262145, 0, 12, 262146, 0, 12, 262147, 0, 12, 262148, 0, 12, 262149, 0, 12, 262150, 0, 12, 262151, 0, 12, 262152, 655360, 13, 262153, 720896, 13, 262154, 786432, 13, 262157, 786432, 13, 262158, 851968, 13, 262159, 0, 12, 262160, 0, 12, 262161, 0, 12, 262162, 0, 12, 262163, 0, 12, 262164, 0, 12, 262165, 0, 12, 262166, 0, 12, 262167, 0, 12, 327680, 0, 12, 327681, 0, 12, 327682, 0, 12, 327683, 0, 12, 327684, 0, 12, 327685, 0, 12, 327686, 0, 12, 327687, 0, 12, 327695, 131072, 13, 327696, 0, 12, 327697, 0, 12, 327698, 0, 12, 327699, 0, 12, 327700, 0, 12, 327701, 0, 12, 327702, 0, 12, 327703, 0, 12, 393216, 0, 12, 393217, 0, 12, 393218, 0, 12, 393219, 0, 12, 393220, 0, 12, 393221, 0, 12, 393222, 0, 12, 393223, 0, 12, 393233, 786432, 12, 393234, 851968, 12, 393235, 0, 12, 393236, 0, 12, 393237, 0, 12, 393238, 0, 12, 393239, 0, 12, 458752, 0, 12, 458753, 0, 12, 458754, 0, 12, 458755, 0, 12, 458756, 0, 12, 458757, 0, 12, 458758, 0, 12, 458759, 196608, 13, 458769, 786432, 13, 458770, 851968, 13, 458771, 0, 12, 458772, 0, 12, 458773, 0, 12, 458774, 0, 12, 458775, 0, 12, 524288, 0, 12, 524289, 0, 12, 524290, 0, 12, 524291, 0, 12, 524292, 524288, 13, 524293, 0, 12, 524294, 262144, 12, 524308, 327680, 12, 524309, 0, 12, 524310, 458752, 13, 524311, 524288, 13, 589824, 0, 12, 589825, 0, 12, 589826, 0, 12, 589827, 458752, 14, 589828, 524288, 14, 589829, 589824, 14, 589845, 393216, 14, 589846, 458752, 14, 589847, 524288, 14, 655360, 0, 12, 655361, 0, 12, 655362, 0, 12, 655363, 0, 12, 655364, 524288, 15, 655365, 589824, 15, 655381, 393216, 15, 655382, 458752, 15, 655383, 0, 12)
+
+[node name="Object1" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(539.163, 2631.24)
+
+[node name="Object2" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(3309.23, 2960.55)
+
+[node name="Object3" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(1326.92, 3770.91)
+
+[node name="Object4" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(3106.33, 2999.79)
+
+[node name="Object5" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1207.97, 2199.12)
+
+[node name="Object6" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1430.73, 2773.8)
+
+[node name="Object7" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1743.9, 2822.23)
+
+[node name="Object8" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1882.73, 2773.8)
+
+[node name="Object9" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(768.387, 2583.31)
+
+[node name="Object10" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(3312.46, 2354.09)
+
+[node name="Object11" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(2776.53, 2331.49)
+
+[node name="Object12" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(2569.9, 3777.87)
+
+[node name="Object13" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(616.647, 3464.7)
+
+[node name="Object14" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(161.426, 3116.02)
+
+[node name="Object15" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(281.381, 3080.51)
+
+[node name="Object16" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(3764.95, 2683.4)
+
+[node name="Object17" parent="." instance=ExtResource("objectsswampMud2")]
+position = Vector2(3655.18, 2647.89)
+
+[node name="Object18" parent="." instance=ExtResource("objectsswampMud2")]
+position = Vector2(1107.88, 2163.61)
+
+[node name="Object19" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(1507.72, 2744.74)
+
+[node name="Object20" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(3112.29, 3777.87)
+
+[node name="Object21" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(3012.71, 3800.47)
+
+[node name="Object22" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(3719.75, 3745.58)
+
+[node name="Object23" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(3448.06, 3761.22)
+
+[node name="Object24" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(2741.01, 3413.04)
+
+[node name="Object25" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(3454.51, 3264.53)
+
+[node name="Object27" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(3041.26, 3270.49)
+
+[node name="Object28" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(2540.84, 2634.47)
+
+[node name="Object29" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(442.307, 3419.5)
+
+[node name="Object30" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(278.153, 3445.33)
+
+[node name="Object31" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(2970.74, 2835.14)
+
+[node name="Object32" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(2589.77, 2993.34)
+
+[node name="Object33" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(3771.41, 2283.06)
+
+[node name="Object34" parent="." instance=ExtResource("objectsswampMud1")]
+position = Vector2(3457.74, 2312.12)
+
+[node name="Object35" parent="." instance=ExtResource("objectsswampMud2")]
+position = Vector2(2312.12, 2609.14)
+
+[node name="Object36" parent="." instance=ExtResource("objectsswampMud2")]
+position = Vector2(3739.12, 3303.27)
+
+[node name="Object37" parent="." instance=ExtResource("objectsswampMud2")]
+position = Vector2(287.838, 2612.37)
+
+[node name="Object38" parent="." instance=ExtResource("objectsswampMud1")]
+position = Vector2(1204.24, 2638.2)
+
+[node name="Object39" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(1294.64, 2176.52)
+
+[node name="Object40" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(1969.4, 2747.97)
+
+[node name="Object41" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(355.137, 3041.76)
+
+[node name="Object42" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(910.442, 3451.79)
+
+[node name="Object43" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(3758, 2990.11)
+
+[node name="Object45" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(3658.41, 3003.02)
+
+[node name="Object46" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1701.93, 3794.01)
+
+[node name="Object47" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1098.2, 3739.12)
+
+[node name="Object49" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(949.684, 3781.1)
+
+[node name="Object50" parent="." instance=ExtResource("objectsswampReed2")]
+position = Vector2(1364, 3440)
+
+[node name="Object51" parent="." instance=ExtResource("objectsswampReed4")]
+position = Vector2(1550.5, 3424.5)
+
+[node name="Object52" parent="." instance=ExtResource("objectsswampReed1")]
+position = Vector2(2174, 2780)
+
+[node name="Object53" parent="." instance=ExtResource("objectsswampReed3")]
+position = Vector2(2012, 2808.5)
+
+[node name="Object54" parent="." instance=ExtResource("objectsswampReed3")]
+position = Vector2(2258, 3138.5)
+
+[node name="Object55" parent="." instance=ExtResource("objectsswampReed1")]
+position = Vector2(778, 3260)
+
+[node name="Object56" parent="." instance=ExtResource("objectsswampReed5")]
+position = Vector2(2698.5, 3110.5)
+
+[node name="Object57" parent="." instance=ExtResource("objectsswampReed5")]
+position = Vector2(2204.5, 3414.5)
+
+[node name="Object58" parent="." instance=ExtResource("objectsswampReed5")]
+position = Vector2(1136.5, 2792.5)
+
+[node name="Object59" parent="." instance=ExtResource("objectsswampReed3")]
+position = Vector2(1438, 2810.5)
+
+[node name="Object60" parent="." instance=ExtResource("objectsswampReed2")]
+position = Vector2(926, 3298.5)
+
+[node name="Object61" parent="." instance=ExtResource("objectsswampReed4")]
+position = Vector2(2104.5, 3446.5)
+
+[node name="Object69" parent="." instance=ExtResource("objectsswampTree")]
+position = Vector2(1076.5, 2204)
+
+[node name="Object70" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(3548, 1608)
+
+[node name="Object72" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(720, 572)
+
+[node name="Object73" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(3472, 256)
+
+[node name="Object74" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(228, 1252)
+
+[node name="Object75" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(1848, -36)
+
+[node name="Object76" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(2844, 1592)
+
+[node name="Object77" parent="." instance=ExtResource("objectsswampBush1")]
+position = Vector2(2715.65, 3621.71)
+
+[node name="Object78" parent="." instance=ExtResource("objectsswampBush1")]
+position = Vector2(3170.2, 2503.53)
+
+[node name="Object80" parent="." instance=ExtResource("objectsswampBush2")]
+position = Vector2(3133.33, 3324.74)
+
+[node name="Object81" parent="." instance=ExtResource("objectsswampBush2")]
+position = Vector2(703.03, 2336.86)
+
+[node name="Object82" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(2045.95, 3621.21)
+
+[node name="Object83" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(382.318, 3727.27)
+
+[node name="Object84" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(258.076, 2669.7)
+
+[node name="Object89" parent="." instance=ExtResource("objectsswampBush2")]
+position = Vector2(2351.52, 1894.44)
+
+[node name="Object90" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(2112.62, 2187.88)
+
+[node name="Object91" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(3275.76, 1248.48)
+
+[node name="Object92" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(2318.18, 284.848)
+
+[node name="Object93" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(384.848, 1569.7)
+
+[node name="Object94" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(1781.82, 1887.88)
+
+[node name="Object95" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(321.212, 600)
+
+[node name="Object96" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(1500, 930.3)
+
+[node name="Object97" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(3293.94, 1881.82)
+
+[node name="Object98" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(3712.12, 615.152)
+
+[node name="Object100" parent="." instance=ExtResource("objectstundraRock2")]
+position = Vector2(1307.5, 803.565)
+
+[node name="Object101" parent="." instance=ExtResource("objectstundraRock1")]
+position = Vector2(3056, 1903)
+
+[node name="Object102" parent="." instance=ExtResource("objectstundraRock2")]
+position = Vector2(540, 1099.79)
+
+[node name="Object103" parent="." instance=ExtResource("objectstundraRock2")]
+position = Vector2(2875.76, 297.19)

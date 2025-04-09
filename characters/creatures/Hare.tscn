@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://djoyeu071fu1y"]
+
+[ext_resource type="Script" uid="uid://dkpufkpx60ifs" path="res://characters/creatures/hare_ai.gd" id="1_shbht"]
+[ext_resource type="Texture2D" uid="uid://esnxg2nv3upd" path="res://assets/characters/creatures/hare/hare_alert_1_anticipation.png" id="2_qpp72"]
+[ext_resource type="Texture2D" uid="uid://clkwedqemb4qb" path="res://assets/characters/creatures/hare/hare_alert_2_overshoot.png" id="3_44vnw"]
+[ext_resource type="Texture2D" uid="uid://b176me28vpljn" path="res://assets/characters/creatures/hare/hare_alert_3.png" id="4_1leqr"]
+[ext_resource type="Texture2D" uid="uid://dvjn2cu1xmw3" path="res://assets/characters/creatures/hare/hare_hop_1_anticipation_a.png" id="5_n0yna"]
+[ext_resource type="Texture2D" uid="uid://tdarb1ktjvd4" path="res://assets/characters/creatures/hare/hare_hop_2_anticipation_b.png" id="6_a24cu"]
+[ext_resource type="Texture2D" uid="uid://di5e17nl7uy6x" path="res://assets/characters/creatures/hare/hare_hop_3.png" id="7_ee0hj"]
+[ext_resource type="Texture2D" uid="uid://cjpalimmdqqss" path="res://assets/characters/creatures/hare/hare_hop_4.png" id="8_6muwh"]
+[ext_resource type="Texture2D" uid="uid://bklv0fst6i24u" path="res://assets/characters/creatures/hare/hare_hop_5_overshoot.png" id="9_qjg4v"]
+[ext_resource type="Texture2D" uid="uid://4rjm0i2u0o2f" path="res://assets/characters/creatures/hare/hare_idle_a.png" id="10_jpt75"]
+[ext_resource type="Texture2D" uid="uid://be8t0r1ne7oho" path="res://assets/characters/creatures/hare/hare_idle_b.png" id="11_d3oej"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="12_d3oej"]
+[ext_resource type="Texture2D" uid="uid://bh4c45msgcx6c" path="res://assets/characters/creatures/hare/hare_idle_a_earflop.png" id="12_jnhmx"]
+[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="13_jnhmx"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="14_dch7s"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="15_mrx3y"]
+[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="16_mg1w6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsglq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qpp72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_44vnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1leqr")
+}],
+"loop": true,
+"name": &"alert",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_n0yna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a24cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ee0hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6muwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qjg4v")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jpt75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d3oej")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jnhmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d3oej")
+}],
+"loop": true,
+"name": &"idle_earflop",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6e4x"]
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qw6v7"]
+radius = 600.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sb0ch"]
+radius = 250.0
+
+[node name="Hare" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_shbht")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wsglq")
+animation = &"idle"
+frame_progress = 0.609873
+script = ExtResource("12_d3oej")
+
+[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.133333)
+z_index = -1
+position = Vector2(-5, 21)
+scale = Vector2(0.5, 0.172)
+texture = ExtResource("13_jnhmx")
+
+[node name="Interaction" type="Area2D" parent="."]
+script = ExtResource("14_dch7s")
+description = "\"GOTCHA!\""
+type = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_v6e4x")
+
+[node name="AlertRange" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlertRange"]
+shape = SubResource("CircleShape2D_qw6v7")
+
+[node name="DangerRange" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerRange"]
+shape = SubResource("CircleShape2D_sb0ch")
+
+[node name="Announcement" type="Label" parent="."]
+z_index = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_top = -75.0
+offset_right = 71.0
+offset_bottom = -37.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("15_mrx3y")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("16_mg1w6")
+
+[connection signal="body_entered" from="AlertRange" to="." method="_on_alert_range_body_entered"]
+[connection signal="body_exited" from="AlertRange" to="." method="_on_alert_range_body_exited"]
+[connection signal="body_entered" from="DangerRange" to="." method="_on_danger_range_body_entered"]
+[connection signal="body_exited" from="DangerRange" to="." method="_on_danger_range_body_exited"]

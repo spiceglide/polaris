@@ -33,5 +33,8 @@ func use() -> bool:
 			pass
 		"torch":
 			pass
+		"sleeping_bag":
+			if WorldData.is_night():
+				PlayerData.state = PlayerData.State.Sleeping
 	
 	return consumable

@@ -44,6 +44,9 @@ func _ready() -> void:
 	
 	#var structure_count = randi() % structure_limit
 
+func get_biome() -> String:
+	return biomes[-1]
+
 func _get_random_point(rect: Vector2) -> Vector2:
 	var x = randi() % int(rect.x)
 	var y = randi() % int(rect.y)

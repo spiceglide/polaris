@@ -34,6 +34,11 @@
 	"description": "Not for drinking!",
 	"consumable": false
   },
+  "sleeping_bag": {
+	"name": "Sleeping Bag",
+	"description": "I'm tired",
+	"consumable": false
+  },
   "smallfire": {
 	"name": "Small Campfire",
 	"description": "Should last the night",

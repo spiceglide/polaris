@@ -3,17 +3,17 @@ extends Node2D
 @export var leak_opacity = 0.3
 var available_scenes: Array = [
 	[
-		preload("res://scenes/tundra_river_e.tscn"),
-		preload("res://scenes/forest_e_river_nw.tscn"),
-		preload("res://scenes/forest_river_s.tscn"),
+		preload("res://scenes/tundra_river_e.tscn").instantiate(),
+		preload("res://scenes/forest_e_river_nw.tscn").instantiate(),
+		preload("res://scenes/forest_river_s.tscn").instantiate(),
 	], [
-		preload("res://scenes/swamp_s_river_n.tscn"),
-		preload("res://scenes/swamp_sw_forest_ne_river_w.tscn"),
-		preload("res://scenes/forest_n_river_se.tscn"),
+		preload("res://scenes/swamp_s_river_n.tscn").instantiate(),
+		preload("res://scenes/swamp_sw_forest_ne_river_w.tscn").instantiate(),
+		preload("res://scenes/forest_n_river_se.tscn").instantiate(),
 	], [
-		preload("res://scenes/swamp_river_nw.tscn"),
-		preload("res://scenes/swamp_w_tundra.tscn"),
-		preload("res://scenes/tundra_river_e.tscn"),
+		preload("res://scenes/swamp_river_nw.tscn").instantiate(),
+		preload("res://scenes/swamp_w_tundra.tscn").instantiate(),
+		preload("res://scenes/tundra_river_e.tscn").instantiate(),
 	],
 ]
 
@@ -32,8 +32,7 @@ func _ready() -> void:
 		var temp_scenes = []
 		for y in range(grid_size[1]):
 			scene = available_scenes[y][x]
-			
-			instance = scene.instantiate()
+			instance = scene
 			print(instance)
 			
 			instance.position.x = scene_size[0] * x
@@ -48,6 +47,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_update_current_scene()
+	WorldData.current_biome = get_current_biome()
 	#_cull_scenes()
 
 func _cull_scenes():
@@ -123,4 +123,8 @@ func _west(xy: Array):
 	return scenes[i][j]
 
 func get_scene(xy: Array):
-	return scenes[xy[0]][xy[1]]
+	return scenes[xy[1]][xy[0]]
+
+func get_current_biome() -> String:
+	var scene = get_scene(current_scene)
+	return scene.get_biome()

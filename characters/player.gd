@@ -15,16 +15,17 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	PlayerData.position = self.position
+	
+	match PlayerData.state:
+		PlayerData.State.Dead:
+			die()
+		PlayerData.State.Sleeping:
+			sleep()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# Dead men don't walk
-	if PlayerData.state == PlayerData.State.Dead:
-		_die()
-		return
-	
-	# Player movement
-	_move()
+	if PlayerData.state == PlayerData.State.Awake:
+		_move()
 
 func _move() -> void:
 	# Speed multiplier
@@ -55,9 +56,21 @@ func _move() -> void:
 	else:
 		$Sprite.set_state(last_dir, "idle")
 
-func _die():
+func die():
 	$Sprite.modulate = Color(0.0, 0.0, 0.0, 1.0)
 	$Sprite.set_state(last_dir, "idle")
+
+func sleep():
+	$Sprite.set_state("west", "idle")
+	$Sprite.rotation_degrees = 90
+	
+	if $SleepTimer.is_stopped():
+		$SleepTimer.start(5)
+
+func awaken():
+	PlayerData.state = PlayerData.State.Awake
+	$Sprite.set_state(last_dir, "idle")
+	$Sprite.rotation_degrees = 0
 
 func _input(event):
 	if event.is_action_pressed("interact"):
@@ -73,3 +86,8 @@ func _on_interaction_body_exited(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
 		interactable.erase(interactive)
+
+func _on_sleep_timer_timeout() -> void:
+	if WorldData.is_night():
+		WorldData.new_day()
+		awaken()

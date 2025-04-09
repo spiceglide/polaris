@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://on2lm2criuyc"]
+[gd_scene load_steps=7 format=3 uid="uid://on2lm2criuyc"]
 
 [ext_resource type="Script" uid="uid://b4l7vmqocns7e" path="res://screens/loading_screen.gd" id="1_xfn56"]
 [ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="2_xfn56"]
 [ext_resource type="Texture2D" uid="uid://4rjm0i2u0o2f" path="res://assets/characters/creatures/hare/hare_idle_a.png" id="3_jf3fe"]
-[ext_resource type="Texture2D" uid="uid://bh4c45msgcx6c" path="res://assets/characters/creatures/hare/hare_idle_a_earflop.png" id="4_og14n"]
 [ext_resource type="Texture2D" uid="uid://be8t0r1ne7oho" path="res://assets/characters/creatures/hare/hare_idle_b.png" id="5_oyopg"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="6_og14n"]
 
@@ -12,9 +11,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_jf3fe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_og14n")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_oyopg")

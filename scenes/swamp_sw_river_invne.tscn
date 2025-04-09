@@ -1,30 +1,30 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5ia5r5lnt5e1"]
+[gd_scene load_steps=25 format=3 uid="uid://cmviyu4jqd7mk"]
 
-[ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="1_df63n"]
 [ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_xwhi0"]
-[ext_resource type="PackedScene" uid="uid://dod01g2ybik2k" path="res://objects/swamp/Mud1.tscn" id="2_xwhi0"]
-[ext_resource type="PackedScene" uid="uid://gvjk8tsg07d8" path="res://objects/swamp/Mud5.tscn" id="3_2f5dd"]
-[ext_resource type="PackedScene" uid="uid://7i4fp6ndf2ss" path="res://objects/swamp/Mud4.tscn" id="4_6kaa2"]
-[ext_resource type="PackedScene" uid="uid://de70muq2m8tii" path="res://objects/swamp/Mud3.tscn" id="5_0dojr"]
-[ext_resource type="PackedScene" uid="uid://71jq6ka37r8j" path="res://objects/swamp/Mud2.tscn" id="6_d7sfl"]
-[ext_resource type="PackedScene" uid="uid://ct0bwbjtev4hx" path="res://objects/swamp/Mud6.tscn" id="7_prefw"]
-[ext_resource type="PackedScene" uid="uid://yufo0vj7muxv" path="res://objects/swamp/Reed2.tscn" id="8_i4nra"]
-[ext_resource type="PackedScene" uid="uid://ds5qpufck4mi" path="res://objects/swamp/Reed1.tscn" id="9_2xenm"]
-[ext_resource type="PackedScene" uid="uid://boi1j5eac6sdm" path="res://objects/swamp/Reed3.tscn" id="10_cg4t4"]
-[ext_resource type="PackedScene" uid="uid://cfb0llt0plafj" path="res://objects/swamp/Reed5.tscn" id="11_clfti"]
-[ext_resource type="PackedScene" uid="uid://bt3je2ky4ljad" path="res://objects/swamp/Reed4.tscn" id="12_fjmst"]
-[ext_resource type="PackedScene" uid="uid://uhnhyutpcf7j" path="res://objects/swamp/Tree.tscn" id="13_dc2x6"]
-[ext_resource type="PackedScene" uid="uid://d4kkjobhjisp2" path="res://objects/swamp/Bush3.tscn" id="14_7rd70"]
-[ext_resource type="PackedScene" uid="uid://nlfj8v8idkp1" path="res://objects/swamp/Bush1.tscn" id="15_4xs6s"]
-[ext_resource type="PackedScene" uid="uid://c67v1sc172sfb" path="res://objects/swamp/Bush2.tscn" id="16_hxaf1"]
-[ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://objects/tundra/SnowPile2.tscn" id="17_sjd2q"]
-[ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="18_b02o1"]
-[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://objects/tundra/StickTree.tscn" id="19_g72i3"]
-[ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="20_nqrhf"]
-[ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="21_8f2a1"]
+[ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="160x160_tileset_ground_a"]
+[ext_resource type="PackedScene" uid="uid://nlfj8v8idkp1" path="res://objects/swamp/Bush1.tscn" id="objectsswampBush1"]
+[ext_resource type="PackedScene" uid="uid://c67v1sc172sfb" path="res://objects/swamp/Bush2.tscn" id="objectsswampBush2"]
+[ext_resource type="PackedScene" uid="uid://d4kkjobhjisp2" path="res://objects/swamp/Bush3.tscn" id="objectsswampBush3"]
+[ext_resource type="PackedScene" uid="uid://dod01g2ybik2k" path="res://objects/swamp/Mud1.tscn" id="objectsswampMud1"]
+[ext_resource type="PackedScene" uid="uid://71jq6ka37r8j" path="res://objects/swamp/Mud2.tscn" id="objectsswampMud2"]
+[ext_resource type="PackedScene" uid="uid://de70muq2m8tii" path="res://objects/swamp/Mud3.tscn" id="objectsswampMud3"]
+[ext_resource type="PackedScene" uid="uid://7i4fp6ndf2ss" path="res://objects/swamp/Mud4.tscn" id="objectsswampMud4"]
+[ext_resource type="PackedScene" uid="uid://gvjk8tsg07d8" path="res://objects/swamp/Mud5.tscn" id="objectsswampMud5"]
+[ext_resource type="PackedScene" uid="uid://ct0bwbjtev4hx" path="res://objects/swamp/Mud6.tscn" id="objectsswampMud6"]
+[ext_resource type="PackedScene" uid="uid://ds5qpufck4mi" path="res://objects/swamp/Reed1.tscn" id="objectsswampReed1"]
+[ext_resource type="PackedScene" uid="uid://yufo0vj7muxv" path="res://objects/swamp/Reed2.tscn" id="objectsswampReed2"]
+[ext_resource type="PackedScene" uid="uid://boi1j5eac6sdm" path="res://objects/swamp/Reed3.tscn" id="objectsswampReed3"]
+[ext_resource type="PackedScene" uid="uid://bt3je2ky4ljad" path="res://objects/swamp/Reed4.tscn" id="objectsswampReed4"]
+[ext_resource type="PackedScene" uid="uid://cfb0llt0plafj" path="res://objects/swamp/Reed5.tscn" id="objectsswampReed5"]
+[ext_resource type="PackedScene" uid="uid://uhnhyutpcf7j" path="res://objects/swamp/Tree.tscn" id="objectsswampTree"]
+[ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="objectstundraRock1"]
+[ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="objectstundraRock2"]
+[ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]
+[ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://objects/tundra/SnowPile2.tscn" id="objectstundraSnowPile2"]
+[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://objects/tundra/StickTree.tscn" id="objectstundraStickTree"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
-texture = ExtResource("1_df63n")
+texture = ExtResource("160x160_tileset_ground_a")
 texture_region_size = Vector2i(160, 160)
 0:0/0 = 0
 1:0/0 = 0
@@ -198,7 +198,6 @@ sources/0 = SubResource("TileSetAtlasSource_0")
 [node name="swamp_sw_river_antine" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xwhi0")
-biomes = ["tundra", "swamp"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0")
@@ -211,161 +210,161 @@ layer_2/name = "river"
 layer_2/enabled = false
 layer_2/tile_data = PackedInt32Array(0, 0, 12, 1, 0, 12, 2, 0, 12, 3, 0, 12, 4, 0, 12, 5, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 12, 9, 524288, 14, 10, 0, 12, 65536, 0, 12, 65537, 0, 12, 65538, 0, 12, 65539, 0, 12, 65540, 0, 12, 65541, 0, 12, 65542, 0, 12, 65543, 0, 12, 65544, 458752, 14, 65545, 524288, 14, 65546, 589824, 14, 131072, 0, 12, 131073, 0, 12, 131074, 0, 12, 131075, 0, 12, 131076, 0, 12, 131077, 0, 12, 131078, 0, 12, 131079, 0, 12, 131080, 0, 12, 131081, 524288, 15, 131082, 589824, 15, 196608, 0, 12, 196609, 0, 12, 196610, 0, 12, 196611, 0, 12, 196612, 0, 12, 196613, 0, 12, 196614, 0, 12, 196615, 0, 12, 196616, 262144, 12, 262144, 0, 12, 262145, 0, 12, 262146, 0, 12, 262147, 0, 12, 262148, 0, 12, 262149, 0, 12, 262150, 0, 12, 262151, 0, 12, 262152, 720896, 13, 327680, 0, 12, 327681, 0, 12, 327682, 0, 12, 327683, 0, 12, 327684, 0, 12, 327685, 0, 12, 327686, 655360, 12, 327687, 720896, 12, 393216, 0, 12, 393217, 0, 12, 393218, 0, 12, 393219, 0, 12, 393220, 458752, 13, 393221, 524288, 13, 393222, 655360, 13, 458752, 0, 12, 458753, 0, 12, 458754, 0, 12, 458755, 0, 12, 458756, 458752, 14, 458757, 0, 12, 524288, 0, 12, 524289, 0, 12, 524290, 0, 12, 524291, 0, 12, 524292, 0, 12, 524293, 0, 12, 524294, 655360, 14, 589824, 0, 12, 589825, 0, 12, 589826, 0, 12, 589827, 0, 12, 589828, 0, 12, 589829, 0, 12, 589830, 655360, 15, 655360, 0, 12, 655361, 0, 12, 655362, 0, 12, 655363, 0, 12, 655364, 0, 12, 655365, 0, 12, 655366, 0, 12, 655367, 655360, 14, 655368, 720896, 14, 720896, 0, 12, 720897, 0, 12, 720898, 0, 12, 720899, 0, 12, 720900, 0, 12, 720901, 0, 12, 720902, 0, 12, 720903, 655360, 15, 720904, 720896, 15, 786432, 0, 12, 786433, 0, 12, 786434, 0, 12, 786435, 0, 12, 786436, 0, 12, 786437, 0, 12, 786438, 0, 12, 786439, 0, 12, 786440, 0, 12, 786441, 0, 12, 786442, 524288, 12, 786443, 589824, 12, 851968, 0, 12, 851969, 0, 12, 851970, 0, 12, 851971, 0, 12, 851972, 0, 12, 851973, 0, 12, 851974, 0, 12, 851975, 0, 12, 851976, 0, 12, 851977, 458752, 13, 851978, 524288, 13, 851979, 589824, 13, 851989, 393216, 12, 851990, 458752, 12, 851991, 0, 12, 917504, 0, 12, 917505, 0, 12, 917506, 0, 12, 917507, 0, 12, 917508, 0, 12, 917509, 0, 12, 917510, 0, 12, 917511, 0, 12, 917512, 0, 12, 917513, 0, 12, 917514, 524288, 14, 917515, 0, 12, 917525, 393216, 13, 917526, 458752, 13, 917527, 524288, 13, 983040, 0, 12, 983041, 0, 12, 983042, 0, 12, 983043, 0, 12, 983044, 0, 12, 983045, 0, 12, 983046, 0, 12, 983047, 0, 12, 983048, 0, 12, 983049, 0, 12, 983050, 0, 12, 983051, 0, 12, 983059, 786432, 14, 983060, 851968, 14, 983061, 0, 12, 983062, 0, 12, 983063, 0, 12, 1048576, 0, 12, 1048577, 0, 12, 1048578, 0, 12, 1048579, 0, 12, 1048580, 0, 12, 1048581, 0, 12, 1048582, 0, 12, 1048583, 0, 12, 1048584, 0, 12, 1048585, 0, 12, 1048586, 0, 12, 1048587, 0, 12, 1048588, 262144, 13, 1048595, 786432, 15, 1048596, 851968, 15, 1048597, 0, 12, 1048598, 0, 12, 1048599, 0, 12, 1114112, 0, 12, 1114113, 0, 12, 1114114, 0, 12, 1114115, 0, 12, 1114116, 0, 12, 1114117, 0, 12, 1114118, 0, 12, 1114119, 0, 12, 1114120, 0, 12, 1114121, 0, 12, 1114122, 0, 12, 1114123, 0, 12, 1114124, 0, 12, 1114125, 0, 12, 1114126, 655360, 15, 1114127, 720896, 15, 1114128, 786432, 15, 1114129, 851968, 15, 1114130, 0, 12, 1114131, 0, 12, 1114132, 0, 12, 1114133, 0, 12, 1114134, 0, 12, 1114135, 0, 12, 1179648, 0, 12, 1179649, 0, 12, 1179650, 0, 12, 1179651, 0, 12, 1179652, 0, 12, 1179653, 0, 12, 1179654, 0, 12, 1179655, 0, 12, 1179656, 0, 12, 1179657, 0, 12, 1179658, 0, 12, 1179659, 0, 12, 1179660, 0, 12, 1179661, 0, 12, 1179662, 0, 12, 1179663, 0, 12, 1179664, 0, 12, 1179665, 0, 12, 1179666, 0, 12, 1179667, 0, 12, 1179668, 0, 12, 1179669, 0, 12, 1179670, 0, 12, 1179671, 0, 12, 1245184, 0, 12, 1245185, 0, 12, 1245186, 0, 12, 1245187, 0, 12, 1245188, 0, 12, 1245189, 0, 12, 1245190, 0, 12, 1245191, 0, 12, 1245192, 0, 12, 1245193, 0, 12, 1245194, 0, 12, 1245195, 0, 12, 1245196, 0, 12, 1245197, 0, 12, 1245198, 0, 12, 1245199, 0, 12, 1245200, 0, 12, 1245201, 0, 12, 1245202, 0, 12, 1245203, 0, 12, 1245204, 0, 12, 1245205, 0, 12, 1245206, 0, 12, 1245207, 0, 12, 1310720, 0, 12, 1310721, 0, 12, 1310722, 0, 12, 1310723, 0, 12, 1310724, 0, 12, 1310725, 0, 12, 1310726, 0, 12, 1310727, 0, 12, 1310728, 0, 12, 1310729, 0, 12, 1310730, 0, 12, 1310731, 0, 12, 1310732, 0, 12, 1310733, 0, 12, 1310734, 0, 12, 1310735, 0, 12, 1310736, 0, 12, 1310737, 0, 12, 1310738, 0, 12, 1310739, 0, 12, 1310740, 0, 12, 1310741, 0, 12, 1310742, 0, 12, 1310743, 0, 12, 1376256, 0, 12, 1376257, 0, 12, 1376258, 0, 12, 1376259, 0, 12, 1376260, 0, 12, 1376261, 0, 12, 1376262, 0, 12, 1376263, 0, 12, 1376264, 0, 12, 1376265, 0, 12, 1376266, 0, 12, 1376267, 0, 12, 1376268, 0, 12, 1376269, 0, 12, 1376270, 0, 12, 1376271, 0, 12, 1376272, 0, 12, 1376273, 0, 12, 1376274, 0, 12, 1376275, 0, 12, 1376276, 0, 12, 1376277, 0, 12, 1376278, 0, 12, 1376279, 0, 12, 1441792, 0, 12, 1441793, 0, 12, 1441794, 0, 12, 1441795, 0, 12, 1441796, 0, 12, 1441797, 0, 12, 1441798, 0, 12, 1441799, 0, 12, 1441800, 0, 12, 1441801, 0, 12, 1441802, 0, 12, 1441803, 0, 12, 1441804, 0, 12, 1441805, 0, 12, 1441806, 0, 12, 1441807, 0, 12, 1441808, 0, 12, 1441809, 0, 12, 1441810, 0, 12, 1441811, 0, 12, 1441812, 0, 12, 1441813, 0, 12, 1441814, 0, 12, 1441815, 0, 12, 1507328, 0, 12, 1507329, 0, 12, 1507330, 0, 12, 1507331, 0, 12, 1507332, 0, 12, 1507333, 0, 12, 1507334, 0, 12, 1507335, 0, 12, 1507336, 0, 12, 1507337, 0, 12, 1507338, 0, 12, 1507339, 0, 12, 1507340, 0, 12, 1507341, 0, 12, 1507342, 0, 12, 1507343, 0, 12, 1507344, 0, 12, 1507345, 0, 12, 1507346, 0, 12, 1507347, 0, 12, 1507348, 0, 12, 1507349, 0, 12, 1507350, 0, 12, 1507351, 0, 12)
 
-[node name="Object3" parent="." instance=ExtResource("2_xwhi0")]
-position = Vector2(480, 2524.5)
+[node name="Object3" parent="." instance=ExtResource("objectsswampMud1")]
+position = Vector2(480, 2591.5)
 
-[node name="Object4" parent="." instance=ExtResource("3_2f5dd")]
-position = Vector2(320, 2536.5)
+[node name="Object4" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(320, 2567.5)
 
-[node name="Object5" parent="." instance=ExtResource("3_2f5dd")]
-position = Vector2(944, 2176.5)
+[node name="Object5" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(944, 2207.5)
 
-[node name="Object6" parent="." instance=ExtResource("4_6kaa2")]
-position = Vector2(620, 2168)
+[node name="Object6" parent="." instance=ExtResource("objectsswampMud4")]
+position = Vector2(620, 2219)
 
-[node name="Object7" parent="." instance=ExtResource("5_0dojr")]
-position = Vector2(420, 2644.5)
+[node name="Object7" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(420, 2665.5)
 
-[node name="Object9" parent="." instance=ExtResource("6_d7sfl")]
-position = Vector2(192.5, 3020.5)
+[node name="Object9" parent="." instance=ExtResource("objectsswampMud2")]
+position = Vector2(192.5, 3064.5)
 
-[node name="Object11" parent="." instance=ExtResource("2_xwhi0")]
-position = Vector2(500, 3760.5)
+[node name="Object11" parent="." instance=ExtResource("objectsswampMud1")]
+position = Vector2(500, 3827.5)
 
-[node name="Object12" parent="." instance=ExtResource("5_0dojr")]
-position = Vector2(168, 3556.5)
+[node name="Object12" parent="." instance=ExtResource("objectsswampMud3")]
+position = Vector2(168, 3577.5)
 
-[node name="Object13" parent="." instance=ExtResource("3_2f5dd")]
-position = Vector2(348, 3788.5)
+[node name="Object13" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(348, 3819.5)
 
-[node name="Object14" parent="." instance=ExtResource("3_2f5dd")]
-position = Vector2(1036, 2640.5)
+[node name="Object14" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(1036, 2671.5)
 
-[node name="Object15" parent="." instance=ExtResource("3_2f5dd")]
-position = Vector2(60, 2328.5)
+[node name="Object15" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(60, 2359.5)
 
-[node name="Object16" parent="." instance=ExtResource("3_2f5dd")]
-position = Vector2(288, 3064.5)
+[node name="Object16" parent="." instance=ExtResource("objectsswampMud5")]
+position = Vector2(288, 3095.5)
 
-[node name="Object17" parent="." instance=ExtResource("7_prefw")]
-position = Vector2(84.5, 3580.5)
+[node name="Object17" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(84.5, 3609.5)
 
-[node name="Object18" parent="." instance=ExtResource("7_prefw")]
-position = Vector2(1612.5, 3600.5)
+[node name="Object18" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1612.5, 3629.5)
 
-[node name="Object19" parent="." instance=ExtResource("7_prefw")]
-position = Vector2(748.5, 2656.5)
+[node name="Object19" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(748.5, 2685.5)
 
-[node name="Object20" parent="." instance=ExtResource("7_prefw")]
-position = Vector2(1628.5, 3080.5)
+[node name="Object20" parent="." instance=ExtResource("objectsswampMud6")]
+position = Vector2(1628.5, 3109.5)
 
-[node name="Object22" parent="." instance=ExtResource("8_i4nra")]
-position = Vector2(1345.33, 3434.67)
+[node name="Object22" parent="." instance=ExtResource("objectsswampReed2")]
+position = Vector2(1345.33, 3534)
 
-[node name="Object23" parent="." instance=ExtResource("9_2xenm")]
-position = Vector2(1541.83, 3256)
+[node name="Object23" parent="." instance=ExtResource("objectsswampReed1")]
+position = Vector2(1541.83, 3375)
 
-[node name="Object24" parent="." instance=ExtResource("10_cg4t4")]
-position = Vector2(862.667, 3440.5)
+[node name="Object24" parent="." instance=ExtResource("objectsswampReed3")]
+position = Vector2(862.667, 3537.5)
 
-[node name="Object25" parent="." instance=ExtResource("11_clfti")]
-position = Vector2(942.5, 2782.5)
+[node name="Object25" parent="." instance=ExtResource("objectsswampReed5")]
+position = Vector2(942.5, 2895.5)
 
-[node name="Object26" parent="." instance=ExtResource("9_2xenm")]
-position = Vector2(374, 3250)
+[node name="Object26" parent="." instance=ExtResource("objectsswampReed1")]
+position = Vector2(374, 3369)
 
-[node name="Object27" parent="." instance=ExtResource("12_fjmst")]
-position = Vector2(1366.5, 2964.5)
+[node name="Object27" parent="." instance=ExtResource("objectsswampReed4")]
+position = Vector2(1366.5, 3082.5)
 
-[node name="Object28" parent="." instance=ExtResource("11_clfti")]
-position = Vector2(1160.5, 3434.5)
+[node name="Object28" parent="." instance=ExtResource("objectsswampReed5")]
+position = Vector2(1160.5, 3547.5)
 
-[node name="Object29" parent="." instance=ExtResource("13_dc2x6")]
-position = Vector2(706.5, 2328)
+[node name="Object29" parent="." instance=ExtResource("objectsswampTree")]
+position = Vector2(706.5, 3374)
 
-[node name="Object30" parent="." instance=ExtResource("9_2xenm")]
-position = Vector2(1112, 2889.33)
+[node name="Object30" parent="." instance=ExtResource("objectsswampReed1")]
+position = Vector2(1112, 3008)
 
-[node name="Object31" parent="." instance=ExtResource("14_7rd70")]
-position = Vector2(1245.95, 2654.55)
+[node name="Object31" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(1245.95, 2735)
 
-[node name="Object32" parent="." instance=ExtResource("15_4xs6s")]
-position = Vector2(1755.05, 3621.71)
+[node name="Object32" parent="." instance=ExtResource("objectsswampBush1")]
+position = Vector2(1755.05, 3699.5)
 
-[node name="Object33" parent="." instance=ExtResource("16_hxaf1")]
-position = Vector2(1581.82, 2839.89)
+[node name="Object33" parent="." instance=ExtResource("objectsswampBush2")]
+position = Vector2(1581.82, 2882.5)
 
-[node name="Object34" parent="." instance=ExtResource("16_hxaf1")]
-position = Vector2(190.909, 2197.47)
+[node name="Object34" parent="." instance=ExtResource("objectsswampBush2")]
+position = Vector2(190.909, 2240.5)
 
-[node name="Object36" parent="." instance=ExtResource("15_4xs6s")]
-position = Vector2(348.985, 2685.35)
+[node name="Object36" parent="." instance=ExtResource("objectsswampBush1")]
+position = Vector2(348.985, 2763.5)
 
-[node name="Object38" parent="." instance=ExtResource("14_7rd70")]
-position = Vector2(228.5, 3636)
+[node name="Object38" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(228.5, 3717)
 
-[node name="Object39" parent="." instance=ExtResource("14_7rd70")]
-position = Vector2(1994.44, 2500)
+[node name="Object39" parent="." instance=ExtResource("objectsswampBush3")]
+position = Vector2(1994.44, 2581)
 
-[node name="Object40" parent="." instance=ExtResource("17_sjd2q")]
-position = Vector2(2540, 1400)
+[node name="Object40" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(2540, 1475)
 
-[node name="Object41" parent="." instance=ExtResource("17_sjd2q")]
-position = Vector2(2344, 3328)
+[node name="Object41" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(2344, 3403)
 
-[node name="Object43" parent="." instance=ExtResource("18_b02o1")]
-position = Vector2(3056, 3004)
+[node name="Object43" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(3056, 3079)
 
-[node name="Object44" parent="." instance=ExtResource("18_b02o1")]
-position = Vector2(716, 592)
+[node name="Object44" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(716, 667)
 
-[node name="Object45" parent="." instance=ExtResource("18_b02o1")]
-position = Vector2(1724, 768)
+[node name="Object45" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(1724, 843)
 
-[node name="Object46" parent="." instance=ExtResource("18_b02o1")]
-position = Vector2(3536, 288)
+[node name="Object46" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(3536, 363)
 
-[node name="Object47" parent="." instance=ExtResource("17_sjd2q")]
-position = Vector2(296, 1376)
+[node name="Object47" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(296, 1451)
 
-[node name="Object49" parent="." instance=ExtResource("17_sjd2q")]
-position = Vector2(3572, 2044)
+[node name="Object49" parent="." instance=ExtResource("objectstundraSnowPile2")]
+position = Vector2(3572, 2119)
 
-[node name="Object50" parent="." instance=ExtResource("18_b02o1")]
-position = Vector2(3472, 3636)
+[node name="Object50" parent="." instance=ExtResource("objectstundraSnowPile1")]
+position = Vector2(3472, 3711)
 
-[node name="Object51" parent="." instance=ExtResource("19_g72i3")]
-position = Vector2(3444, 2552)
+[node name="Object51" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(3444, 2851)
 
-[node name="Object52" parent="." instance=ExtResource("19_g72i3")]
-position = Vector2(2700, 492)
+[node name="Object52" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(2700, 791)
 
-[node name="Object53" parent="." instance=ExtResource("19_g72i3")]
-position = Vector2(2204, 1452)
+[node name="Object53" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(2204, 1751)
 
-[node name="Object54" parent="." instance=ExtResource("19_g72i3")]
-position = Vector2(380, 940)
+[node name="Object54" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(380, 1239)
 
-[node name="Object55" parent="." instance=ExtResource("19_g72i3")]
-position = Vector2(1548, 340)
+[node name="Object55" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(1548, 639)
 
-[node name="Object56" parent="." instance=ExtResource("19_g72i3")]
-position = Vector2(3412, 672)
+[node name="Object56" parent="." instance=ExtResource("objectstundraStickTree")]
+position = Vector2(3412, 971)
 
-[node name="Object57" parent="." instance=ExtResource("20_nqrhf")]
-position = Vector2(2414.61, 2351.45)
+[node name="Object57" parent="." instance=ExtResource("objectstundraRock1")]
+position = Vector2(2414.61, 2391.6)
 
-[node name="Object58" parent="." instance=ExtResource("21_8f2a1")]
-position = Vector2(2447.68, 1704.87)
+[node name="Object58" parent="." instance=ExtResource("objectstundraRock2")]
+position = Vector2(2447.68, 1763.17)
 
-[node name="Object59" parent="." instance=ExtResource("20_nqrhf")]
-position = Vector2(787.879, 1070.71)
+[node name="Object59" parent="." instance=ExtResource("objectstundraRock1")]
+position = Vector2(787.879, 1110.6)
 
-[node name="Object60" parent="." instance=ExtResource("20_nqrhf")]
-position = Vector2(3684, 3470.71)
+[node name="Object60" parent="." instance=ExtResource("objectstundraRock1")]
+position = Vector2(3684, 3510.6)
 
-[node name="Object61" parent="." instance=ExtResource("21_8f2a1")]
-position = Vector2(224.243, 412.637)
+[node name="Object61" parent="." instance=ExtResource("objectstundraRock2")]
+position = Vector2(224.243, 471.166)
 
-[node name="Object62" parent="." instance=ExtResource("21_8f2a1")]
-position = Vector2(3300, 267.181)
+[node name="Object62" parent="." instance=ExtResource("objectstundraRock2")]
+position = Vector2(3300, 325.166)

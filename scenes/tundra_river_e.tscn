@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://56k74x2ngc38"]
+[gd_scene load_steps=12 format=3 uid="uid://c5itgjlayodml"]
 
 [ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_ixbke"]
 [ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="160x160_tileset_ground_a"]
@@ -198,100 +198,100 @@ layer_2/enabled = false
 layer_2/tile_data = PackedInt32Array(13, 393216, 14, 14, 458752, 14, 15, 524288, 14, 16, 0, 12, 17, 458752, 14, 18, 524288, 14, 19, 458752, 14, 20, 458752, 13, 21, 458752, 13, 22, 524288, 13, 23, 524288, 13, 65549, 393216, 15, 65550, 458752, 15, 65551, 0, 12, 65552, 0, 12, 65553, 458752, 14, 65554, 524288, 14, 65555, 524288, 13, 65556, 458752, 13, 65557, 458752, 13, 65558, 524288, 13, 65559, 524288, 14, 131087, 786432, 12, 131088, 851968, 12, 131089, 458752, 14, 131090, 524288, 14, 131091, 524288, 14, 131092, 458752, 13, 131093, 524288, 13, 131094, 524288, 14, 131095, 458752, 13, 196623, 786432, 13, 196624, 851968, 13, 196625, 0, 12, 196626, 458752, 14, 196627, 524288, 14, 196628, 524288, 13, 196629, 524288, 13, 196630, 524288, 14, 196631, 458752, 13, 262161, 0, 12, 262162, 458752, 14, 262163, 524288, 14, 262164, 524288, 13, 262165, 524288, 14, 262166, 524288, 14, 262167, 458752, 13, 327697, 458752, 13, 327698, 458752, 14, 327699, 524288, 14, 327700, 524288, 13, 327701, 458752, 14, 327702, 524288, 14, 327703, 524288, 13, 393233, 458752, 14, 393234, 458752, 14, 393235, 524288, 14, 393236, 524288, 14, 393237, 458752, 14, 393238, 524288, 14, 393239, 524288, 14, 458767, 786432, 14, 458768, 851968, 14, 458769, 458752, 13, 458770, 458752, 14, 458771, 524288, 14, 458772, 458752, 14, 458773, 524288, 14, 458774, 458752, 14, 458775, 524288, 14, 524303, 786432, 15, 524304, 851968, 15, 524305, 458752, 14, 524306, 458752, 14, 524307, 458752, 14, 524308, 458752, 14, 524309, 458752, 14, 524310, 458752, 14, 524311, 458752, 14, 589838, 131072, 12, 589839, 0, 12, 589840, 0, 12, 589841, 458752, 13, 589842, 458752, 13, 589843, 458752, 13, 589844, 458752, 13, 589845, 458752, 13, 589846, 458752, 13, 589847, 458752, 13, 655374, 0, 12, 655375, 0, 12, 655376, 0, 12, 655377, 0, 12, 655378, 458752, 14, 655379, 458752, 14, 655380, 458752, 14, 655381, 458752, 14, 655382, 458752, 14, 655383, 458752, 14, 720908, 393216, 12, 720909, 458752, 12, 720910, 0, 12, 720911, 0, 12, 720912, 0, 12, 720913, 458752, 13, 720914, 458752, 13, 720915, 458752, 13, 720916, 458752, 13, 720917, 458752, 13, 720918, 458752, 13, 720919, 458752, 13, 786444, 393216, 13, 786445, 458752, 13, 786446, 0, 12, 786447, 0, 12, 786448, 0, 12, 786449, 458752, 14, 786450, 458752, 14, 786451, 458752, 14, 786452, 458752, 14, 786453, 458752, 14, 786454, 458752, 14, 786455, 458752, 14, 851980, 0, 12, 851981, 0, 12, 851982, 0, 12, 851983, 0, 12, 851984, 524288, 13, 851985, 0, 12, 851986, 0, 12, 851987, 0, 12, 851988, 0, 12, 851989, 0, 12, 851990, 0, 12, 851991, 0, 12, 917516, 0, 12, 917517, 458752, 13, 917518, 0, 12, 917519, 0, 12, 917520, 0, 12, 917521, 0, 12, 917522, 0, 12, 917523, 0, 12, 917524, 0, 12, 917525, 0, 12, 917526, 0, 12, 917527, 0, 12, 983052, 393216, 14, 983053, 458752, 14, 983054, 0, 12, 983055, 0, 12, 983056, 0, 12, 983057, 0, 12, 983058, 0, 12, 983059, 0, 12, 983060, 0, 12, 983061, 0, 12, 983062, 0, 12, 983063, 0, 12, 1048588, 393216, 15, 1048589, 458752, 15, 1048590, 0, 12, 1048591, 0, 12, 1048592, 0, 12, 1048593, 0, 12, 1048594, 0, 12, 1048595, 0, 12, 1048596, 0, 12, 1048597, 0, 12, 1048598, 0, 12, 1048599, 0, 12, 1114126, 786432, 12, 1114127, 851968, 12, 1114128, 0, 12, 1114129, 0, 12, 1114130, 0, 12, 1114131, 0, 12, 1114132, 0, 12, 1114133, 0, 12, 1114134, 0, 12, 1114135, 0, 12, 1179662, 786432, 13, 1179663, 851968, 13, 1179664, 0, 12, 1179665, 0, 12, 1179666, 0, 12, 1179667, 0, 12, 1179668, 0, 12, 1179669, 0, 12, 1179670, 0, 12, 1179671, 0, 12, 1245200, 393216, 14, 1245201, 458752, 13, 1245202, 458752, 13, 1245203, 458752, 13, 1245204, 458752, 13, 1245205, 458752, 13, 1245206, 458752, 13, 1245207, 458752, 13, 1310736, 393216, 15, 1310737, 458752, 14, 1310738, 458752, 14, 1310739, 458752, 14, 1310740, 458752, 14, 1310741, 458752, 14, 1310742, 458752, 14, 1310743, 458752, 13, 1376271, 786432, 14, 1376272, 851968, 14, 1376273, 458752, 13, 1376274, 524288, 13, 1376275, 458752, 13, 1376276, 524288, 13, 1376277, 458752, 13, 1376278, 458752, 13, 1376279, 458752, 14, 1441807, 786432, 15, 1441808, 851968, 15, 1441809, 458752, 14, 1441810, 524288, 14, 1441811, 458752, 14, 1441812, 524288, 14, 1441813, 458752, 14, 1441814, 458752, 14, 1441815, 458752, 14, 1507341, 393216, 12, 1507342, 458752, 12, 1507343, 458752, 13, 1507344, 524288, 13, 1507345, 524288, 13, 1507346, 458752, 13, 1507347, 458752, 13, 1507348, 458752, 13, 1507349, 458752, 13, 1507350, 458752, 13, 1507351, 458752, 13)
 
 [node name="Object1" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(3136, 2060)
+position = Vector2(3136, 2135)
 
 [node name="Object2" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(1576, 1260)
+position = Vector2(1576, 1335)
 
 [node name="Object3" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(2740, 936)
+position = Vector2(2740, 1011)
 
 [node name="Object4" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(2236, 2216)
+position = Vector2(2236, 2291)
 
 [node name="Object5" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(512, 2848)
+position = Vector2(512, 2923)
 
 [node name="Object6" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(788, 3336)
+position = Vector2(788, 3411)
 
 [node name="Object7" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(2804, 3192)
+position = Vector2(2804, 3267)
 
 [node name="Object8" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(1624, 2944)
+position = Vector2(1624, 3019)
 
 [node name="Object9" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(2288, 3332)
+position = Vector2(2288, 3407)
 
 [node name="Object10" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(676, 1064)
+position = Vector2(676, 1139)
 
 [node name="Object11" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(1636, 136)
+position = Vector2(1636, 211)
 
 [node name="Object12" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(3692, 2700)
+position = Vector2(3692, 2775)
 
 [node name="Object13" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(728, 1888)
+position = Vector2(728, 1963)
 
 [node name="Object15" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(1248, 1744)
+position = Vector2(1248, 2043)
 
 [node name="Object16" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(3504, 928)
+position = Vector2(3504, 1227)
 
 [node name="Object17" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(360, 456)
+position = Vector2(360, 755)
 
 [node name="Object19" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(568, 620)
+position = Vector2(568, 919)
 
 [node name="Object20" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(336, 2944)
+position = Vector2(336, 3243)
 
 [node name="Object21" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(3432, 3452)
+position = Vector2(3432, 3751)
 
 [node name="Object22" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(1548, 3504)
+position = Vector2(1548, 3803)
 
 [node name="Object23" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(2672, 412)
+position = Vector2(2672, 711)
 
 [node name="Object26" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(2172.5, 640.5)
+position = Vector2(2172.5, 918.5)
 
 [node name="Object27" parent="." instance=ExtResource("objectstundraRock1")]
-position = Vector2(1229.13, 2189.17)
+position = Vector2(1229.13, 2226.17)
 
 [node name="Object28" parent="." instance=ExtResource("objectstundraRock2")]
-position = Vector2(1988.5, 2809.14)
+position = Vector2(1988.5, 2865.14)
 
 [node name="Object29" parent="." instance=ExtResource("objectstundraRock2")]
-position = Vector2(1884, 886.29)
+position = Vector2(1884, 943.145)
 
 [node name="Object30" parent="." instance=ExtResource("objectstundraRock2")]
-position = Vector2(240, 1266.29)
+position = Vector2(240, 1322.14)
 
 [node name="Object31" parent="." instance=ExtResource("objectstundraRock2")]
-position = Vector2(3260, 3298.28)
+position = Vector2(3260, 3354.14)
 
 [node name="Object32" parent="." instance=ExtResource("objectstundraRock1")]
-position = Vector2(2168, 2980.34)
+position = Vector2(2168, 3018.17)
 
 [node name="Object33" parent="." instance=ExtResource("objectstundraRock1")]
-position = Vector2(444, 3512.34)
+position = Vector2(444, 3550.17)
 
 [node name="Object34" parent="." instance=ExtResource("objectstundraRock1")]
-position = Vector2(3500, 320.334)
+position = Vector2(3500, 358.167)
 
 [node name="Object35" parent="." instance=ExtResource("objectstundraRock1")]
-position = Vector2(3472, 1736.34)
+position = Vector2(3472, 1774.17)
 
 [node name="Object36" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(2264.67, 893.41)
+position = Vector2(2264.67, 954.077)
 
 [node name="Object37" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(3351.1, 2096.5)
+position = Vector2(3351.1, 2152.5)

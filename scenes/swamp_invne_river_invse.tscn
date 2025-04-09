@@ -195,7 +195,6 @@ sources/0 = SubResource("TileSetAtlasSource_0")
 [node name="swamp_invne_river_invse" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_b1qpn")
-biomes = ["tundra", "swamp"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0")
@@ -211,253 +210,253 @@ layer_3/enabled = false
 layer_3/tile_data = PackedInt32Array(0, 0, 12, 1, 0, 12, 2, 0, 12, 3, 0, 12, 4, 0, 12, 5, 0, 12, 6, 0, 12, 7, 0, 12, 8, 0, 12, 9, 0, 12, 10, 0, 12, 11, 0, 12, 12, 0, 12, 13, 0, 12, 14, 0, 12, 15, 0, 12, 16, 0, 12, 17, 0, 12, 18, 0, 12, 19, 0, 12, 20, 0, 12, 21, 0, 12, 22, 0, 12, 23, 0, 12, 65536, 0, 12, 65537, 0, 12, 65538, 0, 12, 65539, 0, 12, 65540, 0, 12, 65541, 0, 12, 65542, 0, 12, 65543, 0, 12, 65544, 0, 12, 65545, 0, 12, 65546, 0, 12, 65547, 0, 12, 65548, 0, 12, 65549, 0, 12, 65550, 0, 12, 65551, 0, 12, 65552, 0, 12, 65553, 0, 12, 65554, 0, 12, 65555, 0, 12, 65556, 0, 12, 65557, 0, 12, 65558, 0, 12, 65559, 0, 12, 131072, 0, 12, 131073, 0, 12, 131074, 0, 12, 131075, 0, 12, 131076, 0, 12, 131077, 0, 12, 131078, 0, 12, 131079, 0, 12, 131080, 0, 12, 131081, 0, 12, 131082, 0, 12, 131083, 0, 12, 131084, 0, 12, 131085, 0, 12, 131086, 0, 12, 131087, 0, 12, 131088, 0, 12, 131089, 0, 12, 131090, 0, 12, 131091, 0, 12, 131092, 0, 12, 131093, 0, 12, 131094, 0, 12, 131095, 0, 12, 196608, 0, 12, 196609, 0, 12, 196610, 0, 12, 196611, 0, 12, 196612, 0, 12, 196613, 0, 12, 196614, 0, 12, 196615, 0, 12, 196616, 0, 12, 196617, 0, 12, 196618, 0, 12, 196619, 0, 12, 196620, 0, 12, 196621, 0, 12, 196622, 0, 12, 196623, 0, 12, 196624, 0, 12, 196625, 0, 12, 196626, 0, 12, 196627, 0, 12, 196628, 0, 12, 196629, 0, 12, 196630, 0, 12, 196631, 0, 12, 262144, 0, 12, 262145, 0, 12, 262146, 0, 12, 262147, 0, 12, 262148, 0, 12, 262149, 0, 12, 262150, 0, 12, 262151, 0, 12, 262152, 0, 12, 262153, 0, 12, 262154, 0, 12, 262155, 0, 12, 262156, 0, 12, 262157, 0, 12, 262158, 0, 12, 262159, 0, 12, 262160, 0, 12, 262161, 0, 12, 262162, 0, 12, 262163, 0, 12, 262164, 0, 12, 262165, 0, 12, 262166, 0, 12, 262167, 0, 12, 327680, 0, 12, 327681, 0, 12, 327682, 0, 12, 327683, 0, 12, 327684, 0, 12, 327685, 0, 12, 327686, 0, 12, 327687, 0, 12, 327688, 0, 12, 327689, 0, 12, 327690, 0, 12, 327691, 0, 12, 327692, 0, 12, 327693, 0, 12, 327694, 0, 12, 327695, 0, 12, 327696, 0, 12, 327697, 0, 12, 327698, 0, 12, 327699, 0, 12, 327700, 0, 12, 327701, 0, 12, 327702, 0, 12, 327703, 0, 12, 393216, 0, 12, 393217, 0, 12, 393218, 0, 12, 393219, 0, 12, 393220, 0, 12, 393221, 0, 12, 393222, 0, 12, 393223, 0, 12, 393224, 0, 12, 393225, 0, 12, 393226, 0, 12, 393227, 0, 12, 393228, 0, 12, 393229, 0, 12, 393230, 0, 12, 393231, 0, 12, 393232, 0, 12, 393233, 0, 12, 393234, 0, 12, 393235, 0, 12, 393236, 0, 12, 393237, 0, 12, 393238, 0, 12, 393239, 0, 12, 458752, 0, 12, 458753, 0, 12, 458754, 0, 12, 458755, 0, 12, 458756, 0, 12, 458757, 0, 12, 458758, 0, 12, 458759, 0, 12, 458760, 0, 12, 458761, 0, 12, 458762, 0, 12, 458763, 0, 12, 458764, 0, 12, 458765, 0, 12, 458766, 0, 12, 458767, 0, 12, 458768, 0, 12, 458769, 0, 12, 458770, 0, 12, 458771, 0, 12, 458772, 0, 12, 458773, 0, 12, 458774, 0, 12, 458775, 0, 12, 524288, 0, 12, 524289, 0, 12, 524290, 0, 12, 524291, 0, 12, 524292, 0, 12, 524293, 0, 12, 524294, 0, 12, 524295, 0, 12, 524296, 0, 12, 524297, 0, 12, 524298, 0, 12, 524299, 0, 12, 524300, 0, 12, 524301, 0, 12, 524302, 0, 12, 524303, 0, 12, 524304, 0, 12, 524305, 0, 12, 524306, 0, 12, 524307, 0, 12, 524308, 0, 12, 524309, 0, 12, 524310, 0, 12, 524311, 0, 12, 589824, 0, 12, 589825, 0, 12, 589826, 0, 12, 589827, 0, 12, 589828, 0, 12, 589829, 0, 12, 589830, 0, 12, 589831, 0, 12, 589832, 0, 12, 589833, 0, 12, 589834, 0, 12, 589835, 0, 12, 589836, 0, 12, 589837, 0, 12, 589838, 0, 12, 589839, 0, 12, 589840, 0, 12, 589841, 0, 12, 589842, 0, 12, 589843, 0, 12, 589844, 0, 12, 589845, 0, 12, 589846, 0, 12, 589847, 0, 12, 655360, 0, 12, 655361, 0, 12, 655362, 0, 12, 655363, 0, 12, 655364, 0, 12, 655365, 0, 12, 655366, 0, 12, 655367, 0, 12, 655368, 0, 12, 655369, 0, 12, 655370, 0, 12, 655371, 0, 12, 655372, 0, 12, 655373, 0, 12, 655374, 0, 12, 655375, 0, 12, 655376, 0, 12, 655377, 0, 12, 655378, 0, 12, 655379, 0, 12, 655380, 0, 12, 655381, 0, 12, 655382, 0, 12, 655383, 0, 12, 720896, 0, 12, 720897, 0, 12, 720898, 0, 12, 720899, 0, 12, 720900, 0, 12, 720901, 0, 12, 720902, 0, 12, 720903, 655360, 12, 720904, 720896, 12, 720905, 327680, 12, 720906, 0, 12, 720907, 0, 12, 720908, 0, 12, 720909, 0, 12, 720910, 0, 12, 720911, 0, 12, 720912, 0, 12, 720913, 0, 12, 720914, 0, 12, 720915, 0, 12, 720916, 0, 12, 720917, 0, 12, 720918, 0, 12, 720919, 0, 12, 786432, 0, 12, 786433, 0, 12, 786434, 0, 12, 786435, 0, 12, 786436, 0, 12, 786437, 0, 12, 786438, 0, 12, 786439, 655360, 13, 786440, 720896, 13, 786442, 131072, 13, 786443, 0, 12, 786444, 0, 12, 786445, 0, 12, 786446, 0, 12, 786447, 0, 12, 786448, 0, 12, 786449, 0, 12, 786450, 0, 12, 786451, 0, 12, 786452, 0, 12, 786453, 0, 12, 786454, 0, 12, 786455, 0, 12, 851968, 0, 12, 851969, 0, 12, 851970, 0, 12, 851971, 0, 12, 851972, 0, 12, 851973, 0, 12, 851974, 0, 12, 851984, 393216, 14, 851985, 458752, 14, 851986, 524288, 14, 851987, 0, 12, 851988, 0, 12, 851989, 0, 12, 851990, 0, 12, 851991, 0, 12, 917504, 0, 12, 917505, 0, 12, 917506, 0, 12, 917507, 0, 12, 917508, 0, 12, 917509, 0, 12, 917510, 0, 12, 917520, 393216, 15, 917521, 458752, 15, 917522, 524288, 15, 917523, 589824, 15, 983040, 0, 12, 983041, 0, 12, 983042, 0, 12, 983043, 0, 12, 983044, 0, 12, 983045, 0, 12, 983046, 0, 12, 1048576, 0, 12, 1048577, 0, 12, 1048578, 0, 12, 1048579, 0, 12, 1048580, 0, 12, 1048581, 0, 12, 1048582, 0, 12, 1114112, 0, 12, 1114113, 0, 12, 1114114, 0, 12, 1114115, 0, 12, 1114116, 0, 12, 1114117, 0, 12, 1114118, 0, 12, 1114119, 655360, 14, 1114120, 720896, 14, 1179648, 0, 12, 1179649, 0, 12, 1179650, 0, 12, 1179651, 0, 12, 1179652, 0, 12, 1179653, 0, 12, 1179654, 0, 12, 1179655, 655360, 15, 1179656, 720896, 15, 1245184, 0, 12, 1245185, 0, 12, 1245186, 0, 12, 1245187, 0, 12, 1245188, 0, 12, 1245189, 0, 12, 1245190, 0, 12, 1245191, 0, 12, 1245192, 0, 12, 1245193, 524288, 12, 1245194, 589824, 12, 1310720, 0, 12, 1310721, 0, 12, 1310722, 0, 12, 1310723, 0, 12, 1310724, 0, 12, 1310725, 0, 12, 1310726, 0, 12, 1310727, 0, 12, 1310728, 0, 12, 1310729, 524288, 13, 1310730, 589824, 13, 1376256, 0, 12, 1376257, 0, 12, 1376258, 0, 12, 1376259, 0, 12, 1376260, 0, 12, 1376261, 0, 12, 1376262, 0, 12, 1376263, 0, 12, 1376264, 0, 12, 1376265, 524288, 14, 1376266, 0, 12, 1441792, 0, 12, 1441793, 0, 12, 1441794, 0, 12, 1441795, 0, 12, 1441796, 0, 12, 1441797, 0, 12, 1441798, 0, 12, 1441799, 0, 12, 1441800, 0, 12, 1441801, 0, 12, 1441802, 0, 12, 1507328, 0, 12, 1507329, 0, 12, 1507330, 0, 12, 1507331, 0, 12, 1507332, 0, 12, 1507333, 0, 12, 1507334, 0, 12, 1507335, 0, 12, 1507336, 0, 12, 1507337, 0, 12, 1507338, 0, 12)
 
 [node name="Object1" parent="." instance=ExtResource("objectsswampMud1")]
-position = Vector2(604, 3304.5)
+position = Vector2(604, 3371.5)
 
 [node name="Object2" parent="." instance=ExtResource("objectsswampMud1")]
-position = Vector2(1920, 3748.5)
+position = Vector2(1920, 3815.5)
 
 [node name="Object3" parent="." instance=ExtResource("objectsswampMud1")]
-position = Vector2(992, 408.5)
+position = Vector2(992, 475.5)
 
 [node name="Object4" parent="." instance=ExtResource("objectsswampMud1")]
-position = Vector2(3668, 3288.5)
+position = Vector2(3668, 3355.5)
 
 [node name="Object5" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(200.5, 2644.5)
+position = Vector2(200.5, 2688.5)
 
 [node name="Object6" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(520.5, 1360.5)
+position = Vector2(520.5, 1404.5)
 
 [node name="Object7" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(784.5, 2156.5)
+position = Vector2(784.5, 2200.5)
 
 [node name="Object8" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(1996.5, 2328.5)
+position = Vector2(1996.5, 2372.5)
 
 [node name="Object10" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(2584.5, 3120.5)
+position = Vector2(2584.5, 3164.5)
 
 [node name="Object11" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(3716.5, 2624.5)
+position = Vector2(3716.5, 2668.5)
 
 [node name="Object12" parent="." instance=ExtResource("objectsswampMud2")]
-position = Vector2(3308.5, 3776.5)
+position = Vector2(3308.5, 3820.5)
 
 [node name="Object13" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(2404, 3576.5)
+position = Vector2(2404, 3597.5)
 
 [node name="Object14" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(1096, 3456.5)
+position = Vector2(1096, 3477.5)
 
 [node name="Object15" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(1396, 3636.5)
+position = Vector2(1396, 3657.5)
 
 [node name="Object16" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(444, 712.5)
+position = Vector2(444, 733.5)
 
 [node name="Object17" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(832, 752.5)
+position = Vector2(832, 773.5)
 
 [node name="Object18" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(564, 68.5)
+position = Vector2(564, 89.5)
 
 [node name="Object19" parent="." instance=ExtResource("objectsswampMud3")]
-position = Vector2(140, 380.5)
+position = Vector2(140, 401.5)
 
 [node name="Object20" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(884.5, 428.5)
+position = Vector2(884.5, 457.5)
 
 [node name="Object21" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(428.5, 256.5)
+position = Vector2(428.5, 285.5)
 
 [node name="Object22" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(768.5, 124.5)
+position = Vector2(768.5, 153.5)
 
 [node name="Object23" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(848.5, 52.5)
+position = Vector2(848.5, 81.5)
 
 [node name="Object24" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(3208.5, 3128.5)
+position = Vector2(3208.5, 3157.5)
 
 [node name="Object25" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(2792.5, 2964.5)
+position = Vector2(2792.5, 2993.5)
 
 [node name="Object26" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(2572.5, 2948.5)
+position = Vector2(2572.5, 2977.5)
 
 [node name="Object27" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(2392.5, 2752.5)
+position = Vector2(2392.5, 2781.5)
 
 [node name="Object28" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(980, 3472.5)
+position = Vector2(980, 3503.5)
 
 [node name="Object29" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(1268, 3668.5)
+position = Vector2(1268, 3699.5)
 
 [node name="Object30" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(3436, 3812.5)
+position = Vector2(3436, 3843.5)
 
 [node name="Object31" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(3540, 3316.5)
+position = Vector2(3540, 3347.5)
 
 [node name="Object32" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(1760, 3780.5)
+position = Vector2(1760, 3811.5)
 
 [node name="Object33" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(1596, 3564.5)
+position = Vector2(1596, 3595.5)
 
 [node name="Object34" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(1816, 3548.5)
+position = Vector2(1816, 3579.5)
 
 [node name="Object35" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(1632, 3432.5)
+position = Vector2(1632, 3463.5)
 
 [node name="Object36" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(1368, 3444)
+position = Vector2(1368, 3495)
 
 [node name="Object37" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(2764, 3768)
+position = Vector2(2764, 3819)
 
 [node name="Object38" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(956, 3788)
+position = Vector2(956, 3839)
 
 [node name="Object39" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(472, 3612)
+position = Vector2(472, 3663)
 
 [node name="Object40" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(392, 2132)
+position = Vector2(392, 2183)
 
 [node name="Object41" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(1228, 2304)
+position = Vector2(1228, 2355)
 
 [node name="Object42" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(752, 1820)
+position = Vector2(752, 1871)
 
 [node name="Object43" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(1536, 1852)
+position = Vector2(1536, 1903)
 
 [node name="Object44" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(216, 728)
+position = Vector2(216, 779)
 
 [node name="Object45" parent="." instance=ExtResource("objectsswampMud4")]
-position = Vector2(1204, 240)
+position = Vector2(1204, 291)
 
 [node name="Object46" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(720.5, 296.5)
+position = Vector2(720.5, 325.5)
 
 [node name="Object47" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(2696, 3444.5)
+position = Vector2(2696, 3475.5)
 
 [node name="Object48" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(3648, 3640.5)
+position = Vector2(3648, 3671.5)
 
 [node name="Object50" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(1228, 2132.5)
+position = Vector2(1228, 2163.5)
 
 [node name="Object51" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(472, 2320.5)
+position = Vector2(472, 2351.5)
 
 [node name="Object52" parent="." instance=ExtResource("objectsswampMud5")]
-position = Vector2(627.273, 1400.5)
+position = Vector2(627.273, 1431.5)
 
 [node name="Object53" parent="." instance=ExtResource("objectsswampMud6")]
-position = Vector2(612.5, 2968.5)
+position = Vector2(612.5, 2997.5)
 
 [node name="Object54" parent="." instance=ExtResource("objectsswampReed5")]
-position = Vector2(3103.53, 2782.32)
+position = Vector2(3103.53, 2895.5)
 
 [node name="Object55" parent="." instance=ExtResource("objectsswampReed1")]
-position = Vector2(3500, 2618.18)
+position = Vector2(3500, 2737)
 
 [node name="Object56" parent="." instance=ExtResource("objectsswampReed3")]
-position = Vector2(3309.09, 2476.26)
+position = Vector2(3309.09, 2573.5)
 
 [node name="Object57" parent="." instance=ExtResource("objectsswampReed3")]
-position = Vector2(1936.36, 3282.32)
+position = Vector2(1936.36, 3379.5)
 
 [node name="Object58" parent="." instance=ExtResource("objectsswampReed5")]
-position = Vector2(2133.83, 3258.08)
+position = Vector2(2133.83, 3371.5)
 
 [node name="Object59" parent="." instance=ExtResource("objectsswampReed1")]
-position = Vector2(1381.82, 3072.73)
+position = Vector2(1381.82, 3191)
 
 [node name="Object60" parent="." instance=ExtResource("objectsswampReed2")]
-position = Vector2(887.879, 2481.82)
+position = Vector2(887.879, 2581)
 
 [node name="Object61" parent="." instance=ExtResource("objectsswampReed2")]
-position = Vector2(1778.79, 2345.45)
+position = Vector2(1778.79, 2445)
 
 [node name="Object62" parent="." instance=ExtResource("objectsswampReed3")]
-position = Vector2(2175.76, 2485.35)
+position = Vector2(2175.76, 2582.5)
 
 [node name="Object63" parent="." instance=ExtResource("objectsswampReed1")]
-position = Vector2(1261.11, 2318.18)
+position = Vector2(1261.11, 2437)
 
 [node name="Object64" parent="." instance=ExtResource("objectsswampReed3")]
-position = Vector2(1390.91, 2330.8)
+position = Vector2(1390.91, 2427.5)
 
 [node name="Object65" parent="." instance=ExtResource("objectsswampReed4")]
-position = Vector2(1039.89, 2948.98)
+position = Vector2(1039.89, 3066.5)
 
 [node name="Object66" parent="." instance=ExtResource("objectsswampReed4")]
-position = Vector2(848.5, 1182.5)
+position = Vector2(848.5, 1300.5)
 
 [node name="Object67" parent="." instance=ExtResource("objectsswampReed5")]
-position = Vector2(1190.5, 1174.5)
+position = Vector2(1190.5, 1287.5)
 
 [node name="Object68" parent="." instance=ExtResource("objectsswampReed1")]
-position = Vector2(984.5, 716)
+position = Vector2(984.5, 835)
 
 [node name="Object69" parent="." instance=ExtResource("objectsswampReed2")]
-position = Vector2(448, 1040)
+position = Vector2(448, 1140)
 
 [node name="Object70" parent="." instance=ExtResource("objectsswampReed5")]
-position = Vector2(1486.5, 864.5)
+position = Vector2(1486.5, 977.5)
 
 [node name="Object71" parent="." instance=ExtResource("objectsswampReed3")]
-position = Vector2(1472, 1056.5)
+position = Vector2(1472, 1153.5)
 
 [node name="Object74" parent="." instance=ExtResource("objectsswampTree")]
-position = Vector2(1561.11, 1684.85)
+position = Vector2(1561.11, 2730)
 
 [node name="Object75" parent="." instance=ExtResource("objectsswampTree")]
-position = Vector2(627.773, 96.97)
+position = Vector2(627.773, 1142)
 
 [node name="Object76" parent="." instance=ExtResource("objectsswampTree")]
-position = Vector2(1073.23, 1993.94)
+position = Vector2(1073.23, 3039)
 
 [node name="Object77" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(3524.24, 1254.55)
+position = Vector2(3524.24, 1329)
 
 [node name="Object78" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(3360.61, 618.182)
+position = Vector2(3360.61, 693)
 
 [node name="Object79" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(2633.33, 1563.64)
+position = Vector2(2633.33, 1638)
 
 [node name="Object80" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(1984.85, 118.182)
+position = Vector2(1984.85, 193)
 
 [node name="Object81" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(1954.55, 751.515)
+position = Vector2(1954.55, 826)
 
 [node name="Object82" parent="." instance=ExtResource("objectstundraSnowPile1")]
-position = Vector2(3542.42, 2154.55)
+position = Vector2(3542.42, 2229)
 
 [node name="Object83" parent="." instance=ExtResource("objectstundraSnowPile2")]
-position = Vector2(2736.36, 772.727)
+position = Vector2(2736.36, 847)
 
 [node name="Object84" parent="." instance=ExtResource("objectstundraRock1")]
-position = Vector2(1830.05, 450.836)
+position = Vector2(1830.05, 489.169)
 
 [node name="Object86" parent="." instance=ExtResource("objectstundraRock2")]
-position = Vector2(2975.76, 263.667)
+position = Vector2(2975.76, 314.5)
 
 [node name="Object87" parent="." instance=ExtResource("objectstundraRock2")]
-position = Vector2(3300, 1866.7)
+position = Vector2(3300, 1917.5)
 
 [node name="Object89" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(2260.61, 500)
+position = Vector2(2260.61, 799)
 
 [node name="Object90" parent="." instance=ExtResource("objectstundraStickTree")]
-position = Vector2(2984.85, 1742.42)
+position = Vector2(2984.85, 2041)

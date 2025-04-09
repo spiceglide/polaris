@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bv4vqg5vbsciv"]
+[gd_scene load_steps=19 format=3 uid="uid://cwkuqxsdmdqj7"]
 
 [ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_ggdmj"]
 [ext_resource type="Texture2D" uid="uid://b2cjbq43po7hi" path="res://assets/tilemaps/tilesets/160x160_tileset_ground_b.png" id="160x160_tileset_ground_a"]
@@ -192,7 +192,6 @@ sources/0 = SubResource("TileSetAtlasSource_0")
 [node name="forest_river_s" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ggdmj")
-biomes = ["forest"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0")
@@ -206,232 +205,232 @@ layer_2/enabled = false
 layer_2/tile_data = PackedInt32Array(851968, 0, 12, 851969, 524288, 12, 851970, 589824, 12, 851990, 131072, 12, 851991, 0, 12, 917504, 458752, 13, 917505, 524288, 13, 917506, 589824, 13, 917525, 327680, 13, 917526, 0, 12, 917527, 0, 12, 983040, 458752, 14, 983041, 524288, 14, 983042, 0, 12, 983049, 393216, 12, 983050, 458752, 12, 983051, 196608, 12, 983053, 720896, 14, 983058, 131072, 12, 983059, 0, 12, 983060, 0, 12, 983061, 0, 12, 983062, 0, 12, 983063, 0, 12, 1048576, 0, 12, 1048577, 0, 12, 1048578, 0, 12, 1048580, 720896, 13, 1048581, 786432, 13, 1048585, 393216, 13, 1048586, 458752, 13, 1048587, 524288, 13, 1048588, 262144, 13, 1048593, 327680, 13, 1048594, 0, 12, 1048595, 0, 12, 1048596, 0, 12, 1048597, 0, 12, 1048598, 0, 12, 1048599, 0, 12, 1114112, 0, 12, 1114113, 0, 12, 1114114, 0, 12, 1114115, 655360, 14, 1114116, 720896, 14, 1114117, 786432, 14, 1114119, 786432, 14, 1114120, 851968, 14, 1114121, 0, 12, 1114122, 458752, 14, 1114123, 524288, 14, 1114124, 0, 12, 1114125, 0, 12, 1114126, 0, 12, 1114127, 0, 12, 1114128, 0, 12, 1114129, 0, 12, 1114130, 0, 12, 1114131, 0, 12, 1114132, 0, 12, 1114133, 0, 12, 1114134, 0, 12, 1114135, 0, 12, 1179648, 0, 12, 1179649, 0, 12, 1179650, 0, 12, 1179651, 655360, 15, 1179652, 720896, 15, 1179655, 786432, 15, 1179656, 851968, 15, 1179657, 0, 12, 1179658, 0, 12, 1179659, 0, 12, 1179660, 0, 12, 1179661, 0, 12, 1179662, 0, 12, 1179663, 0, 12, 1179664, 0, 12, 1179665, 0, 12, 1179666, 0, 12, 1179667, 0, 12, 1179668, 0, 12, 1179669, 0, 12, 1179670, 0, 12, 1179671, 0, 12, 1245184, 0, 12, 1245185, 0, 12, 1245186, 0, 12, 1245187, 0, 12, 1245188, 0, 12, 1245189, 0, 12, 1245190, 0, 12, 1245191, 0, 12, 1245192, 0, 12, 1245193, 0, 12, 1245194, 0, 12, 1245195, 0, 12, 1245196, 0, 12, 1245197, 0, 12, 1245198, 0, 12, 1245199, 0, 12, 1245200, 0, 12, 1245201, 0, 12, 1245202, 0, 12, 1245203, 0, 12, 1245204, 0, 12, 1245205, 0, 12, 1245206, 0, 12, 1245207, 0, 12, 1310720, 0, 12, 1310721, 0, 12, 1310722, 0, 12, 1310723, 0, 12, 1310724, 0, 12, 1310725, 0, 12, 1310726, 0, 12, 1310727, 0, 12, 1310728, 0, 12, 1310729, 0, 12, 1310730, 0, 12, 1310731, 0, 12, 1310732, 0, 12, 1310733, 0, 12, 1310734, 0, 12, 1310735, 0, 12, 1310736, 0, 12, 1310737, 0, 12, 1310738, 0, 12, 1310739, 0, 12, 1310740, 0, 12, 1310741, 0, 12, 1310742, 0, 12, 1310743, 0, 12, 1376256, 0, 12, 1376257, 0, 12, 1376258, 0, 12, 1376259, 0, 12, 1376260, 0, 12, 1376261, 0, 12, 1376262, 0, 12, 1376263, 0, 12, 1376264, 0, 12, 1376265, 0, 12, 1376266, 0, 12, 1376267, 0, 12, 1376268, 0, 12, 1376269, 0, 12, 1376270, 0, 12, 1376271, 0, 12, 1376272, 0, 12, 1376273, 0, 12, 1376274, 0, 12, 1376275, 0, 12, 1376276, 0, 12, 1376277, 0, 12, 1376278, 0, 12, 1376279, 0, 12, 1441792, 0, 12, 1441793, 0, 12, 1441794, 0, 12, 1441795, 0, 12, 1441796, 0, 12, 1441797, 0, 12, 1441798, 0, 12, 1441799, 0, 12, 1441800, 0, 12, 1441801, 0, 12, 1441802, 0, 12, 1441803, 0, 12, 1441804, 0, 12, 1441805, 0, 12, 1441806, 0, 12, 1441807, 0, 12, 1441808, 0, 12, 1441809, 0, 12, 1441810, 0, 12, 1441811, 0, 12, 1441812, 0, 12, 1441813, 0, 12, 1441814, 0, 12, 1441815, 0, 12, 1507328, 0, 12, 1507329, 0, 12, 1507330, 0, 12, 1507331, 0, 12, 1507332, 0, 12, 1507333, 0, 12, 1507334, 0, 12, 1507335, 0, 12, 1507336, 0, 12, 1507337, 0, 12, 1507338, 0, 12, 1507339, 0, 12, 1507340, 0, 12, 1507341, 0, 12, 1507342, 0, 12, 1507343, 0, 12, 1507344, 0, 12, 1507345, 0, 12, 1507346, 0, 12, 1507347, 0, 12, 1507348, 0, 12, 1507349, 0, 12, 1507350, 0, 12, 1507351, 0, 12)
 
 [node name="Object1" parent="." instance=ExtResource("objectsforestSnowPatch1")]
-position = Vector2(708, 2676.5)
+position = Vector2(708, 3199.5)
 
 [node name="Object2" parent="." instance=ExtResource("objectsforestSnowPatch1")]
-position = Vector2(3288, 688.5)
+position = Vector2(3288, 1211.5)
 
 [node name="Object3" parent="." instance=ExtResource("objectsforestSnowPatch1")]
-position = Vector2(896, 100.5)
+position = Vector2(896, 623.5)
 
 [node name="Object4" parent="." instance=ExtResource("objectsforestSnowPatch1")]
-position = Vector2(3516, 3524.5)
+position = Vector2(3516, 4047.5)
 
 [node name="Object5" parent="." instance=ExtResource("objectsforestSnowPatch7")]
-position = Vector2(3024, 3340.5)
+position = Vector2(3024, 3863.5)
 
 [node name="Object6" parent="." instance=ExtResource("objectsforestSnowPatch7")]
-position = Vector2(992, 1572.5)
+position = Vector2(992, 2095.5)
 
 [node name="Object7" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(984, 2680.5)
+position = Vector2(984, 3203.5)
 
 [node name="Object8" parent="." instance=ExtResource("objectsforestSnowPatch4")]
-position = Vector2(272, 2424.5)
+position = Vector2(272, 2947.5)
 
 [node name="Object10" parent="." instance=ExtResource("objectsforestSnowPatch12")]
-position = Vector2(2660, 976.5)
+position = Vector2(2660, 1499.5)
 
 [node name="Object11" parent="." instance=ExtResource("objectsforestSnowPatch6")]
-position = Vector2(3104, 1216.5)
+position = Vector2(3104, 1739.5)
 
 [node name="Object12" parent="." instance=ExtResource("objectsforestSnowPatch6")]
-position = Vector2(2204, 2912.5)
+position = Vector2(2204, 3435.5)
 
 [node name="Object13" parent="." instance=ExtResource("objectsforestSnowPatch11")]
-position = Vector2(2276, 1848.5)
+position = Vector2(2276, 2371.5)
 
 [node name="Object15" parent="." instance=ExtResource("objectsforestSnowPatch7")]
-position = Vector2(192, -55.5)
+position = Vector2(192, 467.5)
 
 [node name="Object16" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(584, 1332.5)
+position = Vector2(584, 1855.5)
 
 [node name="Object17" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(1252, 1468.5)
+position = Vector2(1252, 1991.5)
 
 [node name="Object18" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(2788, 3116.5)
+position = Vector2(2788, 3639.5)
 
 [node name="Object19" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(3744, 3252.5)
+position = Vector2(3744, 3775.5)
 
 [node name="Object20" parent="." instance=ExtResource("objectsforestSnowPatch4")]
-position = Vector2(2432, 772.5)
+position = Vector2(2432, 1295.5)
 
 [node name="Object21" parent="." instance=ExtResource("objectsforestSnowPatch12")]
-position = Vector2(1952, 656.5)
+position = Vector2(1952, 1179.5)
 
 [node name="Object22" parent="." instance=ExtResource("objectsforestSnowPatch12")]
-position = Vector2(368, 3180.5)
+position = Vector2(368, 3703.5)
 
 [node name="Object23" parent="." instance=ExtResource("objectsforestSnowPatch12")]
-position = Vector2(1376, 3576.5)
+position = Vector2(1376, 4099.5)
 
 [node name="Object24" parent="." instance=ExtResource("objectsforestSnowPatch12")]
-position = Vector2(1608, 2584.5)
+position = Vector2(1608, 3107.5)
 
 [node name="Object25" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(1916, 2472.5)
+position = Vector2(1916, 2995.5)
 
 [node name="Object26" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(3516, 2912.5)
+position = Vector2(3516, 3435.5)
 
 [node name="Object27" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(3296, 2564.5)
+position = Vector2(3296, 3087.5)
 
 [node name="Object28" parent="." instance=ExtResource("objectsforestSnowPatch8")]
-position = Vector2(3736, 1464.5)
+position = Vector2(3736, 1987.5)
 
 [node name="Object29" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(3020, 1744.5)
+position = Vector2(3020, 2267.5)
 
 [node name="Object30" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(212, 668.5)
+position = Vector2(212, 1191.5)
 
 [node name="Object33" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(816, 928.5)
+position = Vector2(816, 1451.5)
 
 [node name="Object34" parent="." instance=ExtResource("objectsforestSnowPatch10")]
-position = Vector2(1040, 700.5)
+position = Vector2(1040, 1223.5)
 
 [node name="Object35" parent="." instance=ExtResource("objectsforestSnowPatch10")]
-position = Vector2(3464, 180.5)
+position = Vector2(3464, 703.5)
 
 [node name="Object36" parent="." instance=ExtResource("objectsforestSnowPatch10")]
-position = Vector2(2076, 24.5)
+position = Vector2(2076, 547.5)
 
 [node name="Object37" parent="." instance=ExtResource("objectsforestSnowPatch3")]
-position = Vector2(2260, 180.5)
+position = Vector2(2260, 703.5)
 
 [node name="Object38" parent="." instance=ExtResource("objectsforestSnowPatch3")]
-position = Vector2(176, 1916.5)
+position = Vector2(176, 2439.5)
 
 [node name="Object39" parent="." instance=ExtResource("objectsforestSnowPatch3")]
-position = Vector2(2828, 2872.5)
+position = Vector2(2828, 3395.5)
 
 [node name="Object41" parent="." instance=ExtResource("objectsforestSnowPatch5")]
-position = Vector2(3388, 2168.5)
+position = Vector2(3388, 2691.5)
 
 [node name="Object42" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(3552, 2316.5)
+position = Vector2(3552, 2839.5)
 
 [node name="Object44" parent="." instance=ExtResource("objectsforestSnowPatch9")]
-position = Vector2(736, 3628.5)
+position = Vector2(736, 4151.5)
 
 [node name="Object47" parent="." instance=ExtResource("objectsforestSnowPatch10")]
-position = Vector2(1520, 500.5)
+position = Vector2(1520, 1023.5)
 
 [node name="Object48" parent="." instance=ExtResource("objectsforestSnowPatch10")]
-position = Vector2(1728, 340.5)
+position = Vector2(1728, 863.5)
 
 [node name="Object51" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(3356.5, 1272)
+position = Vector2(3356.5, 2318)
 
 [node name="Object53" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(2988.5, 400)
+position = Vector2(2988.5, 1446)
 
 [node name="Object56" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(852.5, 2748)
+position = Vector2(852.5, 3794)
 
 [node name="Object61" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(2840.5, 2560)
+position = Vector2(2840.5, 3606)
 
 [node name="Object62" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(288.5, 1532)
+position = Vector2(288.5, 2578)
 
 [node name="Object72" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(636.5, 112)
+position = Vector2(636.5, 1158)
 
 [node name="Object73" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(344.5, -96)
+position = Vector2(344.5, 950)
 
 [node name="Object74" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(1324.5, -124)
+position = Vector2(1324.5, 922)
 
 [node name="Object75" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(1636.5, 488.5)
+position = Vector2(1636.5, 766.5)
 
 [node name="Object76" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(3416.5, 2804.5)
+position = Vector2(3416.5, 3082.5)
 
 [node name="Object77" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(96.5, 2740.5)
+position = Vector2(96.5, 3018.5)
 
 [node name="Object78" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(376.5, 3136.5)
+position = Vector2(376.5, 3414.5)
 
 [node name="Object79" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(2544.5, 3212.5)
+position = Vector2(2544.5, 3490.5)
 
 [node name="Object80" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(2227.17, 2908.5)
+position = Vector2(2227.17, 3186.5)
 
 [node name="Object81" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(2304.5, 2764.5)
+position = Vector2(2304.5, 3042.5)
 
 [node name="Object82" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(1004.5, 2460.5)
+position = Vector2(1004.5, 2738.5)
 
 [node name="Object83" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(848.5, 1344.5)
+position = Vector2(848.5, 1622.5)
 
 [node name="Object84" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(1024.5, 1140.5)
+position = Vector2(1024.5, 1418.5)
 
 [node name="Object85" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(88.5, 400.5)
+position = Vector2(88.5, 678.5)
 
 [node name="Object86" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(632.5, 364.5)
+position = Vector2(632.5, 642.5)
 
 [node name="Object87" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(1900.5, -47.5)
+position = Vector2(1900.5, 230.5)
 
 [node name="Object88" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(3152.5, -27.5)
+position = Vector2(3152.5, 250.5)
 
 [node name="Object89" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(3804.5, 844.5)
+position = Vector2(3804.5, 1122.5)
 
 [node name="Object91" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(3556.5, 3396.5)
+position = Vector2(3556.5, 3674.5)
 
 [node name="Object92" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(1192.5, 3220.5)
+position = Vector2(1192.5, 3498.5)
 
 [node name="Object96" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(2982.32, 2609.59)
+position = Vector2(2982.32, 2887.5)
 
 [node name="Object97" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(3667.17, 1618.68)
+position = Vector2(3667.17, 1896.5)
 
 [node name="Object98" parent="." instance=ExtResource("objectsforestMediumPine")]
-position = Vector2(3167.17, 1212.62)
+position = Vector2(3167.17, 1490.5)
 
 [node name="Object104" parent="." instance=ExtResource("objectsforestHugePine")]
-position = Vector2(2397.47, 487.88)
+position = Vector2(2397.47, 1533)
 
 [node name="Object105" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(2129.91, 3147.83)
+position = Vector2(2129.91, 3201.5)
 
 [node name="Object106" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(1353.33, 3564.33)
+position = Vector2(1353.33, 3618.5)
 
 [node name="Object107" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(2528, 1493.67)
+position = Vector2(2528, 1547.5)
 
 [node name="Object108" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(2360, 1431)
+position = Vector2(2360, 1485.5)
 
 [node name="Object109" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(1124, 1569.67)
+position = Vector2(1124, 1623.5)
 
 [node name="Object110" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(1108, 675)
+position = Vector2(1108, 729.5)
 
 [node name="Object111" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(3196, 3235)
+position = Vector2(3196, 3289.5)
 
 [node name="Object112" parent="." instance=ExtResource("objectstundraBerryBush")]
-position = Vector2(1416, 2023)
+position = Vector2(1416, 2077.5)

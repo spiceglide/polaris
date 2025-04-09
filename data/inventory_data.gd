@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 	set_item(0, "stick")
 	set_item(1, "cone")
-	set_item(2, "log")
+	set_item(2, "berries")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

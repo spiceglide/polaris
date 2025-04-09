@@ -54,6 +54,9 @@ func _input(event):
 	if event.is_action_pressed("inv_prev"):
 		InventoryData.select_slot(fposmod(selected_slot - 1, cols))
 		
+	if event.is_action_pressed("use_item"):
+		slots[selected_slot].use()
+		
 	if event.is_action_pressed("drop"):
 		InventoryData.clear_slot(selected_slot)
 

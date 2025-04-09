@@ -1,42 +1,52 @@
 {
   "berries": {
 	"name": "berries",
-	"description": "A little treat"
+	"description": "A little treat",
+	"consumable": true
   },
   "campfire": {
 	"name": "Big Campfire",
-	"description": "This'll do nicely"
+	"description": "This'll do nicely",
+	"consumable": true
   },
   "cloth": {
 	"name": "Cloth",
-	"description": "Slightly tattered"
+	"description": "Slightly tattered",
+	"consumable": false
   },
   "cone": {
 	"name": "Pinecone",
-	"description": "I've always liked these"
+	"description": "I've always liked these",
+	"consumable": false
   },
   "log": {
 	"name": "Log",
-	"description": "It's heavy..."
+	"description": "It's heavy...",
+	"consumable": false
   },
   "rock": {
 	"name": "Rock",
-	"description": "Better than nothing"
+	"description": "Better than nothing",
+	"consumable": false
   },
   "sap": {
 	"name": "Sap",
-	"description": "Not for drinking!"
+	"description": "Not for drinking!",
+	"consumable": false
   },
   "smallfire": {
 	"name": "Small Campfire",
-	"description": "Should last the night"
+	"description": "Should last the night",
+	"consumable": true
   },
   "stick": {
 	"name": "Stick",
-	"description": "Keeps the flames ablaze"
+	"description": "Keeps the flames ablaze",
+	"consumable": false
   },
   "torch": {
 	"name": "Torch",
-	"description": "Uncomfortably dim"
+	"description": "Uncomfortably dim",
+	"consumable": true
   }
 }

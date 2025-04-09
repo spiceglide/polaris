@@ -51,6 +51,12 @@ func deselect():
 	self.scale = Vector2(1, 1)
 	$Sprite.modulate = Color(1, 1, 1)
 
+func use():
+	if item:
+		var consumed = item.use()
+		if consumed:
+			clear_item()
+
 func quick_move():
 	var slot = InventoryData.get_first_empty_slot()
 	InventoryData.set_item(slot, item.item_id)

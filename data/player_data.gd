@@ -14,7 +14,7 @@ var state = State.Alive
 var health = 100
 var hunger = 100
 var warmth = 100
-var sanity = 100
+var sanity = 0
 
 func _process(delta: float) -> void:
 	# Dead men don't hunger
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		health = 0
 	
 	# Clamp values at 0
-	health = max(health, 0)
-	hunger = max(hunger, 0)
-	warmth = max(warmth, 0)
-	sanity = max(sanity, 0)
+	health = clamp(health, 0, 100)
+	hunger = clamp(hunger, 0, 100)
+	warmth = clamp(warmth, 0, 100)
+	sanity = clamp(sanity, 0, 100)

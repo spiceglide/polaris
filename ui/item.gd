@@ -26,7 +26,7 @@ func use() -> bool:
 	print("Used '%s'" % title)
 	match item_id:
 		"berries":
-			pass
+			PlayerData.hunger += 10
 		"campfire":
 			pass
 		"smallfire":

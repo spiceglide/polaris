@@ -12,7 +12,7 @@ var biome_data: Dictionary = {
 		"structures": [],
 	},
 	"forest": {
-		"creatures": [],
+		"creatures": ["hare"],
 		"structures": [],
 	},
 	"swamp": {
@@ -22,6 +22,8 @@ var biome_data: Dictionary = {
 }
 
 func _ready() -> void:
+	set_biome()
+	
 	var creatures = []
 	var structures = []
 	
@@ -44,8 +46,17 @@ func _ready() -> void:
 	
 	#var structure_count = randi() % structure_limit
 
+func set_biome():
+	self.biomes = []
+	var biomes = biome_data.keys()
+	
+	var path = self.scene_file_path.get_file().get_basename()
+	for part in path.split('_'):
+		if part in biomes:
+			self.biomes.append(part)
+
 func get_biome() -> String:
-	return biomes[-1]
+	return biomes[0]
 
 func _get_random_point(rect: Vector2) -> Vector2:
 	var x = randi() % int(rect.x)

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 1000
 @export var leap_duration = 12
-@export var leap_count = 2
+@export var leap_count = 5
 var state: State = State.Idle
 var leap_time = 0
 var speech_time = 0
@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func start_leap():
+	print(last_player_pos)
 	var threat_direction = self.position.direction_to(last_player_pos)
 	leap_time = 1
 	
@@ -67,7 +68,6 @@ func start_leap():
 		leap_direction.y = -1
 		
 	$AnimatedSprite2D.animation = "hop"
-	
 
 func finish_leap():
 	leap_direction = Vector2.ZERO

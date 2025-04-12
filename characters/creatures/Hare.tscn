@@ -94,14 +94,14 @@ script = ExtResource("1_shbht")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wsglq")
 animation = &"idle"
-frame_progress = 0.609873
+frame_progress = 0.631564
 script = ExtResource("12_d3oej")
 
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
 self_modulate = Color(1, 1, 1, 0.133333)
 z_index = -1
-position = Vector2(-5, 21)
-scale = Vector2(0.5, 0.172)
+position = Vector2(0, 55)
+scale = Vector2(1, 0.344)
 texture = ExtResource("13_jnhmx")
 
 [node name="Interaction" type="Area2D" parent="."]

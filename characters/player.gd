@@ -7,7 +7,7 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-	$Sprite.set_state(last_dir, "idle")
+	$Sprite.set_direction(last_dir, "idle")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,26 +51,26 @@ func _move() -> void:
 	# Normalise velocity
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * PlayerData.speed * mult
-		$Sprite.set_state(last_dir, "walk")
+		$Sprite.set_direction(last_dir, "walk")
 		move_and_slide()
 	else:
-		$Sprite.set_state(last_dir, "idle")
+		$Sprite.set_direction(last_dir, "idle")
 
 func die():
-	$Sprite.modulate = Color(0.0, 0.0, 0.0, 1.0)
-	$Sprite.set_state(last_dir, "idle")
+	$Sprite.set_state("death", false)
+	$Shadow.visible = false
 
 func sleep():
-	$Sprite.set_state("west", "idle")
-	$Sprite.rotation_degrees = 90
+	$Sprite.set_state("sleep", false)
+	$Shadow.visible = false
 	
 	if $SleepTimer.is_stopped():
 		$SleepTimer.start(5)
 
 func awaken():
 	PlayerData.state = PlayerData.State.Awake
-	$Sprite.set_state(last_dir, "idle")
-	$Sprite.rotation_degrees = 0
+	$Sprite.set_direction(last_dir, "idle")
+	$Shadow.visible = true
 
 func _input(event):
 	if event.is_action_pressed("interact"):

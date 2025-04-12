@@ -778,7 +778,6 @@ script = ExtResource("2_020kj")
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_3yrnj")
 animation = &"south_idle"
-frame_progress = 0.563473
 
 [node name="Face" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)

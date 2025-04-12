@@ -1,15 +1,28 @@
-[gd_scene load_steps=60 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=91 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
+[ext_resource type="Texture2D" uid="uid://e85rfro3cs5t" path="res://assets/characters/dora/death/death_1.1.png" id="3_eusy6"]
 [ext_resource type="Texture2D" uid="uid://ckhc3u357q5fu" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_1.1.png" id="3_hcp3g"]
 [ext_resource type="Texture2D" uid="uid://c406gg6b6h0m6" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_2.1.png" id="4_ljj44"]
+[ext_resource type="Texture2D" uid="uid://bn4v26vjdrygw" path="res://assets/characters/dora/death/death_2.1.png" id="4_xa55f"]
 [ext_resource type="Texture2D" uid="uid://0rhlfdv2vupw" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_3.1.png" id="5_ayojo"]
+[ext_resource type="Texture2D" uid="uid://jc48mofpkk67" path="res://assets/characters/dora/death/death_3.1.png" id="5_ycv3e"]
 [ext_resource type="Texture2D" uid="uid://dsoh36kav3mgy" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_4.1.png" id="6_eyv8s"]
+[ext_resource type="Texture2D" uid="uid://bj67v7bcmvo1d" path="res://assets/characters/dora/death/death_4.1.png" id="6_xq7ko"]
+[ext_resource type="Texture2D" uid="uid://dho852fk7je47" path="res://assets/characters/dora/death/death_5.1.png" id="7_atxkk"]
 [ext_resource type="Texture2D" uid="uid://bmih34ilyiie5" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_1.1.png" id="7_e5ktp"]
+[ext_resource type="Texture2D" uid="uid://xyhmxjif3dnp" path="res://assets/characters/dora/death/death_6.1.png" id="8_hc01k"]
 [ext_resource type="Texture2D" uid="uid://bau0phn58lejj" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_2.1.png" id="8_qqhbu"]
+[ext_resource type="Texture2D" uid="uid://b4ut3we1qdnxh" path="res://assets/characters/dora/death/death_7.1.png" id="9_60117"]
 [ext_resource type="Texture2D" uid="uid://cktf0fbgmmle1" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_3.1.png" id="9_ug1av"]
 [ext_resource type="Texture2D" uid="uid://cl0kgsbuxttqf" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_4.1.png" id="10_c7ma8"]
+[ext_resource type="Texture2D" uid="uid://cclu5dq04lc7s" path="res://assets/characters/dora/death/death_8.1.png" id="10_t8v6f"]
+[ext_resource type="Texture2D" uid="uid://c2i47s13b480b" path="res://assets/characters/dora/death/death_9.1.png" id="11_65d4o"]
+[ext_resource type="Texture2D" uid="uid://453sntbawpsb" path="res://assets/characters/dora/death/death_10.1.png" id="12_08onb"]
+[ext_resource type="Texture2D" uid="uid://b8efmrd1wwn1i" path="res://assets/characters/dora/death/death_11.1.png" id="13_gts16"]
+[ext_resource type="Texture2D" uid="uid://ngaaoqcn6hew" path="res://assets/characters/dora/death/death_12.png" id="14_3yrnj"]
+[ext_resource type="Texture2D" uid="uid://gk3xd1tswlkb" path="res://assets/characters/dora/death/death_13.png" id="15_2kbwc"]
 [ext_resource type="Texture2D" uid="uid://ccq37u0w7nvoj" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_1.png" id="18_f34or"]
 [ext_resource type="Texture2D" uid="uid://qhy3ar1m2viv" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_1.1.png" id="19_fplvc"]
 [ext_resource type="Texture2D" uid="uid://ybm85potniru" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_2.png" id="19_r3ggu"]
@@ -43,20 +56,157 @@
 [ext_resource type="Texture2D" uid="uid://dmfnti0j2o625" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_3.2.png" id="37_x6i5x"]
 [ext_resource type="Texture2D" uid="uid://btidkqjj2oepq" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_4.2.png" id="38_jji4q"]
 [ext_resource type="Texture2D" uid="uid://bn0vdg66qjrg1" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_1.2.png" id="39_a86c5"]
+[ext_resource type="Texture2D" uid="uid://cnejyynoldxp2" path="res://assets/characters/dora/death/death_1.2.png" id="40_878fo"]
 [ext_resource type="Texture2D" uid="uid://5fdt4pkej6ve" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_2.2.png" id="40_eusy6"]
+[ext_resource type="Texture2D" uid="uid://bsa3cyjdo6m6s" path="res://assets/characters/dora/death/death_2.2.png" id="41_r6yej"]
 [ext_resource type="Texture2D" uid="uid://b6rw6vkcxnqtf" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_3.2.png" id="41_xa55f"]
+[ext_resource type="Texture2D" uid="uid://bryp6wyyk112b" path="res://assets/characters/dora/death/death_3.2.png" id="42_cbrd4"]
 [ext_resource type="Texture2D" uid="uid://csif04w3eeysq" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_4.2.png" id="42_ycv3e"]
+[ext_resource type="Texture2D" uid="uid://b5lbe10dew51m" path="res://assets/characters/dora/death/death_4.2.png" id="43_8lx4t"]
 [ext_resource type="Texture2D" uid="uid://de6phxpaqvp2n" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_1.3.png" id="43_xq7ko"]
 [ext_resource type="Texture2D" uid="uid://cedt3egdf0oqd" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_2.3.png" id="44_atxkk"]
+[ext_resource type="Texture2D" uid="uid://cn24n80ft73y6" path="res://assets/characters/dora/death/death_5.2.png" id="44_v3808"]
 [ext_resource type="Texture2D" uid="uid://dasowo1406bat" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_3.3.png" id="45_hc01k"]
+[ext_resource type="Texture2D" uid="uid://cm16058dbqplx" path="res://assets/characters/dora/death/death_6.2.png" id="45_tys85"]
 [ext_resource type="Texture2D" uid="uid://s1l1styptx47" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_4.3.png" id="46_60117"]
+[ext_resource type="Texture2D" uid="uid://cyxco144kg3is" path="res://assets/characters/dora/death/death_7.2.png" id="46_bklhw"]
+[ext_resource type="Texture2D" uid="uid://13fxfp33m6qq" path="res://assets/characters/dora/death/death_8.2.png" id="47_dd2sl"]
 [ext_resource type="Texture2D" uid="uid://vhatctejqwef" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_1.3.png" id="47_t8v6f"]
 [ext_resource type="Texture2D" uid="uid://dxh0g1ra6v327" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_2.3.png" id="48_65d4o"]
+[ext_resource type="Texture2D" uid="uid://c1cmf2x2b6g0m" path="res://assets/characters/dora/death/death_9.2.png" id="48_o8ssn"]
 [ext_resource type="Texture2D" uid="uid://b0r53m3gskjv7" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_3.3.png" id="49_08onb"]
+[ext_resource type="Texture2D" uid="uid://dixsnf1sfye1l" path="res://assets/characters/dora/death/death_10.2.png" id="49_f781b"]
+[ext_resource type="Texture2D" uid="uid://lebe18sqspkx" path="res://assets/characters/dora/death/death_11.2.png" id="50_2pryp"]
 [ext_resource type="Texture2D" uid="uid://b52oltrpqbxcv" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_4.3.png" id="50_gts16"]
+[ext_resource type="Texture2D" uid="uid://f0l8jhtm4p21" path="res://assets/characters/dora/death/death_1.3.png" id="67_h1qqf"]
+[ext_resource type="Texture2D" uid="uid://dgkjypfi05j88" path="res://assets/characters/dora/death/death_2.3.png" id="68_pio1k"]
+[ext_resource type="Texture2D" uid="uid://dw0hec3e86smw" path="res://assets/characters/dora/death/death_3.3.png" id="69_cb5ig"]
+[ext_resource type="Texture2D" uid="uid://cnrkw2v7atcg7" path="res://assets/characters/dora/death/death_4.3.png" id="70_a5i8t"]
+[ext_resource type="Texture2D" uid="uid://cmim2aaeol1li" path="res://assets/characters/dora/death/death_5.3.png" id="71_ne2e2"]
+[ext_resource type="Texture2D" uid="uid://belnqk6epegl6" path="res://assets/characters/dora/death/death_6.3.png" id="72_p5csx"]
+[ext_resource type="Texture2D" uid="uid://xn52t45hm4qc" path="res://assets/characters/dora/death/death_7.3.png" id="73_2e8fq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xa55f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ycv3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xq7ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_atxkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_atxkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xq7ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ycv3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xa55f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eusy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xa55f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ycv3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xq7ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_atxkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hc01k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_60117")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t8v6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_65d4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_08onb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gts16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3yrnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2kbwc")
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_hcp3g")
@@ -127,6 +277,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_t8v6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_65d4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_08onb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gts16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3yrnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2kbwc")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("19_fplvc")
 }, {
 "duration": 1.0,
@@ -162,6 +335,125 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2kbwc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_r6yej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cbrd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8lx4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v3808")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v3808")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8lx4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cbrd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_r6yej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_878fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_r6yej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cbrd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8lx4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v3808")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tys85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_bklhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_dd2sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_o8ssn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f781b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2pryp")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("27_x3ma2")
@@ -215,6 +507,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("47_dd2sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_o8ssn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f781b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2pryp")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("35_iomsq")
 }, {
 "duration": 1.0,
@@ -252,6 +567,125 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_pio1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_cb5ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_a5i8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ne2e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ne2e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_a5i8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_cb5ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_pio1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h1qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_pio1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_cb5ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_a5i8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ne2e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_p5csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_2e8fq")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
@@ -266,6 +700,29 @@ animations = [{
 "loop": true,
 "name": &"none",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -321,6 +778,7 @@ script = ExtResource("2_020kj")
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_3yrnj")
 animation = &"south_idle"
+frame_progress = 0.563473
 
 [node name="Face" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)

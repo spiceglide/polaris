@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=158 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
@@ -28,18 +28,26 @@
 [ext_resource type="Texture2D" uid="uid://ybm85potniru" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_2.png" id="19_r3ggu"]
 [ext_resource type="Texture2D" uid="uid://jt6twc16qf28" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_2.1.png" id="20_2nlho"]
 [ext_resource type="Texture2D" uid="uid://ujvscmryh2a0" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_3.png" id="20_hks2g"]
+[ext_resource type="Texture2D" uid="uid://civ6r7qgenpka" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_1.png" id="20_jywnq"]
 [ext_resource type="Texture2D" uid="uid://b4jfks2qpxxj3" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_4.png" id="21_5ncbo"]
 [ext_resource type="Texture2D" uid="uid://b30xlkfmynswd" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_3.1.png" id="21_m7k6u"]
+[ext_resource type="Texture2D" uid="uid://ct0u5c4n562qq" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_2.png" id="21_q1bql"]
+[ext_resource type="Texture2D" uid="uid://yb08jqa4kj75" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_3.png" id="22_846a3"]
 [ext_resource type="Texture2D" uid="uid://bgef8wqg4u3pr" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_4.1.png" id="22_j0pb3"]
+[ext_resource type="Texture2D" uid="uid://b1w5xjvswilcl" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_4.png" id="23_5udqs"]
 [ext_resource type="Texture2D" uid="uid://nwjmpuo6yqu0" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_1.1.png" id="23_23boh"]
 [ext_resource type="Texture2D" uid="uid://g5f1ybigi0gc" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_2.1.png" id="24_1nwdq"]
 [ext_resource type="Texture2D" uid="uid://d45uo50axqpk" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_3.1.png" id="25_8dusi"]
 [ext_resource type="Texture2D" uid="uid://ca3c6cqm12mxc" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_4.1.png" id="26_pwvb5"]
 [ext_resource type="Texture2D" uid="uid://b34jq1utcq4dl" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_1.2.png" id="27_x3ma2"]
+[ext_resource type="Texture2D" uid="uid://b4rq24yi8tejn" path="res://assets/characters/dora/dora_e_walk_hold/sasha_e_walk_hold_1.png" id="28_5qy3x"]
 [ext_resource type="Texture2D" uid="uid://ccq40qricdar" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_2.2.png" id="28_w6c1b"]
 [ext_resource type="Texture2D" uid="uid://cim5jdwrsiqfx" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_3.2.png" id="29_bjrrg"]
+[ext_resource type="Texture2D" uid="uid://dtkj2lek6f5jo" path="res://assets/characters/dora/dora_e_walk_hold/sasha_e_walk_hold_2.png" id="29_dk66l"]
 [ext_resource type="Texture2D" uid="uid://cp5mblpau1nqm" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_4.2.png" id="30_8nhn3"]
+[ext_resource type="Texture2D" uid="uid://bmi111eppe2w6" path="res://assets/characters/dora/dora_e_walk_hold/sasha_e_walk_hold_3.png" id="30_ot57y"]
 [ext_resource type="Texture2D" uid="uid://cv4iii3o8d73j" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_1.png" id="30_q356e"]
+[ext_resource type="Texture2D" uid="uid://cc6k63nmag8dq" path="res://assets/characters/dora/dora_e_walk_hold/sasha_e_walk_hold_4.png" id="31_ajdpy"]
 [ext_resource type="Texture2D" uid="uid://d03rw1rwvmwrw" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_1.2.png" id="31_pmuim"]
 [ext_resource type="Texture2D" uid="uid://r2mj42wdikpe" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_2.png" id="31_tf3ue"]
 [ext_resource type="Texture2D" uid="uid://bl83ifs73itno" path="res://assets/characters/dora/dora_n_idle/dora_n_idle_3.png" id="32_o70wf"]
@@ -52,9 +60,13 @@
 [ext_resource type="Texture2D" uid="uid://djb4gcwxdvua" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_1.2.png" id="35_iomsq"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="36_6cift"]
 [ext_resource type="Texture2D" uid="uid://bxvla0s82twi" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_2.2.png" id="36_dvsti"]
+[ext_resource type="Texture2D" uid="uid://dnmfu4pu7pk2m" path="res://assets/characters/dora/dora_n_idle_hold/sasha_n_idle_hold_1.png" id="36_net86"]
+[ext_resource type="Texture2D" uid="uid://bt11w8gm5oi8l" path="res://assets/characters/dora/dora_n_idle_hold/sasha_n_idle_hold_2.png" id="37_c8csx"]
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="37_r4xk0"]
 [ext_resource type="Texture2D" uid="uid://dmfnti0j2o625" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_3.2.png" id="37_x6i5x"]
 [ext_resource type="Texture2D" uid="uid://btidkqjj2oepq" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_4.2.png" id="38_jji4q"]
+[ext_resource type="Texture2D" uid="uid://x7fhlgqj7c4o" path="res://assets/characters/dora/dora_n_idle_hold/sasha_n_idle_hold_3.png" id="38_nxtaq"]
+[ext_resource type="Texture2D" uid="uid://dd8h712lv8w72" path="res://assets/characters/dora/dora_n_idle_hold/sasha_n_idle_hold_4.png" id="39_4onj0"]
 [ext_resource type="Texture2D" uid="uid://bn0vdg66qjrg1" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_1.2.png" id="39_a86c5"]
 [ext_resource type="Texture2D" uid="uid://cnejyynoldxp2" path="res://assets/characters/dora/death/death_1.2.png" id="40_878fo"]
 [ext_resource type="Texture2D" uid="uid://5fdt4pkej6ve" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_2.2.png" id="40_eusy6"]
@@ -65,19 +77,37 @@
 [ext_resource type="Texture2D" uid="uid://b5lbe10dew51m" path="res://assets/characters/dora/death/death_4.2.png" id="43_8lx4t"]
 [ext_resource type="Texture2D" uid="uid://de6phxpaqvp2n" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_1.3.png" id="43_xq7ko"]
 [ext_resource type="Texture2D" uid="uid://cedt3egdf0oqd" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_2.3.png" id="44_atxkk"]
+[ext_resource type="Texture2D" uid="uid://b1jaw67ct2q0b" path="res://assets/characters/dora/dora_n_walk_hold/sasha_n_walk_hold_1.png" id="44_klyt3"]
 [ext_resource type="Texture2D" uid="uid://cn24n80ft73y6" path="res://assets/characters/dora/death/death_5.2.png" id="44_v3808"]
 [ext_resource type="Texture2D" uid="uid://dasowo1406bat" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_3.3.png" id="45_hc01k"]
+[ext_resource type="Texture2D" uid="uid://oe4it16p1gl8" path="res://assets/characters/dora/dora_n_walk_hold/sasha_n_walk_hold_2.png" id="45_tajfi"]
 [ext_resource type="Texture2D" uid="uid://cm16058dbqplx" path="res://assets/characters/dora/death/death_6.2.png" id="45_tys85"]
 [ext_resource type="Texture2D" uid="uid://s1l1styptx47" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_4.3.png" id="46_60117"]
 [ext_resource type="Texture2D" uid="uid://cyxco144kg3is" path="res://assets/characters/dora/death/death_7.2.png" id="46_bklhw"]
+[ext_resource type="Texture2D" uid="uid://8eo1ybk87p6l" path="res://assets/characters/dora/dora_n_walk_hold/sasha_n_walk_hold_3.png" id="46_rhfbx"]
 [ext_resource type="Texture2D" uid="uid://13fxfp33m6qq" path="res://assets/characters/dora/death/death_8.2.png" id="47_dd2sl"]
 [ext_resource type="Texture2D" uid="uid://vhatctejqwef" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_1.3.png" id="47_t8v6f"]
+[ext_resource type="Texture2D" uid="uid://dkl7w5xfugf1p" path="res://assets/characters/dora/dora_n_walk_hold/sasha_n_walk_hold_4.png" id="47_vubu8"]
 [ext_resource type="Texture2D" uid="uid://dxh0g1ra6v327" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_2.3.png" id="48_65d4o"]
 [ext_resource type="Texture2D" uid="uid://c1cmf2x2b6g0m" path="res://assets/characters/dora/death/death_9.2.png" id="48_o8ssn"]
+[ext_resource type="Texture2D" uid="uid://7e74g60e4gtp" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_1.1.png" id="48_t2div"]
 [ext_resource type="Texture2D" uid="uid://b0r53m3gskjv7" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_3.3.png" id="49_08onb"]
 [ext_resource type="Texture2D" uid="uid://dixsnf1sfye1l" path="res://assets/characters/dora/death/death_10.2.png" id="49_f781b"]
+[ext_resource type="Texture2D" uid="uid://cdr8y7n7vgmpt" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_2.1.png" id="49_t5b5m"]
 [ext_resource type="Texture2D" uid="uid://lebe18sqspkx" path="res://assets/characters/dora/death/death_11.2.png" id="50_2pryp"]
 [ext_resource type="Texture2D" uid="uid://b52oltrpqbxcv" path="res://assets/characters/dora/dora_s_walk/dora_s_walk_4.3.png" id="50_gts16"]
+[ext_resource type="Texture2D" uid="uid://c7s6lr7fiyw3e" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_3.1.png" id="50_xqwrj"]
+[ext_resource type="Texture2D" uid="uid://dve1k1jy6vh1b" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_4.1.png" id="51_r5e14"]
+[ext_resource type="Texture2D" uid="uid://btg6kg2s87who" path="res://assets/characters/dora/dora_s_idle_hold/sasha_s_idle_hold_1.png" id="52_bkc4h"]
+[ext_resource type="Texture2D" uid="uid://blh15fwepmjnp" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_5.1.png" id="52_rypqp"]
+[ext_resource type="Texture2D" uid="uid://bb0gyosn4xpkq" path="res://assets/characters/dora/dora_s_idle_hold/sasha_s_idle_hold_2.png" id="53_r6fra"]
+[ext_resource type="Texture2D" uid="uid://cebrp1os4uqey" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_6.1.png" id="53_u4if2"]
+[ext_resource type="Texture2D" uid="uid://bg6ev54hmkspb" path="res://assets/characters/dora/dora_s_idle_hold/sasha_s_idle_hold_3.png" id="54_s0aph"]
+[ext_resource type="Texture2D" uid="uid://cgo24lawq03nn" path="res://assets/characters/dora/dora_s_idle_hold/sasha_s_idle_hold_4.png" id="55_jx056"]
+[ext_resource type="Texture2D" uid="uid://2g3fyvi2xkla" path="res://assets/characters/dora/dora_s_walk_hold/sasha_s_walk_hold_1.png" id="60_pnvav"]
+[ext_resource type="Texture2D" uid="uid://8ogb3em60fdq" path="res://assets/characters/dora/dora_s_walk_hold/sasha_s_walk_hold_2.png" id="61_bw51p"]
+[ext_resource type="Texture2D" uid="uid://dhee44uh3f3xl" path="res://assets/characters/dora/dora_s_walk_hold/sasha_s_walk_hold_3.png" id="62_rma7d"]
+[ext_resource type="Texture2D" uid="uid://bto0cawt7ggux" path="res://assets/characters/dora/dora_s_walk_hold/sasha_s_walk_hold_4.png" id="63_nsal1"]
 [ext_resource type="Texture2D" uid="uid://f0l8jhtm4p21" path="res://assets/characters/dora/death/death_1.3.png" id="67_h1qqf"]
 [ext_resource type="Texture2D" uid="uid://dgkjypfi05j88" path="res://assets/characters/dora/death/death_2.3.png" id="68_pio1k"]
 [ext_resource type="Texture2D" uid="uid://dw0hec3e86smw" path="res://assets/characters/dora/death/death_3.3.png" id="69_cb5ig"]
@@ -85,6 +115,42 @@
 [ext_resource type="Texture2D" uid="uid://cmim2aaeol1li" path="res://assets/characters/dora/death/death_5.3.png" id="71_ne2e2"]
 [ext_resource type="Texture2D" uid="uid://belnqk6epegl6" path="res://assets/characters/dora/death/death_6.3.png" id="72_p5csx"]
 [ext_resource type="Texture2D" uid="uid://xn52t45hm4qc" path="res://assets/characters/dora/death/death_7.3.png" id="73_2e8fq"]
+[ext_resource type="Texture2D" uid="uid://c581vkxifcem" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_1.2.png" id="89_ms1cn"]
+[ext_resource type="Texture2D" uid="uid://bfmwaex8xri1i" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_2.2.png" id="90_o6s7o"]
+[ext_resource type="Texture2D" uid="uid://b5fyb2vdnlbpu" path="res://assets/characters/dora/items/torch/sasha_e_idle/sasha_e_idle_torch_1.png" id="91_3iuxb"]
+[ext_resource type="Texture2D" uid="uid://diyi0vhstxums" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_3.2.png" id="91_w01n0"]
+[ext_resource type="Texture2D" uid="uid://dkwq8j0rfhsmx" path="res://assets/characters/dora/items/torch/sasha_e_idle/sasha_e_idle_torch_2.png" id="92_2e4ta"]
+[ext_resource type="Texture2D" uid="uid://b0xwpqewjh2yj" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_4.2.png" id="92_np2uo"]
+[ext_resource type="Texture2D" uid="uid://che2rri26s6i5" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_5.2.png" id="93_oe8fn"]
+[ext_resource type="Texture2D" uid="uid://x1mu24basrdk" path="res://assets/characters/dora/items/torch/sasha_e_idle/sasha_e_idle_torch_3.png" id="93_slqk5"]
+[ext_resource type="Texture2D" uid="uid://b50yf56jsemba" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_6.2.png" id="94_3ysty"]
+[ext_resource type="Texture2D" uid="uid://djmw00tyfcoxv" path="res://assets/characters/dora/items/torch/sasha_e_idle/sasha_e_idle_torch_4.png" id="94_50p3t"]
+[ext_resource type="Texture2D" uid="uid://b5a7pd7hm1n7a" path="res://assets/characters/dora/items/torch/sasha_e_walk/sasha_e_walk_torch_1.png" id="95_1c55j"]
+[ext_resource type="Texture2D" uid="uid://d00dy4o4d7ifj" path="res://assets/characters/dora/items/torch/sasha_e_walk/sasha_e_walk_torch_2.png" id="96_7hcwi"]
+[ext_resource type="Texture2D" uid="uid://bxtt7dq6esgw0" path="res://assets/characters/dora/items/torch/sasha_e_walk/sasha_e_walk_torch_3.png" id="97_nbsax"]
+[ext_resource type="Texture2D" uid="uid://dj8pl0vla3dmr" path="res://assets/characters/dora/items/torch/sasha_e_walk/sasha_e_walk_torch_4.png" id="98_0iptr"]
+[ext_resource type="Texture2D" uid="uid://dxkc5k5sb5nek" path="res://assets/characters/dora/items/torch/sasha_n_idle/sasha_n_idle_torch_1.png" id="99_jycqs"]
+[ext_resource type="Texture2D" uid="uid://cg545wihw4jng" path="res://assets/characters/dora/items/torch/sasha_n_idle/sasha_n_idle_torch_2.png" id="100_t2div"]
+[ext_resource type="Texture2D" uid="uid://csxwsho1cf4dc" path="res://assets/characters/dora/items/torch/sasha_n_idle/sasha_n_idle_torch_3.png" id="101_t5b5m"]
+[ext_resource type="Texture2D" uid="uid://le1q8tkxfgeu" path="res://assets/characters/dora/items/torch/sasha_n_idle/sasha_n_idle_torch_4.png" id="102_xqwrj"]
+[ext_resource type="Texture2D" uid="uid://rrrfnuj0qgag" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_1.png" id="103_r5e14"]
+[ext_resource type="Texture2D" uid="uid://btitdcapec0qs" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_2.png" id="104_rypqp"]
+[ext_resource type="Texture2D" uid="uid://cxtji4lsclqcg" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_3.png" id="105_u4if2"]
+[ext_resource type="Texture2D" uid="uid://cvb0mlvcui0et" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_4.png" id="106_ms1cn"]
+[ext_resource type="Texture2D" uid="uid://dgepvl7wbys3m" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_1.png" id="107_o6s7o"]
+[ext_resource type="Texture2D" uid="uid://bmnd0bqq7fdhb" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_2.png" id="108_w01n0"]
+[ext_resource type="Texture2D" uid="uid://btt6yv0k13f66" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_3.png" id="109_np2uo"]
+[ext_resource type="Texture2D" uid="uid://blfnom3o02gvp" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_4.png" id="110_oe8fn"]
+[ext_resource type="Texture2D" uid="uid://4uql0cxrki4v" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_1.3.png" id="110_p25co"]
+[ext_resource type="Texture2D" uid="uid://cq3elhbclupdi" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_1.png" id="111_3ysty"]
+[ext_resource type="Texture2D" uid="uid://bnv85cjlnosyv" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_2.3.png" id="111_j8rfb"]
+[ext_resource type="Texture2D" uid="uid://bolh8cb471yvx" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_3.3.png" id="112_8xst7"]
+[ext_resource type="Texture2D" uid="uid://baftklsbhxjlt" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_2.png" id="112_p25co"]
+[ext_resource type="Texture2D" uid="uid://dul8fyqvbo1sq" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_3.png" id="113_j8rfb"]
+[ext_resource type="Texture2D" uid="uid://c6h7ky4cewot7" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_4.3.png" id="113_kctfg"]
+[ext_resource type="Texture2D" uid="uid://c0b76u1sog7ma" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_4.png" id="114_8xst7"]
+[ext_resource type="Texture2D" uid="uid://cb5e7mxgfmo4w" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_5.3.png" id="114_uvjbs"]
+[ext_resource type="Texture2D" uid="uid://wih17n7j7rcf" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_6.3.png" id="115_ns74u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{
@@ -226,6 +292,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_jywnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_q1bql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_846a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5udqs")
+}],
+"loop": true,
+"name": &"east_idle_hold",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_e5ktp")
 }, {
 "duration": 1.0,
@@ -239,6 +322,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"east_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_5qy3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dk66l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ot57y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ajdpy")
+}],
+"loop": true,
+"name": &"east_walk_hold",
 "speed": 6.0
 }, {
 "frames": [{
@@ -260,6 +360,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("36_net86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_c8csx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_nxtaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4onj0")
+}],
+"loop": true,
+"name": &"north_idle_hold",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("18_f34or")
 }, {
 "duration": 1.0,
@@ -273,6 +390,46 @@ animations = [{
 }],
 "loop": true,
 "name": &"north_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_klyt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tajfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_rhfbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vubu8")
+}],
+"loop": true,
+"name": &"north_walk_hold",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_t2div")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_t5b5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xqwrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_r5e14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_rypqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_u4if2")
+}],
+"loop": true,
+"name": &"pull",
 "speed": 6.0
 }, {
 "frames": [{
@@ -317,6 +474,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("52_bkc4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_r6fra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_s0aph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_jx056")
+}],
+"loop": true,
+"name": &"south_idle_hold",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("23_23boh")
 }, {
 "duration": 1.0,
@@ -330,6 +504,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"south_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_pnvav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_bw51p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_rma7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_nsal1")
+}],
+"loop": true,
+"name": &"south_walk_hold",
 "speed": 6.0
 }]
 
@@ -503,7 +694,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"none",
-"speed": 5.0
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_ms1cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_o6s7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_w01n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_np2uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_oe8fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_3ysty")
+}],
+"loop": true,
+"name": &"pull",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -699,7 +913,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"none",
-"speed": 5.0
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_p25co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_j8rfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_8xst7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_kctfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_uvjbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_ns74u")
+}],
+"loop": true,
+"name": &"pull",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -759,6 +996,116 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_vubu8"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"none",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_3iuxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_2e4ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_slqk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_50p3t")
+}],
+"loop": true,
+"name": &"torch_east_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_1c55j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_7hcwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_nbsax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_0iptr")
+}],
+"loop": true,
+"name": &"torch_east_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_jycqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_t2div")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_t5b5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_xqwrj")
+}],
+"loop": true,
+"name": &"torch_north_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_r5e14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_rypqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_u4if2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_ms1cn")
+}],
+"loop": true,
+"name": &"torch_north_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107_o6s7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_w01n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_np2uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_oe8fn")
+}],
+"loop": true,
+"name": &"torch_south_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111_3ysty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_p25co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_j8rfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_8xst7")
+}],
+"loop": true,
+"name": &"torch_south_walk",
+"speed": 6.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
 size = Vector2(62, 12)
 
@@ -788,6 +1135,11 @@ animation = &"south_idle"
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_878fo")
 animation = &"south_idle"
+
+[node name="Item" type="AnimatedSprite2D" parent="Sprite"]
+position = Vector2(0, -89)
+sprite_frames = SubResource("SpriteFrames_vubu8")
+animation = &"none"
 
 [node name="Shadow" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.133333)
@@ -831,7 +1183,13 @@ script = ExtResource("37_r4xk0")
 
 [node name="SleepTimer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
+
+[node name="PullOutTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
+[connection signal="timeout" from="PullOutTimer" to="." method="_on_pull_out_timer_timeout"]

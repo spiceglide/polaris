@@ -14,6 +14,7 @@ enum SlotState {
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
 var slot_id: int = -1
+var selected: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,10 +45,12 @@ func get_item():
 		return item.item_id
 
 func select():
+	self.selected = true
 	self.scale = Vector2(0.95, 0.95)
 	$Sprite.modulate = Color(0.85, 0.85, 0.85)
 	
 func deselect():
+	self.selected = false
 	self.scale = Vector2(1, 1)
 	$Sprite.modulate = Color(1, 1, 1)
 

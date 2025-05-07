@@ -52,6 +52,6 @@
   "torch": {
 	"name": "Torch",
 	"description": "Uncomfortably dim",
-	"consumable": true
+	"consumable": false
   }
 }

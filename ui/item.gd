@@ -32,7 +32,11 @@ func use() -> bool:
 		"smallfire":
 			pass
 		"torch":
-			pass
+			match PlayerData.state:
+				PlayerData.State.Awake:
+					PlayerData.state = PlayerData.State.PullOut
+				PlayerData.State.Holding:
+					PlayerData.state = PlayerData.State.Awake
 		"sleeping_bag":
 			if WorldData.is_night():
 				PlayerData.state = PlayerData.State.Sleeping

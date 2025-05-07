@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 var last_dir = "south";
+var is_holding = false
 var interactable = []
 
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-	$Sprite.set_direction(last_dir, "idle")
+	$Sprite.set_direction(last_dir, "idle", is_holding)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,16 +16,21 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	PlayerData.position = self.position
+	is_holding = false
 	
 	match PlayerData.state:
 		PlayerData.State.Dead:
 			die()
 		PlayerData.State.Sleeping:
 			sleep()
+		PlayerData.State.PullOut:
+			pull_out()
+		PlayerData.State.Holding:
+			is_holding = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if PlayerData.state == PlayerData.State.Awake:
+	if PlayerData.state in [PlayerData.State.Awake, PlayerData.State.Holding]:
 		_move()
 
 func _move() -> void:
@@ -51,10 +57,10 @@ func _move() -> void:
 	# Normalise velocity
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * PlayerData.speed * mult
-		$Sprite.set_direction(last_dir, "walk")
+		$Sprite.set_direction(last_dir, "walk", is_holding)
 		move_and_slide()
 	else:
-		$Sprite.set_direction(last_dir, "idle")
+		$Sprite.set_direction(last_dir, "idle", is_holding)
 
 func die():
 	$Sprite.set_state("death", false)
@@ -67,9 +73,15 @@ func sleep():
 	if $SleepTimer.is_stopped():
 		$SleepTimer.start(5)
 
+func pull_out():
+	$Sprite.set_state("pull", false)
+	
+	if $PullOutTimer.is_stopped():
+		$PullOutTimer.start(1)
+
 func awaken():
 	PlayerData.state = PlayerData.State.Awake
-	$Sprite.set_direction(last_dir, "idle")
+	$Sprite.set_direction(last_dir, "idle", is_holding)
 	$Shadow.visible = true
 
 func _input(event):
@@ -91,3 +103,7 @@ func _on_sleep_timer_timeout() -> void:
 	if WorldData.is_night():
 		WorldData.new_day()
 		awaken()
+
+func _on_pull_out_timer_timeout() -> void:
+	PlayerData.state = PlayerData.State.Holding
+	$Sprite.set_direction("south", "idle", true)

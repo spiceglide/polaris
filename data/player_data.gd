@@ -4,6 +4,8 @@ enum State {
 	Awake,
 	Dead,
 	Sleeping,
+	PullOut,
+	Holding,
 }
 
 @export var speed: int = 400

@@ -430,7 +430,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"pull",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -717,7 +717,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"pull",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -936,7 +936,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"pull",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1136,7 +1136,7 @@ script = ExtResource("2_020kj")
 [node name="Body" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_3yrnj")
-animation = &"south_idle"
+animation = &"south_walk"
 
 [node name="Face" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)

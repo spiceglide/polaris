@@ -102,16 +102,19 @@ func set_state(state: String, loop: bool):
 	
 	play()
 
-func reset_progress():
-	for segment in [$Body, $Face, $Puff, $Item]:
-		segment.frame_progress = 0.0
-
 func reset_flip():
 	for segment in [$Body, $Face, $Puff, $Item]:
 		segment.flip_h = false
 
 func play():
-	for segment in [$Body, $Face, $Puff, $Item]:
+	var sync = null
+	for segment in [$Face, $Body, $Puff, $Item]:
+		if sync:
+			segment.frame = sync[0]
+			segment.frame_progress = sync[1]
+		else:
+			sync = [segment.frame, segment.frame_progress]
+		
 		segment.play()
 
 func stop():

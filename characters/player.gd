@@ -77,7 +77,7 @@ func pull_out():
 	$Sprite.set_state("pull", false)
 	
 	if $PullOutTimer.is_stopped():
-		$PullOutTimer.start(1)
+		$PullOutTimer.start(0.6)
 
 func awaken():
 	PlayerData.state = PlayerData.State.Awake
@@ -106,5 +106,5 @@ func _on_sleep_timer_timeout() -> void:
 
 func _on_pull_out_timer_timeout() -> void:
 	PlayerData.state = PlayerData.State.Holding
-	last_dir = "south"
 	is_holding = true
+	last_dir = "south"

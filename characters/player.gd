@@ -106,4 +106,5 @@ func _on_sleep_timer_timeout() -> void:
 
 func _on_pull_out_timer_timeout() -> void:
 	PlayerData.state = PlayerData.State.Holding
-	$Sprite.set_direction("south", "idle", true)
+	last_dir = "south"
+	is_holding = true

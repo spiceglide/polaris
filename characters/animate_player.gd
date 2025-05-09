@@ -102,6 +102,9 @@ func set_state(state: String, loop: bool):
 	
 	play()
 
+func reset_progress():
+	for segment in [$Body, $Face, $Puff, $Item]:
+		segment.frame_progress = 0.0
 
 func reset_flip():
 	for segment in [$Body, $Face, $Puff, $Item]:

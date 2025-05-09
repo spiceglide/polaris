@@ -998,7 +998,19 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vubu8"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
 "loop": true,
 "name": &"none",
 "speed": 6.0

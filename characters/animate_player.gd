@@ -15,7 +15,9 @@ func set_direction(direction: String, action: String, is_holding: bool):
 	
 	if ("%s_%s" % [direction, action]) == $Body.animation:
 		return
-		
+	
+	reset_flip()
+	
 	# Holding items
 	var hold = ""
 	var item = null
@@ -31,8 +33,6 @@ func set_direction(direction: String, action: String, is_holding: bool):
 		elif direction == "west":
 			$Body.position.x = -12.5
 			$Item.position.x = -12.5
-	
-	reset_flip()
 	
 	match [direction, action]:
 		["north", "idle"]:
@@ -95,15 +95,23 @@ func set_state(state: String, loop: bool):
 		return
 	
 	reset_flip()
-	$Body.animation = state
-	$Face.animation = state
-	$Puff.animation = state
+	for segment in [$Body, $Face, $Puff]:
+		segment.animation = state
+		
+		print(state)
+		match state:
+			"death":
+				segment.position.x = 70
+			"sleep":
+				segment.position.x = 70
+	
 	$Item.animation = "none"
 	
 	play()
 
 func reset_flip():
 	for segment in [$Body, $Face, $Puff, $Item]:
+		segment.position.x = 0
 		segment.flip_h = false
 
 func play():

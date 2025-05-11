@@ -24,6 +24,11 @@ theme_override_fonts/font = ExtResource("2_q28yu")
 theme_override_font_sizes/font_size = 128
 text = "Options"
 
+[node name="Background" type="ColorRect" parent="Title"]
+show_behind_parent = true
+layout_mode = 2
+color = Color(0, 0, 0, 0.584314)
+
 [node name="Menu" type="MarginContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,5 +80,10 @@ theme = ExtResource("1_n5rk8")
 theme_type_variation = &"FlatButton"
 text = "Back
 "
+
+[node name="Background" type="ColorRect" parent="Menu"]
+show_behind_parent = true
+layout_mode = 2
+color = Color(0, 0, 0, 0.584314)
 
 [connection signal="pressed" from="Menu/VBoxContainer/Back" to="." method="_on_back_pressed"]

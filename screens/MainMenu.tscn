@@ -28,13 +28,12 @@
 [ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
 [ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ggvk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6p6wd"]
 shader = ExtResource("19_nyfbl")
-shader_parameter/pattern = ExtResource("20_y24je")
-shader_parameter/density = 0.1
+shader_parameter/density = 5.0
 shader_parameter/alpha = 0.4
-shader_parameter/speed = Vector2(0.5, -0.4)
-shader_parameter/fade_start = 0.3
+shader_parameter/speed = Vector2(0.8, -0.12)
+shader_parameter/fade_start = 0.5
 shader_parameter/fade_end = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_46ua2"]
@@ -93,13 +92,13 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsdu4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h050v"]
 shader = ExtResource("19_nyfbl")
 shader_parameter/pattern = ExtResource("21_y24je")
 shader_parameter/density = 0.1
-shader_parameter/alpha = 0.6
-shader_parameter/speed = Vector2(0.6, -0.5)
-shader_parameter/fade_start = 0.3
+shader_parameter/alpha = 1.0
+shader_parameter/speed = Vector2(0.8, -0.1)
+shader_parameter/fade_start = 0.404
 shader_parameter/fade_end = 1.0
 
 [node name="MainMenu" type="Node2D"]
@@ -113,61 +112,45 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -1650.0
-offset_right = 1650.0
+offset_right = 4950.0
 offset_bottom = 3300.0
 grow_horizontal = 2
-scale = Vector2(1, 1.65)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_aydwl")
-expand_mode = 2
+expand_mode = 3
+stretch_mode = 1
 
-[node name="Background2" type="TextureRect" parent="MainMenu"]
+[node name="BlizzardFull" type="TextureRect" parent="MainMenu"]
+material = SubResource("ShaderMaterial_6p6wd")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1640.0
-offset_right = 4940.0
-offset_bottom = 3300.0
+offset_left = -1650.0
+offset_right = 6268.0
+offset_bottom = 1125.0
 grow_horizontal = 2
-scale = Vector2(1, 1.65)
-texture = ExtResource("2_aydwl")
-expand_mode = 2
-
-[node name="Control" type="Control" parent="MainMenu"]
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = -20.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-
-[node name="Effect" type="ColorRect" parent="MainMenu/Control"]
-material = SubResource("ShaderMaterial_5ggvk")
-layout_mode = 1
 scale = Vector2(1, 2)
-size_flags_horizontal = 3
+texture = ExtResource("20_y24je")
+stretch_mode = 1
 
-[node name="Sprite" type="AnimatedSprite2D" parent="MainMenu/Control"]
-position = Vector2(-461, 716)
+[node name="Sprite" type="AnimatedSprite2D" parent="MainMenu"]
+position = Vector2(479, 716)
 sprite_frames = SubResource("SpriteFrames_46ua2")
 frame_progress = 0.640071
 script = ExtResource("21_6p6wd")
 
-[node name="Effect2" type="ColorRect" parent="MainMenu"]
-material = SubResource("ShaderMaterial_xsdu4")
-anchors_preset = 8
+[node name="BlizzardMini" type="TextureRect" parent="MainMenu"]
+material = SubResource("ShaderMaterial_h050v")
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -1651.0
+offset_right = 6269.0
+offset_bottom = 1125.0
 grow_horizontal = 2
-grow_vertical = 2
 scale = Vector2(1, 2)
+texture = ExtResource("20_y24je")
+stretch_mode = 1
 
 [node name="Title" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 5
@@ -299,8 +282,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.584314)
 
 [node name="SettingsMenu" parent="." instance=ExtResource("25_5ggvk")]
-offset = Vector2(2000, 0)
-transform = Transform2D(1, 0, 0, 1, 2000, 0)
+offset = Vector2(2500, 0)
+transform = Transform2D(1, 0, 0, 1, 2500, 0)
 follow_viewport_enabled = true
 
 [node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]

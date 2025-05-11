@@ -6,6 +6,21 @@
 [node name="QuitMenu" type="CanvasLayer"]
 script = ExtResource("1_u2rka")
 
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.5
+offset_top = -116.0
+offset_right = 291.5
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.584314)
+
 [node name="Dialog" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5

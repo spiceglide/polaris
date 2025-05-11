@@ -4,7 +4,7 @@ uniform sampler2D pattern;
 
 uniform float density = 0.1;
 uniform float alpha: hint_range(0.0, 1.0) = 1.0;
-uniform vec2 speed = vec2(0.0, -1.0);
+uniform vec2 speed = vec2(0.8, -0.2);
 
 uniform float fade_start: hint_range(0.0, 1.0) = 0.3;
 uniform float fade_end: hint_range(0.0, 1.0) = 1.0;

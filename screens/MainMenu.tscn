@@ -106,13 +106,26 @@ shader_parameter/fade_end = 1.0
 script = ExtResource("1_tder3")
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="Background" type="TextureRect" parent="MainMenu"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1000.0
-offset_right = 1000.0
+offset_left = -1650.0
+offset_right = 1650.0
+offset_bottom = 3300.0
+grow_horizontal = 2
+scale = Vector2(1, 1.65)
+texture = ExtResource("2_aydwl")
+expand_mode = 2
+
+[node name="Background2" type="TextureRect" parent="MainMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1640.0
+offset_right = 4940.0
 offset_bottom = 3300.0
 grow_horizontal = 2
 scale = Vector2(1, 1.65)
@@ -288,10 +301,12 @@ color = Color(0, 0, 0, 0.584314)
 [node name="SettingsMenu" parent="." instance=ExtResource("25_5ggvk")]
 offset = Vector2(2000, 0)
 transform = Transform2D(1, 0, 0, 1, 2000, 0)
+follow_viewport_enabled = true
 
 [node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]
 offset = Vector2(0, 2000)
 transform = Transform2D(1, 0, 0, 1, 0, 2000)
+follow_viewport_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

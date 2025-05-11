@@ -34,7 +34,7 @@ func _on_new_game_pressed() -> void:
 
 func _on_options_pressed() -> void:
 	view = $SettingsMenu.offset
-	$SettingsMenu/Menu/VBoxContainer/MenuButton.grab_focus()
+	$SettingsMenu/Menu/VBoxContainer/Back.grab_focus()
 
 func _on_quit_pressed() -> void:
 	view = $QuitMenu.offset

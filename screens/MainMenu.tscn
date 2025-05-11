@@ -1,29 +1,160 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7x7xmi35d5q6"]
+[gd_scene load_steps=31 format=3 uid="uid://c7x7xmi35d5q6"]
 
 [ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="1_r2nfi"]
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
+[ext_resource type="Texture2D" uid="uid://bfuqeacste1gs" path="res://assets/ui/menu/menu_base.png" id="2_aydwl"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
+[ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
+[ext_resource type="Texture2D" uid="uid://d3657afwj662i" path="res://assets/ui/menu/walk/menu_walk_1.png" id="5_nelve"]
+[ext_resource type="Texture2D" uid="uid://blu8tng17r1wo" path="res://assets/ui/menu/walk/menu_walk_2.png" id="6_nyfbl"]
+[ext_resource type="Texture2D" uid="uid://dva55sdfb1cr0" path="res://assets/ui/menu/walk/menu_walk_3.png" id="7_y24je"]
+[ext_resource type="Texture2D" uid="uid://buvy2bggqlme" path="res://assets/ui/menu/walk/menu_walk_4.png" id="8_xsdu4"]
+[ext_resource type="Texture2D" uid="uid://cwjvi5c53ia0x" path="res://assets/ui/menu/walk/menu_walk_5.png" id="9_5ggvk"]
+[ext_resource type="Texture2D" uid="uid://c0rhk5xysl7f3" path="res://assets/ui/menu/walk/menu_walk_6.png" id="10_6p6wd"]
+[ext_resource type="Texture2D" uid="uid://caba6vg0hl1nv" path="res://assets/ui/menu/walk/menu_walk_7.png" id="11_h050v"]
+[ext_resource type="Texture2D" uid="uid://bvp3h1nnf8ixd" path="res://assets/ui/menu/walk/menu_walk_8.png" id="12_5dkyv"]
+[ext_resource type="Texture2D" uid="uid://dvo40ehvth68u" path="res://assets/ui/menu/walk/menu_walk_9.png" id="13_e3c6o"]
+[ext_resource type="Texture2D" uid="uid://cxxeh0jb08lde" path="res://assets/ui/menu/walk/menu_walk_10.png" id="14_ensew"]
+[ext_resource type="Texture2D" uid="uid://oi5vt5x0r58x" path="res://assets/ui/menu/walk/menu_walk_11.png" id="15_5uksb"]
+[ext_resource type="Texture2D" uid="uid://bsn3dgn54c8co" path="res://assets/ui/menu/walk/menu_walk_12.png" id="16_bx774"]
+[ext_resource type="Texture2D" uid="uid://d33ao7447ad2f" path="res://assets/ui/menu/walk/menu_walk_13.png" id="17_tjlmp"]
+[ext_resource type="Texture2D" uid="uid://bcc5oyglill7x" path="res://assets/ui/menu/walk/menu_walk_14.png" id="18_bswnc"]
+[ext_resource type="Texture2D" uid="uid://cavsmp6bfaixa" path="res://assets/ui/menu/walk/menu_walk_15.png" id="19_8asd5"]
+[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/blizzard.gdshader" id="19_nyfbl"]
+[ext_resource type="Texture2D" uid="uid://owvbh86m1ok0" path="res://assets/ui/menu/walk/menu_walk_16.png" id="20_kc8hk"]
+[ext_resource type="Texture2D" uid="uid://dth38dojhqoat" path="res://assets/stamps/1full.png" id="20_y24je"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="21_6p6wd"]
+[ext_resource type="Texture2D" uid="uid://djcctoywipdxq" path="res://assets/stamps/1mini.png" id="21_y24je"]
+[ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
+[ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ggvk"]
+shader = ExtResource("19_nyfbl")
+shader_parameter/pattern = ExtResource("20_y24je")
+shader_parameter/density = 0.1
+shader_parameter/alpha = 0.4
+shader_parameter/speed = Vector2(0.5, -0.4)
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46ua2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nelve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nyfbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y24je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xsdu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5ggvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6p6wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h050v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5dkyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e3c6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ensew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5uksb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bx774")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tjlmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bswnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8asd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kc8hk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsdu4"]
+shader = ExtResource("19_nyfbl")
+shader_parameter/pattern = ExtResource("21_y24je")
+shader_parameter/density = 0.1
+shader_parameter/alpha = 0.6
+shader_parameter/speed = Vector2(0.6, -0.5)
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 1.0
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_tder3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
-[node name="Background" type="ColorRect" parent="MainMenu"]
+[node name="Background" type="TextureRect" parent="MainMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1000.0
+offset_right = 1000.0
+offset_bottom = 3300.0
+grow_horizontal = 2
+scale = Vector2(1, 1.65)
+texture = ExtResource("2_aydwl")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="MainMenu"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = -20.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="Effect" type="ColorRect" parent="MainMenu/Control"]
+material = SubResource("ShaderMaterial_5ggvk")
+layout_mode = 1
+scale = Vector2(1, 2)
+size_flags_horizontal = 3
+
+[node name="Sprite" type="AnimatedSprite2D" parent="MainMenu/Control"]
+position = Vector2(-461, 716)
+sprite_frames = SubResource("SpriteFrames_46ua2")
+frame_progress = 0.640071
+script = ExtResource("21_6p6wd")
+
+[node name="Effect2" type="ColorRect" parent="MainMenu"]
+material = SubResource("ShaderMaterial_xsdu4")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1280.0
-offset_top = -720.0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(8.42288e-08, 0.0712349, 0.103106, 1)
+scale = Vector2(1, 2)
 
 [node name="Title" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 5
@@ -38,21 +169,22 @@ theme_override_constants/margin_top = 80
 [node name="Label" type="Label" parent="MainMenu/Title"]
 layout_mode = 2
 theme = ExtResource("1_r2nfi")
+theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("2_tder3")
 theme_override_font_sizes/font_size = 128
 text = "Krai Lesa"
 
 [node name="Menu" type="MarginContainer" parent="MainMenu"]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -173.0
-offset_top = -120.0
-offset_right = 173.0
-offset_bottom = 180.0
-grow_horizontal = 2
+offset_left = -954.0
+offset_top = -150.0
+offset_right = 6.0
+offset_bottom = 150.0
+grow_horizontal = 0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Menu"]
@@ -61,12 +193,28 @@ theme_override_constants/separation = 24
 
 [node name="Continue" type="Button" parent="MainMenu/Menu/VBoxContainer"]
 layout_mode = 2
-focus_next = NodePath("../New Game")
+focus_next = NodePath("../NewGame")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
 text = "Continue"
 
-[node name="New Game" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+[node name="Background" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Continue"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -30.0
+offset_right = 225.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.584314)
+
+[node name="NewGame" type="Button" parent="MainMenu/Menu/VBoxContainer"]
 layout_mode = 2
 focus_next = NodePath("../Options")
 focus_previous = NodePath("../Continue")
@@ -74,13 +222,45 @@ theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
 text = "New Game"
 
+[node name="Background2" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/NewGame"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -30.0
+offset_right = 225.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.584314)
+
 [node name="Options" type="Button" parent="MainMenu/Menu/VBoxContainer"]
 layout_mode = 2
 focus_next = NodePath("../Quit")
-focus_previous = NodePath("../New Game")
+focus_previous = NodePath("../NewGame")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
 text = "Options"
+
+[node name="Background4" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Options"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -30.0
+offset_right = 225.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.584314)
 
 [node name="Quit" type="Button" parent="MainMenu/Menu/VBoxContainer"]
 layout_mode = 2
@@ -89,7 +269,40 @@ theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
 text = "Leave"
 
+[node name="Background3" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Quit"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -30.0
+offset_right = 225.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.584314)
+
+[node name="SettingsMenu" parent="." instance=ExtResource("25_5ggvk")]
+offset = Vector2(2000, 0)
+transform = Transform2D(1, 0, 0, 1, 2000, 0)
+
+[node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]
+offset = Vector2(0, 2000)
+transform = Transform2D(1, 0, 0, 1, 0, 2000)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+position_smoothing_enabled = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mbnhl")
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

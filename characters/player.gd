@@ -26,7 +26,9 @@ func _process(delta: float) -> void:
 		PlayerData.State.PullOut:
 			pull_out()
 		PlayerData.State.Holding:
-			is_holding = true
+			is_holding = InventoryData.get_selected_item() in InventoryData.holdable
+			if not is_holding:
+				PlayerData.state = PlayerData.State.Awake
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

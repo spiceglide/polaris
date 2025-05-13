@@ -9,15 +9,15 @@ extends Node2D
 var biome_data: Dictionary = {
 	"tundra": {
 		"creatures": [],
-		"structures": [],
+		"structures": ["campfire"],
 	},
 	"forest": {
 		"creatures": ["hare"],
-		"structures": [],
+		"structures": ["campfire"],
 	},
 	"swamp": {
 		"creatures": ["frog"],
-		"structures": [],
+		"structures": ["campfire"],
 	},
 }
 
@@ -38,13 +38,22 @@ func _ready() -> void:
 		var creature_count = randi() % creature_limit
 		for i in range(creature_count):
 			var creature = creatures.pick_random().capitalize()
-			var point = _get_random_point(space)
+			var point = WorldData.get_random_point(space)
 			
 			var instance = load('res://characters/creatures/%s.tscn' % creature).instantiate()
 			self.add_child(instance)
 			instance.position = point
 	
-	#var structure_count = randi() % structure_limit
+	# Generate structures
+	if not structures.is_empty():
+		var structure_count = randi() % structure_limit
+		for i in range(structure_count):
+			var structure = structures.pick_random().capitalize()
+			var point = WorldData.get_random_point(space)
+			
+			var instance = load('res://structures/%s.tscn' % structure).instantiate()
+			self.add_child(instance)
+			instance.position = point
 
 func set_biome():
 	self.biomes = []
@@ -57,8 +66,3 @@ func set_biome():
 
 func get_biome() -> String:
 	return biomes[0]
-
-func _get_random_point(rect: Vector2) -> Vector2:
-	var x = randi() % int(rect.x)
-	var y = randi() % int(rect.y)
-	return Vector2(x, y)

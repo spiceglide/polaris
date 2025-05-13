@@ -83,6 +83,8 @@ func _update_current_scene():
 		clamp(floor(player_pos[0] / scene_size[0]), 0, grid_size[0]-1),
 		clamp(floor(player_pos[1] / scene_size[1]), 0, grid_size[1]-1),
 	]
+	
+	WorldData.current_scene = get_scene(current_scene)
 
 func _north(xy: Array):
 	var i = xy[0]

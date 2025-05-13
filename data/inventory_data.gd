@@ -7,6 +7,8 @@ var selected_slot: int = 0
 var item_map: Dictionary = {}
 var recipe_map: Dictionary = {}
 
+var holdable = ["torch"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slots.resize(size)

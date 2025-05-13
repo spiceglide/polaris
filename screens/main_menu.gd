@@ -23,7 +23,6 @@ func focus(source: String):
 		"QuitMenu":
 			$MainMenu/Menu/VBoxContainer/Quit.grab_focus()
 
-
 func _on_continue_pressed() -> void:
 	queue_free()
 	get_tree().change_scene_to_file("res://screens/LoadingScreen.tscn")

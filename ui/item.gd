@@ -28,9 +28,9 @@ func use() -> bool:
 		"berries":
 			PlayerData.hunger += 10
 		"campfire":
-			pass
+			place_structure("Campfire")
 		"smallfire":
-			pass
+			place_structure("Campfire")
 		"torch":
 			match PlayerData.state:
 				PlayerData.State.Awake:
@@ -42,3 +42,14 @@ func use() -> bool:
 				PlayerData.state = PlayerData.State.Sleeping
 	
 	return consumable
+
+func place_structure(name: String) -> bool:
+	var scene = WorldData.current_scene
+	var tilemap = scene.get_node("TileMap")
+	var space = tilemap.get_used_rect().size * tilemap.tile_set.tile_size
+	
+	var instance = load('res://structures/%s.tscn' % name).instantiate()
+	scene.add_child(instance)
+	instance.position = PlayerData.position
+	instance.position.x += 100
+	return true

@@ -30,7 +30,7 @@ func use() -> bool:
 		"campfire":
 			place_structure("Campfire")
 		"smallfire":
-			place_structure("Campfire")
+			place_structure("SmallFire")
 		"torch":
 			match PlayerData.state:
 				PlayerData.State.Awake:
@@ -46,7 +46,6 @@ func use() -> bool:
 func place_structure(name: String) -> bool:
 	var scene = WorldData.current_scene
 	var tilemap = scene.get_node("TileMap")
-	var space = tilemap.get_used_rect().size * tilemap.tile_set.tile_size
 	
 	var instance = load('res://structures/%s.tscn' % name).instantiate()
 	scene.add_child(instance)

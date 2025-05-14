@@ -20,7 +20,7 @@ func interact():
 				data["times_used"] = 0
 			data["times_used"] += 1
 			
-			if data["times_used"] > 5:
+			if data["times_used"] > 6:
 				change_state("extinguished")
 			else:
 				match current_state:
@@ -30,6 +30,20 @@ func interact():
 						change_state("default")
 					"extinguished":
 						pass
-
+		"smallfire":
+			if not data.has("times_used"):
+				data["times_used"] = 0
+			data["times_used"] += 1
+			
+			if data["times_used"] > 3:
+				change_state("extinguished")
+			else:
+				match current_state:
+					"default":
+						change_state("ignited")
+					"ignited":
+						change_state("default")
+					"extinguished":
+						pass
 func _on_interaction():
 	interact()

@@ -28,17 +28,18 @@ func _process(delta: float) -> void:
 		state = State.Dead
 		
 	# The night is cold
+	var heat = 1
+	match WorldData.current_biome:
+		"tundra":
+			heat *= 0.1
+		"forest":
+			heat *= 0.15
+		"swamp":
+			heat *= 0.2
 	if WorldData.is_night():
-		var heat = 1
-		match WorldData.current_biome:
-			"tundra":
-				heat *= 0.1
-			"forest":
-				heat *= 0.15
-			"swamp":
-				heat *= 0.2
-			
 		warmth -= delta * (1/heat)
+	else:
+		warmth += delta * heat
 	
 	# Hunger
 	hunger -= delta * 0.5

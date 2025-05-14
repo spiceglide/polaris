@@ -1,5 +1,7 @@
 extends Area2D
 
+signal interaction
+
 @export var description: String
 @export var item: String
 @export var type: Interaction
@@ -9,15 +11,12 @@ enum Interaction {
 	PICKUP,
 	DISPOSE,
 	PICKUP_AND_DISPOSE,
+	OTHER,
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("interactive")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func interact(player):
 	var announcer = player.get_node("Announcement")
@@ -39,3 +38,6 @@ func interact(player):
 			announcer.announce(description)
 			if InventoryData.set_item_at_first_empty(item):
 				self.get_parent().queue_free()
+		Interaction.OTHER:
+			interaction.emit()
+			

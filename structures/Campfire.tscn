@@ -55,11 +55,11 @@ radius = 120.702
 [node name="Campfire" type="StaticBody2D"]
 z_index = 1
 script = ExtResource("1_d1274")
+title = "campfire"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_2d46r")
-animation = &"ignited"
 script = ExtResource("8_wr3f7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -71,6 +71,7 @@ shape = SubResource("RectangleShape2D_drdvg")
 position = Vector2(0, -1)
 script = ExtResource("5_wr3f7")
 description = "\"It's a campfire\""
+type = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

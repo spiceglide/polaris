@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=8 format=3 uid="uid://cmo7oc0pnrfki"]
 
 [ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="1_rwsj7"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/Player.tscn" id="2_ik4lw"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="3_ik4lw"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_ssg0d"]
+[ext_resource type="Shader" uid="uid://h0vbnnfpts0g" path="res://shaders/light.gdshader" id="5_hpikh"]
+[ext_resource type="Texture2D" uid="uid://crubhr0vx3eq3" path="res://assets/lighting/darkness_overlay.png" id="6_bnf7e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ifsp"]
+shader = ExtResource("5_hpikh")
 
 [node name="MainGame" type="Node2D"]
 
 [node name="Game" type="Node2D" parent="."]
-y_sort_enabled = true
 
 [node name="Map" parent="Game" instance=ExtResource("1_rwsj7")]
 
@@ -19,3 +23,55 @@ position = Vector2(1213, 642)
 script = ExtResource("3_ssg0d")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ik4lw")]
+
+[node name="Lighting" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Lighting"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Lighting/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="Lighting"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Lighting"]
+material = SubResource("ShaderMaterial_7ifsp")
+offset_left = 3450.0
+offset_top = 1780.0
+offset_right = 4763.0
+offset_bottom = 2981.0
+texture = ExtResource("6_bnf7e")
+
+[node name="TextureRect2" type="TextureRect" parent="Lighting"]
+material = SubResource("ShaderMaterial_7ifsp")
+offset_left = 1253.0
+offset_top = 1699.0
+offset_right = 2566.0
+offset_bottom = 2900.0
+texture = ExtResource("6_bnf7e")

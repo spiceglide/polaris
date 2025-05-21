@@ -20,6 +20,7 @@ position = Vector2(-8, -865)
 texture = ExtResource("1_n0bvb")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+visible = false
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("2_n0bvb")

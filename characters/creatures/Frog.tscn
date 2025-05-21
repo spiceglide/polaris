@@ -94,7 +94,8 @@ texture = ExtResource("36_yofgo")
 [node name="Interaction" type="Area2D" parent="."]
 script = ExtResource("13_8skwa")
 description = "\"GOTCHA!\""
-type = 2
+item = "frog"
+type = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]

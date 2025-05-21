@@ -32,7 +32,7 @@ func set_item(id: String):
 	item = item_scene.instantiate()
 	item.set_item(id)
 	
-	$ItemSprite.animation = id
+	_set_item_animation(id)
 	$ItemSprite.visible = true
 	
 func clear_item():
@@ -131,6 +131,12 @@ func _notification(type):
 			else:
 				if item:
 					$ItemSprite.visible = true
+
+func _set_item_animation(name: String):
+	if $ItemSprite.sprite_frames.has_animation(name):
+		$ItemSprite.animation = name
+	else:
+		$ItemSprite.animation = "default"
 
 func _on_button_pressed() -> void:
 	if state == SlotState.INACTIVE:

@@ -7,7 +7,7 @@ var selected_slot: int = 0
 var item_map: Dictionary = {}
 var recipe_map: Dictionary = {}
 
-var holdable = ["torch"]
+var holdable = ["torch", "hatchet"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,10 +18,14 @@ func _ready() -> void:
 	
 	add_to_group("crafting")
 	
-	set_item(0, "sleeping_bag")
-	set_item(1, "torch")
-	set_item(2, "berries")
-	set_item(2, "berries")
+	set_item(0, "frog")
+	set_item(1, "hatchet")
+	set_item(4, "sleeping_bag")
+	set_item(5, "berries")
+	set_item(6, "berries")
+	set_item(7, "berries")
+	set_item(8, "berries")
+	set_item(9, "berries")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

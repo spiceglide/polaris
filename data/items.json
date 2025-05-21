@@ -53,5 +53,25 @@
 	"name": "Torch",
 	"description": "Uncomfortably dim",
 	"consumable": false
+  },
+  "hatchet": {
+	"name": "Hatchet",
+	"description": "It has a good weight to it",
+	"consumable": false
+  },
+  "puff": {
+	"name": "Puff",
+	"description": "Soft stuff",
+	"consumable": false
+  },
+  "frog": {
+	"name": "Frog",
+	"description": "Stop wriggling",
+	"consumable": false
+  },
+  "frog_dead": {
+	"name": "Dead Frog",
+	"description": "Wriggles no more",
+	"consumable": false
   }
 }

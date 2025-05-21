@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=182 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
@@ -151,6 +151,30 @@
 [ext_resource type="Texture2D" uid="uid://c0b76u1sog7ma" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_4.png" id="114_8xst7"]
 [ext_resource type="Texture2D" uid="uid://cb5e7mxgfmo4w" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_5.3.png" id="114_uvjbs"]
 [ext_resource type="Texture2D" uid="uid://wih17n7j7rcf" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_6.3.png" id="115_ns74u"]
+[ext_resource type="Texture2D" uid="uid://cvigoffi1q7ot" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_1.png" id="124_mwbkb"]
+[ext_resource type="Texture2D" uid="uid://d36lbqkhkdkfn" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_2.png" id="125_ycyx1"]
+[ext_resource type="Texture2D" uid="uid://bumxqaaef5o4b" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_3.png" id="126_d5u3j"]
+[ext_resource type="Texture2D" uid="uid://civsc72846fj0" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_4.png" id="127_yl6us"]
+[ext_resource type="Texture2D" uid="uid://tc1pwcne5out" path="res://assets/characters/dora/items/hatchet/sasha_e_walk_hatchet_1.png" id="128_rfnh3"]
+[ext_resource type="Texture2D" uid="uid://bc2dtgap41u1g" path="res://assets/characters/dora/items/hatchet/sasha_e_walk_hatchet_2.png" id="129_6fmh5"]
+[ext_resource type="Texture2D" uid="uid://cbtecsb25y1a6" path="res://assets/characters/dora/items/hatchet/sasha_e_walk_hatchet_3.png" id="130_m37o5"]
+[ext_resource type="Texture2D" uid="uid://bij2txtli3xpk" path="res://assets/characters/dora/items/hatchet/sasha_e_walk_hatchet_4.png" id="131_8hfy3"]
+[ext_resource type="Texture2D" uid="uid://cdxn3ibvmlj0f" path="res://assets/characters/dora/items/hatchet/sasha_n_idle_hatchet_1.png" id="132_ot8uf"]
+[ext_resource type="Texture2D" uid="uid://bcsw4m2dt1fc" path="res://assets/characters/dora/items/hatchet/sasha_n_idle_hatchet_2.png" id="133_8ewi2"]
+[ext_resource type="Texture2D" uid="uid://s62mb18ifqf2" path="res://assets/characters/dora/items/hatchet/sasha_n_idle_hatchet_3.png" id="134_lh3o1"]
+[ext_resource type="Texture2D" uid="uid://d1tb8mo21xhth" path="res://assets/characters/dora/items/hatchet/sasha_n_idle_hatchet_4.png" id="135_1rkic"]
+[ext_resource type="Texture2D" uid="uid://b3r5c0abf1s3q" path="res://assets/characters/dora/items/hatchet/sasha_n_walk_hatchet_1.png" id="136_7slno"]
+[ext_resource type="Texture2D" uid="uid://c0s4cxwukcu3j" path="res://assets/characters/dora/items/hatchet/sasha_n_walk_hatchet_2.png" id="137_ke3pm"]
+[ext_resource type="Texture2D" uid="uid://c4oioa2wsycvy" path="res://assets/characters/dora/items/hatchet/sasha_n_walk_hatchet_3.png" id="138_fvtf6"]
+[ext_resource type="Texture2D" uid="uid://dgy06xn58v6s5" path="res://assets/characters/dora/items/hatchet/sasha_n_walk_hatchet_4.png" id="139_yfm2y"]
+[ext_resource type="Texture2D" uid="uid://b550kepd0g8v4" path="res://assets/characters/dora/items/hatchet/sasha_s_idle_hatchet_1.png" id="140_dx1yg"]
+[ext_resource type="Texture2D" uid="uid://db0o6klrsxroq" path="res://assets/characters/dora/items/hatchet/sasha_s_idle_hatchet_2.png" id="141_f41mc"]
+[ext_resource type="Texture2D" uid="uid://cs04m16n8e78u" path="res://assets/characters/dora/items/hatchet/sasha_s_idle_hatchet_3.png" id="142_quboq"]
+[ext_resource type="Texture2D" uid="uid://d4cgi60t0v38u" path="res://assets/characters/dora/items/hatchet/sasha_s_idle_hatchet_4.png" id="143_t8vx2"]
+[ext_resource type="Texture2D" uid="uid://mpsa51sq43s5" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_1.png" id="144_cyjok"]
+[ext_resource type="Texture2D" uid="uid://dns8ixa6aftmh" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_2.png" id="145_4o2cd"]
+[ext_resource type="Texture2D" uid="uid://tjnv4d7sfcrf" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_3.png" id="146_bwvrq"]
+[ext_resource type="Texture2D" uid="uid://dtntfv7fgiior" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_4.png" id="147_gqqpo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{
@@ -998,6 +1022,108 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vubu8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("124_mwbkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_ycyx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_d5u3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_yl6us")
+}],
+"loop": true,
+"name": &"hatchet_east_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("128_rfnh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_6fmh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_m37o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_8hfy3")
+}],
+"loop": true,
+"name": &"hatchet_east_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("132_ot8uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_8ewi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_lh3o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_1rkic")
+}],
+"loop": true,
+"name": &"hatchet_north_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("136_7slno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_ke3pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_fvtf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_yfm2y")
+}],
+"loop": true,
+"name": &"hatchet_north_walk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("140_dx1yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_f41mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_quboq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_t8vx2")
+}],
+"loop": true,
+"name": &"hatchet_south_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("144_cyjok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_4o2cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_bwvrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_gqqpo")
+}],
+"loop": true,
+"name": &"hatchet_south_walk",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": null

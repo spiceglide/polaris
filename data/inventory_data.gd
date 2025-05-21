@@ -87,20 +87,9 @@ func clear_slot(index: int):
 func swap_items(source: int, dest: int):
 	var source_item = slots[source]
 	var dest_item = slots[dest]
-	print("swapped %s with %s" % [source_item, dest_item])
-	print([slots[source], slots[dest]])
 	
-	if source_item and dest_item:
-		slots[dest] = source_item
-		slots[source] = dest_item
-	elif source_item and not dest_item:
-		slots[dest] = source_item
-		slots[source] = ""
-	elif dest_item and not source_item:
-		slots[source] = dest_item
-		slots[dest] = ""
-	
-	print([slots[source], slots[dest]])
+	slots[dest] = source_item
+	slots[source] = dest_item
 
 func remove_items(items: Array):
 	var to_remove = items.duplicate()

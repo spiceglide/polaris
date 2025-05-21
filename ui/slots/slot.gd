@@ -19,7 +19,6 @@ var selected: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sprite.animation = anim
-	
 	clear_item()
 	add_to_group("inventory_slots")
 
@@ -90,6 +89,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var dest_id = slot_id
 	
 	InventoryData.swap_items(source_id, dest_id)
+	$ItemSprite.visible = true
 	update_timestamp()
 	
 func _generate_preview():
@@ -113,12 +113,7 @@ func _notification(type):
 				return
 			state = SlotState.INACTIVE
 			update_timestamp()
-			
-			if is_drag_successful():
-				pass
-			else:
-				if item:
-					$ItemSprite.visible = true
+			$ItemSprite.visible = true
 
 func _on_button_pressed() -> void:
 	if state == SlotState.INACTIVE:

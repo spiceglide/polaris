@@ -7,6 +7,7 @@ var view = Vector2.ZERO
 var pan_speed = 3.0
 
 func _ready() -> void:
+	$QuitMenu.visible = false
 	focus("MainMenu")
 
 func _physics_process(delta: float) -> void:
@@ -36,5 +37,7 @@ func _on_options_pressed() -> void:
 	$SettingsMenu/Menu/VBoxContainer/Back.grab_focus()
 
 func _on_quit_pressed() -> void:
+	$QuitMenu.visible = true
+	
 	view = $QuitMenu.offset
 	$QuitMenu/Dialog/HBoxContainer/No.grab_focus()

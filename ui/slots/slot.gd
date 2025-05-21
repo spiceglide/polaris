@@ -32,7 +32,7 @@ func set_item(id: String):
 	item = item_scene.instantiate()
 	item.set_item(id)
 	
-	_set_item_animation(id)
+	$ItemSprite.animation = id
 	$ItemSprite.visible = true
 	
 func clear_item():
@@ -60,11 +60,6 @@ func use():
 		if consumed:
 			clear_item()
 
-func quick_move():
-	var slot = InventoryData.get_first_empty_slot()
-	InventoryData.set_item(slot, item.item_id)
-	self.clear_item()
-
 func update_timestamp():
 	last_used = Time.get_ticks_msec()
 
@@ -74,34 +69,27 @@ func _clickdrag():
 	
 	$ItemSprite.visible = false
 	var drag_data = _generate_drag_data()
-	force_drag(drag_data["data"], drag_data["preview"])
+	force_drag(drag_data["slot"], drag_data["preview"])
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if not item:
 		return
 	
-	if state == SlotState.INACTIVE:
-		state = SlotState.SELECTED_DRAG
-	
 	$ItemSprite.visible = false
 		
 	var drag_data = _generate_drag_data()
 	set_drag_preview(drag_data["preview"])
-	return drag_data["data"]
+	return drag_data["slot"]
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	if not data[0]:
-		return false
-	return true
+	var slot_id = data
+	return (InventoryData.get_item(slot_id) != null)
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	var source_slot = data[1]
-	if item:
-		source_slot.set_item(item.item_id)
-	else:
-		source_slot.clear_item()
-	set_item(data[0].item_id)
-	state = SlotState.INACTIVE
+	var source_id = data
+	var dest_id = slot_id
+	
+	InventoryData.swap_items(source_id, dest_id)
 	update_timestamp()
 	
 func _generate_preview():
@@ -114,7 +102,7 @@ func _generate_preview():
 
 func _generate_drag_data():
 	return {
-		"data": [item.duplicate(), self],
+		"slot": slot_id,
 		"preview": _generate_preview(),
 	}
 
@@ -132,12 +120,6 @@ func _notification(type):
 				if item:
 					$ItemSprite.visible = true
 
-func _set_item_animation(name: String):
-	if $ItemSprite.sprite_frames.has_animation(name):
-		$ItemSprite.animation = name
-	else:
-		$ItemSprite.animation = "default"
-
 func _on_button_pressed() -> void:
 	if state == SlotState.INACTIVE:
 		var timestamp = Time.get_ticks_msec()
@@ -145,6 +127,6 @@ func _on_button_pressed() -> void:
 			return
 		if item:
 			if Input.is_action_pressed("quick_move"):
-				quick_move()
+				InventoryData.move_item_to_first_empty(slot_id)
 			else:
 				state = SlotState.SELECTED_CLICK

@@ -21,24 +21,17 @@ func _process(delta: float) -> void:
 	
 	for i in range(len(slots)):
 		var slot = slots[i]
-		var slot_data = InventoryData.get_item(i)
 		
-		# Acknowledge modified slots
-		var timestamp = Time.get_ticks_msec()
-		if last_checked < slot.last_used:
-			if slot.item:
-				InventoryData.set_item(i, slot.item.item_id)
+		var old_item = slot.item.item_id if slot.item else ""
+		var new_item = InventoryData.get_item(i)
+		
+		# Update outdated slots
+		if old_item != new_item:
+			print([old_item, new_item])
+			if new_item == "":
+				slot.clear_item()
 			else:
-				InventoryData.clear_slot(i)
-			
-			continue
-		
-		if slot_data:
-			slot.set_item(slot_data)
-		else:
-			slot.clear_item()
-	
-	last_checked = Time.get_ticks_msec()
+				slot.set_item(new_item)
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -78,18 +71,23 @@ func get_all_items():
 
 func _setup_slots():
 	$Full.columns = cols
+	var counter = 0
 	
 	if rows >= 1:
 		for col in cols:
 			var slot = slot_scene.instantiate()
+			slot.slot_id = counter
 			$Hotbar.add_child(slot)
 			slots.append(slot)
+			counter += 1
 		
 		for row in range(rows - 1):
 			for col in range(cols):
 				var slot = slot_scene.instantiate()
+				slot.slot_id = counter
 				$Full.add_child(slot)
 				slots.append(slot)
+				counter += 1
 	
 	var hint = hint_scene.instantiate()
 	$Hotbar.add_child(hint)

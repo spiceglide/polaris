@@ -51,9 +51,16 @@ func set_item(slot: int, item: String) -> bool:
 
 func set_item_at_first_empty(item: String) -> bool:
 	return set_item(get_first_empty_slot(), item)
-	
+
 func set_item_at_selected(item: String) -> bool:
 	return set_item(selected_slot, item)
+
+func move_item_to_first_empty(slot: int) -> bool:
+	var item = get_item(slot)
+	if set_item_at_first_empty(item):
+		clear_slot(slot)
+		return true
+	return false
 
 func get_first_empty_slot():
 	for i in range(len(slots)):
@@ -76,6 +83,24 @@ func select_slot(index: int):
 
 func clear_slot(index: int):
 	slots[index] = ""
+
+func swap_items(source: int, dest: int):
+	var source_item = slots[source]
+	var dest_item = slots[dest]
+	print("swapped %s with %s" % [source_item, dest_item])
+	print([slots[source], slots[dest]])
+	
+	if source_item and dest_item:
+		slots[dest] = source_item
+		slots[source] = dest_item
+	elif source_item and not dest_item:
+		slots[dest] = source_item
+		slots[source] = ""
+	elif dest_item and not source_item:
+		slots[source] = dest_item
+		slots[dest] = ""
+	
+	print([slots[source], slots[dest]])
 
 func remove_items(items: Array):
 	var to_remove = items.duplicate()

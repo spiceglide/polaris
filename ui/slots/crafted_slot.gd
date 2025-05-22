@@ -16,8 +16,9 @@ func disable():
 	$Sprite.modulate = Color(0.6, 0.6, 0.6)
 
 func quick_move():
-	get_tree().call_group("crafting", "craft_complete", item.item_id)
-	InventoryData.set_item_at_first_empty(item.item_id)
+	if enabled:
+		get_tree().call_group("crafting", "craft_complete", item.item_id)
+		InventoryData.set_item_at_first_empty(item.item_id)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	quick_move()

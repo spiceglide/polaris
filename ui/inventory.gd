@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	
 	for i in range(len(slots)):
 		var slot = slots[i]
-		
 		var old_item = slot.item.item_id if slot.item else ""
 		var new_item = InventoryData.get_item(i)
 		

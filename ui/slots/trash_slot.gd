@@ -6,8 +6,11 @@ func _ready() -> void:
 	clear_item()
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	var source_slot = data[1]
-	source_slot.clear_item()
-	set_item(data[0].item_id)
-	state = SlotState.INACTIVE
-	last_used = Time.get_ticks_msec()
+	var source_id = data
+	var dest_id = slot_id
+	
+	if source_id != dest_id:
+		InventoryData.move_item(source_id, dest_id)
+	
+	$ItemSprite.visible = true
+	update_timestamp()

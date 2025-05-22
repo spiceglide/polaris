@@ -84,6 +84,10 @@ func select_slot(index: int):
 func clear_slot(index: int):
 	slots[index] = ""
 
+func move_item(source: int, dest: int):
+	slots[dest] = slots[source]
+	slots[source] = ""
+
 func swap_items(source: int, dest: int):
 	var source_item = slots[source]
 	var dest_item = slots[dest]

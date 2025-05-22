@@ -82,11 +82,11 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	return drag_data["slot"]
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	var slot_id = data
+	var slot_id = data["id"]
 	return (InventoryData.get_item(slot_id) != null)
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	var source_id = data
+	var source_id = data["id"]
 	var dest_id = slot_id
 	
 	if source_id != dest_id:
@@ -105,9 +105,12 @@ func _generate_preview():
 
 func _generate_drag_data():
 	return {
-		"slot": slot_id,
+		"slot": { "id": slot_id, "item": item.item_id, },
 		"preview": _generate_preview(),
 	}
+
+func quick_move():
+	InventoryData.move_item_to_first_empty(slot_id)
 
 func _notification(type):
 	match type:
@@ -125,6 +128,6 @@ func _on_button_pressed() -> void:
 			return
 		if item:
 			if Input.is_action_pressed("quick_move"):
-				InventoryData.move_item_to_first_empty(slot_id)
+				quick_move()
 			else:
 				state = SlotState.SELECTED_CLICK

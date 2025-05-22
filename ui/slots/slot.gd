@@ -24,8 +24,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		if state == SlotState.SELECTED_CLICK:
-			_clickdrag()
+	if state == SlotState.SELECTED_CLICK:
+		_clickdrag()
 	
 func set_item(id: String):
 	item = item_scene.instantiate()
@@ -75,7 +75,8 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		return
 	
 	$ItemSprite.visible = false
-		
+	state = SlotState.SELECTED_CLICK
+	
 	var drag_data = _generate_drag_data()
 	set_drag_preview(drag_data["preview"])
 	return drag_data["slot"]
@@ -88,7 +89,9 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var source_id = data
 	var dest_id = slot_id
 	
-	InventoryData.swap_items(source_id, dest_id)
+	if source_id != dest_id:
+		InventoryData.swap_items(source_id, dest_id)
+	
 	$ItemSprite.visible = true
 	update_timestamp()
 	

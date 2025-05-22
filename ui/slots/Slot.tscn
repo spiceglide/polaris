@@ -301,6 +301,7 @@ script = ExtResource("1_ygpc3")
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_brms5")
 centered = false
+offset = Vector2(10, 10)
 script = ExtResource("20_2aomv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

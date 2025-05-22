@@ -57,7 +57,7 @@ func use():
 	if item:
 		var consumed = item.use()
 		if consumed:
-			clear_item()
+			InventoryData.clear_slot(slot_id)
 
 func update_timestamp():
 	last_used = Time.get_ticks_msec()

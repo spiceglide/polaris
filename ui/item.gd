@@ -46,7 +46,6 @@ func use() -> bool:
 					PlayerData.state = PlayerData.State.PullOut
 				PlayerData.State.Holding:
 					PlayerData.state = PlayerData.State.Awake
-	
 	return consumable
 
 func place_structure(name: String) -> bool:

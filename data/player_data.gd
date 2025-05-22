@@ -18,19 +18,7 @@ var hunger = 100
 var warmth = 100
 var sanity = 0
 
-func get_nodes_in_scene(scene:Node) -> Array:
-	var nodes = [scene]
-	for child in scene.get_children():
-		child.print_orphan_nodes()
-	return nodes
-
-var counter = 0
-
 func _process(delta: float) -> void:
-	#if counter % 100 == 0:
-	#	get_nodes_in_scene(get_tree().get_root())
-	#counter += 1
-	
 	# Dead men don't hunger
 	if state == State.Dead:
 		return

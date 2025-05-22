@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		
 		# Update outdated slots
 		if old_item != new_item:
-			print([old_item, new_item])
 			if new_item == "":
 				slot.clear_item()
 			else:

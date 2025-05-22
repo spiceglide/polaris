@@ -1,16 +1,14 @@
 extends Control
 class_name ItemSlot
 
-var item_scene = preload("res://ui/Item.tscn")
-
 enum SlotState {
 	INACTIVE,
 	SELECTED_DRAG,
 	SELECTED_CLICK,
 }
 
-@export var item: Item = null
 @export var anim: String = "type1"
+var item: Item = null
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
 var slot_id: int = -1
@@ -28,7 +26,7 @@ func _process(delta: float) -> void:
 		_clickdrag()
 	
 func set_item(id: String):
-	item = item_scene.instantiate()
+	item = $Item
 	item.set_item(id)
 	
 	$ItemSprite.animation = id

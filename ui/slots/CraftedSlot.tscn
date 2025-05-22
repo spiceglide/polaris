@@ -304,6 +304,5 @@ focus_mode = 0
 mouse_filter = 1
 
 [node name="Item" parent="." instance=ExtResource("30_d2yne")]
-script = null
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

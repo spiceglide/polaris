@@ -299,4 +299,3 @@ centered = false
 script = ExtResource("19_tbwq6")
 
 [node name="Item" parent="." instance=ExtResource("30_qsxq4")]
-script = null

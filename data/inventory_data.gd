@@ -107,8 +107,8 @@ func remove_items(items: Array):
 			return
 		
 		if to_remove.has(slots[i]):
-			slots[i] = ""
 			to_remove.erase(slots[i])
+			slots[i] = ""
 
 func set_recipes(recipes: Array):
 	self.recipe_map = {}

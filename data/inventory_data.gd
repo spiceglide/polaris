@@ -50,7 +50,11 @@ func set_item(slot: int, item: String) -> bool:
 	return false
 
 func set_item_at_first_empty(item: String) -> bool:
-	return set_item(get_first_empty_slot(), item)
+	var slot = get_first_empty_slot()
+	if slot != null:
+		return set_item(slot, item)
+	else:
+		return false
 
 func set_item_at_selected(item: String) -> bool:
 	return set_item(selected_slot, item)

@@ -4,20 +4,20 @@ extends Node2D
 
 @export var biomes: Array = ["tundra"]
 @export var creature_limit: int = 3
-@export var structure_limit: int = 1
+@export var structure_limit: int = 6
 
 var biome_data: Dictionary = {
 	"tundra": {
 		"creatures": [],
-		"structures": ["campfire"],
+		"structures": ["Campfire", "SmallFire", "Well"],
 	},
 	"forest": {
-		"creatures": ["hare"],
-		"structures": ["campfire"],
+		"creatures": ["Hare"],
+		"structures": ["Campfire", "SmallFire"],
 	},
 	"swamp": {
-		"creatures": ["frog"],
-		"structures": ["campfire"],
+		"creatures": ["Frog"],
+		"structures": ["Campfire", "SmallFire"],
 	},
 }
 
@@ -48,7 +48,7 @@ func _ready() -> void:
 	if not structures.is_empty():
 		var structure_count = randi() % structure_limit
 		for i in range(structure_count):
-			var structure = structures.pick_random().capitalize()
+			var structure = structures.pick_random()
 			var point = WorldData.get_random_point(space)
 			
 			var instance = load('res://structures/%s.tscn' % structure).instantiate()

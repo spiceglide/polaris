@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://uhnhyutpcf7j"]
+[gd_scene load_steps=6 format=3 uid="uid://uhnhyutpcf7j"]
 
 [ext_resource type="Material" uid="uid://btsphodyus8db" path="res://shaders/fade_with_height.material" id="1_a6a03"]
 [ext_resource type="Texture2D" uid="uid://dugpya46uo2y4" path="res://assets/objects/swamp/s_tree_1.png" id="1_n0bvb"]
@@ -8,11 +8,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(349, 118)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 289.691
-
 [node name="Tree" type="StaticBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_a6a03")
@@ -31,12 +30,9 @@ light_mask = 0
 position = Vector2(26.5, 59)
 shape = SubResource("RectangleShape2D_3fioj")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("4_18ynv")
 description = "\"Swampy\""
 item = null
 type = null
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_ejv3r")

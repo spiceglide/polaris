@@ -10,6 +10,8 @@ radius = 58.2151
 
 [node name="Reed" type="StaticBody2D"]
 z_index = 1
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_t34qr")
@@ -23,12 +25,12 @@ z_as_relative = false
 material = ExtResource("3_qb5cs")
 texture = ExtResource("2_t34qr")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ejv3r")
+
+[node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("4_0f2bd")
 description = "\"Sausagepodobny\""
 item = "puff"
 type = 1
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_ejv3r")

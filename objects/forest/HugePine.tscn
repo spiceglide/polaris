@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://iny1lbsa3o1g"]
+[gd_scene load_steps=7 format=3 uid="uid://iny1lbsa3o1g"]
 
 [ext_resource type="Texture2D" uid="uid://dttlt7aajvyvk" path="res://assets/objects/forest/hugepine_1.png" id="1_j8p45"]
 [ext_resource type="Material" uid="uid://btsphodyus8db" path="res://shaders/fade_with_height.material" id="1_locfo"]
@@ -9,11 +9,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(109, 36)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 120.702
-
 [node name="HugePine" type="StaticBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_locfo")
@@ -33,13 +32,10 @@ light_mask = 0
 position = Vector2(43.5, 18)
 shape = SubResource("RectangleShape2D_3fioj")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="Interaction" type="Node2D" parent="."]
 position = Vector2(0, -1)
 script = ExtResource("3_locfo")
 description = "\"This one's bigger\""
 item = "cone"
 type = 1
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_ejv3r")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6rqr8pt7ctkj"]
+[gd_scene load_steps=12 format=3 uid="uid://6rqr8pt7ctkj"]
 
 [ext_resource type="Script" uid="uid://cblg38nhe3rmm" path="res://structures/struct.gd" id="1_d1274"]
 [ext_resource type="Texture2D" uid="uid://dksbuialmegwj" path="res://assets/structures/fire_structures/campfire.png" id="2_d1274"]
@@ -49,11 +49,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(152, 22)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qlrsh"]
-radius = 120.702
-
 [node name="Campfire" type="StaticBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_d1274")
 title = "campfire"
 
@@ -67,12 +66,9 @@ light_mask = 0
 position = Vector2(-2, 11)
 shape = SubResource("RectangleShape2D_drdvg")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="Interaction" type="Node2D" parent="."]
 position = Vector2(0, -1)
 script = ExtResource("5_wr3f7")
 description = "\"It's a campfire\""
 type = 4
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_qlrsh")

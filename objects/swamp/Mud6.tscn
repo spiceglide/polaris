@@ -7,17 +7,19 @@
 radius = 54.037
 
 [node name="Mud" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 2)
 texture = ExtResource("1_34dwc")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ejv3r")
+
+[node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("2_r36x1")
 description = null
 item = null
 type = null
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_ejv3r")

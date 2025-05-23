@@ -18,14 +18,8 @@ func _ready() -> void:
 	
 	add_to_group("crafting")
 	
-	set_item(0, "frog")
-	set_item(1, "hatchet")
+	set_item(0, "hatchet")
 	set_item(4, "sleeping_bag")
-	set_item(5, "berries")
-	set_item(6, "berries")
-	set_item(7, "berries")
-	set_item(8, "berries")
-	set_item(9, "berries")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

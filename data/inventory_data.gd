@@ -43,25 +43,25 @@ func set_item(slot: int, item: String) -> bool:
 		return true
 	return false
 
-func set_item_at_first_empty(item: String) -> bool:
-	var slot = get_first_empty_slot()
+func set_item_at_first_empty(item: String, start: int = 0) -> bool:
+	var slot = get_first_empty_slot(start)
 	if slot != null:
 		return set_item(slot, item)
 	else:
 		return false
 
-func set_item_at_selected(item: String) -> bool:
+func set_item_at_selected(item: String, start: int = 0) -> bool:
 	return set_item(selected_slot, item)
 
-func move_item_to_first_empty(slot: int) -> bool:
+func move_item_to_first_empty(slot: int, start: int = 0) -> bool:
 	var item = get_item(slot)
-	if set_item_at_first_empty(item):
+	if set_item_at_first_empty(item, start):
 		clear_slot(slot)
 		return true
 	return false
 
-func get_first_empty_slot():
-	for i in range(len(slots)):
+func get_first_empty_slot(start: int = 0):
+	for i in range(start, len(slots)):
 		if not slots[i]:
 			return i
 

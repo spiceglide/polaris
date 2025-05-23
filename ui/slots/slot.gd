@@ -108,7 +108,8 @@ func _generate_drag_data():
 	}
 
 func quick_move():
-	InventoryData.move_item_to_first_empty(slot_id)
+	var start = 5 if slot_id < 5 else 0
+	InventoryData.move_item_to_first_empty(slot_id, start)
 
 func _notification(type):
 	match type:

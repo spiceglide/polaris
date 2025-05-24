@@ -17,6 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	PlayerData.position = self.position
 	is_holding = false
+	$Light.visible = false
 	
 	match PlayerData.state:
 		PlayerData.State.Dead:
@@ -26,9 +27,12 @@ func _process(delta: float) -> void:
 		PlayerData.State.PullOut:
 			pull_out()
 		PlayerData.State.Holding:
-			is_holding = InventoryData.get_selected_item() in InventoryData.holdable
+			var item = InventoryData.get_selected_item()
+			is_holding = item in InventoryData.holdable
 			if not is_holding:
 				PlayerData.state = PlayerData.State.Awake
+			elif is_holding and item in ["torch"]:
+				$Light.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

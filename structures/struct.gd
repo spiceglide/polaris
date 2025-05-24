@@ -10,7 +10,12 @@ func _ready() -> void:
 
 func change_state(new_state) -> bool:
 	current_state = new_state
-	$AnimatedSprite2D.animation = new_state
+	
+	if title == "well":
+		$Sprite/Base.animation = new_state
+		$Sprite/Top.animation = new_state
+	else:
+		$AnimatedSprite2D.animation = new_state
 	return true
 
 func interact():
@@ -45,5 +50,22 @@ func interact():
 						change_state("default")
 					"extinguished":
 						pass
+		"well":
+			if not data.has("times_used"):
+				data["times_used"] = 0
+			data["times_used"] += 1
+			
+			if data["times_used"] > 30:
+				change_state("disrepair")
+			else:
+				match current_state:
+					"default":
+						change_state("active")
+						$Sprite/Top.play()
+					"active":
+						change_state("default")
+					"disrepair":
+						pass
+
 func _on_interaction():
 	interact()

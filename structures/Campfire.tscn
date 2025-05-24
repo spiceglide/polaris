@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://6rqr8pt7ctkj"]
+[gd_scene load_steps=12 format=3 uid="uid://6rqr8pt7ctkj"]
 
 [ext_resource type="Script" uid="uid://cblg38nhe3rmm" path="res://structures/struct.gd" id="1_d1274"]
-[ext_resource type="Texture2D" uid="uid://dksbuialmegwj" path="res://assets/structures/fire_structures/campfire.png" id="2_d1274"]
-[ext_resource type="Texture2D" uid="uid://birslwg7xubri" path="res://assets/structures/fire_structures/campfire_extinguished.png" id="3_qlrsh"]
-[ext_resource type="Texture2D" uid="uid://h8n1556xtglw" path="res://assets/structures/fire_structures/campfire_ignited_1.png" id="4_smfxc"]
-[ext_resource type="Texture2D" uid="uid://dwv5k4mak7dks" path="res://assets/structures/fire_structures/campfire_ignited_2.png" id="5_cx3uo"]
+[ext_resource type="Texture2D" uid="uid://dksbuialmegwj" path="res://assets/structures/campfire/campfire.png" id="2_d1274"]
+[ext_resource type="Texture2D" uid="uid://birslwg7xubri" path="res://assets/structures/campfire/campfire_extinguished.png" id="3_qlrsh"]
+[ext_resource type="Texture2D" uid="uid://h8n1556xtglw" path="res://assets/structures/campfire/campfire_ignited_1.png" id="4_smfxc"]
+[ext_resource type="Texture2D" uid="uid://dwv5k4mak7dks" path="res://assets/structures/campfire/campfire_ignited_2.png" id="5_cx3uo"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="5_wr3f7"]
-[ext_resource type="Texture2D" uid="uid://dwirxijt8gmvl" path="res://assets/structures/fire_structures/campfire_ignited_3.png" id="6_c3hqd"]
-[ext_resource type="Texture2D" uid="uid://bxbwlold43q43" path="res://assets/structures/fire_structures/campfire_ignited_4.png" id="7_lmhhj"]
+[ext_resource type="Texture2D" uid="uid://dwirxijt8gmvl" path="res://assets/structures/campfire/campfire_ignited_3.png" id="6_c3hqd"]
+[ext_resource type="Texture2D" uid="uid://bxbwlold43q43" path="res://assets/structures/campfire/campfire_ignited_4.png" id="7_lmhhj"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="8_wr3f7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2d46r"]
@@ -49,11 +49,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(152, 22)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qlrsh"]
-radius = 120.702
-
 [node name="Campfire" type="StaticBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_d1274")
 title = "campfire"
 
@@ -67,12 +66,9 @@ light_mask = 0
 position = Vector2(-2, 11)
 shape = SubResource("RectangleShape2D_drdvg")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="Interaction" type="Node2D" parent="."]
 position = Vector2(0, -1)
 script = ExtResource("5_wr3f7")
 description = "\"It's a campfire\""
 type = 4
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_qlrsh")

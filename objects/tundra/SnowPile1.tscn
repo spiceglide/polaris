@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://di1au0y2ha18t"]
+[gd_scene load_steps=5 format=3 uid="uid://di1au0y2ha18t"]
 
 [ext_resource type="Texture2D" uid="uid://4peh5gfvkc0q" path="res://assets/objects/tundra/snowpile_1.png" id="1_hkd6j"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_hkd6j"]
@@ -7,17 +7,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(161, 21)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nv3j8"]
-radius = 121.696
-
 [node name="Snow Pile" type="StaticBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -39)
 texture = ExtResource("1_hkd6j")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+visible = false
 self_modulate = Color(0, 0, 0.501961, 0.133333)
 show_behind_parent = true
 z_as_relative = false
@@ -29,13 +29,10 @@ light_mask = 0
 position = Vector2(-7.5, 2.5)
 shape = SubResource("RectangleShape2D_3fioj")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="Interaction" type="Node2D" parent="."]
 position = Vector2(-6, 3)
 script = ExtResource("3_3ooul")
 description = "\"What! An entire log inside the snow pile!\""
 item = "log"
 type = 1
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_nv3j8")

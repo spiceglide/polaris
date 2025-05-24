@@ -40,7 +40,12 @@ func use() -> bool:
 		"sleeping_bag":
 			if WorldData.is_night():
 				PlayerData.state = PlayerData.State.Sleeping
-	
+		"hatchet":
+			match PlayerData.state:
+				PlayerData.State.Awake:
+					PlayerData.state = PlayerData.State.PullOut
+				PlayerData.State.Holding:
+					PlayerData.state = PlayerData.State.Awake
 	return consumable
 
 func place_structure(name: String) -> bool:

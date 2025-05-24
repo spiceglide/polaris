@@ -13,5 +13,15 @@
         "in": ["stick", "sap", "cloth"],
         "out": "torch",
 	"category": "fire"
+    },
+    {
+        "in": ["stick", "puff"],
+        "out": "torch",
+	"category": "fire"
+    },
+    {
+        "in": ["frog"],
+        "out": "frog_dead",
+	"category": "sanity"
     }
 ]

@@ -89,6 +89,7 @@ radius = 250.0
 [node name="Hare" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_shbht")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -104,22 +105,26 @@ position = Vector2(0, 55)
 scale = Vector2(1, 0.344)
 texture = ExtResource("13_jnhmx")
 
-[node name="Interaction" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v6e4x")
+
+[node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("14_dch7s")
 description = "\"GOTCHA!\""
 type = 2
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-shape = SubResource("CircleShape2D_v6e4x")
-
 [node name="AlertRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlertRange"]
 shape = SubResource("CircleShape2D_qw6v7")
 
 [node name="DangerRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerRange"]

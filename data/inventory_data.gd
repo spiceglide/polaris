@@ -7,7 +7,7 @@ var selected_slot: int = 0
 var item_map: Dictionary = {}
 var recipe_map: Dictionary = {}
 
-var holdable = ["torch"]
+var holdable = ["torch", "hatchet"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,10 +18,8 @@ func _ready() -> void:
 	
 	add_to_group("crafting")
 	
-	set_item(0, "sleeping_bag")
-	set_item(1, "torch")
-	set_item(2, "berries")
-	set_item(2, "berries")
+	set_item(0, "hatchet")
+	set_item(4, "sleeping_bag")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,14 +43,25 @@ func set_item(slot: int, item: String) -> bool:
 		return true
 	return false
 
-func set_item_at_first_empty(item: String) -> bool:
-	return set_item(get_first_empty_slot(), item)
-	
-func set_item_at_selected(item: String) -> bool:
+func set_item_at_first_empty(item: String, start: int = 0) -> bool:
+	var slot = get_first_empty_slot(start)
+	if slot != null:
+		return set_item(slot, item)
+	else:
+		return false
+
+func set_item_at_selected(item: String, start: int = 0) -> bool:
 	return set_item(selected_slot, item)
 
-func get_first_empty_slot():
-	for i in range(len(slots)):
+func move_item_to_first_empty(slot: int, start: int = 0) -> bool:
+	var item = get_item(slot)
+	if set_item_at_first_empty(item, start):
+		clear_slot(slot)
+		return true
+	return false
+
+func get_first_empty_slot(start: int = 0):
+	for i in range(start, len(slots)):
 		if not slots[i]:
 			return i
 
@@ -73,6 +82,17 @@ func select_slot(index: int):
 func clear_slot(index: int):
 	slots[index] = ""
 
+func move_item(source: int, dest: int):
+	slots[dest] = slots[source]
+	slots[source] = ""
+
+func swap_items(source: int, dest: int):
+	var source_item = slots[source]
+	var dest_item = slots[dest]
+	
+	slots[dest] = source_item
+	slots[source] = dest_item
+
 func remove_items(items: Array):
 	var to_remove = items.duplicate()
 	
@@ -81,8 +101,8 @@ func remove_items(items: Array):
 			return
 		
 		if to_remove.has(slots[i]):
-			slots[i] = ""
 			to_remove.erase(slots[i])
+			slots[i] = ""
 
 func set_recipes(recipes: Array):
 	self.recipe_map = {}

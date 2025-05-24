@@ -30,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_1leqr")
 }],
-"loop": true,
+"loop": false,
 "name": &"alert",
 "speed": 8.0
 }, {
@@ -95,7 +95,6 @@ script = ExtResource("1_shbht")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wsglq")
 animation = &"idle"
-frame_progress = 0.631564
 script = ExtResource("12_d3oej")
 
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]

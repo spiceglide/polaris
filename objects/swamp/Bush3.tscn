@@ -31,6 +31,4 @@ shape = SubResource("RectangleShape2D_3fioj")
 [node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("4_711qx")
 description = "\"It's a bush\""
-item = null
-type = null
 metadata/_edit_group_ = true

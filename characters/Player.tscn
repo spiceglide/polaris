@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=183 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
@@ -175,6 +175,7 @@
 [ext_resource type="Texture2D" uid="uid://dns8ixa6aftmh" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_2.png" id="145_4o2cd"]
 [ext_resource type="Texture2D" uid="uid://tjnv4d7sfcrf" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_3.png" id="146_bwvrq"]
 [ext_resource type="Texture2D" uid="uid://dtntfv7fgiior" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_4.png" id="147_gqqpo"]
+[ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="176_ycyx1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{
@@ -1329,6 +1330,13 @@ one_shot = true
 [node name="PullOutTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(12, -78)
+color = Color(1, 0.93, 0.85, 1)
+energy = 0.5
+texture = ExtResource("176_ycyx1")
+texture_scale = 0.7
 
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]

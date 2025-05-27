@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/Player.tscn" id="2_ik4lw"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="3_ik4lw"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_ssg0d"]
-[ext_resource type="Script" path="res://screens/dark.gd" id="5_4wwiy"]
+[ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="5_4wwiy"]
 
 [node name="MainGame" type="Node2D"]
 

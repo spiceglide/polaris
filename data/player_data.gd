@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	if WorldData.is_night():
 		warmth -= delta * (1/heat)
 	else:
-		warmth += delta * heat
+		warmth += delta * heat * 4
 	
 	# Hunger
 	hunger -= delta * 0.5

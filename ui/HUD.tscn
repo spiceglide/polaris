@@ -397,7 +397,7 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("8_ioimr")
 texture_progress_offset = Vector2(2, 0)
-tint_progress = Color(0.886275, 0, 0.392157, 1)
+tint_progress = Color(0.89, 0.356, 0.5963, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Health"]
 sprite_frames = SubResource("SpriteFrames_r10k7")
@@ -414,7 +414,7 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("8_ioimr")
 texture_progress_offset = Vector2(-4, 2)
-tint_progress = Color(0, 0.89, 0.8455, 1)
+tint_progress = Color(0.376, 0.94, 0.7144, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Thirst"]
 sprite_frames = SubResource("SpriteFrames_3r861")
@@ -431,7 +431,7 @@ layout_mode = 2
 value = 100.0
 texture_progress = ExtResource("8_ioimr")
 texture_progress_offset = Vector2(0, 5)
-tint_progress = Color(0.0352941, 0.0352941, 0.0352941, 1)
+tint_progress = Color(0.219608, 0.482353, 0.74902, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Sanity"]
 sprite_frames = SubResource("SpriteFrames_e2tec")
@@ -466,7 +466,7 @@ layout_mode = 2
 value = 100.0
 fill_mode = 1
 texture_progress = ExtResource("13_hnewt")
-tint_progress = Color(1, 0.517647, 0.105882, 1)
+tint_progress = Color(1, 0.68, 0.4, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsRight/Hunger"]
 sprite_frames = SubResource("SpriteFrames_0us7w")
@@ -484,7 +484,7 @@ value = 100.0
 fill_mode = 1
 texture_progress = ExtResource("13_hnewt")
 texture_progress_offset = Vector2(0, 2)
-tint_progress = Color(1, 0.752941, 0.0627451, 1)
+tint_progress = Color(1, 0.84, 0.4, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsRight/Warmth"]
 sprite_frames = SubResource("SpriteFrames_hyfem")

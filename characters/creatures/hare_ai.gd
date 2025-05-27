@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 		finish_leap()
 		
 	if state == State.Flee:
+		$AnimatedSprite2D.play()
 		if leap_time == 0:
 			start_leap()
 	
@@ -33,6 +34,7 @@ func _process(delta: float) -> void:
 		match state:
 			State.Idle:
 				$AnimatedSprite2D.animation = "idle"
+				$AnimatedSprite2D.play()
 				$Announcement.idle_chatter = []
 			State.Alert:
 				$AnimatedSprite2D.animation = "alert"
@@ -53,10 +55,10 @@ func start_leap():
 	
 	if threat_direction.x < 0:
 		leap_direction.x = 1
-		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = true
 	else:
 		leap_direction.x = -1
-		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = false
 
 	var up_down = randf()
 	if up_down < 0.33:

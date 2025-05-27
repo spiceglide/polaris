@@ -41,10 +41,10 @@ func use() -> bool:
 			if WorldData.how_far_in_day() >= 0.9:
 				PlayerData.state = PlayerData.State.Sleeping
 		"hatchet":
-			PlayerData.sanity = 100
 			match PlayerData.state:
 				PlayerData.State.Awake:
 					PlayerData.state = PlayerData.State.PullOut
+					PlayerData.sanity += 10
 				PlayerData.State.Holding:
 					PlayerData.state = PlayerData.State.Awake
 	return consumable

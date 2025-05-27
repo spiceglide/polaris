@@ -176,7 +176,7 @@
 [ext_resource type="Texture2D" uid="uid://tjnv4d7sfcrf" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_3.png" id="146_bwvrq"]
 [ext_resource type="Texture2D" uid="uid://dtntfv7fgiior" path="res://assets/characters/dora/items/hatchet/sasha_s_walk_hatchet_4.png" id="147_gqqpo"]
 [ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="176_ycyx1"]
-[ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="177_d5u3j"]
+[ext_resource type="Script" path="res://utility/light.gd" id="177_d5u3j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{

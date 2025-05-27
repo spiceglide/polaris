@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="8_kngme"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="9_tskb1"]
 [ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="10_b1l5h"]
-[ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_7juvy"]
+[ext_resource type="Script" path="res://utility/light.gd" id="11_7juvy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a7dlj"]
 animations = [{

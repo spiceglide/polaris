@@ -41,6 +41,7 @@ func use() -> bool:
 			if WorldData.is_night():
 				PlayerData.state = PlayerData.State.Sleeping
 		"hatchet":
+			PlayerData.sanity = 100
 			match PlayerData.state:
 				PlayerData.State.Awake:
 					PlayerData.state = PlayerData.State.PullOut

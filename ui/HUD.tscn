@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=76 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="2_nysna"]
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="2_pom5v"]
@@ -9,16 +9,59 @@
 [ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="5_li43i"]
 [ext_resource type="Texture2D" uid="uid://bmmxw2n56a2sa" path="res://assets/ui/bars/bar_health_a.png" id="6_tlkqj"]
 [ext_resource type="Texture2D" uid="uid://bpgyadkffh7q" path="res://assets/ui/bars/bar_health_icon_a.png" id="7_urddi"]
+[ext_resource type="Texture2D" uid="uid://k2ya5gfx1eu8" path="res://assets/ui/bars/bar_health_b.png" id="8_bg741"]
 [ext_resource type="Texture2D" uid="uid://dio7epn6273v7" path="res://assets/ui/bars/bar_fill_left.png" id="8_ioimr"]
 [ext_resource type="Texture2D" uid="uid://b0cu4q1ekplkh" path="res://assets/ui/bars/bar_insanity_a.png" id="9_cjw2x"]
 [ext_resource type="Texture2D" uid="uid://dr8ufj5wpoo2o" path="res://assets/ui/bars/bar_thirst_a.png" id="9_ioimr"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="9_n8pho"]
 [ext_resource type="Texture2D" uid="uid://clnr7xqpx6aur" path="res://assets/ui/bars/bar_insanity_icon_highest_a.png" id="10_5d7l6"]
 [ext_resource type="Texture2D" uid="uid://d110w37iddgeb" path="res://assets/ui/bars/bar_thirst_icon_a.png" id="10_cjw2x"]
+[ext_resource type="Texture2D" uid="uid://cwuyv7lmxht0c" path="res://assets/ui/bars/bar_health_icon_b.png" id="10_ivqk3"]
 [ext_resource type="Texture2D" uid="uid://c5doodosb1je6" path="res://assets/ui/bars/bar_hunger_a.png" id="11_wxjpw"]
+[ext_resource type="Texture2D" uid="uid://dxtsuphsnxdep" path="res://assets/ui/bars/bar_thirst_b.png" id="12_jpmdu"]
 [ext_resource type="Texture2D" uid="uid://wy1itefetods" path="res://assets/ui/bars/bar_hunger_icon_a.png" id="12_l08fo"]
 [ext_resource type="Texture2D" uid="uid://c52rxnyqn4mtt" path="res://assets/ui/bars/bar_fill_right.png" id="13_hnewt"]
 [ext_resource type="Texture2D" uid="uid://cpflnkbu3pdqu" path="res://assets/ui/bars/bar_temp_a.png" id="14_1il8e"]
+[ext_resource type="Texture2D" uid="uid://cqqupr2ppdgb7" path="res://assets/ui/bars/bar_thirst_icon_b.png" id="14_t6ia2"]
 [ext_resource type="Texture2D" uid="uid://b5fh56jcca0mq" path="res://assets/ui/bars/bar_temp_icon_a.png" id="15_3tkt7"]
+[ext_resource type="Texture2D" uid="uid://bvk5iwytbesit" path="res://assets/ui/bars/bar_insanity_b.png" id="16_a2l73"]
+[ext_resource type="Texture2D" uid="uid://o0krs324yyud" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-1.png" id="17_fd7sj"]
+[ext_resource type="Texture2D" uid="uid://c7jvxhw50u8tv" path="res://assets/ui/bars/bar_insanity_icon_high_a.png" id="17_umpuu"]
+[ext_resource type="Texture2D" uid="uid://cknid38r6uok4" path="res://assets/ui/bars/bar_insanity_icon_high_b.png" id="18_l6glo"]
+[ext_resource type="Texture2D" uid="uid://b2yhryq7463su" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-2.png" id="18_n8pho"]
+[ext_resource type="Texture2D" uid="uid://cuipc1a5wc2l3" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-3.png" id="19_3snwy"]
+[ext_resource type="Texture2D" uid="uid://d148t3qf7reos" path="res://assets/ui/bars/bar_insanity_icon_highest_b.png" id="20_k2mxq"]
+[ext_resource type="Texture2D" uid="uid://b7xtn8rwoahpr" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-4.png" id="20_t0vgj"]
+[ext_resource type="Texture2D" uid="uid://dhwg2myikenvb" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-5.png" id="21_7jh2i"]
+[ext_resource type="Texture2D" uid="uid://c0r344cset3lb" path="res://assets/ui/bars/bar_insanity_icon_low_a.png" id="21_gfytj"]
+[ext_resource type="Texture2D" uid="uid://wgxt6vo8kcn0" path="res://assets/ui/bars/bar_insanity_icon_low_b.png" id="22_a4ur6"]
+[ext_resource type="Texture2D" uid="uid://cfllholx21rcn" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-6.png" id="22_yu8i3"]
+[ext_resource type="Texture2D" uid="uid://c3at3t1wu7t4q" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-7.png" id="23_l5jan"]
+[ext_resource type="Texture2D" uid="uid://bvvlqyoichve3" path="res://assets/ui/bars/bar_insanity_icon_lowest_a.png" id="23_y7dna"]
+[ext_resource type="Texture2D" uid="uid://b8prfe1ck5tmp" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-8.png" id="24_5piq7"]
+[ext_resource type="Texture2D" uid="uid://hsjo3ta1uajb" path="res://assets/ui/bars/bar_insanity_icon_lowest_b.png" id="24_crxqa"]
+[ext_resource type="Texture2D" uid="uid://vogpaxfu0wuk" path="res://assets/ui/bars/insanity_fire_effects/Insanity_high-9.png" id="25_xul80"]
+[ext_resource type="Texture2D" uid="uid://cyl5hef8b064u" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-1.png" id="26_hp4mw"]
+[ext_resource type="Texture2D" uid="uid://bxijjyqx4l1je" path="res://assets/ui/bars/bar_hunger_b.png" id="27_018ua"]
+[ext_resource type="Texture2D" uid="uid://ca2ktiwgtnji1" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-2.png" id="27_ak76r"]
+[ext_resource type="Texture2D" uid="uid://do7ahe0goj7j4" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-3.png" id="28_3fvxu"]
+[ext_resource type="Texture2D" uid="uid://d3vus5axajcpo" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-4.png" id="29_6p7b1"]
+[ext_resource type="Texture2D" uid="uid://bv1c68dtfnmey" path="res://assets/ui/bars/bar_hunger_icon_b.png" id="29_bihhn"]
+[ext_resource type="Texture2D" uid="uid://k751vlaj8vfr" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-5.png" id="30_n8j5f"]
+[ext_resource type="Texture2D" uid="uid://dq686n108ec1r" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-6.png" id="31_m0ert"]
+[ext_resource type="Texture2D" uid="uid://be3ktv8cecxoy" path="res://assets/ui/bars/bar_temp_b.png" id="31_p72n6"]
+[ext_resource type="Texture2D" uid="uid://b5hkalvcybwp3" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-7.png" id="32_iuywf"]
+[ext_resource type="Texture2D" uid="uid://bckss5ii3veie" path="res://assets/ui/bars/bar_temp_icon_b.png" id="33_0mnep"]
+[ext_resource type="Texture2D" uid="uid://u5icbp3ymjmy" path="res://assets/ui/bars/insanity_fire_effects/Insanity_highest-8.png" id="33_g2cdd"]
+[ext_resource type="Texture2D" uid="uid://cfhmh2osdwb01" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-1.png" id="34_nypn7"]
+[ext_resource type="Texture2D" uid="uid://jdm0swlj3arg" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-2.png" id="35_04yxj"]
+[ext_resource type="Texture2D" uid="uid://cl0trtvddcogj" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-3.png" id="36_2on6x"]
+[ext_resource type="Texture2D" uid="uid://b0t3jn583y15j" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-4.png" id="37_rupil"]
+[ext_resource type="Texture2D" uid="uid://obgn2mrn4new" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-5.png" id="38_csbs3"]
+[ext_resource type="Texture2D" uid="uid://s66a6xyux0s3" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-6.png" id="39_pry6l"]
+[ext_resource type="Texture2D" uid="uid://brhrbjxm4feuf" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-7.png" id="40_6wjqw"]
+[ext_resource type="Texture2D" uid="uid://c2c5vi4t30q2v" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-8.png" id="41_p3xho"]
+[ext_resource type="Texture2D" uid="uid://dcjxnqpmspy5t" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-9.png" id="42_v8f2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
 shader = ExtResource("2_nysna")
@@ -33,6 +76,283 @@ shader_parameter/night_length = 0.1
 shader_parameter/twilight_length = 0.2
 shader_parameter/lut_size = 16.0
 shader_parameter/alpha = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r10k7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tlkqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bg741")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tlme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_urddi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ivqk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r861"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ioimr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jpmdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmmxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cjw2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t6ia2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2tec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_cjw2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a2l73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12i28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fd7sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_n8pho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3snwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_t0vgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7jh2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yu8i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_l5jan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5piq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xul80")
+}],
+"loop": true,
+"name": &"high",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_hp4mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ak76r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3fvxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_6p7b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_n8j5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_m0ert")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_iuywf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_g2cdd")
+}],
+"loop": true,
+"name": &"highest",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_nypn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_04yxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_2on6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rupil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_csbs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_pry6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_6wjqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_p3xho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_v8f2b")
+}],
+"loop": true,
+"name": &"low",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"lowest",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p24so"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_umpuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l6glo")
+}],
+"loop": true,
+"name": &"high",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5d7l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k2mxq")
+}],
+"loop": true,
+"name": &"highest",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_gfytj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_a4ur6")
+}],
+"loop": true,
+"name": &"low",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_y7dna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_crxqa")
+}],
+"loop": true,
+"name": &"lowest",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0us7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_wxjpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_018ua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvdxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_l08fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bihhn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hyfem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1il8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_p72n6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjqp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_3tkt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0mnep")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -74,24 +394,61 @@ side = "left"
 
 [node name="Health" type="TextureProgressBar" parent="StatsLeft"]
 layout_mode = 2
-texture_under = ExtResource("6_tlkqj")
-texture_over = ExtResource("7_urddi")
+value = 100.0
 texture_progress = ExtResource("8_ioimr")
+texture_progress_offset = Vector2(2, 0)
 tint_progress = Color(0.886275, 0, 0.392157, 1)
+
+[node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Health"]
+sprite_frames = SubResource("SpriteFrames_r10k7")
+centered = false
+script = ExtResource("9_n8pho")
+
+[node name="Icon" type="AnimatedSprite2D" parent="StatsLeft/Health"]
+sprite_frames = SubResource("SpriteFrames_3tlme")
+centered = false
+script = ExtResource("9_n8pho")
 
 [node name="Thirst" type="TextureProgressBar" parent="StatsLeft"]
 layout_mode = 2
-texture_under = ExtResource("9_ioimr")
-texture_over = ExtResource("10_cjw2x")
+value = 100.0
 texture_progress = ExtResource("8_ioimr")
+texture_progress_offset = Vector2(-4, 2)
 tint_progress = Color(0, 0.89, 0.8455, 1)
+
+[node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Thirst"]
+sprite_frames = SubResource("SpriteFrames_3r861")
+centered = false
+script = ExtResource("9_n8pho")
+
+[node name="Icon" type="AnimatedSprite2D" parent="StatsLeft/Thirst"]
+sprite_frames = SubResource("SpriteFrames_tmmxr")
+centered = false
+script = ExtResource("9_n8pho")
 
 [node name="Sanity" type="TextureProgressBar" parent="StatsLeft"]
 layout_mode = 2
-texture_under = ExtResource("9_cjw2x")
-texture_over = ExtResource("10_5d7l6")
+value = 100.0
 texture_progress = ExtResource("8_ioimr")
+texture_progress_offset = Vector2(0, 5)
 tint_progress = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Sanity"]
+sprite_frames = SubResource("SpriteFrames_e2tec")
+centered = false
+script = ExtResource("9_n8pho")
+
+[node name="Effect" type="AnimatedSprite2D" parent="StatsLeft/Sanity"]
+sprite_frames = SubResource("SpriteFrames_12i28")
+animation = &"lowest"
+centered = false
+script = ExtResource("9_n8pho")
+
+[node name="Icon" type="AnimatedSprite2D" parent="StatsLeft/Sanity"]
+sprite_frames = SubResource("SpriteFrames_p24so")
+animation = &"lowest"
+centered = false
+script = ExtResource("9_n8pho")
 
 [node name="StatsRight" type="VBoxContainer" parent="."]
 anchors_preset = 1
@@ -106,19 +463,38 @@ side = "right"
 
 [node name="Hunger" type="TextureProgressBar" parent="StatsRight"]
 layout_mode = 2
+value = 100.0
 fill_mode = 1
-texture_under = ExtResource("11_wxjpw")
-texture_over = ExtResource("12_l08fo")
 texture_progress = ExtResource("13_hnewt")
 tint_progress = Color(1, 0.517647, 0.105882, 1)
 
+[node name="Bar" type="AnimatedSprite2D" parent="StatsRight/Hunger"]
+sprite_frames = SubResource("SpriteFrames_0us7w")
+centered = false
+script = ExtResource("9_n8pho")
+
+[node name="Icon" type="AnimatedSprite2D" parent="StatsRight/Hunger"]
+sprite_frames = SubResource("SpriteFrames_jvdxf")
+centered = false
+script = ExtResource("9_n8pho")
+
 [node name="Warmth" type="TextureProgressBar" parent="StatsRight"]
 layout_mode = 2
+value = 100.0
 fill_mode = 1
-texture_under = ExtResource("14_1il8e")
-texture_over = ExtResource("15_3tkt7")
 texture_progress = ExtResource("13_hnewt")
+texture_progress_offset = Vector2(0, 2)
 tint_progress = Color(1, 0.752941, 0.0627451, 1)
+
+[node name="Bar" type="AnimatedSprite2D" parent="StatsRight/Warmth"]
+sprite_frames = SubResource("SpriteFrames_hyfem")
+centered = false
+script = ExtResource("9_n8pho")
+
+[node name="Icon" type="AnimatedSprite2D" parent="StatsRight/Warmth"]
+sprite_frames = SubResource("SpriteFrames_tjqp6")
+centered = false
+script = ExtResource("9_n8pho")
 
 [node name="Inventory" parent="." instance=ExtResource("3_f6qnu")]
 anchors_preset = 7

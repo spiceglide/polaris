@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=6 format=3 uid="uid://cmo7oc0pnrfki"]
 
 [ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="1_rwsj7"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/Player.tscn" id="2_ik4lw"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="3_ik4lw"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_ssg0d"]
+[ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="5_4wwiy"]
 
 [node name="MainGame" type="Node2D"]
 
 [node name="Game" type="Node2D" parent="."]
-y_sort_enabled = true
 
 [node name="Map" parent="Game" instance=ExtResource("1_rwsj7")]
 
@@ -19,3 +19,6 @@ position = Vector2(1213, 642)
 script = ExtResource("3_ssg0d")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ik4lw")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("5_4wwiy")

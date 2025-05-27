@@ -48,7 +48,6 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func start_leap():
-	print(last_player_pos)
 	var threat_direction = self.position.direction_to(last_player_pos)
 	leap_time = 1
 	

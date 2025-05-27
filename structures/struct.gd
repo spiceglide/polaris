@@ -31,8 +31,10 @@ func interact():
 				match current_state:
 					"default":
 						change_state("ignited")
+						$Light.visible = true
 					"ignited":
 						change_state("default")
+						$Light.visible = false
 					"extinguished":
 						pass
 		"smallfire":
@@ -46,8 +48,10 @@ func interact():
 				match current_state:
 					"default":
 						change_state("ignited")
+						$Light.visible = true
 					"ignited":
 						change_state("default")
+						$Light.visible = false
 					"extinguished":
 						pass
 		"well":
@@ -66,6 +70,6 @@ func interact():
 						change_state("default")
 					"disrepair":
 						pass
-				
+
 func _on_interaction():
 	interact()

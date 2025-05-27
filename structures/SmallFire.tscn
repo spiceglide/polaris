@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb8u5hchvmdb1"]
+[gd_scene load_steps=14 format=3 uid="uid://cb8u5hchvmdb1"]
 
 [ext_resource type="Script" uid="uid://cblg38nhe3rmm" path="res://structures/struct.gd" id="1_31153"]
 [ext_resource type="Texture2D" uid="uid://b0hvxa8wyhckd" path="res://assets/structures/smallfire/smallfire.png" id="2_31153"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cwp4p7qbx1bty" path="res://assets/structures/smallfire/smallfire_ignited_4.png" id="7_a6cfv"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="8_kngme"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="9_tskb1"]
+[ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="10_b1l5h"]
+[ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_7juvy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a7dlj"]
 animations = [{
@@ -72,3 +74,11 @@ script = ExtResource("9_tskb1")
 description = "\"It's a campfire\""
 type = 4
 metadata/_edit_group_ = true
+
+[node name="Light" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(12, -16)
+color = Color(1, 0.93, 0.85, 1)
+texture = ExtResource("10_b1l5h")
+texture_scale = 0.8
+script = ExtResource("11_7juvy")

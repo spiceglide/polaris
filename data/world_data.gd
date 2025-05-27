@@ -5,7 +5,7 @@ var grid_size = [3, 2]
 var scene_size = [DIMS, DIMS]
 var current_scene = null
 
-@export var day_length: int = 60*15
+@export var day_length: int = 60 #60*15
 var game_time: float = 0
 var current_biome: String = "tundra"
 

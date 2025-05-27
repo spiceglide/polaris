@@ -292,6 +292,7 @@ transform = Transform2D(1, 0, 0, 1, 0, 2000)
 follow_viewport_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 2850)
 anchor_mode = 0
 position_smoothing_enabled = true
 

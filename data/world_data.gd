@@ -15,6 +15,9 @@ func new_day():
 func is_night() -> bool:
 	return game_time >= day_length
 
+func how_far_in_day() -> float:
+	return game_time / day_length
+
 func get_random_point(rect: Vector2) -> Vector2:
 	var x = randi() % int(rect.x)
 	var y = randi() % int(rect.y)

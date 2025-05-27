@@ -38,14 +38,10 @@ func use() -> bool:
 				PlayerData.State.Holding:
 					PlayerData.state = PlayerData.State.Awake
 		"sleeping_bag":
-			if WorldData.is_night():
+			if WorldData.how_far_in_day() >= 0.9:
 				PlayerData.state = PlayerData.State.Sleeping
 		"hatchet":
-			if PlayerData.sanity == 0:
-				PlayerData.sanity = 100
-			else:
-				PlayerData.sanity = 0
-			
+			PlayerData.sanity = 100
 			match PlayerData.state:
 				PlayerData.State.Awake:
 					PlayerData.state = PlayerData.State.PullOut

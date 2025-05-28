@@ -6,7 +6,9 @@ extends Node2D
 var data: Dictionary = {}
 
 func _ready() -> void:
-	$Interaction.connect("interaction", _on_interaction)
+	var interact_node = self.find_child("Interaction")
+	print(interact_node)
+	interact_node.connect("interaction", _on_interaction)
 
 func change_state(new_state) -> bool:
 	current_state = new_state

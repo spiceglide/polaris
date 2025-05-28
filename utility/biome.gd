@@ -4,7 +4,7 @@ extends Node2D
 
 @export var biomes: Array = ["tundra"]
 @export var creature_limit: int = 3
-@export var structure_limit: int = 6
+@export var structure_limit: int = 18
 
 var biome_data: Dictionary = {
 	"tundra": {

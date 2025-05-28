@@ -96,6 +96,7 @@ func _input(event):
 			interactable[0].interact(self)
 
 func _on_interaction_body_entered(body: Node2D) -> void:
+	print(body)
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
 		interactable.append(interactive)

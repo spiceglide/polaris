@@ -88,13 +88,11 @@ func _on_interaction_body_exited(body: Node2D) -> void:
 		interactable.erase(interactive)
 
 func _on_sleep_timer_timeout() -> void:
-	print("timeout")
 	if WorldData.is_night():
 		WorldData.new_day()
 		PlayerData.state = PlayerData.State.Awake
 
 func _on_animation_finished() -> void:
-	print(PlayerData.state)
 	match PlayerData.state:
 		PlayerData.State.PullOut:
 			PlayerData.state = PlayerData.State.Holding

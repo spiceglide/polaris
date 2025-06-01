@@ -295,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_2kbwc")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -454,7 +454,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("53_u4if2")
 }],
-"loop": true,
+"loop": false,
 "name": &"pull",
 "speed": 8.0
 }, {
@@ -477,7 +477,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_2kbwc")
 }],
-"loop": true,
+"loop": false,
 "name": &"sleep",
 "speed": 8.0
 }, {
@@ -667,7 +667,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -741,7 +741,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("94_3ysty")
 }],
-"loop": true,
+"loop": false,
 "name": &"pull",
 "speed": 8.0
 }, {
@@ -764,7 +764,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"sleep",
 "speed": 8.0
 }, {
@@ -920,7 +920,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -960,7 +960,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("115_ns74u")
 }],
-"loop": true,
+"loop": false,
 "name": &"pull",
 "speed": 8.0
 }, {
@@ -983,7 +983,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"sleep",
 "speed": 8.0
 }, {
@@ -1328,10 +1328,6 @@ script = ExtResource("37_r4xk0")
 wait_time = 5.0
 one_shot = true
 
-[node name="PullOutTimer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
 [node name="Light" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(12, -78)
@@ -1340,7 +1336,7 @@ texture = ExtResource("176_ycyx1")
 texture_scale = 1.12
 script = ExtResource("177_d5u3j")
 
+[connection signal="animation_finished" from="Sprite/Body" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
-[connection signal="timeout" from="PullOutTimer" to="." method="_on_pull_out_timer_timeout"]

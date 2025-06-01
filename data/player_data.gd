@@ -6,6 +6,8 @@ enum State {
 	Sleeping,
 	PullOut,
 	Holding,
+	Cranking,
+	Slaughter,
 }
 
 @export var speed: int = 400

@@ -17,15 +17,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	PlayerData.position = self.position
 	is_holding = false
+	$Shadow.visible = true
 	$Light.visible = false
 	
 	match PlayerData.state:
 		PlayerData.State.Dead:
-			die()
+			$Sprite.set_direction(last_dir, "death", is_holding)
+			$Shadow.visible = false
 		PlayerData.State.Sleeping:
-			sleep()
+			$Sprite.set_direction(last_dir, "sleep", is_holding)
+			$Shadow.visible = false
 		PlayerData.State.PullOut:
-			pull_out()
+			$Sprite.set_direction(last_dir, "pull", is_holding)
 		PlayerData.State.Holding:
 			var item = InventoryData.get_selected_item()
 			is_holding = item in InventoryData.holdable
@@ -68,28 +71,6 @@ func _move() -> void:
 	else:
 		$Sprite.set_direction(last_dir, "idle", is_holding)
 
-func die():
-	$Sprite.set_state("death", false)
-	$Shadow.visible = false
-
-func sleep():
-	$Sprite.set_state("sleep", false)
-	$Shadow.visible = false
-	
-	if $SleepTimer.is_stopped():
-		$SleepTimer.start(5)
-
-func pull_out():
-	$Sprite.set_state("pull", false)
-	
-	if $PullOutTimer.is_stopped():
-		$PullOutTimer.start(0.6)
-
-func awaken():
-	PlayerData.state = PlayerData.State.Awake
-	$Sprite.set_direction(last_dir, "idle", is_holding)
-	$Shadow.visible = true
-
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if interactable:
@@ -107,11 +88,21 @@ func _on_interaction_body_exited(body: Node2D) -> void:
 		interactable.erase(interactive)
 
 func _on_sleep_timer_timeout() -> void:
+	print("timeout")
 	if WorldData.is_night():
 		WorldData.new_day()
-		awaken()
+		PlayerData.state = PlayerData.State.Awake
 
-func _on_pull_out_timer_timeout() -> void:
-	PlayerData.state = PlayerData.State.Holding
-	is_holding = true
-	last_dir = "south"
+func _on_animation_finished() -> void:
+	print(PlayerData.state)
+	match PlayerData.state:
+		PlayerData.State.PullOut:
+			PlayerData.state = PlayerData.State.Holding
+			is_holding = true
+			last_dir = "south"
+		PlayerData.State.Sleeping:
+			$Sprite.pause()
+			if $SleepTimer.is_stopped():
+				$SleepTimer.start(5)
+		PlayerData.State.Dead:
+			$Sprite.pause()

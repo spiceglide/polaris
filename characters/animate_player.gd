@@ -60,12 +60,28 @@ func set_direction(direction: String, action: String, is_holding: bool):
 			$Item.animation = "none"
 			for segment in [$Body, $Face, $Puff]:
 				segment.animation = action
+		[_, "kill_1"], [_, "kill_2"], [_, "kill_3"]:
+			var vars = action.split("_")
+			var victim = InventoryData.get_selected_item()
+			var weapon = "rock"
+			var act = vars[0]
+			var stage = int(vars[1])
+			
+			$Body.animation = "%s_%s" % [act, stage]
+			$Face.animation = "%s_%s" % [act, stage]
+			$Puff.animation = "%s_%s_%s" % [act, victim, min(2, stage)]
+			$Item.animation = "%s_%s_%s" % [weapon, act, stage]
+			
+			for segment in [$Body, $Face, $Puff, $Item]:
+				segment.offset.x = 27
+				segment.offset.y = 6
 		
 	play()
 
 func reset_flip():
 	for segment in [$Body, $Face, $Puff, $Item]:
 		segment.offset.x = 0
+		segment.offset.y = 0
 		segment.flip_h = false
 
 func play():

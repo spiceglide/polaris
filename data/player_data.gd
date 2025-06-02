@@ -7,7 +7,9 @@ enum State {
 	PullOut,
 	Holding,
 	Cranking,
-	Slaughter,
+	Kill1,
+	Kill2,
+	Kill3,
 }
 
 @export var speed: int = 400

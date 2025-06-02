@@ -47,6 +47,9 @@ func use() -> bool:
 					PlayerData.sanity += 10
 				PlayerData.State.Holding:
 					PlayerData.state = PlayerData.State.Awake
+		"frog":
+			if PlayerData.state == PlayerData.State.Awake:
+				PlayerData.state = PlayerData.State.Kill1
 	return consumable
 
 func place_structure(name: String) -> bool:

@@ -19,6 +19,7 @@ func _ready() -> void:
 	add_to_group("crafting")
 	
 	set_item(0, "hatchet")
+	set_item(1, "frog")
 	set_item(4, "sleeping_bag")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

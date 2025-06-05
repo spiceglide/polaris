@@ -48,8 +48,11 @@ func use() -> bool:
 				PlayerData.State.Holding:
 					PlayerData.state = PlayerData.State.Awake
 		"frog":
-			if PlayerData.state == PlayerData.State.Awake:
-				PlayerData.state = PlayerData.State.Kill1
+			match PlayerData.state:
+				PlayerData.State.Awake:
+					PlayerData.state = PlayerData.State.Kill1
+				PlayerData.State.Kill2:
+					PlayerData.state = PlayerData.State.Kill3
 	return consumable
 
 func place_structure(name: String) -> bool:

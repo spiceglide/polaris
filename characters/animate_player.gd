@@ -56,6 +56,10 @@ func set_direction(direction: String, action: String, is_holding: bool):
 			for segment in [$Body, $Face, $Puff]:
 				segment.animation = action
 				segment.offset.x = 70
+		[_, "crank"]:
+			for segment in [$Body, $Face, $Puff]:
+				segment.animation = action
+				segment.offset.x = -127
 		[_, "pull"]:
 			$Item.animation = "none"
 			for segment in [$Body, $Face, $Puff]:

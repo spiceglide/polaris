@@ -67,6 +67,7 @@ func interact():
 				match current_state:
 					"default":
 						change_state("active")
+						PlayerData.state = PlayerData.State.Cranking
 						$Sprite/Top.play()
 					"active":
 						change_state("default")
@@ -75,3 +76,7 @@ func interact():
 
 func _on_interaction():
 	interact()
+
+
+func _on_animation_finished() -> void:
+	PlayerData.state = PlayerData.State.Awake

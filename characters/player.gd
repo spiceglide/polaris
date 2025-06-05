@@ -45,6 +45,8 @@ func _process(delta: float) -> void:
 		PlayerData.State.Kill3:
 			$Sprite.set_direction(last_dir, "kill_3", is_holding)
 			$Shadow.visible = false
+		PlayerData.State.Cranking:
+			$Sprite.set_direction(last_dir, "crank", is_holding)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -115,10 +117,10 @@ func _on_animation_finished() -> void:
 			$Sprite.pause()
 		PlayerData.State.Kill1:
 			PlayerData.state = PlayerData.State.Kill2
-		PlayerData.State.Kill2:
-			PlayerData.state = PlayerData.State.Kill3
 		PlayerData.State.Kill3:
 			var item = InventoryData.get_selected_item()
 			InventoryData.remove_items([item])
 			InventoryData.set_item_at_selected("%s_dead" % item)
+			PlayerData.state = PlayerData.State.Awake
+		PlayerData.State.Cranking:
 			PlayerData.state = PlayerData.State.Awake

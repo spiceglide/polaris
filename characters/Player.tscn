@@ -1,37 +1,56 @@
-[gd_scene load_steps=234 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=291 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
 [ext_resource type="Texture2D" uid="uid://e85rfro3cs5t" path="res://assets/characters/dora/death/death_1.1.png" id="3_eusy6"]
+[ext_resource type="Texture2D" uid="uid://bdn3jdd0pn17b" path="res://assets/characters/dora/sasha_well_turn/well_turn_1.1.png" id="3_f7jdm"]
 [ext_resource type="Texture2D" uid="uid://ckhc3u357q5fu" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_1.1.png" id="3_hcp3g"]
+[ext_resource type="Texture2D" uid="uid://db64ujuc3wsvc" path="res://assets/characters/dora/sasha_well_turn/well_turn_2.1.png" id="4_84nti"]
 [ext_resource type="Texture2D" uid="uid://c406gg6b6h0m6" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_2.1.png" id="4_ljj44"]
 [ext_resource type="Texture2D" uid="uid://bn4v26vjdrygw" path="res://assets/characters/dora/death/death_2.1.png" id="4_xa55f"]
 [ext_resource type="Texture2D" uid="uid://0rhlfdv2vupw" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_3.1.png" id="5_ayojo"]
+[ext_resource type="Texture2D" uid="uid://b5k0c8hsg23nd" path="res://assets/characters/dora/sasha_well_turn/well_turn_3.1.png" id="5_e7ygl"]
 [ext_resource type="Texture2D" uid="uid://jc48mofpkk67" path="res://assets/characters/dora/death/death_3.1.png" id="5_ycv3e"]
 [ext_resource type="Texture2D" uid="uid://dsoh36kav3mgy" path="res://assets/characters/dora/dora_e_idle/dora_e_idle_4.1.png" id="6_eyv8s"]
+[ext_resource type="Texture2D" uid="uid://tm72fs5gfivr" path="res://assets/characters/dora/sasha_well_turn/well_turn_4.1.png" id="6_ltyq2"]
 [ext_resource type="Texture2D" uid="uid://bj67v7bcmvo1d" path="res://assets/characters/dora/death/death_4.1.png" id="6_xq7ko"]
 [ext_resource type="Texture2D" uid="uid://dho852fk7je47" path="res://assets/characters/dora/death/death_5.1.png" id="7_atxkk"]
 [ext_resource type="Texture2D" uid="uid://bmih34ilyiie5" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_1.1.png" id="7_e5ktp"]
+[ext_resource type="Texture2D" uid="uid://uipujxetd1gd" path="res://assets/characters/dora/sasha_well_turn/well_turn_5.1.png" id="7_gvmyq"]
 [ext_resource type="Texture2D" uid="uid://xyhmxjif3dnp" path="res://assets/characters/dora/death/death_6.1.png" id="8_hc01k"]
+[ext_resource type="Texture2D" uid="uid://til7uc1kk63n" path="res://assets/characters/dora/sasha_well_turn/well_turn_6.1.png" id="8_hnh68"]
 [ext_resource type="Texture2D" uid="uid://bau0phn58lejj" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_2.1.png" id="8_qqhbu"]
 [ext_resource type="Texture2D" uid="uid://b4ut3we1qdnxh" path="res://assets/characters/dora/death/death_7.1.png" id="9_60117"]
+[ext_resource type="Texture2D" uid="uid://brhq007cbfit5" path="res://assets/characters/dora/sasha_well_turn/well_turn_7.1.png" id="9_ixmvp"]
 [ext_resource type="Texture2D" uid="uid://cktf0fbgmmle1" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_3.1.png" id="9_ug1av"]
+[ext_resource type="Texture2D" uid="uid://bvjxjbjvgqmkw" path="res://assets/characters/dora/sasha_well_turn/well_turn_8.1.png" id="10_0rhvn"]
 [ext_resource type="Texture2D" uid="uid://cl0kgsbuxttqf" path="res://assets/characters/dora/dora_e_walk/dora_e_walk_4.1.png" id="10_c7ma8"]
 [ext_resource type="Texture2D" uid="uid://cclu5dq04lc7s" path="res://assets/characters/dora/death/death_8.1.png" id="10_t8v6f"]
 [ext_resource type="Texture2D" uid="uid://c2i47s13b480b" path="res://assets/characters/dora/death/death_9.1.png" id="11_65d4o"]
+[ext_resource type="Texture2D" uid="uid://b2yudohtdtrsv" path="res://assets/characters/dora/sasha_well_turn/well_turn_9.1.png" id="11_uomgw"]
+[ext_resource type="Texture2D" uid="uid://b5esj2nsx1k8b" path="res://assets/characters/dora/sasha_well_turn/well_turn_10.1.png" id="12_2eg0g"]
 [ext_resource type="Texture2D" uid="uid://453sntbawpsb" path="res://assets/characters/dora/death/death_10.1.png" id="12_08onb"]
 [ext_resource type="Texture2D" uid="uid://b8efmrd1wwn1i" path="res://assets/characters/dora/death/death_11.1.png" id="13_gts16"]
+[ext_resource type="Texture2D" uid="uid://b4alajltl30aw" path="res://assets/characters/dora/sasha_well_turn/well_turn_11.1.png" id="13_oiu31"]
 [ext_resource type="Texture2D" uid="uid://ngaaoqcn6hew" path="res://assets/characters/dora/death/death_12.png" id="14_3yrnj"]
+[ext_resource type="Texture2D" uid="uid://cbqoxsv1jadqo" path="res://assets/characters/dora/sasha_well_turn/well_turn_12.1.png" id="14_ggn53"]
 [ext_resource type="Texture2D" uid="uid://gk3xd1tswlkb" path="res://assets/characters/dora/death/death_13.png" id="15_2kbwc"]
+[ext_resource type="Texture2D" uid="uid://p7s5nba1a5yh" path="res://assets/characters/dora/sasha_well_turn/well_turn_13.1.png" id="15_xuxi4"]
+[ext_resource type="Texture2D" uid="uid://dxm348i8rtc4n" path="res://assets/characters/dora/sasha_well_turn/well_turn_14.1.png" id="16_apkd8"]
+[ext_resource type="Texture2D" uid="uid://c3fkt2eevlxs8" path="res://assets/characters/dora/sasha_well_turn/well_turn_15.1.png" id="17_iuipv"]
 [ext_resource type="Texture2D" uid="uid://ccq37u0w7nvoj" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_1.png" id="18_f34or"]
+[ext_resource type="Texture2D" uid="uid://uenmkwn4a0nk" path="res://assets/characters/dora/sasha_well_turn/well_turn_16.1.png" id="18_n8pns"]
 [ext_resource type="Texture2D" uid="uid://qhy3ar1m2viv" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_1.1.png" id="19_fplvc"]
+[ext_resource type="Texture2D" uid="uid://bykdjvbft8cea" path="res://assets/characters/dora/sasha_well_turn/well_turn_17.1.png" id="19_gr60h"]
 [ext_resource type="Texture2D" uid="uid://ybm85potniru" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_2.png" id="19_r3ggu"]
 [ext_resource type="Texture2D" uid="uid://jt6twc16qf28" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_2.1.png" id="20_2nlho"]
+[ext_resource type="Texture2D" uid="uid://c7macev7kod02" path="res://assets/characters/dora/sasha_well_turn/well_turn_18.1.png" id="20_53hpl"]
 [ext_resource type="Texture2D" uid="uid://ujvscmryh2a0" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_3.png" id="20_hks2g"]
 [ext_resource type="Texture2D" uid="uid://civ6r7qgenpka" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_1.png" id="20_jywnq"]
 [ext_resource type="Texture2D" uid="uid://b4jfks2qpxxj3" path="res://assets/characters/dora/dora_n_walk/dora_n_walk_4.png" id="21_5ncbo"]
 [ext_resource type="Texture2D" uid="uid://b30xlkfmynswd" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_3.1.png" id="21_m7k6u"]
 [ext_resource type="Texture2D" uid="uid://ct0u5c4n562qq" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_2.png" id="21_q1bql"]
+[ext_resource type="Texture2D" uid="uid://c65jr7c0c51vh" path="res://assets/characters/dora/sasha_well_turn/well_turn_19.1.png" id="21_sqi3y"]
 [ext_resource type="Texture2D" uid="uid://yb08jqa4kj75" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_3.png" id="22_846a3"]
 [ext_resource type="Texture2D" uid="uid://bgef8wqg4u3pr" path="res://assets/characters/dora/dora_s_idle/dora_s_idle_4.1.png" id="22_j0pb3"]
 [ext_resource type="Texture2D" uid="uid://b1w5xjvswilcl" path="res://assets/characters/dora/dora_e_idle_hold/sasha_e_idle_hold_4.png" id="23_5udqs"]
@@ -149,36 +168,55 @@
 [ext_resource type="Texture2D" uid="uid://le1q8tkxfgeu" path="res://assets/characters/dora/items/torch/sasha_n_idle/sasha_n_idle_torch_4.png" id="102_xqwrj"]
 [ext_resource type="Texture2D" uid="uid://c3x8lixuvds3g" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_1.2.png" id="103_gvv8p"]
 [ext_resource type="Texture2D" uid="uid://rrrfnuj0qgag" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_1.png" id="103_r5e14"]
+[ext_resource type="Texture2D" uid="uid://cu83a8qga6c07" path="res://assets/characters/dora/sasha_well_turn/well_turn_1.2.png" id="103_w26k0"]
 [ext_resource type="Texture2D" uid="uid://b14gspyaky273" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_2.2.png" id="104_gcnkf"]
 [ext_resource type="Texture2D" uid="uid://btitdcapec0qs" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_2.png" id="104_rypqp"]
+[ext_resource type="Texture2D" uid="uid://dua3b4dsn3boe" path="res://assets/characters/dora/sasha_well_turn/well_turn_2.2.png" id="104_wk8t4"]
+[ext_resource type="Texture2D" uid="uid://s2yqwgr0gadp" path="res://assets/characters/dora/sasha_well_turn/well_turn_3.2.png" id="105_g617q"]
 [ext_resource type="Texture2D" uid="uid://bgiikyb5wgx2q" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_3.2.png" id="105_tws52"]
 [ext_resource type="Texture2D" uid="uid://cxtji4lsclqcg" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_3.png" id="105_u4if2"]
+[ext_resource type="Texture2D" uid="uid://hkx185i8nq0x" path="res://assets/characters/dora/sasha_well_turn/well_turn_4.2.png" id="106_2x7hc"]
 [ext_resource type="Texture2D" uid="uid://cvb0mlvcui0et" path="res://assets/characters/dora/items/torch/sasha_n_walk/sasha_n_walk_torch_4.png" id="106_ms1cn"]
 [ext_resource type="Texture2D" uid="uid://brf1jscfc4yca" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_4.2.png" id="106_xybdd"]
 [ext_resource type="Texture2D" uid="uid://cw1iegphvn405" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_5.2.png" id="107_83gqg"]
 [ext_resource type="Texture2D" uid="uid://dgepvl7wbys3m" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_1.png" id="107_o6s7o"]
+[ext_resource type="Texture2D" uid="uid://cbjjn4rwo8tf" path="res://assets/characters/dora/sasha_well_turn/well_turn_5.2.png" id="107_wr8il"]
+[ext_resource type="Texture2D" uid="uid://bwhnvx4kc4iqb" path="res://assets/characters/dora/sasha_well_turn/well_turn_6.2.png" id="108_hd7ui"]
 [ext_resource type="Texture2D" uid="uid://d3ypp57skhdj7" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_6.2.png" id="108_ogy6x"]
 [ext_resource type="Texture2D" uid="uid://bmnd0bqq7fdhb" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_2.png" id="108_w01n0"]
 [ext_resource type="Texture2D" uid="uid://dlrm1afuhf8ja" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_7.2.png" id="109_duulh"]
+[ext_resource type="Texture2D" uid="uid://cwxqdfoeioymb" path="res://assets/characters/dora/sasha_well_turn/well_turn_7.2.png" id="109_l2yxl"]
 [ext_resource type="Texture2D" uid="uid://btt6yv0k13f66" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_3.png" id="109_np2uo"]
+[ext_resource type="Texture2D" uid="uid://dudqs5sv52hce" path="res://assets/characters/dora/sasha_well_turn/well_turn_8.2.png" id="110_0cy0c"]
 [ext_resource type="Texture2D" uid="uid://b6b6d0py2u05x" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_8.2.png" id="110_f4w4c"]
 [ext_resource type="Texture2D" uid="uid://blfnom3o02gvp" path="res://assets/characters/dora/items/torch/sasha_s_idle/sasha_s_idle_torch_4.png" id="110_oe8fn"]
 [ext_resource type="Texture2D" uid="uid://4uql0cxrki4v" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_1.3.png" id="110_p25co"]
 [ext_resource type="Texture2D" uid="uid://cq3elhbclupdi" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_1.png" id="111_3ysty"]
 [ext_resource type="Texture2D" uid="uid://bnv85cjlnosyv" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_2.3.png" id="111_j8rfb"]
+[ext_resource type="Texture2D" uid="uid://qyfpsdyql5r7" path="res://assets/characters/dora/sasha_well_turn/well_turn_9.2.png" id="111_pgg5f"]
 [ext_resource type="Texture2D" uid="uid://cf32r4vajsw7m" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_9.2.png" id="111_rwexp"]
 [ext_resource type="Texture2D" uid="uid://bolh8cb471yvx" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_3.3.png" id="112_8xst7"]
 [ext_resource type="Texture2D" uid="uid://baftklsbhxjlt" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_2.png" id="112_p25co"]
 [ext_resource type="Texture2D" uid="uid://dtf3fo0px4of3" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_10.2.png" id="112_vd5an"]
+[ext_resource type="Texture2D" uid="uid://cc81jvkxdkpt6" path="res://assets/characters/dora/sasha_well_turn/well_turn_10.2.png" id="112_w3r7v"]
 [ext_resource type="Texture2D" uid="uid://dul8fyqvbo1sq" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_3.png" id="113_j8rfb"]
 [ext_resource type="Texture2D" uid="uid://c6h7ky4cewot7" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_4.3.png" id="113_kctfg"]
+[ext_resource type="Texture2D" uid="uid://fw3e2duijrbp" path="res://assets/characters/dora/sasha_well_turn/well_turn_11.2.png" id="113_rq4ap"]
 [ext_resource type="Texture2D" uid="uid://dj74ir14enjg2" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_11.2.png" id="113_wnljj"]
 [ext_resource type="Texture2D" uid="uid://c0b76u1sog7ma" path="res://assets/characters/dora/items/torch/sasha_s_walk/sasha_s_walk_torch_4.png" id="114_8xst7"]
 [ext_resource type="Texture2D" uid="uid://cs33m1jsvoktu" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_12.2.png" id="114_dvh7x"]
+[ext_resource type="Texture2D" uid="uid://cax0k6ha6viqu" path="res://assets/characters/dora/sasha_well_turn/well_turn_12.2.png" id="114_qdyjj"]
 [ext_resource type="Texture2D" uid="uid://cb5e7mxgfmo4w" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_5.3.png" id="114_uvjbs"]
+[ext_resource type="Texture2D" uid="uid://bvy8qtkd2j00h" path="res://assets/characters/dora/sasha_well_turn/well_turn_13.2.png" id="115_5mofy"]
 [ext_resource type="Texture2D" uid="uid://cs5366muqxuj" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_13.2.png" id="115_d5nl4"]
 [ext_resource type="Texture2D" uid="uid://wih17n7j7rcf" path="res://assets/characters/dora/dora_s_pull/sasha_s_pull_6.3.png" id="115_ns74u"]
 [ext_resource type="Texture2D" uid="uid://byj4q3owtlm01" path="res://assets/characters/dora/sasha_kill_animal/kill_animal_14.2.png" id="116_7g1cc"]
+[ext_resource type="Texture2D" uid="uid://cmne40tnaplq4" path="res://assets/characters/dora/sasha_well_turn/well_turn_14.2.png" id="116_vxoli"]
+[ext_resource type="Texture2D" uid="uid://byirwk2gu1diq" path="res://assets/characters/dora/sasha_well_turn/well_turn_15.2.png" id="117_2hctc"]
+[ext_resource type="Texture2D" uid="uid://b7kusl67nwyhb" path="res://assets/characters/dora/sasha_well_turn/well_turn_16.2.png" id="118_vlf1f"]
+[ext_resource type="Texture2D" uid="uid://bc2i8p1nujkob" path="res://assets/characters/dora/sasha_well_turn/well_turn_17.2.png" id="119_tsr2k"]
+[ext_resource type="Texture2D" uid="uid://5hrsfr1kiiip" path="res://assets/characters/dora/sasha_well_turn/well_turn_18.2.png" id="120_coi6k"]
+[ext_resource type="Texture2D" uid="uid://567m7dai4kle" path="res://assets/characters/dora/sasha_well_turn/well_turn_19.2.png" id="121_br63h"]
 [ext_resource type="Texture2D" uid="uid://cvigoffi1q7ot" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_1.png" id="124_mwbkb"]
 [ext_resource type="Texture2D" uid="uid://d36lbqkhkdkfn" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_2.png" id="125_ycyx1"]
 [ext_resource type="Texture2D" uid="uid://bumxqaaef5o4b" path="res://assets/characters/dora/items/hatchet/sasha_e_idle_hatchet_3.png" id="126_d5u3j"]
@@ -212,13 +250,32 @@
 [ext_resource type="Texture2D" uid="uid://o78ldvmt2mn" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_7_hatchet.png" id="166_1b2ui"]
 [ext_resource type="Texture2D" uid="uid://sx5u1ce1gndx" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_8_hatchet.png" id="167_khc0c"]
 [ext_resource type="Texture2D" uid="uid://dg7dtrqnhnwsg" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_9_hatchet.png" id="168_f2rvc"]
+[ext_resource type="Texture2D" uid="uid://qcqiuetko7nd" path="res://assets/characters/dora/sasha_well_turn/well_turn_1.3.png" id="169_0lbyu"]
 [ext_resource type="Texture2D" uid="uid://ua4gdxaygr8s" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_10_hatchet.png" id="169_mcaxj"]
+[ext_resource type="Texture2D" uid="uid://cdbdxu6psxpte" path="res://assets/characters/dora/sasha_well_turn/well_turn_2.3.png" id="170_hwbma"]
 [ext_resource type="Texture2D" uid="uid://hx6mf0bqh8el" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_11_hatchet.png" id="170_q5yfi"]
 [ext_resource type="Texture2D" uid="uid://ckb16kwmp8hb7" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_12_hatchet.png" id="171_bfouw"]
+[ext_resource type="Texture2D" uid="uid://daj8whcnipl15" path="res://assets/characters/dora/sasha_well_turn/well_turn_3.3.png" id="171_fuqkc"]
 [ext_resource type="Texture2D" uid="uid://de6r7j3b2tojy" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_13_hatchet.png" id="172_rurbs"]
+[ext_resource type="Texture2D" uid="uid://b13fjxk7ohjpu" path="res://assets/characters/dora/sasha_well_turn/well_turn_4.3.png" id="172_vbmoy"]
+[ext_resource type="Texture2D" uid="uid://dh23ushfj5rff" path="res://assets/characters/dora/sasha_well_turn/well_turn_5.3.png" id="173_chuol"]
 [ext_resource type="Texture2D" uid="uid://bvpt0lro5vp7w" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_14_hatchet.png" id="173_pybfc"]
+[ext_resource type="Texture2D" uid="uid://b81a3bm4oqpu0" path="res://assets/characters/dora/sasha_well_turn/well_turn_6.3.png" id="174_ikc8l"]
+[ext_resource type="Texture2D" uid="uid://m3l112v7n7lr" path="res://assets/characters/dora/sasha_well_turn/well_turn_7.3.png" id="175_py8vv"]
+[ext_resource type="Texture2D" uid="uid://dfyn6seiw0k51" path="res://assets/characters/dora/sasha_well_turn/well_turn_8.3.png" id="176_h04xm"]
 [ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="176_ycyx1"]
+[ext_resource type="Texture2D" uid="uid://dyj31pnpu7a1h" path="res://assets/characters/dora/sasha_well_turn/well_turn_9.3.png" id="177_coj38"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="177_d5u3j"]
+[ext_resource type="Texture2D" uid="uid://bydkcrh84as2a" path="res://assets/characters/dora/sasha_well_turn/well_turn_10.3.png" id="178_mlups"]
+[ext_resource type="Texture2D" uid="uid://cmmnlfp65du0d" path="res://assets/characters/dora/sasha_well_turn/well_turn_11.3.png" id="179_bhhnt"]
+[ext_resource type="Texture2D" uid="uid://dkfiyvc4h42u5" path="res://assets/characters/dora/sasha_well_turn/well_turn_12.3.png" id="180_dxtdt"]
+[ext_resource type="Texture2D" uid="uid://ci32jo1qumfoj" path="res://assets/characters/dora/sasha_well_turn/well_turn_13.3.png" id="181_tvwgb"]
+[ext_resource type="Texture2D" uid="uid://drkqthnuof4mn" path="res://assets/characters/dora/sasha_well_turn/well_turn_14.3.png" id="182_qb8lr"]
+[ext_resource type="Texture2D" uid="uid://4gg3aqr8l86g" path="res://assets/characters/dora/sasha_well_turn/well_turn_15.3.png" id="183_ah1vu"]
+[ext_resource type="Texture2D" uid="uid://sje74rwgd61s" path="res://assets/characters/dora/sasha_well_turn/well_turn_16.3.png" id="184_6pijg"]
+[ext_resource type="Texture2D" uid="uid://dn6u3t2arg82x" path="res://assets/characters/dora/sasha_well_turn/well_turn_17.3.png" id="185_f31i7"]
+[ext_resource type="Texture2D" uid="uid://cuv0khr0psjrs" path="res://assets/characters/dora/sasha_well_turn/well_turn_18.3.png" id="186_dd7n5"]
+[ext_resource type="Texture2D" uid="uid://dohqhv5o7mnpm" path="res://assets/characters/dora/sasha_well_turn/well_turn_19.3.png" id="187_4fsuh"]
 [ext_resource type="Texture2D" uid="uid://cfbodl5flquki" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_7_rock.png" id="190_ofpp1"]
 [ext_resource type="Texture2D" uid="uid://ditrm3w6fn1ce" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_8_rock.png" id="191_fdsad"]
 [ext_resource type="Texture2D" uid="uid://bb4qgglkp41h3" path="res://assets/characters/dora/sasha_kill_animal/tools/kill_animal_9_rock.png" id="192_kh0sc"]
@@ -230,6 +287,68 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f7jdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_84nti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e7ygl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ltyq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gvmyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hnh68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ixmvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0rhvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uomgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2eg0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oiu31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ggn53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xuxi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_apkd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_iuipv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_n8pns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gr60h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_53hpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sqi3y")
+}],
+"loop": true,
+"name": &"crank",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_eusy6")
@@ -450,7 +569,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_1",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -485,7 +604,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_2",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -526,7 +645,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_3",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -715,6 +834,68 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("103_w26k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_wk8t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_g617q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_2x7hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_wr8il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_hd7ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_l2yxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_0cy0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_pgg5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_w3r7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_rq4ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_qdyjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_5mofy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_vxoli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_2hctc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_vlf1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_tsr2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_coi6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_br63h")
+}],
+"loop": true,
+"name": &"crank",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("40_878fo")
 }, {
 "duration": 1.0,
@@ -899,7 +1080,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_1",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -934,7 +1115,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_2",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -975,7 +1156,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_3",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1077,6 +1258,68 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_878fo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("169_0lbyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_hwbma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_fuqkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_vbmoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_chuol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_ikc8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_py8vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_h04xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_coj38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_mlups")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_bhhnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_dxtdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_tvwgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_qb8lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_ah1vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_6pijg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_f31i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_dd7n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_4fsuh")
+}],
+"loop": true,
+"name": &"crank",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("67_h1qqf")
@@ -1229,7 +1472,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_frog_1",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1240,7 +1483,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"kill_frog_2",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1275,7 +1518,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"kill_hare_1",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1286,7 +1529,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"kill_hare_2",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1455,7 +1698,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hatchet_kill_1",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1488,9 +1731,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("168_f2rvc")
 }],
-"loop": false,
+"loop": true,
 "name": &"hatchet_kill_2",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1531,7 +1774,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hatchet_kill_3",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1851,17 +2094,17 @@ script = ExtResource("2_020kj")
 [node name="Body" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_3yrnj")
-animation = &"south_idle"
+animation = &"crank"
 
 [node name="Face" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_2kbwc")
-animation = &"south_idle"
+animation = &"crank"
 
 [node name="Puff" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_878fo")
-animation = &"south_idle"
+animation = &"crank"
 
 [node name="Item" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)

@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	
 	PlayerData.position = self.position
 	is_holding = false
-	$Shadow.visible = true
 	$Light.visible = false
 	
 	match PlayerData.state:
@@ -42,12 +41,6 @@ func _process(delta: float) -> void:
 				$Light.visible = true
 		PlayerData.State.Kill1:
 			$Sprite.set_direction(last_dir, "kill_1", is_holding)
-			$Shadow.visible = false
-		PlayerData.State.Kill2:
-			$Sprite.set_direction(last_dir, "kill_2", is_holding)
-			$Shadow.visible = false
-		PlayerData.State.Kill3:
-			$Sprite.set_direction(last_dir, "kill_3", is_holding)
 			$Shadow.visible = false
 		PlayerData.State.Cranking:
 			$Sprite.set_direction(last_dir, "crank", is_holding)
@@ -121,6 +114,8 @@ func _on_animation_finished() -> void:
 			$Sprite.pause()
 		PlayerData.State.Kill1:
 			PlayerData.state = PlayerData.State.Kill2
+			$Sprite.set_direction(last_dir, "kill_2", is_holding)
+			$Shadow.visible = false
 		PlayerData.State.Kill3:
 			var item = InventoryData.get_selected_item()
 			InventoryData.remove_items([item])
@@ -128,3 +123,10 @@ func _on_animation_finished() -> void:
 			PlayerData.state = PlayerData.State.Awake
 		PlayerData.State.Cranking:
 			PlayerData.state = PlayerData.State.Awake
+
+func _on_animation_looped() -> void:
+	match PlayerData.state:
+		PlayerData.State.Kill3:
+			if $Sprite/Body.animation != "kill_3":
+				$Sprite.set_direction(last_dir, "kill_3", is_holding)
+				$Shadow.visible = false

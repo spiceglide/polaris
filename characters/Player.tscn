@@ -1,4 +1,4 @@
-[gd_scene load_steps=295 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=291 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
@@ -2081,47 +2081,6 @@ size = Vector2(62, 12)
 [sub_resource type="CircleShape2D" id="CircleShape2D_52r7i"]
 radius = 64.1327
 
-[sub_resource type="Animation" id="Animation_f7jdm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_84nti"]
-_data = {
-&"RESET": SubResource("Animation_f7jdm")
-}
-
-[sub_resource type="Animation" id="Animation_e7ygl"]
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltyq2"]
-_data = {
-&"pull": SubResource("Animation_e7ygl")
-}
-
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 5
@@ -2136,7 +2095,6 @@ script = ExtResource("2_020kj")
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_3yrnj")
 animation = &"south_idle"
-frame = 2
 
 [node name="Face" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
@@ -2206,12 +2164,6 @@ color = Color(1, 0.826667, 0.6, 1)
 texture = ExtResource("176_ycyx1")
 texture_scale = 1.12
 script = ExtResource("177_d5u3j")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_84nti"),
-&"action": SubResource("AnimationLibrary_ltyq2")
-}
 
 [connection signal="animation_finished" from="Sprite/Body" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="Sprite/Body" to="." method="_on_animation_looped"]

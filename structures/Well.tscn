@@ -1,8 +1,7 @@
-[gd_scene load_steps=66 format=3 uid="uid://cd5xn0tgjxxwf"]
+[gd_scene load_steps=65 format=3 uid="uid://cd5xn0tgjxxwf"]
 
-[ext_resource type="Script" uid="uid://cblg38nhe3rmm" path="res://structures/struct.gd" id="1_ch8tu"]
+[ext_resource type="Script" uid="uid://cbbhgslpla081" path="res://structures/well.gd" id="1_aqq60"]
 [ext_resource type="Texture2D" uid="uid://n22b242kko3e" path="res://assets/structures/well/well_base.png" id="2_aqq60"]
-[ext_resource type="Texture2D" uid="uid://c4pqpa263mq20" path="res://assets/structures/well.bak/well_base.png" id="2_rvt6g"]
 [ext_resource type="Texture2D" uid="uid://chcphe6kw8o2s" path="res://assets/structures/well/well_disrepair.png" id="3_rvt6g"]
 [ext_resource type="Texture2D" uid="uid://cxj8m73a6i7bd" path="res://assets/structures/well/well_top-1.png" id="5_rfpsi"]
 [ext_resource type="Texture2D" uid="uid://cefxqvv1175a3" path="res://assets/structures/well/well_top-2.png" id="6_uw62p"]
@@ -66,14 +65,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rvt6g")
-}],
-"loop": true,
-"name": &"active",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_aqq60")
 }],
 "loop": true,
@@ -91,6 +82,22 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vbuvr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"disrepair",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_2j3re")
+}],
+"loop": true,
+"name": &"lowered",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_rfpsi")
@@ -253,43 +260,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("58_p43l2")
+}],
+"loop": false,
+"name": &"lowering",
+"speed": 8.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("59_2j3re")
+"texture": ExtResource("5_rfpsi")
+}],
+"loop": true,
+"name": &"raised",
+"speed": 8.0
 }, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_2j3re")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("58_p43l2")
 }, {
@@ -453,23 +437,7 @@ animations = [{
 "texture": ExtResource("5_rfpsi")
 }],
 "loop": false,
-"name": &"active",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_rfpsi")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"disrepair",
+"name": &"raising",
 "speed": 8.0
 }]
 
@@ -482,8 +450,7 @@ height = 83.0
 
 [node name="Well" type="StaticBody2D"]
 z_index = 1
-script = ExtResource("1_ch8tu")
-title = "well"
+script = ExtResource("1_aqq60")
 
 [node name="Sprite" type="Node2D" parent="."]
 
@@ -495,6 +462,7 @@ script = ExtResource("8_37mvd")
 [node name="Top" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_vbuvr")
+animation = &"raised"
 script = ExtResource("8_37mvd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -2135,23 +2135,23 @@ script = ExtResource("2_020kj")
 [node name="Body" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_3yrnj")
-animation = &"kill_2"
+animation = &"south_idle"
 frame = 2
 
 [node name="Face" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_2kbwc")
-animation = &"kill_2"
+animation = &"south_idle"
 
 [node name="Puff" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_878fo")
-animation = &"kill_frog_1"
+animation = &"south_idle"
 
 [node name="Item" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_vubu8")
-animation = &"hatchet_kill_1"
+animation = &"none"
 
 [node name="Shadow" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.133333)

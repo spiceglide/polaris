@@ -78,6 +78,9 @@ func interact():
 func _on_interaction():
 	interact()
 
-
 func _on_animation_finished() -> void:
-	PlayerData.state = PlayerData.State.Awake
+	match $Sprite/Top.animation:
+		"lower":
+			PlayerData.state = PlayerData.State.Awake
+		"raise":
+			PlayerData.state = PlayerData.State.Awake

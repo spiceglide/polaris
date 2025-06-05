@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var space: Vector2 = $TileMap.get_used_rect().size * $TileMap.tile_set.tile_size
+@onready var space: Vector2 = $TileMap/base.get_used_rect().size * $TileMap/base.tile_set.tile_size
 
 @export var biomes: Array = ["tundra"]
 @export var creature_limit: int = 3

@@ -1,21 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8rw34inxvqpk"]
+[gd_scene load_steps=2 format=3 uid="uid://c8rw34inxvqpk"]
 
-[ext_resource type="Texture2D" uid="uid://bjjavasprc3hq" path="res://assets/objects/forest/f_snowpatch_4.png" id="1_d5umk"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="2_qmsik"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2y6vw"]
+load_path = "res://.godot/imported/f_snowpatch_4.png-e7d1949093fc7069c05ae99390cddc88.ctex"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 128.0
-
-[node name="SnowPatch" type="StaticBody2D"]
+[node name="SnowPatch2" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_d5umk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ejv3r")
-
-[node name="Interaction" type="Node2D" parent="."]
-script = ExtResource("2_qmsik")
-metadata/_edit_group_ = true
+texture = SubResource("CompressedTexture2D_2y6vw")

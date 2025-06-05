@@ -1,21 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://71jq6ka37r8j"]
+[gd_scene load_steps=2 format=3 uid="uid://71jq6ka37r8j"]
 
 [ext_resource type="Texture2D" uid="uid://baswdntg2kx06" path="res://assets/objects/swamp/s_mud_2.png" id="1_ktsk2"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_nyags"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 118.106
-
-[node name="Mud2" type="StaticBody2D"]
+[node name="Mud" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ktsk2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ejv3r")
-
-[node name="Interaction" type="Node2D" parent="."]
-script = ExtResource("4_nyags")
-metadata/_edit_group_ = true

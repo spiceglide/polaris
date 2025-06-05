@@ -22,6 +22,10 @@ var hunger = 100
 var warmth = 100
 var sanity = 0
 
+var flags = {
+	"position_updated": false,
+}
+
 func _process(delta: float) -> void:
 	# Dead men don't hunger
 	if state == State.Dead:
@@ -57,3 +61,7 @@ func _process(delta: float) -> void:
 	hunger = clamp(hunger, 0, 100)
 	warmth = clamp(warmth, 0, 100)
 	sanity = clamp(sanity, 0, 100)
+
+func set_position(pos: Vector2):
+	position = pos
+	flags["position_updated"] = true

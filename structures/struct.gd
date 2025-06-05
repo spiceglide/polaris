@@ -68,6 +68,7 @@ func interact():
 					"default":
 						change_state("active")
 						PlayerData.state = PlayerData.State.Cranking
+						PlayerData.set_position($Handle/CollisionShape2D.global_position)
 						$Sprite/Top.play()
 					"active":
 						change_state("default")

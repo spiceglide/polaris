@@ -495,7 +495,6 @@ script = ExtResource("8_37mvd")
 [node name="Top" type="AnimatedSprite2D" parent="Sprite"]
 position = Vector2(0, -89)
 sprite_frames = SubResource("SpriteFrames_vbuvr")
-animation = &"active"
 script = ExtResource("8_37mvd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -516,7 +515,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Handle"]
 light_mask = 0
-position = Vector2(100, 0)
+position = Vector2(120, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rvt6g")
 

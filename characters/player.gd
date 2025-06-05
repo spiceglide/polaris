@@ -15,6 +15,10 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	if PlayerData.flags["position_updated"]:
+		self.position = PlayerData.position
+		PlayerData.flags["position_updated"] = false
+	
 	PlayerData.position = self.position
 	is_holding = false
 	$Shadow.visible = true

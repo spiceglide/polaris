@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var next_scene = "res://screens/MainGame.tscn"
+var next_scene = "res://screens/DreamGame.tscn"
 
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(next_scene)

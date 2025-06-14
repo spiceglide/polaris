@@ -1,7 +1,7 @@
 extends Node2D
 
 const DIMS = 24*160
-var grid_size = [3, 3]
+var grid_size = [4, 3]
 var scene_size = [DIMS, DIMS]
 var current_scene = null
 

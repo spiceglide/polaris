@@ -3,8 +3,8 @@ extends Node2D
 @onready var space: Vector2 = $TileMap/base.get_used_rect().size * $TileMap/base.tile_set.tile_size
 
 @export var biomes: Array = ["tundra"]
-@export var creature_limit: int = 3
-@export var structure_limit: int = 18
+@export var creature_limit: int = 4
+@export var structure_limit: int = 9
 
 var biome_data: Dictionary = {
 	"tundra": {

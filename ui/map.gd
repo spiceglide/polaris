@@ -6,14 +6,17 @@ var available_scenes: Array = [
 		preload("res://scenes/tundra_river_e.tscn").instantiate(),
 		preload("res://scenes/forest_e_river_nw.tscn").instantiate(),
 		preload("res://scenes/forest_river_s.tscn").instantiate(),
+		preload("res://scenes/tundra_river_e2.tscn").instantiate(),
 	], [
 		preload("res://scenes/swamp_s_river_n.tscn").instantiate(),
 		preload("res://scenes/swamp_sw_forest_ne_river_w.tscn").instantiate(),
 		preload("res://scenes/forest_n_river_se.tscn").instantiate(),
+		preload("res://scenes/tundra_river_e2.tscn").instantiate(),
 	], [
 		preload("res://scenes/swamp_river_nw.tscn").instantiate(),
 		preload("res://scenes/swamp_w_tundra.tscn").instantiate(),
 		preload("res://scenes/tundra_river_e.tscn").instantiate(),
+		preload("res://scenes/tundra_river_e2.tscn").instantiate(),
 	],
 ]
 

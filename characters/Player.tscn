@@ -2085,6 +2085,7 @@ radius = 64.1327
 z_index = 1
 collision_layer = 5
 collision_mask = 5
+motion_mode = 1
 script = ExtResource("1_x1yu0")
 metadata/_edit_group_ = true
 

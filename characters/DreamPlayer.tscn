@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bgu31xaka4dgs"]
+[gd_scene load_steps=29 format=3 uid="uid://bgu31xaka4dgs"]
 
 [ext_resource type="Script" uid="uid://d2cehjl3qdxm" path="res://characters/dream_player.gd" id="1_rvlve"]
 [ext_resource type="Texture2D" uid="uid://b0ohee1nh56ww" path="res://assets/platformer/px_sasha_animations.png" id="2_fbxxa"]
@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="281_2bogj"]
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="282_x8mck"]
 [ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="283_ktryo"]
-[ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="284_7xmcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
 size = Vector2(12, 27)
@@ -326,12 +325,8 @@ vertical_alignment = 1
 script = ExtResource("282_x8mck")
 
 [node name="Light" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(12, -78)
-color = Color(1, 0.826667, 0.6, 1)
 texture = ExtResource("283_ktryo")
 texture_scale = 1.12
-script = ExtResource("284_7xmcr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

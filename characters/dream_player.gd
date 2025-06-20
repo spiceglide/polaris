@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 			$Sprite.flip_h = true
 	
 	PlayerData.position = self.position
-	$Light.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -138,28 +137,21 @@ func _move() -> void:
 			else:
 				t = 0
 			
-			# Not against wall
-			if not (
+			# Wall jump
+			if (  # Hugging wall
 				(Input.is_action_pressed("move_left") and get_wall_normal().x >= 0)
 				or (Input.is_action_pressed("move_right") and get_wall_normal().x < 0)
 			):
+				if Input.is_action_pressed("move_up"):
+					state = State.Midair
+					velocity.y = -jump_velocity * 3
+					$AnimationPlayer.play("wall/prejump")
+					$AnimationPlayer.queue("jump/ascent")
+			else:  # Not against wall
 				if is_on_floor():
 					state = State.Grounded
 				else:
 					state = State.Midair
-			
-			# Wall jump
-			if Input.is_action_just_pressed("move_up"):
-				state = State.Midair
-				$AnimationPlayer.play("wall/prejump")
-				
-				match get_wall_normal().x:
-					1.0:
-						velocity.x = 1
-						velocity.y = -jump_velocity * 2
-					-1.0:
-						velocity.x = -1
-						velocity.y = -jump_velocity * 2
 			
 			# Animation
 			if is_on_floor():

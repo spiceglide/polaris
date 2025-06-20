@@ -20,7 +20,7 @@ var state = State.Awake
 var health = 100
 var hunger = 100
 var warmth = 100
-var sanity = 0
+var sanity = 100  # 0
 
 var flags = {
 	"position_updated": false,
@@ -36,25 +36,26 @@ func _process(delta: float) -> void:
 		state = State.Dead
 		
 	# The night is cold
-	var heat = 1
-	match WorldData.current_biome:
-		"tundra":
-			heat *= 0.1
-		"forest":
-			heat *= 0.15
-		"swamp":
-			heat *= 0.2
-	if WorldData.is_night():
-		warmth -= delta * (1/heat)
-	else:
-		warmth += delta * heat * 4
-	
-	# Hunger
-	hunger -= delta * 0.5
-	
-	# Hungry and cold deaths
-	if (hunger <= 0) or (warmth <= 0):
-		health = 0
+	if WorldData.get_game_mode() == "overworld":
+		var heat = 1
+		match WorldData.current_biome:
+			"tundra":
+				heat *= 0.1
+			"forest":
+				heat *= 0.15
+			"swamp":
+				heat *= 0.2
+		if WorldData.is_night():
+			warmth -= delta * (1/heat)
+		else:
+			warmth += delta * heat * 4
+		
+		# Hunger
+		hunger -= delta * 0.5
+		
+		# Hungry and cold deaths
+		if (hunger <= 0) or (warmth <= 0):
+			health = 0
 	
 	# Clamp values at 0
 	health = clamp(health, 0, 100)

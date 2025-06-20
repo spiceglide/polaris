@@ -49,21 +49,27 @@ func _move() -> void:
 	match state:
 		State.Grounded:
 			# Determine direction
-			if Input.is_action_pressed("move_left"):
-				last_dir = "west"
-				velocity.x -= 1
 			if Input.is_action_pressed("move_right"):
+				if last_dir == "west":
+					$AnimationPlayer.play("slide/descent")
+					$AnimationPlayer.queue("slide/ascent")
+				$AnimationPlayer.queue("movement/walk")
+				
 				last_dir = "east"
 				velocity.x += 1
+			elif Input.is_action_pressed("move_left"):
+				if last_dir == "east":
+					$AnimationPlayer.play("slide/descent")
+					$AnimationPlayer.queue("slide/ascent")
+				$AnimationPlayer.queue("movement/walk")
+				
+				last_dir = "west"
+				velocity.x -= 1
+			else:
+				$AnimationPlayer.queue("idle/idle")
 			
 			if not is_on_floor():
 				state = State.Midair
-			
-			# Animation
-			if velocity.x != 0:
-				$AnimationPlayer.play("movement/walk")
-			else:
-				$AnimationPlayer.play("idle/idle")
 			
 			# Jumping
 			if Input.is_action_pressed("move_up"):
@@ -142,9 +148,10 @@ func _move() -> void:
 				else:
 					state = State.Midair
 			
+			# Wall jump
 			if Input.is_action_just_pressed("move_up"):
 				state = State.Midair
-				$AnimationPlayer.play("jump/ascent")
+				$AnimationPlayer.play("wall/prejump")
 				
 				match get_wall_normal().x:
 					1.0:
@@ -163,7 +170,7 @@ func _move() -> void:
 				$AnimationPlayer.play("wall/slide")
 		State.Squat:
 			#Unsquat
-			if Input.is_action_just_released("move_down"):
+			if not Input.is_action_pressed("move_down"):
 				state = State.Grounded
 				$AnimationPlayer.play("crouch/ascent")
 		State.Slide:

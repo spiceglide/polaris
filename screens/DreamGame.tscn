@@ -16,7 +16,7 @@ tile_map_data = PackedByteArray("AAALAAQAAQAEAAkAAAAKAAQAAQAEAAkAAAAJAAQAAQAEAAk
 tile_set = ExtResource("1_tlk4b")
 
 [node name="Player" parent="Game" instance=ExtResource("2_seaoo")]
-position = Vector2(85, 28)
+position = Vector2(101, 44)
 
 [node name="Foreground" type="TileMapLayer" parent="Game"]
 texture_filter = 1

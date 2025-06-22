@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 enum State {
-	Grounded,
+	Idle,
+	Walking,
 	Midair,
 	Walled,
 	Squat,
@@ -11,7 +12,7 @@ enum State {
 @export var jump_height = 600
 @export var gravity = 20
 
-var state = State.Grounded
+var state = State.Idle
 var last_dir = "east";
 var jump_velocity = sqrt(2 * jump_height * gravity)
 var jump_count = 0
@@ -46,27 +47,13 @@ func _move() -> void:
 	velocity.y += gravity
 	
 	match state:
-		State.Grounded:
+		State.Idle:
 			# Determine direction
-			if Input.is_action_pressed("move_right"):
-				if last_dir == "west":
-					$AnimationPlayer.play("slide/descent")
-					$AnimationPlayer.queue("slide/ascent")
-				$AnimationPlayer.queue("movement/walk")
-				
-				last_dir = "east"
-				velocity.x += 1
-			elif Input.is_action_pressed("move_left"):
-				if last_dir == "east":
-					$AnimationPlayer.play("slide/descent")
-					$AnimationPlayer.queue("slide/ascent")
-				$AnimationPlayer.queue("movement/walk")
-				
-				last_dir = "west"
-				velocity.x -= 1
-			else:
-				$AnimationPlayer.queue("idle/idle")
+			if Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
+				state = State.Walking
+				$AnimationPlayer.play("movement/walk")
 			
+			# Ungrounded
 			if not is_on_floor():
 				state = State.Midair
 			
@@ -76,14 +63,53 @@ func _move() -> void:
 				jump_count = 1
 				$AnimationPlayer.play("jump/ascent")
 			
-			# Slide & squat
+			# Squat
 			if Input.is_action_pressed("move_down"):
-				if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
-					state = State.Slide
+				state = State.Squat
+				$AnimationPlayer.play("crouch/descent")
+		State.Walking:
+			# Determine direction
+			if Input.is_action_pressed("move_right"):
+				if last_dir == "west":
 					$AnimationPlayer.play("slide/descent")
-				else:
-					state = State.Squat
-					$AnimationPlayer.play("crouch/descent")
+					$AnimationPlayer.queue("slide/ascent")
+					$AnimationPlayer.queue("movement/walk")
+				
+				# Wall pushing
+				if is_on_wall():
+					$AnimationPlayer.play("movement/push")
+				
+				last_dir = "east"
+				velocity.x += 1
+			elif Input.is_action_pressed("move_left"):
+				if last_dir == "east":
+					$AnimationPlayer.play("slide/descent")
+					$AnimationPlayer.queue("slide/ascent")
+					$AnimationPlayer.queue("movement/walk")
+					
+				if is_on_wall():
+					$AnimationPlayer.play("movement/push")
+				
+				last_dir = "west"
+				velocity.x -= 1
+			else:
+				state = State.Idle
+				$AnimationPlayer.play("idle/idle")
+			
+			# Ungrounded
+			if not is_on_floor():
+				state = State.Midair
+			
+			# Jumping
+			if Input.is_action_pressed("move_up"):
+				velocity.y = -jump_velocity * 3.5
+				jump_count = 1
+				$AnimationPlayer.play("jump/ascent")
+			
+			# Slide
+			if Input.is_action_pressed("move_down"):
+				state = State.Slide
+				$AnimationPlayer.play("slide/descent")
 		State.Midair:
 			# Determine direction
 			if Input.is_action_pressed("move_left"):
@@ -115,8 +141,9 @@ func _move() -> void:
 			
 			# Landing
 			if is_on_floor():
-				state = State.Grounded
+				state = State.Idle
 				$AnimationPlayer.play("jump/landing")
+				$AnimationPlayer.queue("idle/idle")
 			
 			# Diving
 			if Input.is_action_pressed("move_down"):
@@ -130,7 +157,7 @@ func _move() -> void:
 			# Check if on wall this and last frame
 			if not is_on_wall():
 				if t > 0:
-					state = State.Grounded
+					state = State.Idle
 					t = 0
 				else:
 					t += 1
@@ -149,13 +176,13 @@ func _move() -> void:
 					$AnimationPlayer.queue("jump/ascent")
 			else:  # Not against wall
 				if is_on_floor():
-					state = State.Grounded
+					state = State.Idle
 				else:
 					state = State.Midair
 			
 			# Animation
 			if is_on_floor():
-				state = State.Grounded
+				state = State.Idle
 				$AnimationPlayer.play("wall/ground")
 				$AnimationPlayer.queue("idle/idle")
 			else:
@@ -163,8 +190,9 @@ func _move() -> void:
 		State.Squat:
 			#Unsquat
 			if not Input.is_action_pressed("move_down"):
-				state = State.Grounded
+				state = State.Idle
 				$AnimationPlayer.play("crouch/ascent")
+				$AnimationPlayer.queue("idle/idle")
 		State.Slide:
 			# Set direction
 			if last_dir == "west":
@@ -191,12 +219,13 @@ func _move() -> void:
 			if is_on_wall():
 				t = 0
 				state = State.Squat
-				$AnimationPlayer.play("crouch/descent")
+				$AnimationPlayer.queue("crouch/descent")
 			
 			if not Input.is_action_pressed("move_down") and not $AnimationPlayer.is_playing():
 				t = 0
-				state = State.Grounded
+				state = State.Walking
 				$AnimationPlayer.play("slide/ascent")
+				$AnimationPlayer.queue("movement/walk")
 	
 	if velocity.length() > 0:
 		velocity.x *= PlayerData.speed * mult

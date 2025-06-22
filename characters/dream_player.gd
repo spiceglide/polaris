@@ -221,7 +221,7 @@ func _move() -> void:
 			
 			# Friction
 			t += 1
-			velocity.x *= 10.0/t
+			velocity.x *= 8.0/t
 			
 			if is_on_wall():
 				t = 0
@@ -244,9 +244,9 @@ func _move() -> void:
 			
 			# Friction
 			t += 1
-			velocity.x *= 20.0/t
+			velocity.x *= 8.0/t
 			
-			if Input.is_action_just_pressed("move_up") or Input.is_action_just_pressed("move_down") or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
+			if t > 30 and (Input.is_action_just_pressed("move_up") or Input.is_action_just_pressed("move_down") or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right")):
 				t = 0
 				state = State.Midair
 				$AnimationPlayer.queue("jump/descent")

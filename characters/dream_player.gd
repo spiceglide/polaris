@@ -7,6 +7,7 @@ enum State {
 	Walled,
 	Squat,
 	Slide,
+	Dash,
 }
 
 @export var jump_height = 600
@@ -16,6 +17,7 @@ var state = State.Idle
 var last_dir = "east";
 var jump_velocity = sqrt(2 * jump_height * gravity)
 var jump_count = 0
+var dash_count = 0
 var t = 0
 
 func _process(delta: float) -> void:
@@ -48,6 +50,9 @@ func _move() -> void:
 	
 	match state:
 		State.Idle:
+			jump_count = 0
+			dash_count = 0
+			
 			# Determine direction
 			if Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
 				state = State.Walking
@@ -145,11 +150,13 @@ func _move() -> void:
 				$AnimationPlayer.play("jump/landing")
 				$AnimationPlayer.queue("idle/idle")
 			
-			# Diving
-			if Input.is_action_pressed("move_down"):
+			# Dash
+			if Input.is_action_pressed("move_down") and dash_count < 2:
 				if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
-					state = State.Slide
-					$AnimationPlayer.play("slide/descent")
+					dash_count += 1
+					state = State.Dash
+					$AnimationPlayer.play("dash/overshoot")
+					$AnimationPlayer.queue("dash/dash")
 		State.Walled:
 			jump_count = 1
 			velocity.y /= 1.3
@@ -214,7 +221,7 @@ func _move() -> void:
 			
 			# Friction
 			t += 1
-			velocity.x /= (t*0.1)
+			velocity.x *= 10.0/t
 			
 			if is_on_wall():
 				t = 0
@@ -226,6 +233,32 @@ func _move() -> void:
 				state = State.Walking
 				$AnimationPlayer.play("slide/ascent")
 				$AnimationPlayer.queue("movement/walk")
+		State.Dash:
+			velocity.y = 0
+			
+			# Set direction
+			if last_dir == "west":
+				velocity.x -= 1
+			if last_dir == "east":
+				velocity.x += 1
+			
+			# Friction
+			t += 1
+			velocity.x *= 20.0/t
+			
+			if Input.is_action_just_pressed("move_up") or Input.is_action_just_pressed("move_down") or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
+				t = 0
+				state = State.Midair
+				$AnimationPlayer.queue("jump/descent")
+			
+			if is_on_wall():
+				t = 0
+				state = State.Walled
+				$AnimationPlayer.play("wall/slide")
+			if is_on_floor():
+				t = 0
+				state = State.Squat
+				$AnimationPlayer.play("crouch/descent")
 	
 	if velocity.length() > 0:
 		velocity.x *= PlayerData.speed * mult

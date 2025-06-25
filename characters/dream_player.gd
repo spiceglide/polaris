@@ -73,6 +73,8 @@ func _move() -> void:
 				state = State.Squat
 				$AnimationPlayer.play("crouch/descent")
 		State.Walking:
+			velocity.y = 0
+			
 			# Determine direction
 			if Input.is_action_pressed("move_right"):
 				if last_dir == "west":
@@ -103,10 +105,12 @@ func _move() -> void:
 			
 			# Ungrounded
 			if not is_on_floor():
-				state = State.Midair
+				if $CoyoteTimer.is_stopped():
+					$CoyoteTimer.start()
 			
 			# Jumping
 			if Input.is_action_pressed("move_up"):
+				state = State.Midair
 				velocity.y = -jump_velocity * 3.5
 				jump_count = 1
 				$AnimationPlayer.play("jump/ascent")
@@ -264,3 +268,6 @@ func _move() -> void:
 	if velocity.length() > 0:
 		velocity.x *= PlayerData.speed * mult
 		move_and_slide()
+
+func _on_coyote_timer_timeout() -> void:
+	state = State.Midair

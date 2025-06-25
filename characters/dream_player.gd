@@ -176,9 +176,10 @@ func _move() -> void:
 				(Input.is_action_pressed("move_left") and get_wall_normal().x >= 0)
 				or (Input.is_action_pressed("move_right") and get_wall_normal().x < 0)
 			):
-				if Input.is_action_pressed("move_up"):
+				if Input.is_action_just_pressed("move_up"):
 					state = State.Midair
 					velocity.y = -jump_velocity * 3
+					velocity
 					$AnimationPlayer.play("wall/prejump")
 					$AnimationPlayer.queue("jump/ascent")
 			else:  # Not against wall

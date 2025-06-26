@@ -20,6 +20,8 @@ var jump_count = 0
 var dash_count = 0
 var t = 0
 
+var jump_buffered = false
+
 func _process(delta: float) -> void:
 	if PlayerData.flags["position_updated"]:
 		self.position = PlayerData.position
@@ -63,7 +65,7 @@ func _move() -> void:
 				state = State.Midair
 			
 			# Jumping
-			if Input.is_action_pressed("move_up"):
+			if Input.is_action_just_pressed("move_up") or jump_buffered:
 				velocity.y = -jump_velocity * 3.5
 				jump_count = 1
 				$AnimationPlayer.play("jump/ascent")
@@ -109,7 +111,7 @@ func _move() -> void:
 					$CoyoteTimer.start()
 			
 			# Jumping
-			if Input.is_action_pressed("move_up"):
+			if Input.is_action_just_pressed("move_up") or jump_buffered:
 				state = State.Midair
 				velocity.y = -jump_velocity * 3.5
 				jump_count = 1
@@ -130,9 +132,13 @@ func _move() -> void:
 			
 			# Double jump
 			if Input.is_action_just_pressed("move_up") and jump_count < 2:
-				velocity.y = -jump_velocity * 3
-				jump_count += 1
-				$AnimationPlayer.play("jump/ascent")
+				if jump_count < 2:
+					velocity.y = -jump_velocity * 3
+					jump_count += 1
+					$AnimationPlayer.play("jump/ascent")
+				else:  # Jump buffering
+					jump_buffered = true
+					$JumpBufferTimer.start()
 			
 			# Jump terminate
 			if velocity.y <= 0 and Input.is_action_just_released("move_up"):  # jump terminate
@@ -141,6 +147,11 @@ func _move() -> void:
 			# Falling
 			if velocity.y > 0:
 				$AnimationPlayer.play("jump/descent")
+			
+			# Jump buffering
+			if Input.is_action_just_pressed("move_up"):
+				jump_buffered = true
+				$JumpBufferTimer.start()
 			
 			# Wall check
 			if is_on_wall_only() and velocity.y >= 0 and (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")):
@@ -271,3 +282,7 @@ func _on_wall_jump_timer_timeout() -> void:
 	else:
 		state = State.Midair
 		$AnimationPlayer.queue("jump/descent")
+
+
+func _on_jump_buffer_timer_timeout() -> void:
+	jump_buffered = false

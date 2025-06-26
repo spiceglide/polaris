@@ -80,6 +80,7 @@ func _move() -> void:
 			# Determine direction
 			if Input.is_action_pressed("move_right"):
 				if last_dir == "west":
+					t = 6
 					$AnimationPlayer.play("slide/descent")
 					$AnimationPlayer.queue("slide/ascent")
 					$AnimationPlayer.queue("movement/walk")
@@ -90,8 +91,14 @@ func _move() -> void:
 				
 				last_dir = "east"
 				velocity.x += 1
+				
+				# Turning momentum
+				if t > 0:
+					velocity.x -= 2.0 - (1 / t)
+					t -= 1
 			elif Input.is_action_pressed("move_left"):
 				if last_dir == "east":
+					t = 6
 					$AnimationPlayer.play("slide/descent")
 					$AnimationPlayer.queue("slide/ascent")
 					$AnimationPlayer.queue("movement/walk")
@@ -101,6 +108,11 @@ func _move() -> void:
 				
 				last_dir = "west"
 				velocity.x -= 1
+				
+				# Turning momentum
+				if t > 0:
+					velocity.x += 2.0 - (1 / t)
+					t -= 1
 			else:
 				state = State.Idle
 				$AnimationPlayer.play("idle/idle")
@@ -167,11 +179,10 @@ func _move() -> void:
 			
 			# Dash
 			if Input.is_action_pressed("move_down") and dash_count < 2:
-				if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
-					dash_count += 1
-					state = State.Dash
-					$AnimationPlayer.play("dash/overshoot")
-					$AnimationPlayer.queue("dash/dash")
+				dash_count += 1
+				state = State.Dash
+				$AnimationPlayer.play("dash/overshoot")
+				$AnimationPlayer.queue("dash/dash")
 		State.Walled:
 			velocity.y /= 1.3
 			
@@ -214,6 +225,10 @@ func _move() -> void:
 			if last_dir == "east":
 				velocity.x += 1
 			
+			# Slide timer
+			if $DashTimer.is_stopped():
+				$DashTimer.start(0.4)
+			
 			# Change direction
 			if Input.is_action_just_pressed("move_left") and last_dir == "east":
 				t = 0
@@ -234,14 +249,12 @@ func _move() -> void:
 				t = 0
 				state = State.Squat
 				$AnimationPlayer.queue("crouch/descent")
-			
-			if not Input.is_action_pressed("move_down") and not $AnimationPlayer.is_playing():
-				t = 0
-				state = State.Walking
-				$AnimationPlayer.play("slide/ascent")
-				$AnimationPlayer.queue("movement/walk")
 		State.Dash:
 			velocity.y = 0
+			
+			# Dash timer
+			if $DashTimer.is_stopped():
+				$DashTimer.start(0.7)
 			
 			# Set direction
 			if last_dir == "west":
@@ -252,11 +265,6 @@ func _move() -> void:
 			# Friction
 			t += 1
 			velocity.x *= 8.0/t
-			
-			if t > 30 and (Input.is_action_just_pressed("move_up") or Input.is_action_just_pressed("move_down") or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right")):
-				t = 0
-				state = State.Midair
-				$AnimationPlayer.queue("jump/descent")
 			
 			if is_on_wall():
 				t = 0
@@ -286,3 +294,16 @@ func _on_wall_jump_timer_timeout() -> void:
 
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffered = false
+
+
+func _on_dash_timer_timeout() -> void:
+	match state:
+		State.Dash:
+			t = 0
+			state = State.Midair
+			$AnimationPlayer.queue("jump/descent")
+		State.Slide:
+			t = 0
+			state = State.Walking
+			$AnimationPlayer.play("slide/ascent")
+			$AnimationPlayer.queue("movement/walk")

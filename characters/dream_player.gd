@@ -162,43 +162,34 @@ func _move() -> void:
 					$AnimationPlayer.play("dash/overshoot")
 					$AnimationPlayer.queue("dash/dash")
 		State.Walled:
-			jump_count = 1
 			velocity.y /= 1.3
 			
-			# Check if on wall this and last frame
-			if not is_on_wall():
-				if t > 0:
-					state = State.Idle
-					t = 0
-				else:
-					t += 1
-			else:
-				t = 0
+			var is_hugging_wall = (Input.is_action_pressed("move_left") and get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and get_wall_normal().x < 0)
+			var is_opposing_wall = (Input.is_action_pressed("move_left") and not get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and not get_wall_normal().x < 0)
 			
 			# Wall jump
-			if (  # Hugging wall
-				(Input.is_action_pressed("move_left") and get_wall_normal().x >= 0)
-				or (Input.is_action_pressed("move_right") and get_wall_normal().x < 0)
-			):
-				if Input.is_action_just_pressed("move_up"):
-					state = State.Midair
-					velocity.y = -jump_velocity * 3
-					velocity
-					$AnimationPlayer.play("wall/prejump")
-					$AnimationPlayer.queue("jump/ascent")
-			else:  # Not against wall
-				if is_on_floor():
-					state = State.Idle
-				else:
-					state = State.Midair
+			if Input.is_action_pressed("move_up") and is_opposing_wall:
+				state = State.Midair
+				velocity.y = -jump_velocity * 2.5
+				velocity
+				$AnimationPlayer.play("wall/prejump")
+				$AnimationPlayer.queue("jump/ascent")
+			
+			# Release wall delay
+			if not is_hugging_wall:
+				if $WallJumpTimer.is_stopped():
+					$WallJumpTimer.start()
+			elif not is_on_wall():
+				if $WallJumpTimer.is_stopped():
+					$WallJumpTimer.start(0.02)
+			else:
+				$WallJumpTimer.stop()
 			
 			# Animation
 			if is_on_floor():
 				state = State.Idle
 				$AnimationPlayer.play("wall/ground")
 				$AnimationPlayer.queue("idle/idle")
-			else:
-				$AnimationPlayer.play("wall/slide")
 		State.Squat:
 			#Unsquat
 			if not Input.is_action_pressed("move_down"):
@@ -271,3 +262,12 @@ func _move() -> void:
 
 func _on_coyote_timer_timeout() -> void:
 	state = State.Midair
+
+
+func _on_wall_jump_timer_timeout() -> void:
+	if is_on_floor():
+		state = State.Idle
+		$AnimationPlayer.queue("movement/push")
+	else:
+		state = State.Midair
+		$AnimationPlayer.queue("jump/descent")

@@ -126,6 +126,7 @@ use_item={
 2d_physics/layer_1="Objects"
 2d_physics/layer_2="Interaction"
 2d_physics/layer_3="Logic"
+2d_physics/layer_4="Damage"
 
 [shader_globals]
 

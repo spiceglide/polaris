@@ -9,9 +9,11 @@ enum State {
 	Squat,
 	Slide,
 	Dash,
+	Hurt,
+	Dead,
 }
 
-@export var jump_height = 600
+@export var jump_height = 19 * 32
 @export var gravity = 20
 
 var state = State.Idle
@@ -21,6 +23,7 @@ var jump_velocity = sqrt(2 * jump_height * gravity)
 var jump_count = 0
 var dash_count = 0
 var running_time = 0
+var checkpoint = Vector2.ZERO
 var t = 0
 
 var jump_buffered = false
@@ -58,6 +61,7 @@ func _move(delta: float) -> void:
 			dash_count = 0
 			running_time = 0
 			last_wall_normal = 0
+			checkpoint = self.position
 			
 			# Determine direction
 			if Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
@@ -322,6 +326,20 @@ func _move(delta: float) -> void:
 				t = 0
 				state = State.Squat
 				$AnimationPlayer.play("crouch/descent")
+		State.Hurt:
+			velocity = Vector2.ZERO
+			
+			if $DamageTimer.is_stopped():
+				PlayerData.health -= 20
+				$AnimationPlayer.play("crouch/descent")
+				$DamageTimer.start()
+			
+			if PlayerData.health <= 0:
+				state = State.Dead
+				$DamageTimer.stop()
+				$Sprite.self_modulate = Color(0.3, 0.3, 0.3)
+		State.Dead:
+			pass
 	
 	if velocity.length() > 0:
 		velocity.x *= PlayerData.speed * mult
@@ -330,7 +348,6 @@ func _move(delta: float) -> void:
 func _on_coyote_timer_timeout() -> void:
 	state = State.Midair
 
-
 func _on_wall_jump_timer_timeout() -> void:
 	if is_on_floor():
 		state = State.Idle
@@ -338,7 +355,6 @@ func _on_wall_jump_timer_timeout() -> void:
 	else:
 		state = State.Midair
 		$AnimationPlayer.queue("jump/descent")
-
 
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffered = false
@@ -358,3 +374,15 @@ func _on_dash_timer_timeout() -> void:
 func _on_stop_moving_timer_timeout() -> void:
 	state = State.Idle
 	$AnimationPlayer.play("idle/idle")
+
+func _on_damage_timer_timeout() -> void:
+	self.position = checkpoint
+	state = State.Idle
+	$AnimationPlayer.play("crouch/descent")
+	$AnimationPlayer.queue("crouch/ascent")
+	$AnimationPlayer.queue("idle/idle")
+
+func _on_damage_hitbox_body_entered(body: Node2D) -> void:
+	print(body)
+	if state != State.Hurt:
+		state = State.Hurt

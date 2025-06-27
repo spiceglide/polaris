@@ -753,6 +753,14 @@ metadata/_edit_group_ = true
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_52r7i")
 
+[node name="DamageHitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageHitbox"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_jmgsg")
+
 [node name="Announcement" type="Label" parent="."]
 z_index = 2
 anchors_preset = 5
@@ -806,10 +814,15 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]
+[connection signal="body_entered" from="DamageHitbox" to="." method="_on_damage_hitbox_body_entered"]
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
 [connection signal="timeout" from="WallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
 [connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="StopMovingTimer" to="." method="_on_stop_moving_timer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

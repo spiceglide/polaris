@@ -3,6 +3,7 @@ extends CharacterBody2D
 enum State {
 	Idle,
 	Walking,
+	Pushing,
 	Midair,
 	Walled,
 	Squat,
@@ -86,7 +87,8 @@ func _move() -> void:
 					$AnimationPlayer.queue("movement/walk")
 				
 				# Wall pushing
-				if is_on_wall():
+				if is_on_wall()and get_wall_normal().x < 0:
+					state = State.Pushing
 					$AnimationPlayer.play("movement/push")
 				
 				last_dir = "east"
@@ -103,7 +105,7 @@ func _move() -> void:
 					$AnimationPlayer.queue("slide/ascent")
 					$AnimationPlayer.queue("movement/walk")
 					
-				if is_on_wall():
+				if is_on_wall() and get_wall_normal().x >= 0:
 					$AnimationPlayer.play("movement/push")
 				
 				last_dir = "west"
@@ -133,6 +135,27 @@ func _move() -> void:
 			if Input.is_action_pressed("move_down"):
 				state = State.Slide
 				$AnimationPlayer.play("slide/descent")
+		State.Pushing:
+			velocity.y = 0
+			
+			var is_hugging_wall = (Input.is_action_pressed("move_left") and get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and get_wall_normal().x < 0)
+			var is_opposing_wall = (Input.is_action_pressed("move_left") and not get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and not get_wall_normal().x < 0)
+			
+			# Stop pushing
+			if not is_hugging_wall:
+				if is_opposing_wall:
+					state = State.Walking
+					$AnimationPlayer.play("movement/walk")
+				else:
+					state = State.Idle
+					$AnimationPlayer.play("idle/idle")
+				
+			# Jumping
+			if Input.is_action_just_pressed("move_up"):
+				state = State.Midair
+				velocity.y = -jump_velocity * 3.5
+				jump_count = 1
+				$AnimationPlayer.play("jump/ascent")
 		State.Midair:
 			# Determine direction
 			if Input.is_action_pressed("move_left"):

@@ -219,7 +219,7 @@ func _move(delta: float) -> void:
 				$AnimationPlayer.queue("idle/idle")
 			
 			# Dash
-			if Input.is_action_pressed("move_down") and dash_count < 2:
+			if Input.is_action_pressed("interact") and dash_count < 2:
 				dash_count += 1
 				state = State.Dash
 				$AnimationPlayer.play("dash/overshoot")

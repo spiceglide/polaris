@@ -53,6 +53,7 @@ func _move() -> void:
 	
 	match state:
 		State.Idle:
+			last_dir = "idle"
 			jump_count = 0
 			dash_count = 0
 			
@@ -81,13 +82,11 @@ func _move() -> void:
 			# Determine direction
 			if Input.is_action_pressed("move_right"):
 				if last_dir == "west":
-					t = 6
+					t = 20
 					$AnimationPlayer.play("slide/descent")
-					$AnimationPlayer.queue("slide/ascent")
-					$AnimationPlayer.queue("movement/walk")
 				
 				# Wall pushing
-				if is_on_wall()and get_wall_normal().x < 0:
+				if is_on_wall() and get_wall_normal().x < 0:
 					state = State.Pushing
 					$AnimationPlayer.play("movement/push")
 				
@@ -95,29 +94,40 @@ func _move() -> void:
 				velocity.x += 1
 				
 				# Turning momentum
-				if t > 0:
-					velocity.x -= 2.0 - (1 / t)
+				if t > 1:
+					velocity.x -= 2.0 - (1.0 / (t-1))
 					t -= 1
+				elif t == 1:
+					t -= 1
+					$AnimationPlayer.play("slide/ascent")
+					$AnimationPlayer.queue("movement/walk")
+				
+				$StopMovingTimer.stop()
 			elif Input.is_action_pressed("move_left"):
 				if last_dir == "east":
-					t = 6
+					t = 20
 					$AnimationPlayer.play("slide/descent")
-					$AnimationPlayer.queue("slide/ascent")
-					$AnimationPlayer.queue("movement/walk")
 					
 				if is_on_wall() and get_wall_normal().x >= 0:
+					state = State.Pushing
 					$AnimationPlayer.play("movement/push")
 				
 				last_dir = "west"
 				velocity.x -= 1
 				
 				# Turning momentum
-				if t > 0:
-					velocity.x += 2.0 - (1 / t)
+				if t > 1:
+					velocity.x += 2.0 - (1.0 / (t-1))
 					t -= 1
+				elif t == 1:
+					t -= 1
+					$AnimationPlayer.play("slide/ascent")
+					$AnimationPlayer.queue("movement/walk")
+				
+				$StopMovingTimer.stop()
 			else:
-				state = State.Idle
-				$AnimationPlayer.play("idle/idle")
+				if $StopMovingTimer.is_stopped():
+					$StopMovingTimer.start()
 			
 			# Ungrounded
 			if not is_on_floor():
@@ -139,7 +149,7 @@ func _move() -> void:
 			velocity.y = 0
 			
 			var is_hugging_wall = (Input.is_action_pressed("move_left") and get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and get_wall_normal().x < 0)
-			var is_opposing_wall = (Input.is_action_pressed("move_left") and not get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and not get_wall_normal().x < 0)
+			var is_opposing_wall = not is_hugging_wall and ((Input.is_action_pressed("move_left") and not get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and not get_wall_normal().x < 0))
 			
 			# Stop pushing
 			if not is_hugging_wall:
@@ -318,7 +328,6 @@ func _on_wall_jump_timer_timeout() -> void:
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffered = false
 
-
 func _on_dash_timer_timeout() -> void:
 	match state:
 		State.Dash:
@@ -330,3 +339,7 @@ func _on_dash_timer_timeout() -> void:
 			state = State.Walking
 			$AnimationPlayer.play("slide/ascent")
 			$AnimationPlayer.queue("movement/walk")
+
+func _on_stop_moving_timer_timeout() -> void:
+	state = State.Idle
+	$AnimationPlayer.play("idle/idle")

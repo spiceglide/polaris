@@ -57,7 +57,7 @@ func _move() -> void:
 			last_dir = "idle"
 			jump_count = 0
 			dash_count = 0
-			running_time /= 2
+			running_time = 0
 			
 			# Determine direction
 			if Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
@@ -83,10 +83,11 @@ func _move() -> void:
 			
 			# Determine direction
 			if Input.is_action_pressed("move_right"):
-				if last_dir == "west" and running_time > 30:
+				if last_dir == "west":
+					if running_time > 30:
+						t = 20
+						$AnimationPlayer.play("slide/descent")
 					running_time = 0
-					t = 20
-					$AnimationPlayer.play("slide/descent")
 				
 				# Wall pushing
 				if is_on_wall() and get_wall_normal().x < 0:
@@ -107,10 +108,11 @@ func _move() -> void:
 				
 				$StopMovingTimer.stop()
 			elif Input.is_action_pressed("move_left"):
-				if last_dir == "east" and running_time > 30:
+				if last_dir == "east":
+					if running_time > 30:
+						t = 20
+						$AnimationPlayer.play("slide/descent")
 					running_time = 0
-					t = 20
-					$AnimationPlayer.play("slide/descent")
 					
 				if is_on_wall() and get_wall_normal().x >= 0:
 					state = State.Pushing

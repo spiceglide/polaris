@@ -16,6 +16,7 @@ enum State {
 
 var state = State.Idle
 var last_dir = "east";
+var last_wall_normal = 0
 var jump_velocity = sqrt(2 * jump_height * gravity)
 var jump_count = 0
 var dash_count = 0
@@ -39,10 +40,9 @@ func _process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if PlayerData.state in [PlayerData.State.Awake, PlayerData.State.Holding]:
-		_move()
+	_move(delta)
 
-func _move() -> void:
+func _move(delta: float) -> void:
 	# Speed multiplier
 	var mult = 0.5
 	if Input.is_action_pressed("run"):
@@ -54,10 +54,10 @@ func _move() -> void:
 	
 	match state:
 		State.Idle:
-			last_dir = "idle"
 			jump_count = 0
 			dash_count = 0
 			running_time = 0
+			last_wall_normal = 0
 			
 			# Determine direction
 			if Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
@@ -79,12 +79,12 @@ func _move() -> void:
 				$AnimationPlayer.play("crouch/descent")
 		State.Walking:
 			velocity.y = 0
-			running_time += 1
+			running_time += delta
 			
 			# Determine direction
 			if Input.is_action_pressed("move_right"):
 				if last_dir == "west":
-					if running_time > 30:
+					if running_time > 0.5:
 						t = 20
 						$AnimationPlayer.play("slide/descent")
 					running_time = 0
@@ -109,7 +109,7 @@ func _move() -> void:
 				$StopMovingTimer.stop()
 			elif Input.is_action_pressed("move_left"):
 				if last_dir == "east":
-					if running_time > 30:
+					if running_time > 0.5:
 						t = 20
 						$AnimationPlayer.play("slide/descent")
 					running_time = 0
@@ -173,7 +173,7 @@ func _move() -> void:
 				jump_count = 1
 				$AnimationPlayer.play("jump/ascent")
 		State.Midair:
-			running_time += 1
+			running_time += delta
 			
 			# Determine direction
 			if Input.is_action_pressed("move_left"):
@@ -232,10 +232,11 @@ func _move() -> void:
 			var is_opposing_wall = (Input.is_action_pressed("move_left") and not get_wall_normal().x >= 0) or (Input.is_action_pressed("move_right") and not get_wall_normal().x < 0)
 			
 			# Wall jump
-			if Input.is_action_pressed("move_up") and is_opposing_wall:
+			if Input.is_action_pressed("move_up") and is_opposing_wall and (get_wall_normal().x != last_wall_normal):
+				last_wall_normal = get_wall_normal().x
+				
 				state = State.Midair
 				velocity.y = -jump_velocity * 2.5
-				velocity
 				$AnimationPlayer.play("wall/prejump")
 				$AnimationPlayer.queue("jump/ascent")
 			
@@ -263,7 +264,7 @@ func _move() -> void:
 				$AnimationPlayer.play("crouch/ascent")
 				$AnimationPlayer.queue("idle/idle")
 		State.Slide:
-			running_time += 1
+			running_time += delta
 			
 			# Set direction
 			if last_dir == "west":
@@ -301,7 +302,7 @@ func _move() -> void:
 			
 			# Dash timer
 			if $DashTimer.is_stopped():
-				$DashTimer.start(0.7)
+				$DashTimer.start(0.4)
 			
 			# Set direction
 			if last_dir == "west":
@@ -311,7 +312,7 @@ func _move() -> void:
 			
 			# Friction
 			t += 1
-			velocity.x *= 8.0/t
+			velocity.x *= 11.0/t
 			
 			if is_on_wall():
 				t = 0

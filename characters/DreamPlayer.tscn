@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="282_x8mck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
-size = Vector2(12, 26)
+size = Vector2(12, 25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52r7i"]
 radius = 12.0
@@ -740,7 +740,7 @@ zoom = Vector2(2, 2)
 script = ExtResource("280_2l6y1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_jmgsg")
 
 [node name="Interaction" type="Area2D" parent="."]

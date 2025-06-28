@@ -65,8 +65,7 @@ func _move(delta: float) -> void:
 			
 			# Determine direction
 			if Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
-				state = State.Walking
-				$AnimationPlayer.play("movement/walk")
+				walk()
 			
 			# Ungrounded
 			if not is_on_floor():
@@ -74,13 +73,12 @@ func _move(delta: float) -> void:
 			
 			# Jumping
 			if Input.is_action_just_pressed("move_up") or jump_buffered:
-				velocity.y = -jump_velocity * 3.5
-				$AnimationPlayer.play("jump/ascent")
+				jump()
 			
 			# Squat
 			if Input.is_action_pressed("move_down"):
-				state = State.Squat
-				$AnimationPlayer.play("crouch/descent")
+				squat()
+			
 		State.Walking:
 			velocity.y = 0
 			running_time += delta
@@ -146,14 +144,12 @@ func _move(delta: float) -> void:
 			
 			# Jumping
 			if Input.is_action_just_pressed("move_up") or jump_buffered:
-				state = State.Midair
-				velocity.y = -jump_velocity * 3.5
-				$AnimationPlayer.play("jump/ascent")
+				jump()
 			
 			# Slide
 			if Input.is_action_pressed("move_down"):
-				state = State.Slide
-				$AnimationPlayer.play("slide/descent")
+				slide()
+			
 		State.Pushing:
 			velocity.y = 0
 			running_time = 0
@@ -164,18 +160,13 @@ func _move(delta: float) -> void:
 			# Stop pushing
 			if not is_hugging_wall:
 				if is_opposing_wall:
-					state = State.Walking
-					$AnimationPlayer.play("movement/walk")
+					walk()
 				else:
-					state = State.Idle
-					$AnimationPlayer.play("idle/idle")
+					idle()
 				
 			# Jumping
 			if Input.is_action_just_pressed("move_up"):
-				state = State.Midair
-				velocity.y = -jump_velocity * 3.5
-				jump_count = 1
-				$AnimationPlayer.play("jump/ascent")
+				jump()
 		State.Midair:
 			running_time += delta
 			
@@ -190,9 +181,8 @@ func _move(delta: float) -> void:
 			# Double jump
 			if Input.is_action_just_pressed("move_up"):
 				if jump_count < 1:
-					velocity.y = -jump_velocity * 3
+					jump()
 					jump_count += 1
-					$AnimationPlayer.play("jump/ascent")
 				else:  # Jump buffering
 					jump_buffered = true
 					$JumpBufferTimer.start()
@@ -203,7 +193,7 @@ func _move(delta: float) -> void:
 			
 			# Falling
 			if velocity.y > 0:
-				$AnimationPlayer.play("jump/descent")
+				fall()
 			
 			# Jump buffering
 			if Input.is_action_just_pressed("move_up"):
@@ -218,16 +208,12 @@ func _move(delta: float) -> void:
 			
 			# Landing
 			if is_on_floor():
-				state = State.Idle
-				$AnimationPlayer.play("jump/landing")
-				$AnimationPlayer.queue("idle/idle")
+				land()
 			
 			# Dash
 			if Input.is_action_pressed("interact") and dash_count < 2:
 				dash_count += 1
-				state = State.Dash
-				$AnimationPlayer.play("dash/overshoot")
-				$AnimationPlayer.queue("dash/dash")
+				dash()
 		State.Walled:
 			velocity.y /= 1.3
 			running_time = 0
@@ -238,11 +224,7 @@ func _move(delta: float) -> void:
 			# Wall jump
 			if Input.is_action_pressed("move_up") and is_opposing_wall and (get_wall_normal().x != last_wall_normal):
 				last_wall_normal = get_wall_normal().x
-				
-				state = State.Midair
-				velocity.y = -jump_velocity * 2.5
-				$AnimationPlayer.play("wall/prejump")
-				$AnimationPlayer.queue("jump/ascent")
+				wall_jump()
 			
 			# Release wall delay
 			if not is_hugging_wall:
@@ -256,17 +238,15 @@ func _move(delta: float) -> void:
 			
 			# Animation
 			if is_on_floor():
-				state = State.Idle
 				$AnimationPlayer.play("wall/ground")
-				$AnimationPlayer.queue("idle/idle")
+				idle()
 		State.Squat:
 			running_time = 0
 			
 			#Unsquat
 			if not Input.is_action_pressed("move_down"):
-				state = State.Idle
 				$AnimationPlayer.play("crouch/ascent")
-				$AnimationPlayer.queue("idle/idle")
+				idle()
 		State.Slide:
 			running_time += delta
 			
@@ -298,8 +278,7 @@ func _move(delta: float) -> void:
 			
 			if is_on_wall():
 				t = 0
-				state = State.Squat
-				$AnimationPlayer.queue("crouch/descent")
+				squat()
 		State.Dash:
 			velocity.y = 0
 			running_time = 0
@@ -324,8 +303,7 @@ func _move(delta: float) -> void:
 				$AnimationPlayer.play("wall/slide")
 			if is_on_floor():
 				t = 0
-				state = State.Squat
-				$AnimationPlayer.play("crouch/descent")
+				squat()
 		State.Hurt:
 			velocity = Vector2.ZERO
 			
@@ -335,9 +313,7 @@ func _move(delta: float) -> void:
 				$DamageTimer.start()
 			
 			if PlayerData.health <= 0:
-				state = State.Dead
-				$DamageTimer.stop()
-				$Sprite.self_modulate = Color(0.3, 0.3, 0.3)
+				die()
 		State.Dead:
 			pass
 	
@@ -345,16 +321,70 @@ func _move(delta: float) -> void:
 		velocity.x *= PlayerData.speed * mult
 		move_and_slide()
 
+func walk() -> void:
+	state = State.Walking
+	$AnimationPlayer.play("movement/walk")
+
+func jump() -> void:
+	state = State.Midair
+	velocity.y = -jump_velocity * 3.5
+	$AnimationPlayer.play("jump/ascent")
+
+func idle() -> void:
+	state = State.Idle
+	$AnimationPlayer.queue("idle/idle")
+
+func fall() -> void:
+	state = State.Midair
+	$AnimationPlayer.play("jump/descent")
+
+func squat() -> void:
+	state = State.Squat
+	$AnimationPlayer.play("crouch/descent")
+
+func unsquat() -> void:
+	state = State.Idle
+	$AnimationPlayer.play("crouch/ascent")
+	$AnimationPlayer.queue("idle/idle")
+
+func slide() -> void:
+	state = State.Slide
+	$AnimationPlayer.play("slide/descent")
+
+func land() -> void:
+	state = State.Idle
+	$AnimationPlayer.play("jump/landing")
+	$AnimationPlayer.queue("idle/idle")
+
+func dash() -> void:
+	state = State.Dash
+	$AnimationPlayer.play("dash/overshoot")
+	$AnimationPlayer.queue("dash/dash")
+
+func wall_jump() -> void:
+	state = State.Midair
+	velocity.y = -jump_velocity * 2.5
+	$AnimationPlayer.play("wall/prejump")
+	$AnimationPlayer.queue("jump/ascent")
+
+func push() -> void:
+	state = State.Pushing
+	$AnimationPlayer.play("movement/push")
+
+func die() -> void:
+	state = State.Dead
+	$DamageTimer.stop()
+	$Sprite.self_modulate = Color(0.3, 0.3, 0.3)
+
 func _on_coyote_timer_timeout() -> void:
 	state = State.Midair
 
 func _on_wall_jump_timer_timeout() -> void:
 	if is_on_floor():
-		state = State.Idle
 		$AnimationPlayer.queue("movement/push")
+		idle()
 	else:
-		state = State.Midair
-		$AnimationPlayer.queue("jump/descent")
+		fall()
 
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffered = false
@@ -363,13 +393,11 @@ func _on_dash_timer_timeout() -> void:
 	match state:
 		State.Dash:
 			t = 0
-			state = State.Midair
-			$AnimationPlayer.queue("jump/descent")
+			fall()
 		State.Slide:
 			t = 0
-			state = State.Walking
 			$AnimationPlayer.play("slide/ascent")
-			$AnimationPlayer.queue("movement/walk")
+			walk()
 
 func _on_stop_moving_timer_timeout() -> void:
 	state = State.Idle
@@ -383,6 +411,5 @@ func _on_damage_timer_timeout() -> void:
 	$AnimationPlayer.queue("idle/idle")
 
 func _on_damage_hitbox_body_entered(body: Node2D) -> void:
-	print(body)
 	if state != State.Hurt:
 		state = State.Hurt

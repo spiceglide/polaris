@@ -35,7 +35,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godot-vim-56c360eee7fa84ff67bff5df815a7ed8383bd354/addons/godot-vim/plugin.cfg")
 
 [global_group]
 

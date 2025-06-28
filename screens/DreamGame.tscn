@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bycxlgbpcyt1m"]
+[gd_scene load_steps=7 format=3 uid="uid://bycxlgbpcyt1m"]
 
 [ext_resource type="Texture2D" uid="uid://bhfn004nbcwd1" path="res://assets/platformer/bg_cave_1.png" id="1_seaoo"]
-[ext_resource type="PackedScene" uid="uid://bgu31xaka4dgs" path="res://characters/DreamPlayer.tscn" id="2_seaoo"]
+[ext_resource type="PackedScene" uid="uid://bgu31xaka4dgs" path="res://characters/platformer/DreamPlayer.tscn" id="2_seaoo"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_lhuhs"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="4_6u62f"]
+[ext_resource type="PackedScene" uid="uid://c8niqyb6vwb2d" path="res://characters/platformer/Enemy.tscn" id="4_seaoo"]
 [ext_resource type="PackedScene" uid="uid://d17rvmuj7asis" path="res://scenes/dream/blue_cave.tscn" id="5_tlk4b"]
 
 [node name="DreamGame" type="Node2D"]
@@ -34,6 +35,9 @@ position = Vector2(-500, -500)
 
 [node name="Player" parent="Game" instance=ExtResource("2_seaoo")]
 position = Vector2(1623, 2522)
+
+[node name="Enemy" parent="Game" instance=ExtResource("4_seaoo")]
+position = Vector2(1552, 2716)
 
 [node name="Time" type="Node2D" parent="."]
 script = ExtResource("3_lhuhs")

@@ -93,8 +93,7 @@ func _move(delta: float) -> void:
 				
 				# Wall pushing
 				if is_on_wall() and get_wall_normal().x < 0:
-					state = State.Pushing
-					$AnimationPlayer.play("movement/push")
+					push()
 				
 				last_dir = "east"
 				velocity.x += 1
@@ -116,9 +115,9 @@ func _move(delta: float) -> void:
 						$AnimationPlayer.play("slide/descent")
 					running_time = 0
 					
+				# Wall pushing
 				if is_on_wall() and get_wall_normal().x >= 0:
-					state = State.Pushing
-					$AnimationPlayer.play("movement/push")
+					push()
 				
 				last_dir = "west"
 				velocity.x -= 1
@@ -163,6 +162,7 @@ func _move(delta: float) -> void:
 					walk()
 				else:
 					idle()
+					$AnimationPlayer.play("idle/idle")
 				
 			# Jumping
 			if Input.is_action_just_pressed("move_up"):

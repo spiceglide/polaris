@@ -14,7 +14,7 @@ position = Vector2(500, 500)
 
 [node name="Background" type="Parallax2D" parent="Game"]
 scroll_scale = Vector2(0.2, 0.1)
-repeat_size = Vector2(672, 352)
+repeat_size = Vector2(556, 319)
 repeat_times = 8
 
 [node name="TextureRect" type="TextureRect" parent="Game/Background"]

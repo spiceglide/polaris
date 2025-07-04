@@ -13,7 +13,7 @@ enum State {
 	Dead,
 }
 
-@export var jump_height = 18 * 32
+@export var jump_height = 13 * 32
 @export var gravity = 20
 
 var state = State.Idle

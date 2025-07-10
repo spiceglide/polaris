@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://d17rvmuj7asis"]
+[gd_scene load_steps=9 format=4 uid="uid://d17rvmuj7asis"]
 
 [ext_resource type="PackedScene" uid="uid://c3ngrdp4ci36c" path="res://characters/platformer/Door.tscn" id="2_f0blw"]
+[ext_resource type="PackedScene" uid="uid://sja2cpb863sk" path="res://characters/platformer/Coin.tscn" id="3_jch0p"]
+[ext_resource type="PackedScene" uid="uid://dsonc2x8d6p66" path="res://characters/platformer/Key.tscn" id="4_0xuwq"]
 [ext_resource type="Texture2D" uid="uid://dhtrxsduugrtn" path="res://assets/platformer/working/px_frost_cave_base.png" id="px_frost_cave_base"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -251,3 +253,18 @@ destination = Vector2(624, 1646)
 [node name="Door2" parent="." instance=ExtResource("2_f0blw")]
 position = Vector2(624, 1646)
 destination = Vector2(1102, 3246)
+
+[node name="Coin" parent="." instance=ExtResource("3_jch0p")]
+position = Vector2(1776, 3128)
+
+[node name="Coin2" parent="." instance=ExtResource("3_jch0p")]
+position = Vector2(1809, 3128)
+
+[node name="Coin3" parent="." instance=ExtResource("3_jch0p")]
+position = Vector2(1840, 3128)
+
+[node name="Coin4" parent="." instance=ExtResource("3_jch0p")]
+position = Vector2(1744, 3127)
+
+[node name="Key" parent="." instance=ExtResource("4_0xuwq")]
+position = Vector2(2480, 3195)

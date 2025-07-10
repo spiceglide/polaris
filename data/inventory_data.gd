@@ -7,6 +7,8 @@ var selected_slot: int = 0
 var item_map: Dictionary = {}
 var recipe_map: Dictionary = {}
 
+var collectables: Dictionary = {}
+
 var holdable = ["torch", "hatchet"]
 
 # Called when the node enters the scene tree for the first time.

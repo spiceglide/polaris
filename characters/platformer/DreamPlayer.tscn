@@ -1,10 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://bgu31xaka4dgs"]
+[gd_scene load_steps=33 format=3 uid="uid://bgu31xaka4dgs"]
 
 [ext_resource type="Script" uid="uid://d2cehjl3qdxm" path="res://characters/platformer/dream_player.gd" id="1_rvlve"]
 [ext_resource type="Texture2D" uid="uid://b0ohee1nh56ww" path="res://assets/platformer/px_dasha_animations.png" id="2_fbxxa"]
 [ext_resource type="Texture2D" uid="uid://c3d0n1ph1jahi" path="res://assets/platformer/darkness_pixelated.png" id="6_0i8xf"]
 [ext_resource type="Script" uid="uid://b0c5fxmvlyjg7" path="res://characters/platformer/following.gd" id="7_t0nbd"]
-[ext_resource type="Texture2D" uid="uid://mgx066ykrg57" path="res://assets/platformer/key.png" id="8_t0nbd"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player_camera.gd" id="280_2l6y1"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="281_2bogj"]
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="282_x8mck"]
@@ -811,21 +810,6 @@ one_shot = true
 z_index = -1
 texture_filter = 1
 script = ExtResource("7_t0nbd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Following"]
-top_level = true
-position = Vector2(-50, -50)
-texture = ExtResource("8_t0nbd")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Following"]
-top_level = true
-position = Vector2(-100, -100)
-texture = ExtResource("8_t0nbd")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Following"]
-top_level = true
-position = Vector2(-150, -150)
-texture = ExtResource("8_t0nbd")
 
 [connection signal="body_entered" from="DamageHitbox" to="." method="_on_damage_hitbox_body_entered"]
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

@@ -268,3 +268,15 @@ position = Vector2(1744, 3127)
 
 [node name="Key" parent="." instance=ExtResource("4_0xuwq")]
 position = Vector2(2480, 3195)
+
+[node name="Key2" parent="." instance=ExtResource("4_0xuwq")]
+position = Vector2(2544, 3117)
+
+[node name="Key3" parent="." instance=ExtResource("4_0xuwq")]
+position = Vector2(2545, 2991)
+
+[node name="Key4" parent="." instance=ExtResource("4_0xuwq")]
+position = Vector2(2543, 2862)
+
+[node name="Key5" parent="." instance=ExtResource("4_0xuwq")]
+position = Vector2(2544, 2735)

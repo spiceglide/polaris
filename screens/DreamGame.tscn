@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d17rvmuj7asis" path="res://scenes/dream/blue_cave.tscn" id="5_tlk4b"]
 
 [node name="DreamGame" type="Node2D"]
+texture_filter = 1
 
 [node name="Game" type="Node2D" parent="."]
 position = Vector2(500, 500)
@@ -27,6 +28,7 @@ offset_right = 336.0
 offset_bottom = 352.0
 grow_horizontal = 2
 texture = ExtResource("1_seaoo")
+stretch_mode = 1
 
 [node name="blue_cave" parent="Game" instance=ExtResource("5_tlk4b")]
 z_index = 1

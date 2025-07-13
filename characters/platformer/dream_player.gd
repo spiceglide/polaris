@@ -307,6 +307,10 @@ func _move(delta: float) -> void:
 		State.Hurt:
 			velocity = Vector2.ZERO
 			
+			# Lose money
+			if InventoryData.collectables.has("coins") and InventoryData.collectables["coins"] > 0:
+				InventoryData.collectables["coins"] -= 1
+			
 			if $DamageTimer.is_stopped():
 				PlayerData.health -= 20
 				$AnimationPlayer.play("crouch/descent")

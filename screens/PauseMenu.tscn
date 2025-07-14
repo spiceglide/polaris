@@ -49,7 +49,7 @@ layout_mode = 2
 theme = ExtResource("2_d7xn7")
 theme_override_fonts/font = ExtResource("3_owydt")
 theme_override_font_sizes/font_size = 128
-text = "Paused"
+text = "MENU_PAUSED"
 
 [node name="Menu" type="MarginContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -73,21 +73,21 @@ theme_override_constants/separation = 24
 layout_mode = 2
 theme = ExtResource("2_d7xn7")
 theme_type_variation = &"FlatButton"
-text = "Resume"
+text = "MENU_RESUME"
 
 [node name="Options" type="Button" parent="PauseMenu/Menu/VBoxContainer"]
 layout_mode = 2
 focus_next = NodePath("../Quit")
 theme = ExtResource("2_d7xn7")
 theme_type_variation = &"FlatButton"
-text = "Options"
+text = "MENU_OPTIONS"
 
 [node name="Quit" type="Button" parent="PauseMenu/Menu/VBoxContainer"]
 layout_mode = 2
 focus_previous = NodePath("../Options")
 theme = ExtResource("2_d7xn7")
 theme_type_variation = &"FlatButton"
-text = "Quit"
+text = "MENU_QUIT"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("4_d7xn7")]
 offset = Vector2(2500, 0)

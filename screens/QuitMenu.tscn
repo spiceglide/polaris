@@ -38,7 +38,7 @@ theme_override_constants/separation = 64
 [node name="Label" type="Label" parent="Dialog"]
 layout_mode = 2
 theme = ExtResource("1_ti0rq")
-text = "Are you certain?"
+text = "MENU_LEAVE_CONFIRM"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Dialog"]
 layout_mode = 2
@@ -51,7 +51,7 @@ focus_next = NodePath("../No")
 focus_previous = NodePath("../No")
 theme = ExtResource("1_ti0rq")
 theme_type_variation = &"FlatButton"
-text = "Yes"
+text = "MENU_YES"
 
 [node name="No" type="Button" parent="Dialog/HBoxContainer"]
 layout_mode = 2
@@ -59,7 +59,7 @@ focus_next = NodePath("../Yes")
 focus_previous = NodePath("../Yes")
 theme = ExtResource("1_ti0rq")
 theme_type_variation = &"FlatButton"
-text = "No"
+text = "MENU_NO"
 
 [connection signal="pressed" from="Dialog/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Dialog/HBoxContainer/No" to="." method="_on_no_pressed"]

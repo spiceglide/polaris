@@ -163,12 +163,13 @@ grow_horizontal = 2
 theme_override_constants/margin_top = 80
 
 [node name="Label" type="Label" parent="MainMenu/Title"]
+auto_translate_mode = 1
 layout_mode = 2
 theme = ExtResource("1_r2nfi")
 theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("2_tder3")
 theme_override_font_sizes/font_size = 128
-text = "Krai Lesa"
+text = "MENU_TITLE"
 
 [node name="Menu" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 6
@@ -192,7 +193,7 @@ layout_mode = 2
 focus_next = NodePath("../NewGame")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "Continue"
+text = "MENU_CONTINUE"
 
 [node name="Background" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Continue"]
 show_behind_parent = true
@@ -216,7 +217,7 @@ focus_next = NodePath("../Options")
 focus_previous = NodePath("../Continue")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "New Game"
+text = "MENU_NEWGAME"
 
 [node name="Background2" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/NewGame"]
 show_behind_parent = true
@@ -240,7 +241,7 @@ focus_next = NodePath("../Quit")
 focus_previous = NodePath("../NewGame")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "Options"
+text = "MENU_OPTIONS"
 
 [node name="Background4" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Options"]
 show_behind_parent = true
@@ -263,7 +264,7 @@ layout_mode = 2
 focus_previous = NodePath("../Options")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "Leave"
+text = "MENU_LEAVE"
 
 [node name="Background3" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Quit"]
 show_behind_parent = true

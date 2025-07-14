@@ -22,7 +22,7 @@ layout_mode = 2
 theme = ExtResource("1_n5rk8")
 theme_override_fonts/font = ExtResource("2_q28yu")
 theme_override_font_sizes/font_size = 128
-text = "Options"
+text = "MENU_OPTIONS"
 
 [node name="Background" type="ColorRect" parent="Title"]
 show_behind_parent = true
@@ -78,8 +78,7 @@ layout_mode = 2
 focus_previous = NodePath("../MenuButton4")
 theme = ExtResource("1_n5rk8")
 theme_type_variation = &"FlatButton"
-text = "Back
-"
+text = "MENU_BACK"
 
 [node name="Background" type="ColorRect" parent="Menu"]
 show_behind_parent = true

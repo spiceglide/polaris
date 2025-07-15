@@ -88,7 +88,7 @@ func _on_danger_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		self.state = State.Flee
 		last_player_pos = body.position
-		$Announcement.announce("!!")
+		$Announcement.announce(tr("ENEMY_HARE_FLEE_1"))
 
 func _on_danger_range_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

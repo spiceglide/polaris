@@ -11,15 +11,11 @@ var item_map: Dictionary
 func _ready() -> void:
 	add_to_group("items")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func set_item(id: String):
 	var data = InventoryData.item_map[id]
 	item_id = id
-	title = data["name"]
-	description = data["description"]
+	title = tr("ITEM_%s_NAME" % (item_id.to_upper().replace("_", "")))
+	description = tr("ITEM_%s_DESCRIPTION" % (item_id.to_upper().replace("_", "")))
 	consumable = data["consumable"]
 
 func use() -> bool:

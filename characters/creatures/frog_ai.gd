@@ -33,10 +33,10 @@ func _process(delta: float) -> void:
 		match state:
 			State.Idle:
 				$AnimatedSprite2D.animation = "ribbit"
-				$Announcement.idle_chatter = ["Ribbit"]
+				$Announcement.idle_chatter = [tr("ENEMY_FROG_IDLE_1")]
 			State.Alert:
 				$AnimatedSprite2D.animation = "idle"
-				$Announcement.idle_chatter = ["*shiver*", "*nervous croaking*"]
+				$Announcement.idle_chatter = [tr("ENEMY_FROG_ALERT_1"), tr("ENEMY_FROG_ALERT_2")]
 
 func _physics_process(delta: float) -> void:
 	# Determine direction
@@ -87,7 +87,7 @@ func _on_danger_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		self.state = State.Flee
 		last_player_pos = body.position
-		$Announcement.announce("!!")
+		$Announcement.announce(tr("ENEMY_FROG_FLEE_1"))
 
 func _on_danger_range_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

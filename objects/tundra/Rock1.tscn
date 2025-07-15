@@ -17,6 +17,7 @@ position = Vector2(1, -10)
 texture = ExtResource("1_edgbq")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+visible = false
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("2_edgbq")

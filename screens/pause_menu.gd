@@ -46,5 +46,4 @@ func _on_options_pressed() -> void:
 	$SettingsMenu/Menu/VBoxContainer/Back.grab_focus()
 
 func _on_quit_pressed() -> void:
-	queue_free()
-	get_tree().change_scene_to_file("res://screens/MainMenu.tscn")
+	SceneSwitcher.load_main_menu()

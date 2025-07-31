@@ -9,10 +9,11 @@ const DIMS = 24*160
 var grid_size = [4, 3]
 var scene_size = [DIMS, DIMS]
 var current_scene = null
-var game_mode = GameMode.Dream
+var game_mode = GameMode.Overworld
 
-@export var day_length: int = 60*10
+@export var day_length: int = 120 #60*10
 var game_time: float = day_length / 2.0
+var day_counter: int = 0
 var current_biome: String = "tundra"
 
 func _ready() -> void:
@@ -21,7 +22,10 @@ func _ready() -> void:
 		HUD.get_node("Vignette").visible = false
 
 func new_day():
-	game_time = 0
+	PlayerData.state = PlayerData.State.Awake
+	PlayerData.health = 100
+	day_counter += 1
+	game_time = day_length * 0.05
 
 func is_night() -> bool:
 	return game_time >= day_length

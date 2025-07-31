@@ -25,12 +25,10 @@ func focus(source: String):
 			$MainMenu/Menu/VBoxContainer/Quit.grab_focus()
 
 func _on_continue_pressed() -> void:
-	queue_free()
-	get_tree().change_scene_to_file("res://screens/LoadingScreen.tscn")
+	SceneSwitcher.load_main_game()
 
 func _on_new_game_pressed() -> void:
-	queue_free()
-	get_tree().change_scene_to_file("res://screens/LoadingScreen.tscn")
+	SceneSwitcher.load_dream_game()
 
 func _on_options_pressed() -> void:
 	view = $SettingsMenu.offset

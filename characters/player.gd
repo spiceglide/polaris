@@ -97,8 +97,9 @@ func _on_interaction_body_exited(body: Node2D) -> void:
 
 func _on_sleep_timer_timeout() -> void:
 	if WorldData.is_night():
-		WorldData.new_day()
-		PlayerData.state = PlayerData.State.Awake
+		SceneSwitcher.load_dream_game()
+		#WorldData.new_day()
+		#PlayerData.state = PlayerData.State.Awake
 
 func _on_animation_finished() -> void:
 	match PlayerData.state:
@@ -120,6 +121,7 @@ func _on_animation_finished() -> void:
 			var item = InventoryData.get_selected_item()
 			InventoryData.remove_items([item])
 			InventoryData.set_item_at_selected("%s_dead" % item)
+			PlayerData.sanity += 40
 			PlayerData.state = PlayerData.State.Awake
 		PlayerData.State.Cranking:
 			PlayerData.state = PlayerData.State.Awake

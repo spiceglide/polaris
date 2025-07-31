@@ -20,7 +20,7 @@ var state = State.Awake
 var health = 100
 var hunger = 100
 var warmth = 100
-var sanity = 100  # 0
+var sanity = 0
 
 var flags = {
 	"position_updated": false,

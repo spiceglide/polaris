@@ -3,6 +3,9 @@ extends VBoxContainer
 @export var side: String
 
 func _ready() -> void:
+	reset()
+
+func reset() -> void:
 	if WorldData.get_game_mode() == "dream":
 		match side:
 			"left":
@@ -10,6 +13,9 @@ func _ready() -> void:
 			"right":
 				$Hunger.visible = false
 				$Warmth.visible = false
+	else:
+		for stat in self.get_children():
+			stat.visible = true
 
 func _process(delta: float) -> void:
 	match side:

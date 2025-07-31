@@ -319,7 +319,8 @@ func _move(delta: float) -> void:
 			if PlayerData.health <= 0:
 				die()
 		State.Dead:
-			pass
+			SceneSwitcher.load_main_game()
+			WorldData.new_day()
 	
 	if velocity.length() > 0:
 		velocity.x *= PlayerData.speed * mult

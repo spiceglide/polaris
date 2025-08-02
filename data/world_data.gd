@@ -16,11 +16,6 @@ var game_time: float = day_length / 2.0
 var day_counter: int = 0
 var current_biome: String = "tundra"
 
-func _ready() -> void:
-	if game_mode == GameMode.Dream:
-		HUD.get_node("DayNight").visible = false
-		HUD.get_node("Vignette").visible = false
-
 func new_day():
 	PlayerData.state = PlayerData.State.Awake
 	PlayerData.health = 100

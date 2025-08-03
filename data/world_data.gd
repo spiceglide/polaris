@@ -11,7 +11,7 @@ var scene_size = [DIMS, DIMS]
 var current_scene = null
 var game_mode = GameMode.Overworld
 
-@export var day_length: int = 120 #60*10
+@export var day_length: int = 60*10
 var game_time: float = day_length / 2.0
 var day_counter: int = 0
 var current_biome: String = "tundra"

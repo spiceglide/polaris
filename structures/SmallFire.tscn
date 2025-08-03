@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb8u5hchvmdb1"]
+[gd_scene load_steps=16 format=3 uid="uid://cb8u5hchvmdb1"]
 
 [ext_resource type="Script" uid="uid://dn72shqw6u7s" path="res://structures/campfire.gd" id="1_7juvy"]
 [ext_resource type="Texture2D" uid="uid://b0hvxa8wyhckd" path="res://assets/structures/smallfire/smallfire.png" id="2_31153"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="9_tskb1"]
 [ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="10_b1l5h"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_7juvy"]
+[ext_resource type="AudioStream" uid="uid://be8ygsvyaiexh" path="res://assets/audio/sfx/woosh_in.ogg" id="12_rk3eb"]
+[ext_resource type="AudioStream" uid="uid://dw2nyxfdgqtr2" path="res://assets/audio/sfx/woosh_out.ogg" id="13_a6cfv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a7dlj"]
 animations = [{
@@ -83,5 +85,11 @@ color = Color(1, 0.827451, 0.6, 1)
 texture = ExtResource("10_b1l5h")
 texture_scale = 0.8
 script = ExtResource("11_7juvy")
+
+[node name="ActiveAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_rk3eb")
+
+[node name="InactiveAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_a6cfv")
 
 [connection signal="interaction" from="Interaction" to="." method="_on_interaction"]

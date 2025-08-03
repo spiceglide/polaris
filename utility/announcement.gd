@@ -29,3 +29,4 @@ func _process(delta: float) -> void:
 func announce(text: String):
 	announcement_timer = 0
 	self.text = text
+	$AudioStreamPlayer2D.play()

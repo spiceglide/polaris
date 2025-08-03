@@ -135,6 +135,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("38_khxt4")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Announcement"]
+position = Vector2(0, 228)
+
 [connection signal="body_entered" from="AlertRange" to="." method="_on_alert_range_body_entered"]
 [connection signal="body_exited" from="AlertRange" to="." method="_on_alert_range_body_exited"]
 [connection signal="body_entered" from="DangerRange" to="." method="_on_danger_range_body_entered"]

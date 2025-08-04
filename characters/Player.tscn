@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=293 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Script" uid="uid://ct3n0c6fw670h" path="res://characters/animate_player.gd" id="2_020kj"]
@@ -284,6 +284,8 @@
 [ext_resource type="Texture2D" uid="uid://cyaj66u5ieanb" path="res://assets/characters/dasha/dasha_kill_animal/tools/kill_animal_12_rock.png" id="195_0a8g8"]
 [ext_resource type="Texture2D" uid="uid://2qsx0vqdlqw1" path="res://assets/characters/dasha/dasha_kill_animal/tools/kill_animal_13_rock.png" id="196_m7kkl"]
 [ext_resource type="Texture2D" uid="uid://dhui8n1onu8qw" path="res://assets/characters/dasha/dasha_kill_animal/tools/kill_animal_14_rock.png" id="197_8qt2v"]
+[ext_resource type="AudioStream" uid="uid://di1cpkakgldhf" path="res://assets/audio/sfx/mumble.ogg" id="283_84nti"]
+[ext_resource type="AudioStream" uid="uid://cufgertvo2ual" path="res://assets/audio/sfx/snowsteps.ogg" id="286_e7ygl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yrnj"]
 animations = [{
@@ -2124,6 +2126,9 @@ limit_left = 0
 limit_top = 0
 limit_right = 15360
 limit_bottom = 15360
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 16.0
 script = ExtResource("34_r4xk0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -2154,6 +2159,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("37_r4xk0")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Announcement"]
+position = Vector2(0, 228)
+stream = ExtResource("283_84nti")
+
 [node name="SleepTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
@@ -2165,6 +2174,11 @@ color = Color(1, 0.826667, 0.6, 1)
 texture = ExtResource("176_ycyx1")
 texture_scale = 1.12
 script = ExtResource("177_d5u3j")
+
+[node name="WalkingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("286_e7ygl")
+volume_db = -10.0
+parameters/looping = true
 
 [connection signal="animation_finished" from="Sprite/Body" to="." method="_on_animation_finished"]
 [connection signal="animation_looped" from="Sprite/Body" to="." method="_on_animation_looped"]

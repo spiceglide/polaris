@@ -82,6 +82,7 @@ func get_all_items():
 
 func select_slot(index: int):
 	selected_slot = index
+	$AudioStreamPlayer.play()
 
 func clear_slot(index: int):
 	slots[index] = ""

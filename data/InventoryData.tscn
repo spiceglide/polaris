@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://6uqerp5adpwd"]
+[gd_scene load_steps=3 format=3 uid="uid://6uqerp5adpwd"]
 
 [ext_resource type="Script" uid="uid://bjajrj0dwj8ra" path="res://data/inventory_data.gd" id="1_2c8ag"]
+[ext_resource type="AudioStream" uid="uid://bn33sasc73pbo" path="res://assets/audio/sfx/click.ogg" id="2_hgof8"]
 
 [node name="InventoryData" type="Node2D"]
 script = ExtResource("1_2c8ag")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hgof8")

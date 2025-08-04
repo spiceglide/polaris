@@ -26,10 +26,12 @@ func interact():
 		State.Unignited:
 			state = State.Ignited
 			$AnimatedSprite2D.animation = "ignited"
+			$ActiveAudio.play()
 			$Light.visible = true
 		State.Ignited:
 			state = State.Unignited
 			$AnimatedSprite2D.animation = "unignited"
+			$InactiveAudio.play()
 			$Light.visible = false
 
 func _on_interaction():

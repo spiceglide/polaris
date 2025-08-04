@@ -75,9 +75,13 @@ func _move() -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * PlayerData.speed * mult
 		$Sprite.set_direction(last_dir, "walk", is_holding)
+		if not $WalkingAudio.playing:
+			$WalkingAudio.play()
 		move_and_slide()
 	else:
 		$Sprite.set_direction(last_dir, "idle", is_holding)
+		if $WalkingAudio.playing:
+			$WalkingAudio.stop()
 
 func _input(event):
 	if event.is_action_pressed("interact"):

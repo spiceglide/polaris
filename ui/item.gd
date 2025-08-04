@@ -57,6 +57,6 @@ func place_structure(name: String) -> bool:
 	
 	var instance = load('res://structures/%s.tscn' % name).instantiate()
 	scene.add_child(instance)
-	instance.position = PlayerData.position
-	instance.position.x += 100
+	instance.global_position = PlayerData.position
+	instance.global_position.x += 150
 	return true

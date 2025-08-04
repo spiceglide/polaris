@@ -58,7 +58,8 @@ z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_7juvy")
-max_uses = 3
+brightness = 0.8
+duration = 180.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -50)

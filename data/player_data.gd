@@ -40,11 +40,11 @@ func _process(delta: float) -> void:
 		var heat = 1
 		match WorldData.current_biome:
 			"tundra":
-				heat *= 0.1
-			"forest":
-				heat *= 0.15
-			"swamp":
 				heat *= 0.2
+			"forest":
+				heat *= 0.3
+			"swamp":
+				heat *= 0.4
 		if WorldData.is_night():
 			warmth -= delta * (1/heat)
 		else:
@@ -54,8 +54,10 @@ func _process(delta: float) -> void:
 		hunger -= delta * 0.5
 		
 		# Hungry and cold deaths
-		if (hunger <= 0) or (warmth <= 0):
-			health = 0
+		if (hunger <= 0):
+			health -= delta
+		if (warmth <= 0):
+			health -= delta
 	
 	# Clamp values at 0
 	health = clamp(health, 0, 100)

@@ -3,21 +3,21 @@ extends Node2D
 @onready var space: Vector2 = $TileMap/base.get_used_rect().size * $TileMap/base.tile_set.tile_size
 
 @export var biomes: Array = ["tundra"]
-@export var creature_limit: int = 4
-@export var structure_limit: int = 9
+@export var creature_limit: int = 2
+@export var structure_limit: int = 1
 
 var biome_data: Dictionary = {
 	"tundra": {
 		"creatures": [],
-		"structures": ["Campfire", "SmallFire", "Well"],
+		"structures": ["Well"],
 	},
 	"forest": {
 		"creatures": ["Hare"],
-		"structures": ["Campfire", "SmallFire"],
+		"structures": ["SmallFire"],
 	},
 	"swamp": {
 		"creatures": ["Frog"],
-		"structures": ["Campfire", "SmallFire"],
+		"structures": ["SmallFire"],
 	},
 }
 
@@ -31,7 +31,9 @@ func _ready() -> void:
 	for biome in biomes:
 		var data = biome_data[biome]
 		creatures.append_array(data['creatures'])
-		structures.append_array(data['structures'])
+	if len(biomes) == 1:
+		var data = biome_data[biomes[0]]
+		structures = data["structures"]
 	
 	# Generate creatures
 	if not creatures.is_empty():

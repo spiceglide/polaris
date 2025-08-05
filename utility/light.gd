@@ -1,8 +1,9 @@
 extends PointLight2D
 
 @export var light: float = 0.8
-@export var jitter_strength: int = 2
-var jitter_direction: float = 1.0
+@export var jitter_radius: float = 10.0
+@export var jitter_speed: float = 2.0
+var jitter_angle: float = 0.0
 
 func _process(delta: float) -> void:
 	set_brightness()
@@ -10,9 +11,9 @@ func _process(delta: float) -> void:
 		process_jitter()
 
 func process_jitter() -> void:
-	self.rotation_degrees += jitter_direction
-	if abs(self.rotation_degrees) > jitter_strength:
-		jitter_direction *= -1
+	jitter_angle += jitter_speed * get_process_delta_time()
+	self.position.x = jitter_radius * cos(jitter_angle)
+	self.position.y = jitter_radius * sin(jitter_angle)
 
 func set_brightness() -> void:
 	var night_length = 0.1

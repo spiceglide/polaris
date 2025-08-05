@@ -80,7 +80,6 @@ metadata/_edit_group_ = true
 
 [node name="Light" type="PointLight2D" parent="."]
 visible = false
-position = Vector2(12, -29)
 color = Color(1, 0.827451, 0.6, 1)
 texture = ExtResource("10_drdvg")
 texture_scale = 1.6

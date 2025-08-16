@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=120 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player.gd" id="1_x1yu0"]
 [ext_resource type="Texture2D" uid="uid://bwj86abmgx5j2" path="res://assets/characters/dasha/dasha_crank.png" id="11_3l5v1"]
@@ -301,15 +301,6 @@ break_loop_at_end = true
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxwip"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_edoe4"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4mf2n"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wmu7x"]
 states/End/position = Vector2(982, 100)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_ixapo")
@@ -334,15 +325,15 @@ states/action_gather_1/position = Vector2(449.619, 215)
 states/action_gather_2/node = SubResource("AnimationNodeAnimation_0vvnc")
 states/action_gather_2/position = Vector2(646.619, 215)
 states/action_kill_1/node = SubResource("AnimationNodeAnimation_72jjy")
-states/action_kill_1/position = Vector2(449.619, 154)
+states/action_kill_1/position = Vector2(449.619, 156)
 states/action_kill_2/node = SubResource("AnimationNodeAnimation_aktsx")
 states/action_kill_2/position = Vector2(636.619, 156)
 states/action_kill_3/node = SubResource("AnimationNodeAnimation_fwn7u")
 states/action_kill_3/position = Vector2(826.619, 156)
 states/action_pull/node = SubResource("AnimationNodeAnimation_lplbi")
 states/action_pull/position = Vector2(329.619, -111)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5317p"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ag5l0"), "Idle Hold", "Idle", SubResource("AnimationNodeStateMachineTransition_bh6e5"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_0vvnc"), "Idle Hold", "Walk Hold", SubResource("AnimationNodeStateMachineTransition_tobve"), "Walk Hold", "Idle Hold", SubResource("AnimationNodeStateMachineTransition_wcyey"), "Walk Hold", "Walk", SubResource("AnimationNodeStateMachineTransition_v1r2j"), "action_chop_1", "action_chop_2", SubResource("AnimationNodeStateMachineTransition_irvxh"), "action_kill_1", "action_kill_2", SubResource("AnimationNodeStateMachineTransition_qncex"), "action_kill_2", "action_kill_3", SubResource("AnimationNodeStateMachineTransition_132k6"), "action_gather_1", "action_gather_2", SubResource("AnimationNodeStateMachineTransition_isx6w"), "action_death_1", "action_death_2", SubResource("AnimationNodeStateMachineTransition_slcf5"), "action_chop_2", "End", SubResource("AnimationNodeStateMachineTransition_lxwip"), "action_kill_3", "End", SubResource("AnimationNodeStateMachineTransition_edoe4"), "action_gather_2", "End", SubResource("AnimationNodeStateMachineTransition_4mf2n")]
-graph_offset = Vector2(-188.381, -10)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5317p"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ag5l0"), "Idle Hold", "Idle", SubResource("AnimationNodeStateMachineTransition_bh6e5"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_0vvnc"), "Idle Hold", "Walk Hold", SubResource("AnimationNodeStateMachineTransition_tobve"), "Walk Hold", "Idle Hold", SubResource("AnimationNodeStateMachineTransition_wcyey"), "Walk Hold", "Walk", SubResource("AnimationNodeStateMachineTransition_v1r2j"), "action_chop_1", "action_chop_2", SubResource("AnimationNodeStateMachineTransition_irvxh"), "action_kill_1", "action_kill_2", SubResource("AnimationNodeStateMachineTransition_qncex"), "action_kill_2", "action_kill_3", SubResource("AnimationNodeStateMachineTransition_132k6"), "action_gather_1", "action_gather_2", SubResource("AnimationNodeStateMachineTransition_isx6w"), "action_death_1", "action_death_2", SubResource("AnimationNodeStateMachineTransition_slcf5")]
+graph_offset = Vector2(-184.381, -22)
 
 [sub_resource type="Animation" id="Animation_rurbs"]
 resource_name = "RESET"

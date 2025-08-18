@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ohee1nh56ww" path="res://assets/platformer/px_dasha_animations.png" id="2_fbxxa"]
 [ext_resource type="Texture2D" uid="uid://c3d0n1ph1jahi" path="res://assets/platformer/darkness_pixelated.png" id="6_0i8xf"]
 [ext_resource type="Script" uid="uid://b0c5fxmvlyjg7" path="res://characters/platformer/following.gd" id="7_t0nbd"]
-[ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player_camera.gd" id="280_2l6y1"]
+[ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="280_2l6y1"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="281_2bogj"]
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="282_x8mck"]
 

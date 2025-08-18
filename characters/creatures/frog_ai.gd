@@ -1,19 +1,19 @@
 extends CharacterBody2D
 
-@export var speed = 1000
-@export var leap_duration = 12
-@export var leap_count = 2
-var state: State = State.Idle
-var leap_time = 0
-var speech_time = 0
-var leap_direction = Vector2.ZERO
-var last_player_pos = Vector2.ZERO
-
-enum State {
+enum EnemyState {
 	Idle,
 	Alert,
 	Flee,
 }
+
+@export var speed = 1000
+@export var leap_duration = 12
+@export var leap_count = 2
+var state: EnemyState = EnemyState.Idle
+var leap_time = 0
+var speech_time = 0
+var leap_direction = Vector2.ZERO
+var last_player_pos = Vector2.ZERO
 
 func _ready() -> void:
 	$AnimatedSprite2D.animation = "ribbit"
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	if leap_time > (leap_duration * leap_count):
 		finish_leap()
 		
-	if state == State.Flee:
+	if state == EnemyState.Flee:
 		if leap_time == 0:
 			start_leap()
 	
@@ -31,10 +31,10 @@ func _process(delta: float) -> void:
 	
 	if leap_time == 0:
 		match state:
-			State.Idle:
+			EnemyState.Idle:
 				$AnimatedSprite2D.animation = "ribbit"
 				$Announcement.idle_chatter = [tr("ENEMY_FROG_IDLE_1")]
-			State.Alert:
+			EnemyState.Alert:
 				$AnimatedSprite2D.animation = "idle"
 				$Announcement.idle_chatter = [tr("ENEMY_FROG_ALERT_1"), tr("ENEMY_FROG_ALERT_2")]
 
@@ -75,21 +75,21 @@ func finish_leap():
 
 func _on_alert_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		self.state = State.Alert
+		self.state = EnemyState.Alert
 		last_player_pos = body.position
 
 func _on_alert_range_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
-		self.state = State.Idle
+		self.state = EnemyState.Idle
 		last_player_pos = body.position
 
 func _on_danger_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		self.state = State.Flee
+		self.state = EnemyState.Flee
 		last_player_pos = body.position
 		$Announcement.announce(tr("ENEMY_FROG_FLEE_1"))
 
 func _on_danger_range_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
-		self.state = State.Alert
+		self.state = EnemyState.Alert
 		last_player_pos = body.position

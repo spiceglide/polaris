@@ -59,9 +59,3 @@ func _on_interaction_body_exited(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
 		interactable.erase(interactive)
-
-func _on_sleep_timer_timeout() -> void:
-	if WorldData.is_night():
-		SceneSwitcher.load_dream_game()
-		#WorldData.new_day()
-		#PlayerData.state = PlayerData.State.Awake

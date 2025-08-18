@@ -22,6 +22,14 @@ func update(delta: float):
 			var item = InventoryData.get_selected_item()
 			if item in InventoryData.holdable:
 				state_transitioned.emit(self, "pullout")
+			elif item in ["frog", "hare"]:
+				state_transitioned.emit(self, "kill")
+	
+	if Input.is_action_just_pressed("interact"):
+		if parent_body.item == "hatchet":
+			state_transitioned.emit(self, "chop")
+		else:
+			state_transitioned.emit(self, "gather")
 
 func physics_update(delta: float):
 	var movement = Input.get_vector("move_left", "move_right", "move_up", "move_down")

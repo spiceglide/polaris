@@ -1,9 +1,6 @@
 extends CharacterBody2D
 
-var direction: Vector2 = Vector2.ZERO
-var interactee = null
-var held = null
-
+var last_dir = "south";
 var is_holding = false
 var interactable = []
 
@@ -11,7 +8,7 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-	#$Sprite.set_direction(last_dir, "idle", is_holding)
+	$AnimationPlayer.play("idle/south")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,16 +23,14 @@ func _process(delta: float) -> void:
 	is_holding = false
 	$Light.visible = false
 	
-	"""
 	match PlayerData.state:
 		PlayerData.State.Dead:
-			$Sprite.set_direction(last_dir, "death", is_holding)
-			$Shadow.visible = false
+			$AnimationPlayer.play("action/death_1")
+			$AnimationPlayer.queue("action/death_2")
 		PlayerData.State.Sleeping:
-			$Sprite.set_direction(last_dir, "sleep", is_holding)
-			$Shadow.visible = false
+			$AnimationPlayer.play("action/death_2")
 		PlayerData.State.PullOut:
-			$Sprite.set_direction(last_dir, "pull", is_holding)
+			$AnimationPlayer.play("action/pull")
 		PlayerData.State.Holding:
 			var item = InventoryData.get_selected_item()
 			is_holding = item in InventoryData.holdable
@@ -44,11 +39,9 @@ func _process(delta: float) -> void:
 			elif is_holding and item in ["torch"]:
 				$Light.visible = true
 		PlayerData.State.Kill1:
-			$Sprite.set_direction(last_dir, "kill_1", is_holding)
-			$Shadow.visible = false
+			$AnimationPlayer.play("action/kill_1")
 		PlayerData.State.Cranking:
-			$Sprite.set_direction(last_dir, "crank", is_holding)
-	"""
+			$AnimationPlayer.play("action/crank")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -62,17 +55,29 @@ func _move() -> void:
 		mult = PlayerData.multiplier
 
 	# Determine direction
-	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed("move_left"):
+		last_dir = "west"
+		velocity.x -= 1
+	if Input.is_action_pressed("move_right"):
+		last_dir = "east"
+		velocity.x += 1
+	if Input.is_action_pressed("move_up"):
+		last_dir = "north"
+		velocity.y -= 1
+	if Input.is_action_pressed("move_down"):
+		last_dir = "south"
+		velocity.y += 1
+
 	# Normalise velocity
-	if direction.length() > 0:
-		self.velocity = direction.normalized() * PlayerData.speed * mult
-		$AnimationTree["parameters/Idle/blend_position"] = direction
-		$AnimationTree["parameters/Walk/blend_position"] = direction
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * PlayerData.speed * mult
+		$AnimationPlayer.play("walk/" + last_dir)
 		if not $WalkingAudio.playing:
 			$WalkingAudio.play()
 		move_and_slide()
 	else:
+		$AnimationPlayer.play("idle/" + last_dir)
 		if $WalkingAudio.playing:
 			$WalkingAudio.stop()
 
@@ -97,22 +102,22 @@ func _on_sleep_timer_timeout() -> void:
 		#WorldData.new_day()
 		#PlayerData.state = PlayerData.State.Awake
 
-func _on_animation_finished() -> void:
+func _on_animation_finished(anim_name: StringName) -> void:
+	print(anim_name)
 	match PlayerData.state:
 		PlayerData.State.PullOut:
 			PlayerData.state = PlayerData.State.Holding
 			is_holding = true
+			last_dir = "south"
 		PlayerData.State.Sleeping:
-			#$Sprite.pause()
+			$Sprite.pause()
 			if $SleepTimer.is_stopped():
 				$SleepTimer.start(5)
 		PlayerData.State.Dead:
-			pass
-			#$Sprite.pause()
+			$Sprite.pause()
 		PlayerData.State.Kill1:
 			PlayerData.state = PlayerData.State.Kill2
-			#$Sprite.set_direction(last_dir, "kill_2", is_holding)
-			$Shadow.visible = false
+			$AnimationPlayer.play("action/kill_2")
 		PlayerData.State.Kill3:
 			var item = InventoryData.get_selected_item()
 			InventoryData.remove_items([item])
@@ -126,5 +131,4 @@ func _on_animation_looped() -> void:
 	match PlayerData.state:
 		PlayerData.State.Kill3:
 			if $Sprite/Body.animation != "kill_3":
-				#$Sprite.set_direction(last_dir, "kill_3", is_holding)
-				$Shadow.visible = false
+				$AnimationPlayer.play("action/kill_3")

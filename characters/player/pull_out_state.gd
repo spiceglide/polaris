@@ -24,6 +24,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 	var item = InventoryData.get_selected_item()
 	if item in InventoryData.holdable:
-		parent_body.last_dir = "south"
 		parent_body.item = item
+		parent_body.last_dir = "south"
 		state_transitioned.emit(self, "idle")

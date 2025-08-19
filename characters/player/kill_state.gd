@@ -21,8 +21,8 @@ func physics_update(delta: float):
 	pass
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print(anim_name)
 	if anim_name != "action/kill_3":
 		return
 	
+	parent_body.last_dir = "south"
 	state_transitioned.emit(self, "idle")

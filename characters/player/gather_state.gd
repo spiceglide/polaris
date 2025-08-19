@@ -20,5 +20,9 @@ func physics_update(delta: float):
 		state_transitioned.emit(self, "walk")
 
 func _on_timer_timeout() -> void:
+	var interactable = parent_body.interactable
+	if len(interactable) > 0:
+		interactable[0].interact(parent_body)
+	
 	parent_body.last_dir = "north"
 	state_transitioned.emit(self, "idle")

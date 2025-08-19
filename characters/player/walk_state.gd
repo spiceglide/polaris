@@ -15,20 +15,33 @@ func exit():
 	$Audio.stop()
 
 func update(delta: float):
+	var item = InventoryData.get_selected_item()
+	
+	# Play idle animation (with or without holding)
 	var last_dir = parent_body.last_dir
-	if parent_body.item:
-		item_sprite.animation = parent_body.item + "_walk"
+	if item in InventoryData.holdable:
+		item_sprite.animation = item + "_walk"
 		anim.play("walk/" + last_dir + "_hold")
 	else:
 		anim.play("walk/" + last_dir)
 	
+	# Potentially hold item
+	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
+		if item in InventoryData.holdable:
+			state_transitioned.emit(self, "pullout")
+	
+	# Use item
 	if Input.is_action_just_pressed("use_item"):
-		if parent_body.item:
-			parent_body.item = ""
-		else:
-			var item = InventoryData.get_selected_item()
-			if item in InventoryData.holdable:
-				state_transitioned.emit(self, "pullout")
+		if item in ["frog", "hare"]:
+			state_transitioned.emit(self, "kill")
+	
+	# Interact with environment
+	if Input.is_action_just_pressed("interact"):
+		match item:
+			"hatchet":
+				state_transitioned.emit(self, "chop")
+			_:
+				state_transitioned.emit(self, "gather")
 
 func physics_update(delta: float):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

@@ -11,6 +11,7 @@ func enter():
 	item_sprite = parent_body.get_node("Sprite/Item")
 	animal_sprite = parent_body.get_node("Sprite/Animal")
 	
+	# Select victim
 	var animal = InventoryData.get_selected_item()
 	if animal in ["frog", "hare"]:
 		animal_sprite.animation = animal
@@ -22,7 +23,7 @@ func exit():
 	return
 
 func update(delta: float):
-	print(animal_sprite.animation)
+	# Select weapon
 	var weapon = InventoryData.get_selected_item()
 	if weapon in ["hatchet", "rock"]:
 		stage = 1

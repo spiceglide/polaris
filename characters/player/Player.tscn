@@ -7002,7 +7002,7 @@ frame = 4
 texture = ExtResource("11_mxfp2")
 hframes = 4
 vframes = 6
-frame = 20
+frame = 8
 
 [node name="Item" type="AnimatedSprite2D" parent="Sprite"]
 visible = false

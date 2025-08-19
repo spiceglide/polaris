@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var last_dir = "south";
-var item: String = ""
 var is_holding = false
 var interactable = []
 

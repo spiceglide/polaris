@@ -1,11 +1,15 @@
 extends State
 
 var anim: AnimationPlayer
+var item_sprite: AnimatedSprite2D
+var animal_sprite: AnimatedSprite2D
 var triggered: bool = false
 
 func enter():
 	triggered = false
 	anim = parent_body.get_node("AnimationPlayer")
+	item_sprite = parent_body.get_node("Sprite/Item")
+	animal_sprite = parent_body.get_node("Sprite/Animal")
 	anim.play("action/kill_1")
 	anim.queue("action/kill_2")
 

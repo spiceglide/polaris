@@ -2,10 +2,12 @@ extends State
 
 var direction: Vector2 = Vector2.ZERO
 var anim: AnimationPlayer
+var item_sprite: AnimatedSprite2D
 
 func enter():
 	direction = Vector2.ZERO
 	anim = parent_body.get_node("AnimationPlayer")
+	item_sprite = parent_body.get_node("Sprite/Item")
 	$Audio.play()
 
 func exit():
@@ -15,6 +17,7 @@ func exit():
 func update(delta: float):
 	var last_dir = parent_body.last_dir
 	if parent_body.item:
+		item_sprite.animation = parent_body.item + "_walk"
 		anim.play("walk/" + last_dir + "_hold")
 	else:
 		anim.play("walk/" + last_dir)

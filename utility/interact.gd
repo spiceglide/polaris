@@ -28,7 +28,7 @@ func interact(player):
 			if not item:
 				return
 			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce("+ '" + item + "'")
+				announcer.announce("+ " + tr("ITEM_" + item.to_upper() + "_NAME"))
 		Interaction.DISPOSE:
 			announcer.announce(description)
 			self.get_parent().queue_free()
@@ -37,7 +37,7 @@ func interact(player):
 				return
 			
 			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce("+ '" + item + "'")
+				announcer.announce("+ " + tr("ITEM_" + item.to_upper() + "_NAME"))
 				self.get_parent().queue_free()
 			else:
 				announcer.announce("Inventory full!")

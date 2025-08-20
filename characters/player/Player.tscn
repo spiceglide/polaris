@@ -578,7 +578,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_rurbs"]
 resource_name = "RESET"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -588,7 +588,7 @@ tracks/0/path = NodePath("Sprite/Body:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333333, 0.499999, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
@@ -636,7 +636,7 @@ tracks/4/path = NodePath("Sprite/Face:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333333, 0.499999, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
@@ -684,7 +684,7 @@ tracks/8/path = NodePath("Sprite/Puff:frame_coords")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333333, 0.499999, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
@@ -3256,7 +3256,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_fdsad"]
 resource_name = "east"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -3302,7 +3302,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
@@ -3350,7 +3350,7 @@ tracks/7/path = NodePath("Sprite/Face:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)]
@@ -3466,7 +3466,7 @@ tracks/16/keys = {
 
 [sub_resource type="Animation" id="Animation_8bnf5"]
 resource_name = "east_hold"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -3512,7 +3512,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
@@ -3560,7 +3560,7 @@ tracks/7/path = NodePath("Sprite/Face:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)]
@@ -3704,7 +3704,7 @@ tracks/19/path = NodePath("Sprite/Item:frame")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [4, 5, 6, 7]
@@ -3712,7 +3712,7 @@ tracks/19/keys = {
 
 [sub_resource type="Animation" id="Animation_ofpp1"]
 resource_name = "north"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -3758,7 +3758,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
@@ -3874,7 +3874,7 @@ tracks/12/keys = {
 
 [sub_resource type="Animation" id="Animation_0a8g8"]
 resource_name = "north_hold"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -3920,7 +3920,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
@@ -4064,7 +4064,7 @@ tracks/15/path = NodePath("Sprite/Item:frame")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [8, 9, 10, 11]
@@ -4072,7 +4072,7 @@ tracks/15/keys = {
 
 [sub_resource type="Animation" id="Animation_pybfc"]
 resource_name = "south"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -4118,7 +4118,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
@@ -4166,7 +4166,7 @@ tracks/7/path = NodePath("Sprite/Face:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
@@ -4214,7 +4214,7 @@ tracks/11/path = NodePath("Sprite/Puff:frame_coords")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
@@ -4330,7 +4330,7 @@ tracks/20/keys = {
 
 [sub_resource type="Animation" id="Animation_m7kkl"]
 resource_name = "south_hold"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -4376,7 +4376,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
@@ -4424,7 +4424,7 @@ tracks/7/path = NodePath("Sprite/Face:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
@@ -4472,7 +4472,7 @@ tracks/11/path = NodePath("Sprite/Puff:frame_coords")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
@@ -4616,7 +4616,7 @@ tracks/23/path = NodePath("Sprite/Item:frame")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -4624,7 +4624,7 @@ tracks/23/keys = {
 
 [sub_resource type="Animation" id="Animation_kh0sc"]
 resource_name = "west"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -4670,7 +4670,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
@@ -4718,7 +4718,7 @@ tracks/7/path = NodePath("Sprite/Face:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)]
@@ -4834,7 +4834,7 @@ tracks/16/keys = {
 
 [sub_resource type="Animation" id="Animation_xj423"]
 resource_name = "west_hold"
-length = 0.666683
+length = 1.00002
 loop_mode = 1
 step = 0.166667
 tracks/0/type = "value"
@@ -4880,7 +4880,7 @@ tracks/3/path = NodePath("Sprite/Body:frame_coords")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
@@ -4928,7 +4928,7 @@ tracks/7/path = NodePath("Sprite/Face:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)]
@@ -5072,7 +5072,7 @@ tracks/19/path = NodePath("Sprite/Item:frame")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"times": PackedFloat32Array(0, 0.333334, 0.5, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [4, 5, 6, 7]

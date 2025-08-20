@@ -7,7 +7,10 @@ func enter():
 	anim.play("action/pull")
 
 func exit():
-	pass
+	var item = InventoryData.get_selected_item()
+	if item in ["torch"]:
+		var light = parent_body.get_node("Light")
+		light.visible = true
 
 func update(delta: float):
 	pass

@@ -6978,7 +6978,7 @@ stream = ExtResource("283_84nti")
 
 [node name="Light" type="PointLight2D" parent="."]
 visible = false
-position = Vector2(12, -78)
+position = Vector2(13, -154)
 color = Color(1, 0.826667, 0.6, 1)
 texture = ExtResource("176_ycyx1")
 texture_scale = 1.12

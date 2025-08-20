@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var last_dir = "south";
-var is_holding = false
 var interactable = []
 
 func start(pos):
@@ -19,8 +18,6 @@ func _process(delta: float) -> void:
 		PlayerData.flags["position_updated"] = false
 	
 	PlayerData.position = self.position
-	is_holding = false
-	$Light.visible = false
 
 func _on_interaction_body_entered(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")

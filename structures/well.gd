@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var state: State = State.Raised
+@export var state: ObjState = ObjState.Raised
 var times_used: int = 0
 
-enum State {
+enum ObjState {
 	Raised,
 	Lowered,
 	Raising,
@@ -19,21 +19,21 @@ func interact():
 	times_used += 1
 	
 	if times_used > 30:
-		state = State.Disrepair
+		state = ObjState.Disrepair
 		$Sprite/Base.animation = "disrepair"
 		$Sprite/Top.animation = "disrepair"
 		return
 	
 	match state:
-		State.Raised:
-			state = State.Lowering
+		ObjState.Raised:
+			state = ObjState.Lowering
 			$Sprite/Top.animation = "lowering"
 			$Sprite/Top.play()
 			
 			PlayerData.state = PlayerData.State.Cranking
 			PlayerData.set_position($Handle/CollisionShape2D.global_position)
-		State.Lowered:
-			state = State.Raising
+		ObjState.Lowered:
+			state = ObjState.Raising
 			$Sprite/Top.animation = "raising"
 			$Sprite/Top.play()
 			
@@ -47,11 +47,11 @@ func _on_animation_finished() -> void:
 	$Sprite/Base.animation = "default"
 	
 	match state:
-		State.Lowering:
-			self.state = State.Lowered
+		ObjState.Lowering:
+			self.state = ObjState.Lowered
 			$Sprite/Top.animation = "lowered"
 			PlayerData.state = PlayerData.State.Awake
-		State.Raising:
-			self.state = State.Raised
+		ObjState.Raising:
+			self.state = ObjState.Raised
 			$Sprite/Top.animation = "raised"
 			PlayerData.state = PlayerData.State.Awake

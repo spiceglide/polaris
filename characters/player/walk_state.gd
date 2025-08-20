@@ -29,6 +29,12 @@ func update(delta: float):
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
 		if item in InventoryData.holdable:
 			state_transitioned.emit(self, "pullout")
+		
+		var light = parent_body.get_node("Light")
+		if item in ["torch"]:
+			light.visible = true
+		else:
+			light.visible = true
 	
 	# Use item
 	if Input.is_action_just_pressed("use_item"):
@@ -37,11 +43,12 @@ func update(delta: float):
 	
 	# Interact with environment
 	if Input.is_action_just_pressed("interact"):
-		match item:
-			"hatchet":
-				state_transitioned.emit(self, "chop")
-			_:
-				state_transitioned.emit(self, "gather")
+		if len(parent_body.interactable) > 0:
+			match item:
+				"hatchet":
+					state_transitioned.emit(self, "chop")
+				_:
+					state_transitioned.emit(self, "gather")
 
 func physics_update(delta: float):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

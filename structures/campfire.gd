@@ -1,11 +1,11 @@
 extends Node2D
 
-@export var state: State = State.Unignited
+@export var state: ObjState = ObjState.Unignited
 @export var brightness: float = 1.0
 @export var duration: float = 60*9
 var time_used: float = 0
 
-enum State {
+enum ObjState {
 	Unignited,
 	Ignited,
 	Extinguished,
@@ -17,23 +17,23 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	match state:
-		State.Ignited:
+		ObjState.Ignited:
 			time_used += delta
 			$Light.texture_scale = brightness * (1.0 - (time_used / duration) ** 4)
 			
 			if time_used > duration:
-				state = State.Extinguished
+				state = ObjState.Extinguished
 				$AnimatedSprite2D.animation = "extinguished"
 
 func interact():
 	match state:
-		State.Unignited:
-			state = State.Ignited
+		ObjState.Unignited:
+			state = ObjState.Ignited
 			$AnimatedSprite2D.animation = "ignited"
 			$ActiveAudio.play()
 			$Light.visible = true
-		State.Ignited:
-			state = State.Unignited
+		ObjState.Ignited:
+			state = ObjState.Unignited
 			$AnimatedSprite2D.animation = "unignited"
 			$InactiveAudio.play()
 			$Light.visible = false

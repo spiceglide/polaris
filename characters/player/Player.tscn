@@ -6996,13 +6996,13 @@ vframes = 6
 texture = ExtResource("11_mxfp2")
 hframes = 4
 vframes = 6
-frame = 4
+frame = 12
 
 [node name="Puff" type="Sprite2D" parent="Sprite"]
 texture = ExtResource("11_mxfp2")
 hframes = 4
 vframes = 6
-frame = 8
+frame = 20
 
 [node name="Item" type="AnimatedSprite2D" parent="Sprite"]
 visible = false

@@ -28,16 +28,19 @@ func interact(player):
 			if not item:
 				return
 			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce(description)
+				announcer.announce("+ '" + item + "'")
 		Interaction.DISPOSE:
 			announcer.announce(description)
 			self.get_parent().queue_free()
 		Interaction.PICKUP_AND_DISPOSE:
 			if not item:
 				return
-			announcer.announce(description)
+			
 			if InventoryData.set_item_at_first_empty(item):
+				announcer.announce("+ '" + item + "'")
 				self.get_parent().queue_free()
+			else:
+				announcer.announce("Inventory full!")
 		Interaction.OTHER:
 			interaction.emit()
 			

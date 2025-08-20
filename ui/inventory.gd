@@ -34,16 +34,20 @@ func _process(delta: float) -> void:
 func _input(event):
 	if event.is_action_pressed("inventory"):
 		$Full.visible = !($Full.visible)
-		$Trash.visible = !($Trash.visible)
+		$Trash.visible = $Full.visible
+		$Announcement.visible = !($Full.visible)
 		
 	if event.is_action_pressed("hotbar"):
 		InventoryData.select_slot(event.as_text().to_int() - 1)
+		$Announcement.announce(InventoryData.get_selected_item())
 		
 	if event.is_action_pressed("inv_next"):
 		InventoryData.select_slot((selected_slot + 1) % cols)
+		$Announcement.announce(InventoryData.get_selected_item())
 		
 	if event.is_action_pressed("inv_prev"):
 		InventoryData.select_slot(fposmod(selected_slot - 1, cols))
+		$Announcement.announce(InventoryData.get_selected_item())
 		
 	if event.is_action_pressed("use_item"):
 		slots[selected_slot].use()

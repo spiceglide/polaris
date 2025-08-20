@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://7a2wv4ftrcw1"]
+[gd_scene load_steps=6 format=3 uid="uid://7a2wv4ftrcw1"]
 
 [ext_resource type="Script" uid="uid://c2ukkdte1qj33" path="res://ui/inventory.gd" id="1_b6eu6"]
 [ext_resource type="PackedScene" uid="uid://dcdscwfma5sob" path="res://ui/slots/TrashSlot.tscn" id="2_0sq80"]
 [ext_resource type="Script" uid="uid://f85xdgpu4c7" path="res://ui/animate_slots.gd" id="2_onhdh"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="4_qahbh"]
+[ext_resource type="Script" uid="uid://cucj58eto375d" path="res://ui/timed_announcement.gd" id="5_kacic"]
 
 [node name="Inventory HUD" type="Control"]
 layout_mode = 3
@@ -43,5 +45,24 @@ offset_right = 450.0
 offset_bottom = 5.0
 grow_vertical = 0
 
+[node name="Announcement" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 160.0
+offset_top = -20.0
+offset_right = 161.0
+offset_bottom = -1.0
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_qahbh")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_kacic")
+
+[node name="Timer" type="Timer" parent="Announcement"]
+wait_time = 1.2
+one_shot = true
+
 [connection signal="child_entered_tree" from="Hotbar" to="Hotbar" method="_on_child_entered_tree"]
 [connection signal="child_entered_tree" from="Full" to="Full" method="_on_child_entered_tree"]
+[connection signal="timeout" from="Announcement/Timer" to="Announcement" method="_on_timer_timeout"]

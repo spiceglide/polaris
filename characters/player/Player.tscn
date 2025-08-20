@@ -7092,6 +7092,8 @@ one_shot = true
 
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]
+[connection signal="animation_changed" from="AnimationPlayer" to="StateMachine/Gather" method="_on_animation_player_animation_changed"]
+[connection signal="animation_changed" from="AnimationPlayer" to="StateMachine/Chop" method="_on_animation_player_animation_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/PullOut" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Kill" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="StateMachine/Sleep/Timer" to="StateMachine/Sleep" method="_on_timer_timeout"]

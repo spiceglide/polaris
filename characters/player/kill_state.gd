@@ -20,7 +20,8 @@ func enter():
 	anim.queue("action/kill_2")
 
 func exit():
-	return
+	parent_body.last_dir = "south"
+	animal_sprite.visible = false
 
 func update(delta: float):
 	# Select weapon
@@ -32,9 +33,13 @@ func update(delta: float):
 		stage = 0
 		item_sprite.animation = ""
 	
-	if Input.is_action_just_pressed("use_item") and stage == 1:
-		stage = 2
-		anim.play("action/kill_3")
+	if Input.is_action_just_pressed("interact"):
+		match stage:
+			0:
+				state_transitioned.emit(self, "idle")
+			1:
+				stage = 2
+				anim.play("action/kill_3")
 
 func physics_update(delta: float):
 	pass
@@ -43,5 +48,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name != "action/kill_3":
 		return
 	
-	parent_body.last_dir = "south"
 	state_transitioned.emit(self, "idle")

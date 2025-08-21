@@ -34,6 +34,6 @@ shape = SubResource("RectangleShape2D_3fioj")
 [node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("4_v4q15")
 description = "\"This one's bigger\""
-item = "cone"
+item = "pinecone"
 type = 1
 metadata/_edit_group_ = true

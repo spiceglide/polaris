@@ -36,6 +36,6 @@ shape = SubResource("RectangleShape2D_3fioj")
 position = Vector2(0, -1)
 script = ExtResource("3_locfo")
 description = "\"This one's bigger\""
-item = "cone"
+item = "pinecone"
 type = 1
 metadata/_edit_group_ = true

@@ -23,7 +23,7 @@ func _ready() -> void:
 	if WorldData.get_game_mode() == "overworld":
 		set_item(0, "hatchet")
 		set_item(1, "frog")
-		set_item(4, "sleeping_bag")
+		set_item(4, "sleepingbag")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

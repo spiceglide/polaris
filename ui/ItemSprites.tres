@@ -1,0 +1,209 @@
+[gd_resource type="SpriteFrames" load_steps=32 format=3 uid="uid://c1fuoyxvmitbn"]
+
+[ext_resource type="Texture2D" uid="uid://dt7wpjjjiurwg" path="res://assets/ui/items/berry_a.png" id="1_1ht4t"]
+[ext_resource type="Texture2D" uid="uid://dmw7c7s8fquau" path="res://assets/ui/items/berry_b.png" id="2_3atwc"]
+[ext_resource type="Texture2D" uid="uid://eqe84ms5eaod" path="res://assets/ui/items/campfire_a.png" id="3_6wtbm"]
+[ext_resource type="Texture2D" uid="uid://qjtmtrljtr1" path="res://assets/ui/items/campfire_b.png" id="4_jqihx"]
+[ext_resource type="Texture2D" uid="uid://bc2d0a06dwrax" path="res://assets/ui/items/cloth_a.png" id="5_eyc6j"]
+[ext_resource type="Texture2D" uid="uid://dupuru70pnq68" path="res://assets/ui/items/cloth_b.png" id="6_8ltrk"]
+[ext_resource type="Texture2D" uid="uid://bi7dj0jsgwtb2" path="res://assets/ui/items/cone_a.png" id="7_upmjs"]
+[ext_resource type="Texture2D" uid="uid://dyldaw4bearqe" path="res://assets/ui/items/cone_b.png" id="8_nyplf"]
+[ext_resource type="Texture2D" uid="uid://brsxkhwr3thxl" path="res://assets/ui/items/placeholder.png" id="9_60ypb"]
+[ext_resource type="Texture2D" uid="uid://crr3jgtm4pkx3" path="res://assets/ui/items/frog_a.png" id="10_4g8ko"]
+[ext_resource type="Texture2D" uid="uid://c8lkycrnaosx" path="res://assets/ui/items/frog_b.png" id="11_1bgur"]
+[ext_resource type="Texture2D" uid="uid://drelnh4jjbbik" path="res://assets/ui/items/frog_dead_a.png" id="12_c8i05"]
+[ext_resource type="Texture2D" uid="uid://ckjk5jylk810k" path="res://assets/ui/items/frog_dead_b.png" id="13_h3qjw"]
+[ext_resource type="Texture2D" uid="uid://b46lmr0878bkd" path="res://assets/ui/items/hatchet_a.png" id="14_toqcd"]
+[ext_resource type="Texture2D" uid="uid://dkwauk2bltw15" path="res://assets/ui/items/hatchet_b.png" id="15_5k1el"]
+[ext_resource type="Texture2D" uid="uid://dkotnm6thd56d" path="res://assets/ui/items/log_a.png" id="16_mc5my"]
+[ext_resource type="Texture2D" uid="uid://c2k1dalvepc1d" path="res://assets/ui/items/log_b.png" id="17_ujw04"]
+[ext_resource type="Texture2D" uid="uid://dchx3pmjetcyf" path="res://assets/ui/items/puff_a.png" id="18_l4qex"]
+[ext_resource type="Texture2D" uid="uid://dovj1rcy2aeir" path="res://assets/ui/items/puff_b.png" id="19_e3tie"]
+[ext_resource type="Texture2D" uid="uid://dxmbu01p816fk" path="res://assets/ui/items/rock_a.png" id="20_bcfle"]
+[ext_resource type="Texture2D" uid="uid://dtte5e476q63n" path="res://assets/ui/items/rock_b.png" id="21_oh5ct"]
+[ext_resource type="Texture2D" uid="uid://33158vk7v75j" path="res://assets/ui/items/sap_a.png" id="22_7dw63"]
+[ext_resource type="Texture2D" uid="uid://cva6845sbbwlx" path="res://assets/ui/items/sap_b.png" id="23_xph5v"]
+[ext_resource type="Texture2D" uid="uid://bpxxhl2sblpdq" path="res://assets/ui/items/sleeping_bag_a.png" id="24_lxh2y"]
+[ext_resource type="Texture2D" uid="uid://muc31e0ndoej" path="res://assets/ui/items/sleeping_bag_b.png" id="25_mfk0l"]
+[ext_resource type="Texture2D" uid="uid://b1n0am2id3u5i" path="res://assets/ui/items/smallfire_a.png" id="26_lcpwy"]
+[ext_resource type="Texture2D" uid="uid://wja8fprn76sg" path="res://assets/ui/items/smallfire_b.png" id="27_0ikgw"]
+[ext_resource type="Texture2D" uid="uid://bjbscyhrivlsp" path="res://assets/ui/items/stick_a.png" id="28_u70ss"]
+[ext_resource type="Texture2D" uid="uid://b7e7m18ubhybf" path="res://assets/ui/items/stick_b.png" id="29_k6nto"]
+[ext_resource type="Texture2D" uid="uid://ck3ojc4nhocx5" path="res://assets/ui/items/torch_a.png" id="30_amego"]
+[ext_resource type="Texture2D" uid="uid://fr427xkrk85e" path="res://assets/ui/items/torch_b.png" id="31_vu1nw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1ht4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3atwc")
+}],
+"loop": true,
+"name": &"berries",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6wtbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqihx")
+}],
+"loop": true,
+"name": &"campfire",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_eyc6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8ltrk")
+}],
+"loop": true,
+"name": &"cloth",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c8i05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h3qjw")
+}],
+"loop": true,
+"name": &"deadfrog",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_60ypb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4g8ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1bgur")
+}],
+"loop": true,
+"name": &"frog",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_toqcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5k1el")
+}],
+"loop": true,
+"name": &"hatchet",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_mc5my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ujw04")
+}],
+"loop": true,
+"name": &"log",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_upmjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nyplf")
+}],
+"loop": true,
+"name": &"pinecone",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_l4qex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e3tie")
+}],
+"loop": true,
+"name": &"puff",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_bcfle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_oh5ct")
+}],
+"loop": true,
+"name": &"rock",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_7dw63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xph5v")
+}],
+"loop": true,
+"name": &"sap",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_lxh2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mfk0l")
+}],
+"loop": true,
+"name": &"sleepingbag",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_lcpwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_0ikgw")
+}],
+"loop": true,
+"name": &"smallfire",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_u70ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_k6nto")
+}],
+"loop": true,
+"name": &"stick",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_amego")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_vu1nw")
+}],
+"loop": true,
+"name": &"torch",
+"speed": 2.0
+}]

@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	
 	for i in range(len(slots)):
 		var slot = slots[i]
-		var old_item = slot.item.item_id if slot.item else ""
+		var old_item = slot.item
 		var new_item = InventoryData.get_item(i)
 		
 		# Update outdated slots
@@ -54,9 +54,6 @@ func _input(event):
 		var item = InventoryData.get_selected_item()
 		if item:
 			$Announcement.announce(tr("ITEM_" + item.to_upper() + "_NAME"))
-	
-	if event.is_action_pressed("use_item"):
-		slots[selected_slot].use()
 		
 	if event.is_action_pressed("drop"):
 		InventoryData.clear_slot(selected_slot)

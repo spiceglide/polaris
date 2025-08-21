@@ -1,11 +1,11 @@
 [
     {
-        "in": ["stick", "cone"],
+        "in": ["stick", "pinecone"],
         "out": "smallfire",
 	"category": "fire"
     },
     {
-        "in": ["stick", "cone", "log"],
+        "in": ["stick", "pinecone", "log"],
         "out": "campfire",
 	"category": "fire"
     },
@@ -21,7 +21,7 @@
     },
     {
         "in": ["frog"],
-        "out": "frog_dead",
+        "out": "deadfrog",
 	"category": "sanity"
     }
 ]

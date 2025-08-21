@@ -1,16 +1,18 @@
 extends Container
 
-var item: Item = null
+var item: String = ""
 
 func set_item(id: String):
-	item = $Item
-	item.set_item(id)
+	item = id
 	
-	$ItemSprite.animation = id
+	if $ItemSprite.sprite_frames.has_animation(id):
+		$ItemSprite.animation = id
+	else:
+		$ItemSprite.animation = "default"
 	$ItemSprite.visible = true
 
 func clear_item():
-	item = null
+	item = ""
 	$ItemSprite.visible = false
 	
 func enable():

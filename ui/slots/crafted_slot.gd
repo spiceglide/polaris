@@ -17,8 +17,8 @@ func disable():
 
 func quick_move():
 	if enabled:
-		get_tree().call_group("crafting", "craft_complete", item.item_id)
-		InventoryData.set_item_at_first_empty(item.item_id)
+		get_tree().call_group("crafting", "craft_complete", item)
+		InventoryData.set_item_at_first_empty(item)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	quick_move()

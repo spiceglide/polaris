@@ -8,7 +8,7 @@ enum SlotState {
 }
 
 @export var anim: String = "type1"
-var item: Item = null
+var item: String = ""
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
 var slot_id: int = -1
@@ -26,20 +26,21 @@ func _process(delta: float) -> void:
 		_clickdrag()
 	
 func set_item(id: String):
-	item = $Item
-	item.set_item(id)
+	item = id
 	
-	$ItemSprite.animation = id
+	if $ItemSprite.sprite_frames.has_animation(id):
+		$ItemSprite.animation = id
+	else:
+		$ItemSprite.animation = "default"
 	$ItemSprite.visible = true
 	
 func clear_item():
-	item = null
+	item = ""
 	$ItemSprite.visible = false
 	update_timestamp()
 
-func get_item():
-	if item:
-		return item.item_id
+func get_item() -> String:
+	return item
 
 func select():
 	self.selected = true
@@ -50,12 +51,6 @@ func deselect():
 	self.selected = false
 	self.scale = Vector2(1, 1)
 	$Sprite.modulate = Color(1, 1, 1)
-
-func use():
-	if item:
-		var consumed = item.use()
-		if consumed:
-			InventoryData.clear_slot(slot_id)
 
 func update_timestamp():
 	last_used = Time.get_ticks_msec()
@@ -103,7 +98,7 @@ func _generate_preview():
 
 func _generate_drag_data():
 	return {
-		"slot": { "id": slot_id, "item": item.item_id, },
+		"slot": { "id": slot_id, "item": item, },
 		"preview": _generate_preview(),
 	}
 

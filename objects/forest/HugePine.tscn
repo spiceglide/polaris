@@ -25,6 +25,7 @@ script = ExtResource("2_02fa7")
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("2_j8p45")
+instance_shader_parameters/flip_offset = 2.0
 texture = ExtResource("1_j8p45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

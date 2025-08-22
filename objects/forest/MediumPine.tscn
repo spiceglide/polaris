@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://6idnqp6mveuf"]
+[gd_scene load_steps=10 format=3 uid="uid://6idnqp6mveuf"]
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_urg0g"]
 [ext_resource type="Texture2D" uid="uid://dcnd88gk0xdrp" path="res://assets/objects/forest/mediumpine.png" id="2_04lg0"]
+[ext_resource type="Texture2D" uid="uid://b37oodg6dwnwx" path="res://assets/objects/temp2/mediumpine_1.png" id="2_yefjf"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_04lg0"]
-[ext_resource type="Script" uid="uid://bdu807tajmmm5" path="res://utility/shadow.gd" id="3_a4ng7"]
+[ext_resource type="Texture2D" uid="uid://1rvpbygvjuaj" path="res://assets/objects/temp2/mediumpine_2.png" id="3_6tmrv"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_v4q15"]
+[ext_resource type="Texture2D" uid="uid://du48ng5j4wibg" path="res://assets/objects/temp2/mediumpine_3.png" id="5_diip3"]
+[ext_resource type="Texture2D" uid="uid://eqclrfowh1we" path="res://assets/objects/temp2/mediumpine_4.png" id="6_tkhhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(75, 64)
@@ -14,16 +17,39 @@ z_index = 1
 collision_layer = 3
 collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("1_urg0g")
+[node name="Sprite" type="Node2D" parent="."]
 position = Vector2(0, -194)
-texture = ExtResource("2_04lg0")
-script = ExtResource("3_a4ng7")
 
-[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprite"]
+material = ExtResource("1_urg0g")
+instance_shader_parameters/mass = 1.0
+instance_shader_parameters/y_origin = 200.0
+texture = ExtResource("2_yefjf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite"]
+material = ExtResource("1_urg0g")
+instance_shader_parameters/mass = 1.4
+instance_shader_parameters/y_origin = 200.0
+texture = ExtResource("3_6tmrv")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite"]
+material = ExtResource("1_urg0g")
+instance_shader_parameters/mass = 1.6
+instance_shader_parameters/y_origin = 200.0
+texture = ExtResource("5_diip3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite"]
+material = ExtResource("1_urg0g")
+instance_shader_parameters/mass = 1.8
+instance_shader_parameters/y_origin = 200.0
+texture = ExtResource("6_tkhhy")
+
+[node name="Shadow" type="Sprite2D" parent="Sprite"]
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_04lg0")
+instance_shader_parameters/flip_offset = 2.0
+position = Vector2(0, -84)
 texture = ExtResource("2_04lg0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

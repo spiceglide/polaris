@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djoyeu071fu1y"]
+[gd_scene load_steps=23 format=3 uid="uid://djoyeu071fu1y"]
 
 [ext_resource type="Script" uid="uid://dkpufkpx60ifs" path="res://characters/creatures/hare_ai.gd" id="1_shbht"]
 [ext_resource type="Texture2D" uid="uid://esnxg2nv3upd" path="res://assets/characters/creatures/hare/hare_alert_1_anticipation.png" id="2_qpp72"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="14_dch7s"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="15_mrx3y"]
 [ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="16_mg1w6"]
+[ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="18_qpp72"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wsglq"]
 animations = [{
@@ -146,8 +147,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("16_mg1w6")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Announcement"]
+sprite_frames = ExtResource("18_qpp72")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Announcement"]
 position = Vector2(0, 228)
+
+[node name="Timer" type="Timer" parent="Announcement"]
+wait_time = 2.5
+one_shot = true
 
 [connection signal="body_entered" from="AlertRange" to="." method="_on_alert_range_body_entered"]
 [connection signal="body_exited" from="AlertRange" to="." method="_on_alert_range_body_exited"]

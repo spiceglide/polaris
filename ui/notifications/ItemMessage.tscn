@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://crdxnhtu2cq45"]
+
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="1_6x2o4"]
+[ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_148fa"]
+[ext_resource type="AudioStream" uid="uid://di1cpkakgldhf" path="res://assets/audio/sfx/mumble.ogg" id="3_6vcm6"]
+
+[node name="Row" type="HBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.478956, 0.890361, 0.993735, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_6x2o4")
+theme_override_font_sizes/font_size = 32
+text = "Item"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-26, 12)
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("2_148fa")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 206)
+stream = ExtResource("3_6vcm6")

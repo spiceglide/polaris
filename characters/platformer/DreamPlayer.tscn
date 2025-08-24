@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b0c5fxmvlyjg7" path="res://characters/platformer/following.gd" id="7_t0nbd"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="280_2l6y1"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="281_2bogj"]
-[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://utility/announcement.gd" id="282_x8mck"]
+[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://ui/notifications/announcement.gd" id="282_x8mck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
 size = Vector2(12, 25)

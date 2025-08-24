@@ -19,7 +19,7 @@ func _ready() -> void:
 	add_to_group("interactive")
 
 func interact(player):
-	var announcer = player.get_node("Announcement")
+	var announcer = player.get_node("Notifications")
 	
 	match type:
 		Interaction.INSPECT:
@@ -28,7 +28,7 @@ func interact(player):
 			if not item:
 				return
 			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce(item, "system")
+				announcer.announce_items([item])
 		Interaction.DISPOSE:
 			announcer.announce(description)
 			self.get_parent().queue_free()
@@ -37,7 +37,7 @@ func interact(player):
 				return
 			
 			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce(item, "system")
+				announcer.announce_items([item])
 				self.get_parent().queue_free()
 			else:
 				announcer.announce("Inventory full!")

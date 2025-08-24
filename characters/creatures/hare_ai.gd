@@ -36,10 +36,10 @@ func _process(delta: float) -> void:
 			EnemyState.Idle:
 				$AnimatedSprite2D.animation = "idle"
 				$AnimatedSprite2D.play()
-				$Announcement.idle_chatter = []
+				$Notifications.autochatter = []
 			EnemyState.Alert:
 				$AnimatedSprite2D.animation = "alert"
-				$Announcement.idle_chatter = []
+				$Notifications.autochatter = []
 
 func _physics_process(delta: float) -> void:
 	# Determine direction
@@ -89,7 +89,7 @@ func _on_danger_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		self.state = EnemyState.Flee
 		last_player_pos = body.position
-		$Announcement.announce(tr("ENEMY_HARE_FLEE_1"))
+		$Notifications.announce(tr("ENEMY_HARE_FLEE_1"))
 
 func _on_danger_range_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

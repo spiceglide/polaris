@@ -2,8 +2,8 @@ shader_type canvas_item;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
-uniform vec3 color = vec3(0.0, 0.0, 0.3);
-uniform float alpha: hint_range(0.0, 1.0) = 0.01;
+uniform vec3 color = vec3(0.0, 0.0, 0.0);
+uniform float alpha: hint_range(0.0, 1.0) = 0.015;
 
 instance uniform float flip_offset = 2;
 uniform float shadow_height = 0.2;

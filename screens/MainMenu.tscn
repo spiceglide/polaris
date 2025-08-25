@@ -1,15 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7x7xmi35d5q6"]
+[gd_scene load_steps=17 format=3 uid="uid://c7x7xmi35d5q6"]
 
 [ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="1_r2nfi"]
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
 [ext_resource type="Texture2D" uid="uid://ccv5owixi6er4" path="res://assets/ui/menu/menu_bg.png" id="2_5hrtm"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
 [ext_resource type="Shader" uid="uid://4i14c8lkhvfg" path="res://shaders/gradient.gdshader" id="3_lts0s"]
+[ext_resource type="Texture2D" uid="uid://ccsm5n07t4dt3" path="res://assets/ui/menu/snow stamps.bak/3mini.png" id="4_5yh37"]
 [ext_resource type="Texture2D" uid="uid://cct8fk057garo" path="res://assets/ui/menu/menu_clutter_nobg.png" id="4_38opn"]
 [ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
 [ext_resource type="Texture2D" uid="uid://cqj8qrxe05guq" path="res://assets/ui/menu/logo.png" id="5_5yh37"]
+[ext_resource type="Shader" uid="uid://bol6tj12pj5oy" path="res://shaders/outline.gdshader" id="5_0675x"]
+[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders.bak/blizzard.gdshader" id="19_nyfbl"]
 [ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
 [ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptt67"]
+shader = ExtResource("19_nyfbl")
+shader_parameter/pattern = ExtResource("4_5yh37")
+shader_parameter/density = 1.0
+shader_parameter/alpha = 0.628
+shader_parameter/speed = Vector2(0.015, -0.1)
+shader_parameter/fade_start = 0.0
+shader_parameter/fade_end = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_op28a"]
+shader = ExtResource("5_0675x")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 10.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0675x"]
 shader = ExtResource("3_lts0s")
@@ -34,18 +52,27 @@ grow_vertical = 2
 texture = ExtResource("2_5hrtm")
 expand_mode = 3
 
+[node name="Snowfall" type="ColorRect" parent="MainMenu"]
+material = SubResource("ShaderMaterial_ptt67")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Title" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -637.0
-offset_right = 1185.0
+offset_left = -547.0
+offset_right = 1275.0
 offset_bottom = 322.0
 grow_horizontal = 2
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 theme_override_constants/margin_top = 80
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/Title"]
+material = SubResource("ShaderMaterial_op28a")
 layout_mode = 2
 texture = ExtResource("5_5yh37")
 
@@ -60,30 +87,34 @@ theme_override_font_sizes/font_size = 128
 text = "MENU_TITLE"
 
 [node name="Menu" type="MarginContainer" parent="MainMenu"]
-anchors_preset = 6
+z_index = 1
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -954.0
-offset_top = -150.0
-offset_right = 6.0
-offset_bottom = 150.0
+anchor_bottom = 1.0
+offset_left = -527.0
+offset_top = -416.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Menu"]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Continue" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+[node name="NewGame" type="Button" parent="MainMenu/Menu/VBoxContainer"]
 layout_mode = 2
-focus_next = NodePath("../NewGame")
+focus_next = NodePath("../Continue")
+focus_previous = NodePath("../Quit")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "MENU_CONTINUE"
+text = "MENU_NEWGAME"
 
-[node name="Background" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Continue"]
+[node name="Background2" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/NewGame"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -99,15 +130,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.584314)
 
-[node name="NewGame" type="Button" parent="MainMenu/Menu/VBoxContainer"]
+[node name="Continue" type="Button" parent="MainMenu/Menu/VBoxContainer"]
 layout_mode = 2
 focus_next = NodePath("../Options")
-focus_previous = NodePath("../Continue")
+focus_previous = NodePath("../NewGame")
 theme = ExtResource("1_r2nfi")
 theme_type_variation = &"FlatButton"
-text = "MENU_NEWGAME"
+disabled = true
+text = "MENU_CONTINUE"
 
-[node name="Background2" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/NewGame"]
+[node name="Background" type="ColorRect" parent="MainMenu/Menu/VBoxContainer/Continue"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -186,6 +218,14 @@ texture = ExtResource("2_5hrtm")
 expand_mode = 3
 flip_h = true
 
+[node name="Snowfall" type="ColorRect" parent="SettingsMenu"]
+material = SubResource("ShaderMaterial_ptt67")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]
 offset = Vector2(0, 1080)
 transform = Transform2D(1, 0, 0, 1, 0, 1080)
@@ -224,7 +264,7 @@ stream = ExtResource("4_mbnhl")
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

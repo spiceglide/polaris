@@ -19,17 +19,17 @@ func focus(source: String):
 	view = Vector2.ZERO
 	match source:
 		"MainMenu":
-			$MainMenu/Menu/VBoxContainer/NewGame.grab_focus()
 			$MainMenu/Menu/VBoxContainer/Continue.grab_focus()
+			$MainMenu/Menu/VBoxContainer/NewGame.grab_focus()
 		"SettingsMenu":
 			$MainMenu/Menu/VBoxContainer/Options.grab_focus()
 		"QuitMenu":
 			$MainMenu/Menu/VBoxContainer/Quit.grab_focus()
 
-func _on_continue_pressed() -> void:
+func _on_new_game_pressed() -> void:
 	SceneSwitcher.load_main_game()
 
-func _on_new_game_pressed() -> void:
+func _on_continue_pressed() -> void:
 	SceneSwitcher.load_dream_game()
 
 func _on_options_pressed() -> void:

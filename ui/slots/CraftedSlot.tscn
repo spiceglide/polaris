@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0coybcg1tfmj"]
+[gd_scene load_steps=15 format=3 uid="uid://b0coybcg1tfmj"]
 
 [ext_resource type="Script" uid="uid://csmdpplcjysma" path="res://ui/slots/crafted_slot.gd" id="1_io71b"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_rr51h"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://ue03khv0lw07" path="res://assets/ui/crafting/crafted_slot_4b.png" id="27_c5ijq"]
 [ext_resource type="Texture2D" uid="uid://e0yfvqob28ak" path="res://assets/ui/crafting/crafted_slot_5a.png" id="28_v06u3"]
 [ext_resource type="Texture2D" uid="uid://46gbpyvkfq36" path="res://assets/ui/crafting/crafted_slot_5b.png" id="29_d3ld7"]
-[ext_resource type="PackedScene" uid="uid://cc6csp2gfaf2n" path="res://ui/Item.tscn" id="30_d2yne"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2x4ab"]
 animations = [{
@@ -96,7 +95,5 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 focus_mode = 0
 mouse_filter = 1
-
-[node name="Item" parent="." instance=ExtResource("30_d2yne")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

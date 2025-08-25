@@ -9,7 +9,7 @@ func _ready() -> void:
 	$Commentary/Autochatter.wait_time = autochatter_frequency["interval"]
 
 func announce(text: String):
-	$Commentary/Announcement.text = text
+	$Commentary/Announcement.text = '"' + text + '"'
 	$Commentary/AudioStreamPlayer2D.play()
 	$Items.position.y -= $Commentary/Announcement.size.y * 2
 	$Commentary/Timeout.start()

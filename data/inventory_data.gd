@@ -52,6 +52,32 @@ func get_first_empty_slot(start: int = 0):
 func get_item(index: int):
 	return slots[index]
 
+func use_selected_item() -> Dictionary:
+	var item = slots[selected_slot]
+	var data = $ItemsData.get_data(item)
+	
+	if "consumable" in data.get("tags", []):
+		print(item)
+		clear_slot(selected_slot)
+	
+	if "stats" in data:
+		PlayerData.health += data["stats"].get("health", 0)
+		PlayerData.hunger += data["stats"].get("hunger", 0)
+		PlayerData.thirst += data["stats"].get("thirst", 0)
+		PlayerData.warmth += data["stats"].get("warmth", 0)
+		PlayerData.sanity += data["stats"].get("sanity", 0)
+	
+	if "yields" in data:
+		for gift in data.get("yields", []):
+			set_item_at_first_empty(gift)
+		
+	if "events" in data:
+		var flags = data.get("events", {})
+		for flag in data.get("events", {}):
+			PlayerData.flags[flag] = flags[flag]
+	
+	return data
+
 func get_selected_item():
 	return slots[selected_slot]
 

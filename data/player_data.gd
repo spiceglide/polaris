@@ -17,10 +17,11 @@ enum State {
 var position: Vector2 = Vector2.ZERO
 
 var state = State.Awake
-var health = 100
-var hunger = 100
-var warmth = 100
-var sanity = 0
+var health = 100.0
+var hunger = 100.0
+var thirst = 100.0
+var warmth = 100.0
+var sanity = 0.0
 
 var flags = {
 	"position_updated": false,

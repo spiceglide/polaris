@@ -41,3 +41,6 @@ func move_item_to_first_empty(slot: int, start: int = 0) -> bool:
 		InventoryData.clear_slot(slot)
 		return true
 	return false
+
+func get_data(item: String):
+	return data[item]

@@ -35,8 +35,11 @@ func update(delta: float):
 			state_transitioned.emit(self, "pullout")
 	
 	# Use item
-	if Input.is_action_just_pressed("use_item"):
-		if item in ["frog", "hare"]:
+	if Input.is_action_just_pressed("use_item") and item != "":
+		var data = InventoryData.use_selected_item()
+		parent_body.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
+		
+		if "victim" in data["tags"]:
 			state_transitioned.emit(self, "kill")
 	
 	# Interact with environment

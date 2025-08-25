@@ -7,14 +7,19 @@
 	"tags": ["placeable", "consumable"]
   },
   "cloth": {
+	"tags": []
   },
   "pinecone": {
+	"tags": []
   },
   "log": {
+	"tags": []
   },
   "rock": {
+	"tags": []
   },
   "sap": {
+	"tags": []
   },
   "sleepingbag": {
 	"tags": ["sleep"]
@@ -31,10 +36,11 @@
 	"tags": ["chop", "holdable"]
   },
   "puff": {
+	"tags": []
   },
   "frog": {
-	"tags": ["victim"],
-	"stats": {"sanity": -20},
+	"tags": ["victim", "consumable"],
+	"stats": {"sanity": 50},
 	"yields": ["deadfrog"],
 	"events": {"firstkill": true}
   },

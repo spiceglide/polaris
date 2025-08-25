@@ -6,52 +6,22 @@
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="4_qahbh"]
 [ext_resource type="Script" uid="uid://cucj58eto375d" path="res://ui/timed_announcement.gd" id="5_kacic"]
 
-[node name="Inventory HUD" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Inventory HUD" type="VBoxContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = -100.0
+offset_right = 183.0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("1_b6eu6")
-
-[node name="Hotbar" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 10.0
-offset_right = 391.0
-offset_bottom = 85.0
-size_flags_horizontal = 3
-script = ExtResource("2_onhdh")
-metadata/_edit_group_ = true
-
-[node name="Full" type="GridContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -292.0
-offset_right = 366.0
-grow_vertical = 0
-columns = 5
-script = ExtResource("2_onhdh")
-metadata/_edit_group_ = true
-
-[node name="Trash" parent="." instance=ExtResource("2_0sq80")]
-visible = false
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 375.0
-offset_top = -70.0
-offset_right = 450.0
-offset_bottom = 5.0
-grow_vertical = 0
 
 [node name="Announcement" type="Label" parent="."]
 z_index = 2
-layout_mode = 0
-offset_left = 160.0
-offset_top = -20.0
-offset_right = 161.0
-offset_bottom = -1.0
+layout_mode = 2
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("4_qahbh")
 theme_override_font_sizes/font_size = 28
@@ -63,6 +33,23 @@ script = ExtResource("5_kacic")
 wait_time = 1.2
 one_shot = true
 
-[connection signal="child_entered_tree" from="Hotbar" to="Hotbar" method="_on_child_entered_tree"]
-[connection signal="child_entered_tree" from="Full" to="Full" method="_on_child_entered_tree"]
+[node name="Trash" parent="." instance=ExtResource("2_0sq80")]
+visible = false
+layout_mode = 2
+
+[node name="Full" type="GridContainer" parent="."]
+visible = false
+layout_mode = 2
+columns = 5
+script = ExtResource("2_onhdh")
+metadata/_edit_group_ = true
+
+[node name="Hotbar" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_onhdh")
+metadata/_edit_group_ = true
+
 [connection signal="timeout" from="Announcement/Timer" to="Announcement" method="_on_timer_timeout"]
+[connection signal="child_entered_tree" from="Full" to="Full" method="_on_child_entered_tree"]
+[connection signal="child_entered_tree" from="Hotbar" to="Hotbar" method="_on_child_entered_tree"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=76 format=3 uid="uid://bhdraj2cyr8o8"]
 
-[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="2_nysna"]
-[ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="2_pom5v"]
+[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders.bak/vignette.gdshader" id="2_nysna"]
+[ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders.bak/day_night.gdshader" id="2_pom5v"]
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://ui/Inventory.tscn" id="3_f6qnu"]
 [ext_resource type="PackedScene" uid="uid://dt04wa7ht1ten" path="res://ui/CraftingMenu.tscn" id="3_jd13s"]
 [ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="4_tvtyy"]
@@ -386,8 +386,8 @@ grow_vertical = 2
 metadata/_edit_group_ = true
 
 [node name="StatsLeft" type="VBoxContainer" parent="."]
-offset_right = 300.0
-offset_bottom = 101.0
+offset_right = 420.0
+offset_bottom = 365.0
 theme_override_constants/separation = -50
 script = ExtResource("5_3q2by")
 side = "left"
@@ -497,17 +497,9 @@ centered = false
 script = ExtResource("9_n8pho")
 
 [node name="Inventory" parent="." instance=ExtResource("3_f6qnu")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -184.0
-offset_top = -94.0
-offset_right = -184.0
-offset_bottom = -94.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = -0.5
+offset_top = -30.0
+offset_right = 0.5
 pivot_offset = Vector2(-50, 0)
 
 [node name="CraftingMenu" parent="." instance=ExtResource("3_jd13s")]

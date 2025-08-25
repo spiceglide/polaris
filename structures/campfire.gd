@@ -23,20 +23,22 @@ func _process(delta: float) -> void:
 			
 			if time_used > duration:
 				state = ObjState.Extinguished
-				$AnimatedSprite2D.animation = "extinguished"
+				$AnimationPlayer.play("burnt")
 
 func interact():
 	match state:
 		ObjState.Unignited:
 			state = ObjState.Ignited
-			$AnimatedSprite2D.animation = "ignited"
+			$AnimationPlayer.play("lit")
 			$ActiveAudio.play()
 			$Light.visible = true
 		ObjState.Ignited:
 			state = ObjState.Unignited
-			$AnimatedSprite2D.animation = "unignited"
+			$AnimationPlayer.play("unlit")
 			$InactiveAudio.play()
 			$Light.visible = false
+		ObjState.Extinguished:
+			queue_free()
 
 func _on_interaction():
 	interact()

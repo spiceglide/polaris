@@ -13,6 +13,7 @@ config_version=5
 config/name="Krai Lesa"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0.054902, 0.0784314, 0.109804, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -128,10 +129,6 @@ locale/translations=PackedStringArray("res://localisations/localisations.en.tran
 2d_physics/layer_2="Interaction"
 2d_physics/layer_3="Logic"
 2d_physics/layer_4="Damage"
-
-[rendering]
-
-environment/defaults/default_clear_color=Color(0.054902, 0.0784314, 0.109804, 1)
 
 [shader_globals]
 

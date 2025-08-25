@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkb82s00y6dgx"]
+[gd_scene load_steps=24 format=3 uid="uid://dkb82s00y6dgx"]
 
 [ext_resource type="Script" uid="uid://dn72shqw6u7s" path="res://structures/campfire.gd" id="1_7pj66"]
+[ext_resource type="Shader" uid="uid://yua5rw4bv4oq" path="res://shaders/glow.gdshader" id="2_3i3u3"]
 [ext_resource type="Texture2D" uid="uid://birslwg7xubri" path="res://assets/structures/campfire/campfire_extinguished.png" id="2_s3jhk"]
 [ext_resource type="Texture2D" uid="uid://h8n1556xtglw" path="res://assets/structures/campfire/campfire_ignited_1.png" id="3_3i3u3"]
 [ext_resource type="Texture2D" uid="uid://dwv5k4mak7dks" path="res://assets/structures/campfire/campfire_ignited_2.png" id="4_br0gt"]
@@ -13,6 +14,16 @@
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_il5cl"]
 [ext_resource type="AudioStream" uid="uid://be8ygsvyaiexh" path="res://assets/audio/sfx/woosh_in.ogg" id="12_sb63e"]
 [ext_resource type="AudioStream" uid="uid://dw2nyxfdgqtr2" path="res://assets/audio/sfx/woosh_out.ogg" id="13_0gf2x"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_br0gt"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hdyu"]
+shader = ExtResource("2_3i3u3")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/strength = 1.7
+shader_parameter/shift = 1.0
+shader_parameter/radius = 8.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2d46r"]
 animations = [{
@@ -53,6 +64,126 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(152, 22)
 
+[sub_resource type="Animation" id="Animation_s3jhk"]
+resource_name = "lit"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unignited"]
+}
+
+[sub_resource type="Animation" id="Animation_3i3u3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unignited"]
+}
+
+[sub_resource type="Animation" id="Animation_br0gt"]
+resource_name = "unlit"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unignited"]
+}
+
+[sub_resource type="Animation" id="Animation_0hdyu"]
+resource_name = "burnt"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"extinguished"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1glw"]
+_data = {
+&"RESET": SubResource("Animation_3i3u3"),
+&"burnt": SubResource("Animation_0hdyu"),
+&"lit": SubResource("Animation_s3jhk"),
+&"unlit": SubResource("Animation_br0gt")
+}
+
 [node name="Campfire" type="StaticBody2D"]
 z_index = 1
 collision_layer = 3
@@ -60,11 +191,30 @@ collision_mask = 3
 script = ExtResource("1_7pj66")
 brightness = 1.6
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -89)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -97)
+texture = SubResource("ViewportTexture_br0gt")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(160, 244)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
+visible = false
+material = SubResource("ShaderMaterial_0hdyu")
+sprite_frames = SubResource("SpriteFrames_2d46r")
+animation = &"ignited"
+frame_progress = 0.309797
+centered = false
+script = ExtResource("8_c5w0t")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
 sprite_frames = SubResource("SpriteFrames_2d46r")
 animation = &"unignited"
-script = ExtResource("8_c5w0t")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -80,15 +230,21 @@ metadata/_edit_group_ = true
 
 [node name="Light" type="PointLight2D" parent="."]
 visible = false
-color = Color(1, 0.827451, 0.6, 1)
+color = Color(1, 0.937255, 0.858824, 1)
 texture = ExtResource("10_hqsbh")
 texture_scale = 1.6
 script = ExtResource("11_il5cl")
+light = 1.0
 
 [node name="ActiveAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_sb63e")
 
 [node name="InactiveAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_0gf2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i1glw")
+}
 
 [connection signal="interaction" from="Interaction" to="." method="_on_interaction"]

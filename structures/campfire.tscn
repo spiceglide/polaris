@@ -192,7 +192,7 @@ script = ExtResource("1_7pj66")
 brightness = 1.6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, -97)
+position = Vector2(0, -97)
 texture = SubResource("ViewportTexture_br0gt")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite2D"]
@@ -207,7 +207,7 @@ visible = false
 material = SubResource("ShaderMaterial_0hdyu")
 sprite_frames = SubResource("SpriteFrames_2d46r")
 animation = &"ignited"
-frame_progress = 0.309797
+frame_progress = 0.111998
 centered = false
 script = ExtResource("8_c5w0t")
 
@@ -218,7 +218,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-2, 11)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_drdvg")
 
 [node name="Interaction" type="Node2D" parent="."]

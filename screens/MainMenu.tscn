@@ -50,7 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5hrtm")
-expand_mode = 3
+expand_mode = 5
 
 [node name="Snowfall" type="ColorRect" parent="MainMenu"]
 material = SubResource("ShaderMaterial_ptt67")
@@ -66,10 +66,10 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -547.0
 offset_right = 1275.0
-offset_bottom = 322.0
+offset_bottom = 282.0
 grow_horizontal = 2
 scale = Vector2(0.6, 0.6)
-theme_override_constants/margin_top = 80
+theme_override_constants/margin_top = 40
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/Title"]
 material = SubResource("ShaderMaterial_op28a")
@@ -215,7 +215,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5hrtm")
-expand_mode = 3
+expand_mode = 5
 flip_h = true
 
 [node name="Snowfall" type="ColorRect" parent="SettingsMenu"]

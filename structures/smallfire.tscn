@@ -244,7 +244,7 @@ visible = false
 material = SubResource("ShaderMaterial_3xnxn")
 sprite_frames = SubResource("SpriteFrames_a7dlj")
 animation = &"ignited"
-frame_progress = 0.729028
+frame_progress = 0.509603
 centered = false
 script = ExtResource("8_kngme")
 
@@ -267,10 +267,11 @@ metadata/_edit_group_ = true
 
 [node name="Light" type="PointLight2D" parent="."]
 visible = false
-color = Color(1, 0.827451, 0.6, 1)
+color = Color(1, 0.937255, 0.858824, 1)
 texture = ExtResource("10_b1l5h")
 texture_scale = 0.8
 script = ExtResource("11_7juvy")
+light = 1.0
 
 [node name="ActiveAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_rk3eb")

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://eqclrfowh1we" path="res://assets/objects/temp2/mediumpine_4.png" id="6_tkhhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
-size = Vector2(75, 64)
+size = Vector2(86, 72)
 
 [node name="PineMedium" type="StaticBody2D"]
 z_index = 1
@@ -54,7 +54,7 @@ texture = ExtResource("2_04lg0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2(-0.5, 4)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Node2D" parent="."]

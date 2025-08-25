@@ -19,6 +19,16 @@ func _process(delta: float) -> void:
 	
 	PlayerData.position = self.position
 
+func place_structure(name: String) -> bool:
+	var scene = WorldData.current_scene
+	var tilemap = scene.get_node("TileMap")
+	
+	var instance = load('res://structures/%s.tscn' % name).instantiate()
+	scene.add_child(instance)
+	instance.global_position = PlayerData.position
+	instance.global_position.x += 150
+	return true
+
 func _on_interaction_body_entered(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):

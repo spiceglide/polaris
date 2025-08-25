@@ -37,6 +37,9 @@ func update(delta: float):
 		
 		if "victim" in data["tags"]:
 			state_transitioned.emit(self, "kill")
+		
+		if "placeable" in data["tags"]:
+			parent_body.place_structure(item)
 	
 	# Interact with environment
 	if Input.is_action_just_pressed("interact"):

@@ -43,7 +43,7 @@ func update(delta: float):
 		var data = InventoryData.use_selected_item()
 		parent_body.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
 		
-		if "victim" in data["tags"]:
+		if "victim" in data.get("tags", []):
 			state_transitioned.emit(self, "kill")
 	
 	# Interact with environment

@@ -8,11 +8,15 @@ func enter():
 	direction = Vector2.ZERO
 	anim = parent_body.get_node("AnimationPlayer")
 	item_sprite = parent_body.get_node("Sprite/Item")
-	$Audio.play()
+	
+	if $Audio.stream_paused:
+		$Audio.stream_paused = false
+	else:
+		$Audio.play()
 
 func exit():
 	direction = Vector2.ZERO
-	$Audio.stop()
+	$Audio.stream_paused = true
 
 func update(delta: float):
 	var item = InventoryData.get_selected_item()

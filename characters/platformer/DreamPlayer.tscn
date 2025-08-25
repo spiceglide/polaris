@@ -1,12 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bgu31xaka4dgs"]
+[gd_scene load_steps=31 format=3 uid="uid://bgu31xaka4dgs"]
 
 [ext_resource type="Script" uid="uid://d2cehjl3qdxm" path="res://characters/platformer/dream_player.gd" id="1_rvlve"]
 [ext_resource type="Texture2D" uid="uid://b0ohee1nh56ww" path="res://assets/platformer/px_dasha_animations.png" id="2_fbxxa"]
 [ext_resource type="Texture2D" uid="uid://c3d0n1ph1jahi" path="res://assets/platformer/darkness_pixelated.png" id="6_0i8xf"]
 [ext_resource type="Script" uid="uid://b0c5fxmvlyjg7" path="res://characters/platformer/following.gd" id="7_t0nbd"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="280_2l6y1"]
-[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="281_2bogj"]
-[ext_resource type="Script" uid="uid://cnal22xx3rsnn" path="res://ui/notifications/announcement.gd" id="282_x8mck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
 size = Vector2(12, 25)
@@ -750,22 +748,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageHitbox"]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_jmgsg")
-
-[node name="Announcement" type="Label" parent="."]
-z_index = 2
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_top = -228.0
-offset_right = 1.0
-offset_bottom = -203.0
-grow_horizontal = 2
-theme_override_constants/outline_size = 7
-theme_override_fonts/font = ExtResource("281_2bogj")
-theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("282_x8mck")
 
 [node name="Light" type="PointLight2D" parent="."]
 texture = ExtResource("6_0i8xf")

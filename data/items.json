@@ -40,7 +40,7 @@
   },
   "frog": {
 	"tags": ["victim", "consumable"],
-	"stats": {"sanity": 50},
+	"stats": {"sanity": 20},
 	"yields": ["deadfrog"],
 	"events": {"firstkill": true}
   },

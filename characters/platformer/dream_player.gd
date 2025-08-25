@@ -313,6 +313,7 @@ func _move(delta: float) -> void:
 			
 			if $DamageTimer.is_stopped():
 				PlayerData.health -= 20
+				PlayerData.sanity += 10
 				$AnimationPlayer.play("crouch/descent")
 				$DamageTimer.start()
 			

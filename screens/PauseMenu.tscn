@@ -31,7 +31,7 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 1)
-color = Color(8.42288e-08, 0.0712349, 0.103106, 1)
+color = Color(0.054902, 0.0784314, 0.109804, 1)
 
 [node name="Title" type="MarginContainer" parent="PauseMenu"]
 layout_mode = 1

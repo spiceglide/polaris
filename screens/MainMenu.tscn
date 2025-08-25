@@ -1,105 +1,23 @@
-[gd_scene load_steps=31 format=3 uid="uid://c7x7xmi35d5q6"]
+[gd_scene load_steps=12 format=3 uid="uid://c7x7xmi35d5q6"]
 
 [ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="1_r2nfi"]
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
-[ext_resource type="Texture2D" uid="uid://bfuqeacste1gs" path="res://assets/ui/menu/menu_base.png" id="2_aydwl"]
+[ext_resource type="Texture2D" uid="uid://ccv5owixi6er4" path="res://assets/ui/menu/menu_bg.png" id="2_5hrtm"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
+[ext_resource type="Shader" uid="uid://4i14c8lkhvfg" path="res://shaders/gradient.gdshader" id="3_lts0s"]
+[ext_resource type="Texture2D" uid="uid://cct8fk057garo" path="res://assets/ui/menu/menu_clutter_nobg.png" id="4_38opn"]
 [ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
-[ext_resource type="Texture2D" uid="uid://d3657afwj662i" path="res://assets/ui/menu/walk/menu_walk_1.png" id="5_nelve"]
-[ext_resource type="Texture2D" uid="uid://blu8tng17r1wo" path="res://assets/ui/menu/walk/menu_walk_2.png" id="6_nyfbl"]
-[ext_resource type="Texture2D" uid="uid://dva55sdfb1cr0" path="res://assets/ui/menu/walk/menu_walk_3.png" id="7_y24je"]
-[ext_resource type="Texture2D" uid="uid://buvy2bggqlme" path="res://assets/ui/menu/walk/menu_walk_4.png" id="8_xsdu4"]
-[ext_resource type="Texture2D" uid="uid://cwjvi5c53ia0x" path="res://assets/ui/menu/walk/menu_walk_5.png" id="9_5ggvk"]
-[ext_resource type="Texture2D" uid="uid://c0rhk5xysl7f3" path="res://assets/ui/menu/walk/menu_walk_6.png" id="10_6p6wd"]
-[ext_resource type="Texture2D" uid="uid://caba6vg0hl1nv" path="res://assets/ui/menu/walk/menu_walk_7.png" id="11_h050v"]
-[ext_resource type="Texture2D" uid="uid://bvp3h1nnf8ixd" path="res://assets/ui/menu/walk/menu_walk_8.png" id="12_5dkyv"]
-[ext_resource type="Texture2D" uid="uid://dvo40ehvth68u" path="res://assets/ui/menu/walk/menu_walk_9.png" id="13_e3c6o"]
-[ext_resource type="Texture2D" uid="uid://cxxeh0jb08lde" path="res://assets/ui/menu/walk/menu_walk_10.png" id="14_ensew"]
-[ext_resource type="Texture2D" uid="uid://oi5vt5x0r58x" path="res://assets/ui/menu/walk/menu_walk_11.png" id="15_5uksb"]
-[ext_resource type="Texture2D" uid="uid://bsn3dgn54c8co" path="res://assets/ui/menu/walk/menu_walk_12.png" id="16_bx774"]
-[ext_resource type="Texture2D" uid="uid://d33ao7447ad2f" path="res://assets/ui/menu/walk/menu_walk_13.png" id="17_tjlmp"]
-[ext_resource type="Texture2D" uid="uid://bcc5oyglill7x" path="res://assets/ui/menu/walk/menu_walk_14.png" id="18_bswnc"]
-[ext_resource type="Texture2D" uid="uid://cavsmp6bfaixa" path="res://assets/ui/menu/walk/menu_walk_15.png" id="19_8asd5"]
-[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/blizzard.gdshader" id="19_nyfbl"]
-[ext_resource type="Texture2D" uid="uid://owvbh86m1ok0" path="res://assets/ui/menu/walk/menu_walk_16.png" id="20_kc8hk"]
-[ext_resource type="Texture2D" uid="uid://dth38dojhqoat" path="res://assets/stamps/1full.png" id="20_y24je"]
-[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="21_6p6wd"]
-[ext_resource type="Texture2D" uid="uid://djcctoywipdxq" path="res://assets/stamps/1mini.png" id="21_y24je"]
+[ext_resource type="Texture2D" uid="uid://cqj8qrxe05guq" path="res://assets/ui/menu/logo.png" id="5_5yh37"]
 [ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
 [ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6p6wd"]
-shader = ExtResource("19_nyfbl")
-shader_parameter/density = 5.0
-shader_parameter/alpha = 0.4
-shader_parameter/speed = Vector2(0.8, -0.12)
-shader_parameter/fade_start = 0.5
-shader_parameter/fade_end = 1.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_46ua2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_nelve")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_nyfbl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_y24je")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_xsdu4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_5ggvk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_6p6wd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_h050v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_5dkyv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_e3c6o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ensew")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_5uksb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_bx774")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_tjlmp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_bswnc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_8asd5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_kc8hk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h050v"]
-shader = ExtResource("19_nyfbl")
-shader_parameter/pattern = ExtResource("21_y24je")
-shader_parameter/density = 0.1
-shader_parameter/alpha = 1.0
-shader_parameter/speed = Vector2(0.8, -0.1)
-shader_parameter/fade_start = 0.404
-shader_parameter/fade_end = 1.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0675x"]
+shader = ExtResource("3_lts0s")
+shader_parameter/first_color = Color(0.176, 0.278, 0.388, 0)
+shader_parameter/second_color = Color(0.054902, 0.0784314, 0.109804, 1)
+shader_parameter/position = -0.123
+shader_parameter/size = 0.568
+shader_parameter/angle = 270.0
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_tder3")
@@ -108,62 +26,32 @@ script = ExtResource("1_tder3")
 follow_viewport_enabled = true
 
 [node name="Background" type="TextureRect" parent="MainMenu"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -1650.0
-offset_right = 4950.0
-offset_bottom = 3300.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_aydwl")
+grow_vertical = 2
+texture = ExtResource("2_5hrtm")
 expand_mode = 3
-stretch_mode = 1
-
-[node name="BlizzardFull" type="TextureRect" parent="MainMenu"]
-material = SubResource("ShaderMaterial_6p6wd")
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -1650.0
-offset_right = 6268.0
-offset_bottom = 1125.0
-grow_horizontal = 2
-scale = Vector2(1, 2)
-texture = ExtResource("20_y24je")
-stretch_mode = 1
-
-[node name="Sprite" type="AnimatedSprite2D" parent="MainMenu"]
-position = Vector2(479, 716)
-sprite_frames = SubResource("SpriteFrames_46ua2")
-frame_progress = 0.640071
-script = ExtResource("21_6p6wd")
-
-[node name="BlizzardMini" type="TextureRect" parent="MainMenu"]
-material = SubResource("ShaderMaterial_h050v")
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -1651.0
-offset_right = 6269.0
-offset_bottom = 1125.0
-grow_horizontal = 2
-scale = Vector2(1, 2)
-texture = ExtResource("20_y24je")
-stretch_mode = 1
 
 [node name="Title" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -304.0
-offset_right = 304.0
-offset_bottom = 98.0
+offset_left = -637.0
+offset_right = 1185.0
+offset_bottom = 322.0
 grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
 theme_override_constants/margin_top = 80
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Title"]
+layout_mode = 2
+texture = ExtResource("5_5yh37")
 
 [node name="Label" type="Label" parent="MainMenu/Title"]
 auto_translate_mode = 1
+visible = false
 layout_mode = 2
 theme = ExtResource("1_r2nfi")
 theme_override_constants/outline_size = 18
@@ -283,14 +171,48 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.584314)
 
 [node name="SettingsMenu" parent="." instance=ExtResource("25_5ggvk")]
-offset = Vector2(2500, 0)
-transform = Transform2D(1, 0, 0, 1, 2500, 0)
+offset = Vector2(1920, 0)
+transform = Transform2D(1, 0, 0, 1, 1920, 0)
 follow_viewport_enabled = true
 
+[node name="Background" type="TextureRect" parent="SettingsMenu"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5hrtm")
+expand_mode = 3
+flip_h = true
+
 [node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]
-offset = Vector2(0, 2000)
-transform = Transform2D(1, 0, 0, 1, 0, 2000)
+offset = Vector2(0, 1080)
+transform = Transform2D(1, 0, 0, 1, 0, 1080)
 follow_viewport_enabled = true
+
+[node name="Colour" type="ColorRect" parent="QuitMenu"]
+z_index = -1
+material = SubResource("ShaderMaterial_0675x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 1)
+color = Color(0.054902, 0.0784314, 0.109804, 1)
+
+[node name="Clutter" type="TextureRect" parent="QuitMenu"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_38opn")
+expand_mode = 2
+stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2500)

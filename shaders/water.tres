@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://w3ti2utvfcly"]
+
+[ext_resource type="Shader" uid="uid://cpfhfkimoc3fq" path="res://shaders/water.gdshader" id="1_243dc"]
+
+[resource]
+shader = ExtResource("1_243dc")
+shader_parameter/bg_color = Color(0.14, 0.43, 0.53, 1)
+shader_parameter/size = 100.0
+shader_parameter/prob = 0.9

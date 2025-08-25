@@ -255,7 +255,7 @@ expand_mode = 2
 stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 2500)
+position = Vector2(0, 1080)
 anchor_mode = 0
 process_callback = 0
 position_smoothing_enabled = true

@@ -7,9 +7,9 @@ var view = Vector2.ZERO
 var pan_speed = 3.0
 
 func _ready() -> void:
+	$QuitMenu.toggle_text(false)
 	$QuitMenu.offset.y = get_viewport_rect().size.y
 	$SettingsMenu.offset.x = get_viewport_rect().size.x
-	$QuitMenu.toggle_text(false)
 	focus("MainMenu")
 
 func _physics_process(delta: float) -> void:

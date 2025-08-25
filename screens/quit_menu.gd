@@ -2,7 +2,7 @@ extends CanvasLayer
 
 func toggle_text(state: bool):
 	$Dialog.visible = state
-	print($Dialog.visible)
+	$Background.visible = state
 
 func _on_yes_pressed() -> void:
 	get_tree().quit()

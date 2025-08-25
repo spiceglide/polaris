@@ -129,6 +129,10 @@ locale/translations=PackedStringArray("res://localisations/localisations.en.tran
 2d_physics/layer_3="Logic"
 2d_physics/layer_4="Damage"
 
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.054902, 0.0784314, 0.109804, 1)
+
 [shader_globals]
 
 game_time={

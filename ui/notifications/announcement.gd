@@ -9,9 +9,11 @@ func _ready() -> void:
 	$Commentary/Autochatter.wait_time = autochatter_frequency["interval"]
 
 func announce(text: String):
+	if $Commentary/Announcement.text == "":
+		$Items.position.y -= $Commentary/Announcement.size.y * 2
+		
 	$Commentary/Announcement.text = '"' + text + '"'
 	$Commentary/AudioStreamPlayer2D.play()
-	$Items.position.y -= $Commentary/Announcement.size.y * 2
 	$Commentary/Timeout.start()
 
 func announce_items(items: Array):
@@ -36,7 +38,7 @@ func _on_items_timeout() -> void:
 	$Items.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
 
 func _on_commentary_timeout() -> void:
-	$Items.size.y += $Commentary/Announcement.size.y * 2
+	$Items.position.y += $Commentary/Announcement.size.y * 2
 	$Items.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
 	$Commentary/Announcement.text = ""
 

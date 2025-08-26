@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bny82lifsvvnc"]
 
-[ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders.bak/sway.material" id="1_ota4e"]
+[ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_2ggt7"]
 [ext_resource type="Texture2D" uid="uid://c3mtppcip2xml" path="res://assets/objects/tundra/sticktree_1.png" id="2_2ggt7"]
-[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders.bak/shadow.material" id="3_2ggt7"]
 [ext_resource type="Script" uid="uid://bdu807tajmmm5" path="res://utility/shadow.gd" id="3_gfvp8"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="4_gfvp8"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_pxmr5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
@@ -15,7 +15,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("1_ota4e")
+material = ExtResource("1_2ggt7")
 position = Vector2(0, -268)
 texture = ExtResource("2_2ggt7")
 script = ExtResource("3_gfvp8")
@@ -23,7 +23,7 @@ script = ExtResource("3_gfvp8")
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
-material = ExtResource("3_2ggt7")
+material = ExtResource("4_gfvp8")
 texture = ExtResource("2_2ggt7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

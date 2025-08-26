@@ -25,6 +25,6 @@ void fragment() {
 	float fade_factor = smoothstep(fade_end, fade_start, UV.y);
 
 	// Output the color
-	COLOR = tex_color * fade_factor;
+	COLOR = (tex_color * fade_factor) + COLOR;
 	COLOR.a *= alpha;
 }

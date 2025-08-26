@@ -4,18 +4,18 @@
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
 [ext_resource type="Texture2D" uid="uid://ccv5owixi6er4" path="res://assets/ui/menu/menu_bg.png" id="2_5hrtm"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
+[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/blizzard.gdshader" id="3_5yh37"]
 [ext_resource type="Shader" uid="uid://4i14c8lkhvfg" path="res://shaders/gradient.gdshader" id="3_lts0s"]
 [ext_resource type="Texture2D" uid="uid://ccsm5n07t4dt3" path="res://assets/ui/menu/snow stamps.bak/3mini.png" id="4_5yh37"]
 [ext_resource type="Texture2D" uid="uid://cct8fk057garo" path="res://assets/ui/menu/menu_clutter_nobg.png" id="4_38opn"]
 [ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
 [ext_resource type="Texture2D" uid="uid://cqj8qrxe05guq" path="res://assets/ui/menu/logo.png" id="5_5yh37"]
 [ext_resource type="Shader" uid="uid://bol6tj12pj5oy" path="res://shaders/outline.gdshader" id="5_0675x"]
-[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders.bak/blizzard.gdshader" id="19_nyfbl"]
 [ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
 [ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptt67"]
-shader = ExtResource("19_nyfbl")
+shader = ExtResource("3_5yh37")
 shader_parameter/pattern = ExtResource("4_5yh37")
 shader_parameter/density = 1.0
 shader_parameter/alpha = 0.628
@@ -59,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Title" type="MarginContainer" parent="MainMenu"]
 anchors_preset = 5
@@ -251,7 +252,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_38opn")
-expand_mode = 2
+expand_mode = 3
 stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]

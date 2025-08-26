@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://uhnhyutpcf7j"]
 
-[ext_resource type="Material" uid="uid://btsphodyus8db" path="res://shaders.bak/fade_with_height.material" id="1_a6a03"]
+[ext_resource type="Material" uid="uid://btsphodyus8db" path="res://shaders/fade_with_height.material" id="1_a6a03"]
 [ext_resource type="Texture2D" uid="uid://dugpya46uo2y4" path="res://assets/objects/swamp/s_tree_1.png" id="1_n0bvb"]
-[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders.bak/shadow.material" id="2_n0bvb"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_7peyl"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_18ynv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(349, 118)
 
-[node name="Tree" type="StaticBody2D"]
+[node name="SwampTree" type="StaticBody2D"]
 z_index = 1
 collision_layer = 3
 collision_mask = 3
@@ -22,7 +22,7 @@ texture = ExtResource("1_n0bvb")
 visible = false
 show_behind_parent = true
 z_as_relative = false
-material = ExtResource("2_n0bvb")
+material = ExtResource("3_7peyl")
 texture = ExtResource("1_n0bvb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

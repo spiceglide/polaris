@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://6idnqp6mveuf"]
 
-[ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders.bak/sway.material" id="1_urg0g"]
+[ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_rwbwl"]
 [ext_resource type="Texture2D" uid="uid://dcnd88gk0xdrp" path="res://assets/objects/forest/mediumpine.png" id="2_04lg0"]
 [ext_resource type="Texture2D" uid="uid://b37oodg6dwnwx" path="res://assets/objects/temp2/mediumpine_1.png" id="2_yefjf"]
-[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders.bak/shadow.material" id="3_04lg0"]
 [ext_resource type="Texture2D" uid="uid://1rvpbygvjuaj" path="res://assets/objects/temp2/mediumpine_2.png" id="3_6tmrv"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_v4q15"]
 [ext_resource type="Texture2D" uid="uid://du48ng5j4wibg" path="res://assets/objects/temp2/mediumpine_3.png" id="5_diip3"]
 [ext_resource type="Texture2D" uid="uid://eqclrfowh1we" path="res://assets/objects/temp2/mediumpine_4.png" id="6_tkhhy"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="6_yefjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(86, 72)
@@ -21,25 +21,25 @@ collision_mask = 3
 position = Vector2(0, -194)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite"]
-material = ExtResource("1_urg0g")
+material = ExtResource("1_rwbwl")
 instance_shader_parameters/mass = 1.0
 instance_shader_parameters/y_origin = 200.0
 texture = ExtResource("2_yefjf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite"]
-material = ExtResource("1_urg0g")
+material = ExtResource("1_rwbwl")
 instance_shader_parameters/mass = 1.4
 instance_shader_parameters/y_origin = 200.0
 texture = ExtResource("3_6tmrv")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite"]
-material = ExtResource("1_urg0g")
+material = ExtResource("1_rwbwl")
 instance_shader_parameters/mass = 1.6
 instance_shader_parameters/y_origin = 200.0
 texture = ExtResource("5_diip3")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite"]
-material = ExtResource("1_urg0g")
+material = ExtResource("1_rwbwl")
 instance_shader_parameters/mass = 1.8
 instance_shader_parameters/y_origin = 200.0
 texture = ExtResource("6_tkhhy")
@@ -47,7 +47,7 @@ texture = ExtResource("6_tkhhy")
 [node name="Shadow" type="Sprite2D" parent="Sprite"]
 show_behind_parent = true
 z_as_relative = false
-material = ExtResource("3_04lg0")
+material = ExtResource("6_yefjf")
 instance_shader_parameters/flip_offset = 2.0
 position = Vector2(0, -84)
 texture = ExtResource("2_04lg0")

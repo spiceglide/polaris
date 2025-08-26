@@ -134,7 +134,7 @@ locale/translations=PackedStringArray("res://localisations/localisations.en.tran
 
 game_time={
 "type": "uint",
-"value": 300
+"value": 200
 }
 wind_strength={
 "type": "float",

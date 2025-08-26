@@ -22,26 +22,22 @@ position = Vector2(0, -194)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite"]
 material = ExtResource("1_rwbwl")
-instance_shader_parameters/mass = 1.0
-instance_shader_parameters/y_origin = 200.0
+instance_shader_parameters/heightOffset = 2.375e-07
 texture = ExtResource("2_yefjf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite"]
 material = ExtResource("1_rwbwl")
-instance_shader_parameters/mass = 1.4
-instance_shader_parameters/y_origin = 200.0
+instance_shader_parameters/heightOffset = -0.33
 texture = ExtResource("3_6tmrv")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite"]
 material = ExtResource("1_rwbwl")
-instance_shader_parameters/mass = 1.6
-instance_shader_parameters/y_origin = 200.0
+instance_shader_parameters/heightOffset = -0.66
 texture = ExtResource("5_diip3")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite"]
 material = ExtResource("1_rwbwl")
-instance_shader_parameters/mass = 1.8
-instance_shader_parameters/y_origin = 200.0
+instance_shader_parameters/heightOffset = -1.0
 texture = ExtResource("6_tkhhy")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite"]

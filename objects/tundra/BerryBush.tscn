@@ -15,7 +15,6 @@ collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_2yjhj")
-instance_shader_parameters/y_origin = 100.0
 position = Vector2(-5, -35)
 texture = ExtResource("2_bv5ra")
 
@@ -23,9 +22,11 @@ texture = ExtResource("2_bv5ra")
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_bv5ra")
+position = Vector2(-5, -12)
 texture = ExtResource("2_bv5ra")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_tu87o")
 
 [node name="Interaction" type="Node2D" parent="."]

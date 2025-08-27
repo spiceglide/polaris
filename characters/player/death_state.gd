@@ -3,7 +3,7 @@ extends State
 var anim: AnimationPlayer
 
 func enter():
-	anim = parent_body.get_node("AnimationPlayer")
+	anim = parent.get_node("AnimationPlayer")
 	anim.play("action/death_1")
 	anim.queue("action/death_2")
 

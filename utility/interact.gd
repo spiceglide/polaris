@@ -2,45 +2,51 @@ extends Node2D
 
 signal interaction
 
-@export var description: String
-@export var item: String
-@export var type: Interaction
+@export var parent: PhysicsBody2D
+var priority: Array = ["chop", "gather"]
 
-enum Interaction {
-	INSPECT,
-	PICKUP,
-	DISPOSE,
-	PICKUP_AND_DISPOSE,
-	OTHER,
-}
+var data: Dictionary = {}
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	data = _read_items()
 	add_to_group("interactive")
 
-func interact(player):
-	var announcer = player.get_node("Notifications")
+func _read_items():
+	var file = FileAccess.open("res://data/objects.json", FileAccess.READ)
+	var json = file.get_as_text()
 	
-	match type:
-		Interaction.INSPECT:
-			announcer.announce(description)
-		Interaction.PICKUP:
-			if not item:
-				return
-			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce_items([item])
-		Interaction.DISPOSE:
-			announcer.announce(description)
-			self.get_parent().queue_free()
-		Interaction.PICKUP_AND_DISPOSE:
-			if not item:
-				return
-			
-			if InventoryData.set_item_at_first_empty(item):
-				announcer.announce_items([item])
-				self.get_parent().queue_free()
-			else:
-				announcer.announce("Inventory full!")
-		Interaction.OTHER:
-			interaction.emit()
-			
+	var reader = JSON.new()
+	var error = reader.parse(json)
+	if error == OK:
+		return reader.data
+	else:
+		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
+		return {}
+
+func select_interaction_type(available: Array) -> String:
+	var object_data = data[parent.id.to_lower()]
+	var state_data = object_data[parent.current_state.name.to_lower()]
+	var possible = state_data.keys()
+
+	var type: String = ""
+	for interaction_type in priority:
+		if (interaction_type in available) and (interaction_type in possible):
+			type = interaction_type
+			break
+	
+	return type
+
+func interact(player: CharacterBody2D, type: String):
+	var object_data = data[parent.id.to_lower()]
+	var state_data = object_data[parent.current_state.name.to_lower()]
+	var interaction_data = state_data[type]
+
+	var yields = interaction_data.get("yields", [])
+	var announcer = player.get_node("Notifications")
+	for item in yields:
+		if InventoryData.set_item_at_first_empty(item):
+			announcer.announce_items([item])
+
+	var next_state = interaction_data.get("next", "")
+	if next_state:
+		parent.change_state(next_state)

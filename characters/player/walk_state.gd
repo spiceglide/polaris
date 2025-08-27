@@ -6,8 +6,8 @@ var item_sprite: AnimatedSprite2D
 
 func enter():
 	direction = Vector2.ZERO
-	anim = parent_body.get_node("AnimationPlayer")
-	item_sprite = parent_body.get_node("Sprite/Item")
+	anim = parent.get_node("AnimationPlayer")
+	item_sprite = parent.get_node("Sprite/Item")
 	
 	if $Audio.stream_paused:
 		$Audio.stream_paused = false
@@ -22,7 +22,7 @@ func update(delta: float):
 	var item = InventoryData.get_selected_item()
 	
 	# Play idle animation (with or without holding)
-	var last_dir = parent_body.last_dir
+	var last_dir = parent.last_dir
 	if item in InventoryData.holdable:
 		item_sprite.animation = item + "_walk"
 		anim.play("walk/" + last_dir + "_hold")
@@ -32,7 +32,7 @@ func update(delta: float):
 	# Potentially hold item
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
 		if item not in ["torch"]:
-			var light = parent_body.get_node("Light")
+			var light = parent.get_node("Light")
 			light.visible = false
 		
 		if item in InventoryData.holdable:
@@ -41,22 +41,26 @@ func update(delta: float):
 	# Use item
 	if Input.is_action_just_pressed("use_item") and item != "":
 		var data = InventoryData.use_selected_item()
-		parent_body.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
+		parent.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
 		
 		if "victim" in data.get("tags", []):
 			state_transitioned.emit(self, "kill")
 	
 	# Interact with environment
 	if Input.is_action_just_pressed("interact"):
-		if len(parent_body.interactable) > 0:
-			match item:
-				"hatchet":
-					state_transitioned.emit(self, "chop")
-				_:
-					state_transitioned.emit(self, "gather")
+		if len(parent.interactable) > 0:
+			var object = parent.interactable[0]
+			var interactions = ["gather"]
+
+			if item == "hatchet":
+					interactions.append("chop")
+
+			var interaction = object.select_interaction_type(interactions)
+			if interaction:
+				state_transitioned.emit(self, interaction)
 
 func physics_update(delta: float):
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	# Speed multiplier
 	var mult = 1
@@ -65,8 +69,8 @@ func physics_update(delta: float):
 	
 	# Process
 	if direction.length() > 0:
-		parent_body.velocity = direction.normalized() * PlayerData.speed * mult
-		parent_body.move_and_slide()
+		parent.velocity = direction.normalized() * PlayerData.speed * mult
+		parent.move_and_slide()
 		
 		# Determine direction
 		var last_dir: String = "south"
@@ -74,6 +78,6 @@ func physics_update(delta: float):
 			last_dir = "north" if direction.y < 0 else "south"
 		else:
 			last_dir = "west" if direction.x < 0 else "east"
-		parent_body.last_dir = last_dir
+		parent.last_dir = last_dir
 	else:
 		state_transitioned.emit(self, "idle")

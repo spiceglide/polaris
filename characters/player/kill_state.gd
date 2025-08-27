@@ -7,9 +7,9 @@ var stage: int = 0
 
 func enter():
 	stage = 0
-	anim = parent_body.get_node("AnimationPlayer")
-	item_sprite = parent_body.get_node("Sprite/Item")
-	animal_sprite = parent_body.get_node("Sprite/Animal")
+	anim = parent.get_node("AnimationPlayer")
+	item_sprite = parent.get_node("Sprite/Item")
+	animal_sprite = parent.get_node("Sprite/Animal")
 	
 	# Select victim
 	var animal = InventoryData.get_selected_item()
@@ -20,7 +20,7 @@ func enter():
 	anim.queue("action/kill_2")
 
 func exit():
-	parent_body.last_dir = "south"
+	parent.last_dir = "south"
 	animal_sprite.visible = false
 
 func update(delta: float):

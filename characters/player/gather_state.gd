@@ -5,7 +5,7 @@ var exitable: bool = false
 
 func enter():
 	exitable = false
-	anim = parent_body.get_node("AnimationPlayer")
+	anim = parent.get_node("AnimationPlayer")
 	anim.play("action/gather_1")
 	anim.queue("action/gather_2")
 	$Timer.start()
@@ -23,11 +23,11 @@ func physics_update(delta: float):
 		state_transitioned.emit(self, "walk")
 
 func _on_timer_timeout() -> void:
-	var interactable = parent_body.interactable
+	var interactable = parent.interactable
 	if len(interactable) > 0:
-		interactable[0].interact(parent_body)
+		interactable[0].interact(parent, "gather")
 	
-	parent_body.last_dir = "north"
+	parent.last_dir = "north"
 	state_transitioned.emit(self, "idle")
 
 func _on_animation_player_animation_changed(old_name: StringName, new_name: StringName) -> void:

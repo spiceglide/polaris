@@ -207,7 +207,7 @@ visible = false
 material = SubResource("ShaderMaterial_0hdyu")
 sprite_frames = SubResource("SpriteFrames_2d46r")
 animation = &"ignited"
-frame_progress = 0.111998
+frame_progress = 0.234284
 centered = false
 script = ExtResource("8_c5w0t")
 

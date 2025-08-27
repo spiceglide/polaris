@@ -7028,9 +7028,9 @@ libraries = {
 }
 autoplay = "idle/south"
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent_body", "initial_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
 script = ExtResource("22_lplbi")
-parent_body = NodePath("..")
+parent = NodePath("..")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]

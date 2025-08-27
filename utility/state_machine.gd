@@ -1,7 +1,7 @@
 extends Node
 class_name StateMachine
 
-@export var parent_body: PhysicsBody2D
+@export var parent: PhysicsBody2D
 @export var initial_state: State
 
 var current_state: State
@@ -11,7 +11,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
-			child.parent_body = parent_body
+			child.parent = parent
 			child.state_transitioned.connect(_on_child_transitioned)
 	
 	if initial_state:
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	current_state.physics_update(delta)
 
-func _on_child_transitioned(state, new_state_name):
+func transition(state, new_state_name):
 	if (state != current_state) or (new_state_name not in states):
 		return
 	
@@ -41,3 +41,6 @@ func _on_child_transitioned(state, new_state_name):
 	new_state.enter()
 	
 	current_state = new_state
+
+func _on_child_transitioned(state, new_state_name):
+	transition(state, new_state_name)

@@ -1,0 +1,144 @@
+{
+  "campfire": {
+    "unlit": {
+      "tags": [],
+      "gather": {
+        "next": "lit"
+      }
+    },
+    "lit": {
+      "tags": ["warmth"],
+      "gather": {
+        "next": "unlit"
+      }
+    },
+    "burnt": {
+      "tags": [],
+      "gather": {
+        "next": ""
+      }
+    }
+  },
+  "smallfire": {
+    "unlit": {
+      "tags": [],
+      "gather": {
+        "next": "lit"
+      }
+    },
+    "lit": {
+      "tags": ["warmth"],
+      "gather": {
+        "next": "unlit"
+      }
+    },
+    "burnt": {
+      "tags": [],
+      "gather": {
+        "next": ""
+      }
+    }
+  },
+  "well": {
+    "lowered": {
+      "tags": [],
+      "crank": {
+        "next": "raised"
+      }
+    },
+    "raised": {
+      "tags": [],
+      "crank": {
+        "next": "lowered"
+      }
+    },
+    "broken": {
+      "tags": [],
+      "gather": {
+        "next": "raised"
+      }
+    }
+  },
+  "hugepine": {
+    "default": {
+      "tags": [],
+      "gather": {
+        "yields": ["pinecone"]
+      },
+      "chop": {}
+    }
+  },
+  "mediumpine": {
+    "default": {
+      "tags": [],
+      "gather": {
+        "yields": ["pinecone"]
+      },
+      "chop": {
+        "yields": ["log", "stick", "stick"],
+        "next": "stump"
+      }
+    },
+    "stump": {
+      "tags": []
+    }
+  },
+  "bush": {
+    "default": {}
+  },
+  "berrybush": {
+    "unpicked": {
+      "tags": [],
+      "gather": {
+        "yields": ["berries"],
+        "next": "picked"
+      }
+    },
+    "picked": {
+      "tags": []
+    }
+  },
+  "rock": {
+    "default": {
+      "tags": [],
+      "gather": {
+        "yields": "rock",
+        "next": ""
+      }
+    }
+  },
+  "snowpile": {
+    "default": {
+      "tags": []
+    }
+  },
+  "sticktree": {
+    "default": {
+      "tags": [],
+      "chop": {
+        "yields": ["stick", "stick"],
+        "next": "picked"
+      }
+    },
+    "picked": {
+      "tags": [],
+      "chop": {
+        "yields": ["stick", "stick", "stick"],
+        "next": "stump"
+      }
+    },
+    "stump": {
+      "tags": []
+    }
+  },
+  "reed": {
+    "default": {
+      "tags": []
+    },
+    "bloom": {
+      "tags": [],
+      "yields": ["puff"],
+      "next": "default"
+    }
+  }
+}

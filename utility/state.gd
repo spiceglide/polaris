@@ -3,7 +3,7 @@ class_name State
 
 signal state_transitioned
 
-var parent_body: PhysicsBody2D
+var parent: PhysicsBody2D
 
 func enter():
 	pass

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://6idnqp6mveuf"]
+[gd_scene load_steps=20 format=3 uid="uid://6idnqp6mveuf"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_tkhhy"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_diip3"]
 [ext_resource type="Texture2D" uid="uid://b37oodg6dwnwx" path="res://assets/objects/temp2/mediumpine_1.png" id="2_yefjf"]
 [ext_resource type="Texture2D" uid="uid://1rvpbygvjuaj" path="res://assets/objects/temp2/mediumpine_2.png" id="3_6tmrv"]
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="3_tkhhy"]
@@ -8,10 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c62pgcbh2ay8q" path="res://assets/objects/temp2/mediumpine_stump.png" id="4_yefjf"]
 [ext_resource type="Texture2D" uid="uid://du48ng5j4wibg" path="res://assets/objects/temp2/mediumpine_3.png" id="5_diip3"]
 [ext_resource type="Texture2D" uid="uid://eqclrfowh1we" path="res://assets/objects/temp2/mediumpine_4.png" id="6_tkhhy"]
-[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders.bak/shadow.material" id="6_yefjf"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="9_6tmrv"]
-[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/forest/mediumpine_default.gd" id="10_diip3"]
-[ext_resource type="Script" uid="uid://cuiepjygopf17" path="res://objects/forest/mediumpine_stump.gd" id="11_tkhhy"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="10_diip3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_diip3"]
 viewport_path = NodePath("SubViewport")
@@ -215,7 +214,7 @@ texture = SubResource("ViewportTexture_diip3")
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
-material = ExtResource("6_yefjf")
+material = ExtResource("2_diip3")
 instance_shader_parameters/flip_offset = 2.0
 position = Vector2(-8, -59)
 texture = SubResource("ViewportTexture_tkhhy")
@@ -271,6 +270,8 @@ initial_state = NodePath("Default")
 
 [node name="Default" type="Node" parent="StateMachine"]
 script = ExtResource("10_diip3")
+animations = ["default"]
 
 [node name="Stump" type="Node" parent="StateMachine"]
-script = ExtResource("11_tkhhy")
+script = ExtResource("10_diip3")
+animations = ["stump"]

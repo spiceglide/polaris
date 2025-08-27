@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
 [ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/blizzard.gdshader" id="3_5yh37"]
 [ext_resource type="Shader" uid="uid://4i14c8lkhvfg" path="res://shaders/gradient.gdshader" id="3_lts0s"]
-[ext_resource type="Texture2D" uid="uid://ccsm5n07t4dt3" path="res://assets/ui/menu/snow stamps.bak/3mini.png" id="4_5yh37"]
+[ext_resource type="Texture2D" uid="uid://crjii57q6bt1d" path="res://assets/stamps/3mini.png" id="4_5yh37"]
 [ext_resource type="Texture2D" uid="uid://cct8fk057garo" path="res://assets/ui/menu/menu_clutter_nobg.png" id="4_38opn"]
 [ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
 [ext_resource type="Texture2D" uid="uid://cqj8qrxe05guq" path="res://assets/ui/menu/logo.png" id="5_5yh37"]

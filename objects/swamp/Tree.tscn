@@ -32,5 +32,4 @@ shape = SubResource("RectangleShape2D_3fioj")
 
 [node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("4_18ynv")
-description = "\"Swampy\""
 metadata/_edit_group_ = true

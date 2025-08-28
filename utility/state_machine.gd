@@ -1,8 +1,8 @@
 extends Node
 class_name StateMachine
 
-@export var parent: PhysicsBody2D = self.get_parent()
-@export var initial_state: State = self.get_child(0)
+@export var parent: PhysicsBody2D
+@export var initial_state: State
 
 var current_state: State
 var states: Dictionary = {}

@@ -12,7 +12,7 @@ void fragment() {
 	vec2 pos = floor(1.0 / size * FRAGCOORD.xy);
 	float color = 0.0;
 	float starValue = rand(pos);
-	
+
 	if (rand(SCREEN_UV.xy / 20.0) > 0.996)
 	{
 		float r = rand(SCREEN_UV.xy);

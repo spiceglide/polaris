@@ -5,5 +5,5 @@
 [resource]
 shader = ExtResource("1_tdt5j")
 shader_parameter/allow_out_of_bounds = true
-shader_parameter/outline_thickness = 3.0
-shader_parameter/outline_color = Color(0.34902, 0.866667, 0.988235, 1)
+shader_parameter/outline_thickness = 2.0
+shader_parameter/outline_color = Color(0.107927, 0.737908, 0.861856, 1)

@@ -22,8 +22,8 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(10, 17)
 
-[sub_resource type="Animation" id="Animation_s7ahs"]
-resource_name = "default"
+[sub_resource type="Animation" id="Animation_h47wc"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,8 +73,8 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_h47wc"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_s7ahs"]
+resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -242,7 +242,6 @@ script = ExtResource("1_ksnqb")
 id = "sticktree"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("1_2ggt7")
 position = Vector2(0, -268)
 texture = SubResource("ViewportTexture_mqhyw")
 
@@ -270,6 +269,7 @@ centered = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("1_2ggt7")
+instance_shader_parameters/heightOffset = 0.0
 texture = ExtResource("6_xia0u")
 centered = false
 

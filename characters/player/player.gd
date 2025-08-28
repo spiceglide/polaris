@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var last_dir = "south";
 var interactable = []
+var tools = []
 
 func start(pos):
 	position = pos
@@ -18,6 +19,18 @@ func _process(delta: float) -> void:
 		PlayerData.flags["position_updated"] = false
 	
 	PlayerData.position = self.position
+
+	highlight_nearest()
+
+func highlight_nearest():
+	var first = true
+	for object in interactable:
+		if first:
+			object.highlight(true, ["gather", "chop"])
+		else:
+			object.highlight(false, ["gather", "chop"])
+
+		first = false
 
 func place_structure(name: String) -> bool:
 	var scene = WorldData.current_scene
@@ -37,4 +50,5 @@ func _on_interaction_body_entered(body: Node2D) -> void:
 func _on_interaction_body_exited(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
+		interactive.highlight(false, ["gather", "chop"])
 		interactable.erase(interactive)

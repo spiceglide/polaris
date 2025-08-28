@@ -21,6 +21,12 @@ func _read_items():
 		print("JSON Parse Error: %s at %s" % [reader.get_error_message(), reader.get_error_line()])
 		return {}
 
+func highlight(enabled: bool, available: Array):
+	if enabled and select_interaction_type(available):
+		parent.highlight(true)
+	else:
+		parent.highlight(false)
+
 func select_interaction_type(available: Array) -> String:
 	var object_data = data[parent.id.to_lower()]
 	var state_data = object_data[parent.current_state.name.to_lower()]

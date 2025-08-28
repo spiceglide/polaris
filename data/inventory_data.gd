@@ -52,7 +52,12 @@ func get_first_empty_slot(start: int = 0):
 func get_item(index: int):
 	return slots[index]
 
-func use_selected_item() -> Dictionary:
+func get_selected_item_data() -> Dictionary:
+	var item = slots[selected_slot]
+	var data = $ItemsData.get_data(item)
+	return data
+
+func use_selected_item():
 	var item = slots[selected_slot]
 	var data = $ItemsData.get_data(item)
 	
@@ -75,8 +80,6 @@ func use_selected_item() -> Dictionary:
 		var flags = data.get("events", {})
 		for flag in data.get("events", {}):
 			PlayerData.flags[flag] = flags[flag]
-	
-	return data
 
 func get_selected_item():
 	return slots[selected_slot]

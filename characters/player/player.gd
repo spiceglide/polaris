@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var last_dir = "south";
 var interactable = []
-var tools = []
 
 func start(pos):
 	position = pos
@@ -22,13 +21,24 @@ func _process(delta: float) -> void:
 
 	highlight_nearest()
 
+func get_possible_interactions():
+	var item = InventoryData.get_selected_item_data()
+	var possible = ["gather"]
+
+	if "chop" in item.get("tags", []):
+		possible.append("chop")
+	
+	return possible
+
 func highlight_nearest():
+	var possible = get_possible_interactions()
+
 	var first = true
 	for object in interactable:
 		if first:
-			object.highlight(true, ["gather", "chop"])
+			object.highlight(true, possible)
 		else:
-			object.highlight(false, ["gather", "chop"])
+			object.highlight(false, possible)
 
 		first = false
 
@@ -50,5 +60,5 @@ func _on_interaction_body_entered(body: Node2D) -> void:
 func _on_interaction_body_exited(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
-		interactive.highlight(false, ["gather", "chop"])
+		interactive.highlight(false)
 		interactable.erase(interactive)

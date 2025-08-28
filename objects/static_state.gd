@@ -8,3 +8,7 @@ func enter():
 	anim_player.play(animations.front())
 	for anim in animations.slice(1):
 		anim.queue(anim)
+
+	var audio = self.get_node_or_null("AudioStreamPlayer2D")
+	if audio:
+		audio.play()

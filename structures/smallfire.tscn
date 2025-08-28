@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://cb8u5hchvmdb1"]
+[gd_scene load_steps=26 format=3 uid="uid://cb8u5hchvmdb1"]
 
-[ext_resource type="Script" uid="uid://dn72shqw6u7s" path="res://structures/campfire.gd" id="1_7juvy"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_3xnxn"]
 [ext_resource type="Texture2D" uid="uid://b0hvxa8wyhckd" path="res://assets/structures/smallfire/smallfire.png" id="2_31153"]
 [ext_resource type="Shader" uid="uid://yua5rw4bv4oq" path="res://shaders/glow.gdshader" id="2_f1bs2"]
 [ext_resource type="Texture2D" uid="uid://bpvtwjya270vt" path="res://assets/structures/smallfire/smallfire_extinguished.png" id="3_b1l5h"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_7juvy"]
 [ext_resource type="AudioStream" uid="uid://be8ygsvyaiexh" path="res://assets/audio/sfx/woosh_in.ogg" id="12_rk3eb"]
 [ext_resource type="AudioStream" uid="uid://dw2nyxfdgqtr2" path="res://assets/audio/sfx/woosh_out.ogg" id="13_a6cfv"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="15_gildr"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="16_i7dgt"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6qb0e"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -102,6 +104,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Light:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_3xnxn"]
 resource_name = "burnt"
@@ -137,6 +151,18 @@ tracks/2/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Light:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -183,6 +209,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Light:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_6qb0e"]
 resource_name = "unlit"
@@ -211,6 +249,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"unignited"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i7dgt"]
 _data = {
@@ -224,9 +274,8 @@ _data = {
 z_index = 1
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_7juvy")
-brightness = 0.8
-duration = 180.0
+script = ExtResource("1_3xnxn")
+id = "smallfire"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -54)
@@ -258,11 +307,9 @@ light_mask = 0
 position = Vector2(-5, 2)
 shape = SubResource("RectangleShape2D_drdvg")
 
-[node name="Interaction" type="Node2D" parent="."]
-position = Vector2(0, -1)
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("9_tskb1")
-description = "\"It's a campfire\""
-type = 4
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Light" type="PointLight2D" parent="."]
@@ -273,15 +320,30 @@ texture_scale = 0.8
 script = ExtResource("11_7juvy")
 light = 1.0
 
-[node name="ActiveAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_rk3eb")
-
-[node name="InactiveAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_a6cfv")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_i7dgt")
 }
 
-[connection signal="interaction" from="Interaction" to="." method="_on_interaction"]
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("15_gildr")
+parent = NodePath("..")
+initial_state = NodePath("Unlit")
+
+[node name="Unlit" type="Node2D" parent="StateMachine"]
+script = ExtResource("16_i7dgt")
+animations = ["unlit"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Unlit"]
+stream = ExtResource("13_a6cfv")
+
+[node name="Lit" type="Node2D" parent="StateMachine"]
+script = ExtResource("16_i7dgt")
+animations = ["lit"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Lit"]
+stream = ExtResource("12_rk3eb")
+
+[node name="Burnt" type="Node2D" parent="StateMachine"]
+script = ExtResource("16_i7dgt")
+animations = ["burnt"]

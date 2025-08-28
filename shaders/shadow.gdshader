@@ -5,9 +5,9 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_n
 uniform vec3 color = vec3(0.0, 0.0, 0.0);
 uniform float alpha: hint_range(0.0, 1.0) = 0.015;
 
-instance uniform float flip_offset = 2;
+instance uniform float flip_offset = 2.0;
 uniform float shadow_height = 0.2;
-uniform float end_angle = 45;
+uniform float end_angle = 45.0;
 uniform vec2 scale_factor = vec2(3.0, 2.0);
 uniform vec2 fade_interval = vec2(0.0, 0.05);
 

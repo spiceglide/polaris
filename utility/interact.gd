@@ -1,8 +1,6 @@
 extends Node2D
 
-signal interaction
-
-@export var parent: PhysicsBody2D
+@export var parent: PhysicsBody2D = self.get_parent()
 var priority: Array = ["chop", "gather"]
 
 var data: Dictionary = {}
@@ -37,8 +35,11 @@ func select_interaction_type(available: Array) -> String:
 	return type
 
 func interact(player: CharacterBody2D, type: String):
-	var object_data = data[parent.id.to_lower()]
-	var state_data = object_data[parent.current_state.name.to_lower()]
+	var id = parent.id.to_lower()
+	var state = parent.current_state.name.to_lower()
+
+	var object_data = data[id]
+	var state_data = object_data[state]
 	var interaction_data = state_data[type]
 
 	var yields = interaction_data.get("yields", [])
@@ -47,6 +48,11 @@ func interact(player: CharacterBody2D, type: String):
 		if InventoryData.set_item_at_first_empty(item):
 			announcer.announce_items([item])
 
-	var next_state = interaction_data.get("next", "")
-	if next_state:
-		parent.change_state(next_state)
+	var next_state = interaction_data.get("next", state)
+	match next_state:
+		state:
+			pass
+		"":
+			parent.queue_free()
+		_:
+			parent.change_state(next_state)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkb82s00y6dgx"]
+[gd_scene load_steps=26 format=3 uid="uid://dkb82s00y6dgx"]
 
-[ext_resource type="Script" uid="uid://dn72shqw6u7s" path="res://structures/campfire.gd" id="1_7pj66"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_br0gt"]
 [ext_resource type="Shader" uid="uid://yua5rw4bv4oq" path="res://shaders/glow.gdshader" id="2_3i3u3"]
 [ext_resource type="Texture2D" uid="uid://birslwg7xubri" path="res://assets/structures/campfire/campfire_extinguished.png" id="2_s3jhk"]
 [ext_resource type="Texture2D" uid="uid://h8n1556xtglw" path="res://assets/structures/campfire/campfire_ignited_1.png" id="3_3i3u3"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_il5cl"]
 [ext_resource type="AudioStream" uid="uid://be8ygsvyaiexh" path="res://assets/audio/sfx/woosh_in.ogg" id="12_sb63e"]
 [ext_resource type="AudioStream" uid="uid://dw2nyxfdgqtr2" path="res://assets/audio/sfx/woosh_out.ogg" id="13_0gf2x"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="15_0hdyu"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="16_i1glw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_br0gt"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -90,6 +92,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"unignited"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0hdyu"]
 resource_name = "burnt"
@@ -117,6 +131,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"extinguished"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_s3jhk"]
@@ -147,6 +173,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"unignited"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_br0gt"]
 resource_name = "unlit"
@@ -175,6 +213,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"unignited"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i1glw"]
 _data = {
@@ -188,8 +238,8 @@ _data = {
 z_index = 1
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_7pj66")
-brightness = 1.6
+script = ExtResource("1_br0gt")
+id = "campfire"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -97)
@@ -198,8 +248,7 @@ texture = SubResource("ViewportTexture_br0gt")
 [node name="SubViewport" type="SubViewport" parent="Sprite2D"]
 disable_3d = true
 transparent_bg = true
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
+handle_input_locally = false
 size = Vector2i(160, 244)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
@@ -221,11 +270,10 @@ light_mask = 0
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_drdvg")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 position = Vector2(0, -1)
 script = ExtResource("9_osoys")
-description = "\"It's a campfire\""
-type = 4
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Light" type="PointLight2D" parent="."]
@@ -236,15 +284,30 @@ texture_scale = 1.6
 script = ExtResource("11_il5cl")
 light = 1.0
 
-[node name="ActiveAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_sb63e")
-
-[node name="InactiveAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_0gf2x")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_i1glw")
 }
 
-[connection signal="interaction" from="Interaction" to="." method="_on_interaction"]
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("15_0hdyu")
+parent = NodePath("..")
+initial_state = NodePath("Unlit")
+
+[node name="Unlit" type="Node2D" parent="StateMachine"]
+script = ExtResource("16_i1glw")
+animations = ["unlit"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Unlit"]
+stream = ExtResource("13_0gf2x")
+
+[node name="Lit" type="Node2D" parent="StateMachine"]
+script = ExtResource("16_i1glw")
+animations = ["lit"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/Lit"]
+stream = ExtResource("12_sb63e")
+
+[node name="Burnt" type="Node2D" parent="StateMachine"]
+script = ExtResource("16_i1glw")
+animations = ["burnt"]

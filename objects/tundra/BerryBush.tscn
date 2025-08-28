@@ -1,37 +1,127 @@
-[gd_scene load_steps=6 format=3 uid="uid://f6yovtrpm7id"]
+[gd_scene load_steps=15 format=3 uid="uid://f6yovtrpm7id"]
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_2yjhj"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_bvmnd"]
 [ext_resource type="Texture2D" uid="uid://0f3o76ar7e0o" path="res://assets/objects/tundra/berrybush_1.png" id="2_bv5ra"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_bv5ra"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_bvmnd"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="6_gdbli"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="7_pkari"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xcrti"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ogaqr"]
+viewport_path = NodePath("Sprite2D/SubViewport")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tu87o"]
 radius = 18.0278
 
-[node name="Bush" type="StaticBody2D"]
+[sub_resource type="Animation" id="Animation_7k6tw"]
+resource_name = "unpicked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bvmnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gdbli"]
+resource_name = "picked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hr0bi"]
+_data = {
+&"RESET": SubResource("Animation_bvmnd"),
+&"picked": SubResource("Animation_gdbli"),
+&"unpicked": SubResource("Animation_7k6tw")
+}
+
+[node name="BerryBush" type="StaticBody2D"]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_bvmnd")
+id = "berrybush"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_2yjhj")
-position = Vector2(-5, -35)
-texture = ExtResource("2_bv5ra")
+position = Vector2(-5, -37)
+texture = SubResource("ViewportTexture_xcrti")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_bv5ra")
-position = Vector2(-5, -12)
+position = Vector2(-1, -2)
+texture = SubResource("ViewportTexture_ogaqr")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(108, 82)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
+material = ExtResource("1_2yjhj")
+instance_shader_parameters/heightOffset = 1.0
 texture = ExtResource("2_bv5ra")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(-4, 0)
 shape = SubResource("CircleShape2D_tu87o")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_bvmnd")
-description = "\"Shrubbery\""
-item = "berries"
-type = 1
+parent = NodePath("..")
 metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hr0bi")
+}
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("6_gdbli")
+parent = NodePath("..")
+initial_state = NodePath("Unpicked")
+
+[node name="Unpicked" type="Node" parent="StateMachine"]
+script = ExtResource("7_pkari")
+animations = ["unpicked"]
+
+[node name="Picked" type="Node" parent="StateMachine"]
+script = ExtResource("7_pkari")
+animations = ["picked"]

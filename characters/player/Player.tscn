@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=139 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dm2vm88275pqx" path="res://characters/player/kill_state.gd" id="29_pe3rb"]
 [ext_resource type="Script" uid="uid://b68t60jf5pamc" path="res://characters/player/gather_state.gd" id="30_cdjc3"]
 [ext_resource type="Script" uid="uid://c4hnxlshqfqyt" path="res://characters/player/chop_state.gd" id="31_3rjxu"]
+[ext_resource type="AudioStream" uid="uid://chyn554nmvjs1" path="res://assets/audio/sfx/lighter_open.ogg" id="32_3rjxu"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="34_r4xk0"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
 [ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="176_ycyx1"]
@@ -891,6 +892,18 @@ tracks/25/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("StateMachine/Chop/Audio:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hnh68"]
 _data = {
@@ -1170,6 +1183,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("StateMachine/Chop/Audio:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.375, 0.875),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 
 [sub_resource type="Animation" id="Animation_p61vd"]
@@ -7076,6 +7101,10 @@ one_shot = true
 
 [node name="Chop" type="Node" parent="StateMachine"]
 script = ExtResource("31_3rjxu")
+
+[node name="Audio" type="AudioStreamPlayer" parent="StateMachine/Chop"]
+stream = ExtResource("32_3rjxu")
+parameters/looping = false
 
 [node name="Timer" type="Timer" parent="StateMachine/Chop"]
 wait_time = 2.0

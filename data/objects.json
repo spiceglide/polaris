@@ -102,7 +102,7 @@
     "default": {
       "tags": [],
       "gather": {
-        "yields": "rock",
+        "yields": ["rock"],
         "next": ""
       }
     }

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cgfytlgrdru1i" path="res://assets/objects/swamp/s_mud_6.png" id="1_34dwc"]
 
 [node name="Mud" type="StaticBody2D"]
+z_index = -1
 collision_layer = 2
 collision_mask = 2
 

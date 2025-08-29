@@ -4,6 +4,7 @@
 load_path = "res://.godot/imported/f_snowpatch_12.png-8dcffe1398040004aea7c36f54b475dd.ctex"
 
 [node name="SnowPatch" type="StaticBody2D"]
+z_index = -1
 collision_layer = 2
 collision_mask = 2
 

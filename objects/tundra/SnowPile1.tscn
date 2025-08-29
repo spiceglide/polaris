@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://di1au0y2ha18t"]
+[gd_scene load_steps=3 format=3 uid="uid://di1au0y2ha18t"]
 
 [ext_resource type="Texture2D" uid="uid://4peh5gfvkc0q" path="res://assets/objects/tundra/snowpile_1.png" id="1_hkd6j"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_3ooul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(161, 21)
 
-[node name="Snow Pile" type="StaticBody2D"]
+[node name="SnowPile" type="StaticBody2D"]
 z_index = 1
 collision_layer = 3
 collision_mask = 3
@@ -19,11 +18,3 @@ texture = ExtResource("1_hkd6j")
 light_mask = 0
 position = Vector2(-7.5, 2.5)
 shape = SubResource("RectangleShape2D_3fioj")
-
-[node name="Interaction" type="Node2D" parent="."]
-position = Vector2(-6, 3)
-script = ExtResource("3_3ooul")
-description = "\"What! An entire log inside the snow pile!\""
-item = "log"
-type = 1
-metadata/_edit_group_ = true

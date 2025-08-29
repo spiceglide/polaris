@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dlng5c5lo2vvi" path="res://assets/objects/forest/f_snowpatch_5.png" id="1_s6x4b"]
 
 [node name="SnowPatch" type="StaticBody2D"]
+z_index = -1
 collision_layer = 2
 collision_mask = 2
 

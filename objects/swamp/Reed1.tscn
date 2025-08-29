@@ -15,7 +15,6 @@ collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_0w4p0")
-instance_shader_parameters/y_origin = 100.0
 position = Vector2(0, -117)
 texture = ExtResource("2_0w4p0")
 
@@ -30,7 +29,4 @@ shape = SubResource("CircleShape2D_ejv3r")
 
 [node name="Interaction" type="Node2D" parent="."]
 script = ExtResource("4_qq25f")
-description = "\"Sausagepodobny\""
-item = "puff"
-type = 1
 metadata/_edit_group_ = true

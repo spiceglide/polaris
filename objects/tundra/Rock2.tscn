@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc3wehveui7v8"]
+[gd_scene load_steps=10 format=3 uid="uid://dc3wehveui7v8"]
 
 [ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="1_7o5vc"]
 [ext_resource type="Texture2D" uid="uid://cpac7gk1u356i" path="res://assets/objects/tundra/rock_2.png" id="2_c5dir"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="2_emwbu"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_2qrgu"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_c5dir"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="6_ottfv"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="7_movpx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hwicx"]
 shader = ExtResource("1_7o5vc")
@@ -22,6 +25,8 @@ z_index = 1
 material = SubResource("ShaderMaterial_hwicx")
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_emwbu")
+id = "rock"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_c5dir")
@@ -36,9 +41,15 @@ texture = ExtResource("2_c5dir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ghpk6")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("3_2qrgu")
-description = "\"Better than nothing\""
-item = "rock"
-type = 3
+parent = NodePath("..")
 metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("6_ottfv")
+parent = NodePath("..")
+initial_state = NodePath("Default")
+
+[node name="Default" type="Node" parent="StateMachine"]
+script = ExtResource("7_movpx")

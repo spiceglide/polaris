@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c67v1sc172sfb"]
+[gd_scene load_steps=5 format=3 uid="uid://c67v1sc172sfb"]
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_av8pc"]
 [ext_resource type="Texture2D" uid="uid://cf67yh7xdng1p" path="res://assets/objects/swamp/s_bush_2.png" id="2_av8pc"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_2m65g"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_18ynv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(119, 7)
@@ -29,8 +28,3 @@ texture = ExtResource("2_av8pc")
 light_mask = 0
 position = Vector2(-59.5, -2.5)
 shape = SubResource("RectangleShape2D_3fioj")
-
-[node name="Interaction" type="Node2D" parent="."]
-script = ExtResource("4_18ynv")
-description = "\"It's a bush\""
-metadata/_edit_group_ = true

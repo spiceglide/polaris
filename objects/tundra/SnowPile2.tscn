@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl2r2tiktn3nn"]
+[gd_scene load_steps=4 format=3 uid="uid://bl2r2tiktn3nn"]
 
 [ext_resource type="Texture2D" uid="uid://dmkp4vc0wsgn8" path="res://assets/objects/tundra/snowpile_2.png" id="1_eqdry"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_eqdry"]
-[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_vl5v1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(144, 20)
@@ -27,8 +26,3 @@ texture = ExtResource("1_eqdry")
 light_mask = 0
 position = Vector2(8, 5)
 shape = SubResource("RectangleShape2D_3fioj")
-
-[node name="Interaction" type="Node2D" parent="."]
-script = ExtResource("3_vl5v1")
-description = "\"Cold...\""
-metadata/_edit_group_ = true

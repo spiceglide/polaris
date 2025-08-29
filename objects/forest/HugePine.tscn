@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://iny1lbsa3o1g"]
+[gd_scene load_steps=11 format=3 uid="uid://iny1lbsa3o1g"]
 
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_a8oah"]
 [ext_resource type="Texture2D" uid="uid://dttlt7aajvyvk" path="res://assets/objects/forest/hugepine_1.png" id="1_j8p45"]
 [ext_resource type="Material" uid="uid://btsphodyus8db" path="res://shaders/fade_with_height.material" id="1_locfo"]
-[ext_resource type="Script" uid="uid://bdu807tajmmm5" path="res://utility/shadow.gd" id="2_02fa7"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_locfo"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="4_uqkuf"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="6_cngn7"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="7_131h6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lfkg1"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wijyw"]
+viewport_path = NodePath("Sprite2D/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(109, 36)
@@ -13,30 +21,46 @@ size = Vector2(109, 36)
 z_index = 1
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_a8oah")
+id = "hugepine"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_locfo")
 position = Vector2(0, -964)
-rotation = -0.000837005
-texture = ExtResource("1_j8p45")
-script = ExtResource("2_02fa7")
+texture = SubResource("ViewportTexture_lfkg1")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("4_uqkuf")
 instance_shader_parameters/flip_offset = 2.0
+position = Vector2(-5, -39)
+texture = SubResource("ViewportTexture_wijyw")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1018, 2082)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
 texture = ExtResource("1_j8p45")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 position = Vector2(43.5, 18)
 shape = SubResource("RectangleShape2D_3fioj")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 position = Vector2(0, -1)
 script = ExtResource("3_locfo")
-description = "\"This one's bigger\""
-item = "pinecone"
-type = 1
+parent = NodePath("..")
 metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("6_cngn7")
+parent = NodePath("..")
+initial_state = NodePath("Default")
+
+[node name="Default" type="Node" parent="StateMachine"]
+script = ExtResource("7_131h6")

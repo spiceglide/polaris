@@ -42,5 +42,5 @@ func move_item_to_first_empty(slot: int, start: int = 0) -> bool:
 		return true
 	return false
 
-func get_data(item: String):
-	return data[item]
+func get_data(item: String) -> Dictionary:
+	return data.get(item, {})

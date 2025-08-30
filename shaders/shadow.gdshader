@@ -8,10 +8,10 @@ uniform float alpha: hint_range(0.0, 1.0) = 0.015;
 instance uniform float flip_offset = 2.0;
 uniform float shadow_height = 0.2;
 uniform float end_angle = 45.0;
-uniform vec2 scale_factor = vec2(3.0, 2.0);
+uniform vec2 scale_factor = vec2(4.0, 2.0);
 uniform vec2 fade_interval = vec2(0.0, 0.05);
 
-global uniform uint game_time;
+global uniform float game_time;
 
 float reflect_around(float value, float refl) {
 	return refl - abs(value - refl);
@@ -35,7 +35,7 @@ void fragment() {
 
 	// Skew effect
 	vec2 origin = vec2(0.5, -1.0);
-	float ntime = float(game_time) / 360.0;
+	float ntime = game_time / 360.0;
 	float skew = mix(-end_angle/4.0, end_angle/4.0, ntime);
 	uv.x += (uv.y + origin.y) * skew;
 	uv.y += (uv.y + origin.y) / shadow_height;

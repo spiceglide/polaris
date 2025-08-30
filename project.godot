@@ -132,11 +132,11 @@ locale/translations=PackedStringArray("res://localisations/localisations.en.tran
 
 [shader_globals]
 
-game_time={
-"type": "uint",
-"value": 200
-}
 wind_strength={
 "type": "float",
 "value": 0.03
+}
+game_time={
+"type": "float",
+"value": 200.0
 }

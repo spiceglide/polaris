@@ -22,7 +22,7 @@ uniform float twilight_length = 0.2;
 uniform float lut_size = 16.0;
 uniform float alpha : hint_range(0, 1) = 1.0;
 
-global uniform uint game_time;
+global uniform float game_time;
 
 float reflect_around(float value, float refl) {
 	return refl - abs(value - refl);
@@ -111,7 +111,7 @@ vec4 get_lut_mapping_trilinear(vec4 old_color, sampler2D lut){
 }
 
 void fragment(){
-	float ntime = float(game_time) / 360.0;
+	float ntime = game_time / 360.0;
 	float gtime = reflect_around(ntime, 0.5);
 
 	float night_twilight = fade_out(gtime, 0.0, night_length);

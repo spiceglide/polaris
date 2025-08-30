@@ -280,7 +280,7 @@ metadata/_edit_group_ = true
 visible = false
 blend_mode = 2
 texture = ExtResource("11_br0gt")
-texture_scale = 1.6
+texture_scale = 2.4
 script = ExtResource("11_il5cl")
 light = 1.0
 

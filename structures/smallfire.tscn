@@ -316,7 +316,7 @@ metadata/_edit_group_ = true
 visible = false
 blend_mode = 2
 texture = ExtResource("11_3xnxn")
-texture_scale = 0.8
+texture_scale = 1.2
 script = ExtResource("11_7juvy")
 light = 1.0
 

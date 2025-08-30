@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 func get_possible_interactions():
 	var item = InventoryData.get_selected_item_data()
-	var possible = ["gather"]
+	var possible = ["crank", "gather"]
 
 	if "chop" in item.get("tags", []):
 		possible.append("chop")
@@ -51,6 +51,10 @@ func place_structure(name: String) -> bool:
 	instance.global_position = PlayerData.position
 	instance.global_position.x += 150
 	return true
+
+func change_state(next: String):
+	if next in $StateMachine.states:
+		$StateMachine.transition($StateMachine.current_state, next)
 
 func _on_interaction_body_entered(body: Node2D) -> void:
 	print(body)

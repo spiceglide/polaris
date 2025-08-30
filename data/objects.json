@@ -155,12 +155,12 @@
   "well_crank": {
     "tags": [],
     "lowered": {
-      "gather": {
+      "crank": {
         "next": "raised"
       }
     },
     "raised": {
-      "gather": {
+      "crank": {
         "next": "lowered"
       }
     },

@@ -50,9 +50,9 @@ func update(delta: float):
 	if Input.is_action_just_pressed("interact"):
 		if len(parent.interactable) > 0:
 			var object = parent.interactable[0]
-			var interactions = ["gather"]
+			var interactions = ["crank", "gather"]
 
-			if item == "hatchet":
+			if item in ["hatchet"]:
 					interactions.append("chop")
 
 			var interaction = object.select_interaction_type(interactions)

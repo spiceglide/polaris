@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var parent: StaticBody2D = self.get_parent()
-var priority: Array = ["chop", "gather"]
+var priority: Array = ["chop", "crank", "gather"]
 
 var data: Dictionary = {}
 

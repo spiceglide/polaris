@@ -72,7 +72,7 @@
         "yields": ["pinecone"]
       },
       "chop": {
-        "yields": ["log", "stick", "stick"],
+        "yields": ["log", "stick"],
         "next": "stump"
       }
     },
@@ -120,7 +120,7 @@
     "picked": {
       "tags": [],
       "chop": {
-        "yields": ["stick", "stick", "stick"],
+        "yields": ["stick", "stick"],
         "next": "stump"
       }
     },

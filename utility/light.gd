@@ -19,7 +19,7 @@ func set_brightness() -> void:
 	var night_length = 0.1
 	var gtime = reflect_around(WorldData.game_time/WorldData.day_length, 0.5)
 	gtime = max(min(gtime / night_length, 1.0), 0.0)
-	self.energy = light * (1.0-gtime)
+	self.energy = 1.0
 
 func reflect_around(value: float, refl: float) -> float:
 	return refl - abs(value - refl);

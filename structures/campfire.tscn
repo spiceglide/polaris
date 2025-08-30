@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dksbuialmegwj" path="res://assets/structures/campfire/campfire.png" id="7_46rd8"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="8_c5w0t"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="9_osoys"]
-[ext_resource type="Texture2D" uid="uid://b4vx3l8c8gre7" path="res://assets/lighting/dark.png" id="10_hqsbh"]
+[ext_resource type="Texture2D" uid="uid://c23ws2xnog52v" path="res://assets/lighting/darkness_overlay_2.png" id="11_br0gt"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_il5cl"]
 [ext_resource type="AudioStream" uid="uid://be8ygsvyaiexh" path="res://assets/audio/sfx/woosh_in.ogg" id="12_sb63e"]
 [ext_resource type="AudioStream" uid="uid://dw2nyxfdgqtr2" path="res://assets/audio/sfx/woosh_out.ogg" id="13_0gf2x"]
@@ -278,8 +278,8 @@ metadata/_edit_group_ = true
 
 [node name="Light" type="PointLight2D" parent="."]
 visible = false
-color = Color(1, 0.937255, 0.858824, 1)
-texture = ExtResource("10_hqsbh")
+blend_mode = 2
+texture = ExtResource("11_br0gt")
 texture_scale = 1.6
 script = ExtResource("11_il5cl")
 light = 1.0

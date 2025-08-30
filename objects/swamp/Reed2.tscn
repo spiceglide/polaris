@@ -18,21 +18,6 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 [sub_resource type="CircleShape2D" id="CircleShape2D_do5ol"]
 radius = 53.2353
 
-[sub_resource type="Animation" id="Animation_do5ol"]
-resource_name = "default"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_tpg6a")]
-}
-
 [sub_resource type="Animation" id="Animation_fb1bt"]
 length = 0.001
 tracks/0/type = "value"
@@ -61,6 +46,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("6_avwt8")]
+}
+
+[sub_resource type="Animation" id="Animation_do5ol"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_tpg6a")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e2vay"]

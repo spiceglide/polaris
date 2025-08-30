@@ -137,5 +137,33 @@
         "next": "default"
       }
     }
+  },
+  "well": {
+    "tags": [],
+    "lowered": { },
+    "raised": {
+      "gather": {
+        "yields": ["sap"]
+      }
+    },
+    "broken": {
+      "gather": {
+        "next": "raised"
+      }
+    }
+  },
+  "well_crank": {
+    "tags": [],
+    "lowered": {
+      "gather": {
+        "next": "raised"
+      }
+    },
+    "raised": {
+      "gather": {
+        "next": "lowered"
+      }
+    },
+    "broken": { }
   }
 }

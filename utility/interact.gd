@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var parent: PhysicsBody2D = self.get_parent()
+@export var parent: StaticBody2D = self.get_parent()
 var priority: Array = ["chop", "gather"]
 
 var data: Dictionary = {}
@@ -28,8 +28,9 @@ func highlight(enabled: bool, available: Array = []):
 		parent.highlight(false)
 
 func select_interaction_type(available: Array) -> String:
+	print(parent)
 	var object_data = data[parent.id.to_lower()]
-	var state_data = object_data[parent.current_state.name.to_lower()]
+	var state_data = object_data[parent.get_current_state()]
 	var possible = state_data.keys()
 
 	var type: String = ""
@@ -42,7 +43,7 @@ func select_interaction_type(available: Array) -> String:
 
 func interact(player: CharacterBody2D, type: String):
 	var id = parent.id.to_lower()
-	var state = parent.current_state.name.to_lower()
+	var state = parent.get_current_state()
 
 	var object_data = data[id]
 	var state_data = object_data[state]

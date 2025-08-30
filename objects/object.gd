@@ -1,21 +1,27 @@
 extends StaticBody2D
 
 @export var id: String
-var states: Array
-var current_state: State
+@export var state_machine: StateMachine
 
 var temp_material: Material
 
 func _ready() -> void:
-	states = $StateMachine.states.keys()
-	temp_material = $Sprite2D.material
+	if not state_machine:
+		if self.get_node_or_null("StateMachine"):
+			state_machine = $StateMachine
 
-func _process(_delta: float) -> void:
-	current_state = $StateMachine.current_state
+	if self.get_node_or_null("Sprite2D"):
+		temp_material = $Sprite2D.material
+
+func get_possible_states() -> Array[String]:
+	return state_machine.states.keys()
+
+func get_current_state() -> String:
+	return state_machine.current_state.name.to_lower()
 
 func change_state(next: String):
-	if next in states:
-		$StateMachine.transition(current_state, next)
+	if next in state_machine.states:
+		state_machine.transition(state_machine.current_state, next)
 
 func highlight(enabled: bool):
 	if enabled:

@@ -1,12 +1,11 @@
-[gd_scene load_steps=65 format=3 uid="uid://cd5xn0tgjxxwf"]
+[gd_scene load_steps=71 format=3 uid="uid://cd5xn0tgjxxwf"]
 
-[ext_resource type="Script" uid="uid://cbbhgslpla081" path="res://structures/well.gd" id="1_aqq60"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_rfpsi"]
 [ext_resource type="Texture2D" uid="uid://n22b242kko3e" path="res://assets/structures/well/well_base.png" id="2_aqq60"]
 [ext_resource type="Texture2D" uid="uid://chcphe6kw8o2s" path="res://assets/structures/well/well_disrepair.png" id="3_rvt6g"]
 [ext_resource type="Texture2D" uid="uid://cxj8m73a6i7bd" path="res://assets/structures/well/well_top-1.png" id="5_rfpsi"]
 [ext_resource type="Texture2D" uid="uid://cefxqvv1175a3" path="res://assets/structures/well/well_top-2.png" id="6_uw62p"]
 [ext_resource type="Texture2D" uid="uid://c48l67hal6ete" path="res://assets/structures/well/well_top-3.png" id="7_d1yhx"]
-[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="8_37mvd"]
 [ext_resource type="Texture2D" uid="uid://l62yfqsvcdlb" path="res://assets/structures/well/well_top-4.png" id="8_v8vje"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="9_5b2n6"]
 [ext_resource type="Texture2D" uid="uid://s0bppnlowucf" path="res://assets/structures/well/well_top-5.png" id="9_7eilg"]
@@ -60,6 +59,8 @@
 [ext_resource type="Texture2D" uid="uid://b62xe8wbpmnpt" path="res://assets/structures/well/well_top-53.png" id="57_1pa54"]
 [ext_resource type="Texture2D" uid="uid://dlxnb6kd3auj6" path="res://assets/structures/well/well_top-54.png" id="58_p43l2"]
 [ext_resource type="Texture2D" uid="uid://b6ladw0civ383" path="res://assets/structures/well/well_top-55.png" id="59_2j3re"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="61_uw62p"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="62_d1yhx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ey3v1"]
 animations = [{
@@ -79,6 +80,203 @@ animations = [{
 "name": &"disrepair",
 "speed": 8.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
+size = Vector2(229, 51)
+
+[sub_resource type="Animation" id="Animation_7eilg"]
+resource_name = "lowered"
+length = 6.62501
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Handle/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 53]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Handle/Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"lowering"]
+}
+
+[sub_resource type="Animation" id="Animation_p8xbr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Handle/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [53]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Handle/Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"raised"]
+}
+
+[sub_resource type="Animation" id="Animation_3h0lr"]
+resource_name = "raised"
+length = 6.62501
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Handle/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 53]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Handle/Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"raising"]
+}
+
+[sub_resource type="Animation" id="Animation_857cw"]
+resource_name = "broken"
+length = 0.001
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"disrepair"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhyhr"]
+_data = {
+&"RESET": SubResource("Animation_p8xbr"),
+&"broken": SubResource("Animation_857cw"),
+&"lowered": SubResource("Animation_7eilg"),
+&"raised": SubResource("Animation_3h0lr")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vbuvr"]
 animations = [{
@@ -441,44 +639,71 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
-size = Vector2(229, 51)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvt6g"]
 radius = 22.5
 height = 83.0
 
 [node name="Well" type="StaticBody2D"]
 z_index = 1
-script = ExtResource("1_aqq60")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_rfpsi")
+id = "well"
 
-[node name="Sprite" type="Node2D" parent="."]
-
-[node name="Base" type="AnimatedSprite2D" parent="Sprite"]
-position = Vector2(0, -89)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-347, -239)
 sprite_frames = SubResource("SpriteFrames_ey3v1")
-script = ExtResource("8_37mvd")
-
-[node name="Top" type="AnimatedSprite2D" parent="Sprite"]
-position = Vector2(0, -89)
-sprite_frames = SubResource("SpriteFrames_vbuvr")
-animation = &"raised"
-script = ExtResource("8_37mvd")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 position = Vector2(-121.5, -11.5)
 shape = SubResource("RectangleShape2D_drdvg")
 
-[node name="Handle" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="Interaction" type="Node2D" parent="Handle"]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 position = Vector2(0, -1)
 script = ExtResource("9_5b2n6")
-description = "\"wowie!\""
-type = 4
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yhyhr")
+}
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("61_uw62p")
+parent = NodePath("..")
+initial_state = NodePath("Broken")
+
+[node name="Lowered" type="Node" parent="StateMachine"]
+script = ExtResource("62_d1yhx")
+animations = ["lowered"]
+
+[node name="Raised" type="Node" parent="StateMachine"]
+script = ExtResource("62_d1yhx")
+animations = ["raised"]
+
+[node name="Broken" type="Node" parent="StateMachine"]
+script = ExtResource("62_d1yhx")
+animations = ["broken"]
+
+[node name="Handle" type="StaticBody2D" parent="." node_paths=PackedStringArray("state_machine")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_rfpsi")
+id = "well_crank"
+state_machine = NodePath("../StateMachine")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Handle"]
+position = Vector2(-347, -239)
+sprite_frames = SubResource("SpriteFrames_vbuvr")
+animation = &"raised"
+centered = false
+
+[node name="Interaction" type="Node2D" parent="Handle" node_paths=PackedStringArray("parent")]
+script = ExtResource("9_5b2n6")
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Handle"]
@@ -486,6 +711,3 @@ light_mask = 0
 position = Vector2(120, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rvt6g")
-
-[connection signal="animation_finished" from="Sprite/Top" to="." method="_on_animation_finished"]
-[connection signal="interaction" from="Handle/Interaction" to="." method="_on_interaction"]

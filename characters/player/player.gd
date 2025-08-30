@@ -53,11 +53,13 @@ func place_structure(name: String) -> bool:
 	return true
 
 func _on_interaction_body_entered(body: Node2D) -> void:
+	print(body)
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
 		interactable.append(interactive)
 
 func _on_interaction_body_exited(body: Node2D) -> void:
+	print(body)
 	var interactive = body.get_node("Interaction")
 	if interactive and interactive.is_in_group("interactive"):
 		interactive.highlight(false)

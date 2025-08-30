@@ -132,13 +132,13 @@
     }
   },
   "reed": {
-    "default": {
-      "tags": []
-    },
+    "tags": [],
+    "default": { },
     "bloom": {
-      "tags": [],
-      "yields": ["puff"],
-      "next": "default"
+      "gather": {
+        "yields": ["puff"],
+        "next": "default"
+      }
     }
   }
 }

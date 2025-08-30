@@ -1,36 +1,127 @@
-[gd_scene load_steps=6 format=3 uid="uid://boi1j5eac6sdm"]
+[gd_scene load_steps=16 format=3 uid="uid://boi1j5eac6sdm"]
 
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_1qwaj"]
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_n6ra2"]
 [ext_resource type="Texture2D" uid="uid://b466bygvf5ivu" path="res://assets/objects/swamp/reed_3.png" id="2_n6ra2"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_ceper"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_ql76t"]
+[ext_resource type="Texture2D" uid="uid://jv0w7lfuq7tk" path="res://assets/objects/swamp/reed_bloom_3.png" id="6_86jwr"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="7_jad60"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="8_6sbkc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 51.0098
+[sub_resource type="ViewportTexture" id="ViewportTexture_4ioik"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5scln"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3s4ca"]
+radius = 53.2353
+
+[sub_resource type="Animation" id="Animation_re04w"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_n6ra2")]
+}
+
+[sub_resource type="Animation" id="Animation_csmyh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_n6ra2")]
+}
+
+[sub_resource type="Animation" id="Animation_iv4pe"]
+resource_name = "bloom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_86jwr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_syrld"]
+_data = {
+&"RESET": SubResource("Animation_csmyh"),
+&"bloom": SubResource("Animation_iv4pe"),
+&"default": SubResource("Animation_re04w")
+}
 
 [node name="Reed" type="StaticBody2D"]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_1qwaj")
+id = "reed"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_n6ra2")
-instance_shader_parameters/y_origin = 100.0
-position = Vector2(0, -87)
-texture = ExtResource("2_n6ra2")
+position = Vector2(0, -98)
+texture = SubResource("ViewportTexture_4ioik")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_ceper")
+position = Vector2(0, -3)
+texture = SubResource("ViewportTexture_5scln")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(173, 197)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
+material = ExtResource("1_n6ra2")
+position = Vector2(8, 0)
 texture = ExtResource("2_n6ra2")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ejv3r")
+shape = SubResource("CircleShape2D_3s4ca")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_ql76t")
-description = "\"Sausagepodobny\""
-item = "puff"
-type = 1
+parent = NodePath("..")
 metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_syrld")
+}
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("7_jad60")
+parent = NodePath("..")
+initial_state = NodePath("Bloom")
+
+[node name="Default" type="Node" parent="StateMachine"]
+script = ExtResource("8_6sbkc")
+animations = ["default"]
+
+[node name="Bloom" type="Node" parent="StateMachine"]
+script = ExtResource("8_6sbkc")
+animations = ["bloom"]

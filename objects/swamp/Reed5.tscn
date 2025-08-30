@@ -1,54 +1,126 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfb0llt0plafj"]
+[gd_scene load_steps=16 format=3 uid="uid://cfb0llt0plafj"]
 
-[ext_resource type="Shader" uid="uid://dherkdxmom1y2" path="res://shaders/sway.gdshader" id="1_v1by8"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_novt2"]
+[ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="2_5vion"]
 [ext_resource type="Texture2D" uid="uid://rv212n47ry08" path="res://assets/objects/swamp/reed_5.png" id="2_v1by8"]
-[ext_resource type="Shader" uid="uid://bhgahevoyuekq" path="res://shaders/shadow.gdshader" id="3_m5q23"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_bao2p"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_s0no2"]
+[ext_resource type="Texture2D" uid="uid://bmdsqryrewf3t" path="res://assets/objects/swamp/reed_bloom_5.png" id="6_ryoq2"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="7_yno1w"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="8_qcbuj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfx2x"]
-shader = ExtResource("1_v1by8")
-shader_parameter/speed = 1.0
-shader_parameter/restrict_dir = 0
+[sub_resource type="ViewportTexture" id="ViewportTexture_novt2"]
+viewport_path = NodePath("Sprite2D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cijpc"]
-shader = ExtResource("3_m5q23")
-shader_parameter/color = Vector3(0, 0, 0.3)
-shader_parameter/alpha = 0.01
-shader_parameter/shadow_height = 0.2
-shader_parameter/end_angle = 45.0
-shader_parameter/scale_factor = Vector2(3, 2)
-shader_parameter/fade_interval = Vector2(0, 0.05)
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vion"]
+viewport_path = NodePath("Sprite2D/SubViewport")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
-radius = 48.3735
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmfhl"]
+radius = 53.2353
+
+[sub_resource type="Animation" id="Animation_ucry6"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_v1by8")]
+}
+
+[sub_resource type="Animation" id="Animation_ptjpi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_v1by8")]
+}
+
+[sub_resource type="Animation" id="Animation_5ei6q"]
+resource_name = "bloom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ryoq2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsulw"]
+_data = {
+&"RESET": SubResource("Animation_ptjpi"),
+&"bloom": SubResource("Animation_5ei6q"),
+&"default": SubResource("Animation_ucry6")
+}
 
 [node name="Reed" type="StaticBody2D"]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_novt2")
+id = "reed"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_cfx2x")
-instance_shader_parameters/y_origin = 100.0
-position = Vector2(0, -111)
-texture = ExtResource("2_v1by8")
+material = ExtResource("2_5vion")
+position = Vector2(0, -114)
+texture = SubResource("ViewportTexture_novt2")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
-z_as_relative = false
-material = SubResource("ShaderMaterial_cijpc")
-position = Vector2(-32, 147)
-scale = Vector2(1, 0.423292)
-skew = 0.733038
+material = ExtResource("3_bao2p")
+position = Vector2(-1, -5)
+texture = SubResource("ViewportTexture_5vion")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(114, 228)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
+material = ExtResource("2_5vion")
+position = Vector2(7, 0)
 texture = ExtResource("2_v1by8")
-flip_v = true
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ejv3r")
+shape = SubResource("CircleShape2D_hmfhl")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_s0no2")
-description = "\"Sausagepodobny\""
-item = "puff"
-type = 1
+parent = NodePath("..")
 metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lsulw")
+}
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("7_yno1w")
+parent = NodePath("..")
+initial_state = NodePath("Bloom")
+
+[node name="Default" type="Node" parent="StateMachine"]
+script = ExtResource("8_qcbuj")
+animations = ["default"]
+
+[node name="Bloom" type="Node" parent="StateMachine"]
+script = ExtResource("8_qcbuj")
+animations = ["bloom"]

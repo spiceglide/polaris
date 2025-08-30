@@ -1,32 +1,127 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds5qpufck4mi"]
+[gd_scene load_steps=16 format=3 uid="uid://ds5qpufck4mi"]
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_0w4p0"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_rd1jg"]
 [ext_resource type="Texture2D" uid="uid://bcaa6nly4ufww" path="res://assets/objects/swamp/reed_1.png" id="2_0w4p0"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_eosph"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_qq25f"]
+[ext_resource type="Texture2D" uid="uid://db85wpcj8jvms" path="res://assets/objects/swamp/reed_bloom_1.png" id="6_q5218"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="7_bqg7y"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="8_f42k8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wkpsn"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_urhh8"]
+viewport_path = NodePath("Sprite2D/SubViewport")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejv3r"]
 radius = 53.2353
+
+[sub_resource type="Animation" id="Animation_0ohf7"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0w4p0")]
+}
+
+[sub_resource type="Animation" id="Animation_hhmtu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0w4p0")]
+}
+
+[sub_resource type="Animation" id="Animation_vxy6x"]
+resource_name = "bloom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_q5218")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4niuv"]
+_data = {
+&"RESET": SubResource("Animation_hhmtu"),
+&"bloom": SubResource("Animation_vxy6x"),
+&"default": SubResource("Animation_0ohf7")
+}
 
 [node name="Reed" type="StaticBody2D"]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_rd1jg")
+id = "reed"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_0w4p0")
 position = Vector2(0, -117)
-texture = ExtResource("2_0w4p0")
+texture = SubResource("ViewportTexture_wkpsn")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_eosph")
+position = Vector2(0, -3)
+texture = SubResource("ViewportTexture_urhh8")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(128, 240)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
+material = ExtResource("1_0w4p0")
+position = Vector2(6, 1)
 texture = ExtResource("2_0w4p0")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ejv3r")
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_qq25f")
+parent = NodePath("..")
 metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4niuv")
+}
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("7_bqg7y")
+parent = NodePath("..")
+initial_state = NodePath("Bloom")
+
+[node name="Default" type="Node" parent="StateMachine"]
+script = ExtResource("8_f42k8")
+animations = ["default"]
+
+[node name="Bloom" type="Node" parent="StateMachine"]
+script = ExtResource("8_f42k8")
+animations = ["bloom"]

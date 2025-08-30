@@ -62,9 +62,6 @@
   "hugepine": {
     "default": {
       "tags": [],
-      "gather": {
-        "yields": ["pinecone"]
-      },
       "chop": {}
     }
   },

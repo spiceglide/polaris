@@ -18,7 +18,9 @@ func _ready() -> void:
 	
 	if WorldData.get_game_mode() == "overworld":
 		set_item(0, "hatchet")
-		set_item(1, "frog")
+		set_item(1, "campfire")
+		set_item(2, "campfire")
+		set_item(3, "smallfire")
 		set_item(4, "sleepingbag")
 
 func set_item(slot: int, item: String) -> bool:

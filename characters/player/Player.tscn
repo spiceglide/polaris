@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=150 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
@@ -39,6 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://c3xgkkyg3bwk6" path="res://assets/audio/sfx/rummage.ogg" id="32_imdlq"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="34_r4xk0"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
+[ext_resource type="Script" uid="uid://p5ndvlkggqsu" path="res://characters/player/placer.gd" id="42_ldfj5"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="177_d5u3j"]
 [ext_resource type="Texture2D" uid="uid://kfgojmaxlcci" path="res://assets/characters/dasha/dasha_idle_hold.png" id="263_bfouw"]
 
@@ -5410,7 +5411,7 @@ tracks/18/path = NodePath("Footsteps")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -5685,7 +5686,7 @@ tracks/21/path = NodePath("Footsteps")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(3.42727e-07, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -5876,7 +5877,7 @@ tracks/14/path = NodePath("Footsteps")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -6103,7 +6104,7 @@ tracks/17/path = NodePath("Footsteps")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -6390,7 +6391,7 @@ tracks/22/path = NodePath("Footsteps")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -6713,7 +6714,7 @@ tracks/25/path = NodePath("Footsteps")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -6952,7 +6953,7 @@ tracks/18/path = NodePath("Footsteps")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -7227,7 +7228,7 @@ tracks/21/path = NodePath("Footsteps")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0.166667, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -7435,6 +7436,11 @@ parameters/looping = false
 [node name="Timer" type="Timer" parent="StateMachine/Chop"]
 wait_time = 2.0
 one_shot = true
+
+[node name="StructurePlacer" type="Node2D" parent="." node_paths=PackedStringArray("placer")]
+modulate = Color(1, 1, 1, 0.4)
+script = ExtResource("42_ldfj5")
+placer = NodePath("..")
 
 [connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
 [connection signal="body_exited" from="Interaction" to="." method="_on_interaction_body_exited"]

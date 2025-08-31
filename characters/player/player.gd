@@ -42,15 +42,8 @@ func highlight_nearest():
 
 		first = false
 
-func place_structure(name: String) -> bool:
-	var scene = WorldData.current_scene
-	var tilemap = scene.get_node("TileMap")
-	
-	var instance = load('res://structures/%s.tscn' % name).instantiate()
-	scene.add_child(instance)
-	instance.global_position = PlayerData.position
-	instance.global_position.x += 150
-	return true
+func place_structure(title: String) -> bool:
+	return $StructurePlacer.place(title)
 
 func change_state(next: String):
 	if next in $StateMachine.states:

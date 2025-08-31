@@ -13,7 +13,7 @@ enum State {
 }
 
 @export var speed: int = 400
-@export var multiplier: float = 0.3
+@export var multiplier: float = 1.3
 var position: Vector2 = Vector2.ZERO
 
 var state = State.Awake
@@ -63,6 +63,7 @@ func _process(delta: float) -> void:
 	# Clamp values at 0
 	health = clamp(health, 0, 100)
 	hunger = clamp(hunger, 0, 100)
+	thirst = clamp(thirst, 0, 100)
 	warmth = clamp(warmth, 0, 100)
 	sanity = clamp(sanity, 0, 100)
 

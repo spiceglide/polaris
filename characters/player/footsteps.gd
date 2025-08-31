@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var fade: float = 0.2
-@export var width: Vector2 = Vector2(20.0, 5.0)
+@export var fade: float = 0.4
+@export var width: Vector2 = Vector2(20.0, 4.0)
 
 @onready var footstep: Resource = load("res://characters/player/footstep.tscn")
 var right_foot: bool = true
@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 func new_step() -> void:
 	var step: Sprite2D = footstep.instantiate()
 	
-
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	step.rotation = direction.angle()
 	step.global_position = self.global_position

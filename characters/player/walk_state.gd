@@ -9,19 +9,19 @@ func enter():
 	anim = parent.get_node("AnimationPlayer")
 	item_sprite = parent.get_node("Sprite/Item")
 
-func exit():
-	direction = Vector2.ZERO
-
-func update(delta: float):
 	var item = InventoryData.get_selected_item()
-	
-	# Play idle animation (with or without holding)
 	var last_dir = parent.last_dir
 	if item in InventoryData.holdable:
 		item_sprite.animation = item + "_walk"
 		anim.play("walk/" + last_dir + "_hold")
 	else:
 		anim.play("walk/" + last_dir)
+
+func exit():
+	direction = Vector2.ZERO
+
+func update(delta: float):
+	var item = InventoryData.get_selected_item()
 	
 	# Potentially hold item
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
@@ -31,6 +31,9 @@ func update(delta: float):
 		
 		if item in InventoryData.holdable:
 			state_transitioned.emit(self, "pullout")
+		else:
+			var last_dir = parent.last_dir
+			anim.queue("walk/" + last_dir)
 	
 	# Use item
 	if Input.is_action_just_pressed("use_item") and item != "":
@@ -79,5 +82,12 @@ func physics_update(delta: float):
 		else:
 			last_dir = "west" if direction.x < 0 else "east"
 		parent.last_dir = last_dir
+
+		var item = InventoryData.get_selected_item()
+		if item in InventoryData.holdable:
+			item_sprite.animation = item + "_walk"
+			anim.play("walk/" + last_dir + "_hold")
+		else:
+			anim.play("walk/" + last_dir)
 	else:
 		state_transitioned.emit(self, "idle")

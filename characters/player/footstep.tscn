@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3p2jtd044fc0"]
+
+[ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="1_fgk47"]
+
+[node name="Footstep" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0.14)
+show_behind_parent = true
+top_level = true
+scale = Vector2(0.22, 0.14)
+texture = ExtResource("1_fgk47")

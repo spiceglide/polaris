@@ -1,8 +1,9 @@
-[gd_scene load_steps=148 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=149 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
 [ext_resource type="Texture2D" uid="uid://c23ws2xnog52v" path="res://assets/lighting/darkness_overlay_2.png" id="4_y5xty"]
+[ext_resource type="Script" uid="uid://crnw4gmsec7jm" path="res://characters/player/footsteps.gd" id="6_e56m4"]
 [ext_resource type="Texture2D" uid="uid://dhedcw51ywf3a" path="res://assets/characters/dasha/items_kill.png" id="10_imdlq"]
 [ext_resource type="Texture2D" uid="uid://bwj86abmgx5j2" path="res://assets/characters/dasha/dasha_crank.png" id="11_3l5v1"]
 [ext_resource type="Texture2D" uid="uid://c6pnutjun31b3" path="res://assets/characters/dasha/dasha_pull.png" id="11_lbva7"]
@@ -5402,6 +5403,23 @@ tracks/17/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Footsteps")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xgxpv"]
 resource_name = "east"
@@ -5660,6 +5678,23 @@ tracks/20/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/21/type = "method"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Footsteps")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_1xrmv"]
 resource_name = "north"
@@ -5833,6 +5868,23 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Footsteps")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lplbi"]
@@ -6043,6 +6095,23 @@ tracks/16/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/17/type = "method"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Footsteps")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_5317p"]
@@ -6313,6 +6382,23 @@ tracks/21/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/22/type = "method"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Footsteps")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_mx4r1"]
@@ -6620,6 +6706,23 @@ tracks/24/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/25/type = "method"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Footsteps")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8qt2v"]
 resource_name = "west"
@@ -6841,6 +6944,23 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Footsteps")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_knrfc"]
@@ -7100,6 +7220,23 @@ tracks/20/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/21/type = "method"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Footsteps")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"new_step"
+}, {
+"args": [],
+"method": &"new_step"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rq4ap"]
 _data = {
@@ -7175,6 +7312,11 @@ blend_mode = 2
 texture = ExtResource("4_y5xty")
 texture_scale = 1.12
 script = ExtResource("177_d5u3j")
+
+[node name="Footsteps" type="Node2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(0.22, 0.06)
+script = ExtResource("6_e56m4")
 
 [node name="Sprite" type="Node2D" parent="."]
 position = Vector2(0, -91)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cb8u5hchvmdb1"]
+[gd_scene load_steps=27 format=3 uid="uid://cb8u5hchvmdb1"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_3xnxn"]
 [ext_resource type="Texture2D" uid="uid://b0hvxa8wyhckd" path="res://assets/structures/smallfire/smallfire.png" id="2_31153"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dw2nyxfdgqtr2" path="res://assets/audio/sfx/woosh_out.ogg" id="13_a6cfv"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="15_gildr"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="16_i7dgt"]
+[ext_resource type="Material" uid="uid://cd6bhp1vwoq46" path="res://particles/smoke.tres" id="17_gildr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6qb0e"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -347,3 +348,12 @@ stream = ExtResource("12_rk3eb")
 [node name="Burnt" type="Node2D" parent="StateMachine"]
 script = ExtResource("16_i7dgt")
 animations = ["burnt"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.136826, 0.136826, 0.136826, 1)
+show_behind_parent = true
+position = Vector2(0, -9)
+amount = 400
+lifetime = 6.0
+randomness = 1.0
+process_material = ExtResource("17_gildr")

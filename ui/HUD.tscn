@@ -92,8 +92,10 @@ shader_parameter/seed = 5.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1whyg"]
 shader = ExtResource("2_nysna")
-shader_parameter/outerRadius = 5.0
-shader_parameter/MainAlpha = 0.0
+shader_parameter/alpha = 0.0
+shader_parameter/inner_radius = 0.45
+shader_parameter/outer_radius = 2.0
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pfnlp"]
 shader = ExtResource("2_pom5v")
@@ -418,7 +420,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
 
 [node name="DayNight" type="ColorRect" parent="Compositor"]
 material = SubResource("ShaderMaterial_pfnlp")

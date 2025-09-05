@@ -1,4 +1,5 @@
 shader_type canvas_item;
+render_mode unshaded;
 
 uniform bool allow_out_of_bounds = true;
 uniform float outline_thickness: hint_range(0.0, 16.0, 1.0) = 1.0;

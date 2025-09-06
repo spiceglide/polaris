@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://crdxnhtu2cq45"]
+[gd_scene load_steps=7 format=3 uid="uid://crdxnhtu2cq45"]
 
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="1_6x2o4"]
 [ext_resource type="Shader" uid="uid://bol6tj12pj5oy" path="res://shaders/outline.gdshader" id="2_6vcm6"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_148fa"]
 [ext_resource type="AudioStream" uid="uid://di1cpkakgldhf" path="res://assets/audio/sfx/mumble.ogg" id="3_6vcm6"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_148fa"]
+light_mode = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_148fa"]
 shader = ExtResource("2_6vcm6")
@@ -12,9 +15,11 @@ shader_parameter/outline_thickness = 2.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 
 [node name="Row" type="HBoxContainer"]
+material = SubResource("CanvasItemMaterial_148fa")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
+use_parent_material = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.478956, 0.890361, 0.993735, 1)
 theme_override_constants/outline_size = 7

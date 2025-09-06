@@ -10,6 +10,7 @@ anchors_preset = 0
 script = ExtResource("3_4ko16")
 
 [node name="Items" type="VBoxContainer" parent="."]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -28,6 +29,7 @@ wait_time = 2.5
 one_shot = true
 
 [node name="Commentary" type="BoxContainer" parent="."]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -39,6 +41,7 @@ grow_vertical = 0
 
 [node name="Announcement" type="Label" parent="Commentary"]
 z_index = 2
+use_parent_material = true
 layout_mode = 2
 theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("2_1lf5u")

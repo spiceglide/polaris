@@ -10,6 +10,8 @@ func _ready() -> void:
 	$QuitMenu.toggle_text(false)
 	$QuitMenu.offset.y = get_viewport_rect().size.y
 	$SettingsMenu.offset.x = get_viewport_rect().size.x
+
+	$MainMenu/Menu/VBoxContainer/Continue.disabled = false
 	focus("MainMenu")
 
 func _physics_process(delta: float) -> void:

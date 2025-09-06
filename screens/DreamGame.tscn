@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bycxlgbpcyt1m"]
+[gd_scene load_steps=8 format=3 uid="uid://bycxlgbpcyt1m"]
 
 [ext_resource type="Texture2D" uid="uid://bhfn004nbcwd1" path="res://assets/platformer/bg_cave_1.png" id="1_seaoo"]
 [ext_resource type="PackedScene" uid="uid://bgu31xaka4dgs" path="res://characters/platformer/DreamPlayer.tscn" id="2_seaoo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="4_6u62f"]
 [ext_resource type="PackedScene" uid="uid://c8niqyb6vwb2d" path="res://characters/platformer/Enemy.tscn" id="4_seaoo"]
 [ext_resource type="PackedScene" uid="uid://d17rvmuj7asis" path="res://scenes/dream/blue_cave.tscn" id="5_tlk4b"]
+[ext_resource type="PackedScene" uid="uid://bhdraj2cyr8o8" path="res://ui/HUD.tscn" id="6_lhuhs"]
 
 [node name="DreamGame" type="Node2D"]
 texture_filter = 1
@@ -43,6 +44,11 @@ position = Vector2(1552, 2716)
 
 [node name="Time" type="Node2D" parent="."]
 script = ExtResource("3_lhuhs")
+
+[node name="HUD" parent="." instance=ExtResource("6_lhuhs")]
+hunger = false
+thirst = false
+warmth = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_6u62f")]
 visible = false

@@ -12,7 +12,7 @@ var current_scene = null
 var game_mode = GameMode.Overworld
 
 @export var day_length: int = 60*20
-var game_time: float = 0.0 #day_length / 2.0
+var game_time: float = day_length / 2.0
 var day_counter: int = 0
 var current_biome: String = "tundra"
 
@@ -20,7 +20,7 @@ func new_day():
 	PlayerData.state = PlayerData.State.Awake
 	PlayerData.health = 100
 	day_counter += 1
-	game_time = day_length * 0.05
+	game_time = day_length * (1.0/40.0)
 
 func is_night() -> bool:
 	return game_time >= day_length

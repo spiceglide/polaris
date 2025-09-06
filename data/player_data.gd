@@ -23,6 +23,10 @@ var thirst = 100.0
 var warmth = 100.0
 var sanity = 0.0
 
+var hunger_rate: float = 5 / 60.0
+var thirst_rate: float = 10 / 60.0
+var warmth_rate: float = 100 / 60.0
+
 var flags = {
 	"position_updated": false,
 }
@@ -47,18 +51,21 @@ func _process(delta: float) -> void:
 			"swamp":
 				heat *= 0.4
 		if WorldData.is_night():
-			warmth -= delta * (1/heat)
+			warmth -= warmth_rate*delta * (1/heat)
 		else:
-			warmth += delta * heat * 4
+			warmth += warmth_rate*delta * heat * 4
 		
-		# Hunger
-		hunger -= delta * 0.5
+		# Hunger and thirst
+		hunger -= hunger_rate*delta
+		thirst -= thirst_rate*delta
 		
 		# Hungry and cold deaths
 		if (hunger <= 0):
-			health -= delta
+			health -= hunger_rate*delta
+		if (thirst <= 0):
+			health -= thirst_rate*delta
 		if (warmth <= 0):
-			health -= delta
+			health -= warmth_rate*delta
 	
 	# Clamp values at 0
 	health = clamp(health, 0, 100)

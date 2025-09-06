@@ -1,42 +1,36 @@
-extends VBoxContainer
+extends CanvasLayer
 
-@export var side: String
+@export var health: bool = true
+@export var hunger: bool = true
+@export var thirst: bool = true
+@export var warmth: bool = true
+@export var sanity: bool = true
 
 func _ready() -> void:
-	reset()
+	$StatsLeft/Health.visible = true if health else false
+	$StatsLeft/Thirst.visible = true if thirst else false
+	$StatsLeft/Sanity.visible = true if sanity else false
+	$StatsRight/Hunger.visible = true if hunger else false
+	$StatsRight/Warmth.visible = true if warmth else false
 
-func reset() -> void:
-	if WorldData.get_game_mode() == "dream":
-		match side:
-			"left":
-				$Thirst.visible = false
-			"right":
-				$Hunger.visible = false
-				$Warmth.visible = false
+func _process(_delta: float) -> void:
+	$StatsLeft/Health.value = PlayerData.health
+	$StatsLeft/Thirst.value = PlayerData.thirst
+	$StatsLeft/Sanity.value = PlayerData.sanity
+	
+	# Stages of insanity
+	if $StatsLeft/Sanity.value < 25:
+		$StatsLeft/Sanity/Icon.animation = "lowest"
+		$StatsLeft/Sanity/Effect.animation = "lowest"
+	elif $StatsLeft/Sanity.value < 50:
+		$StatsLeft/Sanity/Icon.animation = "low"
+		$StatsLeft/Sanity/Effect.animation = "low"
+	elif $StatsLeft/Sanity.value < 75:
+		$StatsLeft/Sanity/Icon.animation = "high"
+		$StatsLeft/Sanity/Effect.animation = "high"
 	else:
-		for stat in self.get_children():
-			stat.visible = true
+		$StatsLeft/Sanity/Icon.animation = "highest"
+		$StatsLeft/Sanity/Effect.animation = "highest"
 
-func _process(delta: float) -> void:
-	match side:
-		"left":
-			$Health.value = PlayerData.health
-			#$Thirst.value = PlayerData.thirst
-			$Sanity.value = PlayerData.sanity
-			
-			# Stages of insanity
-			if $Sanity.value < 25:
-				$Sanity/Icon.animation = "lowest"
-				$Sanity/Effect.animation = "lowest"
-			elif $Sanity.value < 50:
-				$Sanity/Icon.animation = "low"
-				$Sanity/Effect.animation = "low"
-			elif $Sanity.value < 75:
-				$Sanity/Icon.animation = "high"
-				$Sanity/Effect.animation = "high"
-			else:
-				$Sanity/Icon.animation = "highest"
-				$Sanity/Effect.animation = "highest"
-		"right":
-			$Hunger.value = PlayerData.hunger
-			$Warmth.value = PlayerData.warmth
+	$StatsRight/Hunger.value = PlayerData.hunger
+	$StatsRight/Warmth.value = PlayerData.warmth

@@ -17,10 +17,8 @@ func load_main_menu() -> void:
 
 func load_main_game(first_time: bool = false) -> void:
 	WorldData.game_mode = WorldData.GameMode.Overworld
-	HUD.get_node("Compositor/DayNight").visible = true
-	HUD.get_node("Compositor/Vignette").visible = true
-	HUD.get_node("StatsLeft").reset()
-	HUD.get_node("StatsRight").reset()
+	#HUD.get_node("StatsLeft").reset()
+	#HUD.get_node("StatsRight").reset()
 	
 	var loading = scenes["loading_screen"]
 	get_tree().change_scene_to_file(loading)
@@ -32,10 +30,8 @@ func load_main_game(first_time: bool = false) -> void:
 
 func load_dream_game() -> void:
 	WorldData.game_mode = WorldData.GameMode.Dream
-	HUD.get_node("Compositor/DayNight").visible = false
-	HUD.get_node("Compositor/Vignette").visible = false
-	HUD.get_node("StatsLeft").reset()
-	HUD.get_node("StatsRight").reset()
+	#HUD.get_node("StatsLeft").reset()
+	#HUD.get_node("StatsRight").reset()
 	
 	var loading = scenes["loading_screen"]
 	get_tree().change_scene_to_file(loading)

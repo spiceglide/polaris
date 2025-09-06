@@ -1,10 +1,59 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=17 format=3 uid="uid://cmo7oc0pnrfki"]
 
 [ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="1_rwsj7"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_ik4lw"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="3_ik4lw"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_ssg0d"]
 [ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="5_4wwiy"]
+[ext_resource type="Shader" uid="uid://icddc7ws1jb" path="res://shaders/rays.gdshader" id="6_uhe65"]
+[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="7_khj5h"]
+[ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="8_icway"]
+[ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="9_2lsej"]
+[ext_resource type="PackedScene" uid="uid://bhdraj2cyr8o8" path="res://ui/HUD.tscn" id="9_khj5h"]
+[ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="10_s1oow"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q6sfw"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(800, -200, 0)
+emission_shape_scale = Vector3(600, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0.4, 1, 0)
+spread = 50.0
+initial_velocity_min = 100.0
+initial_velocity_max = 600.0
+scale_max = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ynvl"]
+shader = ExtResource("6_uhe65")
+shader_parameter/position = 0.2
+shader_parameter/spread = 1.0
+shader_parameter/cutoff = -1.0
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.15
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 1.0
+shader_parameter/color = Color(1, 1, 1, 0.18)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwt4m"]
+shader = ExtResource("7_khj5h")
+shader_parameter/alpha = 0.0
+shader_parameter/inner_radius = 0.45
+shader_parameter/outer_radius = 2.0
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pyqy"]
+shader = ExtResource("8_icway")
+shader_parameter/night_lut = ExtResource("9_2lsej")
+shader_parameter/twilight_lut = ExtResource("10_s1oow")
+shader_parameter/night_length = 0.1
+shader_parameter/twilight_length = 0.2
+shader_parameter/lut_size = 16.0
+shader_parameter/alpha = 1.0
 
 [sub_resource type="Compositor" id="Compositor_4wwiy"]
 
@@ -20,6 +69,45 @@ position = Vector2(1213, 642)
 
 [node name="Time" type="Node2D" parent="."]
 script = ExtResource("3_ssg0d")
+
+[node name="Effects" type="CanvasLayer" parent="."]
+
+[node name="SnowParticles" type="GPUParticles2D" parent="Effects"]
+self_modulate = Color(1, 1, 1, 0.9)
+amount = 160
+lifetime = 8.0
+speed_scale = 0.1
+randomness = 0.2
+collision_base_size = 0.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_q6sfw")
+
+[node name="Rays" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_4ynvl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vignette" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_dwt4m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayNight" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_2pyqy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="HUD" parent="." instance=ExtResource("9_khj5h")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ik4lw")]
 visible = false

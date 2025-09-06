@@ -29,7 +29,7 @@ func focus(source: String):
 			$MainMenu/Menu/VBoxContainer/Quit.grab_focus()
 
 func _on_new_game_pressed() -> void:
-	SceneSwitcher.load_main_game()
+	SceneSwitcher.load_main_game(true)
 
 func _on_continue_pressed() -> void:
 	SceneSwitcher.load_dream_game()

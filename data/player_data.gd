@@ -31,6 +31,13 @@ var flags = {
 	"position_updated": false,
 }
 
+func reset():
+	health = 100
+	hunger = 100
+	thirst = 100
+	warmth = 100
+	sanity = 0
+
 func _process(delta: float) -> void:
 	# Dead men don't hunger
 	if state == State.Dead:

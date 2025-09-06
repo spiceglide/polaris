@@ -22,6 +22,9 @@ func exit():
 
 func update(delta: float):
 	var item = InventoryData.get_selected_item()
+
+	if PlayerData.health <= 0:
+		state_transitioned.emit(self, "dead")
 	
 	# Potentially hold item
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
@@ -45,6 +48,9 @@ func update(delta: float):
 
 		if "placeable" in data.get("tags", []):
 			parent.place_structure(item)
+
+		if "sleep" in data.get("tags", []):
+			state_transitioned.emit(self, "sleep")
 		
 
 		InventoryData.use_selected_item()

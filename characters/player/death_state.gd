@@ -1,6 +1,7 @@
 extends State
 
 var anim: AnimationPlayer
+var anim_finished: bool = false
 
 func enter():
 	anim = parent.get_node("AnimationPlayer")
@@ -10,8 +11,12 @@ func enter():
 func exit():
 	pass
 
-func update(delta: float):
-	pass
+func update(_delta: float):
+	if anim_finished and Input.is_anything_pressed():
+		SceneSwitcher.load_main_menu()
 
-func physics_update(delta: float):
-	pass
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name != "action/death_2":
+		return
+	
+	anim_finished = true

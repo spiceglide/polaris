@@ -20,7 +20,7 @@ func new_day():
 	PlayerData.state = PlayerData.State.Awake
 	PlayerData.health = 100
 	day_counter += 1
-	game_time = day_length * (1.0/40.0)
+	game_time = 30
 
 func is_night() -> bool:
 	return game_time >= day_length

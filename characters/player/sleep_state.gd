@@ -5,16 +5,14 @@ var anim: AnimationPlayer
 func enter():
 	anim = parent.get_node("AnimationPlayer")
 	anim.play("action/death_2")
-	$Timer.play()
+	$Timer.start()
 
 func exit():
-	pass
+	$Timer.stop()
 
-func update(delta: float):
-	pass
-
-func physics_update(delta: float):
-	pass
+func _process(_delta: float) -> void:
+	if not WorldData.is_night():
+		state_transitioned.emit(self, "idle")
 
 func _on_timer_timeout() -> void:
 	if WorldData.is_night():

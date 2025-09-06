@@ -22,6 +22,7 @@ position = Vector2(1213, 642)
 script = ExtResource("3_ssg0d")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ik4lw")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("5_4wwiy")

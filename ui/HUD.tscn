@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=78 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="Shader" uid="uid://icddc7ws1jb" path="res://shaders/rays.gdshader" id="1_3snwy"]
 [ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="2_nysna"]
@@ -8,10 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="4_tvtyy"]
 [ext_resource type="Script" uid="uid://d3lvw2rrmnj6s" path="res://ui/stats.gd" id="5_3q2by"]
 [ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="5_li43i"]
-[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/blizzard.gdshader" id="6_7jh2i"]
 [ext_resource type="Texture2D" uid="uid://bmmxw2n56a2sa" path="res://assets/ui/bars/bar_health_a.png" id="6_tlkqj"]
 [ext_resource type="Texture2D" uid="uid://bpgyadkffh7q" path="res://assets/ui/bars/bar_health_icon_a.png" id="7_urddi"]
-[ext_resource type="Texture2D" uid="uid://dhgfj2phk8mw7" path="res://assets/ui/menu/snow stamps.bak/2mini.png" id="7_yu8i3"]
 [ext_resource type="Texture2D" uid="uid://k2ya5gfx1eu8" path="res://assets/ui/bars/bar_health_b.png" id="8_bg741"]
 [ext_resource type="Texture2D" uid="uid://dio7epn6273v7" path="res://assets/ui/bars/bar_fill_left.png" id="8_ioimr"]
 [ext_resource type="Texture2D" uid="uid://b0cu4q1ekplkh" path="res://assets/ui/bars/bar_insanity_a.png" id="9_cjw2x"]
@@ -65,15 +63,6 @@
 [ext_resource type="Texture2D" uid="uid://brhrbjxm4feuf" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-7.png" id="40_6wjqw"]
 [ext_resource type="Texture2D" uid="uid://c2c5vi4t30q2v" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-8.png" id="41_p3xho"]
 [ext_resource type="Texture2D" uid="uid://dcjxnqpmspy5t" path="res://assets/ui/bars/insanity_fire_effects/Insanity_low-9.png" id="42_v8f2b"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5jan"]
-shader = ExtResource("6_7jh2i")
-shader_parameter/pattern = ExtResource("7_yu8i3")
-shader_parameter/density = 0.1
-shader_parameter/alpha = 0.2
-shader_parameter/speed = Vector2(0.008, -0.05)
-shader_parameter/fade_start = 0.0
-shader_parameter/fade_end = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0vgj"]
 shader = ExtResource("1_3snwy")
@@ -392,16 +381,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Particles" type="ColorRect" parent="Compositor"]
-material = SubResource("ShaderMaterial_l5jan")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
 
 [node name="Rays" type="ColorRect" parent="Compositor"]
 material = SubResource("ShaderMaterial_t0vgj")

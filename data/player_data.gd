@@ -17,11 +17,11 @@ enum State {
 var position: Vector2 = Vector2.ZERO
 
 var state = State.Awake
-var health = 100.0
-var hunger = 100.0
-var thirst = 100.0
-var warmth = 100.0
-var sanity = 0.0
+var health: float = 100.0
+var hunger: float = 100.0
+var thirst: float = 100.0
+var warmth: float = 100.0
+var sanity: float = 0.0
 
 var hunger_rate: float = 5 / 60.0
 var thirst_rate: float = 10 / 60.0
@@ -39,6 +39,9 @@ func _process(delta: float) -> void:
 	# Death
 	if health <= 0:
 		state = State.Dead
+		hunger = 0
+		thirst = 0
+		warmth = 0
 		
 	# The night is cold
 	if WorldData.get_game_mode() == "overworld":
@@ -56,8 +59,15 @@ func _process(delta: float) -> void:
 			warmth += warmth_rate*delta * heat * 4
 		
 		# Hunger and thirst
-		hunger -= hunger_rate*delta
-		thirst -= thirst_rate*delta
+		if hunger < 100:
+			hunger -= hunger_rate*delta
+		elif $HungerTimer.is_stopped():
+			$HungerTimer.start()
+
+		if thirst < 100:
+			thirst -= thirst_rate*delta
+		elif $ThirstTimer.is_stopped():
+			$ThirstTimer.start()
 		
 		# Hungry and cold deaths
 		if (hunger <= 0):
@@ -77,3 +87,13 @@ func _process(delta: float) -> void:
 func set_position(pos: Vector2):
 	position = pos
 	flags["position_updated"] = true
+
+
+func _on_hunger_timer_timeout() -> void:
+	if hunger >= 100:
+		hunger = 99
+
+
+func _on_thirst_timer_timeout() -> void:
+	if thirst >= 100:
+		thirst = 99

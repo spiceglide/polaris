@@ -4,3 +4,14 @@
 
 [node name="PlayerData" type="Node2D"]
 script = ExtResource("1_cnmup")
+
+[node name="HungerTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="ThirstTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
+[connection signal="timeout" from="ThirstTimer" to="." method="_on_thirst_timer_timeout"]

@@ -1,4 +1,7 @@
 {
+  "placeholder": {
+    "default": {}
+  },
   "campfire": {
     "unlit": {
       "tags": [],

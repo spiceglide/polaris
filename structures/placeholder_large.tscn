@@ -37,6 +37,7 @@ position = Vector2(0, -193)
 texture = SubResource("ViewportTexture_gh87h")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
 material = ExtResource("2_4rumg")
 position = Vector2(-7, -13)
 texture = SubResource("ViewportTexture_auv3d")

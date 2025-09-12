@@ -42,26 +42,6 @@
       }
     }
   },
-  "well": {
-    "lowered": {
-      "tags": [],
-      "crank": {
-        "next": "raised"
-      }
-    },
-    "raised": {
-      "tags": [],
-      "crank": {
-        "next": "lowered"
-      }
-    },
-    "broken": {
-      "tags": [],
-      "gather": {
-        "next": "raised"
-      }
-    }
-  },
   "hugepine": {
     "default": {
       "tags": [],
@@ -133,7 +113,12 @@
   },
   "reed": {
     "tags": [],
-    "default": { },
+    "default": {
+      "gather": {
+        "yields": ["bast"],
+        "next": ""
+      }
+    },
     "bloom": {
       "gather": {
         "yields": ["puff"],
@@ -150,6 +135,7 @@
       }
     },
     "broken": {
+      "requires": ["log", "rope", "brick", "brick"],
       "gather": {
         "next": "raised"
       }

@@ -1,89 +1,91 @@
 {
-	"berries": {
-		"tags": [
-			"food",
-			"consumable"
-		],
-		"stats": {
-			"hunger": 5.0
-		}
-	},
-	"campfire": {
-		"tags": [
-			"placeable",
-			"consumable"
-		]
-	},
-	"cloth": {
-		"tags": []
-	},
-	"pinecone": {
-		"tags": []
-	},
-	"log": {
-		"tags": []
-	},
-	"rock": {
-		"tags": []
-	},
-	"sap": {
-		"tags": [
-			"consumable"
-		],
-		"stats": {
-			"thirst": 30.0
-		}
-	},
-	"sleepingbag": {
-		"tags": [
-			"sleep"
-		]
-	},
-	"smallfire": {
-		"tags": [
-			"placeable",
-			"consumable"
-		]
-	},
-	"stick": {
-
-	},
-	"torch": {
-		"tags": [
-			"light",
-			"holdable"
-		]
-	},
-	"hatchet": {
-		"tags": [
-			"chop",
-			"holdable"
-		]
-	},
-	"puff": {
-		"tags": []
-	},
-	"frog": {
-		"tags": [
-			"victim",
-			"consumable"
-		],
-		"stats": {
-			"sanity": 20.0
-		},
-		"yields": [
-			"deadfrog"
-		],
-		"events": {
-			"firstkill": true
-		}
-	},
-	"deadfrog": {
-		"tags": [
-			"consumable"
-		],
-		"stats": {
-			"hunger": 20.0
-		}
+  "rope": {},
+  "bast": {},
+  "berries": {
+	"tags": [
+	  "food",
+	  "consumable"
+	],
+	"stats": {
+	  "hunger": 5.0
 	}
+  },
+  "campfire": {
+	"tags": [
+	  "placeable",
+	  "consumable"
+	]
+  },
+  "cloth": {
+	"tags": []
+  },
+  "pinecone": {
+	"tags": []
+  },
+  "log": {
+	"tags": []
+  },
+  "rock": {
+	"tags": []
+  },
+  "sap": {
+	"tags": [
+	  "consumable"
+	],
+	"stats": {
+	  "thirst": 30.0
+	}
+  },
+  "sleepingbag": {
+	"tags": [
+	  "sleep"
+	]
+  },
+  "smallfire": {
+	"tags": [
+	  "placeable",
+	  "consumable"
+	]
+  },
+  "stick": {
+
+  },
+  "torch": {
+	"tags": [
+	  "light",
+	  "holdable"
+	]
+  },
+  "hatchet": {
+	"tags": [
+	  "chop",
+	  "holdable"
+	]
+  },
+  "puff": {
+	"tags": []
+  },
+  "frog": {
+	"tags": [
+	  "victim",
+	  "consumable"
+	],
+	"stats": {
+	  "sanity": 20.0
+	},
+	"yields": [
+	  "deadfrog"
+	],
+	"events": {
+	  "firstkill": true
+	}
+  },
+  "deadfrog": {
+	"tags": [
+	  "consumable"
+	],
+	"stats": {
+	  "hunger": 20.0
+	}
+  }
 }

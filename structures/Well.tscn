@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cd5xn0tgjxxwf"]
+[gd_scene load_steps=72 format=3 uid="uid://cd5xn0tgjxxwf"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_rfpsi"]
 [ext_resource type="Texture2D" uid="uid://n22b242kko3e" path="res://assets/structures/well/well_base.png" id="2_aqq60"]
@@ -61,6 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ladw0civ383" path="res://assets/structures/well/well_top-55.png" id="59_2j3re"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="61_uw62p"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="62_d1yhx"]
+[ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="62_rfpsi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ey3v1"]
 animations = [{
@@ -134,6 +135,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [&"raised"]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Notifications:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_857cw"]
 resource_name = "broken"
@@ -162,6 +175,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Notifications:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_7eilg"]
@@ -216,6 +241,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [&"lowering"]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Notifications:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_3h0lr"]
 resource_name = "raised"
@@ -268,6 +305,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [&"raising"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Notifications:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yhyhr"]
@@ -711,3 +760,18 @@ light_mask = 0
 position = Vector2(120, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rvt6g")
+
+[node name="Notifications" parent="." instance=ExtResource("62_rfpsi")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -200.0
+offset_right = -125.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+timeout_enabled = false
+
+[connection signal="transitioned" from="StateMachine" to="Interaction" method="_on_state_machine_transitioned"]

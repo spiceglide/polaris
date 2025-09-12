@@ -1,28 +1,45 @@
 [
-    {
-        "in": ["stick", "pinecone"],
-        "out": "smallfire",
-	"category": "fire"
-    },
-    {
-        "in": ["stick", "pinecone", "log"],
-        "out": "campfire",
-	"category": "fire"
-    },
-    {
-        "in": ["stick", "sap", "cloth"],
-        "out": "torch",
-	"category": "fire"
-    },
-    {
-        "in": ["stick", "puff"],
-        "out": "torch",
-	"category": "fire"
-    },
-    {
-        "in": ["frog"],
-        "out": "deadfrog",
-	"category": "sanity",
+  {
+    "in": ["bast", "bast"],
+    "out": "rope",
+    "category": "fire"
+  },
+  {
+    "in": ["stick", "pinecone"],
+    "out": "smallfire",
+    "category": "fire"
+  },
+  {
+    "in": ["stick", "pinecone", "log"],
+    "out": "campfire",
+    "category": "fire"
+  },
+  {
+    "in": ["stick", "sap", "cloth"],
+    "out": "torch",
+    "category": "fire"
+  },
+  {
+    "in": ["stick", "puff"],
+    "out": "torch",
+    "category": "fire"
+  },
+  {
+    "in": ["frog"],
+    "out": "deadfrog",
+    "category": "sanity",
     "stations": ["campfire", "smallfire"]
-    }
+  },
+  {
+    "in": ["clay", "clay"],
+    "out": "bucket",
+    "category": "vessel",
+    "stations": ["kiln"]
+  },
+  {
+    "in": ["clay"],
+    "out": "brick",
+    "category": "fire",
+    "stations": ["kiln"]
+  }
 ]

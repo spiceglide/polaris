@@ -1,6 +1,8 @@
 extends Node
 class_name StateMachine
 
+signal transitioned(state: String)
+
 @export var parent: PhysicsBody2D
 @export var initial_state: State
 
@@ -17,6 +19,7 @@ func _ready() -> void:
 	if initial_state:
 		initial_state.enter()
 		current_state = initial_state
+		transitioned.emit(initial_state.name.to_lower())
 
 func _process(delta: float) -> void:
 	if not current_state:
@@ -41,6 +44,7 @@ func transition(state, new_state_name):
 	new_state.enter()
 	
 	current_state = new_state
+	transitioned.emit(new_state_name)
 
 func _on_child_transitioned(state, new_state_name):
 	transition(state, new_state_name)

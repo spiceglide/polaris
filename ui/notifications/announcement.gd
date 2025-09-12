@@ -1,7 +1,8 @@
 extends Control
 
-@onready var row_scene: Resource = preload("res://ui/notifications/ItemMessage.tscn")
+var row_scene: Resource = load("res://ui/notifications/ItemMessage.tscn")
 
+@export var timeout_enabled: bool = true
 @export var autochatter: Array = []
 @export var autochatter_frequency: Dictionary = {"interval": 5, "odds": 0.5}
 
@@ -14,7 +15,9 @@ func announce(text: String):
 		
 	$Commentary/Announcement.text = '"' + text + '"'
 	$Commentary/AudioStreamPlayer2D.play()
-	$Commentary/Timeout.start()
+
+	if timeout_enabled:
+		$Commentary/Timeout.start()
 
 func announce_items(items: Array):
 	for i in range(len(items)):
@@ -28,7 +31,15 @@ func announce_items(items: Array):
 		
 		$Items.add_child(scene)
 	
-	$Items/Timeout.start()
+	if timeout_enabled:
+		$Items/Timeout.start()
+
+func clear_text():
+	$Commentary/Announcement.text = ""
+
+	for row in $Items.get_children():
+		if row is HBoxContainer:
+			row.queue_free()
 
 func _on_items_timeout() -> void:
 	for row in $Items.get_children():

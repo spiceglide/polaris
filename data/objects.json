@@ -135,7 +135,7 @@
       }
     },
     "broken": {
-      "requires": ["log", "rope", "brick", "brick"],
+      "requires": ["log", "log", "rope", "bucket"],
       "gather": {
         "next": "raised"
       }

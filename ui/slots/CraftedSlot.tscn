@@ -76,6 +76,7 @@ animations = [{
 custom_minimum_size = Vector2(90, 90)
 offset_right = 75.0
 offset_bottom = 75.0
+mouse_default_cursor_shape = 2
 script = ExtResource("1_io71b")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]

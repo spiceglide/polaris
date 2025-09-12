@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 	
 func set_item(id: String):
 	item = id
+	self.tooltip_text = tr("ITEM_" + id.to_upper() + "_NAME")
 	
 	if $ItemSprite.sprite_frames.has_animation(id):
 		$ItemSprite.animation = id
@@ -36,6 +37,8 @@ func set_item(id: String):
 	
 func clear_item():
 	item = ""
+	self.tooltip_text = ""
+
 	$ItemSprite.visible = false
 	update_timestamp()
 

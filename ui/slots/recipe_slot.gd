@@ -4,6 +4,7 @@ var item: String = ""
 
 func set_item(id: String):
 	item = id
+	self.tooltip_text = tr("ITEM_" + id.to_upper() + "_NAME")
 	
 	if $ItemSprite.sprite_frames.has_animation(id):
 		$ItemSprite.animation = id

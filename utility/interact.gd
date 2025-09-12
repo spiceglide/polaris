@@ -40,6 +40,9 @@ func select_interaction_type(available: Array) -> String:
 	var state_data = object_data[parent.get_current_state()]
 	var possible = state_data.keys()
 
+	if not has_required_items():
+		return ""
+
 	var type: String = ""
 	for interaction_type in priority:
 		if (interaction_type in available) and (interaction_type in possible):
@@ -55,11 +58,12 @@ func interact(player: CharacterBody2D, type: String):
 	var interaction_data = state_data[type]
 
 	# Does the interaction require any items?
-	var requires = state_data.get("requires", [])
-	if not CraftingData.is_subset(requires, InventoryData.slots):
-		return
-	if requires != []:
+	var required = has_required_items()
+	if required:
+		var requires = state_data.get("requires", [])
 		InventoryData.remove_items(requires)
+	else:
+		return
 
 	# Get yields
 	var yields = interaction_data.get("yields", [])
@@ -95,3 +99,13 @@ func _on_state_machine_transitioned(state: String) -> void:
 		var requires = state_data.get("requires", [])
 		notifications.clear_text()
 		notifications.announce_items(requires)
+
+func has_required_items() -> bool:
+	var state_data = get_state_data()
+
+	# Does the interaction require any items?
+	var requires = state_data.get("requires", [])
+	if CraftingData.is_subset(requires, InventoryData.slots):
+		return true
+	else:
+		return false

@@ -27,7 +27,10 @@ func announce_items(items: Array):
 		var icon = scene.get_node("AnimatedSprite2D")
 		
 		label.text = tr("ITEM_" + item.to_upper() + "_NAME")
-		icon.animation = item.to_lower()
+		if icon.sprite_frames.has_animation(item.to_lower()):
+			icon.animation = item.to_lower()
+		else:
+			icon.animation = "default"
 		
 		$Items.add_child(scene)
 	

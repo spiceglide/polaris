@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cd5xn0tgjxxwf"]
+[gd_scene load_steps=74 format=3 uid="uid://cd5xn0tgjxxwf"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_rfpsi"]
 [ext_resource type="Texture2D" uid="uid://n22b242kko3e" path="res://assets/structures/well/well_base.png" id="2_aqq60"]
@@ -135,18 +135,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [&"raised"]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Notifications:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_857cw"]
 resource_name = "broken"
@@ -176,21 +164,115 @@ tracks/1/keys = {
 "update": 0,
 "values": [false]
 }
+
+[sub_resource type="Animation" id="Animation_7eilg"]
+resource_name = "lowered"
+length = 0.001
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Notifications:visible")
+tracks/2/path = NodePath("Handle/Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [53]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Handle/Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"lowering"]
 }
 
-[sub_resource type="Animation" id="Animation_7eilg"]
-resource_name = "lowered"
+[sub_resource type="Animation" id="Animation_3h0lr"]
+resource_name = "raised"
+length = 0.001
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Handle/Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Handle/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [53]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Handle/Sprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"raising"]
+}
+
+[sub_resource type="Animation" id="Animation_rfpsi"]
+resource_name = "lowering"
 length = 6.62501
 step = 0.125
 tracks/0/type = "value"
@@ -241,21 +323,9 @@ tracks/3/keys = {
 "update": 0,
 "values": [&"lowering"]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Notifications:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
-[sub_resource type="Animation" id="Animation_3h0lr"]
-resource_name = "raised"
+[sub_resource type="Animation" id="Animation_uw62p"]
+resource_name = "raising"
 length = 6.62501
 step = 0.125
 tracks/0/type = "value"
@@ -306,25 +376,15 @@ tracks/3/keys = {
 "update": 0,
 "values": [&"raising"]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Notifications:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yhyhr"]
 _data = {
 &"RESET": SubResource("Animation_p8xbr"),
 &"broken": SubResource("Animation_857cw"),
 &"lowered": SubResource("Animation_7eilg"),
-&"raised": SubResource("Animation_3h0lr")
+&"lowering": SubResource("Animation_rfpsi"),
+&"raised": SubResource("Animation_3h0lr"),
+&"raising": SubResource("Animation_uw62p")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vbuvr"]
@@ -729,9 +789,17 @@ initial_state = NodePath("Broken")
 script = ExtResource("62_d1yhx")
 animations = ["lowered"]
 
+[node name="Lowering" type="Node" parent="StateMachine"]
+script = ExtResource("62_d1yhx")
+animations = ["lowering"]
+
 [node name="Raised" type="Node" parent="StateMachine"]
 script = ExtResource("62_d1yhx")
 animations = ["raised"]
+
+[node name="Raising" type="Node" parent="StateMachine"]
+script = ExtResource("62_d1yhx")
+animations = ["raising"]
 
 [node name="Broken" type="Node" parent="StateMachine"]
 script = ExtResource("62_d1yhx")
@@ -762,6 +830,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rvt6g")
 
 [node name="Notifications" parent="." instance=ExtResource("62_rfpsi")]
+visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0

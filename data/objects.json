@@ -129,7 +129,13 @@
   "well": {
     "tags": [],
     "lowered": { },
+    "lowering": { },
     "raised": {
+      "gather": {
+        "yields": ["sap"]
+      }
+    },
+    "raising": {
       "gather": {
         "yields": ["sap"]
       }
@@ -145,12 +151,22 @@
     "tags": [],
     "lowered": {
       "crank": {
-        "next": "raised"
+        "next": "raising"
+      }
+    },
+    "lowering": {
+      "crank": {
+        "next": "raising"
       }
     },
     "raised": {
       "crank": {
-        "next": "lowered"
+        "next": "lowering"
+      }
+    },
+    "raising": {
+      "crank": {
+        "next": "lowering"
       }
     },
     "broken": { }

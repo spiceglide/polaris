@@ -95,6 +95,10 @@
   "sticktree": {
     "default": {
       "tags": [],
+      "gather": {
+        "yields": ["stick", "stick"],
+        "next": "picked"
+      },
       "chop": {
         "yields": ["stick", "stick"],
         "next": "picked"

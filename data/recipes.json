@@ -1,5 +1,20 @@
 [
   {
+    "in": ["stick", "rock", "rope"],
+    "out": "hatchet",
+    "category": "tool"
+  },
+  {
+    "in": ["stick", "rock", "rope"],
+    "out": "shovel",
+    "category": "tool"
+  },
+  {
+    "in": ["stick", "rock", "rope"],
+    "out": "spear",
+    "category": "tool"
+  },
+  {
     "in": ["bast", "bast"],
     "out": "rope",
     "category": "fire"
@@ -7,12 +22,22 @@
   {
     "in": ["stick", "pinecone"],
     "out": "smallfire",
-    "category": "fire"
+    "category": "vessel"
   },
   {
     "in": ["stick", "pinecone", "log"],
     "out": "campfire",
-    "category": "fire"
+    "category": "vessel"
+  },
+  {
+    "in": ["campfire", "clay", "clay", "rock", "rock"],
+    "out": "kiln",
+    "category": "vessel"
+  },
+  {
+    "in": ["smallfire", "clay", "clay", "rock", "rock"],
+    "out": "kiln",
+    "category": "vessel"
   },
   {
     "in": ["stick", "sap", "cloth"],
@@ -22,7 +47,7 @@
   {
     "in": ["stick", "puff"],
     "out": "torch",
-    "category": "fire"
+    "category": "tool"
   },
   {
     "in": ["frog"],
@@ -31,9 +56,15 @@
     "stations": ["campfire", "smallfire"]
   },
   {
+    "in": ["pinecone"],
+    "out": "nuts",
+    "category": "sanity",
+    "stations": ["mortarpestle"]
+  },
+  {
     "in": ["clay", "clay"],
     "out": "bucket",
-    "category": "vessel",
+    "category": "fire",
     "stations": ["kiln"]
   },
   {
@@ -41,5 +72,27 @@
     "out": "brick",
     "category": "fire",
     "stations": ["kiln"]
+  },
+  {
+    "in": ["clay"],
+    "out": "mug",
+    "category": "fire",
+    "stations": ["kiln"]
+  },
+  {
+    "in": ["clay", "clay"],
+    "out": "mortarpestle",
+    "category": "vessel",
+    "stations": ["kiln"]
+  },
+  {
+    "in": ["bucket+water"],
+    "out": "bucket",
+    "category": "fire"
+  },
+  {
+    "in": ["bucket+dirtywater"],
+    "out": "bucket",
+    "category": "fire"
   }
 ]

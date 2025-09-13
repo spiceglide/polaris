@@ -1,92 +1,111 @@
 {
-  "bucket": {},
-  "rope": {},
-  "bast": {},
+  "mortarpestle": {
+    "tags": [ "placeable", "consumable" ]
+  },
+  "kiln": {
+    "tags": [ "placeable", "consumable" ]
+  },
+  "nuts": {
+    "tags": [ "food", "consumable" ],
+    "stats": { "hunger": 5.0 }
+  },
+  "brick": {
+  },
+  "mug": {
+  },
+  "mug+water": {
+    "tags": [ "food", "consumable" ],
+    "stats": { "thirst": 20.0 }
+  },
+  "mug+dirtywater": {
+    "tags": [ "food", "consumable" ],
+    "stats": { "thirst": 20.0, "health": -5.0}
+  },
+  "bucket": { },
+  "bucket+water": { },
+  "bucket+dirtywater": { },
+  "rope": {
+  },
+  "bast": {
+  },
+  "net": {
+  },
+  "snaretrap": {
+    "tags": [ "placeable", "consumable" ]
+  },
+  "leather": {
+  },
+  "cellar": {
+    "tags": [ "placeable", "consumable" ]
+  },
+  "spear": {
+    "tags": [ "holdable" ]
+  },
+  "shovel": {
+    "tags": [ "holdable" ]
+  },
+  "smallmeat": {
+    "tags": [ "food", "consumable" ]
+  },
+  "bigmeat": {
+    "tags": [ "food", "consumable" ]
+  },
+  "dirtywater": {
+    "tags": [ "food", "consumable" ]
+  },
   "berries": {
-	"tags": [
-	  "food",
-	  "consumable"
-	],
-	"stats": {
-	  "hunger": 5.0
-	}
+    "tags": [ "food", "consumable" ],
+    "stats": { "hunger": 5.0 }
   },
   "campfire": {
-	"tags": [
-	  "placeable",
-	  "consumable"
-	]
+    "tags": [ "placeable", "consumable" ]
   },
   "cloth": {
-	"tags": []
+    "tags": []
   },
   "pinecone": {
-	"tags": []
+    "tags": []
   },
   "log": {
-	"tags": []
+    "tags": []
   },
   "rock": {
-	"tags": []
+    "tags": []
   },
   "sap": {
-	"tags": [
-	  "consumable"
-	],
-	"stats": {
-	  "thirst": 30.0
-	}
+    "tags": [ "consumable" ],
+    "stats": { "thirst": 30.0 }
   },
   "sleepingbag": {
-	"tags": [
-	  "sleep"
-	]
+    "tags": [ "sleep" ]
   },
   "smallfire": {
-	"tags": [
-	  "placeable",
-	  "consumable"
-	]
+    "tags": [ "placeable", "consumable" ]
   },
   "stick": {
 
   },
   "torch": {
-	"tags": [
-	  "light",
-	  "holdable"
-	]
+    "tags": [ "light", "holdable" ]
   },
   "hatchet": {
-	"tags": [
-	  "chop",
-	  "holdable"
-	]
+    "tags": [ "chop", "holdable" ]
   },
   "puff": {
-	"tags": []
+    "tags": []
   },
   "frog": {
-	"tags": [
-	  "victim",
-	  "consumable"
-	],
-	"stats": {
-	  "sanity": 20.0
-	},
-	"yields": [
-	  "deadfrog"
-	],
-	"events": {
-	  "firstkill": true
-	}
+    "tags": [ "victim", "consumable" ],
+    "stats": { "sanity": 20.0 },
+    "yields": [
+      "deadfrog"
+    ],
+    "events": {
+      "firstkill": true
+    }
   },
   "deadfrog": {
-	"tags": [
-	  "consumable"
-	],
-	"stats": {
-	  "hunger": 20.0
-	}
+    "tags": [ "consumable" ],
+    "stats": { "hunger": 20.0 }
   }
 }

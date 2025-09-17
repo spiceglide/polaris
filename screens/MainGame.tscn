@@ -41,10 +41,10 @@ shader_parameter/seed = 5.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dwt4m"]
 shader = ExtResource("7_khj5h")
-shader_parameter/alpha = 0.0
-shader_parameter/inner_radius = 0.45
-shader_parameter/outer_radius = 2.0
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/blur_radius = 0.2
+shader_parameter/blur_amount = 1.0
+shader_parameter/blur_inner = 0.4
+shader_parameter/blur_outer = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2pyqy"]
 shader = ExtResource("8_icway")

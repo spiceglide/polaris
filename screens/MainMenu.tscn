@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
 [ext_resource type="Texture2D" uid="uid://ccv5owixi6er4" path="res://assets/ui/menu/menu_bg.png" id="2_5hrtm"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
-[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/blizzard.gdshader" id="3_5yh37"]
+[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/scroll.gdshader" id="3_5yh37"]
 [ext_resource type="Shader" uid="uid://4i14c8lkhvfg" path="res://shaders/gradient.gdshader" id="3_lts0s"]
 [ext_resource type="Texture2D" uid="uid://crjii57q6bt1d" path="res://assets/stamps/3mini.png" id="4_5yh37"]
 [ext_resource type="Texture2D" uid="uid://cct8fk057garo" path="res://assets/ui/menu/menu_clutter_nobg.png" id="4_38opn"]

@@ -1,9 +1,15 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://w3ti2utvfcly"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://w3ti2utvfcly"]
 
-[ext_resource type="Shader" uid="uid://cpfhfkimoc3fq" path="res://shaders/water.gdshader" id="1_243dc"]
+[ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/scroll.gdshader" id="1_phhhr"]
+[ext_resource type="Texture2D" uid="uid://bk3hajc4t7uxt" path="res://assets/ui/menu/snow stamps.bak/1full.png" id="2_5w6nj"]
 
 [resource]
-shader = ExtResource("1_243dc")
-shader_parameter/bg_color = Color(0.14, 0.43, 0.53, 1)
-shader_parameter/size = 100.0
-shader_parameter/prob = 0.9
+shader = ExtResource("1_phhhr")
+shader_parameter/scroll_speed = 0.01
+shader_parameter/angle_degrees = 130.0
+shader_parameter/repeat_x = 1.0
+shader_parameter/repeat_y = 1.0
+shader_parameter/row_offset = 1.0
+shader_parameter/uv_mode = true
+shader_parameter/color = Color(1, 1, 1, 0.313726)
+shader_parameter/texture_to_scroll = ExtResource("2_5w6nj")

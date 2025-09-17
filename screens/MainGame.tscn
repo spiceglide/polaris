@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=16 format=3 uid="uid://cmo7oc0pnrfki"]
 
 [ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="1_rwsj7"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_ik4lw"]
@@ -24,6 +24,13 @@ initial_velocity_min = 100.0
 initial_velocity_max = 600.0
 scale_max = 5.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwt4m"]
+shader = ExtResource("7_khj5h")
+shader_parameter/blur_radius = 0.2
+shader_parameter/blur_amount = 1.0
+shader_parameter/blur_inner = 0.4
+shader_parameter/blur_outer = 0.5
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ynvl"]
 shader = ExtResource("6_uhe65")
 shader_parameter/position = 0.2
@@ -39,13 +46,6 @@ shader_parameter/color = Color(1, 1, 1, 0.18)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwt4m"]
-shader = ExtResource("7_khj5h")
-shader_parameter/blur_radius = 0.2
-shader_parameter/blur_amount = 1.0
-shader_parameter/blur_inner = 0.4
-shader_parameter/blur_outer = 0.5
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2pyqy"]
 shader = ExtResource("8_icway")
 shader_parameter/night_lut = ExtResource("9_2lsej")
@@ -54,8 +54,6 @@ shader_parameter/night_length = 0.1
 shader_parameter/twilight_length = 0.2
 shader_parameter/lut_size = 16.0
 shader_parameter/alpha = 1.0
-
-[sub_resource type="Compositor" id="Compositor_4wwiy"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -82,16 +80,16 @@ collision_base_size = 0.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_q6sfw")
 
-[node name="Rays" type="ColorRect" parent="Effects"]
-material = SubResource("ShaderMaterial_4ynvl")
+[node name="Vignette" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_dwt4m")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Vignette" type="ColorRect" parent="Effects"]
-material = SubResource("ShaderMaterial_dwt4m")
+[node name="Rays" type="ColorRect" parent="Effects"]
+material = SubResource("ShaderMaterial_4ynvl")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -114,6 +112,3 @@ visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("5_4wwiy")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-compositor = SubResource("Compositor_4wwiy")

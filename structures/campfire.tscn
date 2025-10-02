@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dkb82s00y6dgx"]
+[gd_scene load_steps=28 format=3 uid="uid://dkb82s00y6dgx"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_br0gt"]
 [ext_resource type="Shader" uid="uid://yua5rw4bv4oq" path="res://shaders/glow.gdshader" id="2_3i3u3"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="15_0hdyu"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="16_i1glw"]
 [ext_resource type="Material" uid="uid://cd6bhp1vwoq46" path="res://particles/smoke.tres" id="17_0hdyu"]
+[ext_resource type="Texture2D" uid="uid://nqtia0rcar8t" path="res://assets/brush_textures/brush_14_smoke3.png" id="17_i1glw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_br0gt"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -314,10 +315,10 @@ script = ExtResource("16_i1glw")
 animations = ["burnt"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-modulate = Color(0.136826, 0.136826, 0.136826, 1)
 show_behind_parent = true
-position = Vector2(0, -15)
-amount = 800
-lifetime = 6.0
+position = Vector2(-1, -15)
+amount = 5
+texture = ExtResource("17_i1glw")
+lifetime = 12.0
 randomness = 1.0
 process_material = ExtResource("17_0hdyu")

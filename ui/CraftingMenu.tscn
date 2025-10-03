@@ -18,22 +18,32 @@ script = ExtResource("2_r3pf1")
 
 [node name="All" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+tooltip_text = "All"
+mouse_default_cursor_shape = 2
 category = "all"
 
 [node name="Fire" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+tooltip_text = "Materials"
+mouse_default_cursor_shape = 2
 category = "fire"
 
 [node name="Tool" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+tooltip_text = "Tools"
+mouse_default_cursor_shape = 2
 category = "tool"
 
 [node name="Vessel" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+tooltip_text = "Structures"
+mouse_default_cursor_shape = 2
 category = "vessel"
 
 [node name="Sanity" parent="Categories" instance=ExtResource("2_pno6w")]
 layout_mode = 2
+tooltip_text = "Consumables"
+mouse_default_cursor_shape = 2
 category = "sanity"
 
 [node name="Recipes" type="VBoxContainer" parent="."]

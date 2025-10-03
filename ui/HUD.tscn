@@ -346,6 +346,7 @@ theme_override_constants/separation = -50
 
 [node name="Health" type="TextureProgressBar" parent="StatsLeft"]
 layout_mode = 2
+tooltip_text = "Health"
 value = 100.0
 texture_progress = ExtResource("8_ioimr")
 texture_progress_offset = Vector2(2, 0)
@@ -363,6 +364,7 @@ script = ExtResource("9_n8pho")
 
 [node name="Thirst" type="TextureProgressBar" parent="StatsLeft"]
 layout_mode = 2
+tooltip_text = "Thirst"
 value = 100.0
 texture_progress = ExtResource("8_ioimr")
 texture_progress_offset = Vector2(-4, 2)
@@ -380,6 +382,7 @@ script = ExtResource("9_n8pho")
 
 [node name="Sanity" type="TextureProgressBar" parent="StatsLeft"]
 layout_mode = 2
+tooltip_text = "Sanity"
 value = 100.0
 texture_progress = ExtResource("8_ioimr")
 texture_progress_offset = Vector2(0, 5)
@@ -413,6 +416,7 @@ theme_override_constants/separation = -50
 
 [node name="Hunger" type="TextureProgressBar" parent="StatsRight"]
 layout_mode = 2
+tooltip_text = "Hunger"
 value = 100.0
 fill_mode = 1
 texture_progress = ExtResource("13_hnewt")
@@ -430,6 +434,7 @@ script = ExtResource("9_n8pho")
 
 [node name="Warmth" type="TextureProgressBar" parent="StatsRight"]
 layout_mode = 2
+tooltip_text = "Warmth"
 value = 100.0
 fill_mode = 1
 texture_progress = ExtResource("13_hnewt")

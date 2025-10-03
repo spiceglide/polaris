@@ -41,7 +41,7 @@ func update(delta: float):
 	# Use item
 	if Input.is_action_just_pressed("use_item") and item != "":
 		var data = InventoryData.get_selected_item_data()
-		parent.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
+		#parent.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
 		
 		if "victim" in data.get("tags", []):
 			state_transitioned.emit(self, "kill")

@@ -2,6 +2,20 @@
   "placeholder": {
     "default": {}
   },
+  "cellar": {
+    "closed": {
+      "tags": [],
+      "gather": {
+        "next": "open"
+      }
+    },
+    "open": {
+      "tags": [],
+      "gather": {
+        "next": "closed"
+      }
+    }
+  },
   "campfire": {
     "unlit": {
       "tags": [],
@@ -19,6 +33,20 @@
       "tags": [],
       "gather": {
         "next": ""
+      }
+    }
+  },
+  "kiln": {
+    "unlit": {
+      "tags": [],
+      "gather": {
+        "next": "lit"
+      }
+    },
+    "lit": {
+      "tags": ["warmth"],
+      "gather": {
+        "next": "unlit"
       }
     }
   },

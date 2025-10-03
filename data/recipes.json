@@ -1,5 +1,10 @@
 [
   {
+    "in": ["shovel", "log", "log"],
+    "out": "cellar",
+    "category": "vessel"
+  },
+  {
     "in": ["puff", "puff"],
     "out": "cloth",
     "category": "fire"
@@ -48,11 +53,6 @@
     "in": ["campfire", "clay", "clay"],
     "out": "kiln",
     "category": "vessel"
-  },
-  {
-    "in": ["stick", "sap", "cloth"],
-    "out": "torch",
-    "category": "tool"
   },
   {
     "in": ["stick", "puff"],

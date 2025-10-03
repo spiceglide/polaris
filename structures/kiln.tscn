@@ -1,0 +1,210 @@
+[gd_scene load_steps=23 format=3 uid="uid://ccbdb3b8r4jim"]
+
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_a2gfp"]
+[ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_4x7uc"]
+[ext_resource type="Texture2D" uid="uid://bafpt8p300a2s" path="res://assets/structures/kiln/kiln_2.png" id="3_5qnwv"]
+[ext_resource type="Texture2D" uid="uid://csqkc0dy66s8p" path="res://assets/structures/kiln/kiln_1.png" id="4_4uf3d"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_v0jmq"]
+[ext_resource type="Material" uid="uid://b0e4qoqgmf2e1" path="res://shaders/flame.tres" id="5_hcr5e"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="5_xx2c3"]
+[ext_resource type="Texture2D" uid="uid://dmhkr7oi6qxht" path="res://assets/structures/kiln/kiln_fire_1.png" id="6_8cjs0"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="6_guqx4"]
+[ext_resource type="Texture2D" uid="uid://bw0ue2s846t6f" path="res://assets/structures/kiln/kiln_fire_2.png" id="7_53has"]
+[ext_resource type="Texture2D" uid="uid://d25lnq4qdhgo8" path="res://assets/structures/kiln/kiln_fire_3.png" id="8_yc4uv"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="9_5iwde"]
+[ext_resource type="Texture2D" uid="uid://nqtia0rcar8t" path="res://assets/brush_textures/brush_14_smoke3.png" id="13_pjrvu"]
+[ext_resource type="Material" uid="uid://cd6bhp1vwoq46" path="res://particles/smoke.tres" id="14_5gfvc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kiqkw"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yvg0q"]
+viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdxs5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8cjs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_53has")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yc4uv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
+size = Vector2(241, 32)
+
+[sub_resource type="Animation" id="Animation_wohbl"]
+resource_name = "unlit"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Flame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qfnbr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Flame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5gme2"]
+resource_name = "lit"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Flame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgn58"]
+_data = {
+&"RESET": SubResource("Animation_qfnbr"),
+&"lit": SubResource("Animation_5gme2"),
+&"unlit": SubResource("Animation_wohbl")
+}
+
+[node name="Kiln" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
+z_index = 1
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_a2gfp")
+id = "kiln"
+state_machine = NodePath("StateMachine")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-13, -163)
+texture = SubResource("ViewportTexture_kiqkw")
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
+material = ExtResource("2_4x7uc")
+position = Vector2(-3, -15)
+texture = SubResource("ViewportTexture_yvg0q")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite2D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(277, 413)
+
+[node name="Foreground" type="Sprite2D" parent="Sprite2D/SubViewport"]
+texture = ExtResource("3_5qnwv")
+centered = false
+
+[node name="Background" type="Sprite2D" parent="Sprite2D/SubViewport"]
+texture = ExtResource("4_4uf3d")
+centered = false
+
+[node name="Flame" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
+visible = false
+material = ExtResource("5_hcr5e")
+sprite_frames = SubResource("SpriteFrames_cdxs5")
+frame_progress = 0.23640247
+centered = false
+script = ExtResource("9_5iwde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+position = Vector2(-3.5, 18)
+shape = SubResource("RectangleShape2D_drdvg")
+
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
+position = Vector2(0, -1)
+script = ExtResource("4_v0jmq")
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jgn58")
+}
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("5_xx2c3")
+parent = NodePath("..")
+initial_state = NodePath("Unlit")
+
+[node name="Unlit" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_guqx4")
+animations = ["unlit"]
+
+[node name="Lit" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_guqx4")
+animations = ["lit"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2(-37, -17)
+amount = 5
+texture = ExtResource("13_pjrvu")
+lifetime = 12.0
+randomness = 1.0
+process_material = ExtResource("14_5gfvc")

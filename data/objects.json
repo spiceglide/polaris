@@ -85,7 +85,7 @@
         "yields": ["pinecone"]
       },
       "chop": {
-        "yields": ["log", "stick"],
+        "yields": ["log", "log", "stick"],
         "next": "stump"
       }
     },

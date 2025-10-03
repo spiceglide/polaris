@@ -7434,7 +7434,7 @@ stream = ExtResource("32_3rjxu")
 parameters/looping = false
 
 [node name="Timer" type="Timer" parent="StateMachine/Chop"]
-wait_time = 2.0
+wait_time = 4.5
 one_shot = true
 
 [node name="StructurePlacer" type="Node2D" parent="." node_paths=PackedStringArray("placer")]

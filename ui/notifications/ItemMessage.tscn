@@ -31,8 +31,8 @@ vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_148fa")
-position = Vector2(-26, 12)
-scale = Vector2(0.7, 0.7)
+position = Vector2(-26, 18.000002)
+scale = Vector2(0.4, 0.4)
 sprite_frames = ExtResource("2_148fa")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

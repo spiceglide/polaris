@@ -45,7 +45,9 @@
   "hugepine": {
     "default": {
       "tags": [],
-      "chop": {}
+      "chop": {
+        "yields": ["sap"]
+      }
     }
   },
   "mediumpine": {

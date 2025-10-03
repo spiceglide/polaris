@@ -42,7 +42,7 @@ shader_parameter/speed = 1.0
 shader_parameter/ray1_density = 8.0
 shader_parameter/ray2_density = 30.0
 shader_parameter/ray2_intensity = 1.0
-shader_parameter/color = Color(1, 1, 1, 0.18)
+shader_parameter/color = Color(1, 1, 1, 0.156863)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
@@ -68,9 +68,9 @@ position = Vector2(1213, 642)
 [node name="Time" type="Node2D" parent="."]
 script = ExtResource("3_ssg0d")
 
-[node name="Effects" type="CanvasLayer" parent="."]
+[node name="Overlay" type="CanvasLayer" parent="."]
 
-[node name="SnowParticles" type="GPUParticles2D" parent="Effects"]
+[node name="SnowParticles" type="GPUParticles2D" parent="Overlay"]
 self_modulate = Color(1, 1, 1, 0.9)
 amount = 160
 lifetime = 8.0
@@ -80,7 +80,7 @@ collision_base_size = 0.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_q6sfw")
 
-[node name="Vignette" type="ColorRect" parent="Effects"]
+[node name="Vignette" type="ColorRect" parent="Overlay"]
 material = SubResource("ShaderMaterial_dwt4m")
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,7 +88,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Rays" type="ColorRect" parent="Effects"]
+[node name="Rays" type="ColorRect" parent="Overlay"]
 material = SubResource("ShaderMaterial_4ynvl")
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,7 +96,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DayNight" type="ColorRect" parent="Effects"]
+[node name="DayNight" type="ColorRect" parent="Overlay"]
 material = SubResource("ShaderMaterial_2pyqy")
 anchors_preset = 15
 anchor_right = 1.0

@@ -93,6 +93,8 @@ script = ExtResource("1_hhlo8")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
+position = Vector2(13, 12)
+scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_0sf5x")
 animation = &"sleepingbag"
 centered = false

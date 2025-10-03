@@ -1,5 +1,20 @@
 [
   {
+    "in": ["puff", "puff"],
+    "out": "cloth",
+    "category": "fire"
+  },
+  {
+    "in": ["bast", "bast"],
+    "out": "cloth",
+    "category": "fire"
+  },
+  {
+    "in": ["puff", "bast"],
+    "out": "cloth",
+    "category": "fire"
+  },
+  {
     "in": ["stick", "rock", "rope"],
     "out": "hatchet",
     "category": "tool"
@@ -20,29 +35,24 @@
     "category": "fire"
   },
   {
-    "in": ["stick", "pinecone"],
+    "in": ["stick", "stick", "pinecone"],
     "out": "smallfire",
     "category": "vessel"
   },
   {
-    "in": ["stick", "pinecone", "log"],
+    "in": ["log", "log", "pinecone"],
     "out": "campfire",
     "category": "vessel"
   },
   {
-    "in": ["campfire", "clay", "clay", "rock", "rock"],
-    "out": "kiln",
-    "category": "vessel"
-  },
-  {
-    "in": ["smallfire", "clay", "clay", "rock", "rock"],
+    "in": ["campfire", "clay", "clay"],
     "out": "kiln",
     "category": "vessel"
   },
   {
     "in": ["stick", "sap", "cloth"],
     "out": "torch",
-    "category": "fire"
+    "category": "tool"
   },
   {
     "in": ["stick", "puff"],
@@ -62,37 +72,38 @@
     "stations": ["mortarpestle"]
   },
   {
-    "in": ["clay", "clay"],
-    "out": "bucket",
-    "category": "fire",
-    "stations": ["kiln"]
-  },
-  {
     "in": ["clay"],
     "out": "brick",
     "category": "fire",
     "stations": ["kiln"]
   },
   {
-    "in": ["clay"],
-    "out": "mug",
+    "in": ["clay", "clay"],
+    "out": "bucket",
     "category": "fire",
     "stations": ["kiln"]
   },
   {
-    "in": ["clay", "clay"],
-    "out": "mortarpestle",
-    "category": "vessel",
+    "in": ["clay"],
+    "out": "mug",
+    "category": "sanity",
     "stations": ["kiln"]
   },
   {
-    "in": ["bucket+water"],
-    "out": "bucket",
-    "category": "fire"
+    "in": ["clay"],
+    "out": "smalljug",
+    "category": "sanity",
+    "stations": ["kiln"]
   },
   {
-    "in": ["bucket+dirtywater"],
-    "out": "bucket",
-    "category": "fire"
+    "in": ["clay", "clay"],
+    "out": "largejug",
+    "category": "sanity",
+    "stations": ["kiln"]
+  },
+  {
+    "in": ["log", "log", "stick"],
+    "out": "mortarpestle",
+    "category": "vessel"
   }
 ]

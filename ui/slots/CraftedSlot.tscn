@@ -81,7 +81,8 @@ script = ExtResource("1_io71b")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(20, 15)
+position = Vector2(18, 12.000001)
+scale = Vector2(0.6, 0.6)
 sprite_frames = ExtResource("2_rr51h")
 centered = false
 script = ExtResource("20_io71b")

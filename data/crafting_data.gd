@@ -9,6 +9,7 @@ var uncraftable = []
 
 func _ready() -> void:
 	recipes = read_recipes()
+	recipes.sort_custom(func(a, b): len(a["in"]) > len(b["in"]))
 	for recipe in recipes:
 		recipe["in"].sort()
 
@@ -32,7 +33,8 @@ func sort_recipes():
 	craftable = []
 	uncraftable = []
 	
-	for recipe in recipes:
+	var usable_recipes = recipes.filter(_filter_stations)
+	for recipe in usable_recipes:
 		# Filter by category
 		if (current_category != "all") and (current_category != recipe["category"]):
 			continue
@@ -50,6 +52,21 @@ func is_subset(array1: Array, array2: Array) -> bool:
 
 func set_category(category: String):
 	self.current_category = category
+
+func _filter_stations(recipe: Dictionary) -> bool:
+	var stations: Array = recipe.get("stations", [])
+	
+	# No station necessary
+	if len(stations) == 0:
+		return true
+	
+	# Usable station nearby
+	var vicinity: Array = PlayerData.vicinity
+	for station in stations:
+		if station in vicinity:
+			return true
+	
+	return false
 
 func craft_complete(product: String):
 	sort_recipes()

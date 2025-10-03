@@ -17,10 +17,12 @@ func _ready() -> void:
 	add_to_group("crafting")
 	
 	if WorldData.get_game_mode() == "overworld":
-		set_item(0, "hatchet")
 		set_item(4, "sleepingbag")
 		set_item(5, "clay")
 		set_item(6, "clay")
+		set_item(7, "clay")
+		set_item(8, "clay")
+		set_item(9, "clay")
 
 func set_item(slot: int, item: String) -> bool:
 	if not slots[slot]:

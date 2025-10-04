@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=15 format=3 uid="uid://cmo7oc0pnrfki"]
 
 [ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="1_rwsj7"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_ik4lw"]
@@ -12,24 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://bhdraj2cyr8o8" path="res://ui/HUD.tscn" id="9_khj5h"]
 [ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="10_s1oow"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q6sfw"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(800, -200, 0)
-emission_shape_scale = Vector3(600, 1, 1)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-direction = Vector3(0.4, 1, 0)
-spread = 50.0
-initial_velocity_min = 100.0
-initial_velocity_max = 600.0
-scale_max = 5.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwt4m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khj5h"]
 shader = ExtResource("7_khj5h")
 shader_parameter/blur_radius = 0.2
 shader_parameter/blur_amount = 1.0
-shader_parameter/blur_inner = 0.4
-shader_parameter/blur_outer = 0.5
+shader_parameter/blur_inner = 0.400000019
+shader_parameter/blur_outer = 0.66
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ynvl"]
 shader = ExtResource("6_uhe65")
@@ -70,18 +58,8 @@ script = ExtResource("3_ssg0d")
 
 [node name="Overlay" type="CanvasLayer" parent="."]
 
-[node name="SnowParticles" type="GPUParticles2D" parent="Overlay"]
-self_modulate = Color(1, 1, 1, 0.9)
-amount = 160
-lifetime = 8.0
-speed_scale = 0.1
-randomness = 0.2
-collision_base_size = 0.0
-local_coords = true
-process_material = SubResource("ParticleProcessMaterial_q6sfw")
-
 [node name="Vignette" type="ColorRect" parent="Overlay"]
-material = SubResource("ShaderMaterial_dwt4m")
+material = SubResource("ShaderMaterial_khj5h")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

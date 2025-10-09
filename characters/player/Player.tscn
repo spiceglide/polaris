@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=152 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
@@ -39,6 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://c3xgkkyg3bwk6" path="res://assets/audio/sfx/rummage.ogg" id="32_imdlq"]
 [ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="34_r4xk0"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="35_1odh0"]
+[ext_resource type="Script" uid="uid://dxxag46x22kc0" path="res://characters/player/operate_state.gd" id="42_jqeeo"]
 [ext_resource type="Script" uid="uid://p5ndvlkggqsu" path="res://characters/player/placer.gd" id="42_ldfj5"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="177_d5u3j"]
 [ext_resource type="Texture2D" uid="uid://kfgojmaxlcci" path="res://assets/characters/dasha/dasha_idle_hold.png" id="263_bfouw"]
@@ -7457,6 +7458,9 @@ parameters/looping = false
 [node name="Timer" type="Timer" parent="StateMachine/Chop"]
 wait_time = 4.5
 one_shot = true
+
+[node name="Operate" type="Node" parent="StateMachine"]
+script = ExtResource("42_jqeeo")
 
 [node name="StructurePlacer" type="Node2D" parent="." node_paths=PackedStringArray("placer")]
 modulate = Color(1, 1, 1, 0.4)

@@ -131,4 +131,4 @@ func craft_complete(product: String):
 	for recipe in CraftingData.recipes:
 		if product == recipe["out"]:
 			remove_items(recipe["in"])
-			return
+			

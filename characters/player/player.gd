@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 func get_possible_interactions():
 	var item = InventoryData.get_selected_item_data()
-	var possible = ["crank", "gather"]
+	var possible = ["crank", "gather", "operate"]
 
 	if "chop" in item.get("tags", []):
 		possible.append("chop")

@@ -37,30 +37,32 @@
     }
   },
   "mortarpestle": {
-    "default": { }
+    "default": {
+        "operate": {}
+    }
   },
   "lograck": {
     "empty": {
       "tags": [],
-      "gather": {
+      "operate": {
         "next": "full1"
       }
     },
     "full1": {
       "tags": [],
-      "gather": {
+      "operate": {
         "next": "full2"
       }
     },
     "full2": {
       "tags": [],
-      "gather": {
+      "operate": {
         "next": "full3"
       }
     },
     "full3": {
       "tags": [],
-      "gather": {
+      "operate": {
         "next": "full4"
       }
     },
@@ -71,13 +73,13 @@
   "kiln": {
     "unlit": {
       "tags": [],
-      "gather": {
+      "operate": {
         "next": "lit"
       }
     },
     "lit": {
       "tags": ["warmth"],
-      "gather": {
+      "operate": {
         "next": "unlit"
       }
     }

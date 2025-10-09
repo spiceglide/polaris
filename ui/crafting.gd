@@ -18,12 +18,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	set_category(CraftingData.current_category)
 
+func toggle():
+	if self.visible:
+		close()
+	else:
+		open()
+
+func open():
+	self.visible = true
+	CraftingData.sort_recipes()
+	_update_list()
+
+func close():
+	self.visible = false
+
 func _input(event):
 	if event.is_action_pressed("inventory"):
-		self.visible = !(self.visible)
-		if self.visible:
-			CraftingData.sort_recipes()
-			_update_list()
+		toggle()
 
 func _setup_slots(rows: int):
 	for row in rows:
@@ -62,3 +73,12 @@ func set_category(category: String):
 			button.disable()
 	CraftingData.sort_recipes()
 	_update_list()
+
+func set_ui_element(element: String, state: bool):
+	if element != "inventory":
+		return
+	
+	if state == true:
+		open()
+	else:
+		close()

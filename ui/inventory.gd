@@ -33,9 +33,7 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
-		$Full.visible = !($Full.visible)
-		$Trash.visible = $Full.visible
-		$Announcement.visible = !($Full.visible)
+		toggle()
 		
 	if event.is_action_pressed("hotbar"):
 		InventoryData.select_slot(event.as_text().to_int() - 1)
@@ -57,6 +55,22 @@ func _input(event):
 		
 	if event.is_action_pressed("drop"):
 		InventoryData.clear_slot(selected_slot)
+
+func toggle():
+	if $Full.visible:
+		close()
+	else:
+		open()
+
+func open():
+	$Full.visible = true
+	$Trash.visible = true
+	$Announcement.visible = false
+
+func close():
+	$Full.visible = false
+	$Trash.visible = false
+	$Announcement.visible = true
 
 func set_item(slot_index: int, item: String):
 	var slot = slots[slot_index]
@@ -101,3 +115,12 @@ func select(slot_index: int):
 	slots[selected_slot].deselect()
 	selected_slot = slot_index
 	slots[selected_slot].select()
+
+func set_ui_element(element: String, state: bool):
+	if element != "inventory":
+		return
+	
+	if state == true:
+		open()
+	else:
+		close()

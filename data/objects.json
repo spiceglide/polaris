@@ -39,6 +39,35 @@
   "mortarpestle": {
     "default": { }
   },
+  "lograck": {
+    "empty": {
+      "tags": [],
+      "gather": {
+        "next": "full1"
+      }
+    },
+    "full1": {
+      "tags": [],
+      "gather": {
+        "next": "full2"
+      }
+    },
+    "full2": {
+      "tags": [],
+      "gather": {
+        "next": "full3"
+      }
+    },
+    "full3": {
+      "tags": [],
+      "gather": {
+        "next": "full4"
+      }
+    },
+    "full4": {
+      "tags": []
+    }
+  },
   "kiln": {
     "unlit": {
       "tags": [],

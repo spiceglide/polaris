@@ -1,4 +1,7 @@
 {
+  "lograck": {
+    "tags": [ "placeable", "consumable" ]
+  },
   "mortarpestle": {
     "tags": [ "placeable", "consumable" ]
   },

@@ -23,6 +23,9 @@ func _process(_delta: float) -> void:
 			scene.add_child(instance)
 			instance.global_position = self.global_position
 			instance.process_mode = Node.PROCESS_MODE_INHERIT
+			var shadow = instance.get_node_or_null("Sprite2D/Shadow")
+			if shadow:
+				shadow.visible = true
 
 func place(title: String) -> bool:
 	#var tilemap: TileMap = scene.get_node("TileMap")
@@ -36,6 +39,9 @@ func place(title: String) -> bool:
 	self.size = rect.shape.size
 
 	instance.process_mode = Node.PROCESS_MODE_DISABLED
+	var shadow = instance.get_node_or_null("Sprite2D/Shadow")
+	if shadow:
+		shadow.visible = false
 	self.add_child(instance)
 
 	return true

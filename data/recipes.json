@@ -1,5 +1,10 @@
 [
   {
+    "in": ["stick", "stick", "stick", "stick", "cloth"],
+    "out": "lograck",
+    "category": "vessel"
+  },
+  {
     "in": ["shovel", "log", "log"],
     "out": "cellar",
     "category": "vessel"

@@ -6,7 +6,7 @@ func enter():
 	if len(animations) > 0:
 		var anim_player = parent.get_node("AnimationPlayer")
 
-		anim_player.play(animations.front())
+		anim_player.play(self.name.to_lower())
 		for anim in animations.slice(1):
 			anim.queue(anim)
 

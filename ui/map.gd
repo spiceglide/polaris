@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var leak_opacity = 0.3
 var available_scenes: Array = [
 	[
 		preload("res://scenes/tundra_river_e.tscn").instantiate(),
@@ -48,10 +47,10 @@ func _ready() -> void:
 		scenes.append(temp_scenes)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_update_current_scene()
 	WorldData.current_biome = get_current_biome()
-	#_cull_scenes()
+	_cull_scenes()
 
 func _cull_scenes():
 	var grid_size = WorldData.grid_size
@@ -60,14 +59,13 @@ func _cull_scenes():
 		for y in range(grid_size[1]):
 			var scene = scenes[y][x]
 			scene.visible = false
-			scene.modulate = Color(1, 1, 1, 1)
 	
 	var current = get_scene(current_scene)
 	current.visible = true
 	
 	var adjacent = [
-		#_north(current_scene), _east(current_scene),
-		_south(current_scene), #_west(current_scene),
+		_north(current_scene), _east(current_scene),
+		_south(current_scene), _west(current_scene),
 	]
 	
 	for adj in adjacent:
@@ -75,7 +73,6 @@ func _cull_scenes():
 			continue
 			
 		adj.visible = true
-		adj.modulate = Color(1, 1, 1, leak_opacity)
 
 func _update_current_scene():
 	var player_pos = PlayerData.position

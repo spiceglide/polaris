@@ -3,6 +3,7 @@ extends Node
 @export var rows: int = 5
 @export var current_category = "all"
 
+var station: String = ""
 var recipes: Array
 var craftable = []
 var uncraftable = []
@@ -61,12 +62,15 @@ func _filter_stations(recipe: Dictionary) -> bool:
 		return true
 	
 	# Usable station nearby
-	var vicinity: Array = PlayerData.vicinity
-	for station in stations:
-		if station in vicinity:
-			return true
+	print(stations)
+	if self.station in stations:
+		return true
 	
 	return false
 
 func craft_complete(product: String):
 	sort_recipes()
+
+func _apply_station(station: String):
+	print("station: " + station)
+	self.station = station

@@ -9,6 +9,8 @@ var recipe_map: Dictionary = {}
 var collectables: Dictionary = {}
 var holdable = ["torch", "hatchet"]
 
+var station = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slots.resize(size)
@@ -131,4 +133,3 @@ func craft_complete(product: String):
 	for recipe in CraftingData.recipes:
 		if product == recipe["out"]:
 			remove_items(recipe["in"])
-			

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://sxmeccp3qasg" path="res://ui/slots/CategoriesButton.tscn" id="2_pno6w"]
 [ext_resource type="Script" uid="uid://f85xdgpu4c7" path="res://ui/animate_slots.gd" id="2_r3pf1"]
 
-[node name="CraftingMenu" type="Control" groups=["ui"]]
+[node name="CraftingMenu" type="Control" groups=["station"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pno6w")

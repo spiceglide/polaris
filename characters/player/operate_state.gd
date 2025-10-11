@@ -3,16 +3,23 @@ extends State
 var anim: AnimationPlayer
 
 func toggle_menu(state: bool):
-	get_tree().call_group("ui", "set_ui_element", "inventory", state)
+	get_tree().call_group("station", "_toggle_menu", state)
+
+func apply_recipe(state: bool):
+	if (state == false) or (len(parent.interactable) == 0):
+		get_tree().call_group("station", "_apply_station", "")
+	else:
+		get_tree().call_group("station", "_apply_station", parent.interactable[0])
 
 func enter():
 	anim = parent.get_node("AnimationPlayer")
 	anim.play("action/gather_1")
 	
+	apply_recipe(true)
 	toggle_menu(true)
 
 func exit():
-	pass
+	apply_recipe(false)
 
 func update(_delta: float):
 	if Input.is_action_just_pressed("inventory"):

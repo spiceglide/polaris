@@ -39,7 +39,7 @@ version_control/autoload_on_startup=true
 
 interactive=""
 crafting=""
-ui=""
+station=""
 
 [gui]
 

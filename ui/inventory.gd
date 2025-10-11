@@ -116,10 +116,7 @@ func select(slot_index: int):
 	selected_slot = slot_index
 	slots[selected_slot].select()
 
-func set_ui_element(element: String, state: bool):
-	if element != "inventory":
-		return
-	
+func _toggle_menu(state: bool):
 	if state == true:
 		open()
 	else:

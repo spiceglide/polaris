@@ -52,16 +52,12 @@ func change_state(next: String):
 func _on_interaction_body_entered(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive:
-		PlayerData.vicinity.append(interactive.parent.id)
-		
 		if interactive.is_in_group("interactive"):
 			interactable.append(interactive)
 
 func _on_interaction_body_exited(body: Node2D) -> void:
 	var interactive = body.get_node("Interaction")
 	if interactive:
-		PlayerData.vicinity.erase(interactive.parent.id)
-		
 		if interactive.is_in_group("interactive"):
 			interactive.highlight(false)
 			interactable.erase(interactive)

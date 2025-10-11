@@ -74,10 +74,7 @@ func set_category(category: String):
 	CraftingData.sort_recipes()
 	_update_list()
 
-func set_ui_element(element: String, state: bool):
-	if element != "inventory":
-		return
-	
+func _toggle_menu(state: bool):
 	if state == true:
 		open()
 	else:

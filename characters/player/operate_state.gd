@@ -13,7 +13,7 @@ func apply_recipe(state: bool):
 
 func enter():
 	anim = parent.get_node("AnimationPlayer")
-	anim.play("action/gather_1")
+	anim.play("action/think")
 	
 	apply_recipe(true)
 	toggle_menu(true)

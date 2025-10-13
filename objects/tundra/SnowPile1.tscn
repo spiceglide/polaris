@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://di1au0y2ha18t"]
 
-[ext_resource type="Texture2D" uid="uid://4peh5gfvkc0q" path="res://assets/objects/tundra/snowpile_1.png" id="1_hkd6j"]
+[ext_resource type="Texture2D" uid="uid://ccp5ti71a860r" path="res://assets/objects/tundra/snowpile.png" id="1_t1078"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(161, 21)
@@ -12,7 +12,8 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -39)
-texture = ExtResource("1_hkd6j")
+texture = ExtResource("1_t1078")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

@@ -1,14 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://6idnqp6mveuf"]
+[gd_scene load_steps=15 format=3 uid="uid://6idnqp6mveuf"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_tkhhy"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="2_diip3"]
-[ext_resource type="Texture2D" uid="uid://b37oodg6dwnwx" path="res://assets/objects/temp2/mediumpine_1.png" id="2_yefjf"]
-[ext_resource type="Texture2D" uid="uid://1rvpbygvjuaj" path="res://assets/objects/temp2/mediumpine_2.png" id="3_6tmrv"]
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="3_tkhhy"]
+[ext_resource type="Texture2D" uid="uid://dblnllymidds8" path="res://assets/objects/forest/mediumpine.png" id="4_rwbwl"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_v4q15"]
-[ext_resource type="Texture2D" uid="uid://c62pgcbh2ay8q" path="res://assets/objects/temp2/mediumpine_stump.png" id="4_yefjf"]
-[ext_resource type="Texture2D" uid="uid://du48ng5j4wibg" path="res://assets/objects/temp2/mediumpine_3.png" id="5_diip3"]
-[ext_resource type="Texture2D" uid="uid://eqclrfowh1we" path="res://assets/objects/temp2/mediumpine_4.png" id="6_tkhhy"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="9_6tmrv"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="10_diip3"]
 
@@ -18,25 +14,6 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_tkhhy"]
 viewport_path = NodePath("Sprite2D/SubViewport")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d1t7d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_yefjf")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_yefjf")
-}],
-"loop": false,
-"name": &"stump",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(86, 72)
 
@@ -45,14 +22,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:animation")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"default"]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -91,19 +68,20 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_diip3"]
+[sub_resource type="Animation" id="Animation_yefjf"]
 resource_name = "default"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:animation")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"default"]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -142,19 +120,20 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_d1t7d"]
+[sub_resource type="Animation" id="Animation_6tmrv"]
 resource_name = "stump"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:animation")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"stump"]
+"values": [4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -196,8 +175,8 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3mj3t"]
 _data = {
 &"RESET": SubResource("Animation_tkhhy"),
-&"default": SubResource("Animation_diip3"),
-&"stump": SubResource("Animation_d1t7d")
+&"default": SubResource("Animation_yefjf"),
+&"stump": SubResource("Animation_6tmrv")
 }
 
 [node name="MediumPine" type="StaticBody2D"]
@@ -224,29 +203,36 @@ disable_3d = true
 transparent_bg = true
 size = Vector2i(366, 545)
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("3_tkhhy")
 instance_shader_parameters/heightOffset = 2.375e-07
-sprite_frames = SubResource("SpriteFrames_d1t7d")
+texture = ExtResource("4_rwbwl")
 centered = false
+hframes = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("3_tkhhy")
-instance_shader_parameters/heightOffset = -0.33
-texture = ExtResource("3_6tmrv")
+instance_shader_parameters/heightOffset = 2.375e-07
+texture = ExtResource("4_rwbwl")
 centered = false
+hframes = 5
+frame = 1
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("3_tkhhy")
-instance_shader_parameters/heightOffset = -0.66
-texture = ExtResource("5_diip3")
+instance_shader_parameters/heightOffset = 2.375e-07
+texture = ExtResource("4_rwbwl")
 centered = false
+hframes = 5
+frame = 2
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("3_tkhhy")
-instance_shader_parameters/heightOffset = -1.0
-texture = ExtResource("6_tkhhy")
+instance_shader_parameters/heightOffset = 2.375e-07
+texture = ExtResource("4_rwbwl")
 centered = false
+hframes = 5
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

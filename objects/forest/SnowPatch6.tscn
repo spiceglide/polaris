@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvpyfg11g03pe"]
 
-[ext_resource type="Texture2D" uid="uid://ccbt6wlb3ex6p" path="res://assets/objects/forest/f_snowpatch_6.png" id="1_0da80"]
+[ext_resource type="Texture2D" uid="uid://dta4hf1tibflo" path="res://assets/objects/forest/snowpatch.png" id="1_7c58n"]
 
 [node name="SnowPatch" type="StaticBody2D"]
 z_index = -1
@@ -8,4 +8,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0da80")
+texture = ExtResource("1_7c58n")
+hframes = 12
+frame = 5

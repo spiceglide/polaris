@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfravii50wfpu"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kuy4r"]
-load_path = "res://.godot/imported/f_snowpatch_8.png-bdebc8b75d84236454611fc2db263eae.ctex"
+[ext_resource type="Texture2D" uid="uid://dta4hf1tibflo" path="res://assets/objects/forest/snowpatch.png" id="1_kuy4r"]
 
 [node name="SnowPatch" type="StaticBody2D"]
 z_index = -1
@@ -9,4 +8,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("CompressedTexture2D_kuy4r")
+texture = ExtResource("1_kuy4r")
+hframes = 12
+frame = 7

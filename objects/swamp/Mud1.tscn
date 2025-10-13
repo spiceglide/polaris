@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dod01g2ybik2k"]
 
-[ext_resource type="Texture2D" uid="uid://dfhlspihf0lye" path="res://assets/objects/swamp/s_mud_1.png" id="1_wbrya"]
+[ext_resource type="Texture2D" uid="uid://c0ykuroxnpl0r" path="res://assets/objects/swamp/mud.png" id="1_iq2ao"]
 
 [node name="Mud" type="StaticBody2D"]
 z_index = -1
@@ -8,4 +8,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wbrya")
+texture = ExtResource("1_iq2ao")
+hframes = 6

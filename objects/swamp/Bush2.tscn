@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c67v1sc172sfb"]
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_av8pc"]
-[ext_resource type="Texture2D" uid="uid://cf67yh7xdng1p" path="res://assets/objects/swamp/s_bush_2.png" id="2_av8pc"]
+[ext_resource type="Texture2D" uid="uid://cf67yh7xdng1p" path="res://assets/objects/swamp/bush/s_bush_2.png" id="2_av8pc"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_2m65g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]

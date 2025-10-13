@@ -44,29 +44,52 @@
   "lograck": {
     "empty": {
       "tags": [],
-      "operate": {
+      "gather": {
         "next": "full1"
       }
     },
     "full1": {
       "tags": [],
-      "operate": {
+      "gather": {
         "next": "full2"
       }
     },
     "full2": {
       "tags": [],
-      "operate": {
+      "gather": {
         "next": "full3"
       }
     },
     "full3": {
       "tags": [],
-      "operate": {
+      "gather": {
         "next": "full4"
       }
     },
     "full4": {
+      "tags": []
+    }
+  },
+  "stickrack": {
+    "empty": {
+      "tags": [],
+      "gather": {
+        "next": "full1"
+      }
+    },
+    "full1": {
+      "tags": [],
+      "gather": {
+        "next": "full2"
+      }
+    },
+    "full2": {
+      "tags": [],
+      "gather": {
+        "next": "full3"
+      }
+    },
+    "full3": {
       "tags": []
     }
   },

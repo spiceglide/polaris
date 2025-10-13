@@ -2,6 +2,9 @@
   "lograck": {
     "tags": [ "placeable", "consumable" ]
   },
+  "stickrack": {
+    "tags": [ "placeable", "consumable" ]
+  },
   "mortarpestle": {
     "tags": [ "placeable", "consumable" ]
   },

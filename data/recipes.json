@@ -5,6 +5,11 @@
     "category": "vessel"
   },
   {
+    "in": ["stick", "stick", "stick", "stick"],
+    "out": "stickrack",
+    "category": "vessel"
+  },
+  {
     "in": ["shovel", "log", "log"],
     "out": "cellar",
     "category": "vessel"

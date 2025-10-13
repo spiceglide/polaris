@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqvesepf487gq" path="res://objects/forest/SnowPatch7.tscn" id="objectsforestSnowPatch7"]
 [ext_resource type="PackedScene" uid="uid://cifwkmuve4xm8" path="res://objects/forest/SnowPatch9.tscn" id="objectsforestSnowPatch9"]
 [ext_resource type="PackedScene" uid="uid://ccdbknky2i8qd" path="res://objects/forest/SnowPatch11.tscn" id="objectsforestSnowPatch11"]
-[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://objects/tundra/BerryBush.tscn" id="objectstundraBerryBush"]
+[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://structures/berrybush.tscn" id="objectstundraBerryBush"]
 [ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="objectstundraRock1"]
 [ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="objectstundraRock2"]
 [ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]

@@ -44,21 +44,6 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_7k6tw"]
-resource_name = "unpicked"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_pkari"]
 resource_name = "picked"
 tracks/0/type = "value"
@@ -74,6 +59,21 @@ tracks/0/keys = {
 "values": [1]
 }
 
+[sub_resource type="Animation" id="Animation_7k6tw"]
+resource_name = "unpicked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hr0bi"]
 _data = {
 &"RESET": SubResource("Animation_bvmnd"),
@@ -81,12 +81,13 @@ _data = {
 &"unpicked": SubResource("Animation_7k6tw")
 }
 
-[node name="BerryBush" type="StaticBody2D"]
+[node name="BerryBush" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_bvmnd")
 id = "berrybush"
+state_machine = NodePath("StateMachine")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_2yjhj")

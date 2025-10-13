@@ -25,8 +25,11 @@ func get_possible_interactions():
 	var item = InventoryData.get_selected_item_data()
 	var possible = ["crank", "gather", "operate"]
 
-	if "chop" in item.get("tags", []):
+	var tags = item.get("tags", [])
+	if "chop" in tags:
 		possible.append("chop")
+	if "dig" in tags:
+		possible.append("dig")
 	
 	return possible
 
@@ -43,6 +46,7 @@ func highlight_nearest():
 		first = false
 
 func place_structure(title: String) -> bool:
+	print(title)
 	return $StructurePlacer.place(title)
 
 func change_state(next: String):

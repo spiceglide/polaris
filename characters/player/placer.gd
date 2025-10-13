@@ -36,7 +36,11 @@ func place(title: String) -> bool:
 	var rect: Node = instance.get_node_or_null("CollisionShape2D")
 	if not rect:
 		return false
-	self.size = rect.shape.size
+	
+	if "size" in rect.shape:
+		self.size = rect.shape.size
+	else:
+		self.size = Vector2(50.0, 50.0)
 
 	instance.process_mode = Node.PROCESS_MODE_DISABLED
 	var shadow = instance.get_node_or_null("Sprite2D/Shadow")

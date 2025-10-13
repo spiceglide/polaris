@@ -136,10 +136,18 @@
       "gather": {
         "yields": ["berries"],
         "next": "picked"
+      },
+      "dig": {
+        "yields": ["berrybush"],
+        "next": ""
       }
     },
     "picked": {
-      "tags": []
+      "tags": [],
+      "dig": {
+        "yields": ["berrybush"],
+        "next": ""
+      }
     }
   },
   "rock": {

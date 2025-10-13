@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ckqow5yx641po" path="res://objects/forest/SnowPatch10.tscn" id="objectsforestSnowPatch10"]
 [ext_resource type="PackedScene" uid="uid://ccdbknky2i8qd" path="res://objects/forest/SnowPatch11.tscn" id="objectsforestSnowPatch11"]
 [ext_resource type="PackedScene" uid="uid://dwyx7njjbp8iv" path="res://objects/forest/SnowPatch12.tscn" id="objectsforestSnowPatch12"]
-[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://objects/tundra/BerryBush.tscn" id="objectstundraBerryBush"]
+[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://structures/berrybush.tscn" id="objectstundraBerryBush"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("160x160_tileset_ground_a")

@@ -19,6 +19,7 @@ func _ready() -> void:
 	add_to_group("crafting")
 	
 	if WorldData.get_game_mode() == "overworld":
+		set_item(0, "berrybush")
 		set_item(4, "sleepingbag")
 		set_item(5, "clay")
 		set_item(6, "clay")

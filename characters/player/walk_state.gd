@@ -10,9 +10,11 @@ func enter():
 	item_sprite = parent.get_node("Sprite/Item")
 
 	var item = InventoryData.get_selected_item()
+	var data = InventoryData.get_selected_item_data()
+	
 	var last_dir = parent.last_dir
-	if item in InventoryData.holdable:
-		item_sprite.animation = item + "_walk"
+	if "holdable" in data.get("tags", []):
+		item_sprite.animation = item
 		anim.play("walk/" + last_dir + "_hold")
 	else:
 		anim.play("walk/" + last_dir)
@@ -20,7 +22,7 @@ func enter():
 func exit():
 	direction = Vector2.ZERO
 
-func update(delta: float):
+func update(_delta: float):
 	var item = InventoryData.get_selected_item()
 
 	if PlayerData.health <= 0:
@@ -28,11 +30,13 @@ func update(delta: float):
 	
 	# Potentially hold item
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
-		if item not in ["torch"]:
+		var data := InventoryData.get_selected_item_data()
+		
+		if "light" in data.get("tags", []):
 			var light = parent.get_node("Light")
 			light.visible = false
 		
-		if item in InventoryData.holdable:
+		if "holdable" in data.get("tags", []):
 			state_transitioned.emit(self, "pullout")
 		else:
 			var last_dir = parent.last_dir
@@ -52,7 +56,6 @@ func update(delta: float):
 		if "sleep" in data.get("tags", []):
 			state_transitioned.emit(self, "sleep")
 		
-
 		InventoryData.use_selected_item()
 	
 	# Interact with environment
@@ -68,7 +71,7 @@ func update(delta: float):
 			if interaction:
 				state_transitioned.emit(self, interaction)
 
-func physics_update(delta: float):
+func physics_update(_delta: float):
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	# Speed multiplier
@@ -90,8 +93,10 @@ func physics_update(delta: float):
 		parent.last_dir = last_dir
 
 		var item = InventoryData.get_selected_item()
-		if item in InventoryData.holdable:
-			item_sprite.animation = item + "_walk"
+		var data = InventoryData.get_selected_item_data()
+		
+		if "holdable" in data.get("tags", []):
+			item_sprite.animation = item
 			anim.play("walk/" + last_dir + "_hold")
 		else:
 			anim.play("walk/" + last_dir)

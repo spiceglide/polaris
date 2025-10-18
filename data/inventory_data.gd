@@ -7,7 +7,6 @@ var selected_slot: int = 0
 var recipe_map: Dictionary = {}
 
 var collectables: Dictionary = {}
-var holdable = ["torch", "hatchet"]
 
 var station = null
 
@@ -21,9 +20,9 @@ func _ready() -> void:
 	if WorldData.get_game_mode() == "overworld":
 		set_item(0, "berrybush")
 		set_item(4, "sleepingbag")
-		set_item(5, "clay")
-		set_item(6, "clay")
-		set_item(7, "clay")
+		set_item(5, "hatchet")
+		set_item(6, "shovel")
+		set_item(7, "spear")
 		set_item(8, "clay")
 		set_item(9, "clay")
 

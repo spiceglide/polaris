@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ds5qpufck4mi" path="res://objects/swamp/Reed1.tscn" id="objectsswampReed1"]
 [ext_resource type="PackedScene" uid="uid://boi1j5eac6sdm" path="res://objects/swamp/Reed3.tscn" id="objectsswampReed3"]
 [ext_resource type="PackedScene" uid="uid://bt3je2ky4ljad" path="res://objects/swamp/Reed4.tscn" id="objectsswampReed4"]
-[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://objects/tundra/BerryBush.tscn" id="objectstundraBerryBush"]
+[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://structures/berrybush.tscn" id="objectstundraBerryBush"]
 [ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="objectstundraRock1"]
 [ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="objectstundraRock2"]
 [ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]

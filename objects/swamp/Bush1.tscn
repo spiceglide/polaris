@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_nnt07"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_okf1m"]
-[ext_resource type="Texture2D" uid="uid://p6sikun5ffeq" path="res://assets/objects/swamp/s_bush_1.png" id="4_v4qv5"]
+[ext_resource type="Texture2D" uid="uid://p6sikun5ffeq" path="res://assets/objects/swamp/bush/s_bush_1.png" id="4_v4qv5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fioj"]
 size = Vector2(163, 14)

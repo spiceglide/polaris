@@ -2,9 +2,9 @@
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_2yjhj"]
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_bvmnd"]
-[ext_resource type="Texture2D" uid="uid://0f3o76ar7e0o" path="res://assets/objects/tundra/berrybush_1.png" id="2_bv5ra"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_bv5ra"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_bvmnd"]
+[ext_resource type="Texture2D" uid="uid://btjyt0ly6cyu7" path="res://assets/objects/tundra/berrybush.png" id="4_gdbli"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="6_gdbli"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="7_pkari"]
 
@@ -31,20 +31,32 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[sub_resource type="Animation" id="Animation_gdbli"]
+[sub_resource type="Animation" id="Animation_pkari"]
 resource_name = "picked"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:visible")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_7k6tw"]
@@ -52,29 +64,30 @@ resource_name = "unpicked"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:visible")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hr0bi"]
 _data = {
 &"RESET": SubResource("Animation_bvmnd"),
-&"picked": SubResource("Animation_gdbli"),
+&"picked": SubResource("Animation_pkari"),
 &"unpicked": SubResource("Animation_7k6tw")
 }
 
-[node name="BerryBush" type="StaticBody2D"]
+[node name="BerryBush" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_bvmnd")
 id = "berrybush"
+state_machine = NodePath("StateMachine")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_2yjhj")
@@ -85,19 +98,20 @@ texture = SubResource("ViewportTexture_xcrti")
 show_behind_parent = true
 z_as_relative = false
 material = ExtResource("3_bv5ra")
-position = Vector2(-1, -2)
+position = Vector2(-1, -3)
 texture = SubResource("ViewportTexture_ogaqr")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite2D"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(108, 82)
+size = Vector2i(159, 118)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("1_2yjhj")
 instance_shader_parameters/heightOffset = 1.0
-texture = ExtResource("2_bv5ra")
+texture = ExtResource("4_gdbli")
 centered = false
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 0)

@@ -15,7 +15,7 @@ enum State {
 @export var speed: int = 400
 @export var multiplier: float = 1.3
 var position: Vector2 = Vector2.ZERO
-var vicinity: Array = []
+var interacting: StaticBody2D
 
 var state = State.Awake
 var health: float = 100.0

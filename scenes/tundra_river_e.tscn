@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_ixbke"]
 [ext_resource type="TileSet" uid="uid://c2oeewbey6qt7" path="res://scenes/tileset.tres" id="2_ixbke"]
-[ext_resource type="PackedScene" uid="uid://cd5xn0tgjxxwf" path="res://structures/Well.tscn" id="10_0nehg"]
+[ext_resource type="PackedScene" uid="uid://cd5xn0tgjxxwf" path="res://structures/well.tscn" id="10_0nehg"]
 [ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://objects/forest/MediumPine.tscn" id="objectsforestMediumPine"]
-[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://objects/tundra/BerryBush.tscn" id="objectstundraBerryBush"]
+[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://structures/berrybush.tscn" id="objectstundraBerryBush"]
 [ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="objectstundraRock1"]
 [ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="objectstundraRock2"]
 [ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]

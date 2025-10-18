@@ -1,6 +1,6 @@
 extends Camera2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_update_camera()
 	var node = self.get_parent().get_node("Sprite")
 	var pos = node.global_position

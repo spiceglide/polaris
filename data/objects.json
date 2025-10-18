@@ -36,16 +36,73 @@
       }
     }
   },
+  "mortarpestle": {
+    "default": {
+        "operate": {}
+    }
+  },
+  "lograck": {
+    "empty": {
+      "tags": [],
+      "gather": {
+        "next": "full1"
+      }
+    },
+    "full1": {
+      "tags": [],
+      "gather": {
+        "next": "full2"
+      }
+    },
+    "full2": {
+      "tags": [],
+      "gather": {
+        "next": "full3"
+      }
+    },
+    "full3": {
+      "tags": [],
+      "gather": {
+        "next": "full4"
+      }
+    },
+    "full4": {
+      "tags": []
+    }
+  },
+  "stickrack": {
+    "empty": {
+      "tags": [],
+      "gather": {
+        "next": "full1"
+      }
+    },
+    "full1": {
+      "tags": [],
+      "gather": {
+        "next": "full2"
+      }
+    },
+    "full2": {
+      "tags": [],
+      "gather": {
+        "next": "full3"
+      }
+    },
+    "full3": {
+      "tags": []
+    }
+  },
   "kiln": {
     "unlit": {
       "tags": [],
-      "gather": {
+      "operate": {
         "next": "lit"
       }
     },
     "lit": {
       "tags": ["warmth"],
-      "gather": {
+      "operate": {
         "next": "unlit"
       }
     }
@@ -102,10 +159,18 @@
       "gather": {
         "yields": ["berries"],
         "next": "picked"
+      },
+      "dig": {
+        "yields": ["berrybush"],
+        "next": ""
       }
     },
     "picked": {
-      "tags": []
+      "tags": [],
+      "dig": {
+        "yields": ["berrybush"],
+        "next": ""
+      }
     }
   },
   "rock": {

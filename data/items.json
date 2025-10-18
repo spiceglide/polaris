@@ -1,4 +1,10 @@
 {
+  "lograck": {
+    "tags": [ "placeable", "consumable" ]
+  },
+  "stickrack": {
+    "tags": [ "placeable", "consumable" ]
+  },
   "mortarpestle": {
     "tags": [ "placeable", "consumable" ]
   },
@@ -46,7 +52,7 @@
     "tags": [ "holdable" ]
   },
   "shovel": {
-    "tags": [ "holdable" ]
+    "tags": [ "holdable", "dig" ]
   },
   "smallmeat": {
     "tags": [ "food", "consumable" ]
@@ -60,6 +66,9 @@
   "berries": {
     "tags": [ "food", "consumable" ],
     "stats": { "hunger": 5.0 }
+  },
+  "berrybush": {
+    "tags": [ "placeable", "consumable" ]
   },
   "campfire": {
     "tags": [ "placeable", "consumable" ]

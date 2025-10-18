@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=37 format=3 uid="uid://c1fuoyxvmitbn"]
+[gd_resource type="SpriteFrames" load_steps=38 format=3 uid="uid://c1fuoyxvmitbn"]
 
 [ext_resource type="Texture2D" uid="uid://cw57uqta1npks" path="res://assets/ui/items.png" id="1_do4gg"]
 
@@ -9,6 +9,10 @@ region = Rect2(0, 0, 90, 90)
 [sub_resource type="AtlasTexture" id="AtlasTexture_byk8m"]
 atlas = ExtResource("1_do4gg")
 region = Rect2(90, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ltrk"]
+atlas = ExtResource("1_do4gg")
+region = Rect2(3150, 0, 90, 90)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4ym5"]
 atlas = ExtResource("1_do4gg")
@@ -158,6 +162,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"berries",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ltrk")
+}],
+"loop": true,
+"name": &"berrybush",
 "speed": 2.0
 }, {
 "frames": [{

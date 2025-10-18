@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqafg6skb5ux6"]
+[gd_scene load_steps=10 format=3 uid="uid://cqafg6skb5ux6"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_vbtqn"]
 [ext_resource type="Texture2D" uid="uid://blsvhgfbcd460" path="res://assets/structures/placeholder/placeholder_structure_s.png" id="2_4rumg"]
@@ -15,14 +15,6 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(188, 28)
-
-[sub_resource type="Animation" id="Animation_cph68"]
-resource_name = "default"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cv1pm"]
-_data = {
-&"default": SubResource("Animation_cph68")
-}
 
 [node name="Placeholder" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
 z_index = 1
@@ -63,9 +55,6 @@ parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_cv1pm")
-}
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
 script = ExtResource("4_auv3d")
@@ -74,4 +63,4 @@ initial_state = NodePath("Default")
 
 [node name="Default" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_1hgmf")
-animations = ["unlit"]
+animations = ["default"]

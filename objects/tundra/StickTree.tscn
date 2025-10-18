@@ -1,15 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bny82lifsvvnc"]
+[gd_scene load_steps=16 format=3 uid="uid://bny82lifsvvnc"]
 
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_2ggt7"]
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_ksnqb"]
-[ext_resource type="Texture2D" uid="uid://c3mtppcip2xml" path="res://assets/objects/tundra/sticktree_1.png" id="2_2ggt7"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="4_gfvp8"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_pxmr5"]
-[ext_resource type="Texture2D" uid="uid://dbr2320cv28bk" path="res://assets/objects/tundra/sticktree_2.png" id="5_jqu62"]
-[ext_resource type="Texture2D" uid="uid://c2c7n3ekngsky" path="res://assets/objects/tundra/sticktree_3.png" id="6_xia0u"]
-[ext_resource type="Texture2D" uid="uid://dckw856hnfobl" path="res://assets/objects/tundra/sticktree_4.png" id="7_dtweq"]
-[ext_resource type="Texture2D" uid="uid://c44i0hpf06w8a" path="res://assets/objects/tundra/sticktree_picked.png" id="9_7fk36"]
-[ext_resource type="Texture2D" uid="uid://cqlrlath3o3qm" path="res://assets/objects/tundra/sticktree_stump.png" id="10_8jsh8"]
+[ext_resource type="Texture2D" uid="uid://djqsaouo6otj5" path="res://assets/objects/tundra/sticktree.png" id="4_rvv7v"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="11_jqu62"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="11_jt555"]
 
@@ -27,14 +22,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_2ggt7")]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -73,19 +68,20 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_s7ahs"]
+[sub_resource type="Animation" id="Animation_yp7qf"]
 resource_name = "default"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_2ggt7")]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -124,19 +120,20 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_gyqgg"]
+[sub_resource type="Animation" id="Animation_u54to"]
 resource_name = "picked"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_7fk36")]
+"values": [4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -175,19 +172,20 @@ tracks/3/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_07lcy"]
+[sub_resource type="Animation" id="Animation_ksnqb"]
 resource_name = "stump"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:texture")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("10_8jsh8")]
+"values": [5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -229,9 +227,9 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4u384"]
 _data = {
 &"RESET": SubResource("Animation_h47wc"),
-&"default": SubResource("Animation_s7ahs"),
-&"picked": SubResource("Animation_gyqgg"),
-&"stump": SubResource("Animation_07lcy")
+&"default": SubResource("Animation_yp7qf"),
+&"picked": SubResource("Animation_u54to"),
+&"stump": SubResource("Animation_ksnqb")
 }
 
 [node name="StickTree" type="StaticBody2D"]
@@ -257,26 +255,33 @@ disable_3d = true
 transparent_bg = true
 size = Vector2i(342, 587)
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("1_2ggt7")
-texture = ExtResource("2_2ggt7")
+texture = ExtResource("4_rvv7v")
 centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D/SubViewport"]
-material = ExtResource("1_2ggt7")
-texture = ExtResource("5_jqu62")
-centered = false
+hframes = 6
+frame = 3
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("1_2ggt7")
 instance_shader_parameters/heightOffset = 0.0
-texture = ExtResource("6_xia0u")
+texture = ExtResource("4_rvv7v")
 centered = false
+hframes = 6
+frame = 2
 
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D/SubViewport"]
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D/SubViewport"]
 material = ExtResource("1_2ggt7")
-texture = ExtResource("7_dtweq")
+texture = ExtResource("4_rvv7v")
 centered = false
+hframes = 6
+frame = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SubViewport"]
+material = ExtResource("1_2ggt7")
+texture = ExtResource("4_rvv7v")
+centered = false
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

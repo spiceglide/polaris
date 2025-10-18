@@ -7,7 +7,8 @@ var selected_slot: int = 0
 var recipe_map: Dictionary = {}
 
 var collectables: Dictionary = {}
-var holdable = ["torch", "hatchet"]
+
+var station = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +18,11 @@ func _ready() -> void:
 	add_to_group("crafting")
 	
 	if WorldData.get_game_mode() == "overworld":
+		set_item(0, "berrybush")
 		set_item(4, "sleepingbag")
-		set_item(5, "clay")
-		set_item(6, "clay")
-		set_item(7, "clay")
+		set_item(5, "hatchet")
+		set_item(6, "shovel")
+		set_item(7, "spear")
 		set_item(8, "clay")
 		set_item(9, "clay")
 
@@ -131,4 +133,3 @@ func craft_complete(product: String):
 	for recipe in CraftingData.recipes:
 		if product == recipe["out"]:
 			remove_items(recipe["in"])
-			return

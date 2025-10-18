@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_elc0u"]
 [ext_resource type="Material" uid="uid://dvbar0vfwoiv3" path="res://shaders/sway.material" id="1_tpg6a"]
-[ext_resource type="Texture2D" uid="uid://b7n23wdldpvvy" path="res://assets/objects/swamp/reed_2.png" id="2_tpg6a"]
+[ext_resource type="Texture2D" uid="uid://b7n23wdldpvvy" path="res://assets/objects/swamp/reed/reed_2.png" id="2_tpg6a"]
 [ext_resource type="Material" uid="uid://bb5w6aegaq135" path="res://shaders/shadow.material" id="3_5cga4"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_3j5g3"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="5_3rvxj"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="6_3j5g3"]
-[ext_resource type="Texture2D" uid="uid://bddhjklx2hwd5" path="res://assets/objects/swamp/reed_bloom_2.png" id="6_avwt8"]
+[ext_resource type="Texture2D" uid="uid://bddhjklx2hwd5" path="res://assets/objects/swamp/reed/reed_bloom_2.png" id="6_avwt8"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_elc0u"]
 viewport_path = NodePath("Sprite2D/SubViewport")

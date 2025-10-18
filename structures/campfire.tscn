@@ -1,14 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://dkb82s00y6dgx"]
+[gd_scene load_steps=20 format=3 uid="uid://dkb82s00y6dgx"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_br0gt"]
+[ext_resource type="Texture2D" uid="uid://ciggfu7bvaft5" path="res://assets/structures/campfire.png" id="2_1vg37"]
 [ext_resource type="Material" uid="uid://b0e4qoqgmf2e1" path="res://shaders/flame.tres" id="2_i1glw"]
-[ext_resource type="Texture2D" uid="uid://birslwg7xubri" path="res://assets/structures/campfire/campfire_extinguished.png" id="2_s3jhk"]
-[ext_resource type="Texture2D" uid="uid://h8n1556xtglw" path="res://assets/structures/campfire/campfire_ignited_1.png" id="3_3i3u3"]
-[ext_resource type="Texture2D" uid="uid://dwv5k4mak7dks" path="res://assets/structures/campfire/campfire_ignited_2.png" id="4_br0gt"]
-[ext_resource type="Texture2D" uid="uid://dwirxijt8gmvl" path="res://assets/structures/campfire/campfire_ignited_3.png" id="5_0hdyu"]
-[ext_resource type="Texture2D" uid="uid://bxbwlold43q43" path="res://assets/structures/campfire/campfire_ignited_4.png" id="6_i1glw"]
-[ext_resource type="Texture2D" uid="uid://dksbuialmegwj" path="res://assets/structures/campfire/campfire.png" id="7_46rd8"]
-[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="8_c5w0t"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="9_osoys"]
 [ext_resource type="Texture2D" uid="uid://c23ws2xnog52v" path="res://assets/lighting/darkness_overlay_2.png" id="11_br0gt"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="11_il5cl"]
@@ -22,122 +16,167 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_br0gt"]
 viewport_path = NodePath("Sprite2D/SubViewport")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2d46r"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_s3jhk")
-}],
-"loop": true,
-"name": &"extinguished",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_3i3u3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_br0gt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_0hdyu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_i1glw")
-}],
-"loop": true,
-"name": &"ignited",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_46rd8")
-}],
-"loop": true,
-"name": &"unignited",
-"speed": 8.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(152, 22)
 
 [sub_resource type="Animation" id="Animation_3i3u3"]
-length = 0.001
+length = 0.5000125
+loop_mode = 1
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Base:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [Vector2i(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/path = NodePath("Sprite2D/SubViewport/Flame:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.0009999999, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [&"unignited"]
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Light:visible")
+tracks/2/path = NodePath("Sprite2D/SubViewport/Flame:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Light:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("GPUParticles2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_0hdyu"]
-resource_name = "burnt"
-length = 0.001
+[sub_resource type="Animation" id="Animation_1vg37"]
+resource_name = "lit"
+length = 0.5000125
+loop_mode = 1
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Base:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [Vector2i(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/path = NodePath("Sprite2D/SubViewport/Flame:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/SubViewport/Flame:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Light:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"extinguished"]
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7pj66"]
+resource_name = "unlit"
+length = 0.001
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/SubViewport/Flame:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -161,88 +200,36 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_s3jhk"]
-resource_name = "lit"
+resource_name = "burnt"
 length = 0.001
-loop_mode = 1
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
+tracks/0/path = NodePath("Sprite2D/SubViewport/Base:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [Vector2i(1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
+tracks/1/path = NodePath("Sprite2D/SubViewport/Flame:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"unignited"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Light:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("GPUParticles2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_br0gt"]
-resource_name = "unlit"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0009999999),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/SubViewport/AnimatedSprite2D2:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"unignited"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -266,15 +253,15 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i1glw"]
 _data = {
 &"RESET": SubResource("Animation_3i3u3"),
-&"burnt": SubResource("Animation_0hdyu"),
-&"lit": SubResource("Animation_s3jhk"),
-&"unlit": SubResource("Animation_br0gt")
+&"burnt": SubResource("Animation_s3jhk"),
+&"lit": SubResource("Animation_1vg37"),
+&"unlit": SubResource("Animation_7pj66")
 }
 
 [node name="Campfire" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
@@ -295,19 +282,19 @@ transparent_bg = true
 handle_input_locally = false
 size = Vector2i(160, 244)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
-visible = false
-material = ExtResource("2_i1glw")
-sprite_frames = SubResource("SpriteFrames_2d46r")
-animation = &"ignited"
-frame_progress = 0.234284
+[node name="Base" type="Sprite2D" parent="Sprite2D/SubViewport"]
+texture = ExtResource("2_1vg37")
 centered = false
-script = ExtResource("8_c5w0t")
+hframes = 4
+vframes = 2
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D/SubViewport"]
-sprite_frames = SubResource("SpriteFrames_2d46r")
-animation = &"unignited"
+[node name="Flame" type="Sprite2D" parent="Sprite2D/SubViewport"]
+material = ExtResource("2_i1glw")
+texture = ExtResource("2_1vg37")
 centered = false
+hframes = 4
+vframes = 2
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

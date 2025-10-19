@@ -3,11 +3,18 @@
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="1_sb4kv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb4kv"]
+bg_color = Color(1, 1, 1, 0.85882354)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
 
 [resource]
+default_base_scale = 0.84
 default_font = ExtResource("1_sb4kv")
 BoxContainer/constants/separation = 12
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 32
+Label/font_sizes/font_size = 24
 Label/fonts/font = ExtResource("1_sb4kv")
 Panel/styles/panel = SubResource("StyleBoxFlat_sb4kv")

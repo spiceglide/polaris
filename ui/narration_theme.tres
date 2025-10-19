@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ckdafanyjgwu0"]
+
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="1_sb4kv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb4kv"]
+
+[resource]
+default_font = ExtResource("1_sb4kv")
+BoxContainer/constants/separation = 12
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_sb4kv")
+Panel/styles/panel = SubResource("StyleBoxFlat_sb4kv")

@@ -2,6 +2,14 @@
   "placeholder": {
     "default": {}
   },
+  "clay": {
+    "default": {
+      "dig": {
+        "yields": ["clay"],
+        "next": ""
+      }
+    }
+  },
   "cellar": {
     "closed": {
       "tags": [],

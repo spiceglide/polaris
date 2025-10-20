@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwnsctynxc2fc"]
+
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_0pryo"]
+[ext_resource type="Texture2D" uid="uid://ch7tlkga5wbju" path="res://assets/structures/clay.png" id="2_0pryo"]
+[ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="3_3rb45"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="4_vjxlr"]
+[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="5_hey2p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4ote"]
+radius = 20.0
+
+[node name="Clay" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_0pryo")
+id = "clay"
+state_machine = NodePath("StateMachine")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0pryo")
+hframes = 7
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g4ote")
+
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
+position = Vector2(0, -1)
+script = ExtResource("3_3rb45")
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("4_vjxlr")
+parent = NodePath("..")
+initial_state = NodePath("Default")
+
+[node name="Default" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_hey2p")

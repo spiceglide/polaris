@@ -46,16 +46,20 @@ func update(_delta: float):
 		var data = InventoryData.get_selected_item_data()
 		#parent.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
 		
+		if "food" in data.get("tags", []):
+			state_transitioned.emit(self, "eat")
+		
 		if "victim" in data.get("tags", []):
 			state_transitioned.emit(self, "kill")
+			InventoryData.use_selected_item()
 		
 		if "placeable" in data.get("tags", []):
 			parent.place_structure(item)
-
+			InventoryData.use_selected_item()
+		
 		if "sleep" in data.get("tags", []):
 			state_transitioned.emit(self, "sleep")
-		
-		InventoryData.use_selected_item()
+			InventoryData.use_selected_item()
 	
 	# Interact with environment
 	if Input.is_action_just_pressed("interact"):

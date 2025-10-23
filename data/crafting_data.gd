@@ -62,15 +62,12 @@ func _filter_stations(recipe: Dictionary) -> bool:
 		return true
 	
 	# Usable station nearby
-	print(stations)
 	if self.station in stations:
 		return true
-	
 	return false
 
 func craft_complete(product: String):
 	sort_recipes()
 
 func _apply_station(station: String):
-	print("station: " + station)
 	self.station = station

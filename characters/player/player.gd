@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var last_dir = "south";
 var interactable = []
+var holding = null
 
 func start(pos):
 	position = pos
@@ -12,7 +13,7 @@ func start(pos):
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if PlayerData.flags["position_updated"]:
 		self.position = PlayerData.position
 		PlayerData.flags["position_updated"] = false
@@ -22,15 +23,15 @@ func _process(delta: float) -> void:
 	highlight_nearest()
 
 func get_possible_interactions():
-	var item = InventoryData.get_selected_item_data()
 	var possible = ["crank", "gather", "operate"]
-
-	var tags = item.get("tags", [])
-	if "chop" in tags:
-		possible.append("chop")
-	if "dig" in tags:
-		possible.append("dig")
-	
+	if self.holding:
+		var item = InventoryData.get_item_data(self.holding)
+		var tags = item.get("tags", [])
+		
+		for tag in tags:
+			if tag in ["chop", "dig"]:
+				possible.append(tag)
+		
 	return possible
 
 func highlight_nearest():

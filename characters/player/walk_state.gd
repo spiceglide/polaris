@@ -8,16 +8,12 @@ func enter():
 	direction = Vector2.ZERO
 	anim = parent.get_node("AnimationPlayer")
 	item_sprite = parent.get_node("Sprite/Item")
-
-	var item = InventoryData.get_selected_item()
-	var data = InventoryData.get_selected_item_data()
 	
-	var last_dir = parent.last_dir
-	if "holdable" in data.get("tags", []):
-		item_sprite.animation = item
-		anim.play("walk/" + last_dir + "_hold")
+	if parent.holding:
+		item_sprite.animation = parent.holding
+		anim.play("walk/" + parent.last_dir + "_hold")
 	else:
-		anim.play("walk/" + last_dir)
+		anim.play("walk/" + parent.last_dir)
 
 func exit():
 	direction = Vector2.ZERO
@@ -48,12 +44,9 @@ func physics_update(_delta: float):
 		else:
 			last_dir = "west" if direction.x < 0 else "east"
 		parent.last_dir = last_dir
-
-		var item = InventoryData.get_selected_item()
-		var data = InventoryData.get_selected_item_data()
 		
-		if "holdable" in data.get("tags", []):
-			item_sprite.animation = item
+		if parent.holding:
+			item_sprite.animation = parent.holding
 			anim.play("walk/" + last_dir + "_hold")
 		else:
 			anim.play("walk/" + last_dir)

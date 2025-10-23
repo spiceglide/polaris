@@ -6,17 +6,13 @@ var item_sprite: AnimatedSprite2D
 func enter():
 	anim = parent.get_node("AnimationPlayer")
 	item_sprite = parent.get_node("Sprite/Item")
-
-	# Play idle animation (with or without holding)
-	var item = InventoryData.get_selected_item()
-	var data = InventoryData.get_selected_item_data()
 	
-	var last_dir = parent.last_dir
-	if "holdable" in data.get("tags", []):
-		item_sprite.animation = item
-		anim.play("idle/" + last_dir + "_hold")
+	# Play idle animation (with or without holding)
+	if parent.holding:
+		item_sprite.animation = parent.holding
+		anim.play("idle/" + parent.last_dir + "_hold")
 	else:
-		anim.play("idle/" + last_dir)
+		anim.play("idle/" + parent.last_dir)
 
 func exit():
 	pass

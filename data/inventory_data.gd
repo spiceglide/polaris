@@ -57,6 +57,9 @@ func get_first_empty_slot(start: int = 0):
 func get_item(index: int):
 	return slots[index]
 
+func get_item_data(item: String):
+	return $ItemsData.get_data(item)
+
 func get_selected_item_data() -> Dictionary:
 	var item = slots[selected_slot]
 	var data = $ItemsData.get_data(item)

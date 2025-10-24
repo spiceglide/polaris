@@ -1,6 +1,7 @@
 extends State
 
 var anim: AnimationPlayer
+var terminable: bool = false
 
 func toggle_menu(state: bool):
 	get_tree().call_group("station", "_toggle_menu", state)
@@ -12,6 +13,7 @@ func apply_recipe(state: bool):
 		get_tree().call_group("station", "_apply_station", parent.interactable[0])
 
 func enter():
+	terminable = false
 	anim = parent.get_node("AnimationPlayer")
 	anim.play("action/think")
 	
@@ -19,6 +21,7 @@ func enter():
 	toggle_menu(true)
 
 func exit():
+	terminable = false
 	apply_recipe(false)
 
 func update(_delta: float):
@@ -27,6 +30,11 @@ func update(_delta: float):
 
 func physics_update(_delta: float):
 	var movement = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if (movement.length() > 0):
+	if terminable and (movement.length() > 0):
 		state_transitioned.emit(self, "walk")
 		toggle_menu(false)
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name != "action/think":
+		return
+	terminable = true

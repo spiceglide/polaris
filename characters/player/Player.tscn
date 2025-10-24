@@ -8524,6 +8524,7 @@ placer = NodePath("..")
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Eat" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Dead" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Kill" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Operate" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Place" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="StateMachine/Sleep/Timer" to="StateMachine/Sleep" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Crank/Timer" to="StateMachine/Crank" method="_on_timer_timeout"]

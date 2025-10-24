@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=154 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
@@ -50,6 +50,7 @@
 [ext_resource type="Script" uid="uid://dxxag46x22kc0" path="res://characters/player/operate_state.gd" id="42_jqeeo"]
 [ext_resource type="Script" uid="uid://p5ndvlkggqsu" path="res://characters/player/placer.gd" id="42_ldfj5"]
 [ext_resource type="Script" uid="uid://dk6ogbogwnjra" path="res://characters/player/dig_state.gd" id="44_o7vov"]
+[ext_resource type="Script" uid="uid://f2yft3lmgq85" path="res://characters/player/place_state.gd" id="52_6e8hx"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="177_d5u3j"]
 [ext_resource type="Texture2D" uid="uid://kfgojmaxlcci" path="res://assets/characters/dasha/dasha_idle_hold.png" id="263_bfouw"]
 
@@ -8506,6 +8507,9 @@ one_shot = true
 [node name="Operate" type="Node" parent="StateMachine"]
 script = ExtResource("42_jqeeo")
 
+[node name="Place" type="Node" parent="StateMachine"]
+script = ExtResource("52_6e8hx")
+
 [node name="StructurePlacer" type="Node2D" parent="." node_paths=PackedStringArray("placer")]
 modulate = Color(1, 1, 1, 0.4)
 script = ExtResource("42_ldfj5")
@@ -8520,6 +8524,7 @@ placer = NodePath("..")
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Eat" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Dead" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Kill" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Place" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="StateMachine/Sleep/Timer" to="StateMachine/Sleep" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Crank/Timer" to="StateMachine/Crank" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Gather/Timer" to="StateMachine/Gather" method="_on_timer_timeout"]

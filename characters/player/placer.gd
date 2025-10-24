@@ -14,18 +14,7 @@ func _process(_delta: float) -> void:
 			position = Vector2(offset + size.x, 0.0)
 		"west":
 			position = Vector2(-(offset + size.x), 0.0)
-	
-	if Input.is_action_just_pressed("interact"):
-		var scene = WorldData.current_scene
-		var instance = self.get_child(0)
-		if instance:
-			self.remove_child(instance)
-			scene.add_child(instance)
-			instance.global_position = self.global_position
-			instance.process_mode = Node.PROCESS_MODE_INHERIT
-			var shadow = instance.get_node_or_null("Sprite2D/Shadow")
-			if shadow:
-				shadow.visible = true
+
 
 func place(title: String) -> bool:
 	#var tilemap: TileMap = scene.get_node("TileMap")
@@ -49,3 +38,19 @@ func place(title: String) -> bool:
 	self.add_child(instance)
 
 	return true
+
+func complete():
+	var scene = WorldData.current_scene
+	var instance = self.get_child(0)
+	if instance:
+		self.remove_child(instance)
+		scene.add_child(instance)
+		instance.global_position = self.global_position
+		instance.process_mode = Node.PROCESS_MODE_INHERIT
+		var shadow = instance.get_node_or_null("Sprite2D/Shadow")
+		if shadow:
+			shadow.visible = true
+
+func cancel():
+	for child in self.get_children():
+		child.queue_free()

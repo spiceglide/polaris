@@ -19,6 +19,8 @@ func handle_holding(caller: State, root: CharacterBody2D):
 	
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
 		root.holding = null
+		root.cancel_structure()
+		
 		caller.anim.queue(prev_state + "/" + root.last_dir)
 		return
 	
@@ -49,7 +51,6 @@ func handle_consumption(caller: State, root: CharacterBody2D):
 		
 		if "placeable" in tags:
 			root.place_structure(item)
-			InventoryData.use_selected_item()
 		
 		if "sleep" in tags:
 			caller.state_transitioned.emit(caller, "sleep")
@@ -67,11 +68,18 @@ func handle_consumption(caller: State, root: CharacterBody2D):
 func handle_interaction(caller: State, root: CharacterBody2D):
 	# Interact with environment
 	if Input.is_action_just_pressed("interact"):
+		# Prioritise placing objects
+		print("interaction")
+		if root.placing:
+			print("placing start")
+			caller.state_transitioned.emit(caller, "place")
+			return
+		
+		# Otherwise, interact with environment
 		if len(root.interactable) > 0:
 			var object = root.interactable[0]
 			var interactions = root.get_possible_interactions()
 			
 			var interaction = object.select_interaction_type(interactions)
 			if interaction:
-				print(interaction)
 				caller.state_transitioned.emit(caller, interaction)

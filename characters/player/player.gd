@@ -3,6 +3,7 @@ extends CharacterBody2D
 var last_dir = "south";
 var interactable = []
 var holding = null
+var placing = null
 
 func start(pos):
 	position = pos
@@ -46,9 +47,17 @@ func highlight_nearest():
 
 		first = false
 
-func place_structure(title: String) -> bool:
-	print(title)
-	return $StructurePlacer.place(title)
+func place_structure(title: String):
+	placing = title
+	$StructurePlacer.place(title)
+
+func complete_structure():
+	placing = null
+	$StructurePlacer.complete()
+
+func cancel_structure():
+	placing = null
+	$StructurePlacer.cancel()
 
 func change_state(next: String):
 	if next in $StateMachine.states:

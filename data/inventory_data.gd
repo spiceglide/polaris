@@ -54,10 +54,10 @@ func get_first_empty_slot(start: int = 0):
 		if not slots[i]:
 			return i
 
-func get_item(index: int):
+func get_item(index: int) -> String:
 	return slots[index]
 
-func get_item_data(item: String):
+func get_item_data(item: String) -> Dictionary:
 	return $ItemsData.get_data(item)
 
 func get_selected_item_data() -> Dictionary:
@@ -89,10 +89,10 @@ func use_selected_item():
 		for flag in data.get("events", {}):
 			PlayerData.flags[flag] = flags[flag]
 
-func get_selected_item():
+func get_selected_item() -> String:
 	return slots[selected_slot]
 
-func get_all_items():
+func get_all_items() -> Array:
 	return slots.filter(
 		func(item): return not item.is_empty()
 	)

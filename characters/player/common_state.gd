@@ -18,20 +18,13 @@ func handle_holding(caller: State, root: CharacterBody2D):
 	var prev_state = caller.name.to_lower()
 	
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
+		# Reset holding data
 		root.holding = null
 		root.cancel_structure()
+		var light = root.get_node("Light")
+		light.visible = true
 		
 		caller.anim.queue(prev_state + "/" + root.last_dir)
-		return
-	
-	if "light" in tags:
-		var light = root.get_node("Light")
-		light.visible = false
-	
-	if "holdable" in tags:
-		caller.anim.play(prev_state + "/" + root.last_dir + "_hold")
-	else:
-		caller.anim.play(prev_state + "/" + root.last_dir)
 
 func handle_consumption(caller: State, root: CharacterBody2D):
 	var item = InventoryData.get_selected_item()

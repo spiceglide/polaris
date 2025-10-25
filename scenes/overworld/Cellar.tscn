@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://c80dixwqfqmdv"]
+
+[ext_resource type="Texture2D" uid="uid://csdoqred3hk0l" path="res://assets/structures/cellar/ice_cellar_base.png" id="1_epegr"]
+[ext_resource type="Texture2D" uid="uid://dqmtqj7awu8xj" path="res://assets/structures/cellar/ice_cellar_containers.png" id="2_n203x"]
+[ext_resource type="Texture2D" uid="uid://v0rdii3fun0y" path="res://assets/structures/cellar/ice_cellar_small_containers.png" id="3_m2e1o"]
+[ext_resource type="Texture2D" uid="uid://bkntfwkwt50rb" path="res://assets/structures/cellar/ice_cellar_rope.png" id="4_1ye8x"]
+[ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="5_4flpm"]
+[ext_resource type="Texture2D" uid="uid://c23ws2xnog52v" path="res://assets/lighting/darkness_overlay_2.png" id="6_6aeaf"]
+[ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="6_eqmi6"]
+[ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="7_3u2st"]
+[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="7_6aeaf"]
+[ext_resource type="PackedScene" uid="uid://bhdraj2cyr8o8" path="res://ui/HUD.tscn" id="8_3u2st"]
+[ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="9_s2ber"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3up5e"]
+shader = ExtResource("7_6aeaf")
+shader_parameter/blur_radius = 0.2
+shader_parameter/blur_amount = 1.0
+shader_parameter/blur_inner = 0.400000019
+shader_parameter/blur_outer = 0.66
+
+[node name="Cellar" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Game" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1213, 642)
+
+[node name="ColorRect" type="ColorRect" parent="Game"]
+custom_minimum_size = Vector2(4000, 4000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -2000.0
+offset_right = 2000.0
+offset_bottom = 2000.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Game"]
+texture = ExtResource("1_epegr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Game"]
+texture = ExtResource("2_n203x")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Game"]
+texture = ExtResource("3_m2e1o")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Game"]
+z_index = 1
+texture = ExtResource("4_1ye8x")
+
+[node name="Player" parent="Game" instance=ExtResource("5_4flpm")]
+
+[node name="Light" type="PointLight2D" parent="Game"]
+position = Vector2(148, -222)
+blend_mode = 2
+texture = ExtResource("6_6aeaf")
+texture_scale = 1.12
+script = ExtResource("7_3u2st")
+jitter_radius = 0.0
+jitter_speed = 0.0
+
+[node name="Time" type="Node2D" parent="."]
+script = ExtResource("6_eqmi6")
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="Overlay"]
+visible = false
+material = SubResource("ShaderMaterial_3up5e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" parent="." instance=ExtResource("8_3u2st")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_s2ber")]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

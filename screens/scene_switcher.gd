@@ -4,7 +4,7 @@ var active_scene = null
 var scenes = {
 	"main_menu": "res://screens/MainMenu.tscn",
 	"loading_screen": "res://screens/LoadingScreen.tscn",
-	"main_game": "res://screens/MainGame.tscn",
+	"main_game": "res://scenes/overworld/Cellar.tscn", #"res://screens/MainGame.tscn",
 	"dream_game": "res://screens/DreamGame.tscn",
 }
 
@@ -26,7 +26,7 @@ func load_main_game(first_time: bool = false) -> void:
 	var loading = scenes["loading_screen"]
 	get_tree().change_scene_to_file(loading)
 	get_tree().paused = false
-
+	
 	active_scene = scenes["main_game"]
 	ResourceLoader.load_threaded_request(active_scene)
 	$Timer.start(1)

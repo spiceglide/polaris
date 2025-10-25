@@ -100,6 +100,9 @@ func _on_state_machine_transitioned(state: String) -> void:
 		notifications.clear_text()
 		notifications.announce_items(requires)
 
+func get_structure_id() -> String:
+	return parent.id
+
 func has_required_items() -> bool:
 	var state_data = get_state_data()
 

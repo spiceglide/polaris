@@ -4,7 +4,7 @@ extends Node
 @export var current_category = "all"
 
 var station: String = ""
-var recipes: Array
+var recipes: Array = []
 var craftable = []
 var uncraftable = []
 

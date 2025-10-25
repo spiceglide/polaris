@@ -10,7 +10,8 @@ func apply_recipe(state: bool):
 	if (state == false) or (len(parent.interactable) == 0):
 		get_tree().call_group("station", "_apply_station", "")
 	else:
-		get_tree().call_group("station", "_apply_station", parent.interactable[0])
+		var id = parent.interactable[0].get_structure_id()
+		get_tree().call_group("station", "_apply_station", id)
 
 func enter():
 	terminable = false

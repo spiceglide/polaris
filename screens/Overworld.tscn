@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://burgku2ck58j1"]
+
+[ext_resource type="Script" uid="uid://5w0yjuchyd4e" path="res://scenes/overworld/map.gd" id="1_qp2hw"]
+[ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_xv731"]
+[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="4_10rpf"]
+[ext_resource type="Shader" uid="uid://icddc7ws1jb" path="res://shaders/rays.gdshader" id="5_nq5xx"]
+[ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="6_ql0m5"]
+[ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="7_hvr76"]
+[ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="8_qgkgn"]
+[ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="11_xe4yi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khj5h"]
+shader = ExtResource("4_10rpf")
+shader_parameter/blur_radius = 0.2
+shader_parameter/blur_amount = 1.0
+shader_parameter/blur_inner = 0.400000019
+shader_parameter/blur_outer = 0.66
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ynvl"]
+shader = ExtResource("5_nq5xx")
+shader_parameter/position = 0.2
+shader_parameter/spread = 1.0
+shader_parameter/cutoff = -1.0
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.15
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 1.0
+shader_parameter/color = Color(1, 1, 1, 0.156863)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pyqy"]
+shader = ExtResource("6_ql0m5")
+shader_parameter/night_lut = ExtResource("7_hvr76")
+shader_parameter/twilight_lut = ExtResource("8_qgkgn")
+shader_parameter/night_length = 0.1
+shader_parameter/twilight_length = 0.2
+shader_parameter/lut_size = 16.0
+shader_parameter/alpha = 1.0
+
+[node name="Overworld" type="Node2D"]
+
+[node name="Map" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_qp2hw")
+
+[node name="Player" parent="Map" instance=ExtResource("2_xv731")]
+position = Vector2(1213, 642)
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="Overlay"]
+material = SubResource("ShaderMaterial_khj5h")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rays" type="ColorRect" parent="Overlay"]
+material = SubResource("ShaderMaterial_4ynvl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayNight" type="ColorRect" parent="Overlay"]
+material = SubResource("ShaderMaterial_2pyqy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+script = ExtResource("11_xe4yi")

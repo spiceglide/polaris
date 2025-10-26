@@ -1,94 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=6 format=3 uid="uid://cmo7oc0pnrfki"]
 
-[ext_resource type="PackedScene" uid="uid://dtl35oajbss5e" path="res://ui/Map.tscn" id="1_rwsj7"]
-[ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_ik4lw"]
+[ext_resource type="PackedScene" uid="uid://c80dixwqfqmdv" path="res://scenes/overworld/Cellar.tscn" id="1_4wwiy"]
+[ext_resource type="PackedScene" uid="uid://burgku2ck58j1" path="res://screens/Overworld.tscn" id="1_ssg0d"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="3_ik4lw"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_ssg0d"]
-[ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="5_4wwiy"]
-[ext_resource type="Shader" uid="uid://icddc7ws1jb" path="res://shaders/rays.gdshader" id="6_uhe65"]
-[ext_resource type="Shader" uid="uid://0u4ocfckffpl" path="res://shaders/vignette.gdshader" id="7_khj5h"]
-[ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="8_icway"]
-[ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="9_2lsej"]
 [ext_resource type="PackedScene" uid="uid://bhdraj2cyr8o8" path="res://ui/HUD.tscn" id="9_khj5h"]
-[ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="10_s1oow"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_khj5h"]
-shader = ExtResource("7_khj5h")
-shader_parameter/blur_radius = 0.2
-shader_parameter/blur_amount = 1.0
-shader_parameter/blur_inner = 0.400000019
-shader_parameter/blur_outer = 0.66
+[node name="MainGame" type="Node"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ynvl"]
-shader = ExtResource("6_uhe65")
-shader_parameter/position = 0.2
-shader_parameter/spread = 1.0
-shader_parameter/cutoff = -1.0
-shader_parameter/falloff = 1.0
-shader_parameter/edge_fade = 0.15
-shader_parameter/speed = 1.0
-shader_parameter/ray1_density = 8.0
-shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 1.0
-shader_parameter/color = Color(1, 1, 1, 0.156863)
-shader_parameter/hdr = false
-shader_parameter/seed = 5.0
+[node name="Locations" type="Node" parent="."]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pyqy"]
-shader = ExtResource("8_icway")
-shader_parameter/night_lut = ExtResource("9_2lsej")
-shader_parameter/twilight_lut = ExtResource("10_s1oow")
-shader_parameter/night_length = 0.1
-shader_parameter/twilight_length = 0.2
-shader_parameter/lut_size = 16.0
-shader_parameter/alpha = 1.0
+[node name="Overworld" parent="Locations" instance=ExtResource("1_ssg0d")]
 
-[node name="MainGame" type="Node2D"]
+[node name="Cellar" parent="Locations" instance=ExtResource("1_4wwiy")]
+process_mode = 4
+visible = false
 
-[node name="Game" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="Map" parent="Game" instance=ExtResource("1_rwsj7")]
-
-[node name="Player" parent="Game" instance=ExtResource("2_ik4lw")]
-position = Vector2(1213, 642)
-
-[node name="Time" type="Node2D" parent="."]
+[node name="Time" type="Node" parent="."]
 script = ExtResource("3_ssg0d")
-
-[node name="Overlay" type="CanvasLayer" parent="."]
-
-[node name="Vignette" type="ColorRect" parent="Overlay"]
-material = SubResource("ShaderMaterial_khj5h")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Rays" type="ColorRect" parent="Overlay"]
-material = SubResource("ShaderMaterial_4ynvl")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="DayNight" type="ColorRect" parent="Overlay"]
-material = SubResource("ShaderMaterial_2pyqy")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_group_ = true
 
 [node name="HUD" parent="." instance=ExtResource("9_khj5h")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ik4lw")]
 visible = false
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-script = ExtResource("5_4wwiy")

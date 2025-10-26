@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=129 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://g5avir72mu40" path="res://assets/characters/dasha/dasha_chop.png" id="15_3l5v1"]
 [ext_resource type="Texture2D" uid="uid://bhhfpnt8yuxap" path="res://assets/characters/dasha/dasha_walk_hold.png" id="15_a5vpp"]
 [ext_resource type="Texture2D" uid="uid://drshewr03c0bd" path="res://assets/characters/dasha/dasha_kill.png" id="17_p61vd"]
-[ext_resource type="Texture2D" uid="uid://o0mid1vvmrth" path="res://assets/characters/dasha/items_torch.png" id="19_imdlq"]
 [ext_resource type="Texture2D" uid="uid://c6nx3mygqbbn0" path="res://assets/characters/dasha/dasha_think.png" id="19_jqeeo"]
 [ext_resource type="Texture2D" uid="uid://bu0o7pumibviw" path="res://assets/characters/dasha/dasha_dig.png" id="20_4tsmt"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="22_lplbi"]
@@ -164,102 +163,6 @@ region = Rect2(90, 0, 45, 129)
 atlas = ExtResource("10_qgugx")
 region = Rect2(135, 0, 45, 129)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1e72y"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(0, 0, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sphd4"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(185, 0, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hx83i"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(370, 0, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5yw2"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(555, 0, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i43hc"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(0, 210, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5wlh"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(185, 210, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4jqb"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(370, 210, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqc8q"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(555, 210, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfbh3"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(0, 420, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oma04"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(185, 420, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l0b0k"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(370, 420, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1scf8"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(555, 420, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8jy1"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(0, 630, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5bsmn"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(185, 630, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18uwv"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(370, 630, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_maamt"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(555, 630, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_03a5a"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(0, 840, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1qhua"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(185, 840, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5o6ig"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(370, 840, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_onmhu"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(555, 840, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_he4oo"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(0, 1050, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebbxk"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(185, 1050, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7cktu"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(370, 1050, 185, 210)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6myfo"]
-atlas = ExtResource("19_imdlq")
-region = Rect2(555, 1050, 185, 210)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_p83q2"]
 animations = [{
 "frames": [{
@@ -360,88 +263,6 @@ animations = [{
 "loop": false,
 "name": &"torch",
 "speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1e72y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sphd4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hx83i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5yw2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i43hc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5wlh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o4jqb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqc8q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qfbh3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oma04")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l0b0k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1scf8")
-}],
-"loop": false,
-"name": &"torch_idle",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8jy1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5bsmn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18uwv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_maamt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_03a5a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1qhua")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5o6ig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_onmhu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_he4oo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebbxk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7cktu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6myfo")
-}],
-"loop": false,
-"name": &"torch_walk",
-"speed": 6.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qlk8"]
@@ -4252,10 +4073,10 @@ tracks/17/path = NodePath("Sprite/Item:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.33333334, 0.5, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(5.499998, -4)]
+"values": [Vector2(5.499998, -4), Vector2(5.5, -4.5), Vector2(5.5, -5), Vector2(5.5, -4.5)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -4612,10 +4433,10 @@ tracks/13/path = NodePath("Sprite/Item:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.33333334, 0.5, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(76.5, -13)]
+"values": [Vector2(76.5, -13), Vector2(76.5, -14), Vector2(76.5, -15), Vector2(76.5, -14)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -5164,10 +4985,10 @@ tracks/21/path = NodePath("Sprite/Item:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.33333334, 0.5, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(74.5, -17)]
+"values": [Vector2(74.5, -17), Vector2(74.5, -18), Vector2(74.5, -19), Vector2(74.5, -18)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
@@ -5620,10 +5441,10 @@ tracks/17/path = NodePath("Sprite/Item:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.33333334, 0.5, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-5.5, -4)]
+"values": [Vector2(-5.5, -4), Vector2(-5.5, -4.5), Vector2(-5.5, -5), Vector2(-5.5, -4.5)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -6673,10 +6494,10 @@ tracks/17/path = NodePath("Sprite/Item:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(5.499998, -4)]
+"values": [Vector2(5.499998, -4), Vector2(5.5, -8), Vector2(5.5, -4), Vector2(5.5, -8)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -7091,10 +6912,10 @@ tracks/13/path = NodePath("Sprite/Item:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(76.5, -13)]
+"values": [Vector2(76.5, -13), Vector2(76.5, -18), Vector2(76.5, -13), Vector2(76.5, -18)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -7701,10 +7522,10 @@ tracks/21/path = NodePath("Sprite/Item:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(74.5, -17)]
+"values": [Vector2(74.5, -17), Vector2(74.5, -23), Vector2(74.5, -15), Vector2(74.5, -19)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
@@ -8215,10 +8036,10 @@ tracks/17/path = NodePath("Sprite/Item:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-5.5, -4)]
+"values": [Vector2(-5.5, -4), Vector2(-5.5, -8), Vector2(-5.5, -4), Vector2(-5.5, -8)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -8385,9 +8206,9 @@ frame = 20
 
 [node name="Item" type="AnimatedSprite2D" parent="Sprite"]
 visible = false
-rotation = -0.31415927
+rotation = 0.31415927
 sprite_frames = SubResource("SpriteFrames_p83q2")
-animation = &"torch"
+animation = &"hatchet"
 script = ExtResource("12_ucgbp")
 
 [node name="Animal" type="AnimatedSprite2D" parent="Sprite"]

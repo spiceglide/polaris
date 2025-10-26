@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmo7oc0pnrfki"]
+[gd_scene load_steps=7 format=3 uid="uid://cmo7oc0pnrfki"]
 
 [ext_resource type="PackedScene" uid="uid://c80dixwqfqmdv" path="res://scenes/overworld/Cellar.tscn" id="1_4wwiy"]
+[ext_resource type="Script" uid="uid://djsrnsa2mnn2w" path="res://utility/rooms.gd" id="1_hpikh"]
 [ext_resource type="PackedScene" uid="uid://burgku2ck58j1" path="res://screens/Overworld.tscn" id="1_ssg0d"]
 [ext_resource type="PackedScene" uid="uid://8a78bnxjjmnq" path="res://screens/PauseMenu.tscn" id="3_ik4lw"]
 [ext_resource type="Script" uid="uid://cbi35rdv7fju3" path="res://utility/time.gd" id="3_ssg0d"]
@@ -9,6 +10,7 @@
 [node name="MainGame" type="Node"]
 
 [node name="Locations" type="Node" parent="."]
+script = ExtResource("1_hpikh")
 
 [node name="Overworld" parent="Locations" instance=ExtResource("1_ssg0d")]
 
@@ -23,3 +25,5 @@ script = ExtResource("3_ssg0d")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_ik4lw")]
 visible = false
+
+[connection signal="child_entered_tree" from="Locations" to="Locations" method="_on_child_entered_tree"]

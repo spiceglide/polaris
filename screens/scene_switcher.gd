@@ -1,7 +1,8 @@
 extends Node2D
 
 var active_scene = null
-var scenes = {
+var rooms = null
+var scenes := {
 	"main_menu": "res://screens/MainMenu.tscn",
 	"loading_screen": "res://screens/LoadingScreen.tscn",
 	"main_game": "res://screens/MainGame.tscn",
@@ -43,10 +44,34 @@ func load_dream_game() -> void:
 	ResourceLoader.load_threaded_request(active_scene)
 	$Timer.start(1)
 
+func switch_room(new_room: String):
+	if len(rooms) <= 0:
+		print("No rooms loaded")
+		return
+	
+	"""
+	var room_names = rooms.map(func (x): x.name)
+	print(rooms)
+	print(room_names)
+	print(new_room)
+	
+	if new_room not in room_names:  # only the names PLEASE
+		print("Room '" + new_room + "' not found")
+		return
+	"""
+	
+	for room in rooms:
+		if room.name == new_room:
+			room.process_mode = PROCESS_MODE_INHERIT
+			room.visible = true
+		else:
+			room.visible = false
+			room.process_mode = PROCESS_MODE_DISABLED
+
 func _on_timer_timeout() -> void:
 	if ResourceLoader.load_threaded_get_status(active_scene) == 3:
 		var scene = ResourceLoader.load_threaded_get(active_scene)
 		get_tree().change_scene_to_packed(scene)
 		$Timer.stop()
 	else:
-		$Timer.start(1)
+		$Timer.start(0.5)

@@ -5,6 +5,9 @@ enum GameMode {
 	Dream,
 }
 
+var overworld_rooms := []
+var dream_rooms := []
+
 const DIMS = 24*160
 var grid_size = [4, 3]
 var scene_size = [DIMS, DIMS]
@@ -40,3 +43,6 @@ func get_game_mode() -> String:
 		GameMode.Dream:
 			return "dream"
 	return ""
+
+func switch_rooms(new_room: String):
+	pass

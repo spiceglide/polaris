@@ -12,19 +12,18 @@ corner_radius_bottom_left = 8
 corner_detail = 5
 
 [node name="PanelContainer" type="PanelContainer"]
-custom_minimum_size = Vector2(800, 200)
+custom_minimum_size = Vector2(800, 120)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -414.0
-offset_right = 414.0
-offset_bottom = 200.0
+offset_right = 386.0
+offset_bottom = 100.0
 grow_horizontal = 2
 theme = ExtResource("1_jemvw")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ohd58")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(800, 200)
 layout_mode = 2
 theme = ExtResource("1_jemvw")
 theme_override_constants/margin_left = 10

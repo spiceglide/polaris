@@ -468,6 +468,6 @@ offset_right = 12.0
 offset_bottom = -94.0
 grow_vertical = 0
 
-[node name="PanelContainer" parent="." instance=ExtResource("59_hyfem")]
+[node name="Narration" parent="." instance=ExtResource("59_hyfem")]
 offset_top = 40.0
-offset_bottom = 240.0
+offset_bottom = 160.0

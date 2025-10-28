@@ -2,8 +2,10 @@ extends Container
 
 var item: String = ""
 
-func set_item(id: String):
+func set_item(id: String, quantity: int = 1):
 	item = id
+	%Quantity.text = str(quantity)
+	%Quantity.visible = quantity not in [0, 1]
 	self.tooltip_text = '%s\n"%s"' % [
 		tr("ITEM_" + id.to_upper() + "_NAME"),
 		tr("ITEM_" + id.to_upper() + "_DESCRIPTION"),
@@ -17,6 +19,7 @@ func set_item(id: String):
 
 func clear_item():
 	item = ""
+	%Quantity.visible = false
 	$ItemSprite.visible = false
 	
 func enable():

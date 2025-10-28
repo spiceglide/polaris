@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7x7xmi35d5q6"]
+[gd_scene load_steps=46 format=3 uid="uid://c7x7xmi35d5q6"]
 
 [ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="1_r2nfi"]
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
@@ -10,6 +10,25 @@
 [ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
 [ext_resource type="Texture2D" uid="uid://cqj8qrxe05guq" path="res://assets/ui/menu/logo.png" id="5_5yh37"]
 [ext_resource type="Shader" uid="uid://bol6tj12pj5oy" path="res://shaders/outline.gdshader" id="5_0675x"]
+[ext_resource type="Texture2D" uid="uid://vlqaucjstgwm" path="res://assets/ui/menu/options/optionen_screen_0.png" id="9_xsdu4"]
+[ext_resource type="Texture2D" uid="uid://b37seq8lkpo3c" path="res://assets/ui/menu/options/optionen_screen_1.png" id="10_5ggvk"]
+[ext_resource type="Material" uid="uid://b0e4qoqgmf2e1" path="res://shaders/flame.tres" id="10_bx774"]
+[ext_resource type="Texture2D" uid="uid://q5n0nioexqfs" path="res://assets/ui/menu/options/optionen_screen_10.png" id="11_6p6wd"]
+[ext_resource type="Texture2D" uid="uid://ciggfu7bvaft5" path="res://assets/structures/campfire.png" id="11_ensew"]
+[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="12_5uksb"]
+[ext_resource type="Texture2D" uid="uid://cwon8f8ctlm4d" path="res://assets/ui/menu/options/optionen_screen_11.png" id="12_h050v"]
+[ext_resource type="Texture2D" uid="uid://besdra5c0oy8" path="res://assets/ui/menu/options/optionen_screen_12.png" id="13_5dkyv"]
+[ext_resource type="Texture2D" uid="uid://fx0rreghcp6k" path="res://assets/ui/menu/options/optionen_screen_2.png" id="14_e3c6o"]
+[ext_resource type="Texture2D" uid="uid://b8p4ca85uujft" path="res://assets/ui/menu/options/optionen_screen_3.png" id="15_ensew"]
+[ext_resource type="Texture2D" uid="uid://bs1j4pykclqid" path="res://assets/ui/menu/options/optionen_screen_4.png" id="16_5uksb"]
+[ext_resource type="Texture2D" uid="uid://buntf7y5lorb0" path="res://assets/ui/menu/options/optionen_screen_5.png" id="17_bx774"]
+[ext_resource type="Texture2D" uid="uid://ccajc1jeu5ovx" path="res://assets/ui/menu/options/optionen_screen_6.png" id="18_tjlmp"]
+[ext_resource type="Texture2D" uid="uid://dg0w48muyt3e1" path="res://assets/ui/menu/options/optionen_screen_7.png" id="19_bswnc"]
+[ext_resource type="Texture2D" uid="uid://dlkyfbmos74t" path="res://assets/ui/menu/options/optionen_screen_8.png" id="20_8asd5"]
+[ext_resource type="Texture2D" uid="uid://lsfjqs1xa0e2" path="res://assets/ui/menu/options/optionen_screen_9.png" id="21_kc8hk"]
+[ext_resource type="Texture2D" uid="uid://bc4up26t3rckm" path="res://assets/ui/menu/options/optionen_screen_13.png" id="22_h050v"]
+[ext_resource type="Texture2D" uid="uid://ce672d1pspkog" path="res://assets/ui/menu/options/optionen_screen_14.png" id="23_5dkyv"]
+[ext_resource type="Script" uid="uid://dwdyq4nhl4gkf" path="res://ui/options_animation.gd" id="24_e3c6o"]
 [ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
 [ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
 
@@ -29,6 +48,136 @@ shader_parameter/allow_out_of_bounds = true
 shader_parameter/outline_thickness = 10.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx774"]
+atlas = ExtResource("11_ensew")
+region = Rect2(0, 251, 162, 251)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjlmp"]
+atlas = ExtResource("11_ensew")
+region = Rect2(162, 251, 162, 251)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bswnc"]
+atlas = ExtResource("11_ensew")
+region = Rect2(324, 251, 162, 251)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8asd5"]
+atlas = ExtResource("11_ensew")
+region = Rect2(486, 251, 162, 251)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kc8hk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx774")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjlmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bswnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8asd5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_ensew"]
+resource_name = "RESET"
+length = 0.5000167
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Animation:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_5ggvk"), ExtResource("14_e3c6o"), ExtResource("18_tjlmp")]
+}
+
+[sub_resource type="Animation" id="Animation_bx774"]
+resource_name = "idle"
+length = 0.5000167
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Animation:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_5ggvk"), ExtResource("14_e3c6o"), ExtResource("18_tjlmp")]
+}
+
+[sub_resource type="Animation" id="Animation_tjlmp"]
+resource_name = "messing"
+length = 0.5000167
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Animation:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_ensew"), ExtResource("16_5uksb"), ExtResource("17_bx774")]
+}
+
+[sub_resource type="Animation" id="Animation_bswnc"]
+resource_name = "ohshit"
+length = 0.83335
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Animation:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_bswnc")]
+}
+
+[sub_resource type="Animation" id="Animation_8asd5"]
+resource_name = "spooked"
+length = 3.0000167
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Animation:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 2.3333333, 2.5, 2.6666665, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_8asd5"), ExtResource("21_kc8hk"), ExtResource("11_6p6wd"), ExtResource("12_h050v"), ExtResource("13_5dkyv"), ExtResource("22_h050v"), ExtResource("23_5dkyv")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kc8hk"]
+_data = {
+&"RESET": SubResource("Animation_ensew"),
+&"idle": SubResource("Animation_bx774"),
+&"messing": SubResource("Animation_tjlmp"),
+&"ohshit": SubResource("Animation_bswnc"),
+&"spooked": SubResource("Animation_8asd5")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0675x"]
 shader = ExtResource("3_lts0s")
 shader_parameter/first_color = Color(0.176, 0.278, 0.388, 0)
@@ -44,6 +193,7 @@ script = ExtResource("1_tder3")
 follow_viewport_enabled = true
 
 [node name="Background" type="TextureRect" parent="MainMenu"]
+custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -204,29 +354,67 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.584314)
 
 [node name="SettingsMenu" parent="." instance=ExtResource("25_5ggvk")]
+layer = 2
 offset = Vector2(1920, 0)
 transform = Transform2D(1, 0, 0, 1, 1920, 0)
 follow_viewport_enabled = true
 
-[node name="Background" type="TextureRect" parent="SettingsMenu"]
+[node name="Background" type="ColorRect" parent="SettingsMenu"]
 z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5hrtm")
-expand_mode = 5
-flip_h = true
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="SettingsMenu"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -400.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+
+[node name="Background" type="Sprite2D" parent="SettingsMenu/Control"]
+self_modulate = Color(1, 0.83137256, 0.5294118, 1)
+texture = ExtResource("9_xsdu4")
+
+[node name="Animation" type="Sprite2D" parent="SettingsMenu/Control"]
+self_modulate = Color(1, 0.83137256, 0.5294118, 1)
+texture = ExtResource("10_5ggvk")
+
+[node name="Flame" type="AnimatedSprite2D" parent="SettingsMenu/Control"]
+material = ExtResource("10_bx774")
+position = Vector2(-250, 18)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_kc8hk")
+script = ExtResource("12_5uksb")
 
 [node name="Snowfall" type="ColorRect" parent="SettingsMenu"]
+visible = false
 material = SubResource("ShaderMaterial_ptt67")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_kc8hk")
+}
+script = ExtResource("24_e3c6o")
 
 [node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]
 offset = Vector2(0, 1080)
@@ -236,10 +424,12 @@ follow_viewport_enabled = true
 [node name="Colour" type="ColorRect" parent="QuitMenu"]
 z_index = -1
 material = SubResource("ShaderMaterial_0675x")
+custom_minimum_size = Vector2(960, 2160)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -1080.0
+offset_right = -960.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 1)
@@ -272,3 +462,4 @@ parameters/looping = true
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainMenu/Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="animation_finished" from="SettingsMenu/AnimationPlayer" to="SettingsMenu/AnimationPlayer" method="_on_animation_finished"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvpp82otu27sj"]
+[gd_scene load_steps=19 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_ygpc3"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_6l8bt"]
+[ext_resource type="Material" uid="uid://7m1nn2h8huqw" path="res://shaders/tilt.tres" id="2_6oknj"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="17_5i2o2"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_2aomv"]
 [ext_resource type="Texture2D" uid="uid://bxmousydkt7oy" path="res://assets/ui/inventory/inventory_e1.png" id="22_2kom7"]
@@ -95,12 +96,13 @@ script = ExtResource("1_ygpc3")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
+material = ExtResource("2_6oknj")
 position = Vector2(4, 3)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_6l8bt")
+animation = &"mortarpestle"
 centered = false
 offset = Vector2(22, 16)
-script = ExtResource("20_2aomv")
 
 [node name="Quantity" type="Label" parent="ItemSprite"]
 unique_name_in_owner = true

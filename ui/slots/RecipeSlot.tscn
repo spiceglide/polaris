@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://xmwxqd3uos47"]
+[gd_scene load_steps=17 format=3 uid="uid://xmwxqd3uos47"]
 
 [ext_resource type="Script" uid="uid://bnw1ruviyie6p" path="res://ui/slots/recipe_slot.gd" id="1_kgvkk"]
+[ext_resource type="Material" uid="uid://7m1nn2h8huqw" path="res://shaders/tilt.tres" id="2_6l6l8"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_kqc8j"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="15_i2fgw"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="19_tbwq6"]
@@ -81,11 +82,11 @@ script = ExtResource("1_kgvkk")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
+material = ExtResource("2_6l6l8")
 position = Vector2(14.000001, 14.000001)
 scale = Vector2(0.4, 0.4)
 sprite_frames = ExtResource("2_kqc8j")
 centered = false
-script = ExtResource("19_tbwq6")
 
 [node name="Quantity" type="Label" parent="ItemSprite"]
 unique_name_in_owner = true
@@ -94,7 +95,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -41.0
+offset_left = -37.0
 offset_top = -49.0
 grow_horizontal = 0
 grow_vertical = 0

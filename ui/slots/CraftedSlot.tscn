@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0coybcg1tfmj"]
+[gd_scene load_steps=17 format=3 uid="uid://b0coybcg1tfmj"]
 
 [ext_resource type="Script" uid="uid://csmdpplcjysma" path="res://ui/slots/crafted_slot.gd" id="1_io71b"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_rr51h"]
+[ext_resource type="Material" uid="uid://7m1nn2h8huqw" path="res://shaders/tilt.tres" id="2_vlln6"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="15_vlln6"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_io71b"]
 [ext_resource type="Texture2D" uid="uid://brk7qh8tusg2m" path="res://assets/ui/crafting/crafted_slot_1a.png" id="20_kyeyh"]
@@ -82,11 +83,11 @@ script = ExtResource("1_io71b")
 
 [node name="ItemSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
+material = ExtResource("2_vlln6")
 position = Vector2(18, 12.000001)
 scale = Vector2(0.6, 0.6)
 sprite_frames = ExtResource("2_rr51h")
 centered = false
-script = ExtResource("20_io71b")
 
 [node name="Quantity" type="Label" parent="ItemSprite"]
 unique_name_in_owner = true
@@ -95,7 +96,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -41.0
+offset_left = -37.0
 offset_top = -49.0
 grow_horizontal = 0
 grow_vertical = 0

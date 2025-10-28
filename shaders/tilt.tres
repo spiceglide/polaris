@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7m1nn2h8huqw"]
+
+[ext_resource type="Shader" uid="uid://bmj3nfgheeuvi" path="res://shaders/tilt.gdshader" id="1_o3aia"]
+
+[resource]
+shader = ExtResource("1_o3aia")
+shader_parameter/rotation_degrees = 2.0000086450000083
+shader_parameter/fps = 2
+shader_parameter/pivot = Vector2(60, 60)

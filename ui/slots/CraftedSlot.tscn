@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0coybcg1tfmj"]
+[gd_scene load_steps=16 format=3 uid="uid://b0coybcg1tfmj"]
 
 [ext_resource type="Script" uid="uid://csmdpplcjysma" path="res://ui/slots/crafted_slot.gd" id="1_io71b"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_rr51h"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="15_vlln6"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_io71b"]
 [ext_resource type="Texture2D" uid="uid://brk7qh8tusg2m" path="res://assets/ui/crafting/crafted_slot_1a.png" id="20_kyeyh"]
 [ext_resource type="Texture2D" uid="uid://bfapjf70wt27r" path="res://assets/ui/crafting/crafted_slot_1b.png" id="21_bqhur"]
@@ -86,6 +87,24 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = ExtResource("2_rr51h")
 centered = false
 script = ExtResource("20_io71b")
+
+[node name="Quantity" type="Label" parent="ItemSprite"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("15_vlln6")
+theme_override_font_sizes/font_size = 64
+text = "0"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2x4ab")

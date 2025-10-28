@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcdscwfma5sob"]
+[gd_scene load_steps=18 format=3 uid="uid://dcdscwfma5sob"]
 
 [ext_resource type="Script" uid="uid://dw6lci1a46ls4" path="res://ui/slots/trash_slot.gd" id="1_hhlo8"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_0sf5x"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="17_2oxhe"]
 [ext_resource type="Texture2D" uid="uid://bxmousydkt7oy" path="res://assets/ui/inventory/inventory_e1.png" id="20_kemw5"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_u2e2h"]
 [ext_resource type="Texture2D" uid="uid://bjrgokty30u5x" path="res://assets/ui/inventory/inventory_e2.png" id="21_ir3y1"]
@@ -96,9 +97,26 @@ z_index = 1
 position = Vector2(13, 12)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_0sf5x")
-animation = &"sleepingbag"
 centered = false
 script = ExtResource("20_u2e2h")
+
+[node name="Quantity" type="Label" parent="ItemSprite"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("17_2oxhe")
+theme_override_font_sizes/font_size = 64
+text = "0"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.603922, 0.603922, 0.603922, 1)

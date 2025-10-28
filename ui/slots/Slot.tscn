@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvpp82otu27sj"]
+[gd_scene load_steps=18 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_ygpc3"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_6l8bt"]
+[ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="17_5i2o2"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_2aomv"]
 [ext_resource type="Texture2D" uid="uid://bxmousydkt7oy" path="res://assets/ui/inventory/inventory_e1.png" id="22_2kom7"]
 [ext_resource type="Texture2D" uid="uid://bjrgokty30u5x" path="res://assets/ui/inventory/inventory_e2.png" id="23_7p74d"]
@@ -97,10 +98,29 @@ z_index = 1
 position = Vector2(4, 3)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_6l8bt")
-animation = &"mortarpestle"
 centered = false
 offset = Vector2(22, 16)
 script = ExtResource("20_2aomv")
+
+[node name="Quantity" type="Label" parent="ItemSprite"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -24.0
+offset_right = 22.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("17_5i2o2")
+theme_override_font_sizes/font_size = 64
+text = "0"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_355af")

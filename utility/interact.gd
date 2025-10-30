@@ -60,8 +60,10 @@ func interact(player: CharacterBody2D, type: String):
 	# Does the interaction require any items?
 	var required = has_required_items()
 	if required:
-		var requires = state_data.get("requires", [])
-		InventoryData.remove_items(requires)
+		var requires: Array[GameItem]
+		requires.assign(state_data.get("requires", []).map(func (x): return GameItem.new(x)))
+		for req in requires:
+			InventoryData.inventory.pop(req, 1)
 	else:
 		return
 
@@ -69,7 +71,7 @@ func interact(player: CharacterBody2D, type: String):
 	var yields = interaction_data.get("yields", [])
 	var announcer = player.get_node("Notifications")
 	for item in yields:
-		if InventoryData.push(item, 1):
+		if InventoryData.inventory.push(GameItem.new(item), 1):
 			announcer.announce_items([item])
 
 	# State transition
@@ -104,11 +106,12 @@ func get_structure_id() -> String:
 	return parent.id
 
 func has_required_items() -> bool:
-	var state_data = get_state_data()
+	var state_data := get_state_data()
 
 	# Does the interaction require any items?
-	var requires = state_data.get("requires", [])
-	if CraftingData.is_subset(requires, InventoryData.slots):
+	var requires: Array[GameItem]
+	requires.assign(state_data.get("requires", []).map(func (x): return GameItem.new(x)))
+	if CraftingData.is_subset(requires, InventoryData.get_all_items()):
 		return true
 	else:
 		return false

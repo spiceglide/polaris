@@ -17,7 +17,7 @@ func push(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.sl
 		if (not firstEmpty) and (not slot.item):
 			firstEmpty = slot
 		elif slot.item and slot.item.equals(item):
-			while (quantity > 0) and (slot.quantity <= slot.item.max_stack):
+			while (quantity > 0) and (slot.quantity < slot.item.max_stack):
 				slot.quantity += 1
 				quantity -= 1
 	# Leftover items after stack fills up

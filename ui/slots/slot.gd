@@ -9,6 +9,7 @@ enum SlotState {
 
 @export var anim: String = "type1"
 var item: GameItem = null
+var quantity: int = 0
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
 var slot_id: int = -1
@@ -27,8 +28,10 @@ func _process(_delta: float) -> void:
 	
 func set_item(item: GameItem, quantity: int = 1):
 	self.item = item
+	self.quantity = quantity
 	%Quantity.text = str(quantity)
 	%Quantity.visible = quantity not in [0, 1]
+	self.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	self.tooltip_text = '%s\n"%s"' % [
 		item.tr_name(),
 		item.tr_description(),
@@ -42,7 +45,9 @@ func set_item(item: GameItem, quantity: int = 1):
 	
 func clear_item():
 	item = null
+	quantity = 0
 	%Quantity.visible = false
+	self.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	self.tooltip_text = ""
 
 	$ItemSprite.visible = false
@@ -92,7 +97,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var dest_id = slot_id
 	
 	if source_id != dest_id:
-		InventoryData.swap_items(source_id, dest_id)
+		InventoryData.inventory.clever_swap(source_id, dest_id)
 	
 	$ItemSprite.visible = true
 	update_timestamp()
@@ -112,8 +117,10 @@ func _generate_drag_data():
 	}
 
 func quick_move():
-	var start = 5 if slot_id < 5 else 0
-	InventoryData.move_item_to_first_empty(slot_id, start)
+	var start := 5 if slot_id < 5 else 0
+	var subset := InventoryData.inventory.slots.slice(start)
+	InventoryData.inventory.pop(item, quantity)
+	InventoryData.inventory.push(item, quantity, subset)
 
 func _notification(type):
 	match type:

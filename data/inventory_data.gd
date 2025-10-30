@@ -76,6 +76,7 @@ func set_recipes(recipes: Array):
 
 func craft_complete(product: GameItem):
 	for recipe in CraftingData.recipes:
-		if product == recipe["out"]:
-			for item in recipe["out"]:
+		var output := GameItem.new(recipe["out"])
+		if product == output:
+			for item in recipe["in"]:
 				inventory.pop(GameItem.new(item))

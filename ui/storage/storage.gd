@@ -6,7 +6,7 @@ var slots: Array[LogicalSlot]
 func _init(size: int) -> void:
 	slots.resize(size)
 	for i in range(len(slots)):
-		slots[i] = LogicalSlot.new()
+		slots[i] = LogicalSlot.new(i)
 
 func get_item(slot: int) -> GameItem:
 	return slots[slot].item
@@ -14,7 +14,7 @@ func get_item(slot: int) -> GameItem:
 func push(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.slots) -> bool:
 	var firstEmpty: LogicalSlot = null
 	for slot in slots:
-		if (not firstEmpty) and (not slot):
+		if (not firstEmpty) and (not slot.item):
 			firstEmpty = slot
 		elif slot.item and slot.item.equals(item):
 			while (quantity > 0) and (slot.quantity <= slot.item.max_stack):

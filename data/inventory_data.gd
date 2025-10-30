@@ -18,7 +18,7 @@ func _ready() -> void:
 	if WorldData.get_game_mode() == "overworld":
 		inventory.push(GameItem.new("cellar"))
 		inventory.push(GameItem.new("sleepingbag"))
-		inventory.push(GameItem.new("hatcher"))
+		inventory.push(GameItem.new("hatchet"))
 		inventory.push(GameItem.new("shovel"))
 		inventory.push(GameItem.new("spear"))
 		inventory.push(GameItem.new("clay"), 2)

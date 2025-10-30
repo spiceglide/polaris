@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3drjbpk47nbc"]
+
+[ext_resource type="Script" uid="uid://be51mn455b2sg" path="res://data/imported_data.gd" id="1_j2lnt"]
+
+[node name="ImportedData" type="Node"]
+script = ExtResource("1_j2lnt")

@@ -24,8 +24,8 @@ func _process(delta: float) -> void:
 		var new_item = InventoryData.get_item(i)
 		
 		# Update outdated slots
-		if old_item and new_item and (not old_item.equals(new_item)):
-			if new_item == "":
+		if true or (not old_item.equals(new_item)):
+			if not new_item:
 				slot.clear_item()
 			else:
 				var quantity := InventoryData.get_quantity(i)

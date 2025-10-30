@@ -1,19 +1,22 @@
 extends Node
 class_name Storage
 
-@export var size: int = 5*5
-
-var slots: Array[LogicalSlot] = []
+var slots: Array[LogicalSlot]
 
 func _init(size: int) -> void:
-	self.size = size
+	slots.resize(size)
+	for i in range(len(slots)):
+		slots[i] = LogicalSlot.new()
+
+func get_item(slot: int) -> GameItem:
+	return slots[slot].item
 
 func push(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.slots) -> bool:
 	var firstEmpty: LogicalSlot = null
 	for slot in slots:
-		if not firstEmpty and slot.is_empty():
+		if (not firstEmpty) and (not slot):
 			firstEmpty = slot
-		elif slot.item.equals(item):
+		elif slot.item and slot.item.equals(item):
 			while (quantity > 0) and (slot.quantity <= slot.item.max_stack):
 				slot.quantity += 1
 				quantity -= 1
@@ -53,3 +56,8 @@ func clever_swap(slotA: int, slotB: int):
 		var diff = slots[slotB].item.max_stack - slots[slotB].amount
 		slots[slotB].amount += diff
 		slots[slotA].amount -= diff
+
+func shift(slot: int, dest: Array[LogicalSlot]):
+	var data := slots[slot]
+	slots[slot] = null
+	push(data.item, data.quantity, dest)

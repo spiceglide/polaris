@@ -8,7 +8,7 @@ func _init(id: String) -> void:
 	self.id = id
 
 func _get(property: StringName) -> Variant:
-	var data := InventoryData.get_item_data(id)
+	var data = InventoryData.get_item_data(id)
 	var prop = data.get(property, null)
 	if prop == null:
 		print("ERROR: Property '%' not found in item '%'" % [property, id])

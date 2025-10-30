@@ -16,19 +16,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	select(InventoryData.selected_slot)
+	select(InventoryData.selected_slot.id)
 	
 	for i in range(len(slots)):
-		var slot = slots[i]
-		var old_item = slot.item
+		var slot := slots[i]
+		var old_item := slot.item
 		var new_item = InventoryData.get_item(i)
 		
 		# Update outdated slots
-		if old_item != new_item:
+		if old_item and new_item and (not old_item.equals(new_item)):
 			if new_item == "":
 				slot.clear_item()
 			else:
-				slot.set_item(new_item)
+				var quantity := InventoryData.get_quantity(i)
+				slot.set_item(new_item, quantity)
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -38,19 +39,19 @@ func _input(event):
 		InventoryData.select_slot(event.as_text().to_int() - 1)
 		var item = InventoryData.get_selected_item()
 		if item:
-			$Announcement.announce(tr("ITEM_" + item.to_upper() + "_NAME"))
+			$Announcement.announce(item.tr_name())
 		
 	if event.is_action_pressed("inv_next"):
 		InventoryData.select_slot((selected_slot + 1) % cols)
 		var item = InventoryData.get_selected_item()
 		if item:
-			$Announcement.announce(tr("ITEM_" + item.to_upper() + "_NAME"))
+			$Announcement.announce(item.tr_name())
 	
 	if event.is_action_pressed("inv_prev"):
 		InventoryData.select_slot(fposmod(selected_slot - 1, cols))
 		var item = InventoryData.get_selected_item()
 		if item:
-			$Announcement.announce(tr("ITEM_" + item.to_upper() + "_NAME"))
+			$Announcement.announce(item.tr_name())
 		
 	if event.is_action_pressed("drop"):
 		InventoryData.clear_slot(selected_slot)
@@ -71,7 +72,7 @@ func close():
 	$Trash.visible = false
 	$Announcement.visible = true
 
-func set_item(slot_index: int, item: String):
+func set_item(slot_index: int, item: GameItem):
 	var slot = slots[slot_index]
 	slot.set_item(item)
 

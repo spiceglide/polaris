@@ -3,6 +3,10 @@ class_name LogicalSlot
 
 var item: GameItem = null
 var quantity: int = 0
+var id: int = -1
+
+func _init(id: int = -1) -> void:
+	self.id = id
 
 func push(item: GameItem, quantity: int = 1) -> bool:
 	if is_empty():

@@ -14,7 +14,7 @@ func _ready() -> void:
 	for recipe in recipes:
 		recipe["in"].sort()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	sort_recipes()
 
 func read_recipes() -> Array:
@@ -30,7 +30,7 @@ func read_recipes() -> Array:
 		return []
 
 func sort_recipes():
-	var all_items = InventoryData.get_all_items()
+	var all_items := InventoryData.get_all_items()
 	craftable = []
 	uncraftable = []
 	
@@ -40,14 +40,19 @@ func sort_recipes():
 		if (current_category != "all") and (current_category != recipe["category"]):
 			continue
 		
-		if is_subset(recipe["in"], all_items):
+		var input: Array[GameItem] 
+		input.assign(recipe["in"].map(func (x): return GameItem.new(x)))
+		if is_subset(input, all_items):
 			craftable.append(recipe)
 		else:
 			uncraftable.append(recipe)
 			
-func is_subset(array1: Array, array2: Array) -> bool:
-	for item in array1:
-		if item not in array2:
+func is_subset(array1: Array[GameItem], array2: Array[GameItem]) -> bool:
+	var a1 := array1.map(func (x: GameItem): return x.id)
+	var a2 := array2.map(func (x: GameItem): return x.id)
+	
+	for item in a1:
+		if item not in a2:
 			return false
 	return true
 

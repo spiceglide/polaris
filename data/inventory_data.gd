@@ -48,11 +48,17 @@ func use_selected_item() -> bool:
 	
 	return true
 
+func get_item(slot: int) -> GameItem:
+	return inventory.slots[slot].item
+
+func get_quantity(slot: int) -> int:
+	return inventory.slots[slot].quantity
+
 func get_selected_item() -> GameItem:
 	return selected_slot.item
 
-func get_all_items() -> Array:
-	var items := []
+func get_all_items() -> Array[GameItem]:
+	var items: Array[GameItem] = []
 	for slot in inventory.slots:
 		if slot.item:
 			items.append(slot.item)

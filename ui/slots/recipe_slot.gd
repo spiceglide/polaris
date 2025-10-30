@@ -1,24 +1,24 @@
 extends Container
 
-var item: String = ""
+var item: GameItem = null
 
-func set_item(id: String, quantity: int = 1):
-	item = id
+func set_item(item: GameItem, quantity: int = 1):
+	self.item = item
 	%Quantity.text = str(quantity)
 	%Quantity.visible = quantity not in [0, 1]
 	self.tooltip_text = '%s\n"%s"' % [
-		tr("ITEM_" + id.to_upper() + "_NAME"),
-		tr("ITEM_" + id.to_upper() + "_DESCRIPTION"),
+		item.tr_name(),
+		item.tr_description(),
 	]
 	
-	if $ItemSprite.sprite_frames.has_animation(id):
-		$ItemSprite.animation = id
+	if $ItemSprite.sprite_frames.has_animation(item.id):
+		$ItemSprite.animation = item.id
 	else:
 		$ItemSprite.animation = "default"
 	$ItemSprite.visible = true
 
 func clear_item():
-	item = ""
+	item = null
 	%Quantity.visible = false
 	$ItemSprite.visible = false
 	

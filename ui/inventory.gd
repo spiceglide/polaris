@@ -2,7 +2,6 @@ extends Control
 class_name InventorySystem
 
 @onready var slot_scene = preload("res://ui/slots/Slot.tscn")
-@onready var item_scene = preload("res://ui/Item.tscn")
 @onready var hint_scene = preload("res://ui/slots/HintButton.tscn")
 
 @export var cols: int = 5

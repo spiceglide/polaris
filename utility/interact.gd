@@ -69,7 +69,7 @@ func interact(player: CharacterBody2D, type: String):
 	var yields = interaction_data.get("yields", [])
 	var announcer = player.get_node("Notifications")
 	for item in yields:
-		if InventoryData.set_item_at_first_empty(item):
+		if InventoryData.push(item, 1):
 			announcer.announce_items([item])
 
 	# State transition

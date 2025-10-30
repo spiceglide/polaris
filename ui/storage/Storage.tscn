@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgkmm0trmkeqr"]
+
+[ext_resource type="Script" uid="uid://decxivkbn2v7d" path="res://ui/storage/storage.gd" id="1_mmxxv"]
+
+[node name="Storage" type="Node"]
+script = ExtResource("1_mmxxv")

@@ -24,12 +24,24 @@ func _process(_delta: float) -> void:
 		var new_item = InventoryData.get_item(i)
 		
 		# Update outdated slots
+		# TODO: Fix this `true`
 		if true or (not old_item.equals(new_item)):
 			if not new_item:
 				slot.clear_item()
 			else:
 				var quantity := InventoryData.get_quantity(i)
 				slot.set_item(new_item, quantity)
+	
+	# Trash slot
+	var old_item: GameItem = $Trash.item
+	var new_item := InventoryData.trash.item
+	# TODO: ditto
+	if true or (not old_item.equals(new_item)):
+		if not new_item:
+			$Trash.clear_item()
+		else:
+			var quantity := InventoryData.trash.quantity
+			$Trash.set_item(new_item, quantity)
 
 func _input(event):
 	if event.is_action_pressed("inventory"):

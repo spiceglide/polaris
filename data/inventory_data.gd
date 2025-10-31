@@ -3,6 +3,7 @@ extends Node
 @onready var size = 5*5
 
 var inventory: Storage
+var trash: LogicalSlot
 var selected_slot: int = 0
 var recipe_map: Dictionary = {}
 
@@ -13,6 +14,7 @@ var station = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	inventory = Storage.new(size)
+	trash = LogicalSlot.new(-1)
 	selected_slot = 0
 	
 	if WorldData.get_game_mode() == "overworld":

@@ -48,11 +48,16 @@ func sort_recipes():
 			uncraftable.append(recipe)
 			
 func is_subset(array1: Array[GameItem], array2: Array[GameItem]) -> bool:
-	var a1 := array1.map(func (x: GameItem): return x.id)
-	var a2 := array2.map(func (x: GameItem): return x.id)
+	var a1: Dictionary[String, int] = {}
+	var a2: Dictionary[String, int] = {}
+	
+	for item in array1:
+		a1[item.id] = a1.get(item.id, 0) + 1
+	for item in array2:
+		a2[item.id] = a2.get(item.id, 0) + 1
 	
 	for item in a1:
-		if item not in a2:
+		if a2.get(item, 0) < a1[item]:
 			return false
 	return true
 
@@ -71,7 +76,7 @@ func _filter_stations(recipe: Dictionary) -> bool:
 		return true
 	return false
 
-func craft_complete(product: String):
+func craft_complete(_product: GameItem, _inputs: Array[GameItem]):
 	sort_recipes()
 
 func _apply_station(station: String):

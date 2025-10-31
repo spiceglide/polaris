@@ -6,7 +6,11 @@ func set_recipe(recipe: Dictionary, craftable: bool):
 	for ingr in recipe["in"]:
 		ingredients[ingr] = ingredients.get(ingr, 0) + 1
 	
+	var inputs: Array[GameItem]
+	inputs.assign( recipe["in"].map(func (x): return GameItem.new(x)) )
 	$Crafted.set_item(GameItem.new(output))
+	$Crafted.set_inputs(inputs)
+	
 	if craftable:
 		$Crafted.enable()
 	else:

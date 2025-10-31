@@ -62,7 +62,8 @@ func get_all_items() -> Array[GameItem]:
 	var items: Array[GameItem] = []
 	for slot in inventory.slots:
 		if slot.item:
-			items.append(slot.item)
+			for q in range(slot.quantity):
+				items.append(slot.item)
 	return items
 
 func select_slot(index: int):
@@ -75,9 +76,7 @@ func set_recipes(recipes: Array):
 	for recipe in recipes:
 		self.recipes[recipe["out"]] = recipe["in"]
 
-func craft_complete(product: GameItem):
-	for recipe in CraftingData.recipes:
-		var output := GameItem.new(recipe["out"])
-		if product == output:
-			for item in recipe["in"]:
-				inventory.pop(GameItem.new(item))
+func craft_complete(product: GameItem, inputs: Array[GameItem]):
+	for item in inputs:
+		inventory.pop(item)
+	inventory.push(product)

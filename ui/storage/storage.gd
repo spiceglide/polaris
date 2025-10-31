@@ -34,10 +34,13 @@ func push(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.sl
 func pop(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.slots) -> bool:
 	slots.reverse()
 	for slot in slots:
-		if slot.item.equal(item):
+		if slot.item and slot.item.equals(item):
 			var lower = min(quantity, slot.quantity)
 			quantity -= lower
 			slot.quantity -= lower
+			
+			if slot.quantity == 0:
+				slot.item = null
 	# Are we popping more items than the inventory contains?
 	if quantity <= 0:
 		return true

@@ -3,7 +3,7 @@ extends Node
 @onready var size = 5*5
 
 var inventory: Storage
-var selected_slot: LogicalSlot
+var selected_slot: int = 0
 var recipe_map: Dictionary = {}
 
 var collectables: Dictionary = {}
@@ -13,7 +13,7 @@ var station = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	inventory = Storage.new(size)
-	selected_slot = inventory.slots[0]
+	selected_slot = 0
 	
 	if WorldData.get_game_mode() == "overworld":
 		inventory.push(GameItem.new("cellar"))
@@ -26,12 +26,13 @@ func _ready() -> void:
 	add_to_group("crafting")
 
 func use_selected_item() -> bool:
-	var item := selected_slot.item
+	var slot := inventory.slots[selected_slot]
+	var item := slot.item
 	var tags = item.get("tags")
 	
 	if tags and "consumable" in tags:
 		print(item)
-		inventory.pop(item, 1, [selected_slot])
+		inventory.pop(item, 1, [slot])
 	
 	var stats = item.get("stats")
 	if stats:
@@ -55,7 +56,7 @@ func get_quantity(slot: int) -> int:
 	return inventory.slots[slot].quantity
 
 func get_selected_item() -> GameItem:
-	return selected_slot.item
+	return inventory.slots[selected_slot].item
 
 func get_all_items() -> Array[GameItem]:
 	var items: Array[GameItem] = []
@@ -65,7 +66,7 @@ func get_all_items() -> Array[GameItem]:
 	return items
 
 func select_slot(index: int):
-	selected_slot = inventory.slots[index]
+	selected_slot = index
 	$AudioStreamPlayer.play()
 
 func set_recipes(recipes: Array):

@@ -15,8 +15,8 @@ func _ready() -> void:
 	_setup_slots()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	select(InventoryData.selected_slot.id)
+func _process(_delta: float) -> void:
+	select(InventoryData.selected_slot)
 	
 	for i in range(len(slots)):
 		var slot := slots[i]
@@ -54,7 +54,8 @@ func _input(event):
 			$Announcement.announce(item.tr_name())
 		
 	if event.is_action_pressed("drop"):
-		InventoryData.clear_slot(selected_slot)
+		var slot := InventoryData.inventory.slots[InventoryData.selected_slot]
+		InventoryData.inventory.pop(slot.item, 1, [slot])
 
 func toggle():
 	if $Full.visible:

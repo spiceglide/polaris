@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var last_dir: String = "south";
-var interactable: Array[StaticBody2D] = []
+var interactable: Array = []
 var holding: GameItem = null
 var placing: GameItem = null
 
@@ -36,19 +36,15 @@ func get_possible_interactions():
 	return possible
 
 func highlight_nearest():
-	print("TEST")
 	var possible = get_possible_interactions()
-	print(possible)
-	print()
-
+	
 	var first = true
 	for object in interactable:
 		if first:
 			object.highlight(true, possible)
+			first = false
 		else:
 			object.highlight(false, possible)
-
-		first = false
 
 func place_structure(title: GameItem):
 	placing = title

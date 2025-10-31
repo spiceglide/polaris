@@ -9,12 +9,16 @@ func _init(id: String) -> void:
 
 func _get(property: StringName) -> Variant:
 	var data = ImportedData.items.get(id)
-	if not data:
-		print("ERROR: Item '%' has no data" % data)
+	if data == null:
+		print("ERROR: Item '%s' has no data" % data)
+		return
 	
 	var prop = data.get(property, null)
 	if prop == null:
-		print("ERROR: Property '%' not found in item '%'" % [property, id])
+		print("ERROR: Property '%s' not found in item '%s'" % [property, id])
+		if property == &"tags":
+			return []
+		return
 	
 	return prop
 

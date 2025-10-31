@@ -8,9 +8,11 @@ func toggle_menu(state: bool):
 
 func apply_recipe(state: bool):
 	if (state == false) or (len(parent.interactable) == 0):
+		InventoryData.chest = null
 		get_tree().call_group("station", "_apply_station", "")
 	else:
 		var id = parent.interactable[0].get_structure_id()
+		InventoryData.chest = parent.interactable[0].get_inventory()
 		get_tree().call_group("station", "_apply_station", id)
 
 func enter():
@@ -27,13 +29,14 @@ func exit():
 
 func update(_delta: float):
 	if Input.is_action_just_pressed("inventory"):
+		toggle_menu(false)
 		state_transitioned.emit(self, "walk")
 
 func physics_update(_delta: float):
 	var movement = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if terminable and (movement.length() > 0):
-		state_transitioned.emit(self, "walk")
 		toggle_menu(false)
+		state_transitioned.emit(self, "walk")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name != "action/think":

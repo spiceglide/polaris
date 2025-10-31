@@ -52,27 +52,19 @@
   "lograck": {
     "empty": {
       "tags": [],
-      "gather": {
-        "next": "full1"
-      }
+      "operate": { }
     },
     "full1": {
       "tags": [],
-      "gather": {
-        "next": "full2"
-      }
+      "operate": { }
     },
     "full2": {
       "tags": [],
-      "gather": {
-        "next": "full3"
-      }
+      "operate": { }
     },
     "full3": {
       "tags": [],
-      "gather": {
-        "next": "full4"
-      }
+      "operate": { }
     },
     "full4": {
       "tags": []
@@ -81,21 +73,15 @@
   "stickrack": {
     "empty": {
       "tags": [],
-      "gather": {
-        "next": "full1"
-      }
+      "operate": { }
     },
     "full1": {
       "tags": [],
-      "gather": {
-        "next": "full2"
-      }
+      "operate": { }
     },
     "full2": {
       "tags": [],
-      "gather": {
-        "next": "full3"
-      }
+      "operate": { }
     },
     "full3": {
       "tags": []

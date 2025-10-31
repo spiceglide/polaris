@@ -105,6 +105,9 @@ func _on_state_machine_transitioned(state: String) -> void:
 func get_structure_id() -> String:
 	return parent.id
 
+func get_inventory() -> Storage:
+	return parent.inventory
+
 func has_required_items() -> bool:
 	var state_data := get_state_data()
 

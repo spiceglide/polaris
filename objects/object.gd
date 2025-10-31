@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var id: String
 @export var state_machine: StateMachine
 
+var inventory: Storage
 var temp_material: Material
 
 func _ready() -> void:
@@ -12,6 +13,8 @@ func _ready() -> void:
 
 	if self.get_node_or_null("Sprite2D"):
 		temp_material = $Sprite2D.material
+	
+	inventory = Storage.new(5)
 
 func get_possible_states() -> Array[String]:
 	return state_machine.states.keys()

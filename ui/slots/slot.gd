@@ -119,7 +119,7 @@ func _generate_drag_data():
 func quick_move():
 	var start := 5 if slot_id < 5 else 0
 	var subset := InventoryData.inventory.slots.slice(start)
-	InventoryData.inventory.pop(item, quantity, [InventoryData.inventory.slots[slot_id]])
+	InventoryData.inventory.pop(item, quantity)
 	InventoryData.inventory.push(item, quantity, subset)
 
 func _notification(type):

@@ -130,6 +130,8 @@ func select(slot_index: int):
 	slots[selected_slot].select()
 
 func _toggle_menu(state: bool):
+	$Chest.visible = state
+	
 	if state == true:
 		open()
 	else:

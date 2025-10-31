@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var last_dir = "south";
-var interactable = []
-var holding = null
-var placing = null
+var last_dir: String = "south";
+var interactable: Array[StaticBody2D] = []
+var holding: GameItem = null
+var placing: GameItem = null
 
 func start(pos):
 	position = pos
@@ -26,8 +26,8 @@ func _process(_delta: float) -> void:
 func get_possible_interactions():
 	var possible = ["crank", "gather", "operate"]
 	if self.holding:
-		var item = InventoryData.get_item_data(self.holding)
-		var tags = item.get("tags", [])
+		var tags: Array[String]
+		tags.assign(self.holding.get("tags"))
 		
 		for tag in tags:
 			if tag in ["chop", "dig"]:
@@ -36,7 +36,10 @@ func get_possible_interactions():
 	return possible
 
 func highlight_nearest():
+	print("TEST")
 	var possible = get_possible_interactions()
+	print(possible)
+	print()
 
 	var first = true
 	for object in interactable:
@@ -47,7 +50,7 @@ func highlight_nearest():
 
 		first = false
 
-func place_structure(title: String):
+func place_structure(title: GameItem):
 	placing = title
 	$StructurePlacer.place(title)
 

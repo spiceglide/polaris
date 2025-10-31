@@ -16,10 +16,10 @@ func _process(_delta: float) -> void:
 			position = Vector2(-(offset + size.x), 0.0)
 
 
-func place(title: String) -> bool:
+func place(item: GameItem) -> bool:
 	#var tilemap: TileMap = scene.get_node("TileMap")
 	
-	var struct: Resource = load('res://structures/%s.tscn' % title)
+	var struct: Resource = load('res://structures/%s.tscn' % item.id)
 	var instance: Variant = struct.instantiate()
 
 	var rect: Node = instance.get_node_or_null("CollisionShape2D")

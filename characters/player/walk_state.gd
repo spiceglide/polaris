@@ -10,7 +10,7 @@ func enter():
 	item_sprite = parent.get_node("Sprite/Item")
 	
 	if parent.holding:
-		item_sprite.animation = parent.holding
+		item_sprite.animation = parent.holding.id
 		anim.play("walk/" + parent.last_dir + "_hold")
 	else:
 		anim.play("walk/" + parent.last_dir)
@@ -46,7 +46,7 @@ func physics_update(_delta: float):
 		parent.last_dir = last_dir
 		
 		if parent.holding:
-			item_sprite.animation = parent.holding
+			item_sprite.animation = parent.holding.id
 			anim.play("walk/" + last_dir + "_hold")
 		else:
 			anim.play("walk/" + last_dir)

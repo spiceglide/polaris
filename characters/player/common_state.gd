@@ -10,12 +10,12 @@ func handle_holding(caller: State, root: CharacterBody2D):
 	if not root.holding:
 		return
 	
-	var data = InventoryData.get_item_data(root.holding)
-	if not data:
+	var tags: Array[String]
+	tags.assign(root.holding.get("tags"))
+	if not tags:
 		return
-	
-	var tags = data.get("tags", [])
-	var prev_state = caller.name.to_lower()
+
+	var prev_state := caller.name.to_lower()
 	
 	if Input.is_action_just_pressed("hotbar") or Input.is_action_just_pressed("inv_prev") or Input.is_action_just_pressed("inv_next"):
 		# Reset holding data
@@ -27,12 +27,12 @@ func handle_holding(caller: State, root: CharacterBody2D):
 		caller.anim.queue(prev_state + "/" + root.last_dir)
 
 func handle_consumption(caller: State, root: CharacterBody2D):
-	var item = InventoryData.get_selected_item()
+	var item := InventoryData.get_selected_item()
 	
 	# Use item
-	if Input.is_action_just_pressed("use_item") and item != "":
-		var data = InventoryData.get_item_data(item)
-		var tags: Array = data.get("tags", [])
+	if Input.is_action_just_pressed("use_item") and item:
+		var tags: Array[String]
+		tags.assign(item.get("tags"))
 		#parent.get_node("Notifications").announce(tr("ITEM_" + item.to_upper() + "_DESCRIPTION"))
 		
 		if "food" in tags:

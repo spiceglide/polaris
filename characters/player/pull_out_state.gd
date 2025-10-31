@@ -19,8 +19,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		return
 	
 	var item := InventoryData.get_selected_item()
-	var data := InventoryData.get_item_data(item)
-	var tags = data.get("tags", [])
+	var tags: Array = item.get("tags")
 	
 	parent.holding = item
 	parent.last_dir = "south"

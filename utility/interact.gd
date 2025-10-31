@@ -52,13 +52,13 @@ func select_interaction_type(available: Array) -> String:
 	return type
 
 func interact(player: CharacterBody2D, type: String):
-	var state = parent.get_current_state()
+	var state: String = parent.get_current_state()
 	
-	var state_data = get_state_data()
-	var interaction_data = state_data[type]
+	var state_data := get_state_data()
+	var interaction_data: Dictionary = state_data[type]
 
 	# Does the interaction require any items?
-	var required = has_required_items()
+	var required := has_required_items()
 	if required:
 		var requires: Array[GameItem]
 		requires.assign(state_data.get("requires", []).map(func (x): return GameItem.new(x)))

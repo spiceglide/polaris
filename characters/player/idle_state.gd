@@ -9,7 +9,7 @@ func enter():
 	
 	# Play idle animation (with or without holding)
 	if parent.holding:
-		item_sprite.animation = parent.holding
+		item_sprite.animation = parent.holding.id
 		anim.play("idle/" + parent.last_dir + "_hold")
 	else:
 		anim.play("idle/" + parent.last_dir)

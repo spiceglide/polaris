@@ -6,10 +6,16 @@ func set_recipe(recipe: Dictionary, craftable: bool):
 	for ingr in recipe["in"]:
 		ingredients[ingr] = ingredients.get(ingr, 0) + 1
 	
+	
 	var inputs: Array[GameItem]
 	inputs.assign( recipe["in"].map(func (x): return GameItem.new(x)) )
 	$Crafted.set_item(GameItem.new(output))
 	$Crafted.set_inputs(inputs)
+	
+	if len(recipe.get("stations", [])) > 0:
+		mark_color(true)
+	else:
+		mark_color(false)
 	
 	if craftable:
 		$Crafted.enable()
@@ -41,3 +47,13 @@ func clear_recipe():
 	for slot in $Recipe.get_children():
 		slot.clear_item()
 		slot.disable()
+
+func mark_color(state: bool):
+	var color: Color
+	color = Color("#ffdba2") if state else Color(1, 1, 1)
+
+	$Crafted/Sprite.self_modulate = color
+	for slot in $Recipe.get_children():
+		var frame = slot.get_node_or_null("Sprite")
+		if frame:
+			frame.self_modulate = color

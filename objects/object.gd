@@ -15,6 +15,7 @@ func _ready() -> void:
 		temp_material = $Sprite2D.material
 	
 	inventory = Storage.new(5)
+	inventory.slots[0].push(GameItem.new("bigmeat"), 2)
 
 func get_possible_states() -> Array[String]:
 	return state_machine.states.keys()

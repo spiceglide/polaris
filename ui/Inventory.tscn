@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://7a2wv4ftrcw1"]
+[gd_scene load_steps=6 format=3 uid="uid://7a2wv4ftrcw1"]
 
 [ext_resource type="Script" uid="uid://c2ukkdte1qj33" path="res://ui/inventory.gd" id="1_b6eu6"]
 [ext_resource type="PackedScene" uid="uid://dcdscwfma5sob" path="res://ui/slots/TrashSlot.tscn" id="2_0sq80"]
 [ext_resource type="Script" uid="uid://f85xdgpu4c7" path="res://ui/animate_slots.gd" id="2_onhdh"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="4_qahbh"]
 [ext_resource type="Script" uid="uid://cucj58eto375d" path="res://ui/timed_announcement.gd" id="5_kacic"]
-[ext_resource type="PackedScene" uid="uid://bvpp82otu27sj" path="res://ui/slots/Slot.tscn" id="6_kacic"]
 
 [node name="Inventory HUD" type="VBoxContainer" groups=["interactive", "station"]]
 anchors_preset = 7
@@ -40,26 +39,10 @@ layout_mode = 2
 
 [node name="Chest" type="HBoxContainer" parent="."]
 visible = false
-modulate = Color(1, 0.8586074, 0.6334076, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("2_onhdh")
 metadata/_edit_group_ = true
-
-[node name="Slot" parent="Chest" instance=ExtResource("6_kacic")]
-layout_mode = 2
-
-[node name="Slot2" parent="Chest" instance=ExtResource("6_kacic")]
-layout_mode = 2
-
-[node name="Slot3" parent="Chest" instance=ExtResource("6_kacic")]
-layout_mode = 2
-
-[node name="Slot4" parent="Chest" instance=ExtResource("6_kacic")]
-layout_mode = 2
-
-[node name="Slot5" parent="Chest" instance=ExtResource("6_kacic")]
-layout_mode = 2
 
 [node name="Full" type="GridContainer" parent="."]
 visible = false

@@ -61,6 +61,7 @@ func clever_swap(slotA: int, slotB: int):
 		slots[slotA].amount -= diff
 
 func shift(slot: int, dest: Array[LogicalSlot]):
-	var data := slots[slot]
-	slots[slot] = null
-	push(data.item, data.quantity, dest)
+	var item := slots[slot].item
+	var quantity := slots[slot].quantity
+	slots[slot].clear()
+	push(item, quantity, dest)

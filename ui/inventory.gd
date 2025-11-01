@@ -7,6 +7,7 @@ class_name InventorySystem
 @export var cols: int = 5
 @export var rows: int = 5
 var slots: Array[ItemSlot] = []
+var chest: Array[ItemSlot] = []
 var selected_slot: int = 0
 var last_checked = INF
 
@@ -42,6 +43,24 @@ func _process(_delta: float) -> void:
 		else:
 			var quantity := InventoryData.trash.quantity
 			$Trash.set_item(new_item, quantity)
+	
+	# Update chest slots
+	if not $Chest.visible:
+		return
+	for i in range(len(chest)):
+		var slot := chest[i]
+		slot.slot_set = InventoryData.chest
+		old_item = slot.item
+		new_item = InventoryData.chest.slots[i].item
+		
+		# Update outdated slots
+		# TODO: Fix this `true`
+		if true or (not old_item.equals(new_item)):
+			if not new_item:
+				slot.clear_item()
+			else:
+				var quantity := InventoryData.chest.slots[i].quantity
+				slot.set_item(new_item, quantity)
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
@@ -108,6 +127,7 @@ func _setup_slots():
 	if rows >= 1:
 		for col in cols:
 			var slot = slot_scene.instantiate()
+			slot.slot_set = InventoryData.inventory
 			slot.slot_id = counter
 			$Hotbar.add_child(slot)
 			slots.append(slot)
@@ -116,10 +136,22 @@ func _setup_slots():
 		for row in range(rows - 1):
 			for col in range(cols):
 				var slot = slot_scene.instantiate()
+				slot.slot_set = InventoryData.inventory
 				slot.slot_id = counter
 				$Full.add_child(slot)
 				slots.append(slot)
 				counter += 1
+		
+		# Chest slots
+		counter = 0
+		for i in range(cols):
+			var slot = slot_scene.instantiate()
+			slot.slot_set = InventoryData.chest
+			slot.slot_id = counter
+			slot.get_node("Sprite").self_modulate = Color("ffdba2")
+			$Chest.add_child(slot)
+			chest.append(slot)
+			counter += 1
 	
 	var hint = hint_scene.instantiate()
 	$Hotbar.add_child(hint)

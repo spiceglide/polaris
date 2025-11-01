@@ -13,6 +13,7 @@ var quantity: int = 0
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
 var slot_id: int = -1
+var slot_set: Storage = null
 var selected: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -90,14 +91,15 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	var slot_id = data["id"]
-	return (InventoryData.get_item(slot_id) != null)
+	var slot = slot_set.slots[slot_id]
+	return(slot.item != null)
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var source_id = data["id"]
 	var dest_id = slot_id
 	
 	if source_id != dest_id:
-		InventoryData.inventory.clever_swap(source_id, dest_id)
+		slot_set.clever_swap(source_id, dest_id)
 	
 	$ItemSprite.visible = true
 	update_timestamp()
@@ -118,9 +120,8 @@ func _generate_drag_data():
 
 func quick_move():
 	var start := 5 if slot_id < 5 else 0
-	var subset := InventoryData.inventory.slots.slice(start)
-	InventoryData.inventory.pop(item, quantity)
-	InventoryData.inventory.push(item, quantity, subset)
+	var subset := slot_set.slots.slice(start)
+	slot_set.shift(slot_id, subset)
 
 func _notification(type):
 	match type:

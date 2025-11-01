@@ -13,7 +13,7 @@ var quantity: int = 0
 var state = SlotState.INACTIVE
 var last_used = Time.get_ticks_msec()
 var slot_id: int = -1
-var slot_set: Storage = null
+var slot_set: Storage
 var selected: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -89,17 +89,17 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	set_drag_preview(drag_data["preview"])
 	return drag_data["slot"]
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	var slot_id = data["id"]
-	var slot = slot_set.slots[slot_id]
-	return(slot.item != null)
+func _can_drop_data(at_position: Vector2, _data: Variant) -> bool:
+	return true
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+	var source_set = data["slot_set"]
+	var dest_set = slot_set
 	var source_id = data["id"]
 	var dest_id = slot_id
 	
-	if source_id != dest_id:
-		slot_set.clever_swap(source_id, dest_id)
+	if (source_set != dest_set) or (source_id != dest_id):
+		slot_set.clever_swap(source_id, dest_id, source_set.slots, dest_set.slots)
 	
 	$ItemSprite.visible = true
 	update_timestamp()
@@ -114,7 +114,7 @@ func _generate_preview():
 
 func _generate_drag_data():
 	return {
-		"slot": { "id": slot_id, "item": item, },
+		"slot": { "id": slot_id, "item": item, "slot_set": slot_set},
 		"preview": _generate_preview(),
 	}
 

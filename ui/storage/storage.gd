@@ -46,19 +46,20 @@ func pop(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.slo
 		return true
 	return false
 
-func swap(slotA: int, slotB: int) -> bool:
-	var dataA := slots[slotA]
-	slots[slotA] = slots[slotB]
-	slots[slotB] = dataA
+func swap(slotA: int, slotB: int, slotsA: Array[LogicalSlot] = self.slots, slotsB: Array[LogicalSlot] = self.slots) -> bool:
+	var dataA := slotsA[slotA]
+	slotsA[slotA] = slotsB[slotB]
+	slotsB[slotB] = dataA
 	return true
 
-func clever_swap(slotA: int, slotB: int):
-	if slots[slotA].item != slots[slotB].item:
-		swap(slotA, slotB)
+func clever_swap(slotA: int, slotB: int, slotsA: Array[LogicalSlot] = self.slots, slotsB: Array[LogicalSlot] = self.slots) -> bool:
+	if slotsA[slotA].item != slotsB[slotB].item:
+		swap(slotA, slotB, slotsA, slotsB)
 	else:
-		var diff = slots[slotB].item.max_stack - slots[slotB].amount
-		slots[slotB].amount += diff
-		slots[slotA].amount -= diff
+		var diff = slotsB[slotB].item.max_stack - slotsB[slotB].amount
+		slotsB[slotB].amount += diff
+		slotsA[slotA].amount -= diff
+	return true
 
 func shift(slot: int, dest: Array[LogicalSlot]):
 	var item := slots[slot].item

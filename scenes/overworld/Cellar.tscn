@@ -11,10 +11,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3up5e"]
 shader = ExtResource("7_6aeaf")
-shader_parameter/blur_radius = 0.2
-shader_parameter/blur_amount = 1.0
-shader_parameter/blur_inner = 0.400000019
-shader_parameter/blur_outer = 0.66
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
 
 [node name="Cellar" type="Node2D"]
 y_sort_enabled = true
@@ -65,6 +64,7 @@ jitter_speed = 0.0
 [node name="Overlay" type="CanvasLayer" parent="."]
 
 [node name="Vignette" type="ColorRect" parent="Overlay"]
+visible = false
 material = SubResource("ShaderMaterial_3up5e")
 anchors_preset = 15
 anchor_right = 1.0

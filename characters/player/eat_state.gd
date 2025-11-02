@@ -29,5 +29,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name != "action/eat_2":
 		return
 	
+	parent.last_dir = "south"
 	InventoryData.use_selected_item()
 	state_transitioned.emit(self, "idle")

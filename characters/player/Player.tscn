@@ -56,7 +56,7 @@
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ra8ms"]
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(0, -600, 0)
-emission_shape_scale = Vector3(1920, 1, 1)
+emission_shape_scale = Vector3(5760, 1, 1)
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
 direction = Vector3(0, 1, 0)
@@ -8140,6 +8140,16 @@ script = ExtResource("34_r4xk0")
 
 [node name="SnowParticles" type="GPUParticles2D" parent="Camera2D"]
 self_modulate = Color(1, 1, 1, 0.9)
+amount = 800
+lifetime = 16.0
+speed_scale = 0.1
+randomness = 0.2
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_ra8ms")
+
+[node name="SnowParticles2" type="GPUParticles2D" parent="Camera2D"]
+self_modulate = Color(1, 1, 1, 0.9)
+position = Vector2(0, 1180)
 amount = 800
 lifetime = 16.0
 speed_scale = 0.1

@@ -8,7 +8,7 @@
 [ext_resource type="Shader" uid="uid://dtma2rhcqq0jc" path="res://shaders/bloom.gdshader" id="8_5x430"]
 [ext_resource type="Shader" uid="uid://kkl4p2ujr6at" path="res://shaders/vignette_textured.gdshader" id="8_dxshd"]
 [ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="8_qgkgn"]
-[ext_resource type="Texture2D" uid="uid://h338etqeimbv" path="res://assets/platformer/bg_cave_2.png" id="9_dxshd"]
+[ext_resource type="Texture2D" uid="uid://bh4jto4psobak" path="res://assets/ui/menu/menu_clutter.png" id="9_dxshd"]
 [ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="11_xe4yi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dxshd"]
@@ -40,10 +40,10 @@ shader_parameter/color = Color(1, 1, 1, 0.15686275)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_khj5h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5ynl"]
 shader = ExtResource("8_dxshd")
 shader_parameter/tex = ExtResource("9_dxshd")
-shader_parameter/alpha = 0.6
+shader_parameter/alpha = 0.1
 shader_parameter/inner_radius = 0.8
 shader_parameter/outer_radius = 1.0
 
@@ -85,12 +85,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Vignette" type="ColorRect" parent="Overlay"]
-material = SubResource("ShaderMaterial_khj5h")
+z_index = 1
+material = SubResource("ShaderMaterial_p5ynl")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://xmwxqd3uos47"]
+[gd_scene load_steps=18 format=3 uid="uid://xmwxqd3uos47"]
 
 [ext_resource type="Script" uid="uid://bnw1ruviyie6p" path="res://ui/slots/recipe_slot.gd" id="1_kgvkk"]
 [ext_resource type="Material" uid="uid://7m1nn2h8huqw" path="res://shaders/tilt.tres" id="2_6l6l8"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_kqc8j"]
+[ext_resource type="Material" uid="uid://c4jisls25jf48" path="res://shaders/shadow_outline.tres" id="5_6l6l8"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="15_i2fgw"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="19_tbwq6"]
 [ext_resource type="Texture2D" uid="uid://dwpampjkwo75s" path="res://assets/ui/crafting/recipe_slot_1a.png" id="20_85bo8"]
@@ -107,6 +108,15 @@ theme_override_font_sizes/font_size = 64
 text = "0"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_355af")
+animation = &"type2"
+frame_progress = 0.177332
+centered = false
+script = ExtResource("19_tbwq6")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="Sprite"]
+show_behind_parent = true
+material = ExtResource("5_6l6l8")
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"type2"
 frame_progress = 0.177332

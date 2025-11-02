@@ -1,7 +1,8 @@
-[gd_scene load_steps=71 format=3 uid="uid://bhdraj2cyr8o8"]
+[gd_scene load_steps=72 format=3 uid="uid://bhdraj2cyr8o8"]
 
 [ext_resource type="PackedScene" uid="uid://7a2wv4ftrcw1" path="res://ui/Inventory.tscn" id="3_f6qnu"]
 [ext_resource type="PackedScene" uid="uid://dt04wa7ht1ten" path="res://ui/CraftingMenu.tscn" id="3_jd13s"]
+[ext_resource type="Material" uid="uid://c4jisls25jf48" path="res://shaders/shadow_outline.tres" id="3_tjqp6"]
 [ext_resource type="Script" uid="uid://d3lvw2rrmnj6s" path="res://ui/stats.gd" id="5_3q2by"]
 [ext_resource type="Texture2D" uid="uid://bmmxw2n56a2sa" path="res://assets/ui/bars/bar_health_a.png" id="6_tlkqj"]
 [ext_resource type="Texture2D" uid="uid://bpgyadkffh7q" path="res://assets/ui/bars/bar_health_icon_a.png" id="7_urddi"]
@@ -354,6 +355,7 @@ texture_progress_offset = Vector2(2, 0)
 tint_progress = Color(0.89, 0.356, 0.5963, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Health"]
+material = ExtResource("3_tjqp6")
 sprite_frames = SubResource("SpriteFrames_r10k7")
 centered = false
 script = ExtResource("9_n8pho")
@@ -372,6 +374,7 @@ texture_progress_offset = Vector2(-4, 2)
 tint_progress = Color(0.376, 0.94, 0.7144, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Thirst"]
+material = ExtResource("3_tjqp6")
 sprite_frames = SubResource("SpriteFrames_3r861")
 centered = false
 script = ExtResource("9_n8pho")
@@ -390,6 +393,7 @@ texture_progress_offset = Vector2(0, 5)
 tint_progress = Color(0.219608, 0.482353, 0.74902, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsLeft/Sanity"]
+material = ExtResource("3_tjqp6")
 sprite_frames = SubResource("SpriteFrames_e2tec")
 centered = false
 script = ExtResource("9_n8pho")
@@ -424,6 +428,7 @@ texture_progress = ExtResource("13_hnewt")
 tint_progress = Color(1, 0.68, 0.4, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsRight/Hunger"]
+material = ExtResource("3_tjqp6")
 sprite_frames = SubResource("SpriteFrames_0us7w")
 centered = false
 script = ExtResource("9_n8pho")
@@ -443,6 +448,7 @@ texture_progress_offset = Vector2(0, 2)
 tint_progress = Color(1, 0.84, 0.4, 1)
 
 [node name="Bar" type="AnimatedSprite2D" parent="StatsRight/Warmth"]
+material = ExtResource("3_tjqp6")
 sprite_frames = SubResource("SpriteFrames_hyfem")
 centered = false
 script = ExtResource("9_n8pho")

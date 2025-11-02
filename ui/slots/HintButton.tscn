@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp0alufktwr2j"]
+[gd_scene load_steps=17 format=3 uid="uid://dp0alufktwr2j"]
 
 [ext_resource type="Script" uid="uid://u78s1iaw4kw8" path="res://ui/hint_button.gd" id="1_5pua0"]
 [ext_resource type="Texture2D" uid="uid://bxmousydkt7oy" path="res://assets/ui/inventory/inventory_e1.png" id="2_76ksy"]
+[ext_resource type="Material" uid="uid://c4jisls25jf48" path="res://shaders/shadow_outline.tres" id="2_lg28f"]
 [ext_resource type="Texture2D" uid="uid://bjrgokty30u5x" path="res://assets/ui/inventory/inventory_e2.png" id="3_lg28f"]
 [ext_resource type="Texture2D" uid="uid://do8r5fv14iwj" path="res://assets/ui/inventory/itemslot_1a.png" id="4_lgeec"]
 [ext_resource type="Texture2D" uid="uid://t34vbp7blgjs" path="res://assets/ui/inventory/itemslot_1b.png" id="5_3e38m"]
@@ -92,6 +93,14 @@ script = ExtResource("1_5pua0")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_355af")
+animation = &"hint"
+centered = false
+script = ExtResource("14_76ksy")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="Sprite"]
+show_behind_parent = true
+material = ExtResource("2_lg28f")
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"hint"
 centered = false

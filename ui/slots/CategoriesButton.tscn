@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://sxmeccp3qasg"]
+[gd_scene load_steps=26 format=3 uid="uid://sxmeccp3qasg"]
 
 [ext_resource type="Script" uid="uid://dfmhphmk0h6ew" path="res://ui/slots/categories_button.gd" id="1_y3q5a"]
+[ext_resource type="Material" uid="uid://c4jisls25jf48" path="res://shaders/shadow_outline.tres" id="2_bhvtq"]
 [ext_resource type="Texture2D" uid="uid://dpg5old4pvvlr" path="res://assets/ui/crafting/category_slot_1a.png" id="2_y3q5a"]
 [ext_resource type="Texture2D" uid="uid://bflefjpfdksrd" path="res://assets/ui/crafting/category_slot_1b.png" id="3_mnoeh"]
 [ext_resource type="Texture2D" uid="uid://djbi8p2uug7m1" path="res://assets/ui/crafting/category_slot_2a.png" id="4_bhvtq"]
@@ -147,6 +148,14 @@ script = ExtResource("1_y3q5a")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t13gf")
+animation = &"type1"
+centered = false
+script = ExtResource("12_mnoeh")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="Sprite"]
+show_behind_parent = true
+material = ExtResource("2_bhvtq")
 sprite_frames = SubResource("SpriteFrames_t13gf")
 animation = &"type1"
 centered = false

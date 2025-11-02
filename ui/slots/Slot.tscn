@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bvpp82otu27sj"]
+[gd_scene load_steps=20 format=3 uid="uid://bvpp82otu27sj"]
 
 [ext_resource type="Script" uid="uid://c631r873egu2d" path="res://ui/slots/slot.gd" id="1_ygpc3"]
 [ext_resource type="SpriteFrames" uid="uid://c1fuoyxvmitbn" path="res://ui/ItemSprites.tres" id="2_6l8bt"]
 [ext_resource type="Material" uid="uid://7m1nn2h8huqw" path="res://shaders/tilt.tres" id="2_6oknj"]
+[ext_resource type="Material" uid="uid://c4jisls25jf48" path="res://shaders/shadow_outline.tres" id="5_5i2o2"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="17_5i2o2"]
 [ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="20_2aomv"]
 [ext_resource type="Texture2D" uid="uid://bxmousydkt7oy" path="res://assets/ui/inventory/inventory_e1.png" id="22_2kom7"]
@@ -125,6 +126,14 @@ theme_override_font_sizes/font_size = 64
 text = "0"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_355af")
+animation = &"type5"
+centered = false
+script = ExtResource("20_2aomv")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="Sprite"]
+show_behind_parent = true
+material = ExtResource("5_5i2o2")
 sprite_frames = SubResource("SpriteFrames_355af")
 animation = &"type5"
 centered = false

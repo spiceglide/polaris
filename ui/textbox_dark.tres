@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cdiah3uhg86mj"]
+
+[ext_resource type="Shader" uid="uid://dcwjelfpobov1" path="res://shaders/linear_burn.gdshader" id="1_aqviu"]
+[ext_resource type="Texture2D" uid="uid://qyf512vb4pb0" path="res://assets/ui/textbox/textbox_dark.png" id="2_x5d4b"]
+
+[resource]
+shader = ExtResource("1_aqviu")
+shader_parameter/tex = ExtResource("2_x5d4b")
+shader_parameter/burn_strength = 0.0

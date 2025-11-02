@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://maxc3wolgh7b"]
+
+[ext_resource type="Shader" uid="uid://buo28m7f4ont8" path="res://shaders/opacity.gdshader" id="1_o5f2m"]
+
+[resource]
+shader = ExtResource("1_o5f2m")
+shader_parameter/opacity = 0.90000004275

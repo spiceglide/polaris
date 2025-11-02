@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://burgku2ck58j1"]
+[gd_scene load_steps=17 format=3 uid="uid://burgku2ck58j1"]
 
 [ext_resource type="Script" uid="uid://5w0yjuchyd4e" path="res://scenes/overworld/map.gd" id="1_qp2hw"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_xv731"]
@@ -6,9 +6,10 @@
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="6_ql0m5"]
 [ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="7_hvr76"]
 [ext_resource type="Shader" uid="uid://dtma2rhcqq0jc" path="res://shaders/bloom.gdshader" id="8_5x430"]
-[ext_resource type="Shader" uid="uid://kkl4p2ujr6at" path="res://shaders/vignette_textured.gdshader" id="8_dxshd"]
+[ext_resource type="Shader" uid="uid://dr6kothpnjfk1" path="res://shaders/vignette_blur.gdshader" id="8_dxshd"]
 [ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="8_qgkgn"]
 [ext_resource type="Texture2D" uid="uid://bh4jto4psobak" path="res://assets/ui/menu/menu_clutter.png" id="9_dxshd"]
+[ext_resource type="Shader" uid="uid://kkl4p2ujr6at" path="res://shaders/vignette_textured.gdshader" id="9_p5ynl"]
 [ext_resource type="Script" uid="uid://bjltuy3cf6lrc" path="res://screens/dark.gd" id="11_xe4yi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dxshd"]
@@ -40,11 +41,18 @@ shader_parameter/color = Color(1, 1, 1, 0.15686275)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5ynl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xv731"]
 shader = ExtResource("8_dxshd")
+shader_parameter/blur_radius = 0.800000038
+shader_parameter/blur_amount = 1.0000000475
+shader_parameter/blur_inner = 0.850000040375
+shader_parameter/blur_outer = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5ynl"]
+shader = ExtResource("9_p5ynl")
 shader_parameter/tex = ExtResource("9_dxshd")
-shader_parameter/alpha = 0.1
-shader_parameter/inner_radius = 0.9
+shader_parameter/alpha = 0.05
+shader_parameter/inner_radius = 0.85
 shader_parameter/outer_radius = 1.0
 
 [node name="Overworld" type="Node2D"]
@@ -84,7 +92,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Vignette" type="ColorRect" parent="Overlay"]
+[node name="VignetteBlur" type="ColorRect" parent="Overlay"]
+z_index = 1
+material = SubResource("ShaderMaterial_xv731")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VignetteTexture" type="ColorRect" parent="Overlay"]
 z_index = 1
 material = SubResource("ShaderMaterial_p5ynl")
 anchors_preset = 15

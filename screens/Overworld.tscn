@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="6_ql0m5"]
 [ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="7_hvr76"]
 [ext_resource type="Shader" uid="uid://dtma2rhcqq0jc" path="res://shaders/bloom.gdshader" id="8_5x430"]
-[ext_resource type="Shader" uid="uid://dr6kothpnjfk1" path="res://shaders/vignette_blur.gdshader" id="8_dxshd"]
+[ext_resource type="Shader" uid="uid://dr6kothpnjfk1" path="res://shaders/tilt_shift.gdshader" id="8_dxshd"]
 [ext_resource type="Texture2D" uid="uid://bn47d8i8tq3sa" path="res://assets/lighting/twilight.png" id="8_qgkgn"]
 [ext_resource type="Texture2D" uid="uid://bh4jto4psobak" path="res://assets/ui/menu/menu_clutter.png" id="9_dxshd"]
 [ext_resource type="Shader" uid="uid://kkl4p2ujr6at" path="res://shaders/vignette_textured.gdshader" id="9_p5ynl"]
@@ -43,16 +43,15 @@ shader_parameter/seed = 5.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xv731"]
 shader = ExtResource("8_dxshd")
-shader_parameter/blur_radius = 0.800000038
-shader_parameter/blur_amount = 1.0000000475
-shader_parameter/blur_inner = 0.850000040375
-shader_parameter/blur_outer = 1.0
+shader_parameter/limit = 0.400000019
+shader_parameter/blur = 2.000000095
+shader_parameter/intensity = 0.270000012825
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p5ynl"]
 shader = ExtResource("9_p5ynl")
 shader_parameter/tex = ExtResource("9_dxshd")
-shader_parameter/alpha = 0.05
-shader_parameter/inner_radius = 0.85
+shader_parameter/alpha = 0.04
+shader_parameter/inner_radius = 0.9
 shader_parameter/outer_radius = 1.0
 
 [node name="Overworld" type="Node2D"]
@@ -92,7 +91,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VignetteBlur" type="ColorRect" parent="Overlay"]
+[node name="TiltShift" type="ColorRect" parent="Overlay"]
 z_index = 1
 material = SubResource("ShaderMaterial_xv731")
 anchors_preset = 15

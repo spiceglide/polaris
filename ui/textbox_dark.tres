@@ -6,4 +6,4 @@
 [resource]
 shader = ExtResource("1_aqviu")
 shader_parameter/tex = ExtResource("2_x5d4b")
-shader_parameter/burn_strength = 0.0
+shader_parameter/burn_strength = 0.30000001425

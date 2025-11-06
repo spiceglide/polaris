@@ -43,9 +43,9 @@ shader_parameter/seed = 5.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xv731"]
 shader = ExtResource("8_dxshd")
-shader_parameter/limit = 0.400000019
-shader_parameter/blur = 2.000000095
-shader_parameter/intensity = 0.30000001425
+shader_parameter/limit = 0.450000021375
+shader_parameter/blur = 2.50000011875
+shader_parameter/intensity = 0.350000016625
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p5ynl"]
 shader = ExtResource("9_p5ynl")

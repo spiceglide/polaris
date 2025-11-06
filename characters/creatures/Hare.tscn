@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://djoyeu071fu1y"]
+[gd_scene load_steps=20 format=3 uid="uid://djoyeu071fu1y"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_4hfvj"]
 [ext_resource type="Texture2D" uid="uid://boyujyu0l8l6l" path="res://assets/characters/creatures/hare.png" id="2_53eq5"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="6_ahjcj"]
 [ext_resource type="Script" uid="uid://bxugwlm55a26o" path="res://characters/creatures/hare/idle_state.gd" id="7_fff4a"]
+[ext_resource type="Script" uid="uid://cvgmcc6x5q5vo" path="res://characters/creatures/hare/alert_state.gd" id="7_xfigf"]
+[ext_resource type="Script" uid="uid://dmeyhgyrxmlt5" path="res://characters/creatures/hare/flee_state.gd" id="8_4hfvj"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="13_jnhmx"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="14_dch7s"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="16_07xaf"]
@@ -16,6 +18,33 @@ radius = 600.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sb0ch"]
 radius = 250.0
+
+[sub_resource type="Animation" id="Animation_1leqr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_07xaf"]
 resource_name = "alert"
@@ -32,24 +61,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_shbht"]
-resource_name = "hop"
-length = 0.416675
-loop_mode = 1
-step = 0.083333336
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_qpp72"]
@@ -86,8 +97,10 @@ tracks/0/keys = {
 "values": [Vector2i(1, 0), Vector2i(2, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_1leqr"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_53eq5"]
+resource_name = "hop_left"
+length = 0.416675
+step = 0.083333336
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,17 +108,59 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(0, 0)]
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_shbht"]
+resource_name = "hop_right"
+length = 0.416675
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n0yna"]
 _data = {
 &"RESET": SubResource("Animation_1leqr"),
 &"alert": SubResource("Animation_07xaf"),
-&"hop": SubResource("Animation_shbht"),
+&"hop_left": SubResource("Animation_53eq5"),
+&"hop_right": SubResource("Animation_shbht"),
 &"idle": SubResource("Animation_qpp72"),
 &"idle_earflop": SubResource("Animation_44vnw")
 }
@@ -154,8 +209,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_n0yna")
 }
 
-[node name="Interaction" type="Node2D" parent="."]
+[node name="Interaction" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("14_dch7s")
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
@@ -167,8 +223,10 @@ initial_state = NodePath("Idle")
 script = ExtResource("7_fff4a")
 
 [node name="Alert" type="Node2D" parent="StateMachine"]
+script = ExtResource("7_xfigf")
 
 [node name="Flee" type="Node2D" parent="StateMachine"]
+script = ExtResource("8_4hfvj")
 
 [node name="Notifications" parent="." instance=ExtResource("16_07xaf")]
 anchors_preset = 12
@@ -181,4 +239,8 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [connection signal="body_entered" from="AlertRange" to="StateMachine/Idle" method="_on_alert_range_body_entered"]
+[connection signal="body_exited" from="AlertRange" to="StateMachine/Alert" method="_on_alert_range_body_exited"]
+[connection signal="body_exited" from="AlertRange" to="StateMachine/Flee" method="_on_alert_range_body_exited"]
+[connection signal="body_entered" from="DangerRange" to="StateMachine/Alert" method="_on_danger_range_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Idle" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Flee" method="_on_animation_player_animation_finished"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var parent: StaticBody2D = self.get_parent()
+@export var parent: CollisionObject2D = self.get_parent()
 var priority: Array = ["chop", "dig", "crank", "gather", "operate"]
 
 var data: Dictionary = {}

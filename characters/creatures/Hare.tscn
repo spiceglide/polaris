@@ -1,80 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://djoyeu071fu1y"]
+[gd_scene load_steps=17 format=3 uid="uid://djoyeu071fu1y"]
 
-[ext_resource type="Script" uid="uid://dkpufkpx60ifs" path="res://characters/creatures/hare_ai.gd" id="1_shbht"]
-[ext_resource type="Texture2D" uid="uid://esnxg2nv3upd" path="res://assets/characters/creatures/hare/hare_alert_1_anticipation.png" id="2_qpp72"]
-[ext_resource type="Texture2D" uid="uid://clkwedqemb4qb" path="res://assets/characters/creatures/hare/hare_alert_2_overshoot.png" id="3_44vnw"]
-[ext_resource type="Texture2D" uid="uid://b176me28vpljn" path="res://assets/characters/creatures/hare/hare_alert_3.png" id="4_1leqr"]
-[ext_resource type="Texture2D" uid="uid://dvjn2cu1xmw3" path="res://assets/characters/creatures/hare/hare_hop_1_anticipation_a.png" id="5_n0yna"]
-[ext_resource type="Texture2D" uid="uid://tdarb1ktjvd4" path="res://assets/characters/creatures/hare/hare_hop_2_anticipation_b.png" id="6_a24cu"]
-[ext_resource type="Texture2D" uid="uid://di5e17nl7uy6x" path="res://assets/characters/creatures/hare/hare_hop_3.png" id="7_ee0hj"]
-[ext_resource type="Texture2D" uid="uid://cjpalimmdqqss" path="res://assets/characters/creatures/hare/hare_hop_4.png" id="8_6muwh"]
-[ext_resource type="Texture2D" uid="uid://bklv0fst6i24u" path="res://assets/characters/creatures/hare/hare_hop_5_overshoot.png" id="9_qjg4v"]
-[ext_resource type="Texture2D" uid="uid://4rjm0i2u0o2f" path="res://assets/characters/creatures/hare/hare_idle_a.png" id="10_jpt75"]
-[ext_resource type="Texture2D" uid="uid://be8t0r1ne7oho" path="res://assets/characters/creatures/hare/hare_idle_b.png" id="11_d3oej"]
-[ext_resource type="Script" uid="uid://olputjwpbuvb" path="res://ui/slots/run_animation.gd" id="12_d3oej"]
-[ext_resource type="Texture2D" uid="uid://bh4c45msgcx6c" path="res://assets/characters/creatures/hare/hare_idle_a_earflop.png" id="12_jnhmx"]
+[ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_4hfvj"]
+[ext_resource type="Texture2D" uid="uid://boyujyu0l8l6l" path="res://assets/characters/creatures/hare.png" id="2_53eq5"]
+[ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="6_ahjcj"]
+[ext_resource type="Script" uid="uid://bxugwlm55a26o" path="res://characters/creatures/hare/idle_state.gd" id="7_fff4a"]
 [ext_resource type="Texture2D" uid="uid://fb5fmgqm7xb8" path="res://assets/shadow.png" id="13_jnhmx"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="14_dch7s"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="16_07xaf"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wsglq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_qpp72")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_44vnw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_1leqr")
-}],
-"loop": false,
-"name": &"alert",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_n0yna")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_a24cu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ee0hj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_6muwh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_qjg4v")
-}],
-"loop": true,
-"name": &"hop",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_jpt75")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_d3oej")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_jnhmx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_d3oej")
-}],
-"loop": true,
-"name": &"idle_earflop",
-"speed": 8.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6e4x"]
 radius = 35.0
@@ -85,18 +17,113 @@ radius = 600.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_sb0ch"]
 radius = 250.0
 
-[node name="Hare" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_07xaf"]
+resource_name = "alert"
+length = 0.3750125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_shbht"]
+resource_name = "hop"
+length = 0.416675
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_qpp72"]
+resource_name = "idle"
+length = 0.2500125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_44vnw"]
+resource_name = "idle_earflop"
+length = 0.2500125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1leqr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0yna"]
+_data = {
+&"RESET": SubResource("Animation_1leqr"),
+&"alert": SubResource("Animation_07xaf"),
+&"hop": SubResource("Animation_shbht"),
+&"idle": SubResource("Animation_qpp72"),
+&"idle_earflop": SubResource("Animation_44vnw")
+}
+
+[node name="Hare" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 3
-script = ExtResource("1_shbht")
+script = ExtResource("1_4hfvj")
+id = "hare"
+state_machine = NodePath("StateMachine")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_wsglq")
-animation = &"idle"
-script = ExtResource("12_d3oej")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_53eq5")
+hframes = 5
+vframes = 3
 
-[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0.133333)
 z_index = -1
 position = Vector2(0, 55)
@@ -105,10 +132,6 @@ texture = ExtResource("13_jnhmx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v6e4x")
-
-[node name="Interaction" type="Node2D" parent="."]
-script = ExtResource("14_dch7s")
-metadata/_edit_group_ = true
 
 [node name="AlertRange" type="Area2D" parent="."]
 collision_layer = 4
@@ -126,6 +149,27 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerRange"]
 shape = SubResource("CircleShape2D_sb0ch")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n0yna")
+}
+
+[node name="Interaction" type="Node2D" parent="."]
+script = ExtResource("14_dch7s")
+metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("6_ahjcj")
+parent = NodePath("..")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+script = ExtResource("7_fff4a")
+
+[node name="Alert" type="Node2D" parent="StateMachine"]
+
+[node name="Flee" type="Node2D" parent="StateMachine"]
+
 [node name="Notifications" parent="." instance=ExtResource("16_07xaf")]
 anchors_preset = 12
 anchor_top = 1.0
@@ -136,7 +180,5 @@ offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[connection signal="body_entered" from="AlertRange" to="." method="_on_alert_range_body_entered"]
-[connection signal="body_exited" from="AlertRange" to="." method="_on_alert_range_body_exited"]
-[connection signal="body_entered" from="DangerRange" to="." method="_on_danger_range_body_entered"]
-[connection signal="body_exited" from="DangerRange" to="." method="_on_danger_range_body_exited"]
+[connection signal="body_entered" from="AlertRange" to="StateMachine/Idle" method="_on_alert_range_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Idle" method="_on_animation_player_animation_finished"]

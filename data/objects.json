@@ -1,4 +1,44 @@
 {
+  "hare": {
+    "idle": {
+      "kill": {
+        "yields": ["hare"],
+        "next": ""
+      }
+    },
+    "alert": {
+      "kill": {
+        "yields": ["hare"],
+        "next": ""
+      }
+    },
+    "flee": {
+      "kill": {
+        "yields": ["hare"],
+        "next": ""
+      }
+    }
+  },
+  "frog": {
+    "idle": {
+      "kill": {
+        "yields": ["frog"],
+        "next": ""
+      }
+    },
+    "alert": {
+      "kill": {
+        "yields": ["frog"],
+        "next": ""
+      }
+    },
+    "flee": {
+      "kill": {
+        "yields": ["frog"],
+        "next": ""
+      }
+    }
+  },
   "placeholder": {
     "default": {}
   },

@@ -1,9 +1,11 @@
-extends StaticBody2D
+extends CollisionObject2D
 
 @export var id: String
 @export var state_machine: StateMachine
 
 var inventory: Storage
+var data: Dictionary[String, Variant] = {}
+
 var temp_material: Material
 
 func _ready() -> void:

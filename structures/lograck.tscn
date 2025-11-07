@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bgamyjklx84hl" path="res://assets/structures/lograck.png" id="3_vg76k"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_t1yxl"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="5_ka0je"]
-[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="6_vkofw"]
+[ext_resource type="Script" uid="uid://djnwo855lhqtn" path="res://structures/rack_state.gd" id="6_vg76k"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_kiqkw"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -16,8 +16,8 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(192, 28)
 
-[sub_resource type="Animation" id="Animation_6oom2"]
-resource_name = "empty"
+[sub_resource type="Animation" id="Animation_wvvh6"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,8 +31,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_wvvh6"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_6oom2"]
+resource_name = "empty"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -166,21 +166,21 @@ parent = NodePath("..")
 initial_state = NodePath("Empty")
 
 [node name="Empty" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_vkofw")
-animations = ["empty"]
+script = ExtResource("6_vg76k")
+states = Array[String](["empty", "full1", "full2", "full3", "full4"])
 
 [node name="Full1" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_vkofw")
-animations = ["empty"]
+script = ExtResource("6_vg76k")
+states = Array[String](["empty", "full1", "full2", "full3", "full4"])
 
 [node name="Full2" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_vkofw")
-animations = ["full2"]
+script = ExtResource("6_vg76k")
+states = Array[String](["empty", "full1", "full2", "full3", "full4"])
 
 [node name="Full3" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_vkofw")
-animations = ["empty"]
+script = ExtResource("6_vg76k")
+states = Array[String](["empty", "full1", "full2", "full3", "full4"])
 
 [node name="Full4" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_vkofw")
-animations = ["empty"]
+script = ExtResource("6_vg76k")
+states = Array[String](["empty", "full1", "full2", "full3", "full4"])

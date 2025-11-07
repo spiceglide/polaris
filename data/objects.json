@@ -107,7 +107,8 @@
       "operate": { }
     },
     "full4": {
-      "tags": []
+      "tags": [],
+      "operate": { }
     }
   },
   "stickrack": {
@@ -124,7 +125,8 @@
       "operate": { }
     },
     "full3": {
-      "tags": []
+      "tags": [],
+      "operate": { }
     }
   },
   "kiln": {

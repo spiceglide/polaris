@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://cbuloj656l6eh"]
+[gd_scene load_steps=128 format=3 uid="uid://cbuloj656l6eh"]
 
 [ext_resource type="Script" uid="uid://dmv8ko5ox53s4" path="res://characters/player/player.gd" id="1_x1yu0"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="3_cdjc3"]
@@ -52,18 +52,6 @@
 [ext_resource type="Script" uid="uid://f2yft3lmgq85" path="res://characters/player/place_state.gd" id="52_6e8hx"]
 [ext_resource type="Script" uid="uid://dd1o1swvm3hcu" path="res://utility/light.gd" id="177_d5u3j"]
 [ext_resource type="Texture2D" uid="uid://kfgojmaxlcci" path="res://assets/characters/dasha/dasha_idle_hold.png" id="263_bfouw"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ra8ms"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(0, -600, 0)
-emission_shape_scale = Vector3(5760, 1, 1)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-direction = Vector3(0, 1, 0)
-spread = 80.0
-initial_velocity_min = 100.0
-initial_velocity_max = 600.0
-scale_max = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgsg"]
 size = Vector2(62, 12)
@@ -8137,25 +8125,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 script = ExtResource("34_r4xk0")
-
-[node name="SnowParticles" type="GPUParticles2D" parent="Camera2D"]
-self_modulate = Color(1, 1, 1, 0.9)
-amount = 800
-lifetime = 16.0
-speed_scale = 0.1
-randomness = 0.2
-collision_base_size = 0.0
-process_material = SubResource("ParticleProcessMaterial_ra8ms")
-
-[node name="SnowParticles2" type="GPUParticles2D" parent="Camera2D"]
-self_modulate = Color(1, 1, 1, 0.9)
-position = Vector2(0, 1180)
-amount = 800
-lifetime = 16.0
-speed_scale = 0.1
-randomness = 0.2
-collision_base_size = 0.0
-process_material = SubResource("ParticleProcessMaterial_ra8ms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c5itgjlayodml"]
+[gd_scene load_steps=12 format=4 uid="uid://c5itgjlayodml"]
 
 [ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_ixbke"]
 [ext_resource type="TileSet" uid="uid://c2oeewbey6qt7" path="res://scenes/tileset.tres" id="2_ixbke"]
@@ -10,6 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="objectstundraSnowPile1"]
 [ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://objects/tundra/SnowPile2.tscn" id="objectstundraSnowPile2"]
 [ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://objects/tundra/StickTree.tscn" id="objectstundraStickTree"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0nehg"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1920, -100, 0)
+emission_shape_scale = Vector3(1920, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 80.0
+initial_velocity_min = 100.0
+initial_velocity_max = 600.0
+scale_max = 5.0
 
 [node name="tundra_river_e" type="Node2D"]
 y_sort_enabled = true
@@ -136,3 +148,12 @@ position = Vector2(3351.1, 2152.5)
 
 [node name="Well" parent="." instance=ExtResource("10_0nehg")]
 position = Vector2(1078, 1483)
+
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.9)
+amount = 800
+lifetime = 16.0
+speed_scale = 0.1
+randomness = 0.2
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_0nehg")

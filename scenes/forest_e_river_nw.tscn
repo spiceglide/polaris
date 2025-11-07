@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://chondugv5ot0l"]
+[gd_scene load_steps=25 format=4 uid="uid://chondugv5ot0l"]
 
 [ext_resource type="Script" uid="uid://caapb5tqly042" path="res://utility/biome.gd" id="1_isc5g"]
 [ext_resource type="TileSet" uid="uid://c2oeewbey6qt7" path="res://scenes/tileset.tres" id="3_y1irm"]
@@ -194,6 +194,18 @@ texture_region_size = Vector2i(160, 160)
 tile_size = Vector2i(160, 160)
 sources/0 = SubResource("TileSetAtlasSource_0")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y1irm"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1920, -100, 0)
+emission_shape_scale = Vector3(1920, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 80.0
+initial_velocity_min = 100.0
+initial_velocity_max = 600.0
+scale_max = 5.0
+
 [node name="forest_e_river_nw" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_isc5g")
@@ -363,3 +375,12 @@ position = Vector2(1715.15, 1442.03)
 
 [node name="Object53" parent="." instance=ExtResource("objectstundraRock2")]
 position = Vector2(557.333, 763.5)
+
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.9)
+amount = 800
+lifetime = 16.0
+speed_scale = 0.1
+randomness = 0.2
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_y1irm")

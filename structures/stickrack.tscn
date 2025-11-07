@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wqqwo47sru0v" path="res://assets/structures/stickrack.png" id="3_kw5vm"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_gkruy"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="5_nn5tv"]
-[ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="6_v2hdf"]
+[ext_resource type="Script" uid="uid://djnwo855lhqtn" path="res://structures/rack_state.gd" id="6_tp2fb"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_kiqkw"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -16,8 +16,7 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(87, 18)
 
-[sub_resource type="Animation" id="Animation_tp2fb"]
-resource_name = "empty"
+[sub_resource type="Animation" id="Animation_d4gx0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -56,7 +55,8 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_d4gx0"]
+[sub_resource type="Animation" id="Animation_tp2fb"]
+resource_name = "empty"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -230,7 +230,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kw5vm")
 id = "stickrack"
-state_machine = NodePath("StateMachine")
+state_machine = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -58)
@@ -245,7 +245,7 @@ texture = SubResource("ViewportTexture_yvg0q")
 [node name="SubViewport" type="SubViewport" parent="Sprite2D"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(143, 184)
+size = Vector2i(143, 185)
 
 [node name="Back" type="Sprite2D" parent="Sprite2D/SubViewport"]
 texture = ExtResource("3_kw5vm")
@@ -295,23 +295,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_m711p")
 }
 
-[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
 script = ExtResource("5_nn5tv")
 parent = NodePath("..")
 initial_state = NodePath("Empty")
 
-[node name="Empty" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_v2hdf")
-animations = ["empty"]
+[node name="Empty" type="Node" parent="StateMachine"]
+script = ExtResource("6_tp2fb")
 
-[node name="Full1" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_v2hdf")
-animations = ["empty"]
+[node name="Full1" type="Node" parent="StateMachine"]
+script = ExtResource("6_tp2fb")
 
-[node name="Full2" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_v2hdf")
-animations = ["full2"]
+[node name="Full2" type="Node" parent="StateMachine"]
+script = ExtResource("6_tp2fb")
 
-[node name="Full3" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_v2hdf")
-animations = ["empty"]
+[node name="Full3" type="Node" parent="StateMachine"]
+script = ExtResource("6_tp2fb")

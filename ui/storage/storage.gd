@@ -14,7 +14,7 @@ func get_item(slot: int) -> GameItem:
 func push(item: GameItem, quantity: int = 1, slots: Array[LogicalSlot] = self.slots) -> bool:
 	var firstEmpty: LogicalSlot = null
 	for slot in slots:
-		if (not firstEmpty) and (not slot.item):
+		if (not firstEmpty) and slot.is_empty() and slot.is_allowed(item):
 			firstEmpty = slot
 		elif slot.item and slot.item.equals(item):
 			while (quantity > 0) and (slot.quantity < slot.item.max_stack):

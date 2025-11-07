@@ -2,6 +2,7 @@ extends Node
 class_name LogicalSlot
 
 var item: GameItem = null
+var allowed: Array[String] = []
 var quantity: int = 0
 var id: int = -1
 
@@ -9,12 +10,12 @@ func _init(id: int = -1) -> void:
 	self.id = id
 
 func push(item: GameItem, quantity: int = 1) -> bool:
-	if is_empty():
-		self.item = item
-		self.quantity = quantity
-		return true
 	if item == self.item:
 		self.quantity = min(item.max_stack, self.quantity + quantity)
+		return true
+	if is_empty() and is_allowed(item):
+		self.item = item
+		self.quantity = quantity
 		return true
 	return false
 
@@ -32,3 +33,9 @@ func clear():
 
 func is_empty() -> bool:
 	return (not item) or (quantity <= 0)
+
+func is_allowed(item: GameItem) -> bool:
+	if len(allowed) > 0:
+		return (item.id in allowed)
+	else:
+		return true

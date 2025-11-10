@@ -3,7 +3,7 @@ render_mode unshaded;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 
-uniform vec3 color = vec3(0.0, 0.0, 0.0);
+uniform vec3 color: source_color = vec3(0.0, 0.0, 0.0);
 uniform float alpha: hint_range(0.0, 1.0) = 0.015;
 
 instance uniform float flip_offset = 2.0;

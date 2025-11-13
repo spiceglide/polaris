@@ -6,7 +6,6 @@
 size = Vector2(161, 21)
 
 [node name="SnowPile" type="StaticBody2D"]
-z_index = 1
 collision_layer = 3
 collision_mask = 3
 

@@ -268,7 +268,6 @@ _data = {
 }
 
 [node name="SmallFire" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
-z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_3xnxn")
@@ -293,12 +292,13 @@ hframes = 4
 vframes = 2
 
 [node name="Flame" type="Sprite2D" parent="Sprite2D/SubViewport"]
+visible = false
 material = ExtResource("3_i3i86")
 texture = ExtResource("2_kb8eo")
 centered = false
 hframes = 4
 vframes = 2
-frame = 6
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0

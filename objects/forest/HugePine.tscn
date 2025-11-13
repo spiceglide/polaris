@@ -18,7 +18,6 @@ viewport_path = NodePath("Sprite2D/SubViewport")
 size = Vector2(109, 36)
 
 [node name="HugePine" type="StaticBody2D"]
-z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_a8oah")
@@ -30,8 +29,7 @@ position = Vector2(0, -964)
 texture = SubResource("ViewportTexture_lfkg1")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
-show_behind_parent = true
-z_as_relative = false
+z_index = -1
 material = ExtResource("4_uqkuf")
 instance_shader_parameters/flip_offset = 2.0
 position = Vector2(-5, -39)

@@ -82,7 +82,6 @@ _data = {
 }
 
 [node name="BerryBush" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
-z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_bvmnd")
@@ -96,7 +95,6 @@ texture = SubResource("ViewportTexture_xcrti")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
-z_as_relative = false
 material = ExtResource("3_bv5ra")
 position = Vector2(-1, -3)
 texture = SubResource("ViewportTexture_ogaqr")

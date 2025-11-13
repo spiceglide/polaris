@@ -9,7 +9,6 @@ radius = 70.0
 height = 420.0
 
 [node name="SwampTree" type="StaticBody2D"]
-z_index = 1
 collision_layer = 3
 collision_mask = 3
 
@@ -21,7 +20,6 @@ texture = ExtResource("1_n0bvb")
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 visible = false
 show_behind_parent = true
-z_as_relative = false
 material = ExtResource("3_7peyl")
 texture = ExtResource("1_n0bvb")
 

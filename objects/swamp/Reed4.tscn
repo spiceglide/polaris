@@ -71,7 +71,6 @@ _data = {
 }
 
 [node name="Reed" type="StaticBody2D"]
-z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_14etp")
@@ -84,7 +83,6 @@ texture = SubResource("ViewportTexture_8h8yq")
 
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
-z_as_relative = false
 material = ExtResource("3_qb5cs")
 position = Vector2(0, -3)
 texture = SubResource("ViewportTexture_2fecg")

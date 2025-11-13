@@ -11,7 +11,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hwicx"]
 shader = ExtResource("1_7o5vc")
-shader_parameter/color = Vector3(0, 0, 0.1)
+shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/alpha = 0.01
 shader_parameter/shadow_height = 0.2
 shader_parameter/end_angle = 45.0
@@ -22,7 +22,6 @@ shader_parameter/fade_interval = Vector2(0, 0.05)
 radius = 31.0161
 
 [node name="Rock" type="StaticBody2D"]
-z_index = 1
 material = SubResource("ShaderMaterial_hwicx")
 collision_layer = 2
 collision_mask = 2
@@ -37,7 +36,6 @@ frame = 1
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 visible = false
 show_behind_parent = true
-z_as_relative = false
 material = ExtResource("3_c5dir")
 texture = ExtResource("2_c5dir")
 

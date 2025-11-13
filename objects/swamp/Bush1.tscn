@@ -8,7 +8,6 @@
 size = Vector2(163, 14)
 
 [node name="Bush" type="StaticBody2D"]
-z_index = 1
 collision_layer = 3
 collision_mask = 3
 
@@ -20,7 +19,6 @@ texture = ExtResource("4_v4qv5")
 [node name="Shadow" type="Sprite2D" parent="Sprite2D"]
 visible = false
 show_behind_parent = true
-z_as_relative = false
 material = ExtResource("3_okf1m")
 texture = ExtResource("4_v4qv5")
 

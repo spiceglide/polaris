@@ -41,34 +41,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drdvg"]
 size = Vector2(241, 32)
 
-[sub_resource type="Animation" id="Animation_wohbl"]
-resource_name = "unlit"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/SubViewport/Flame:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("GPUParticles2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_qfnbr"]
 length = 0.001
 tracks/0/type = "value"
@@ -124,6 +96,34 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_wohbl"]
+resource_name = "unlit"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/SubViewport/Flame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jgn58"]
 _data = {
 &"RESET": SubResource("Animation_qfnbr"),
@@ -132,7 +132,6 @@ _data = {
 }
 
 [node name="Kiln" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
-z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_a2gfp")

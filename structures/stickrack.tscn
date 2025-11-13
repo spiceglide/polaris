@@ -224,13 +224,11 @@ _data = {
 &"full3": SubResource("Animation_v2hdf")
 }
 
-[node name="StickRack" type="StaticBody2D" node_paths=PackedStringArray("state_machine")]
-z_index = 1
+[node name="StickRack" type="StaticBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kw5vm")
 id = "stickrack"
-state_machine = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -58)

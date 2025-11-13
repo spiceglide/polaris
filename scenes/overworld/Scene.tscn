@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bxa6s70uc0tgo"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]

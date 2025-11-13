@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvwbb4r3ui1r6"]
+
+[ext_resource type="PackedScene" uid="uid://bl2r2tiktn3nn" path="res://objects/tundra/SnowPile2.tscn" id="3_hf627"]
+[ext_resource type="PackedScene" uid="uid://di1au0y2ha18t" path="res://objects/tundra/SnowPile1.tscn" id="4_pi4g4"]
+[ext_resource type="PackedScene" uid="uid://bny82lifsvvnc" path="res://objects/tundra/StickTree.tscn" id="5_diuju"]
+[ext_resource type="PackedScene" uid="uid://6idnqp6mveuf" path="res://objects/forest/MediumPine.tscn" id="6_nqwbt"]
+[ext_resource type="PackedScene" uid="uid://12i565cs2h8l" path="res://objects/tundra/Rock1.tscn" id="7_1hn4c"]
+[ext_resource type="PackedScene" uid="uid://dc3wehveui7v8" path="res://objects/tundra/Rock2.tscn" id="8_wk2gu"]
+[ext_resource type="PackedScene" uid="uid://f6yovtrpm7id" path="res://structures/berrybush.tscn" id="9_7nog5"]
+[ext_resource type="PackedScene" uid="uid://cd5xn0tgjxxwf" path="res://structures/well.tscn" id="10_vo6na"]
+
+[node name="Props" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Object1" parent="." instance=ExtResource("3_hf627")]
+position = Vector2(3136, 2135)
+
+[node name="Object2" parent="." instance=ExtResource("3_hf627")]
+position = Vector2(1576, 1335)
+
+[node name="Object3" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(2740, 1011)
+
+[node name="Object4" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(2236, 2291)
+
+[node name="Object5" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(512, 2923)
+
+[node name="Object6" parent="." instance=ExtResource("3_hf627")]
+position = Vector2(788, 3411)
+
+[node name="Object7" parent="." instance=ExtResource("3_hf627")]
+position = Vector2(2804, 3267)
+
+[node name="Object8" parent="." instance=ExtResource("3_hf627")]
+position = Vector2(1624, 3019)
+
+[node name="Object9" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(2288, 3407)
+
+[node name="Object10" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(676, 1139)
+
+[node name="Object11" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(1636, 211)
+
+[node name="Object12" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(3692, 2775)
+
+[node name="Object13" parent="." instance=ExtResource("4_pi4g4")]
+position = Vector2(728, 1963)
+
+[node name="Object15" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(1248, 2043)
+
+[node name="Object16" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(3504, 1227)
+
+[node name="Object17" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(360, 755)
+
+[node name="Object19" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(568, 919)
+
+[node name="Object20" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(336, 3243)
+
+[node name="Object21" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(3432, 3751)
+
+[node name="Object22" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(1548, 3803)
+
+[node name="Object23" parent="." instance=ExtResource("5_diuju")]
+position = Vector2(2672, 711)
+
+[node name="Object26" parent="." instance=ExtResource("6_nqwbt")]
+position = Vector2(2172.5, 918.5)
+
+[node name="Object27" parent="." instance=ExtResource("7_1hn4c")]
+position = Vector2(1229.13, 2226.17)
+
+[node name="Object28" parent="." instance=ExtResource("8_wk2gu")]
+position = Vector2(1988.5, 2865.14)
+
+[node name="Object29" parent="." instance=ExtResource("8_wk2gu")]
+position = Vector2(1884, 943.145)
+
+[node name="Object30" parent="." instance=ExtResource("8_wk2gu")]
+position = Vector2(240, 1322.14)
+
+[node name="Object31" parent="." instance=ExtResource("8_wk2gu")]
+position = Vector2(3260, 3354.14)
+
+[node name="Object32" parent="." instance=ExtResource("7_1hn4c")]
+position = Vector2(2168, 3018.17)
+
+[node name="Object33" parent="." instance=ExtResource("7_1hn4c")]
+position = Vector2(444, 3550.17)
+
+[node name="Object34" parent="." instance=ExtResource("7_1hn4c")]
+position = Vector2(3500, 358.167)
+
+[node name="Object35" parent="." instance=ExtResource("7_1hn4c")]
+position = Vector2(3472, 1774.17)
+
+[node name="Object36" parent="." instance=ExtResource("9_7nog5")]
+position = Vector2(2264.67, 954.077)
+
+[node name="Object37" parent="." instance=ExtResource("9_7nog5")]
+position = Vector2(3351.1, 2152.5)
+
+[node name="Well" parent="." instance=ExtResource("10_vo6na")]
+position = Vector2(1078, 1483)

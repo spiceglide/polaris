@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://lv56bfts6hp7"]
+[gd_scene load_steps=22 format=3 uid="uid://lv56bfts6hp7"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_2j4w2"]
 [ext_resource type="Texture2D" uid="uid://c5al6wvyo7pjh" path="res://assets/structures/bridge/bridge.png" id="2_2j4w2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_niyjq"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="5_3yb1j"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="6_x6url"]
+[ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="7_4dly3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gh87h"]
 viewport_path = NodePath("Sprite2D/SubViewport")
@@ -540,7 +541,7 @@ libraries = {
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
 script = ExtResource("5_3yb1j")
 parent = NodePath("..")
-initial_state = NodePath("Broken")
+initial_state = NodePath("Fixed")
 
 [node name="Fixed" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_x6url")
@@ -549,3 +550,17 @@ animations = ["fixed"]
 [node name="Broken" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_x6url")
 animations = ["broken"]
+
+[node name="Notifications" parent="." instance=ExtResource("7_4dly3")]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -200.0
+offset_right = -125.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+timeout_enabled = false

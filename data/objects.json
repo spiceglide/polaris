@@ -1,8 +1,8 @@
 {
   "bridge": {
     "broken": {
+      "requires": ["log", "log", "log", "rope"],
       "gather": {
-        "requires": ["log", "log", "log", "rope"],
         "next": "fixed"
       }
     },

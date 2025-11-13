@@ -8,7 +8,7 @@ var pan_speed = 3.0
 
 func _ready() -> void:
 	$QuitMenu.toggle_text(false)
-	$QuitMenu.offset.y = get_viewport_rect().size.y
+	#$QuitMenu.offset.y = get_viewport_rect().size.y
 	$SettingsMenu.offset.x = get_viewport_rect().size.x
 
 	$MainMenu/Menu/VBoxContainer/Continue.disabled = false

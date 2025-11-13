@@ -2,11 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://d1ur6s61aljcj" path="res://ui/ui.tres" id="1_r2nfi"]
 [ext_resource type="Script" uid="uid://ch4cexadkrdup" path="res://screens/main_menu.gd" id="1_tder3"]
-[ext_resource type="Texture2D" uid="uid://ccv5owixi6er4" path="res://assets/ui/menu/menu_bg.png" id="2_5hrtm"]
+[ext_resource type="Texture2D" uid="uid://bj6ou4u524q4" path="res://assets/ui/menu/main/gradient.png" id="2_ensew"]
 [ext_resource type="FontFile" uid="uid://bo1jnolgp5jx7" path="res://assets/font/polarisfont-Regular222.otf" id="2_tder3"]
 [ext_resource type="Shader" uid="uid://g6e2a7tnpes1" path="res://shaders/scroll.gdshader" id="3_5yh37"]
 [ext_resource type="Shader" uid="uid://4i14c8lkhvfg" path="res://shaders/gradient.gdshader" id="3_lts0s"]
-[ext_resource type="Texture2D" uid="uid://cct8fk057garo" path="res://assets/ui/menu/menu_clutter_nobg.png" id="4_38opn"]
 [ext_resource type="AudioStream" uid="uid://dcnv2hs6aq4h4" path="res://assets/audio/bgm/main_menu.ogg" id="4_mbnhl"]
 [ext_resource type="Texture2D" uid="uid://cqj8qrxe05guq" path="res://assets/ui/menu/logo.png" id="5_5yh37"]
 [ext_resource type="Shader" uid="uid://bol6tj12pj5oy" path="res://shaders/outline.gdshader" id="5_0675x"]
@@ -31,6 +30,7 @@
 [ext_resource type="Script" uid="uid://dwdyq4nhl4gkf" path="res://ui/options_animation.gd" id="24_e3c6o"]
 [ext_resource type="PackedScene" uid="uid://bc721lnjrr6jk" path="res://screens/SettingsMenu.tscn" id="25_5ggvk"]
 [ext_resource type="PackedScene" uid="uid://dbtkcmlnfkeq7" path="res://screens/QuitMenu.tscn" id="26_6p6wd"]
+[ext_resource type="Texture2D" uid="uid://mqh5emp185w0" path="res://assets/ui/menu/main/menu_clutter_nobg.png" id="30_ensew"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptt67"]
 shader = ExtResource("3_5yh37")
@@ -184,7 +184,7 @@ shader_parameter/first_color = Color(0.176, 0.278, 0.388, 0)
 shader_parameter/second_color = Color(0.054902, 0.0784314, 0.109804, 1)
 shader_parameter/position = -0.123
 shader_parameter/size = 0.568
-shader_parameter/angle = 270.0
+shader_parameter/angle = 270.1110128302725
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_tder3")
@@ -194,12 +194,9 @@ follow_viewport_enabled = true
 
 [node name="Background" type="TextureRect" parent="MainMenu"]
 custom_minimum_size = Vector2(1920, 1080)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_5hrtm")
+offset_right = 1920.0
+offset_bottom = 3007.0322
+texture = ExtResource("2_ensew")
 expand_mode = 5
 
 [node name="Snowfall" type="ColorRect" parent="MainMenu"]
@@ -417,11 +414,12 @@ libraries = {
 script = ExtResource("24_e3c6o")
 
 [node name="QuitMenu" parent="." instance=ExtResource("26_6p6wd")]
-offset = Vector2(0, 1080)
-transform = Transform2D(1, 0, 0, 1, 0, 1080)
+offset = Vector2(0, 1920)
+transform = Transform2D(1, 0, 0, 1, 0, 1920)
 follow_viewport_enabled = true
 
 [node name="Colour" type="ColorRect" parent="QuitMenu"]
+visible = false
 z_index = -1
 material = SubResource("ShaderMaterial_0675x")
 custom_minimum_size = Vector2(960, 2160)
@@ -437,17 +435,23 @@ color = Color(0.054902, 0.0784314, 0.109804, 1)
 
 [node name="Clutter" type="TextureRect" parent="QuitMenu"]
 z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
+custom_minimum_size = Vector2(0, 1772)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -1772.0
+offset_right = 1000.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_38opn")
+grow_vertical = 0
+texture = ExtResource("30_ensew")
 expand_mode = 3
 stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 1080)
+position = Vector2(0, 1920)
 anchor_mode = 0
 process_callback = 0
 position_smoothing_enabled = true

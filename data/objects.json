@@ -1,4 +1,13 @@
 {
+  "bridge": {
+    "broken": {
+      "gather": {
+        "requires": ["log", "log", "log", "rope"],
+        "next": "fixed"
+      }
+    },
+    "fixed": { }
+  },
   "hare": {
     "idle": {
       "kill": {

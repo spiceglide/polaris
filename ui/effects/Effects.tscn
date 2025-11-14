@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckmvri8prxlq"]
+
+[ext_resource type="Script" uid="uid://b20mtck38idrl" path="res://ui/effects/shake.gd" id="1_arv7l"]
+
+[node name="Effects" type="Node"]
+
+[node name="Shake" type="Node" parent="."]
+script = ExtResource("1_arv7l")

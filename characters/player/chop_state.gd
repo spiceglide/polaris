@@ -30,6 +30,9 @@ func _on_timer_timeout() -> void:
 	parent.last_dir = "north"
 	state_transitioned.emit(self, "idle")
 
+func chop():
+	Effects.get_node("Shake").apply()
+
 func _on_animation_player_animation_changed(old_name: StringName, new_name: StringName) -> void:
 	if [old_name, new_name] == [&"action/chop_1", &"action/chop_2"]:
 		exitable = true

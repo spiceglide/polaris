@@ -24,6 +24,7 @@ PlayerData="*res://data/PlayerData.tscn"
 WorldData="*res://data/WorldData.tscn"
 CraftingData="*res://data/CraftingData.tscn"
 SceneSwitcher="*res://screens/SceneSwitcher.tscn"
+Effects="*res://ui/effects/Effects.tscn"
 
 [display]
 

@@ -20,7 +20,9 @@ func _ready() -> void:
 	selected_slot = 0
 	
 	if WorldData.get_game_mode() == "overworld":
-		inventory.push(GameItem.new("hatchet"))
+		inventory.push(GameItem.new("kiln"))
+		inventory.push(GameItem.new("stick"), 8)
+
 	
 	add_to_group("crafting")
 

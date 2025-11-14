@@ -26,12 +26,20 @@ func update(_delta: float):
 func physics_update(_delta: float):
 	var movement = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if movement.length() > 0:
-		# Determine direction
-		var last_dir: String = "south"
-		if movement.y != 0:
-			last_dir = "north" if movement.y < 0 else "south"
-		else:
-			last_dir = "west" if movement.x < 0 else "east"
+		var north: bool = movement.y < 0
+		var east: bool = movement.x > 0
+		var south: bool = movement.y > 0
+		var west: bool = movement.x < 0
+		
+		var last_dir: String = ""
+		if south:
+			last_dir += "south"
+		elif north:
+			last_dir += "north"
+		if east:
+			last_dir += "east"
+		elif west:
+			last_dir += "west"
+		
 		parent.last_dir = last_dir
-
 		state_transitioned.emit(self, "walk")

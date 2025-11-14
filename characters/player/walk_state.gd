@@ -37,13 +37,20 @@ func physics_update(_delta: float):
 		parent.velocity = direction.normalized() * PlayerData.speed * mult
 		parent.move_and_slide()
 		
-		# Determine direction
-		var last_dir: String = "south"
-		if direction.y != 0:
-			last_dir = "north" if direction.y < 0 else "south"
-		else:
-			last_dir = "west" if direction.x < 0 else "east"
-		parent.last_dir = last_dir
+		var north: bool = direction.y < 0
+		var east: bool = direction.x > 0
+		var south: bool = direction.y > 0
+		var west: bool = direction.x < 0
+		
+		var last_dir: String = ""
+		if south:
+			last_dir += "south"
+		elif north:
+			last_dir += "north"
+		if east:
+			last_dir += "east"
+		elif west:
+			last_dir += "west"
 		
 		if parent.holding:
 			item_sprite.animation = parent.holding.id

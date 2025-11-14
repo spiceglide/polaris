@@ -135,6 +135,7 @@ locale/translations=PackedStringArray("res://localisations/localisations.en.tran
 2d_physics/layer_2="Interaction"
 2d_physics/layer_3="Logic"
 2d_physics/layer_4="Damage"
+2d_physics/layer_5="Water"
 
 [shader_globals]
 

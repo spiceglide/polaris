@@ -1,15 +1,25 @@
-[gd_scene load_steps=22 format=3 uid="uid://lv56bfts6hp7"]
+[gd_scene load_steps=26 format=3 uid="uid://lv56bfts6hp7"]
 
 [ext_resource type="Script" uid="uid://3r4c6rbxqg3g" path="res://objects/object.gd" id="1_2j4w2"]
 [ext_resource type="Texture2D" uid="uid://c5al6wvyo7pjh" path="res://assets/structures/bridge/bridge.png" id="2_2j4w2"]
 [ext_resource type="Texture2D" uid="uid://ce8m20e4w6by0" path="res://assets/structures/bridge/bridge_disrepair.png" id="4_4dly3"]
 [ext_resource type="Script" uid="uid://box81yowdennp" path="res://utility/interact.gd" id="4_niyjq"]
 [ext_resource type="Script" uid="uid://omutx8gyilg6" path="res://utility/state_machine.gd" id="5_3yb1j"]
+[ext_resource type="Script" uid="uid://u5h2cv14mlxe" path="res://structures/bridge_state.gd" id="6_sjpe5"]
 [ext_resource type="Script" uid="uid://btbr3d3yl288q" path="res://objects/static_state.gd" id="6_x6url"]
 [ext_resource type="PackedScene" uid="uid://c4oq36js5sr7o" path="res://ui/notifications/NotificationSystem.tscn" id="7_4dly3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gh87h"]
 viewport_path = NodePath("Sprite2D/SubViewport")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjpe5"]
+size = Vector2(373.20798, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_niyjq"]
+size = Vector2(573, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yb1j"]
+size = Vector2(378.02115, 73.3454)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2j4w2"]
 a = Vector2(-215, -195)
@@ -480,6 +490,22 @@ size = Vector2i(1364, 361)
 texture = ExtResource("2_2j4w2")
 centered = false
 
+[node name="OnBridge" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnBridge"]
+position = Vector2(-421.95547, 87.89909)
+rotation = -0.27925268
+shape = SubResource("RectangleShape2D_sjpe5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OnBridge"]
+position = Vector2(34.5, 36)
+shape = SubResource("RectangleShape2D_niyjq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OnBridge"]
+position = Vector2(493.17712, 82.90741)
+rotation = 0.27925268
+shape = SubResource("RectangleShape2D_3yb1j")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 position = Vector2(19, 245)
@@ -538,16 +564,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_x6url")
 }
 
-[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("parent", "initial_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("parent", "initial_state")]
 script = ExtResource("5_3yb1j")
 parent = NodePath("..")
 initial_state = NodePath("Fixed")
 
-[node name="Fixed" type="Node2D" parent="StateMachine"]
-script = ExtResource("6_x6url")
-animations = ["fixed"]
+[node name="Fixed" type="Node" parent="StateMachine"]
+script = ExtResource("6_sjpe5")
 
-[node name="Broken" type="Node2D" parent="StateMachine"]
+[node name="Broken" type="Node" parent="StateMachine"]
 script = ExtResource("6_x6url")
 animations = ["broken"]
 
@@ -564,3 +589,6 @@ offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 0
 timeout_enabled = false
+
+[connection signal="body_entered" from="OnBridge" to="StateMachine/Fixed" method="_on_body_entered"]
+[connection signal="body_exited" from="OnBridge" to="StateMachine/Fixed" method="_on_body_exited"]

@@ -18,9 +18,8 @@ func _process(_delta: float) -> void:
 	if PlayerData.flags["position_updated"]:
 		self.position = PlayerData.position
 		PlayerData.flags["position_updated"] = false
-	
 	PlayerData.position = self.position
-
+	
 	highlight_nearest()
 
 func get_possible_interactions():

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daw7r2iltx312" path="res://screens/scene_switcher.gd" id="1_2hpcg"]
 
-[node name="SceneSwitcher" type="Node2D"]
+[node name="SceneSwitcher" type="Node"]
 script = ExtResource("1_2hpcg")
 
 [node name="Timer" type="Timer" parent="."]

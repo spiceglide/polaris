@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://burgku2ck58j1"]
+[gd_scene load_steps=18 format=3 uid="uid://burgku2ck58j1"]
 
 [ext_resource type="Script" uid="uid://5w0yjuchyd4e" path="res://scenes/overworld/map.gd" id="1_qp2hw"]
 [ext_resource type="PackedScene" uid="uid://cbuloj656l6eh" path="res://characters/player/Player.tscn" id="2_xv731"]
+[ext_resource type="Script" uid="uid://dc60ygsgy78yj" path="res://characters/player/player_camera.gd" id="3_xv731"]
 [ext_resource type="Shader" uid="uid://icddc7ws1jb" path="res://shaders/rays.gdshader" id="5_nq5xx"]
 [ext_resource type="Shader" uid="uid://82lbbc05pgg3" path="res://shaders/day_night.gdshader" id="6_ql0m5"]
 [ext_resource type="Texture2D" uid="uid://cvboruyfnhot5" path="res://assets/lighting/night.png" id="7_hvr76"]
@@ -63,6 +64,17 @@ script = ExtResource("1_qp2hw")
 
 [node name="Player" parent="Map" instance=ExtResource("2_xv731")]
 position = Vector2(1213, 642)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 15360
+limit_bottom = 15360
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("3_xv731")
 
 [node name="Overlay" type="CanvasLayer" parent="."]
 

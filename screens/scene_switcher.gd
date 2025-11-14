@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var active_scene = null
 var rooms = null
@@ -64,6 +64,11 @@ func switch_room(new_room: String):
 		if room.name == new_room:
 			room.process_mode = PROCESS_MODE_INHERIT
 			room.visible = true
+			
+			var camera: Camera2D = room.get_node_or_null("Camera2D")
+			if camera:
+				camera.enabled = true
+				camera.make_current()
 		else:
 			room.visible = false
 			room.process_mode = PROCESS_MODE_DISABLED
